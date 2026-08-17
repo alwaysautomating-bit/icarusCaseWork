@@ -37,11 +37,20 @@ These are likely domain-layer or derived objects:
 
 ## Canonical Evidence Ontology
 
-Use three distinct concepts:
+Use these distinct concepts:
 
-- `SourceArtifact`: the immutable evidence object received by Icarus
+- `Source`: the evidentiary origin or origin system
+- `SourceArtifact`: an immutable concrete representation received or captured by Icarus
 - `Document`: a format or type classification of `SourceArtifact`, not a canonical primitive
-- `Source`: provenance context, not a catch-all object
+- `EvidenceLane`: the evidentiary modality of a Source and its Claims, independent of artifact representation
+
+Current evidence lanes:
+
+- `testimony`
+- `documentary`
+- `direct_evidence`
+
+The lane is a product capture/reconciliation boundary, not a legal conclusion about admissibility, weight, or whether testimony is legally direct or circumstantial evidence. A transcript HTML page remains an artifact representation of testimony; it does not convert the recorded claims to the documentary lane.
 
 In implementation, prefer explicit provenance roles such as:
 
@@ -53,6 +62,7 @@ In implementation, prefer explicit provenance roles such as:
 Primitive mapping:
 
 - `SourceArtifact` -> Evidence
+- `EvidenceLane` -> classification of Evidence and evidence-backed Claims
 - `Document` -> Evidence subtype or classification
 - person / institution / device / publisher / custodian -> Entity
 - entity supplied / published / recorded / custodial relationship to artifact -> Relationship
@@ -92,6 +102,8 @@ Evidence currently includes:
 - derived calculations or structured extraction outputs with provenance
 
 Evidence is not the same thing as a claim. Evidence supports, contradicts, or fails to distinguish among claims and reconstructions.
+
+Intake preserves evidence within its declared lane. Cross-lane support, contradiction, corroboration, independence assessment, and verification are Relationships or Projections created only by a later Reconciliation layer. A later lane may link a new Claim to an existing Proposition but may not rewrite the original Claim.
 
 ## Claim
 

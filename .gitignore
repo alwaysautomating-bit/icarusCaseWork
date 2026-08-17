@@ -13,6 +13,8 @@
 # testing
 /coverage
 /.playwright-cli/
+/output/
+/tmp/
 
 # next.js
 /.next/
@@ -37,6 +39,17 @@ yarn-error.log*
 
 # local evidence database and object store
 /.data/
+
+# local transcript intake queue and legacy working copies
+/transcripts/*
+!/transcripts/inbox/
+!/transcripts/manifests/
+!/transcripts/preserved/
+/transcripts/inbox/*
+!/transcripts/inbox/.gitkeep
+
+# extracted design-system working copy; the source archive is retained
+/Icarus design system/
 
 # vercel
 .vercel

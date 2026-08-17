@@ -57,6 +57,12 @@ describe("Rev testimony parser", () => {
     ]));
   });
 
+  it("does not promote an exhibit reference to a stipulation without explicit stipulation language", () => {
+    const parsed = parseRevTranscript(fixture, "https://www.rev.com/transcripts/example-trial-day-6");
+    expect(parsed.exhibits.some((item) => item.label === "J")).toBe(true);
+    expect(parsed.stipulations).toHaveLength(0);
+  });
+
   it("leaves an interval open when a publisher timestamp moves backward", () => {
     const discontinuous = fixture.replace(">01:16</a>", ">00:05</a>");
     const parsed = parseRevTranscript(discontinuous, "https://www.rev.com/transcripts/example-trial-day-6");

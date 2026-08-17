@@ -1,5 +1,204 @@
 # End-to-End Implementation Plan
 
+## Implemented Build Slice: Testimony URL Intake
+
+Status: Complete locally on 08-16-2026. Migration `20260817035154_testimony_url_intake.sql`, the authenticated Rev URL flow, real-page browser evidence, and the maintained local integration check satisfy the slice boundary. Remaining test expansion and schema-reference debt are tracked in `BACKLOG_08-16-2026.md`.
+
+### Outcome
+
+The first intake build accepts one authenticated, case-scoped testimony URL and turns it into inspectable, provenance-preserving records. The proving fixture is a timestamped Rev trial-transcript page with an embedded media reference. The slice is complete only when a researcher can move from an assertion to its exact transcript segment and source-specific deep link without the assertion becoming a verified fact.
+
+The first slice is intentionally narrower than the complete evidence-intake prompt. PDF, DOCX, image, medical-record, forensic-report, and Lindsay Clancy Part 2 PDF ingestion remain later adapters over the same intake contract.
+
+### Invariants
+
+- Preserve the submitted URL exactly; store a normalized canonical URL separately.
+- Treat the captured transcript page, embedded media, underlying testimony, and mentioned exhibits or records as distinct objects.
+- Treat `source_artifacts` as concrete source-document representations, not as the evidentiary origin itself.
+- Evolve `claims` as the persisted assertion object; do not introduce a competing assertions table.
+- Persist an explicit evidence lane on the evidentiary `source` and each `claim`: `testimony`, `documentary`, or `direct_evidence`. The first slice may create only `testimony` records.
+- Artifact representation and evidence lane are orthogonal. An HTML transcript is a documentary representation of testimony; its file format cannot silently reclassify the contained claims as documentary evidence.
+- A proposition normalizes what assertions concern but never asserts truth.
+- Extraction confidence describes extraction quality only and cannot create or change a verification assessment.
+- Every assertion must resolve to one exact `source_segment`, including speaker, timestamp, and deep-link target when available.
+- Ordered attribution must preserve speaker, reporter, recorder, quoter, summarizer, interpreter, and testifier roles.
+- Repeated documents or derivative reports from one lineage cannot increase independent corroboration.
+- `known_to_exist` and `possessed_by_us` remain independent fields.
+- Null or unknown metadata stays null; parsers do not invent certainty.
+- All writes remain case-scoped, authenticated, RLS-protected, auditable, and atomic.
+
+### Intake/Reconciliation Boundary
+
+Cross-lane reconciliation is forbidden during intake.
+
+Testimony intake may create sources, artifacts, segments, claims, proposition candidates, ordered attribution chains, source lineages, and acquisition targets. It may not:
+
+- merge testimony claims with documentary or direct-evidence claims;
+- create support, contradiction, corroboration, independence-assessment, or verification records;
+- use absence in another evidence lane as contradiction or negative evidence;
+- mutate an earlier claim when a later lane links to the same proposition; or
+- permit a future parser adapter to write around the reconciliation boundary.
+
+Cross-lane support, conflict, qualification, independence assessment, and verification belong to a later authenticated Reconciliation layer. Intake may identify exact duplicate/source lineage, but lineage is not support.
+
+### Existing-Schema Mapping
+
+| Requested concept | Plan |
+| --- | --- |
+| EvidenceIntake | Add `evidence_intakes` as the capture/job ledger. |
+| Source | Add `sources` for the evidentiary origin or known underlying source. |
+| EvidenceLane | Add a constrained lane to `sources` and `claims`; do not place it on `source_artifacts`, whose media/document type describes representation. |
+| SourceDocument | Reuse and extend `source_artifacts`; it already stores immutable checksum-addressed representations. |
+| DocumentSegment | Reuse and extend `source_segments` with sequence, speaker, timestamp, and deep-link metadata. |
+| CanonicalDocument | Add `source_lineages` where canonical/duplicate grouping is required; retain each physical artifact and keep this distinct from `claim_lineage`. |
+| Proposition | Add `propositions`; a proposition has no truth or verification flag. |
+| Assertion | Evolve `claims`; add proposition, provenance, epistemic, extraction-confidence, and review fields without overloading `status`. |
+| AssertionAttribution | Add ordered `claim_attributions` linked to entities and source artifacts. |
+| AssertionSupport | Add `claim_support` for the later Reconciliation layer with `supporting_claim_id`, `target_proposition_id`, `evidence_lane`, `source_lineage_id`, `independence_group`, `relation_type`, and `assessment_origin`. Testimony intake receives no write contract for this table. |
+| Event | Reuse `events`; add `event_claims` so multiple assertions may describe one event. Do not auto-promote extracted testimony. |
+| VerificationAssessment | Add append-only `verification_assessments` plus linked supporting/conflicting claims. |
+| EvidenceAcquisitionRecord | Add `evidence_acquisition_records` for mentioned but unpossessed exhibits and records. |
+| Review/correction history | Reuse `review_decisions` and `audit_events`; extend audit details to preserve before/after values and optional reason. |
+
+### Runtime Shape
+
+```text
+Authenticated researcher
+  -> URL intake Server Action
+  -> URL safety and capture service
+  -> immutable HTML snapshot + checksum
+  -> evidence_intakes / sources / source_artifacts
+  -> transcript parser adapter (Rev first)
+  -> source_segments + extraction candidates
+  -> one atomic commit function
+  -> testimony-lane claims + proposition candidates + ordered attributions
+  -> acquisition targets; no support or verification write
+  -> assertion inspection drawer
+```
+
+The capture service must allow only HTTP(S), reject credentials in URLs, revalidate every redirect, block loopback/private/link-local destinations after DNS resolution, cap redirects, bytes, and duration, and accept only expected document content types. A parser failure preserves the original and ends in `review_required` or `failed`; it never discards the capture.
+
+### Migration Sequence
+
+Create the migration through `supabase migration new testimony_url_intake`; do not invent the migration filename.
+
+1. Add enums/check constraints needed for evidence lane (`testimony`, `documentary`, `direct_evidence`), intake status, source family, capture method, provenance type, attribution role, support relation, support status, and acquisition status.
+2. Add `evidence_intakes` and `sources` with `case_id`, exact submitted URL, canonical URL, capture metadata, status, checksum linkage, and null-safe parser metadata.
+3. Extend `source_artifacts` with `source_id`, `evidence_intake_id`, document/capture metadata, derivative linkage, and URL/publisher fields while retaining the existing `(case_id, sha256)` exact-duplicate guard.
+4. Extend `source_segments` with ordinal, speaker entity, timestamp interval, and source-specific deep-link target.
+5. Add `propositions`; extend `claims` to reference propositions and the originating source, store assertion/provenance semantics, and persist its evidence lane. Use a composite foreign-key or equivalently strict database constraint so a claim cannot disagree with its source lane. Keep existing claim IDs and downstream references stable.
+6. Add ordered `claim_attributions` and the reconciliation-owned `claim_support` shape. Do not expose a support-write payload or grant an intake write path.
+7. Add `source_lineages`, `verification_assessments`, assessment-claim joins, and `evidence_acquisition_records`.
+8. Add `event_claims`; preserve the current `events.promoted_from_claim_id` compatibility path until callers migrate, then plan its removal separately.
+9. Add indexes for every case/foreign-key traversal, `(case_id, canonical_url)`, processing status, proposition, attribution sequence, lineage/independence group, support status, and acquisition status.
+10. Enable RLS on every added public table; add ownership predicates through case membership for `SELECT`, `INSERT`, `UPDATE`, and `DELETE`, with both `USING` and `WITH CHECK` on updates.
+11. Revoke default function/table privileges, grant only the required authenticated Data API access, and add one narrowly scoped `SECURITY INVOKER` commit function for the atomic parsed-result write. Its input contract accepts testimony only and contains no support, contradiction, reconciliation, or verification fields.
+12. Update or disable every legacy write path so no adapter can omit or override the evidence lane; the current slice permits `testimony` only.
+13. Reconcile `src/db/schema.ts` with the authoritative migration in the same slice or retire it explicitly; schema drift cannot accompany this migration.
+
+### Build Sequence
+
+#### 1. Contract and storage
+
+- Define Zod contracts for URL submission, captured document, transcript segment, testimony-lane assertion candidate, ordered attribution, proposition candidate, and acquisition target. Do not include reconciliation outputs in the intake contract.
+- Extend the immutable storage adapter so an HTML snapshot is stored before parsing.
+- Make idempotency deterministic from case, canonical URL, snapshot checksum, parser name, and parser version.
+
+Exit evidence: duplicate submission reuses the exact snapshot/artifact identity while preserving the new intake attempt and its submitted URL provenance.
+
+#### 2. Safe URL capture
+
+- Add an authenticated, case-scoped Server Action accepting a URL only.
+- Preserve submitted and canonical forms separately.
+- Capture title, publisher, retrieval time, content type, response URL, immutable HTML, checksum, and embedded media identifier/URL when discoverable.
+- Persist failure state and diagnostics without exposing arbitrary internal-network fetches.
+
+Exit evidence: a safe synthetic transcript fixture captures successfully; blocked private-network, oversized, redirected-to-private, and unsupported-content fixtures fail safely.
+
+#### 3. Testimony parser adapter
+
+- Implement a provider-neutral transcript-parser interface and one Rev adapter.
+- Extract ordered timestamped segments, speaker labels, exact text, and deep links.
+- Record trial-day/session metadata as parser output; create a reviewed Event only after human confirmation.
+- Create acquisition targets for mentioned exhibits/underlying records while leaving possession false.
+
+Exit evidence: parsing the frozen fixture yields stable ordered segments and preserves the media reference separately from the transcript document.
+
+#### 4. Atomic domain commit
+
+- Commit testimony sources, documents, segments, claims, proposition candidates, attributions, lineages, and acquisition records in one database transaction.
+- Make retries idempotent and reject cross-case foreign-key references.
+- Leave verification unassessed unless a human or later evaluation workflow explicitly creates an assessment.
+- Reject any non-testimony evidence lane and any payload that attempts support, contradiction, corroboration, independence assessment, or verification writes.
+
+Exit evidence: induced failure after each write stage rolls back the whole domain commit; retry produces no duplicate assertions; the completed intake creates zero `claim_support` and zero `verification_assessments` rows.
+
+#### 5. Inspection UI
+
+- Add one URL field and processing-state display to the casework inbox.
+- Add an assertion detail drawer showing exact excerpt, proposition, source, document, attribution chain, provenance type, support status, related support/duplicate lineage, and acquisition gaps.
+- Provide `Open source` and `Watch at timestamp` actions when safe deep links exist.
+
+Exit evidence: browser verification proves assertion -> segment -> canonical source/deep link navigation with no console or framework errors.
+
+### Test Contract
+
+Automate at least:
+
+1. direct subject testimony;
+2. witness testimony;
+3. ordered reported-by chain;
+4. clinician-recorded subject statement fixture;
+5. investigator characterization;
+6. expert opinion;
+7. duplicate transcript/artifact lineage;
+8. source/claim lineage distinguishes repeated origin from independent-origin metadata without creating support;
+9. semantically conflicting testimony claims coexist without an intake-created contradiction record;
+10. proposition remains unverified without an assessment;
+11. `known_to_exist` differs from `possessed_by_us`;
+12. exact duplicate capture does not duplicate assertions;
+13. attribution sequence is preserved;
+14. cross-user/cross-case RLS denial for every new table and commit function;
+15. correction appends before/after audit history;
+16. unknown metadata remains null;
+17. high extraction confidence cannot set corroborated status;
+18. submitted tracking URL and canonical URL are both preserved;
+19. transcript page and embedded media are separate linked records;
+20. SSRF and capture-budget controls fail closed;
+21. induced domain-commit failure rolls back every record;
+22. testimony claims remain `testimony` after persistence and retrieval;
+23. an HTML transcript artifact does not reclassify its claims as `documentary`;
+24. intake creates no support, contradiction, reconciliation, or verification record;
+25. a later documentary or direct-evidence claim can link to the same proposition without mutating the original testimony claim.
+
+### Slice Acceptance Gate
+
+The slice may close only when one authorized Rev testimony URL can be submitted and later inspected with:
+
+- exact submitted URL and canonical URL;
+- immutable snapshot checksum and object key;
+- transcript document separate from embedded media;
+- stable ordered speaker/timestamp segments and deep links;
+- at least one assertion, proposition, and ordered attribution chain;
+- `testimony` evidence lane retained independently from the transcript artifact's HTML representation;
+- unassessed verification state;
+- zero intake-created support, contradiction, reconciliation, independence-assessment, or verification rows;
+- one mentioned exhibit or underlying record represented as an unpossessed acquisition target;
+- authenticated audit identity;
+- passing atomicity, idempotency, RLS, evidence-lane, reconciliation-boundary, provenance, null-semantics, unit, migration, build, and browser tests.
+
+Allowed terminal dispositions are accepted, rejected for redesign, superseded by a recorded plan, or cancelled. A successful scrape or attractive demo alone is not completion.
+
+### Explicitly Deferred
+
+- General-purpose web crawling and arbitrary-site parser coverage
+- Full PDF/DOCX/image/audio/video ingestion
+- Lindsay Clancy Part 2 PDF canonical-affidavit evaluation
+- Automated corroboration or verification decisions
+- Full evidence graph visualization
+- Hosted Supabase, production Blob, Google/Apple credentials, and deployment cutover unless separately authorized
+- Generalization to employment, malpractice, insurance, corporate investigations, or other domains; those are validated future projections over the same substrate
+
 ## Goal
 
 Build the minimum vertical slice that proves the v1 obligation without prematurely absorbing advanced probabilistic or generalized platform scope.

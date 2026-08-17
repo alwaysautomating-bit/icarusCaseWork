@@ -13,6 +13,7 @@
     "test:integration": "pnpm testimony:day6",
     "transcript:intake": "node scripts/transcript-intake.mjs",
     "testimony:day6": "tsx scripts/reprocess-day6.ts",
+    "testimony:publish-corpus": "tsx scripts/publish-transcript-corpus.ts",
     "supabase:migrations": "supabase migration list --local",
     "supabase:reset": "supabase db reset",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"

@@ -30,3 +30,14 @@ Decision: deliver a thin source-to-timeline slice first, then grow the evidence 
 
 Reason: each slice produces observable evidence for the V1 proof obligation and limits premature platform expansion.
 
+## 08-16-2026 — Separate evidence lane from artifact representation
+
+Decision: persist `testimony`, `documentary`, or `direct_evidence` on evidentiary Sources and Claims, never infer the lane from SourceArtifact format, and restrict the first URL-intake slice to testimony.
+
+Reason: an HTML or PDF transcript is a concrete representation of testimony, not documentary evidence merely because it is a document.
+
+## 08-16-2026 — Reconciliation begins after intake
+
+Decision: intake may preserve lane-specific sources, artifacts, segments, claims, proposition candidates, attribution, lineage, and acquisition targets, but only a later authenticated Reconciliation layer may create cross-lane support, conflict, corroboration, independence-assessment, or verification records.
+
+Reason: evidence streams must be compared explicitly after preservation rather than blended by parsers during capture.

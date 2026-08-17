@@ -174,7 +174,13 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
     );
   }
 
-  if (!/https?:\/\/(?:www\.)?rev\.com\/(?:app\/transcript|transcripts|category)\//i.test(text)) {
+  const trialDay = Number(titleMatch[2]);
+  const hasRevUrl = /https?:\/\/(?:www\.)?rev\.com\/(?:app\/transcript|transcripts|category)\//i.test(text);
+  const hasRevPlainTextProvenance = /^About[\u00a0 ]Rev\s*$/im.test(text)
+    && /^Transcripts Home\s*$/im.test(text)
+    && /^Copyright Disclaimer\s*$/im.test(text)
+    && new RegExp(`^Day\\s+${trialDay}\\s+of the MA v\\. Lindsay Clancy trial\\. Read the transcript here\\.\\s*$`, "im").test(text);
+  if (!hasRevUrl && !hasRevPlainTextProvenance) {
     throw new TranscriptIntakeError(
       "UNKNOWN_PUBLISHER",
       "The source title was recognized, but Rev provenance could not be detected.",
@@ -182,7 +188,6 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
     );
   }
 
-  const trialDay = Number(titleMatch[2]);
   const pageTitle = `MA v. Lindsay Clancy Day ${trialDay}`;
   const titleWindow = text.slice(titleMatch.index, titleMatch.index + 2_000);
   const dateMatch = titleWindow.match(
@@ -194,7 +199,11 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
 
   const timestampPattern =
     /\[([0-9]{1,2}:[0-9]{2}(?::[0-9]{2})?)\]\(https?:\/\/(?:www\.)?rev\.com\/app\/transcript\/[^)\s]+\)/gi;
-  const timestamps = Array.from(text.matchAll(timestampPattern), (match) => match[1]);
+  let timestamps = Array.from(text.matchAll(timestampPattern), (match) => match[1]);
+  if (timestamps.length === 0 && hasRevPlainTextProvenance) {
+    const plainTimestampPattern = /^.+?\s+\(([0-9]{1,2}:[0-9]{2}(?::[0-9]{2})?)\):\s*$/gm;
+    timestamps = Array.from(text.matchAll(plainTimestampPattern), (match) => match[1]);
+  }
 
   const canonicalUrlPattern =
     /https?:\/\/(?:www\.)?rev\.com\/transcripts\/ma-v-lindsay-clancy-day-(\d{1,3})(?=[)\s]|$)/gi;

@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { reviewExtractionCandidateAction } from "./actions";
 import { ActionLink, EvidenceCard, MonoLabel, SpecRow } from "./casework-ui";
 
-type Segment = { id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; speaker: string; artifact_title: string; artifact_sha256: string; canonical_url: string };
+type Segment = { id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; speaker: string; artifact_title: string; artifact_sha256: string; canonical_url: string | null };
 type QaExchange = { id: string; question_segment_id: string; answer_segment_ids: string[]; context_segment_ids: string[]; question_text: string; answer_text: string };
 type Candidate = { id: string; candidate_type: string; source_segment_ids: string[]; payload: Record<string, unknown>; extraction_confidence: number; review_status: string; current_review_version: number };
 type ReviewVersion = { candidate_id: string; version: number; action: string; payload: Record<string, unknown> | null; note: string; reviewed_at: string };
@@ -65,7 +65,7 @@ export function TestimonySourceReader({ segments, qaExchanges, candidates, revie
           </article>;
         })}</section>
         <section className="inspector-section"><MonoLabel>ACQUISITION GAPS</MonoLabel>{linkedGaps.length === 0 ? <p className="console-muted">No acquisition target is linked to this exact segment.</p> : linkedGaps.map((gap) => <EvidenceCard tag={gap.priority.toUpperCase()} title={gap.title} relation={`${gap.acquisition_status} · ${gap.possessed_by_us ? "possessed" : "not possessed"}`} meta={gap.admitted_as_exhibit === null ? "ADMISSION UNKNOWN" : gap.admitted_as_exhibit ? "ADMITTED" : "NOT ADMITTED"} key={gap.id} />)}</section>
-        <div className="inspector-actions"><ActionLink href={selected.canonical_url} variant="console">Open source</ActionLink>{selected.deep_link ? <ActionLink href={selected.deep_link} variant="console">Open at timestamp</ActionLink> : null}</div>
+        <div className="inspector-actions">{selected.canonical_url ? <ActionLink href={selected.canonical_url} variant="console">Open source</ActionLink> : <span>Source URL not recorded</span>}{selected.deep_link ? <ActionLink href={selected.deep_link} variant="console">Open at timestamp</ActionLink> : null}</div>
       </div>
     </aside>
   </div>;

@@ -25,6 +25,17 @@ The human researcher controls case scope, high-impact claim acceptance, entity m
 
 Every model-assisted output must retain model/version metadata, input references, status, and reviewer disposition.
 
+## Intake/Reconciliation Boundary
+
+Intake preserves lane-specific evidence; it does not reconcile evidence streams.
+
+- `EvidenceLane` is required on evidentiary Sources and Claims and is independent of SourceArtifact format.
+- Testimony intake may create testimony sources, artifacts, segments, claims, proposition candidates, ordered attribution, lineage, and acquisition targets.
+- Intake may not create support, contradiction, corroboration, independence-assessment, or verification records.
+- Absence in another lane cannot become conflict or negative evidence during intake.
+- Documentary and direct-evidence adapters must use the same boundary and may not rewrite earlier testimony Claims.
+- A later authenticated Reconciliation layer owns cross-lane support/conflict/qualification, independence assessment, and verification.
+
 ## Human-Only Decisions in V1
 
 - accepting a high-impact claim;
@@ -53,6 +64,8 @@ Every model-assisted output must retain model/version metadata, input references
 4. Contradictory evidence may coexist without forced resolution.
 5. Absence of evidence remains unknown unless a declared rule supports a stronger inference.
 6. Every material narrative assertion has an exact citation or is visibly labeled interpretation.
+7. Artifact representation cannot determine evidence lane.
+8. Cross-lane reconciliation never occurs inside intake.
 7. A projection cannot overwrite the evidence substrate.
 8. Unresolved consequential conditions remain surfaced until a recorded terminal disposition is evidenced.
 
@@ -66,4 +79,3 @@ An export is publishable only when automated validation and an independent human
 - public-record cutoff date and evidence snapshot;
 - no prohibited guilt, diagnosis, credibility, admissibility, or truth-probability claims;
 - case-specific safety and dignity review.
-

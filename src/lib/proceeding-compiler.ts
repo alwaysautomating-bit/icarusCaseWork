@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { parseRevTranscript, type ProceedingPackageV1 } from "@/lib/rev-testimony";
+import { parseRevTranscript, REV_PARSER_VERSION, type ExtractionCandidate, type ParsedTranscriptSegment, type ProceedingPackageV1 } from "@/lib/rev-testimony";
 
 export type ProceedingParty = "court" | "commonwealth" | "defense" | "other";
 export type ProceedingPhase = "court_orientation" | "commonwealth_opening" | "transition" | "defense_opening" | "recess";
@@ -98,6 +98,11 @@ const HEADER = /^(?:(.+?)\s+)?\((\d{1,2}:\d{2}(?::\d{2})?)\):?$/;
 
 function stableId(namespace: string, value: string) {
   return `${namespace}_${createHash("sha256").update(value).digest("hex").slice(0, 16)}`;
+}
+
+function stableUuid(namespace: string, value: string) {
+  const hash = createHash("sha256").update(`${namespace}\0${value}`).digest("hex");
+  return `${hash.slice(0, 8)}-${hash.slice(8, 12)}-5${hash.slice(13, 16)}-a${hash.slice(17, 20)}-${hash.slice(20, 32)}`;
 }
 
 function sourceLines(source: string): SourceLine[] {
@@ -327,6 +332,62 @@ export function compileOpeningStatements(source: string, artifactName = "opening
   };
 }
 
+export function compileOpeningStatementsPackageV1(source: string, artifactName = "opening-statements.rev.txt"): ProceedingPackageV1 {
+  const opening = compileOpeningStatements(source, artifactName);
+  const sourceSha256 = opening.source.sha256;
+  const allSourceSegments = parseAllSegments(source);
+  const escape = (value: string) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+  const validationUrl = "https://www.rev.com/transcripts/preserved-opening-statements";
+  const syntheticHtml = `<!doctype html><html><head><title>MA v. Lindsay Clancy Opening Statements | Rev</title><link href="${validationUrl}" rel="canonical"><script type="application/ld+json">{"datePublished":"2026-07-29"}</script></head><body><div id="main-content">${allSourceSegments.map((segment) => `<p>${escape(segment.originalSpeaker)} (<a href="">${segment.timestamp}</a>):</p><p>${escape(segment.exactText).replaceAll("\n", "<br/>")}</p>`).join("")}</div></body></html>`;
+  const base = parseRevTranscript(syntheticHtml, validationUrl, sourceSha256, "rev_plain_text_transcript").package;
+  if (base.segments.length !== allSourceSegments.length) throw new Error(`Opening-statements completeness failure: detected ${allSourceSegments.length}, parsed ${base.segments.length}.`);
+  const segments: ParsedTranscriptSegment[] = base.segments.map((segment, index) => ({ ...segment, locator: { ...segment.locator, start: allSourceSegments[index].sourceStart, end: allSourceSegments[index].sourceEnd } }));
+  const segmentId = new Map(opening.segments.map((segment) => [segment.id, segments[segment.ordinal].id]));
+  const speakers = base.speakers;
+  const positions = opening.positions.map((position) => ({ id: stableUuid("position", `${sourceSha256}:${position.id}`), party: position.party, statement: position.assertion, evidenceStatus: "not_evidence" as const, sourceSegmentIds: [segmentId.get(position.segmentId)!] }));
+  const proceduralActions = opening.proceduralActions.map((action) => ({ id: stableUuid("procedure", `${sourceSha256}:${action.id}`), action: action.exactText, sourceSegmentIds: [segmentId.get(action.id)!] }));
+  const resolutionItems = opening.resolutionItems.filter((item) => item.segmentIds.length > 0).map((item) => ({ id: stableUuid("resolution", `${sourceSha256}:${item.id}`), kind: item.kind, title: item.title, detail: item.detail, status: "unresolved" as const, eventTime: null, sourceSegmentIds: item.segmentIds.map((id) => segmentId.get(id)).filter((id): id is string => Boolean(id)) }));
+  const openingScopeIds = new Set(opening.segments.map((segment) => segments[segment.ordinal].id));
+  const openingPositionIds = new Set(positions.flatMap((position) => position.sourceSegmentIds));
+  const keepNonOpeningSources = (ids: string[]) => ids.filter((id) => !openingPositionIds.has(id));
+  const baseCandidates = base.extractionCandidates.flatMap<ExtractionCandidate>((candidate) => {
+    if (candidate.candidateType === "testimony_claim" && candidate.sourceSegmentIds.some((id) => openingPositionIds.has(id))) return [];
+    if ((candidate.candidateType === "position" || candidate.candidateType === "procedural_action") && candidate.sourceSegmentIds.some((id) => openingScopeIds.has(id))) return [];
+    if (candidate.candidateType === "exhibit" || candidate.candidateType === "stipulation") {
+      const sourceSegmentIds = keepNonOpeningSources(candidate.sourceSegmentIds);
+      return sourceSegmentIds.length ? [{ ...candidate, sourceSegmentIds }] : [];
+    }
+    return [candidate];
+  });
+  const extractionCandidates: ExtractionCandidate[] = [...baseCandidates,
+    ...positions.map((position) => ({ id: stableUuid("candidate", `${sourceSha256}:position:${position.id}`), candidateType: "position" as const, sourceSegmentIds: position.sourceSegmentIds, payload: { party: position.party, statement: position.statement, evidenceStatus: "not_evidence" }, extractionConfidence: 1, reviewStatus: "pending" as const })),
+    ...proceduralActions.map((action) => ({ id: stableUuid("candidate", `${sourceSha256}:procedure:${action.id}`), candidateType: "procedural_action" as const, sourceSegmentIds: action.sourceSegmentIds, payload: { action: action.action }, extractionConfidence: 1, reviewStatus: "pending" as const })),
+    ...resolutionItems.filter((item) => item.sourceSegmentIds.length > 0).map((item) => ({ id: stableUuid("candidate", `${sourceSha256}:resolution:${item.id}`), candidateType: "resolution_item" as const, sourceSegmentIds: item.sourceSegmentIds, payload: { title: item.title, detail: item.detail, eventTime: null }, extractionConfidence: 1, reviewStatus: "pending" as const })),
+  ];
+  const basePositions = base.positions.filter((item) => item.sourceSegmentIds.every((id) => !openingScopeIds.has(id)));
+  const baseProceduralActions = base.proceduralActions.filter((item) => item.sourceSegmentIds.every((id) => !openingScopeIds.has(id)));
+  const exhibits = base.exhibits.flatMap((item) => { const sourceSegmentIds = keepNonOpeningSources(item.sourceSegmentIds); return sourceSegmentIds.length ? [{ ...item, sourceSegmentIds }] : []; });
+  const stipulations = base.stipulations.flatMap((item) => { const sourceSegmentIds = keepNonOpeningSources(item.sourceSegmentIds); return sourceSegmentIds.length ? [{ ...item, sourceSegmentIds }] : []; });
+  return {
+    schemaVersion: "proceeding-package/1.0",
+    packageId: stableUuid("package", sourceSha256),
+    compiler: { name: "Icarus Testimony Compiler", version: REV_PARSER_VERSION, boundary: "record_only_no_case_analysis" },
+    proceeding: { title: opening.proceeding.title, type: "opening_statements", proceedingDate: opening.proceeding.date, publisher: "Rev" },
+    source: { canonicalUrl: opening.source.originalSourceUrl, sha256: sourceSha256, representation: "rev_plain_text_transcript" },
+    coverage: { completionState: "complete", detectedSegments: allSourceSegments.length, parsedSegments: segments.length, firstTimestamp: segments[0].locator.timestampStart, lastTimestamp: segments.at(-1)?.locator.timestampStart ?? segments[0].locator.timestampStart, parserWarnings: opening.coverage.parserWarnings },
+    speakers,
+    segments,
+    qaExchanges: base.qaExchanges,
+    extractionCandidates,
+    positions: [...basePositions, ...positions],
+    proceduralActions: [...baseProceduralActions, ...proceduralActions],
+    exhibits,
+    stipulations,
+    resolutionItems: [...base.resolutionItems, ...resolutionItems],
+    invariants: [...opening.invariants, "Opening-statement packages create no testimony-claim candidates."],
+  };
+}
+
 export type PreservedTranscriptManifest = {
   provider: "rev";
   representation: "rev_html" | "rev_markdown" | "rev_plain_text";
@@ -338,6 +399,7 @@ export type PreservedTranscriptManifest = {
 /** Provider-neutral compiler entry point used by preserved transcript manifests. */
 export function compileProceedingSource(manifest: PreservedTranscriptManifest & { representation: "rev_html" }, source: string): ProceedingPackageV1;
 export function compileProceedingSource(manifest: PreservedTranscriptManifest & { representation: "rev_markdown" }, source: string): ProceedingPackageV1;
+export function compileProceedingSource(manifest: PreservedTranscriptManifest & { representation: "rev_plain_text"; proceedingType: "trial_day" }, source: string): ProceedingPackageV1;
 export function compileProceedingSource(manifest: PreservedTranscriptManifest & { representation: "rev_plain_text"; proceedingType: "opening_statements" }, source: string): ProceedingPackage;
 export function compileProceedingSource(manifest: PreservedTranscriptManifest, source: string): ProceedingPackage | ProceedingPackageV1 {
   if (manifest.provider === "rev" && manifest.representation === "rev_html") {
@@ -364,7 +426,32 @@ export function compileProceedingSource(manifest: PreservedTranscriptManifest, s
     const canonical = manifest.sourceUrl ?? `https://www.rev.com/transcripts/${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
     const syntheticHtml = `<!doctype html><html><head><title>${escape(title)} | Rev</title><link href="${escape(canonical)}" rel="canonical"></head><body><div id="main-content">${turns.map((turn) => `<p>${escape(turn.speaker)} (<a href="${escape(turn.href)}">${escape(turn.timestamp)}</a>):</p><p>${escape(turn.text).replaceAll("\n", "<br/>")}</p>`).join("")}</div></body></html>`;
     const originalSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
-    return parseRevTranscript(syntheticHtml, canonical, originalSha256, "rev_markdown_transcript").package;
+    const compiled = parseRevTranscript(syntheticHtml, canonical, originalSha256, "rev_markdown_transcript").package;
+    return { ...compiled, source: { ...compiled.source, canonicalUrl: manifest.sourceUrl ?? null } };
+  }
+  if (manifest.provider === "rev" && manifest.representation === "rev_plain_text" && manifest.proceedingType === "trial_day") {
+    const header = /^(.+?) \(([0-9]{1,2}:[0-9]{2}(?::[0-9]{2})?)\):\s*$/;
+    const lines = source.replace(/^\uFEFF/, "").split(/\r?\n/);
+    const first = lines.findIndex((line) => header.test(line.trim()));
+    if (first < 0) throw new Error("No Rev timestamped turns were found in the preserved plain-text transcript.");
+    const escape = (value: string) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;");
+    const turns: Array<{ speaker: string; timestamp: string; text: string }> = [];
+    for (let index = first; index < lines.length;) {
+      const match = lines[index].trim().match(header);
+      if (!match) { index += 1; continue; }
+      let end = index + 1;
+      while (end < lines.length && !header.test(lines[end].trim()) && lines[end].trim() !== "Keep reading") end += 1;
+      const text = lines.slice(index + 1, end).join("\n").trim();
+      if (text) turns.push({ speaker: match[1].trim(), timestamp: match[2], text });
+      if (lines[end]?.trim() === "Keep reading") break;
+      index = end;
+    }
+    const title = source.match(/^(MA v\. Lindsay Clancy Day \d+)\s*$/m)?.[1] ?? manifest.artifactName;
+    const validationUrl = manifest.sourceUrl ?? "https://www.rev.com/transcripts/preserved-plain-text";
+    const syntheticHtml = `<!doctype html><html><head><title>${escape(title)} | Rev</title><link href="${escape(validationUrl)}" rel="canonical"></head><body><div id="main-content">${turns.map((turn) => `<p>${escape(turn.speaker)} (<a href="">${escape(turn.timestamp)}</a>):</p><p>${escape(turn.text).replaceAll("\n", "<br/>")}</p>`).join("")}</div></body></html>`;
+    const originalSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
+    const compiled = parseRevTranscript(syntheticHtml, validationUrl, originalSha256, "rev_plain_text_transcript").package;
+    return { ...compiled, source: { ...compiled.source, canonicalUrl: manifest.sourceUrl ?? null } };
   }
   if (manifest.provider === "rev" && manifest.representation === "rev_plain_text" && manifest.proceedingType === "opening_statements") {
     return compileOpeningStatements(source, manifest.artifactName);
@@ -385,5 +472,16 @@ export function compilePreservedTranscriptManifest(manifest: IntakeManifest, sou
   if (manifest.source.publisher !== "Rev") throw new Error(`Unsupported transcript provider: ${manifest.source.publisher}`);
   const actualSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
   if (actualSha256 !== manifest.integrity.sha256) throw new Error("Preserved transcript checksum does not match its intake manifest.");
-  return compileProceedingSource({ provider: "rev", representation: "rev_markdown", artifactName: manifest.source.preserved_filename, sourceUrl: manifest.source.canonical_url, proceedingType: "trial_day" }, source);
+  const compilerManifest = { provider: "rev" as const, artifactName: manifest.source.preserved_filename, sourceUrl: manifest.source.canonical_url, proceedingType: "trial_day" as const };
+  if (manifest.source.preserved_filename.toLowerCase().endsWith(".txt")) {
+    return compileProceedingSource({ ...compilerManifest, representation: "rev_plain_text" }, source);
+  }
+  return compileProceedingSource({ ...compilerManifest, representation: "rev_markdown" }, source);
+}
+
+export function compileUnifiedProceeding(manifest: PreservedTranscriptManifest, source: string): ProceedingPackageV1 {
+  if (manifest.proceedingType === "opening_statements") return compileOpeningStatementsPackageV1(source, manifest.artifactName);
+  if (manifest.representation === "rev_html") return compileProceedingSource({ ...manifest, representation: "rev_html" }, source);
+  if (manifest.representation === "rev_markdown") return compileProceedingSource({ ...manifest, representation: "rev_markdown" }, source);
+  return compileProceedingSource({ ...manifest, representation: "rev_plain_text", proceedingType: "trial_day" }, source);
 }

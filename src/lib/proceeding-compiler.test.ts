@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { compileOpeningStatements, compileProceedingSource } from "./proceeding-compiler";
+import { compileOpeningStatements, compileProceedingSource, compileUnifiedProceeding } from "./proceeding-compiler";
 
 const fixturePath = path.join(process.cwd(), "fixtures", "ma-v-lindsay-clancy-opening-statements.rev.txt");
 const source = readFileSync(fixturePath, "utf8");
@@ -52,5 +52,19 @@ describe("opening-statement proceeding compiler", () => {
     const routed = compileProceedingSource({ provider: "rev", representation: "rev_plain_text", proceedingType: "opening_statements", artifactName: "opening.rev.txt" }, source);
     expect(routed.schemaVersion).toBe("proceeding-package/1.0");
     expect(routed.positions.every((position) => position.evidenceStatus === "not_evidence")).toBe(true);
+  });
+
+  it("commits the complete preserved artifact while keeping opening advocacy out of testimony claims", () => {
+    const compiled = compileUnifiedProceeding({ provider: "rev", representation: "rev_plain_text", proceedingType: "opening_statements", artifactName: "opening.rev.txt", sourceUrl: null }, source);
+    expect(compiled.coverage.detectedSegments).toBe(1_364);
+    expect(compiled.coverage.parsedSegments).toBe(1_364);
+    expect(compiled.segments).toHaveLength(1_364);
+    expect(compiled.coverage.lastTimestamp).toBe("05:37:51");
+    const positionSegments = new Set(compiled.positions.flatMap((position) => position.sourceSegmentIds));
+    expect(compiled.positions).toHaveLength(61);
+    expect(compiled.positions.every((position) => position.evidenceStatus === "not_evidence")).toBe(true);
+    expect(compiled.extractionCandidates.some((candidate) => candidate.candidateType === "testimony_claim" && candidate.sourceSegmentIds.some((id) => positionSegments.has(id)))).toBe(false);
+    expect(compiled.resolutionItems.every((item) => item.sourceSegmentIds.length > 0)).toBe(true);
+    for (const segment of compiled.segments) expect(source.slice(segment.locator.start, segment.locator.end).trim()).toBe(segment.text);
   });
 });

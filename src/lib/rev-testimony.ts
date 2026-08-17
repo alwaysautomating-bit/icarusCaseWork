@@ -33,7 +33,7 @@ export type QaExchange = { id: string; ordinal: number; questionSegmentId: strin
 export type ExtractionCandidate = { id: string; candidateType: "testimony_claim" | "qa_exchange" | "procedural_action" | "position" | "exhibit" | "stipulation" | "resolution_item"; sourceSegmentIds: string[]; payload: Record<string, unknown>; extractionConfidence: number; reviewStatus: "pending" };
 export type StructuredExhibit = { id: string; label: string; admissionStatus: "identification" | "admitted" | "unknown"; description: string; sourceSegmentIds: string[] };
 export type StructuredStipulation = { id: string; exhibitLabel: string; subject: string; status: "accepted" | "entered"; exactText: string; sourceSegmentIds: string[] };
-export type CompilerResolutionItem = { id: string; kind: "measurement_time" | "speaker_attribution" | "transcript_gap"; title: string; detail: string; status: "unresolved"; eventTime: null; sourceSegmentIds: string[] };
+export type CompilerResolutionItem = { id: string; kind: string; title: string; detail: string; status: "unresolved"; eventTime: null; sourceSegmentIds: string[] };
 type Position = { id: string; party: "commonwealth" | "defense"; statement: string; evidenceStatus: "not_evidence"; sourceSegmentIds: string[] };
 type Procedure = { id: string; action: string; sourceSegmentIds: string[] };
 type Coverage = { completionState: "complete" | "incomplete"; detectedSegments: number; parsedSegments: number; firstTimestamp: string; lastTimestamp: string; parserWarnings: string[] };
@@ -42,8 +42,8 @@ export type ProceedingPackageV1 = {
   schemaVersion: "proceeding-package/1.0";
   packageId: string;
   compiler: { name: "Icarus Testimony Compiler"; version: string; boundary: "record_only_no_case_analysis" };
-  proceeding: { title: string; type: "trial_day"; proceedingDate: string | null; publisher: string };
-  source: { canonicalUrl: string; sha256: string; representation: "rev_html_transcript" | "rev_markdown_transcript" };
+  proceeding: { title: string; type: "trial_day" | "opening_statements"; proceedingDate: string | null; publisher: string };
+  source: { canonicalUrl: string | null; sha256: string; representation: "rev_html_transcript" | "rev_markdown_transcript" | "rev_plain_text_transcript" };
   coverage: Coverage;
   speakers: Array<{ id: string; providerLabel: string }>;
   segments: ParsedTranscriptSegment[];
@@ -85,7 +85,7 @@ function parseSegments(html: string, sha: string) {
   const opening = /<div[^>]+id="main-content"[^>]*>/i.exec(html);
   if (!opening) throw new Error("The Rev transcript body could not be located.");
   const body = html.slice(opening.index + opening[0].length);
-  const header = /<p>((?:(?!<\/p>)[\s\S])*?)\s*\(<a[^>]+href="([^"]+)"[^>]*>([^<]+)<\/a>\):<\/p>/gi;
+  const header = /<p>((?:(?!<\/p>)[\s\S])*?)\s*\(<a[^>]+href="([^"]*)"[^>]*>([^<]+)<\/a>\):<\/p>/gi;
   const headers = [...body.matchAll(header)];
   if (!headers.length) throw new Error("No timestamped Rev transcript segments were found.");
   const raw: Array<Omit<ParsedTranscriptSegment, "timestampEndMs" | "locator">> = [];
@@ -159,7 +159,7 @@ function acquisitions(segments: ParsedTranscriptSegment[], url: string) {
 }
 
 const matching = (segments: ParsedTranscriptSegment[], pattern: RegExp) => segments.filter((segment) => pattern.test(segment.text));
-function structureRecord(segments: ParsedTranscriptSegment[]) {
+function structureRecord(segments: ParsedTranscriptSegment[], sourceSha256: string) {
   const definitions: Array<[string, StructuredExhibit["admissionStatus"], string, RegExp]> = [
     ["J", "identification", "Summary or list of stipulated facts identified as Exhibit J.", /Exhibit J|J for identification/i],
     ["184", "admitted", "Stipulation regarding postmortem toxicology testing of Cora Clancy.", /Exhibit 184|postmortem toxicology testing of Cora Clancy/i],
@@ -168,18 +168,32 @@ function structureRecord(segments: ParsedTranscriptSegment[]) {
   ];
   const exhibits = definitions.flatMap<StructuredExhibit>(([label, admissionStatus, description, pattern]) => {
     const rows = matching(segments, pattern);
-    return rows.length ? [{ id: stableUuid("exhibit", label), label, admissionStatus, description, sourceSegmentIds: rows.map((row) => row.id) }] : [];
+    return rows.length ? [{ id: stableUuid("exhibit", `${sourceSha256}:${label}`), label, admissionStatus, description, sourceSegmentIds: rows.map((row) => row.id) }] : [];
   });
+  for (const segment of segments) {
+    for (const match of segment.text.matchAll(/\bExhibit\s+([A-Z0-9]+)\b/gi)) {
+      const label = match[1].toUpperCase();
+      const existing = exhibits.find((item) => item.label === label);
+      if (existing) {
+        if (!existing.sourceSegmentIds.includes(segment.id)) existing.sourceSegmentIds.push(segment.id);
+        continue;
+      }
+      const identification = new RegExp(`Exhibit\\s+${label}\\s+for\\s+(?:ID|identification)`, "i").test(segment.text);
+      const admitted = new RegExp(`(?:admit(?:ted)?|enter(?:ed)?|move(?:s|d)?\\s+to\\s+admit)[^.?]{0,80}Exhibit\\s+${label}|Exhibit\\s+${label}[^.?]{0,80}(?:admit(?:ted)?|enter(?:ed)?)`, "i").test(segment.text);
+      exhibits.push({ id: stableUuid("exhibit", `${sourceSha256}:${label}`), label, admissionStatus: identification ? "identification" : admitted ? "admitted" : "unknown", description: `Exhibit ${label} referenced in the proceeding.`, sourceSegmentIds: [segment.id] });
+    }
+  }
   const acceptedJ = matching(segments, /accept(?:ed)? the (?:proposed )?stipulation|accept the stipulation/i);
-  const stipulations = exhibits.map<StructuredStipulation>((exhibit) => {
+  const stipulations = exhibits.flatMap<StructuredStipulation>((exhibit) => {
     const rows = segments.filter((segment) => exhibit.sourceSegmentIds.includes(segment.id));
     const all = exhibit.label === "J" ? [...new Map([...rows, ...acceptedJ].map((row) => [row.id, row])).values()] : rows;
-    return { id: stableUuid("stipulation", exhibit.label), exhibitLabel: exhibit.label, subject: exhibit.label === "J" ? "Facts summarized in Exhibit J" : exhibit.description.replace(/^Stipulation regarding /, "").replace(/\.$/, ""), status: exhibit.label === "J" ? "accepted" : "entered", exactText: all.map((row) => row.text).join("\n\n"), sourceSegmentIds: all.map((row) => row.id) };
+    if (!all.some((row) => /\bstipulat(?:e|ed|ion|ions)\b/i.test(row.text))) return [];
+    return [{ id: stableUuid("stipulation", `${sourceSha256}:${exhibit.label}`), exhibitLabel: exhibit.label, subject: exhibit.label === "J" ? "Facts summarized in Exhibit J" : exhibit.description.replace(/^Stipulation regarding /, "").replace(/\.$/, ""), status: exhibit.label === "J" ? "accepted" : "entered", exactText: all.map((row) => row.text).join("\n\n"), sourceSegmentIds: all.map((row) => row.id) }];
   });
   const proceduralActions = matching(segments, /accept(?:ed)? the (?:proposed )?stipulation|move to enter three stipulations|bring the jury|call your next witness|swear .* in/i).map((segment) => ({ id: stableUuid("procedure", segment.id), action: segment.text, sourceSegmentIds: [segment.id] }));
   const positions = matching(segments, /we have not been contesting the government'?s case|Commonwealth's position|defense(?:'s)? position/i).map((segment) => ({ id: stableUuid("position", segment.id), party: /Reddington|defense/i.test(segment.speaker + segment.text) ? "defense" as const : "commonwealth" as const, statement: segment.text, evidenceStatus: "not_evidence" as const, sourceSegmentIds: [segment.id] }));
   const measurements = matching(segments, /82\.1 degrees|95\.2 degrees/i);
-  const resolutionItems: CompilerResolutionItem[] = measurements.length ? [{ id: stableUuid("resolution", "temperature-measurement-time"), kind: "measurement_time", title: "Resolve when the 82.1°F and 95.2°F measurements were taken", detail: "The transcript supplies statement timestamps for the questions and answers, but it does not supply the event time of either temperature measurement. No measurement-time timestamp is inferred.", status: "unresolved", eventTime: null, sourceSegmentIds: measurements.map((row) => row.id) }] : [];
+  const resolutionItems: CompilerResolutionItem[] = measurements.length ? [{ id: stableUuid("resolution", `${sourceSha256}:temperature-measurement-time`), kind: "measurement_time", title: "Resolve when the 82.1°F and 95.2°F measurements were taken", detail: "The transcript supplies statement timestamps for the questions and answers, but it does not supply the event time of either temperature measurement. No measurement-time timestamp is inferred.", status: "unresolved", eventTime: null, sourceSegmentIds: measurements.map((row) => row.id) }] : [];
   return { exhibits, stipulations, proceduralActions, positions, resolutionItems };
 }
 
@@ -208,7 +222,7 @@ export function parseRevTranscript(html: string, submittedUrl: string, preserved
   const speakers = [...new Set(parsed.segments.map((segment) => segment.speaker))].map((providerLabel) => ({ id: stableUuid("speaker", `${sourceSha256}:${providerLabel}`), providerLabel }));
   const claimRecord = buildClaims(parsed.segments);
   const qaExchanges = buildQa(parsed.segments);
-  const record = structureRecord(parsed.segments);
+  const record = structureRecord(parsed.segments, sourceSha256);
   const extractionCandidates = candidates(claimRecord.claims, qaExchanges, record);
   const packageRecord: ProceedingPackageV1 = { schemaVersion: "proceeding-package/1.0", packageId: stableUuid("package", sourceSha256), compiler: { name: "Icarus Testimony Compiler", version: REV_PARSER_VERSION, boundary: "record_only_no_case_analysis" }, proceeding: { title, type: "trial_day", proceedingDate: publishedDate, publisher: "Rev" }, source: { canonicalUrl, sha256: sourceSha256, representation }, coverage, speakers, segments: parsed.segments, qaExchanges, extractionCandidates, ...record, invariants: ["A run can complete only when detected segments equal parsed segments equal committed segments.", "Every extracted record cites one or more exact source segments.", "Question and short-answer segments remain linked as a Q/A exchange.", "Party advocacy is a position, not evidence.", "Transcript statement timestamps are never substituted for unknown event times.", "Casework import creates no support, contradiction, truth, or hypothesis assessment."] };
   return { title, description, canonicalUrl, publisher: "Rev", publishedDate, sourceSha256, coverage, speakers, media: parseMedia(html, sourceSha256), segments: parsed.segments, qaExchanges, extractionCandidates, claims: claimRecord.claims, attributions: claimRecord.attributions, acquisitions: acquisitions(parsed.segments, canonicalUrl), ...record, package: packageRecord };

@@ -18,16 +18,20 @@ Closure blocker: the corpus boundary or public-record cutoff date is absent.
 
 ## Workflow 2: Ingest and Preserve Sources
 
-1. Upload or link an authorized source artifact.
-2. Preserve the original bytes, checksum, acquisition context, provenance roles, and access status.
-3. Extract text, media metadata, pages, timestamps, and source-addressable segments without replacing the original.
-4. Flag unsupported, unreadable, duplicate, or restricted material for disposition.
+1. Upload or link an authorized source artifact. For URL testimony intake, preserve the exact submitted URL and a normalized canonical URL separately.
+2. Preserve the original bytes or HTML snapshot, checksum, acquisition context, provenance roles, and access status before parsing.
+3. Keep a transcript page, embedded media, underlying testimony source, and mentioned exhibits or records as separate linked objects.
+4. Assign the evidentiary source and extracted claims an explicit evidence lane independent of artifact format. The testimony slice accepts only `testimony`.
+5. Extract text, media metadata, speakers, pages, timestamps, deep links, and source-addressable segments without replacing the original.
+6. Create acquisition targets for mentioned but unpossessed evidence without implying that the underlying source has been reviewed or acquired.
+7. Stop before reconciliation: do not create support, contradiction, corroboration, independence-assessment, or verification records during intake.
+8. Flag unsupported, unreadable, duplicate, restricted, failed, or review-required material for disposition.
 
 Terminal dispositions: accepted, duplicate, unsupported, restricted, rejected, or cancelled.
 
 Evidence: immutable artifact, checksum, provenance record, extraction record, and disposition event.
 
-Closure blocker: an accepted artifact lacks checksum, provenance, or a source-addressable representation.
+Closure blocker: an accepted artifact lacks checksum, provenance, or a source-addressable representation; a URL capture loses its submitted URL; artifact format changes an evidence lane; intake creates reconciliation state; or mentioned evidence is represented as possessed without acquisition evidence.
 
 ## Workflow 3: Extract and Review Claims
 
@@ -105,4 +109,3 @@ Terminal dispositions: approved and exported, rejected for revision, cancelled, 
 Evidence: approval event, validation report, and export manifest.
 
 Closure blocker: any material sentence lacks an exact citation or visible interpretation label.
-

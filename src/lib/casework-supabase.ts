@@ -141,8 +141,8 @@ export async function getWorkspace(actor: CaseActor): Promise<Workspace> {
 
 export type TestimonyIntakeWorkspace = {
   counts: { intakes: number; segments: number; claims: number; acquisitionTargets: number };
-  intakes: Array<{ id: string; submitted_url: string; canonical_url: string; page_title: string | null; publisher: string | null; published_date: string | null; captured_at: string; sha256: string; processing_status: string; exact_duplicate_of: string | null }>;
-  segments: Array<{ id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; speaker: string; artifact_title: string; artifact_sha256: string; canonical_url: string }>;
+  intakes: Array<{ id: string; submitted_url: string | null; canonical_url: string | null; page_title: string | null; publisher: string | null; published_date: string | null; captured_at: string; sha256: string; processing_status: string; exact_duplicate_of: string | null }>;
+  segments: Array<{ id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; speaker: string; artifact_title: string; artifact_sha256: string; canonical_url: string | null }>;
   qaExchanges: Array<{ id: string; question_segment_id: string; answer_segment_ids: string[]; context_segment_ids: string[]; question_text: string; answer_text: string }>;
   candidates: Array<{ id: string; candidate_type: string; source_segment_ids: string[]; payload: Record<string, unknown>; extraction_confidence: number; review_status: string; current_review_version: number }>;
   reviewVersions: Array<{ candidate_id: string; version: number; action: string; payload: Record<string, unknown> | null; note: string; reviewed_at: string }>;
@@ -169,14 +169,14 @@ export async function getTestimonyIntakeWorkspace(actor: CaseActor): Promise<Tes
   ]);
   const [intakesResult, artifactsResult, segmentsResult, speakersResult, qaResult, candidatesResult, reviewsResult, mediaResult, acquisitionsResult, intakeCountResult, segmentCountResult, claimCountResult, acquisitionCountResult] = results;
   const intakes = rowsOrThrow(intakesResult) as TestimonyIntakeWorkspace["intakes"];
-  const artifacts = rowsOrThrow(artifactsResult) as Array<{ id: string; title: string; canonical_url: string; sha256: string; evidence_intake_id: string }>;
+  const artifacts = rowsOrThrow(artifactsResult) as Array<{ id: string; title: string; canonical_url: string | null; sha256: string; evidence_intake_id: string }>;
   const rawSegments = rowsOrThrow(segmentsResult) as Array<{ id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; proceeding_speaker_id: string | null }>;
   const speakers = rowsOrThrow(speakersResult) as Array<{ id: string; provider_label: string }>;
   const mediaRows = rowsOrThrow(mediaResult) as Array<{ id: string; source_artifact_id: string; provider: string; external_id: string | null; media_url: string; embed_url: string | null; possessed_by_us: boolean }>;
   const acquisitionRows = rowsOrThrow(acquisitionsResult) as Array<{ id: string; title: string; acquisition_status: string; priority: string; exhibit_number: string | null; known_to_exist: boolean; possessed_by_us: boolean; admitted_as_exhibit: boolean | null; discovered_from_segment_id: string | null }>;
   const artifactById = new Map(artifacts.map((item) => [item.id, item]));
   const speakerById = new Map(speakers.map((item) => [item.id, item.provider_label]));
-  const segments = rawSegments.map((segment) => { const artifact = artifactById.get(segment.artifact_id); return { ...segment, speaker: speakerById.get(segment.proceeding_speaker_id ?? "") ?? "Unidentified speaker", artifact_title: artifact?.title ?? "Unknown artifact", artifact_sha256: artifact?.sha256 ?? "", canonical_url: artifact?.canonical_url ?? "" }; });
+  const segments = rawSegments.map((segment) => { const artifact = artifactById.get(segment.artifact_id); return { ...segment, speaker: speakerById.get(segment.proceeding_speaker_id ?? "") ?? "Unidentified speaker", artifact_title: artifact?.title ?? "Unknown artifact", artifact_sha256: artifact?.sha256 ?? "", canonical_url: artifact?.canonical_url ?? null }; });
   const segmentById = new Map(segments.map((item) => [item.id, item]));
   return {
     counts: { intakes: intakeCountResult.count ?? 0, segments: segmentCountResult.count ?? 0, claims: claimCountResult.count ?? 0, acquisitionTargets: acquisitionCountResult.count ?? 0 },

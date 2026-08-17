@@ -82,6 +82,27 @@ describe("Rev metadata detection", () => {
     );
   });
 
+  it("recognizes a branded Rev plain-text export without transcript hyperlinks", () => {
+    const source = [
+      "About Rev",
+      "Transcripts Home",
+      "MA v. Lindsay Clancy Day 7",
+      "Day 7 of the MA v. Lindsay Clancy trial. Read the transcript here.",
+      "Copyright Disclaimer",
+      "Court Clerk (00:00):",
+      "Court is in session.",
+      "Judge William Sullivan (04:12:09):",
+      "Court is adjourned.",
+    ].join("\n\n");
+    expect(parseRevTranscript(Buffer.from(source), "day7.txt")).toMatchObject({
+      trialDay: 7,
+      publisher: "Rev",
+      canonicalUrl: null,
+      firstTimestamp: "00:00",
+      lastTimestamp: "04:12:09",
+    });
+  });
+
   it("generates canonical filenames from trial day without a calendar date", () => {
     expect(canonicalNames(5, ".md")).toEqual({
       preservedFilename: "Lindsay-Clancy_Trial-Day-05_Rev-Transcript.md",
