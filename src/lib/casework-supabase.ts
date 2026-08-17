@@ -1,26 +1,16 @@
 import "server-only";
 
-import { createHash, randomUUID } from "node:crypto";
-import path from "node:path";
+import { randomUUID } from "node:crypto";
 import type { PostgrestError, SupabaseClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { CaseActor } from "@/lib/authority";
-import { exactCharacterLocator } from "@/lib/citation";
 import { assertDistinctClaims, lineageKinds } from "@/lib/evidence-graph";
-import { getObjectStorage } from "@/lib/object-storage";
-import { buildSourceLocator, type SourceLocator } from "@/lib/source-locator";
+import type { SourceLocator } from "@/lib/source-locator";
 import { createClient } from "@/lib/supabase/server";
-
-const dataRoot = process.env.ICARUS_DATA_DIR ? path.resolve(process.env.ICARUS_DATA_DIR) : path.join(process.cwd(), ".data");
 
 function rowsOrThrow<T>(result: { data: T | null; error: PostgrestError | null }): T {
   if (result.error) throw new Error(result.error.message);
   if (result.data === null) throw new Error("Supabase returned no data.");
-  return result.data;
-}
-
-function nullableOrThrow<T>(result: { data: T | null; error: PostgrestError | null }): T | null {
-  if (result.error) throw new Error(result.error.message);
   return result.data;
 }
 
@@ -29,34 +19,17 @@ async function caseContext(actor: CaseActor) {
   const existing = rowsOrThrow(await supabase.from("cases").select("id").order("created_at").limit(1));
   if (existing[0]) return { supabase, caseId: existing[0].id as string };
   const caseId = randomUUID();
-  const { error } = await supabase.from("cases").insert({ id: caseId, owner_user_id: actor.id, title: "Source-linked proof case", purpose: "Demonstrate claim and event separation with public or authorized text.", public_record_cutoff: "2026-08-13T23:59:59Z" });
-  if (error) throw new Error(error.message);
-  return { supabase, caseId };
+  const { error } = await supabase.from("cases").insert({ id: caseId, owner_user_id: actor.id, workspace_key: "default", title: "Source-linked proof case", purpose: "Demonstrate claim and event separation with public or authorized text.", public_record_cutoff: "2026-08-13T23:59:59Z" });
+  if (!error) return { supabase, caseId };
+  if (error.code !== "23505") throw new Error(error.message);
+  const concurrent = rowsOrThrow(await supabase.from("cases").select("id").eq("workspace_key", "default").single()) as { id: string };
+  return { supabase, caseId: concurrent.id };
 }
+
+export const getCaseContext = caseContext;
 
 async function audit(supabase: SupabaseClient, caseId: string, actor: CaseActor, action: string, subjectType: string, subjectId: string, details: Record<string, unknown> = {}) {
   rowsOrThrow(await supabase.from("audit_events").insert({ id: randomUUID(), case_id: caseId, actor_user_id: actor.id, action, subject_type: subjectType, subject_id: subjectId, details }).select("id").single());
-}
-
-const ingestInput = z.object({
-  title: z.string().trim().min(3).max(160), acquiredFrom: z.string().trim().min(3).max(240), mediaType: z.enum(["text/plain", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "text/vtt", "image/jpeg", "image/png", "text/csv", "audio/mpeg", "video/mp4"]), locatorType: z.enum(["character_offset", "page", "timestamp", "spreadsheet_range", "image_region"]), page: z.string().optional(), timestampStart: z.string().optional(), timestampEnd: z.string().optional(), sheet: z.string().optional(), range: z.string().optional(), imageRegion: z.string().optional(), sourceText: z.string().trim().min(20).max(100_000), claimant: z.string().trim().min(2).max(120), assertion: z.string().trim().min(5).max(2_000), exactQuote: z.string().trim().min(5).max(4_000), claimedEventTime: z.string().optional(), authorized: z.literal("on"),
-});
-
-export async function ingestClaim(actor: CaseActor, raw: Record<string, FormDataEntryValue>) {
-  const input = ingestInput.parse(raw);
-  const locator = buildSourceLocator(input, exactCharacterLocator(input.sourceText, input.exactQuote));
-  const bytes = Buffer.from(input.sourceText, "utf8");
-  const sha256 = createHash("sha256").update(bytes).digest("hex");
-  const { supabase, caseId } = await caseContext(actor);
-  const preserved = nullableOrThrow(await supabase.from("source_artifacts").select("id,object_key").eq("case_id", caseId).eq("sha256", sha256).maybeSingle()) as { id: string; object_key: string } | null;
-  const storedObject = preserved ? { key: preserved.object_key as string, provider: "existing" } : await getObjectStorage(dataRoot).putImmutable({ key: `${sha256}.source`, bytes, contentType: input.mediaType });
-  const artifactId = (preserved?.id as string | undefined) ?? randomUUID();
-  if (!preserved) rowsOrThrow(await supabase.from("source_artifacts").insert({ id: artifactId, case_id: caseId, title: input.title, media_type: input.mediaType, sha256, byte_length: bytes.length, object_key: storedObject.key, acquired_from: input.acquiredFrom, is_authorized: true }).select("id").single());
-  const segmentId = randomUUID();
-  rowsOrThrow(await supabase.from("source_segments").insert({ id: segmentId, artifact_id: artifactId, locator_type: locator.type, locator, exact_text: input.exactQuote }).select("id").single());
-  const claimId = randomUUID();
-  rowsOrThrow(await supabase.from("claims").insert({ id: claimId, case_id: caseId, source_segment_id: segmentId, claimant: input.claimant, assertion: input.assertion, claimed_event_time: input.claimedEventTime || null }).select("id").single());
-  await audit(supabase, caseId, actor, "claim.created", "claim", claimId, { artifactId, locator, storageProvider: storedObject.provider });
 }
 
 export async function reviewAndPromote(actor: CaseActor, claimId: string, rationale: string, eventTitle: string, precision: string, eventTimeEnd?: string, uncertaintyNote = "") {
@@ -69,6 +42,16 @@ export async function reviewAndPromote(actor: CaseActor, claimId: string, ration
   const eventId = randomUUID();
   rowsOrThrow(await supabase.from("events").insert({ id: eventId, case_id: caseId, promoted_from_claim_id: input.claimId, title: input.eventTitle, event_time_start: claim.claimed_event_time, event_time_end: input.eventTimeEnd || null, time_precision: input.precision, epistemic_state: "reviewed_observable", uncertainty_note: input.uncertaintyNote }).select("id").single());
   await audit(supabase, caseId, actor, "claim.accepted_and_event.promoted", "event", eventId, { claimId: input.claimId, precision: input.precision });
+}
+
+export async function reviewExtractionCandidate(actor: CaseActor, candidateId: string, action: string, payloadText: string, note: string) {
+  const input = z.object({ candidateId: z.uuid(), action: z.enum(["accept", "amend", "split", "reject", "defer"]), payloadText: z.string().max(20_000), note: z.string().trim().max(1_000) }).parse({ candidateId, action, payloadText, note });
+  let payload: unknown = null;
+  if (input.action === "amend" || input.action === "split") {
+    try { payload = JSON.parse(input.payloadText); } catch { throw new Error(`${input.action === "amend" ? "Amend" : "Split"} payload must be valid JSON.`); }
+  }
+  const { supabase } = await caseContext(actor);
+  rowsOrThrow(await supabase.rpc("review_extraction_candidate", { p_candidate_id: input.candidateId, p_action: input.action, p_payload: payload, p_note: input.note }));
 }
 
 export async function createEntity(actor: CaseActor, raw: Record<string, FormDataEntryValue>) {
@@ -154,4 +137,55 @@ export async function getWorkspace(actor: CaseActor): Promise<Workspace> {
   const dispositions = rowsOrThrow(dispositionsResult) as Array<{ contradiction_id: string; rationale: string }>;
   const contradictions = (rowsOrThrow(contradictionsResult) as Array<{ id: string; title: string; description: string; status: string }>).map((item) => ({ ...item, claim_count: contradictionClaims.filter((claim) => claim.contradiction_id === item.id).length, disposition_rationale: dispositions.find((disposition) => disposition.contradiction_id === item.id)?.rationale ?? null }));
   return { caseTitle: currentCase.title as string, incidentAt: currentCase.incident_at as string | null, incidentWindowStart: currentCase.incident_window_start as string | null, incidentWindowEnd: currentCase.incident_window_end as string | null, artifacts, claims, entities, provenance, lineage, contradictions, savedViews: rowsOrThrow(viewsResult) as Workspace["savedViews"], audit: rowsOrThrow(auditResult) as Workspace["audit"] };
+}
+
+export type TestimonyIntakeWorkspace = {
+  counts: { intakes: number; segments: number; claims: number; acquisitionTargets: number };
+  intakes: Array<{ id: string; submitted_url: string; canonical_url: string; page_title: string | null; publisher: string | null; published_date: string | null; captured_at: string; sha256: string; processing_status: string; exact_duplicate_of: string | null }>;
+  segments: Array<{ id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; speaker: string; artifact_title: string; artifact_sha256: string; canonical_url: string }>;
+  qaExchanges: Array<{ id: string; question_segment_id: string; answer_segment_ids: string[]; context_segment_ids: string[]; question_text: string; answer_text: string }>;
+  candidates: Array<{ id: string; candidate_type: string; source_segment_ids: string[]; payload: Record<string, unknown>; extraction_confidence: number; review_status: string; current_review_version: number }>;
+  reviewVersions: Array<{ candidate_id: string; version: number; action: string; payload: Record<string, unknown> | null; note: string; reviewed_at: string }>;
+  media: Array<{ id: string; provider: string; external_id: string | null; media_url: string; embed_url: string | null; possessed_by_us: boolean; artifact_title: string }>;
+  acquisitions: Array<{ id: string; title: string; acquisition_status: string; priority: string; exhibit_number: string | null; known_to_exist: boolean; possessed_by_us: boolean; admitted_as_exhibit: boolean | null; deep_link: string | null }>;
+};
+
+export async function getTestimonyIntakeWorkspace(actor: CaseActor): Promise<TestimonyIntakeWorkspace> {
+  const { supabase, caseId } = await caseContext(actor);
+  const results = await Promise.all([
+    supabase.from("evidence_intakes").select("id,submitted_url,canonical_url,page_title,publisher,published_date,captured_at,sha256,processing_status,exact_duplicate_of").eq("case_id", caseId).order("created_at", { ascending: false }).limit(10),
+    supabase.from("source_artifacts").select("id,title,canonical_url,sha256,evidence_intake_id").eq("case_id", caseId),
+    supabase.from("source_segments").select("id,artifact_id,ordinal,timestamp_start_ms,timestamp_end_ms,deep_link,exact_text,locator,proceeding_speaker_id").eq("case_id", caseId).order("ordinal"),
+    supabase.from("proceeding_speakers").select("id,provider_label").eq("case_id", caseId),
+    supabase.from("qa_exchanges").select("id,question_segment_id,answer_segment_ids,context_segment_ids,question_text,answer_text").eq("case_id", caseId).order("ordinal"),
+    supabase.from("extraction_candidates").select("id,candidate_type,source_segment_ids,payload,extraction_confidence,review_status,current_review_version").eq("case_id", caseId).order("created_at"),
+    supabase.from("extraction_review_versions").select("candidate_id,version,action,payload,note,reviewed_at").eq("case_id", caseId).order("reviewed_at", { ascending: false }),
+    supabase.from("media_references").select("id,source_artifact_id,provider,external_id,media_url,embed_url,possessed_by_us").eq("case_id", caseId),
+    supabase.from("evidence_acquisition_records").select("id,title,acquisition_status,priority,exhibit_number,known_to_exist,possessed_by_us,admitted_as_exhibit,discovered_from_segment_id").eq("case_id", caseId).order("created_at", { ascending: false }),
+    supabase.from("evidence_intakes").select("id", { count: "exact", head: true }).eq("case_id", caseId),
+    supabase.from("source_segments").select("id", { count: "exact", head: true }).eq("case_id", caseId),
+    supabase.from("extraction_candidates").select("id", { count: "exact", head: true }).eq("case_id", caseId).eq("candidate_type", "testimony_claim"),
+    supabase.from("evidence_acquisition_records").select("id", { count: "exact", head: true }).eq("case_id", caseId),
+  ]);
+  const [intakesResult, artifactsResult, segmentsResult, speakersResult, qaResult, candidatesResult, reviewsResult, mediaResult, acquisitionsResult, intakeCountResult, segmentCountResult, claimCountResult, acquisitionCountResult] = results;
+  const intakes = rowsOrThrow(intakesResult) as TestimonyIntakeWorkspace["intakes"];
+  const artifacts = rowsOrThrow(artifactsResult) as Array<{ id: string; title: string; canonical_url: string; sha256: string; evidence_intake_id: string }>;
+  const rawSegments = rowsOrThrow(segmentsResult) as Array<{ id: string; artifact_id: string; ordinal: number; timestamp_start_ms: number | null; timestamp_end_ms: number | null; deep_link: string | null; exact_text: string; locator: Record<string, unknown>; proceeding_speaker_id: string | null }>;
+  const speakers = rowsOrThrow(speakersResult) as Array<{ id: string; provider_label: string }>;
+  const mediaRows = rowsOrThrow(mediaResult) as Array<{ id: string; source_artifact_id: string; provider: string; external_id: string | null; media_url: string; embed_url: string | null; possessed_by_us: boolean }>;
+  const acquisitionRows = rowsOrThrow(acquisitionsResult) as Array<{ id: string; title: string; acquisition_status: string; priority: string; exhibit_number: string | null; known_to_exist: boolean; possessed_by_us: boolean; admitted_as_exhibit: boolean | null; discovered_from_segment_id: string | null }>;
+  const artifactById = new Map(artifacts.map((item) => [item.id, item]));
+  const speakerById = new Map(speakers.map((item) => [item.id, item.provider_label]));
+  const segments = rawSegments.map((segment) => { const artifact = artifactById.get(segment.artifact_id); return { ...segment, speaker: speakerById.get(segment.proceeding_speaker_id ?? "") ?? "Unidentified speaker", artifact_title: artifact?.title ?? "Unknown artifact", artifact_sha256: artifact?.sha256 ?? "", canonical_url: artifact?.canonical_url ?? "" }; });
+  const segmentById = new Map(segments.map((item) => [item.id, item]));
+  return {
+    counts: { intakes: intakeCountResult.count ?? 0, segments: segmentCountResult.count ?? 0, claims: claimCountResult.count ?? 0, acquisitionTargets: acquisitionCountResult.count ?? 0 },
+    intakes,
+    segments,
+    qaExchanges: rowsOrThrow(qaResult) as TestimonyIntakeWorkspace["qaExchanges"],
+    candidates: rowsOrThrow(candidatesResult) as TestimonyIntakeWorkspace["candidates"],
+    reviewVersions: rowsOrThrow(reviewsResult) as TestimonyIntakeWorkspace["reviewVersions"],
+    media: mediaRows.map((item) => ({ ...item, artifact_title: artifactById.get(item.source_artifact_id)?.title ?? "Unknown artifact" })),
+    acquisitions: acquisitionRows.map((item) => ({ ...item, deep_link: segmentById.get(item.discovered_from_segment_id ?? "")?.deep_link ?? null })),
+  };
 }

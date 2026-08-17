@@ -1,16 +1,34 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
-import { addProvenance, createContradiction, createEntity, disposeContradiction, ingestClaim, linkClaims, reviewAndPromote, saveResearchView } from "@/lib/casework-supabase";
+import { addProvenance, createContradiction, createEntity, disposeContradiction, linkClaims, reviewAndPromote, reviewExtractionCandidate, saveResearchView } from "@/lib/casework-supabase";
 import { requireCaseActor } from "@/lib/authority";
+import { intakeTestimonyUrl } from "@/lib/testimony-intake";
 
-export async function ingestClaimAction(formData: FormData) {
-  await ingestClaim(await requireCaseActor(), Object.fromEntries(formData.entries()));
-  revalidatePath("/");
+export type TestimonyIntakeActionState = { status: "idle" | "success" | "error"; message: string };
+
+export async function intakeTestimonyUrlAction(_previous: TestimonyIntakeActionState, formData: FormData): Promise<TestimonyIntakeActionState> {
+  try {
+    const result = await intakeTestimonyUrl(await requireCaseActor(), Object.fromEntries(formData.entries()));
+    revalidatePath("/");
+    return {
+      status: "success",
+      message: result.duplicate
+        ? `Exact snapshot already preserved. Reused ${result.segments} segments and ${result.claims} testimony claims without duplication.`
+        : `Captured ${result.segments} timestamped segments, ${result.claims} testimony claims, and ${result.acquisitionTargets} acquisition targets.`,
+    };
+  } catch (error) {
+    return { status: "error", message: error instanceof Error ? error.message : "The testimony URL could not be processed." };
+  }
 }
 
 export async function reviewClaimAction(formData: FormData) {
   await reviewAndPromote(await requireCaseActor(), String(formData.get("claimId")), String(formData.get("rationale")), String(formData.get("eventTitle")), String(formData.get("precision")), String(formData.get("eventTimeEnd") || ""), String(formData.get("uncertaintyNote") || ""));
+  revalidatePath("/");
+}
+
+export async function reviewExtractionCandidateAction(formData: FormData) {
+  await reviewExtractionCandidate(await requireCaseActor(), String(formData.get("candidateId")), String(formData.get("reviewAction")), String(formData.get("payload") ?? ""), String(formData.get("note") ?? ""));
   revalidatePath("/");
 }
 

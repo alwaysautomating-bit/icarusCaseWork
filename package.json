@@ -10,6 +10,9 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
+    "test:integration": "pnpm testimony:day6",
+    "transcript:intake": "node scripts/transcript-intake.mjs",
+    "testimony:day6": "tsx scripts/reprocess-day6.ts",
     "supabase:migrations": "supabase migration list --local",
     "supabase:reset": "supabase db reset",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
@@ -36,6 +39,7 @@
     "eslint-config-next": "16.3.0",
     "supabase": "2.113.0",
     "tailwindcss": "^4",
+    "tsx": "4.20.6",
     "typescript": "^5",
     "vitest": "^4.1.10"
   },

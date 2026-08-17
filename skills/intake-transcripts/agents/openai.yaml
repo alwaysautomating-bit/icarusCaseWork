@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intake Transcripts"
+  short_description: "Preserve and manifest transcript sources"
+  default_prompt: "Use $intake-transcripts to process the new transcript captures."

@@ -38,6 +38,16 @@ pnpm dev
 
 Populate `.env.local` with the Supabase URL and publishable key shown by `pnpm exec supabase status`, then open [http://localhost:3000](http://localhost:3000). Local magic-link emails appear in Mailpit at [http://127.0.0.1:54324](http://127.0.0.1:54324). Use the guided form to preserve a source, extract a cited claim, review it, and promote it to a distinct timeline event.
 
+## Transcript intake
+
+Place new Rev markdown or text captures in `transcripts/inbox`, then run:
+
+```powershell
+pnpm transcript:intake
+```
+
+To process one source elsewhere, pass its path explicitly. The compiler copies the source byte-for-byte to `transcripts/preserved`, writes a versioned JSON manifest to `transcripts/manifests`, and uses trial day—not a publisher display date—as filename identity. It never promotes a publisher date to `proceeding_date` and stops with `SOURCE_CONFLICT` if a trial day already has a different preserved checksum.
+
 ## Verify
 
 ```powershell
@@ -51,7 +61,7 @@ pnpm supabase:reset
 pnpm supabase:migrations
 ```
 
-See `DEPLOYMENT_08-13-2026.md` for the controlled cloud deployment gate.
+See `DEPLOYMENT_08-16-2026.md` for the controlled cloud deployment gate.
 
 ## Data constraints
 

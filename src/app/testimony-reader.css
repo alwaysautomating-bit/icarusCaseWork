@@ -1,0 +1,20 @@
+.reader-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px; padding: 12px 20px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--surface-alt); }
+.reader-toolbar label { font: 600 8px/1 var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
+.reader-toolbar input, .reader-toolbar select { width: 100%; margin-top: 6px; }
+.qa-context { display: grid; gap: 7px; margin-top: 12px; }
+.qa-context article { padding: 10px; border-left: 2px solid var(--console-line); background: var(--console-deep); }
+.qa-context article.question { border-left-color: var(--console-accent); }
+.qa-context article.answer { border-left-color: var(--status-ok); }
+.qa-context time, .qa-context strong { margin-right: 8px; font: 600 8px/1 var(--font-mono); text-transform: uppercase; }
+.qa-context p { margin: 7px 0 0; line-height: 1.45; }
+.candidate-review { padding: 12px 0; border-top: 1px solid var(--console-line); }
+.candidate-review > header { display: flex; justify-content: space-between; gap: 8px; text-transform: uppercase; }
+.candidate-review pre { max-height: 180px; overflow: auto; padding: 10px; background: var(--console-deep); white-space: pre-wrap; font-size: 10px; }
+.review-button-row { display: flex; gap: 6px; }
+.review-button-row button, .review-payload-form button { padding: 7px 9px; border: 1px solid var(--console-line); background: transparent; color: var(--console-text); cursor: pointer; }
+.review-button-row button:hover, .review-payload-form button:hover { border-color: var(--console-accent); color: var(--console-accent); }
+.review-payload-form { display: grid; gap: 6px; margin-top: 8px; }
+.review-payload-form textarea { min-height: 88px; resize: vertical; }
+.review-payload-form input, .review-payload-form textarea { border-color: var(--console-line); background: var(--console-deep); color: var(--console-text); }
+.candidate-review details { margin-top: 9px; color: var(--console-text-dim); font-size: 10px; }
+@media (max-width: 620px) { .reader-toolbar { grid-template-columns: 1fr; } }

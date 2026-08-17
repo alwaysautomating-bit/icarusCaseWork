@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "case": "Commonwealth v. Lindsay Clancy",
+  "trial_day": 4,
+  "proceeding_label": "Day 4",
+  "proceeding_date": null,
+  "proceeding_date_status": "not independently verified",
+  "source": {
+    "publisher": "Rev",
+    "source_type": "published transcript page capture",
+    "page_title": "MA v. Lindsay Clancy Day 4",
+    "source_display_date": "2026-08-02",
+    "original_filename": "MA-v-Lindsay-Clancy_Day-04_2026-08-02_Rev.md",
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-04_Rev-Transcript.md",
+    "canonical_url": null
+  },
+  "integrity": {
+    "sha256": "e42f3ec7f9c737cdbebac60ff0d69f32a1f1d6bc93a355d6dfc8f5e536b07012",
+    "bytes": 178755,
+    "line_count": 3593
+  },
+  "transcript": {
+    "first_timestamp": "01:04",
+    "last_timestamp": "01:00:52"
+  },
+  "intake_rules": [
+    "Preserve source artifact unchanged.",
+    "A surrogate never becomes the source.",
+    "Separate courtroom proceedings from embedded publisher/media commentary.",
+    "Attorney questions are not automatically case facts.",
+    "Advocacy and argument are not evidence.",
+    "Q/A exchanges must preserve explicit question-answer lineage.",
+    "A short answer such as \"Yes\" or \"Correct\" cannot be interpreted without its question.",
+    "Transcript timestamps are source-media timestamps, not automatically event timestamps.",
+    "Source display/publication date is not automatically proceeding date.",
+    "Each trial day remains a distinct proceeding."
+  ],
+  "compiler": {
+    "name": "icarus-transcript-intake",
+    "version": "0.1.0"
+  }
+}
