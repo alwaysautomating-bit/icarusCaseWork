@@ -46,7 +46,9 @@ Place new Rev markdown or text captures in `transcripts/inbox`, then run:
 pnpm transcript:intake
 ```
 
-To process one source elsewhere, pass its path explicitly. The compiler copies the source byte-for-byte to `transcripts/preserved`, writes a versioned JSON manifest to `transcripts/manifests`, and uses trial day—not a publisher display date—as filename identity. It never promotes a publisher date to `proceeding_date` and stops with `SOURCE_CONFLICT` if a trial day already has a different preserved checksum.
+To process one source elsewhere, pass its path explicitly. The compiler copies the source byte-for-byte to `transcripts/preserved`, writes a versioned JSON manifest to `transcripts/manifests`, and runs the experimental V2 deterministic structure pass into `transcripts/first-pass`. V2 accepts both Rev Markdown and plain-text transcript shapes. It identifies witness blocks, examination-phase runs, and procedural markers with source-line, timestamp, and deep-link locators. These outputs are reviewable navigation aids, not verified facts, credibility findings, or canonical legal classifications.
+
+The intake uses trial day—not a publisher display date—as filename identity. It never promotes a publisher date to `proceeding_date`, never edits the source, and stops with `SOURCE_CONFLICT` if a trial day already has a different preserved checksum. Re-running an identical source validates and reuses both its manifest and first-pass output.
 
 ## Verify
 

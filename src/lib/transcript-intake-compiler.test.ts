@@ -103,10 +103,25 @@ describe("Rev metadata detection", () => {
     });
   });
 
+  it("rejects a research or conversation dump that merely mentions a Rev trial day", () => {
+    const source = [
+      "MA v. Lindsay Clancy Day 6",
+      "Day 6 of the MA v. Lindsay Clancy trial. Read the transcript here.",
+      "About Rev",
+      "Transcripts Home",
+      "Copyright Disclaimer",
+      "This is a prose summary without timestamped speaker turns.",
+    ].join("\n");
+    expect(() => parseRevTranscript(Buffer.from(source), "conversation-dump.txt")).toThrow(
+      /no timestamped transcript turns/i,
+    );
+  });
+
   it("generates canonical filenames from trial day without a calendar date", () => {
     expect(canonicalNames(5, ".md")).toEqual({
       preservedFilename: "Lindsay-Clancy_Trial-Day-05_Rev-Transcript.md",
       manifestFilename: "Lindsay-Clancy_Trial-Day-05_Intake-Manifest.json",
+      firstPassFilename: "Lindsay-Clancy_Trial-Day-05_Testimony-First-Pass.json",
     });
   });
 });
@@ -147,6 +162,9 @@ describe("source preservation", () => {
     expect(result.disposition).toBe("processed");
     expect(transcriptManifestSchema.safeParse(manifest).success).toBe(true);
     expect(manifest.integrity.sha256).toBe(sha256(source));
+    expect(result.firstPass.classification).toBe("candidate_structure_only");
+    expect(result.firstPass.source.sha256).toBe(sha256(source));
+    expect(result.firstPassPath).toMatch(/first-pass/);
   });
 
   it("reuses an identical source for the same trial day", async () => {

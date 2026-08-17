@@ -45,6 +45,7 @@ yarn-error.log*
 !/transcripts/inbox/
 !/transcripts/manifests/
 !/transcripts/preserved/
+!/transcripts/first-pass/
 /transcripts/inbox/*
 !/transcripts/inbox/.gitkeep
 

@@ -5,6 +5,8 @@ import path from "node:path";
 
 import { z } from "zod";
 
+import { firstPassSchema, writeFirstPass } from "./transcript-first-pass-lib.mjs";
+
 export const COMPILER_NAME = "icarus-transcript-intake";
 export const COMPILER_VERSION = "0.1.0";
 export const DEFAULT_TRANSCRIPTS_ROOT = "transcripts";
@@ -143,6 +145,7 @@ export function canonicalNames(trialDay, extension = ".md") {
   return {
     preservedFilename: `Lindsay-Clancy_Trial-Day-${day}_Rev-Transcript${normalizedExtension}`,
     manifestFilename: `Lindsay-Clancy_Trial-Day-${day}_Intake-Manifest.json`,
+    firstPassFilename: `Lindsay-Clancy_Trial-Day-${day}_Testimony-First-Pass.json`,
   };
 }
 
@@ -200,9 +203,16 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
   const timestampPattern =
     /\[([0-9]{1,2}:[0-9]{2}(?::[0-9]{2})?)\]\(https?:\/\/(?:www\.)?rev\.com\/app\/transcript\/[^)\s]+\)/gi;
   let timestamps = Array.from(text.matchAll(timestampPattern), (match) => match[1]);
-  if (timestamps.length === 0 && hasRevPlainTextProvenance) {
+  if (timestamps.length === 0) {
     const plainTimestampPattern = /^.+?\s+\(([0-9]{1,2}:[0-9]{2}(?::[0-9]{2})?)\):\s*$/gm;
     timestamps = Array.from(text.matchAll(plainTimestampPattern), (match) => match[1]);
+  }
+  if (timestamps.length === 0) {
+    throw new TranscriptIntakeError(
+      "UNKNOWN_TRANSCRIPT",
+      "The source wrapper was recognized, but no timestamped transcript turns were found.",
+      { originalFilename },
+    );
   }
 
   const canonicalUrlPattern =
@@ -281,12 +291,14 @@ export async function ensureTranscriptDirectories(rootPath) {
     inbox: path.join(resolvedRoot, "inbox"),
     preserved: path.join(resolvedRoot, "preserved"),
     manifests: path.join(resolvedRoot, "manifests"),
+    firstPass: path.join(resolvedRoot, "first-pass"),
   };
 
   await Promise.all([
     mkdir(directories.inbox, { recursive: true }),
     mkdir(directories.preserved, { recursive: true }),
     mkdir(directories.manifests, { recursive: true }),
+    mkdir(directories.firstPass, { recursive: true }),
   ]);
 
   return directories;
@@ -308,6 +320,7 @@ export async function processTranscriptFile({ inputPath, rootPath }) {
   const names = canonicalNames(metadata.trialDay, path.extname(originalFilename));
   const preservedPath = path.join(directories.preserved, names.preservedFilename);
   const manifestPath = path.join(directories.manifests, names.manifestFilename);
+  const firstPassPath = path.join(directories.firstPass, names.firstPassFilename);
   const incomingSha256 = sha256(buffer);
   let disposition = "processed";
 
@@ -400,14 +413,41 @@ export async function processTranscriptFile({ inputPath, rootPath }) {
     });
   }
 
+  let firstPass;
+  let firstPassDisposition = "generated";
+  if (await fileExists(firstPassPath)) {
+    try {
+      firstPass = firstPassSchema.parse(JSON.parse(await readFile(firstPassPath, "utf8")));
+    } catch (error) {
+      throw new TranscriptIntakeError(
+        "FIRST_PASS_CONFLICT",
+        `The existing first-pass output is invalid: ${firstPassPath}`,
+        { firstPassPath, cause: error instanceof Error ? error.message : String(error) },
+      );
+    }
+    if (firstPass.source.sha256 !== incomingSha256) {
+      throw new TranscriptIntakeError(
+        "FIRST_PASS_CONFLICT",
+        "The existing first-pass output does not describe the preserved source checksum.",
+        { firstPassPath, firstPassSha256: firstPass.source.sha256, preservedSha256: incomingSha256 },
+      );
+    }
+    firstPassDisposition = "reused";
+  } else {
+    firstPass = await writeFirstPass({ preservedPath, outputPath: firstPassPath, sourceSha256: incomingSha256 });
+  }
+
   return {
     disposition,
     manifestDisposition,
     metadata,
     manifest,
+    firstPass,
+    firstPassDisposition,
     inputPath: resolvedInput,
     preservedPath,
     manifestPath,
+    firstPassPath,
     warnings: [
       metadata.sourceDisplayDate
         ? `Publisher display date ${metadata.sourceDisplayDate} was not promoted to proceeding_date.`

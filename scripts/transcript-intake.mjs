@@ -90,10 +90,16 @@ function reportSuccess(result) {
       ? "PASS existing manifest validated and reused"
       : "PASS manifest generated and schema validated",
   );
+  console.log(
+    result.firstPassDisposition === "reused"
+      ? "PASS deterministic testimony first pass validated and reused"
+      : `PASS deterministic testimony first pass generated (${result.firstPass.counts.witness_blocks} witness blocks; ${result.firstPass.counts.procedural_markers} procedural markers)`,
+  );
   for (const warning of result.warnings) console.log(`WARN ${warning}`);
   console.log("Output:");
   console.log(result.preservedPath);
   console.log(result.manifestPath);
+  console.log(result.firstPassPath);
 }
 
 function reportFailure(inputPath, error) {

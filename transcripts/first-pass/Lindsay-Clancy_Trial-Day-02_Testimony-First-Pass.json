@@ -1,0 +1,3570 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-02_Rev-Transcript.md",
+    "sha256": "f1f8363c6a2fce26693f84b41b9e7264b369e5e8789926ebe4e0cf376c1653ae"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 2130,
+    "witness_blocks": 2,
+    "phase_sets": 2,
+    "procedural_markers": 206
+  },
+  "witness_blocks": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Angela Krause",
+      "start": {
+        "segment_index": 604,
+        "source_line": 2551,
+        "timestamp_display": "02:45:50",
+        "timestamp_seconds": 9950.76,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9950.76"
+      },
+      "end": {
+        "segment_index": 715,
+        "source_line": 2995,
+        "timestamp_display": "02:51:20",
+        "timestamp_seconds": 10280.01,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10280.01"
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Saria Sweeney. Yeah",
+      "start": {
+        "segment_index": 716,
+        "source_line": 2999,
+        "timestamp_display": "02:51:33",
+        "timestamp_seconds": 10293.18,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10293.18"
+      },
+      "end": {
+        "segment_index": 2129,
+        "source_line": 8738,
+        "timestamp_display": "07:19:26",
+        "timestamp_seconds": 26366.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26366.61"
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    }
+  ],
+  "phase_sets": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Angela Krause",
+      "examiner_candidates": [],
+      "phases": [
+        {
+          "phase": "setup",
+          "jury_present": true,
+          "start": {
+            "segment_index": 604,
+            "source_line": 2551,
+            "timestamp_display": "02:45:50",
+            "timestamp_seconds": 9950.76,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9950.76"
+          },
+          "end": {
+            "segment_index": 715,
+            "source_line": 2995,
+            "timestamp_display": "02:51:20",
+            "timestamp_seconds": 10280.01,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10280.01"
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Saria Sweeney. Yeah",
+      "examiner_candidates": [
+        "Julia Jenae",
+        "Terri Austin",
+        "Julia Janae",
+        "Jo-Anna Nieves",
+        "Kevin Reddington",
+        "Defense",
+        "Prosecution"
+      ],
+      "phases": [
+        {
+          "phase": "setup",
+          "jury_present": true,
+          "start": {
+            "segment_index": 716,
+            "source_line": 2999,
+            "timestamp_display": "02:51:33",
+            "timestamp_seconds": 10293.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10293.18"
+          },
+          "end": {
+            "segment_index": 827,
+            "source_line": 3443,
+            "timestamp_display": "03:02:18",
+            "timestamp_seconds": 10938.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10938.18"
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": false,
+          "start": {
+            "segment_index": 828,
+            "source_line": 3447,
+            "timestamp_display": "03:02:42",
+            "timestamp_seconds": 10962.66,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10962.66"
+          },
+          "end": {
+            "segment_index": 932,
+            "source_line": 3865,
+            "timestamp_display": "03:09:40",
+            "timestamp_seconds": 11380.86,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11380.86"
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 933,
+            "source_line": 3869,
+            "timestamp_display": "03:10:12",
+            "timestamp_seconds": 11412.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11412.18"
+          },
+          "end": {
+            "segment_index": 933,
+            "source_line": 3869,
+            "timestamp_display": "03:10:12",
+            "timestamp_seconds": 11412.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11412.18"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 934,
+            "source_line": 3876,
+            "timestamp_display": "03:11:26",
+            "timestamp_seconds": 11486.58,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11486.58"
+          },
+          "end": {
+            "segment_index": 934,
+            "source_line": 3876,
+            "timestamp_display": "03:11:26",
+            "timestamp_seconds": 11486.58,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11486.58"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 935,
+            "source_line": 3880,
+            "timestamp_display": "03:12:16",
+            "timestamp_seconds": 11536.41,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11536.41"
+          },
+          "end": {
+            "segment_index": 935,
+            "source_line": 3880,
+            "timestamp_display": "03:12:16",
+            "timestamp_seconds": 11536.41,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11536.41"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 936,
+            "source_line": 3887,
+            "timestamp_display": "03:13:12",
+            "timestamp_seconds": 11592.15,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11592.15"
+          },
+          "end": {
+            "segment_index": 936,
+            "source_line": 3887,
+            "timestamp_display": "03:13:12",
+            "timestamp_seconds": 11592.15,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11592.15"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 937,
+            "source_line": 3891,
+            "timestamp_display": "03:13:46",
+            "timestamp_seconds": 11626.38,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11626.38"
+          },
+          "end": {
+            "segment_index": 937,
+            "source_line": 3891,
+            "timestamp_display": "03:13:46",
+            "timestamp_seconds": 11626.38,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11626.38"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 938,
+            "source_line": 3898,
+            "timestamp_display": "03:14:52",
+            "timestamp_seconds": 11692.32,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11692.32"
+          },
+          "end": {
+            "segment_index": 938,
+            "source_line": 3898,
+            "timestamp_display": "03:14:52",
+            "timestamp_seconds": 11692.32,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11692.32"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 939,
+            "source_line": 3902,
+            "timestamp_display": "03:15:36",
+            "timestamp_seconds": 11736.06,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11736.06"
+          },
+          "end": {
+            "segment_index": 939,
+            "source_line": 3902,
+            "timestamp_display": "03:15:36",
+            "timestamp_seconds": 11736.06,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11736.06"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 940,
+            "source_line": 3909,
+            "timestamp_display": "03:16:32",
+            "timestamp_seconds": 11792.13,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11792.13"
+          },
+          "end": {
+            "segment_index": 969,
+            "source_line": 4034,
+            "timestamp_display": "03:36:39",
+            "timestamp_seconds": 12999.96,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12999.96"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 970,
+            "source_line": 4047,
+            "timestamp_display": "03:39:51",
+            "timestamp_seconds": 13191.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13191.18"
+          },
+          "end": {
+            "segment_index": 970,
+            "source_line": 4047,
+            "timestamp_display": "03:39:51",
+            "timestamp_seconds": 13191.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13191.18"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 971,
+            "source_line": 4057,
+            "timestamp_display": "03:41:59",
+            "timestamp_seconds": 13319.37,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13319.37"
+          },
+          "end": {
+            "segment_index": 971,
+            "source_line": 4057,
+            "timestamp_display": "03:41:59",
+            "timestamp_seconds": 13319.37,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13319.37"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 972,
+            "source_line": 4061,
+            "timestamp_display": "03:42:48",
+            "timestamp_seconds": 13368.72,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13368.72"
+          },
+          "end": {
+            "segment_index": 972,
+            "source_line": 4061,
+            "timestamp_display": "03:42:48",
+            "timestamp_seconds": 13368.72,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13368.72"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 973,
+            "source_line": 4068,
+            "timestamp_display": "03:44:08",
+            "timestamp_seconds": 13448.94,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13448.94"
+          },
+          "end": {
+            "segment_index": 975,
+            "source_line": 4076,
+            "timestamp_display": "03:49:40",
+            "timestamp_seconds": 13780.2,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13780.2"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 976,
+            "source_line": 4083,
+            "timestamp_display": "03:51:27",
+            "timestamp_seconds": 13887.72,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13887.72"
+          },
+          "end": {
+            "segment_index": 976,
+            "source_line": 4083,
+            "timestamp_display": "03:51:27",
+            "timestamp_seconds": 13887.72,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13887.72"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 977,
+            "source_line": 4090,
+            "timestamp_display": "03:53:23",
+            "timestamp_seconds": 14003.25,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14003.25"
+          },
+          "end": {
+            "segment_index": 977,
+            "source_line": 4090,
+            "timestamp_display": "03:53:23",
+            "timestamp_seconds": 14003.25,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14003.25"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 978,
+            "source_line": 4094,
+            "timestamp_display": "03:53:32",
+            "timestamp_seconds": 14012.28,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14012.28"
+          },
+          "end": {
+            "segment_index": 978,
+            "source_line": 4094,
+            "timestamp_display": "03:53:32",
+            "timestamp_seconds": 14012.28,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14012.28"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 979,
+            "source_line": 4098,
+            "timestamp_display": "03:54:25",
+            "timestamp_seconds": 14065.83,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14065.83"
+          },
+          "end": {
+            "segment_index": 979,
+            "source_line": 4098,
+            "timestamp_display": "03:54:25",
+            "timestamp_seconds": 14065.83,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14065.83"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 980,
+            "source_line": 4102,
+            "timestamp_display": "03:54:25",
+            "timestamp_seconds": 14065.92,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14065.92"
+          },
+          "end": {
+            "segment_index": 980,
+            "source_line": 4102,
+            "timestamp_display": "03:54:25",
+            "timestamp_seconds": 14065.92,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14065.92"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 981,
+            "source_line": 4106,
+            "timestamp_display": "03:54:27",
+            "timestamp_seconds": 14067.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14067.18"
+          },
+          "end": {
+            "segment_index": 981,
+            "source_line": 4106,
+            "timestamp_display": "03:54:27",
+            "timestamp_seconds": 14067.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14067.18"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 982,
+            "source_line": 4110,
+            "timestamp_display": "03:54:27",
+            "timestamp_seconds": 14067.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14067.18"
+          },
+          "end": {
+            "segment_index": 982,
+            "source_line": 4110,
+            "timestamp_display": "03:54:27",
+            "timestamp_seconds": 14067.18,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14067.18"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 983,
+            "source_line": 4114,
+            "timestamp_display": "03:54:28",
+            "timestamp_seconds": 14068.26,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14068.26"
+          },
+          "end": {
+            "segment_index": 983,
+            "source_line": 4114,
+            "timestamp_display": "03:54:28",
+            "timestamp_seconds": 14068.26,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14068.26"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 984,
+            "source_line": 4118,
+            "timestamp_display": "03:55:08",
+            "timestamp_seconds": 14108.4,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14108.4"
+          },
+          "end": {
+            "segment_index": 984,
+            "source_line": 4118,
+            "timestamp_display": "03:55:08",
+            "timestamp_seconds": 14108.4,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14108.4"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 985,
+            "source_line": 4125,
+            "timestamp_display": "03:56:37",
+            "timestamp_seconds": 14197.86,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14197.86"
+          },
+          "end": {
+            "segment_index": 985,
+            "source_line": 4125,
+            "timestamp_display": "03:56:37",
+            "timestamp_seconds": 14197.86,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14197.86"
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 986,
+            "source_line": 4129,
+            "timestamp_display": "03:56:58",
+            "timestamp_seconds": 14218.53,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14218.53"
+          },
+          "end": {
+            "segment_index": 986,
+            "source_line": 4129,
+            "timestamp_display": "03:56:58",
+            "timestamp_seconds": 14218.53,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14218.53"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 987,
+            "source_line": 4133,
+            "timestamp_display": "03:57:51",
+            "timestamp_seconds": 14271.03,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14271.03"
+          },
+          "end": {
+            "segment_index": 1009,
+            "source_line": 4236,
+            "timestamp_display": "04:13:59",
+            "timestamp_seconds": 15239.07,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=15239.07"
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 1010,
+            "source_line": 4240,
+            "timestamp_display": "04:14:57",
+            "timestamp_seconds": 15297.48,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=15297.48"
+          },
+          "end": {
+            "segment_index": 1876,
+            "source_line": 7720,
+            "timestamp_display": "06:52:02",
+            "timestamp_seconds": 24722.07,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24722.07"
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 1877,
+            "source_line": 7724,
+            "timestamp_display": "06:52:21",
+            "timestamp_seconds": 24741.12,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24741.12"
+          },
+          "end": {
+            "segment_index": 1940,
+            "source_line": 7979,
+            "timestamp_display": "06:57:04",
+            "timestamp_seconds": 25024.23,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25024.23"
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 1941,
+            "source_line": 7983,
+            "timestamp_display": "06:57:12",
+            "timestamp_seconds": 25032.24,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25032.24"
+          },
+          "end": {
+            "segment_index": 1980,
+            "source_line": 8139,
+            "timestamp_display": "07:00:58",
+            "timestamp_seconds": 25258.38,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25258.38"
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": false,
+          "start": {
+            "segment_index": 1981,
+            "source_line": 8143,
+            "timestamp_display": "07:01:01",
+            "timestamp_seconds": 25261.68,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25261.68"
+          },
+          "end": {
+            "segment_index": 2124,
+            "source_line": 8715,
+            "timestamp_display": "07:16:01",
+            "timestamp_seconds": 26161.23,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26161.23"
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2125,
+            "source_line": 8719,
+            "timestamp_display": "07:16:05",
+            "timestamp_seconds": 26165.79,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26165.79"
+          },
+          "end": {
+            "segment_index": 2129,
+            "source_line": 8738,
+            "timestamp_display": "07:19:26",
+            "timestamp_seconds": 26366.61,
+            "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26366.61"
+          }
+        }
+      ]
+    }
+  ],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 9,
+        "source_line": 145,
+        "timestamp_display": "24:45",
+        "timestamp_seconds": 1485.15,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15"
+      },
+      "speaker": "Judge William F. Sullivan",
+      "text": "All right. Before we get started, could I see Counsel at sidebar briefly?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 26,
+        "source_line": 222,
+        "timestamp_display": "25:23",
+        "timestamp_seconds": 1523.16,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1523.16"
+      },
+      "speaker": "Judge William F. Sullivan",
+      "text": "Next  question. Is there any other serious matter or concern bearing on your  service as a juror that anybody needs to bring to my attention at this  time? All right. Again, thank you for following those instructions. Now,  the schedule that we're going to follow today is we're going to  continue with the case with the Commonwealth's witness who was on the  stand Monday. And then we're going to take ... today, be a little bit  ... Might be broken up a little bit. There may be a couple of breaks  that we have to take during the course of that, but we'll try and keep  those to a minimum. But we'll take a break at one o'clock, and then  we'll come back this afternoon, and we'll probably go to sometime  between 3:00 and 4:00. All right. Hopefully, I think tomorrow will be  pretty much the same schedule. Tomorrow's Thursday. And then Friday, we  are planning to go on that view. All right. And as a judge, I can  control a lot of things, but I can't control the weather. ([26:20](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1580.58)) All  right? And so we've checked. It looks like the weather should be fine  in regards to do this, but we'll talk a little bit more about that  tomorrow. But that's just in case I forget about that. That's what we're  going to do. So on Friday, you may want to make sure you have a jacket  with you, or comfortable shoes, but we'll go into that a little bit  more. So that's the schedule that we anticipate for the rest of the  week. So on Friday, we do the view, we'll come back. We usually  generally do that in the morning. And then we'll come back and we'll  probably go to, again, probably around 3:00 or 4:00 if we can. All  right. And then on Friday, I'll discuss with you the next week's  schedule and kind of where we are in the timeline of this case. All  right. So I'll try and keep you up to date as best I can in regards to  the case. ([27:06](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1626.06)) But  like I said, there may be some unanticipated breaks here and there that  we're going to have to take. So with that, we're going to return now to  the Commonwealth's case. Commonwealth had a witness on the stand at  that time. I'm going to ask, Ms. Sprague, if you could recall that  witness, please.",
+      "event_types": [
+        "jury_in",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 29,
+        "source_line": 240,
+        "timestamp_display": "27:49",
+        "timestamp_seconds": 1669.89,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1669.89"
+      },
+      "speaker": "Court Reporter",
+      "text": "Please  raise your right hand, sir. Do you solemnly swear that the testimony  and the evidence you shall give to the court and the jury in the matter  now pending between the Commonwealth and the defendant [inaudible  00:27:54] shall be the truth, the whole truth, and nothing but the  truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 45,
+        "source_line": 304,
+        "timestamp_display": "29:25",
+        "timestamp_seconds": 1765.26,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1765.26"
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have this photo marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 46,
+        "source_line": 308,
+        "timestamp_display": "29:27",
+        "timestamp_seconds": 1767.06,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1767.06"
+      },
+      "speaker": "Judge William F. Sullivan",
+      "text": "All right. Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 48,
+        "source_line": 316,
+        "timestamp_display": "29:28",
+        "timestamp_seconds": 1768.68,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1768.68"
+      },
+      "speaker": "Judge William F. Sullivan",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 126,
+        "source_line": 628,
+        "timestamp_display": "35:07",
+        "timestamp_seconds": 2107.8,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2107.8"
+      },
+      "speaker": "Speaker 1",
+      "text": "If we could have the CVS receipt marked as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 127,
+        "source_line": 632,
+        "timestamp_display": "35:12",
+        "timestamp_seconds": 2112.42,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2112.42"
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 128,
+        "source_line": 636,
+        "timestamp_display": "35:14",
+        "timestamp_seconds": 2114.37,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2114.37"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 26.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 129,
+        "source_line": 640,
+        "timestamp_display": "35:20",
+        "timestamp_seconds": 2120.16,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2120.16"
+      },
+      "speaker": "Speaker 1",
+      "text": "And  then if we could have the original CVS video marked as an exhibit and  the CVS timeline, a condensed version marked as the following exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 132,
+        "source_line": 652,
+        "timestamp_display": "35:48",
+        "timestamp_seconds": 2148.96,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2148.96"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 26, 27 and 28 so marked.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 141,
+        "source_line": 688,
+        "timestamp_display": "37:02",
+        "timestamp_seconds": 2222.19,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2222.19"
+      },
+      "speaker": "Speaker 2",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 142,
+        "source_line": 692,
+        "timestamp_display": "37:03",
+        "timestamp_seconds": 2223.81,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2223.81"
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 143,
+        "source_line": 696,
+        "timestamp_display": "37:05",
+        "timestamp_seconds": 2225.49,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2225.49"
+      },
+      "speaker": "Speaker 1",
+      "text": "We can use empty case as a marker. Exhibit 29?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 165,
+        "source_line": 784,
+        "timestamp_display": "39:45",
+        "timestamp_seconds": 2385.24,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2385.24"
+      },
+      "speaker": "Speaker 1",
+      "text": "If we could have the ThreeV video marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 166,
+        "source_line": 788,
+        "timestamp_display": "39:50",
+        "timestamp_seconds": 2390.16,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2390.16"
+      },
+      "speaker": "Judge",
+      "text": "Sure. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 167,
+        "source_line": 792,
+        "timestamp_display": "39:53",
+        "timestamp_seconds": 2393.04,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2393.04"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 30 so marked, Your Honor.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 170,
+        "source_line": 804,
+        "timestamp_display": "40:05",
+        "timestamp_seconds": 2405.82,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2405.82"
+      },
+      "speaker": "Speaker 1",
+      "text": "Can I just have the receipt marked as the next exhibit?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 171,
+        "source_line": 808,
+        "timestamp_display": "40:05",
+        "timestamp_seconds": 2405.82,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2405.82"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 39.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 172,
+        "source_line": 812,
+        "timestamp_display": "41:30",
+        "timestamp_seconds": 2490.51,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2490.51"
+      },
+      "speaker": "Judge",
+      "text": "All right. It's subject to the court's order that may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 192,
+        "source_line": 892,
+        "timestamp_display": "43:33",
+        "timestamp_seconds": 2613.69,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2613.69"
+      },
+      "speaker": "Judge",
+      "text": "They may be admitted. Thank you.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 194,
+        "source_line": 900,
+        "timestamp_display": "44:05",
+        "timestamp_seconds": 2645.97,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2645.97"
+      },
+      "speaker": "Speaker 1",
+      "text": "So sir, showing you what's been marked as Exhibit 32. Is this the front of your house with the main door?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 196,
+        "source_line": 908,
+        "timestamp_display": "44:17",
+        "timestamp_seconds": 2657.19,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2657.19"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then showing you what's been marked as Exhibit 33. Where is this in relation to that main front door?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 202,
+        "source_line": 932,
+        "timestamp_display": "44:38",
+        "timestamp_seconds": 2678.07,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2678.07"
+      },
+      "speaker": "Speaker 1",
+      "text": "Showing you Exhibit 34. Can you tell us what portion of the house this is?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 204,
+        "source_line": 940,
+        "timestamp_display": "44:47",
+        "timestamp_seconds": 2687.34,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2687.34"
+      },
+      "speaker": "Speaker 1",
+      "text": "So  if I'm facing the front door, it's to the left. There's a fence there.  Is that correct? And Exhibit 35, is that more of that same fence on the  left?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 206,
+        "source_line": 948,
+        "timestamp_display": "45:01",
+        "timestamp_seconds": 2701.29,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2701.29"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then showing you Exhibit 36, is this looking at your backyard from that left side area where the fence is?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 208,
+        "source_line": 956,
+        "timestamp_display": "45:14",
+        "timestamp_seconds": 2714.76,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2714.76"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then Exhibit 37, can you tell us what we're seeing here?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 210,
+        "source_line": 964,
+        "timestamp_display": "45:25",
+        "timestamp_seconds": 2725.65,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2725.65"
+      },
+      "speaker": "Speaker 1",
+      "text": "And Exhibit 38, is that a more direct view of that back of the house?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 241,
+        "source_line": 1088,
+        "timestamp_display": "47:48",
+        "timestamp_seconds": 2868.72,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2868.72"
+      },
+      "speaker": "Judge",
+      "text": "They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 243,
+        "source_line": 1096,
+        "timestamp_display": "48:00",
+        "timestamp_seconds": 2880.81,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2880.81"
+      },
+      "speaker": "Speaker 1",
+      "text": "Sir, I'm showing you what's been marked as Exhibit 39. Can you tell us where the sliding glass doors are in this photograph?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 255,
+        "source_line": 1144,
+        "timestamp_display": "48:46",
+        "timestamp_seconds": 2926.59,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2926.59"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then showing you Exhibit 40, is that where you placed the bags on the island in the kitchen?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 277,
+        "source_line": 1232,
+        "timestamp_display": "50:15",
+        "timestamp_seconds": 3015.96,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3015.96"
+      },
+      "speaker": "Speaker 1",
+      "text": "If we could have this marked as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 278,
+        "source_line": 1236,
+        "timestamp_display": "50:19",
+        "timestamp_seconds": 3019.2,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3019.2"
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 279,
+        "source_line": 1240,
+        "timestamp_display": "50:19",
+        "timestamp_seconds": 3019.95,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3019.95"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 41.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 316,
+        "source_line": 1388,
+        "timestamp_display": "52:52",
+        "timestamp_seconds": 3172.68,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3172.68"
+      },
+      "speaker": "Speaker 1",
+      "text": "Could I have this photo marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 317,
+        "source_line": 1392,
+        "timestamp_display": "52:54",
+        "timestamp_seconds": 3174.36,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3174.36"
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 318,
+        "source_line": 1396,
+        "timestamp_display": "52:55",
+        "timestamp_seconds": 3175.11,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3175.11"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 42.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 325,
+        "source_line": 1424,
+        "timestamp_display": "53:25",
+        "timestamp_seconds": 3205.56,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3205.56"
+      },
+      "speaker": "Speaker 1",
+      "text": "Mark this as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 326,
+        "source_line": 1428,
+        "timestamp_display": "53:27",
+        "timestamp_seconds": 3207.09,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3207.09"
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 327,
+        "source_line": 1432,
+        "timestamp_display": "53:32",
+        "timestamp_seconds": 3212.37,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3212.37"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 43.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 337,
+        "source_line": 1472,
+        "timestamp_display": "54:46",
+        "timestamp_seconds": 3286.53,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3286.53"
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 338,
+        "source_line": 1476,
+        "timestamp_display": "55:04",
+        "timestamp_seconds": 3304.47,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3304.47"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 44, 45, 46.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 339,
+        "source_line": 1480,
+        "timestamp_display": "55:11",
+        "timestamp_seconds": 3311.19,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3311.19"
+      },
+      "speaker": "Speaker 1",
+      "text": "Sir, showing you what's been marked Exhibit 44. Is this the entrance to the room looking into the room?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 341,
+        "source_line": 1488,
+        "timestamp_display": "55:20",
+        "timestamp_seconds": 3320.1,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3320.1"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then Exhibit 45, is this mirror to the right of that bureau we were just looking at?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 345,
+        "source_line": 1504,
+        "timestamp_display": "55:37",
+        "timestamp_seconds": 3337.38,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3337.38"
+      },
+      "speaker": "Speaker 1",
+      "text": "And then in Exhibit 46, is that getting closer to the window?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 349,
+        "source_line": 1520,
+        "timestamp_display": "55:57",
+        "timestamp_seconds": 3357.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3357.48"
+      },
+      "speaker": "Speaker 1",
+      "text": "Going back to Exhibit 42, there's no blood on the walls or on the bedding, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 359,
+        "source_line": 1560,
+        "timestamp_display": "58:04",
+        "timestamp_seconds": 3484.08,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3484.08"
+      },
+      "speaker": "Speaker 1",
+      "text": "Can we have this marked as the next exhibit please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 360,
+        "source_line": 1564,
+        "timestamp_display": "58:05",
+        "timestamp_seconds": 3485.01,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3485.01"
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 361,
+        "source_line": 1568,
+        "timestamp_display": "58:05",
+        "timestamp_seconds": 3485.01,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3485.01"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 47.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 374,
+        "source_line": 1620,
+        "timestamp_display": "58:58",
+        "timestamp_seconds": 3538.47,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3538.47"
+      },
+      "speaker": "Speaker 1",
+      "text": "And so looking at Exhibit 38, you said this was the window, correct? The top right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 382,
+        "source_line": 1652,
+        "timestamp_display": "59:46",
+        "timestamp_seconds": 3586.92,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3586.92"
+      },
+      "speaker": "Speaker 1",
+      "text": "We could have this marked as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 383,
+        "source_line": 1656,
+        "timestamp_display": "59:49",
+        "timestamp_seconds": 3589.65,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3589.65"
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 384,
+        "source_line": 1660,
+        "timestamp_display": "59:50",
+        "timestamp_seconds": 3590.13,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3590.13"
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 48.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 385,
+        "source_line": 1664,
+        "timestamp_display": "59:50",
+        "timestamp_seconds": 3590.55,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=3590.55"
+      },
+      "speaker": "Speaker 1",
+      "text": "I'm showing you Exhibit 48. So the window's open, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 507,
+        "source_line": 2154,
+        "timestamp_display": "01:08:52",
+        "timestamp_seconds": 4132.14,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4132.14"
+      },
+      "speaker": "Speaker 4",
+      "text": "If we may approach briefly.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 519,
+        "source_line": 2202,
+        "timestamp_display": "01:09:58",
+        "timestamp_seconds": 4198.38,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4198.38"
+      },
+      "speaker": "Speaker 4",
+      "text": "Okay. And at this point, Your Honor, I'd move to submit the 911 call as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 556,
+        "source_line": 2350,
+        "timestamp_display": "01:13:32",
+        "timestamp_seconds": 4412.25,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4412.25"
+      },
+      "speaker": "Speaker 5",
+      "text": "All right. Counsel, can I see just briefly, sidebar?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 559,
+        "source_line": 2365,
+        "timestamp_display": "01:15:00",
+        "timestamp_seconds": 4500.39,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4500.39"
+      },
+      "speaker": "Speaker 4",
+      "text": "Your  Honor, at this point, I would move to submit some evidence. First would  be the clothing Cora Clancy was wearing the night of January 24th,  2023. First, the pajama pants, pajama shirt. And then the pink robe. We  could have these marked as one exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 560,
+        "source_line": 2369,
+        "timestamp_display": "01:16:29",
+        "timestamp_seconds": 4589.31,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4589.31"
+      },
+      "speaker": "Speaker 5",
+      "text": "All right. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 561,
+        "source_line": 2373,
+        "timestamp_display": "01:16:43",
+        "timestamp_seconds": 4603.05,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4603.05"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit one.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 563,
+        "source_line": 2381,
+        "timestamp_display": "01:16:47",
+        "timestamp_seconds": 4607.76,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4607.76"
+      },
+      "speaker": "Speaker 4",
+      "text": "And  then Dawson's clothing. We have dinosaur underwear for the record. And a  gray T-shirt or shirt, long sleeve shirt. Have this as the next  exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 564,
+        "source_line": 2385,
+        "timestamp_display": "01:17:20",
+        "timestamp_seconds": 4640.79,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4640.79"
+      },
+      "speaker": "Speaker 5",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 565,
+        "source_line": 2389,
+        "timestamp_display": "01:17:20",
+        "timestamp_seconds": 4640.88,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4640.88"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit two.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 566,
+        "source_line": 2393,
+        "timestamp_display": "01:17:37",
+        "timestamp_seconds": 4657.89,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4657.89"
+      },
+      "speaker": "Speaker 4",
+      "text": "And then Callan's pajamas. As the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 567,
+        "source_line": 2397,
+        "timestamp_display": "01:17:53",
+        "timestamp_seconds": 4673.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4673.61"
+      },
+      "speaker": "Speaker 5",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 568,
+        "source_line": 2401,
+        "timestamp_display": "01:18:09",
+        "timestamp_seconds": 4689.93,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4689.93"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit three.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 569,
+        "source_line": 2405,
+        "timestamp_display": "01:18:11",
+        "timestamp_seconds": 4691.13,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4691.13"
+      },
+      "speaker": "Speaker 4",
+      "text": "Yellow exercise band found with Dawson. Can have this as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 570,
+        "source_line": 2409,
+        "timestamp_display": "01:18:19",
+        "timestamp_seconds": 4699.92,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4699.92"
+      },
+      "speaker": "Speaker 5",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 571,
+        "source_line": 2413,
+        "timestamp_display": "01:18:19",
+        "timestamp_seconds": 4699.92,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4699.92"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit four.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 572,
+        "source_line": 2417,
+        "timestamp_display": "01:18:36",
+        "timestamp_seconds": 4716.81,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4716.81"
+      },
+      "speaker": "Speaker 4",
+      "text": "Black exercise band found with Cora. Could have this as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 574,
+        "source_line": 2425,
+        "timestamp_display": "01:18:47",
+        "timestamp_seconds": 4727.73,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4727.73"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit five.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 575,
+        "source_line": 2429,
+        "timestamp_display": "01:18:56",
+        "timestamp_seconds": 4736.31,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4736.31"
+      },
+      "speaker": "Speaker 4",
+      "text": "And then the blue exercise band found with Callan. If you could have this as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 576,
+        "source_line": 2433,
+        "timestamp_display": "01:19:06",
+        "timestamp_seconds": 4746.6,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4746.6"
+      },
+      "speaker": "Speaker 5",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 577,
+        "source_line": 2437,
+        "timestamp_display": "01:19:06",
+        "timestamp_seconds": 4746.87,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4746.87"
+      },
+      "speaker": "Speaker 6",
+      "text": "Exhibit six.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 579,
+        "source_line": 2445,
+        "timestamp_display": "01:19:22",
+        "timestamp_seconds": 4762.62,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4762.62"
+      },
+      "speaker": "Speaker 5",
+      "text": "All  right. All right. Members of the jury, I just kind of wanted to give  you ... All right. Sometimes in a trial, evidence that is introduced  that produces in jurors an emotional response. For example, it's  understandable to feel sympathy and empathy when you hear or see certain  evidence. But as jurors who have taken an oath to follow the law, I'm  instructing you that the law says you must separate any emotional  reaction on your part from the informational value and weight of the  evidence. You must not be influenced in any way by the unpleasant nature  of some of the evidence, including testimony, including exhibits. And  so you must find the facts in this case based only on the evidence. So  you can't find facts or base your decision on sympathy, anger, passion,  or prejudice, or pity for or against either side. Rather, your verdict  must be based solely on the evidence that is introduced in this case and  my instructions and any other limiting instructions. ([01:20:41](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=4841.82)) And  I'll go into that, but I just kind of wanted to remind you of that as  we go through this. All right. At this point, we're going to play the  exhibit, which is I believe the 911 call. Is that correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 586,
+        "source_line": 2479,
+        "timestamp_display": "01:29:20",
+        "timestamp_seconds": 5360.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=5360.61"
+      },
+      "speaker": "Speaker 5",
+      "text": "We'll be in recess at this time.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 589,
+        "source_line": 2491,
+        "timestamp_display": "01:29:20",
+        "timestamp_seconds": 5360.88,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=5360.88"
+      },
+      "speaker": "Speaker 9",
+      "text": "We're in recess. Please exit the courtroom. Get out the courtroom, please. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 592,
+        "source_line": 2503,
+        "timestamp_display": "02:30:22",
+        "timestamp_seconds": 9022.98,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9022.98"
+      },
+      "speaker": "Judge",
+      "text": "All  right. Counsel, can I see you at sidebar, please? All right. We're  going to take about a five- minute break. Then we'll come back out and  I'll address the scheduling with counsel. All right. So about  five-minute recess.",
+      "event_types": [
+        "sidebar",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 598,
+        "source_line": 2527,
+        "timestamp_display": "02:43:59",
+        "timestamp_seconds": 9839.46,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9839.46"
+      },
+      "speaker": "Speaker 12",
+      "text": "I  think Patrick is going to expand upon what he was trying to say on  direct examination, which is, \"Okay, she may not have finished the  entire bottle, but it was subject to different doses. So she finished  one bottle and then maybe started another bottle.\" So I think he's going  to try to explain at least that issue.",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 599,
+        "source_line": 2531,
+        "timestamp_display": "02:44:19",
+        "timestamp_seconds": 9859.83,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9859.83"
+      },
+      "speaker": "Speaker 13",
+      "text": "Yep.  Okay. You see they're back on the record there. Let's go into the  courtroom, see if they're just going to wait for the jury or if there's  anything else going on. Oh, looks like they're jumping back to a sidebar  quickly before bringing in the jury. So let's use this opportunity,  grab a commercial break and get you back into the courtroom. We expect  Patrick Clancy to be back on the stand for cross-examination. We'll see.  Stay with us.",
+      "event_types": [
+        "sidebar",
+        "recess",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 602,
+        "source_line": 2543,
+        "timestamp_display": "02:45:35",
+        "timestamp_seconds": 9935.43,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9935.43"
+      },
+      "speaker": "Speaker 11",
+      "text": "Your  Honor, for the purpose of the record, we return back to the trial of  Commonwealth v. Lindsay Clancy. All parties are present, including the  defendant and the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 603,
+        "source_line": 2547,
+        "timestamp_display": "02:45:44",
+        "timestamp_seconds": 9944.88,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9944.88"
+      },
+      "speaker": "Judge",
+      "text": "All  right. Members of the jury, thank you for your patience with us. With  that, Commonwealth, you would call your next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 604,
+        "source_line": 2551,
+        "timestamp_display": "02:45:50",
+        "timestamp_seconds": 9950.76,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9950.76"
+      },
+      "speaker": "Speaker 14",
+      "text": "Thank you, Your Honor. The Commonwealth calls Angela Krause.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 605,
+        "source_line": 2555,
+        "timestamp_display": "02:46:07",
+        "timestamp_seconds": 9967.32,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9967.32"
+      },
+      "speaker": "Speaker 16",
+      "text": "Good morning. Stop right here and raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 606,
+        "source_line": 2559,
+        "timestamp_display": "02:46:12",
+        "timestamp_seconds": 9972.09,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=9972.09"
+      },
+      "speaker": "Speaker 11",
+      "text": "Good  morning. Do you solemnly swear that the testimony and the evidence you  shall give to the court and the jury that are now standing between the  Commonwealth and the defendant shall be the truth, the whole truth, and  nothing but the truth, so help you God? Thank you.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 689,
+        "source_line": 2891,
+        "timestamp_display": "02:49:20",
+        "timestamp_seconds": 10160.07,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10160.07"
+      },
+      "speaker": "Speaker 14",
+      "text": "Okay.  And if I could just have Exhibit 28, the footage up for a moment. If  you could look at the screen here, do you recognize the store?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 702,
+        "source_line": 2943,
+        "timestamp_display": "02:50:19",
+        "timestamp_seconds": 10219.95,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10219.95"
+      },
+      "speaker": "Speaker 17",
+      "text": "I'm just showing you exhibit 26. Is this the receipt that you provided to the police?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 716,
+        "source_line": 2999,
+        "timestamp_display": "02:51:33",
+        "timestamp_seconds": 10293.18,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10293.18"
+      },
+      "speaker": "Speaker 17",
+      "text": "Your Honor, the Commonwealth would call Saria Sweeney. Yeah, sure.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 719,
+        "source_line": 3011,
+        "timestamp_display": "02:52:10",
+        "timestamp_seconds": 10330.53,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10330.53"
+      },
+      "speaker": "Speaker 19",
+      "text": "Good morning, ma'am. Can you stop right here and raise your right hand for the clerk, please?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 720,
+        "source_line": 3015,
+        "timestamp_display": "02:52:12",
+        "timestamp_seconds": 10332.63,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10332.63"
+      },
+      "speaker": "Speaker 21",
+      "text": "Please  raise your right hand. Do you solemnly swear that the testimony and the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the [inaudible 02:52:19] shall be  the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 797,
+        "source_line": 3323,
+        "timestamp_display": "02:55:32",
+        "timestamp_seconds": 10532.19,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10532.19"
+      },
+      "speaker": "Speaker 17",
+      "text": "If we could pull up Exhibit 30 footage. And are you depicted in the video here?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 813,
+        "source_line": 3387,
+        "timestamp_display": "02:56:51",
+        "timestamp_seconds": 10611.03,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10611.03"
+      },
+      "speaker": "Speaker 17",
+      "text": "And showing you what's been marked as Exhibit 31, do you recognize this?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 824,
+        "source_line": 3431,
+        "timestamp_display": "02:57:58",
+        "timestamp_seconds": 10678.23,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10678.23"
+      },
+      "speaker": "Speaker 18",
+      "text": "All  right. Thank you, ma'am. You may step down. Thank you. Watch your step,  please. All right. Counsel, can I see you at this time? Thanks again,  everyone. All right. Well, members of the jury, remember I said today  was going to be full of a couple of starts and stops? This is going to  be one of those stops, all right? So, what we're going to do, I'm going  to excuse you till 2:00, all right, and then we're going to come back  and we're going to resume, I believe, with the Commonwealth's case. So,  we're going to be in recess on this matter till 2:00, all right?",
+      "event_types": [
+        "recess",
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 826,
+        "source_line": 3439,
+        "timestamp_display": "03:01:55",
+        "timestamp_seconds": 10915.2,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10915.2"
+      },
+      "speaker": "Speaker 18",
+      "text": "All  right. We're going to be in recess on this matter till 2:00. I want to  remind everyone of the media order regarding not videotaping or  broadcasting from the courtroom or inside the courthouse, so I just kind  of wanted to reiterate that. All right, so with that, we'll be in  recess till 2:00. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 830,
+        "source_line": 3455,
+        "timestamp_display": "03:03:37",
+        "timestamp_seconds": 11017.86,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11017.86"
+      },
+      "speaker": "Speaker 19",
+      "text": "Good morning, ma'am. Can you stop right here and raise your right hand for the clerk please?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 831,
+        "source_line": 3459,
+        "timestamp_display": "03:03:41",
+        "timestamp_seconds": 11021.04,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11021.04"
+      },
+      "speaker": "Speaker 21",
+      "text": "Please  raise your right hand. Do you solemnly swear that the testimony of the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the [inaudible 03:03:47] shall be  the truth, the whole truth, and nothing but the truth so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 904,
+        "source_line": 3753,
+        "timestamp_display": "03:07:00",
+        "timestamp_seconds": 11220.6,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11220.6"
+      },
+      "speaker": "Speaker 17",
+      "text": "If we could pull up Exhibit 30 footage, and are you depicted in the video here?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 920,
+        "source_line": 3817,
+        "timestamp_display": "03:08:19",
+        "timestamp_seconds": 11299.47,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11299.47"
+      },
+      "speaker": "Speaker 17",
+      "text": "And showing you what's been marked as Exhibit 31. Do you recognize this?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 931,
+        "source_line": 3861,
+        "timestamp_display": "03:09:26",
+        "timestamp_seconds": 11366.67,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11366.67"
+      },
+      "speaker": "Speaker 18",
+      "text": "All  right. Thank you, ma'am. You may step down. Thank you. Watch your step,  please. All right. Counsel, can I see you at this time? Thanks again,  everyone.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 932,
+        "source_line": 3865,
+        "timestamp_display": "03:09:40",
+        "timestamp_seconds": 11380.86,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11380.86"
+      },
+      "speaker": "Julia Jenae",
+      "text": "All  right. They are taking a bit of a break, and we understand that that  actually turns into an early lunch break for these jurors. So, let's  bring back in our guest who is watching with us. We have trial attorney  Terri Austin, who's been providing analysis on this case all day. Terri,  it has been a difficult day for jurors, sometimes a lunch break is even  more than that, and I think that's what's going to be the case today.  They can't talk about what they just went through together as a jury,  but sometimes a break is certainly necessary.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 933,
+        "source_line": 3869,
+        "timestamp_display": "03:10:12",
+        "timestamp_seconds": 11412.18,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11412.18"
+      },
+      "speaker": "Terri Austin",
+      "text": "Exactly,  and I think that's why the judge is giving them an early break. He's  enabling them to take in what they heard and to get past it, because it  was extremely emotional, and maybe that's why we have these two  witnesses, the CVS witness, the ThreeV witness. Those are the people who  saw Patrick Clancy before he ended up going home and finding his wife  on the ground and his three children, who obviously were killed. But I  do believe that there was a possibility to avoid these two witnesses  altogether. You saw that Reddington did not cross-examine them. Both of  them were short, they could have stipulated to this. If I'm sitting on  that jury, I'm thinking, why are you wasting my time, prosecution,  listening to what he ordered? I know she's trying to show that the  defendant, Lindsay Clancy, knew what she was doing, it was planned, and  it was organized. ([03:11:04](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11464.8)) Frankly,  I think that's something that even the defense could stipulate if he  can get an expert to say you can be both psychotic and planned, and  those two things are not mutually exclusive. So, maybe he doesn't want  to admit that here, and maybe that's why he is allowing these people to  go on, and didn't offer to stipulate, but I probably would've stipulated  to that.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 935,
+        "source_line": 3880,
+        "timestamp_display": "03:12:16",
+        "timestamp_seconds": 11536.41,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11536.41"
+      },
+      "speaker": "Terri Austin",
+      "text": "I  think the prosecution has a right to make the argument. I saw that  argument, that's when the prosecution got, in my opinion, a little  snippy, saying, \"Yes, I know the defense doesn't want to hear all this,  but I have a right to bring on my case,\" which she does. But maybe what  could have been done, I see why no one is going to agree, the judge is  not, the prosecution is not, they're not going to agree that it's skip  the guilt phase. But there could have been instances where these small  minor witnesses aren't that necessary and do waste the time of the  court, where the judge could have encouraged the prosecution to say,  \"Look, you can have an affidavit from each of these people. You can  stipulate to what they're going to say. No one is objecting to the fact  that they came.\" ([03:12:58](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11578.53)) But  she's got to put on her case. The judge is giving her leeway. And I  think the defense, Reddington, is an amazing defense attorney. I think  we've all been saying that, and I think he made the argument and the  judge basically was not having it.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 938,
+        "source_line": 3898,
+        "timestamp_display": "03:14:52",
+        "timestamp_seconds": 11692.32,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11692.32"
+      },
+      "speaker": "Julia Jenae",
+      "text": "No,  I agree. The logistics of a jury view, not easy, not simple. It is an  undertaking to get all of these different people. And there's 18 jurors  that are going to be going to these different locations. They've got to  be protected. There's got to be security. You've got to remove other  people from these locations. I don't know if they're going to go into  the ThreeV and into the CVS, but the prosecution says they want them to  feel the distance, feel the amount of time that it took to get to these  locations. I mean, this is probably why we have this six to eight-week  trial, Terri, because we can already tell at the onset, the  meticulousness and thoroughness that this prosecution is going to be  taking in going through the facts of this case.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 940,
+        "source_line": 3909,
+        "timestamp_display": "03:16:32",
+        "timestamp_seconds": 11792.13,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11792.13"
+      },
+      "speaker": "Julia Jenae",
+      "text": "Yeah,  the in-person looking at exhibits versus inside of the courtroom. Now,  speaking of exhibits, you can, as our viewers know, they can look at  those exhibits. We have them up on our website, so you can go to  courttv.com to see the evidence gallery, and it's going to be updated  every day. We are going to take a break while they are on that break  inside of the courtroom. And when we come back, we're going to talk more  about this case. We also will have a live interview with someone who is  inside of that courtroom during the playing of that emotional 911 call  that was blocked from the public, but it was very apparent just how  heavy that evidence was. Don't go anywhere. ([03:17:09](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11829.6)) Welcome  back to Court TV Live, I'm Julia Jenae. And we are continuing our  coverage out of Plymouth, Massachusetts, in the case against Lindsay  Clancy, a mom on trial for killing her three kids. She does not deny  that she did that, but her defense says she was suffering from  postpartum psychosis at the time and should not be held criminally  responsible. The first witness for the prosecution was one who broke all  of our hearts, Patrick Clancy, the father and former husband of the  defendant. And I want to bring in someone who was inside of the  courtroom for the most emotional of moments that happened today. We have  Director of Photography for Law and Crime and Court TV, Richie  Morganson is with us, Morganstern rather, there in Boston,  Massachusetts. ([03:21:58](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12118.23)) Richie,  thank you so much for joining us. I know you're on a lunch break at  this time, so we certainly appreciate your time. You have been the eyes  and ears in the courtroom for those moments where we have to go off the  record. And I know it's difficult, even for us, as journalists, take us  to the moment when that 911 call, I know the audio had to be turned down  for the public, but you were still able to hear what was played.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 945,
+        "source_line": 3935,
+        "timestamp_display": "03:24:01",
+        "timestamp_seconds": 12241.98,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12241.98"
+      },
+      "speaker": "Richie Morganstern",
+      "text": "No,  she wept and even after the judge had called recess, she was surrounded  by her nurses and she was crying until the moment she was brought out  of the room and I couldn't see her any longer.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 946,
+        "source_line": 3939,
+        "timestamp_display": "03:24:18",
+        "timestamp_seconds": 12258.99,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12258.99"
+      },
+      "speaker": "Julia Jenae",
+      "text": "You  mentioned the jurors. My heart goes out to them because they are the  ones in this courtroom that did not sign up for anything. They were  chosen to fulfill their duty, their service, their civil service, and  are having to be exposed to all of this. What was it like after the call  was over? I know they were given a break, but did you notice anything?  Did you notice them looking at Lindsay or looking at the gallery at all?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 948,
+        "source_line": 3947,
+        "timestamp_display": "03:25:16",
+        "timestamp_seconds": 12316.71,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12316.71"
+      },
+      "speaker": "Julia Jenae",
+      "text": "I'm  so glad that you're able to share the emotion of it. There was  something that the judge told these jurors at the beginning to separate  or be able to separate the emotion from the facts. The prosecution  wanted to share this, even though Patrick Clancy didn't want to even be  in the room for it, and he's the one who asked for it to not be shown to  the public. Did you gather anything from it that you felt is actually  helpful to understand whether or not Lindsay Clancy was having a  psychotic break? We know from the motion about this particular call, the  prosecution says you can hear how quickly the volume in his voice rises  when he finds a child and goes down, then rises again when he finds  another child, and they say that shows-",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 958,
+        "source_line": 3987,
+        "timestamp_display": "03:28:40",
+        "timestamp_seconds": 12520.32,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12520.32"
+      },
+      "speaker": "Julia Jenae",
+      "text": "And  I want to let our viewers know that this could be one of the reasons,  not could be, they put it in their motion, and it's one of the reasons  that the prosecution wanted to bring this evidence to the jury, even  though it's so devastating to hear, even though it may hurt more than  help in terms of moving the case for her being not insane and not, they  say that she is criminally responsible. But they say those exercise  bands were tied in a certain way. And you mentioned it tied like a  shoelace the first time and not the second time. And that his voice, the  swiftness in which we're hearing the wails of when he finds the  children, that shows, and this is the most horrific part of it all, that  she would have held the exercise band for a long period of time, that  it wasn't a situation where she double knotted it and left. ([03:29:31](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12571.98)) I  mean, those details that these jurors have to take in, they are  difficult, but they are important. According to the prosecution, they  say that can help these jurors determine whether this was someone who  was cold and calculated and committed premeditated murder or someone who  was in the throes of a psychotic break. So do you think that that was  clear for the jurors or did that emotion feel so heavy that it's hard to  even get through those facts even though the judge told them they need  to pay attention to the facts?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 960,
+        "source_line": 3998,
+        "timestamp_display": "03:30:56",
+        "timestamp_seconds": 12656.85,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12656.85"
+      },
+      "speaker": "Julia Jenae",
+      "text": "Are  we getting a sense of whether Patrick Clancy is coming back today? It  wasn't necessarily said on the record. Are you hearing anything there in  the courtroom about his cross-examination?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 962,
+        "source_line": 4006,
+        "timestamp_display": "03:31:16",
+        "timestamp_seconds": 12676.35,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12676.35"
+      },
+      "speaker": "Julia Jenae",
+      "text": "All  right. Richie Morganstern, thank you so much for joining us and for  sharing all of that. It's illuminating for us. You're doing a wonderful  job for us, so we really appreciate everything that you're being able to  bring to our viewers. We'll let you get back inside of that courtroom.  We have to take a break, but we have more of the Clancy trial coming up  after this.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 969,
+        "source_line": 4034,
+        "timestamp_display": "03:36:39",
+        "timestamp_seconds": 12999.96,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=12999.96"
+      },
+      "speaker": "Julia Jenae",
+      "text": "Welcome  back to Court TV Live. We are following day two of the case against  Lindsay Clancy. You saw there some of the clips from the opening  statements. And today these jurors heard some of the most emotional and  horrific evidence that they're going to see in this trial. That is  through the testimony of the ex-husband of the defendant who's also the  father of these three children. Right now, court is on a lunch break. So  the jurors are taking a break. It may take a little longer than normal  in a case where they have seen such difficult testimony and evidence  that they have heard play inside of that courtroom. But once they  reconvene, we will take you there live back inside of that Plymouth  County, Massachusetts courtroom. ([03:37:21](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13041.27)) While  we wait, we are going to take a look back at the timeline of this case  because it is important. The prosecution absolutely wants these jurors  to feel every moment of what they say was a crime. The defense says she  doesn't bear criminal responsibility because of her mental state. So  here's a look at some of the major time points of this case. At 4:02 PM,  the defendant, according to the prosecution on the day in question,  searched for, quote, \"Kids Miralax\" on her phone. And then at 4:13 PM,  she searches, \"Take out ThreeV.\" So the restaurant, we just heard from a  hostess from ThreeV. About 30 minutes later, she called CVS and talked  with someone about children's Miralax. So again, this is someone that  prosecution has brought to the stand, brought the manager so that they  could talk about being inside of that store at the time. 4:53 PM, there  was a text to Patrick asking him if he wanted takeout from ThreeV. ([03:38:23](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13103.97)) And  then there are calls at 5:10 PM. ThreeV, Lindsay speaks to the hostess  to place an order. That hostess took the stand to say she seemed like  nothing was out of the ordinary. It seemed like a normal call. And the  order is placed for 5:15 PM and that's when Patrick leaves the house.  He's seen on surveillance video just about 10, 15 minutes later at CVS  first. Patrick calls Lindsay because he's trying to figure out making  sure if he has the right prescription. She doesn't answer. Then she  calls him back and tells Patrick exactly what medicine to get. He has  said that she did not seem out of the ordinary. Nothing alarmed him  about how she sounded on the phone. ([03:39:07](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13147.23)) At  5:37, he made that purchase at CVS. 5:54, he then picks up their  takeout from ThreeV. Remember, he left home at 5:15. So once he arrives  home, it's 6:09 PM. Less than an hour has passed, but he arrives home  and that's what these jurors heard inside of the courtroom. The 911 call  of his discovery of first his wife outside on the lawn, and then each  of his children inside the basement of their home. Let's bring back in  trial attorney Terri Austin, who's been analyzing this case for us.  Terri, in the reading of that timeline, is there anything that stands  out to you that may be helpful to this jury in any way in determining  criminal responsibility?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 970,
+        "source_line": 4047,
+        "timestamp_display": "03:39:51",
+        "timestamp_seconds": 13191.18,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13191.18"
+      },
+      "speaker": "Terri Austin",
+      "text": "Well,  it's a very condensed timeline, like you said. I mean, it's 45 minutes.  It's less than an hour between the time he left the home and got back  from the CVS and picking up the food. And I think what the prosecution  is trying to show here is that this was very planned. We know that the  defendant sent Patrick out to pick up the drugs for her little girl, for  Cora, and to pick up the food for all of them. She ordered the food.  There was no problem. We saw the two witnesses from, one from CVS and  one from ThreeV Restaurant. They all said that she sounded perfectly  normal on the phone. So they are trying to show that this timeline means  this was planned. This was intentional. She took just enough time. She  mapped it out. She knows how long these errands are going to take, and  that she murdered her children. ([03:40:44](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13244.07)) This  was intentional, premeditated, planned murder. I think what we're going  to have to see on the defense side, Reddington is going to have to make  sure when he does the cross-examination of Patrick Clancy, whenever he  comes back on that stand, that it's clear there was no idea that  anything was going to happen. Clearly had Patrick Clancy thought  something was going to happen, he would not have left. He would have had  the parents come. He would have had her institutionalized. He would  have stayed by her side. And I think what the medical experts are going  to have to say to support the theory that this was psychosis is it's  possible for her to plan this out, to have dinner, et cetera, and still  have these voices in her head telling her that she has to kill the  children. And this was something to save the children she had to do,  whatever the voice was and whatever it said, that she couldn't control  herself. ([03:41:38](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13298.52)) Remember,  under the law in Massachusetts, it's a two-pronged approach. There's  cognitive and there's volitional. She has to show that she was not aware  of her wrongfulness and she wasn't able to conform herself to the  requirements of the law. So those are the things she's going to have to  show, and the medical experts are going to have to come in and defend  her in this case.",
+      "event_types": [
+        "sidebar",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 972,
+        "source_line": 4061,
+        "timestamp_display": "03:42:48",
+        "timestamp_seconds": 13368.72,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13368.72"
+      },
+      "speaker": "Terri Austin",
+      "text": "Well,  that's exactly right. And it's not as though... Look, we can't predict  when a psychotic episode is going to occur. If we could, we wouldn't  have any psychotic episodes. We'd do something to prevent it from  happening. I think one of the weaknesses in this case is the fact that  Patrick wasn't told every single little thing about the medications. He  wasn't told every single thing about what she was going through. He'd  not heard the word psychosis. But you know what? Maybe Lindsay Clancy  didn't know it was psychosis. Maybe after this happened, she was  cognizant enough to figure out, \"Well, I don't know what happened. My  God, how could I have done this?\" And then she figured out she was going  through a psychotic break or perhaps she talked to some of the doctors  that she was dealing with when she was put into the hospital. So it's  very difficult to know exactly what is going on as you're going through  it. ([03:43:46](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13426.11)) They  are not medical experts. The medical experts are the ones who are going  to have to help them through this psychotic break. And I'm not  surprised that he never heard that word. And I don't think she was aware  of what was going on. Frankly, I think if she knew she was going to  have a psychotic break, this would not have happened. Both of them did  the best they could, in my humble opinion, to avoid anything like this  happening.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 973,
+        "source_line": 4068,
+        "timestamp_display": "03:44:08",
+        "timestamp_seconds": 13448.94,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13448.94"
+      },
+      "speaker": "Julia Jenae",
+      "text": "Yeah.  The prosecution is certainly pushing back on that and using that part  of the testimony to try and suggest that her attorneys told her that  word. But Kevin Reddington has said that that is absolutely not the  case. He didn't supply the defense to his client that early on in this  case. We're going to keep talking about it. Terri, please stand by. When  we come back, we are going to check in, see if they're back from that  lunch break, and break down more that is happening ahead in this case.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 975,
+        "source_line": 4076,
+        "timestamp_display": "03:49:40",
+        "timestamp_seconds": 13780.2,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13780.2"
+      },
+      "speaker": "Julia Jenae",
+      "text": "A  husband's testimony is on pause inside of a Plymouth County,  Massachusetts courtroom. The Lindsay Clancy trial continues as both  sides battle over one central issue, criminal responsibility. And we are  still waiting to hear when her ex-husband and the father of the three  victims in this case, Patrick Clancy, is going to be returning to the  witness stand. His direct examination seems to be over, but we  anticipate there is going to be cross-examination coming soon. Right  now, they're on that lunch break. Here's a live look inside of the  courtroom. And once they come back from that lunch break, we will take  you back into the courtroom. We understand from the photojournalist  that's there inside of the courtroom for us, Richie Morganstern, he says  that it seems like the state has many witnesses lined up for the rest  of the day. So there's a possibility that Patrick may not return to the  stand as anticipated. ([03:50:32](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13832.46)) While  we continue to wait, let's bring back in our guest who is watching  along with us, trial attorney Terri Austin, who's been helping us break  down exactly what these jurors have to decide. It is a difficult one.  It's not, do they believe that she did it? Do they believe that she is  the exact reason for the deaths of her children? They've got to  determine whether she was legally sane and understood her actions when  it happened. You broke it down wonderfully, Terri, earlier, but I want  to ask you this. How as either a prosecutor or a defense attorney, how  do you keep these jurors thinking about that very narrow part of this?  It's outside of the horror of it all. It's outside of even all of the  medication. You've got to keep them on task of did she understand or  appreciate the criminality of her actions? And if not, then they can  find her guilty.",
+      "event_types": [
+        "recess",
+        "direct_explicit",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 976,
+        "source_line": 4083,
+        "timestamp_display": "03:51:27",
+        "timestamp_seconds": 13887.72,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13887.72"
+      },
+      "speaker": "Terri Austin",
+      "text": "I  think we're going to see the defense do more of that. Right now, the  prosecution is being fairly broad in the presentation. I think going  through the timeline, obviously you have to make sure the jury  understood what was going on, particularly as it relates to that day.  And so I think the prosecution is trying to lay out what occurred and  trying to point out from a timeline perspective that the defendant knew  what she was doing, she knew it was wrong, and that she could have  conformed her conduct. What I think we're going to see the defense say  is, \"Look, there is no argument that this happened.\" And I think he's  going to try to get that out through his cross-examinations when he  finally does do the cross-examination of Patrick Clancy and through  other cross-examinations that we're going to see of the prosecution's  case. ([03:52:21](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=13941.84)) But  during closing arguments, I definitely think that Reddington is going  to focus on the question here, ladies and gentlemen of the jury, is  whether or not it was someone who could appreciate that what she was  doing was wrong and could she conform her behavior? And if not, if you  believe and you listen to our medical experts and we had these medical  experts who got up there and they testified and you heard them say that  it's possible she could have this postpartum, not only depression, but  psychosis, she could be hearing the voices in her head and not able to  conform her behavior, not understand that what she's doing is wrong, and  planning this because that is what the voice is telling her to do. A  psychosis is hallucinations. It's delusion. You've got to have those  medical experts. And I think that we're going to see more of that when  we see the defense case and certainly when we see the defense closing.",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 987,
+        "source_line": 4133,
+        "timestamp_display": "03:57:51",
+        "timestamp_seconds": 14271.03,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14271.03"
+      },
+      "speaker": "Julia Jenae",
+      "text": "It  is certainly a difficult day for everyone involved. Terri Austin, thank  you for helping us understand things a lot more. We've got to get to  our break. When we come back, more coverage of the Lindsay Clancy trial.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 989,
+        "source_line": 4141,
+        "timestamp_display": "04:02:08",
+        "timestamp_seconds": 14528.01,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14528.01"
+      },
+      "speaker": "Julia Janae",
+      "text": "Welcome  back to CourtTV Live. I'm Julia Janae. Thank you for being with us this  Wednesday afternoon where we are in the state of Massachusetts. Did  Lindsay Clancy know what she was doing when she killed her children? We  are watching her trial play out. Here's a live look inside of the  courtroom. The jury remains on their lunch break and testimony is going  to start up again soon. We don't know who's going to be on the stand  next. Now, before the break though, emotions boiled over as the 911 call  was played for the jurors, but not the public.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 992,
+        "source_line": 4153,
+        "timestamp_display": "04:03:05",
+        "timestamp_seconds": 14585.46,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14585.46"
+      },
+      "speaker": "Speaker 31",
+      "text": "We'll be in recess at this time.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 995,
+        "source_line": 4165,
+        "timestamp_display": "04:03:15",
+        "timestamp_seconds": 14595.57,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14595.57"
+      },
+      "speaker": "Speaker 30",
+      "text": "We're in recess. Please exit the courtroom. Way out the courtroom, please. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1010,
+        "source_line": 4240,
+        "timestamp_display": "04:14:57",
+        "timestamp_seconds": 15297.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=15297.48"
+      },
+      "speaker": "Julia Janae",
+      "text": "Philip  and Jo-Anna, stand by, we've got to slip on a break, but when we come  back, we're going to talk more about this case. They are still on a  lunch break, but there's still something that's up in the air. What is  going to happen when Patrick Clancy takes the stand again? He still has  not finished his cross-examination. It hasn't even started yet. So we'll  talk with our guests about what the defense should do on cross.",
+      "event_types": [
+        "recess",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1012,
+        "source_line": 4248,
+        "timestamp_display": "05:25:22",
+        "timestamp_seconds": 19522.02,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19522.02"
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Excuse me. I'm going to approach you, sir, with this document and just ask if you can recognize the handwriting?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1017,
+        "source_line": 4268,
+        "timestamp_display": "05:25:35",
+        "timestamp_seconds": 19535.07,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19535.07"
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1020,
+        "source_line": 4280,
+        "timestamp_display": "05:25:47",
+        "timestamp_seconds": 19547.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19547.61"
+      },
+      "speaker": "Speaker 34",
+      "text": "Bit  of an objection there. So they're going on sidebar. Let's bring back in  our guests who are standing by. We have with us Joanna Nieves, who's  watching along with us. Joanna, Patrick is back on the stand. What are  you picking up on with cross-examination now? Does he seem a little bit  more relaxed than he did on direct examination?",
+      "event_types": [
+        "objection",
+        "sidebar",
+        "direct_explicit",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1059,
+        "source_line": 4436,
+        "timestamp_display": "05:28:57",
+        "timestamp_seconds": 19737.33,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19737.33"
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1061,
+        "source_line": 4444,
+        "timestamp_display": "05:28:58",
+        "timestamp_seconds": 19738.5,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19738.5"
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1062,
+        "source_line": 4448,
+        "timestamp_display": "05:29:04",
+        "timestamp_seconds": 19744.41,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19744.41"
+      },
+      "speaker": "Speaker 35",
+      "text": "Exhibit 58.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1064,
+        "source_line": 4456,
+        "timestamp_display": "05:29:08",
+        "timestamp_seconds": 19748.46,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19748.46"
+      },
+      "speaker": "Kevin Reddington",
+      "text": "If  I may put Exhibit 58 up so the jurors in the zone can see it. There's  some kind of like, looks as though it's boxed out window. So are we  standing in the kitchen looking into that room through that boxed out  window?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1073,
+        "source_line": 4492,
+        "timestamp_display": "05:29:50",
+        "timestamp_seconds": 19790.46,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19790.46"
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1075,
+        "source_line": 4500,
+        "timestamp_display": "05:29:51",
+        "timestamp_seconds": 19791.66,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19791.66"
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1076,
+        "source_line": 4504,
+        "timestamp_display": "05:29:52",
+        "timestamp_seconds": 19792.14,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19792.14"
+      },
+      "speaker": "Speaker 35",
+      "text": "Exhibit 59.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1099,
+        "source_line": 4596,
+        "timestamp_display": "05:31:36",
+        "timestamp_seconds": 19896.24,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19896.24"
+      },
+      "speaker": "Speaker 35",
+      "text": "Exhibit 60 and 61.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1112,
+        "source_line": 4648,
+        "timestamp_display": "05:32:44",
+        "timestamp_seconds": 19964.64,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19964.64"
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Your Honor, if we may approach briefly.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1115,
+        "source_line": 4660,
+        "timestamp_display": "05:39:23",
+        "timestamp_seconds": 20363.67,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20363.67"
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Mr.  Clancy, and if I ask a question and it's difficult or if you need a  break, I'm sure that [inaudible 05:39:30] we'll certainly give you a  break. If I push too hard, just let me know. All right?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1171,
+        "source_line": 4884,
+        "timestamp_display": "05:44:01",
+        "timestamp_seconds": 20641.77,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20641.77"
+      },
+      "speaker": "Speaker 37",
+      "text": "I'm going to approach you, sir, and ask if you can identify this as being an email that you sent.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1174,
+        "source_line": 4896,
+        "timestamp_display": "05:44:15",
+        "timestamp_seconds": 20655.27,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20655.27"
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1180,
+        "source_line": 4922,
+        "timestamp_display": "05:44:18",
+        "timestamp_seconds": 20658.66,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20658.66"
+      },
+      "speaker": "Speaker 38",
+      "text": "Sidebar.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1182,
+        "source_line": 4930,
+        "timestamp_display": "05:45:24",
+        "timestamp_seconds": 20724.27,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20724.27"
+      },
+      "speaker": "Speaker 38",
+      "text": "No objection, Your Honor.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1183,
+        "source_line": 4934,
+        "timestamp_display": "05:45:25",
+        "timestamp_seconds": 20725.17,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20725.17"
+      },
+      "speaker": "Judge",
+      "text": "Okay, thank you. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1190,
+        "source_line": 4962,
+        "timestamp_display": "05:46:49",
+        "timestamp_seconds": 20809.2,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20809.2"
+      },
+      "speaker": "Speaker 38",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1191,
+        "source_line": 4966,
+        "timestamp_display": "05:46:49",
+        "timestamp_seconds": 20809.65,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20809.65"
+      },
+      "speaker": "Judge",
+      "text": "Sustained. If you could rephrase that.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1211,
+        "source_line": 5046,
+        "timestamp_display": "05:49:05",
+        "timestamp_seconds": 20945.91,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20945.91"
+      },
+      "speaker": "Speaker 38",
+      "text": "Objection. That was December 3rd.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1212,
+        "source_line": 5050,
+        "timestamp_display": "05:49:07",
+        "timestamp_seconds": 20947.71,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20947.71"
+      },
+      "speaker": "Judge",
+      "text": "All right. Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1226,
+        "source_line": 5106,
+        "timestamp_display": "05:50:44",
+        "timestamp_seconds": 21044.85,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21044.85"
+      },
+      "speaker": "Judge",
+      "text": "So  I think we had Exhibit 76. They're making a copy of that. Do you want  to mark that? I don't know if we marked that yet. That was the earlier  one, just so everybody could keep this straight. And this latest email  would be Exhibit 77?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1233,
+        "source_line": 5134,
+        "timestamp_display": "05:51:22",
+        "timestamp_seconds": 21082.59,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21082.59"
+      },
+      "speaker": "Speaker 38",
+      "text": "Exhibit 76 and 77.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1235,
+        "source_line": 5142,
+        "timestamp_display": "05:51:31",
+        "timestamp_seconds": 21091.38,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21091.38"
+      },
+      "speaker": "Speaker 37",
+      "text": "Thank  you. Now, sir, Exhibit 76 is an email from you to... And we will try to  delete the people that are on the email, if I may, Your Honor, as we  mark it as an exhibit. Let me approach you. Does it indicate the date  and the time on the very top, you sent that email to your staff members  or the people that work with you?",
+      "event_types": [
+        "sidebar",
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1242,
+        "source_line": 5170,
+        "timestamp_display": "05:52:18",
+        "timestamp_seconds": 21138.03,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21138.03"
+      },
+      "speaker": "Judge",
+      "text": "That would be Exhibit 76.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1312,
+        "source_line": 5450,
+        "timestamp_display": "05:58:11",
+        "timestamp_seconds": 21491.49,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21491.49"
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1322,
+        "source_line": 5490,
+        "timestamp_display": "06:00:44",
+        "timestamp_seconds": 21644.13,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21644.13"
+      },
+      "speaker": "Speaker 37",
+      "text": "So  while that's being marked Exhibit E for ID, basically that would at  least refresh your memory, sir, that in fact, inadvertently, that you  touched the Wikipedia thing for suicide, but it was for Tom Hall, the  singer, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1352,
+        "source_line": 5610,
+        "timestamp_display": "06:04:18",
+        "timestamp_seconds": 21858.27,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21858.27"
+      },
+      "speaker": "Speaker 37",
+      "text": "And  I'm going to approach you with this document, sir, which would be a  number of pages from the book, the cover of the book, and the inside of  the book. You've never seen that before though?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1359,
+        "source_line": 5638,
+        "timestamp_display": "06:05:04",
+        "timestamp_seconds": 21904.86,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21904.86"
+      },
+      "speaker": "Judge",
+      "text": "All right. Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1364,
+        "source_line": 5658,
+        "timestamp_display": "06:05:14",
+        "timestamp_seconds": 21914.13,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21914.13"
+      },
+      "speaker": "Speaker 38",
+      "text": "No objection to him not offering it. If I could just look at it, there may...",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1367,
+        "source_line": 5670,
+        "timestamp_display": "06:06:21",
+        "timestamp_seconds": 21981.12,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21981.12"
+      },
+      "speaker": "Speaker 38",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1368,
+        "source_line": 5674,
+        "timestamp_display": "06:06:24",
+        "timestamp_seconds": 21984.36,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21984.36"
+      },
+      "speaker": "Judge",
+      "text": "Okay. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1402,
+        "source_line": 5810,
+        "timestamp_display": "06:08:51",
+        "timestamp_seconds": 22131.3,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22131.3"
+      },
+      "speaker": "Speaker 38",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1406,
+        "source_line": 5826,
+        "timestamp_display": "06:09:09",
+        "timestamp_seconds": 22149.93,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22149.93"
+      },
+      "speaker": "Speaker 38",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1440,
+        "source_line": 5962,
+        "timestamp_display": "06:11:36",
+        "timestamp_seconds": 22296.84,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22296.84"
+      },
+      "speaker": "Speaker 38",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1499,
+        "source_line": 6198,
+        "timestamp_display": "06:15:50",
+        "timestamp_seconds": 22550.46,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22550.46"
+      },
+      "speaker": "Speaker 42",
+      "text": "Exhibit that for identification.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1522,
+        "source_line": 6290,
+        "timestamp_display": "06:18:20",
+        "timestamp_seconds": 22700.49,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22700.49"
+      },
+      "speaker": "Speaker 41",
+      "text": "Objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1524,
+        "source_line": 6298,
+        "timestamp_display": "06:18:21",
+        "timestamp_seconds": 22701.87,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22701.87"
+      },
+      "speaker": "Speaker 41",
+      "text": "All right. Sustained at this time.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1530,
+        "source_line": 6322,
+        "timestamp_display": "06:18:52",
+        "timestamp_seconds": 22732.56,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22732.56"
+      },
+      "speaker": "Speaker 42",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1531,
+        "source_line": 6326,
+        "timestamp_display": "06:18:52",
+        "timestamp_seconds": 22732.56,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22732.56"
+      },
+      "speaker": "Speaker 41",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1533,
+        "source_line": 6334,
+        "timestamp_display": "06:19:02",
+        "timestamp_seconds": 22742.04,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22742.04"
+      },
+      "speaker": "Speaker 42",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1589,
+        "source_line": 6558,
+        "timestamp_display": "06:24:24",
+        "timestamp_seconds": 23064.36,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23064.36"
+      },
+      "speaker": "Speaker 41",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1603,
+        "source_line": 6614,
+        "timestamp_display": "06:25:31",
+        "timestamp_seconds": 23131.23,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23131.23"
+      },
+      "speaker": "Speaker 41",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1605,
+        "source_line": 6622,
+        "timestamp_display": "06:25:35",
+        "timestamp_seconds": 23135.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23135.61"
+      },
+      "speaker": "Speaker 41",
+      "text": "All right. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1643,
+        "source_line": 6776,
+        "timestamp_display": "06:28:26",
+        "timestamp_seconds": 23306.19,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23306.19"
+      },
+      "speaker": "Speaker 41",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1645,
+        "source_line": 6784,
+        "timestamp_display": "06:28:28",
+        "timestamp_seconds": 23308.83,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23308.83"
+      },
+      "speaker": "Speaker 41",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1692,
+        "source_line": 6972,
+        "timestamp_display": "06:31:23",
+        "timestamp_seconds": 23483.52,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23483.52"
+      },
+      "speaker": "Speaker 40",
+      "text": "Right?  I'm going to approach you, sir, and another one of the books that was  in the kitchen cabinet, I believe. Do you remember if you ever saw this  one?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1703,
+        "source_line": 7016,
+        "timestamp_display": "06:32:38",
+        "timestamp_seconds": 23558.61,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23558.61"
+      },
+      "speaker": "Speaker 40",
+      "text": "Thank  you. By the way... I'll withdraw that. I'm going to approach you, sir,  with this document. Excuse me. And ask if you can identify it.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1708,
+        "source_line": 7039,
+        "timestamp_display": "06:33:06",
+        "timestamp_seconds": 23586.45,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23586.45"
+      },
+      "speaker": "Speaker 42",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1709,
+        "source_line": 7043,
+        "timestamp_display": "06:33:06",
+        "timestamp_seconds": 23586.45,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23586.45"
+      },
+      "speaker": "Speaker 41",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1710,
+        "source_line": 7047,
+        "timestamp_display": "06:33:06",
+        "timestamp_seconds": 23586.45,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23586.45"
+      },
+      "speaker": "Speaker 42",
+      "text": "Exhibit 81.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1726,
+        "source_line": 7114,
+        "timestamp_display": "06:35:10",
+        "timestamp_seconds": 23710.59,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23710.59"
+      },
+      "speaker": "Speaker 42",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1727,
+        "source_line": 7118,
+        "timestamp_display": "06:35:11",
+        "timestamp_seconds": 23711.22,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23711.22"
+      },
+      "speaker": "Speaker 41",
+      "text": "All right. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1733,
+        "source_line": 7142,
+        "timestamp_display": "06:35:41",
+        "timestamp_seconds": 23741.49,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23741.49"
+      },
+      "speaker": "Speaker 43",
+      "text": "Exhibit for identification.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1734,
+        "source_line": 7146,
+        "timestamp_display": "06:35:52",
+        "timestamp_seconds": 23752.14,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23752.14"
+      },
+      "speaker": "Speaker 40",
+      "text": "John, can I see the exhibit for the... ([06:35:52](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23752.47)) One of the things that you had identified yesterday was the document that you obtained from CVS. Is that correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1744,
+        "source_line": 7189,
+        "timestamp_display": "06:37:34",
+        "timestamp_seconds": 23854.08,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23854.08"
+      },
+      "speaker": "Speaker 40",
+      "text": "Exhibit two would be the pills that you had turned in, I believe. Is that correct? They were in your bag in your car?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1747,
+        "source_line": 7201,
+        "timestamp_display": "06:37:45",
+        "timestamp_seconds": 23865.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23865.48"
+      },
+      "speaker": "Patrick Clancy",
+      "text": "I remembered it's exhibit two though.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1791,
+        "source_line": 7377,
+        "timestamp_display": "06:41:37",
+        "timestamp_seconds": 24097.23,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24097.23"
+      },
+      "speaker": "Patrick Clancy",
+      "text": "Is there objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1798,
+        "source_line": 7405,
+        "timestamp_display": "06:41:48",
+        "timestamp_seconds": 24108.57,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24108.57"
+      },
+      "speaker": "Speaker 42",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1799,
+        "source_line": 7409,
+        "timestamp_display": "06:41:48",
+        "timestamp_seconds": 24108.96,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24108.96"
+      },
+      "speaker": "Speaker 41",
+      "text": "Okay. Good. Do you want to put that in as one exhibit?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1812,
+        "source_line": 7461,
+        "timestamp_display": "06:42:39",
+        "timestamp_seconds": 24159.63,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24159.63"
+      },
+      "speaker": "Speaker 42",
+      "text": "Objection. We could go to sidebar.",
+      "event_types": [
+        "objection",
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1813,
+        "source_line": 7465,
+        "timestamp_display": "06:42:40",
+        "timestamp_seconds": 24160.41,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24160.41"
+      },
+      "speaker": "Speaker 41",
+      "text": "Yeah. Can I see counsel sidebar, please?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1829,
+        "source_line": 7529,
+        "timestamp_display": "06:47:56",
+        "timestamp_seconds": 24476.28,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24476.28"
+      },
+      "speaker": "Speaker 42",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1830,
+        "source_line": 7533,
+        "timestamp_display": "06:47:56",
+        "timestamp_seconds": 24476.85,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24476.85"
+      },
+      "speaker": "Speaker 41",
+      "text": "Okay. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1846,
+        "source_line": 7597,
+        "timestamp_display": "06:49:12",
+        "timestamp_seconds": 24552.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24552.48"
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1847,
+        "source_line": 7601,
+        "timestamp_display": "06:49:12",
+        "timestamp_seconds": 24552.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24552.48"
+      },
+      "speaker": "Prosecution",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1848,
+        "source_line": 7605,
+        "timestamp_display": "06:49:14",
+        "timestamp_seconds": 24554.97,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24554.97"
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1863,
+        "source_line": 7665,
+        "timestamp_display": "06:51:02",
+        "timestamp_seconds": 24662.4,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24662.4"
+      },
+      "speaker": "Prosecution",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1864,
+        "source_line": 7669,
+        "timestamp_display": "06:51:02",
+        "timestamp_seconds": 24662.73,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24662.73"
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1868,
+        "source_line": 7685,
+        "timestamp_display": "06:51:25",
+        "timestamp_seconds": 24685.77,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24685.77"
+      },
+      "speaker": "Defense",
+      "text": "Yeah. ([06:51:25](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24685.77)) Okay.  Okay. I'm talking about the hornet thing right here. And then this  is... I see on this top here. Okay. So you see on the top of this window  here. It's not a very good picture. Underneath the hornet thing, I see  it, but in the exhibit you can see there's blood drops or blood smears  there.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1873,
+        "source_line": 7708,
+        "timestamp_display": "06:51:59",
+        "timestamp_seconds": 24719.04,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24719.04"
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1875,
+        "source_line": 7716,
+        "timestamp_display": "06:52:01",
+        "timestamp_seconds": 24721.14,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24721.14"
+      },
+      "speaker": "Judge",
+      "text": "They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1877,
+        "source_line": 7724,
+        "timestamp_display": "06:52:21",
+        "timestamp_seconds": 24741.12,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24741.12"
+      },
+      "speaker": "Judge",
+      "text": "All right. Commonwealth, redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1878,
+        "source_line": 7728,
+        "timestamp_display": "06:52:31",
+        "timestamp_seconds": 24751.26,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24751.26"
+      },
+      "speaker": "Prosecution",
+      "text": "Yes, Your Honor. Thank you. ([06:52:38](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24758.19)) Mr.  Clancy, you were shown an email and it's been marked as an exhibit that  you sent to coworkers on January 24th, 2023 at 5:24 PM, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1936,
+        "source_line": 7963,
+        "timestamp_display": "06:57:00",
+        "timestamp_seconds": 25020,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25020"
+      },
+      "speaker": "Prosecution",
+      "text": "If we could have the text messages marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1937,
+        "source_line": 7967,
+        "timestamp_display": "06:57:02",
+        "timestamp_seconds": 25022.85,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25022.85"
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1939,
+        "source_line": 7975,
+        "timestamp_display": "06:57:04",
+        "timestamp_seconds": 25024.23,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25024.23"
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1941,
+        "source_line": 7983,
+        "timestamp_display": "06:57:12",
+        "timestamp_seconds": 25032.24,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25032.24"
+      },
+      "speaker": "Prosecution",
+      "text": "Now  in cross-examination, you said that Lindsay always took the medications  exactly as instructed, but in direct, you said you weren't always with  her every time she took the pills. Is that correct?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1981,
+        "source_line": 8143,
+        "timestamp_display": "07:01:01",
+        "timestamp_seconds": 25261.68,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25261.68"
+      },
+      "speaker": "Prosecution",
+      "text": "Okay. Now you stated on direct examination that you visited her two times during the time that she was there at McLean, right?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2081,
+        "source_line": 8543,
+        "timestamp_display": "07:10:19",
+        "timestamp_seconds": 25819.29,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=25819.29"
+      },
+      "speaker": "Prosecution",
+      "text": "And  I was looking for one of the exhibits from defense counsel. It's the...  Yes. Exhibit 84, this was the packet here that defense counsel was  going through with you where you said this is Lindsay writing Callan's  schedule. Is that right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2120,
+        "source_line": 8699,
+        "timestamp_display": "07:15:54",
+        "timestamp_seconds": 26154.42,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26154.42"
+      },
+      "speaker": "Prosecution",
+      "text": "Can I see which one that is, please? No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2121,
+        "source_line": 8703,
+        "timestamp_display": "07:15:57",
+        "timestamp_seconds": 26157.48,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26157.48"
+      },
+      "speaker": "Judge",
+      "text": "Okay. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2125,
+        "source_line": 8719,
+        "timestamp_display": "07:16:05",
+        "timestamp_seconds": 26165.79,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26165.79"
+      },
+      "speaker": "Judge",
+      "text": "All  right. Thank you, sir. You may step down. Thank you. Counsel, can I see  you? The jury, I know it's been a long day for everyone, so we're going  to excuse you till tomorrow morning. The hope is we'll start about 9:00  and kind of the same thing. We'll go to hopefully about 11:00, take a  break at 11:00. We'll have a break from 1:00 to 2:00 and we'll go into  the afternoon around 3:00 or 4:00. All right? So that's the thing.  Remember, I'm going to ask you those questions about not talking about  the case, not doing any research about it, I don't watch anything about  it, you still have to keep an open mind. At this point, you've heard  some evidence, but you haven't heard all the evidence, and you haven't  heard the law that you are to apply to the evidence. So at this point,  you've got to keep struggling in a sense, keep that open mind. ([07:18:18](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26298.18)) So  I'm going to excuse you. I hope you have a nice evening. We'll come  back here tomorrow morning. If I forget to tell you tomorrow, Friday,  we're still on the schedule to take that view, and then we'll deal with  the schedule going to come in tomorrow. But as best I can tell you,  that's the schedule for tomorrow. So again, thank you so much for all  your work on this case so far. I hope you have a nice evening. We'll see  you tomorrow.",
+      "event_types": [
+        "recess",
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2127,
+        "source_line": 8730,
+        "timestamp_display": "07:19:20",
+        "timestamp_seconds": 26360.97,
+        "url": "https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26360.97"
+      },
+      "speaker": "Judge",
+      "text": "All right. So we'll be in recess on this matter till tomorrow morning at 9:00. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}

@@ -272,3 +272,23 @@ A named T0 gives the case a stable starting snapshot without silently promoting 
 - Dispatch/CAD, hospital, forensic, exhibit, full-transcript, and official-identifier records must confirm, correct, split, merge, or supersede its candidates.
 - Repeated secondary reporting does not establish independent source lineage.
 - Future baselines may replace T0 operationally, but `T0-PROVISIONAL-001` and its original artifact remain preserved as historical state.
+
+## 08-17-2026 — Use the witness index as the testimony-analysis routing layer
+
+### Decision
+
+Adopt the experimental V2 first pass as the deterministic structure stage for transcript inbox testing. It supports both Rev Markdown captures and direct copy/paste plain-text transcript turns. Its primary output is an addressable hierarchy of proceeding, candidate witness block, examination-phase candidates, timestamped turns, and procedural markers.
+
+Treat witness blocks as routing units for later skills. Select legal, medical, expert, impeachment, foundation, source-chain, or timeline procedures according to the witness and relevant subrange rather than running every procedure over an entire proceeding or every witness.
+
+### Reason
+
+A multi-hour transcript is too coarse for precise, repeatable analysis. Addressable witness blocks let later procedures operate on bounded testimony while retaining exact source lineage. This more closely matches legal transcript work: locate the witness, understand the examination, identify the relevant testimony, and then apply the appropriate reasoning procedure.
+
+### Consequences
+
+- V2 remains under test and its structural classifications require review.
+- Every downstream result must retain its source turn and timestamp or deep link.
+- The preserved transcript remains authoritative over every derived analytical layer.
+- Transcript-derived ChatGPT notes remain useful derived case data but are not transcript source artifacts.
+- The mixed inbox will be normalized later; current Markdown, copied-text, JSON, and derived-note files are retained without forced reclassification in this session.

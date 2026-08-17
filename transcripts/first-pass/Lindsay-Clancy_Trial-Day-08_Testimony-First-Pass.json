@@ -1,0 +1,1344 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-08_Rev-Transcript.txt",
+    "sha256": "100e9122089d8795a37e527fb7ef5b383199ed7108ca7b566eb2879eeca9dcba"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 928,
+    "witness_blocks": 4,
+    "phase_sets": 4,
+    "procedural_markers": 54
+  },
+  "witness_blocks": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Amy Bevins",
+      "start": {
+        "segment_index": 9,
+        "source_line": 110,
+        "timestamp_display": "26:03",
+        "timestamp_seconds": 1563,
+        "url": null
+      },
+      "end": {
+        "segment_index": 238,
+        "source_line": 1026,
+        "timestamp_display": "45:07",
+        "timestamp_seconds": 2707,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Christopher Clancy",
+      "start": {
+        "segment_index": 239,
+        "source_line": 1030,
+        "timestamp_display": "45:16",
+        "timestamp_seconds": 2716,
+        "url": null
+      },
+      "end": {
+        "segment_index": 513,
+        "source_line": 2131,
+        "timestamp_display": "02:36:36",
+        "timestamp_seconds": 9396,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_003",
+      "witness_name_candidate": "Kyle Carney",
+      "start": {
+        "segment_index": 514,
+        "source_line": 2138,
+        "timestamp_display": "02:36:42",
+        "timestamp_seconds": 9402,
+        "url": null
+      },
+      "end": {
+        "segment_index": 617,
+        "source_line": 2550,
+        "timestamp_display": "02:44:08",
+        "timestamp_seconds": 9848,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    },
+    {
+      "block_id": "witness_004",
+      "witness_name_candidate": "Andrew Chiachio",
+      "start": {
+        "segment_index": 618,
+        "source_line": 2554,
+        "timestamp_display": "02:44:20",
+        "timestamp_seconds": 9860,
+        "url": null
+      },
+      "end": {
+        "segment_index": 927,
+        "source_line": 3852,
+        "timestamp_display": "03:56:35",
+        "timestamp_seconds": 14195,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    }
+  ],
+  "phase_sets": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Amy Bevins",
+      "examiner_candidates": [
+        "Attorney Sprague",
+        "Mr. Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "setup",
+          "jury_present": true,
+          "start": {
+            "segment_index": 9,
+            "source_line": 110,
+            "timestamp_display": "26:03",
+            "timestamp_seconds": 1563,
+            "url": null
+          },
+          "end": {
+            "segment_index": 16,
+            "source_line": 138,
+            "timestamp_display": "27:01",
+            "timestamp_seconds": 1621,
+            "url": null
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 17,
+            "source_line": 142,
+            "timestamp_display": "27:02",
+            "timestamp_seconds": 1622,
+            "url": null
+          },
+          "end": {
+            "segment_index": 160,
+            "source_line": 714,
+            "timestamp_display": "37:22",
+            "timestamp_seconds": 2242,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 161,
+            "source_line": 718,
+            "timestamp_display": "37:23",
+            "timestamp_seconds": 2243,
+            "url": null
+          },
+          "end": {
+            "segment_index": 236,
+            "source_line": 1018,
+            "timestamp_display": "45:07",
+            "timestamp_seconds": 2707,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 237,
+            "source_line": 1022,
+            "timestamp_display": "45:07",
+            "timestamp_seconds": 2707,
+            "url": null
+          },
+          "end": {
+            "segment_index": 238,
+            "source_line": 1026,
+            "timestamp_display": "45:07",
+            "timestamp_seconds": 2707,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Christopher Clancy",
+      "examiner_candidates": [
+        "Attorney Sprague",
+        "Mr. Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 239,
+            "source_line": 1030,
+            "timestamp_display": "45:16",
+            "timestamp_seconds": 2716,
+            "url": null
+          },
+          "end": {
+            "segment_index": 445,
+            "source_line": 1857,
+            "timestamp_display": "59:09",
+            "timestamp_seconds": 3549,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 446,
+            "source_line": 1861,
+            "timestamp_display": "59:09",
+            "timestamp_seconds": 3549,
+            "url": null
+          },
+          "end": {
+            "segment_index": 452,
+            "source_line": 1885,
+            "timestamp_display": "59:31",
+            "timestamp_seconds": 3571,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 453,
+            "source_line": 1889,
+            "timestamp_display": "59:45",
+            "timestamp_seconds": 3585,
+            "url": null
+          },
+          "end": {
+            "segment_index": 453,
+            "source_line": 1889,
+            "timestamp_display": "59:45",
+            "timestamp_seconds": 3585,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 454,
+            "source_line": 1893,
+            "timestamp_display": "59:46",
+            "timestamp_seconds": 3586,
+            "url": null
+          },
+          "end": {
+            "segment_index": 457,
+            "source_line": 1907,
+            "timestamp_display": "01:00:22",
+            "timestamp_seconds": 3622,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 458,
+            "source_line": 1911,
+            "timestamp_display": "01:00:22",
+            "timestamp_seconds": 3622,
+            "url": null
+          },
+          "end": {
+            "segment_index": 458,
+            "source_line": 1911,
+            "timestamp_display": "01:00:22",
+            "timestamp_seconds": 3622,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 459,
+            "source_line": 1915,
+            "timestamp_display": "01:04:49",
+            "timestamp_seconds": 3889,
+            "url": null
+          },
+          "end": {
+            "segment_index": 477,
+            "source_line": 1987,
+            "timestamp_display": "01:06:21",
+            "timestamp_seconds": 3981,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 478,
+            "source_line": 1991,
+            "timestamp_display": "01:06:45",
+            "timestamp_seconds": 4005,
+            "url": null
+          },
+          "end": {
+            "segment_index": 478,
+            "source_line": 1991,
+            "timestamp_display": "01:06:45",
+            "timestamp_seconds": 4005,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 479,
+            "source_line": 1995,
+            "timestamp_display": "01:06:50",
+            "timestamp_seconds": 4010,
+            "url": null
+          },
+          "end": {
+            "segment_index": 479,
+            "source_line": 1995,
+            "timestamp_display": "01:06:50",
+            "timestamp_seconds": 4010,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 480,
+            "source_line": 1999,
+            "timestamp_display": "01:06:52",
+            "timestamp_seconds": 4012,
+            "url": null
+          },
+          "end": {
+            "segment_index": 480,
+            "source_line": 1999,
+            "timestamp_display": "01:06:52",
+            "timestamp_seconds": 4012,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 481,
+            "source_line": 2003,
+            "timestamp_display": "01:06:53",
+            "timestamp_seconds": 4013,
+            "url": null
+          },
+          "end": {
+            "segment_index": 481,
+            "source_line": 2003,
+            "timestamp_display": "01:06:53",
+            "timestamp_seconds": 4013,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 482,
+            "source_line": 2007,
+            "timestamp_display": "01:07:06",
+            "timestamp_seconds": 4026,
+            "url": null
+          },
+          "end": {
+            "segment_index": 482,
+            "source_line": 2007,
+            "timestamp_display": "01:07:06",
+            "timestamp_seconds": 4026,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 483,
+            "source_line": 2011,
+            "timestamp_display": "01:07:08",
+            "timestamp_seconds": 4028,
+            "url": null
+          },
+          "end": {
+            "segment_index": 488,
+            "source_line": 2031,
+            "timestamp_display": "01:07:26",
+            "timestamp_seconds": 4046,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 489,
+            "source_line": 2035,
+            "timestamp_display": "01:07:26",
+            "timestamp_seconds": 4046,
+            "url": null
+          },
+          "end": {
+            "segment_index": 504,
+            "source_line": 2095,
+            "timestamp_display": "02:35:41",
+            "timestamp_seconds": 9341,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 505,
+            "source_line": 2099,
+            "timestamp_display": "02:35:41",
+            "timestamp_seconds": 9341,
+            "url": null
+          },
+          "end": {
+            "segment_index": 513,
+            "source_line": 2131,
+            "timestamp_display": "02:36:36",
+            "timestamp_seconds": 9396,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_003",
+      "witness_name_candidate": "Kyle Carney",
+      "examiner_candidates": [
+        "Attorney Sprague"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 514,
+            "source_line": 2138,
+            "timestamp_display": "02:36:42",
+            "timestamp_seconds": 9402,
+            "url": null
+          },
+          "end": {
+            "segment_index": 617,
+            "source_line": 2550,
+            "timestamp_display": "02:44:08",
+            "timestamp_seconds": 9848,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_004",
+      "witness_name_candidate": "Andrew Chiachio",
+      "examiner_candidates": [
+        "Mr. Reddington",
+        "Attorney Sprague"
+      ],
+      "phases": [
+        {
+          "phase": "setup",
+          "jury_present": true,
+          "start": {
+            "segment_index": 618,
+            "source_line": 2554,
+            "timestamp_display": "02:44:20",
+            "timestamp_seconds": 9860,
+            "url": null
+          },
+          "end": {
+            "segment_index": 748,
+            "source_line": 3076,
+            "timestamp_display": "02:51:54",
+            "timestamp_seconds": 10314,
+            "url": null
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 749,
+            "source_line": 3080,
+            "timestamp_display": "02:52:04",
+            "timestamp_seconds": 10324,
+            "url": null
+          },
+          "end": {
+            "segment_index": 848,
+            "source_line": 3497,
+            "timestamp_display": "03:28:32",
+            "timestamp_seconds": 12512,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 849,
+            "source_line": 3504,
+            "timestamp_display": "03:30:00",
+            "timestamp_seconds": 12600,
+            "url": null
+          },
+          "end": {
+            "segment_index": 862,
+            "source_line": 3583,
+            "timestamp_display": "03:41:12",
+            "timestamp_seconds": 13272,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 863,
+            "source_line": 3587,
+            "timestamp_display": "03:41:16",
+            "timestamp_seconds": 13276,
+            "url": null
+          },
+          "end": {
+            "segment_index": 865,
+            "source_line": 3601,
+            "timestamp_display": "03:44:19",
+            "timestamp_seconds": 13459,
+            "url": null
+          }
+        },
+        {
+          "phase": "voir_dire",
+          "jury_present": true,
+          "start": {
+            "segment_index": 866,
+            "source_line": 3608,
+            "timestamp_display": "03:45:23",
+            "timestamp_seconds": 13523,
+            "url": null
+          },
+          "end": {
+            "segment_index": 927,
+            "source_line": 3852,
+            "timestamp_display": "03:56:35",
+            "timestamp_seconds": 14195,
+            "url": null
+          }
+        }
+      ]
+    }
+  ],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 7,
+        "source_line": 102,
+        "timestamp_display": "25:50",
+        "timestamp_seconds": 1550,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Your Honor, for the purpose of the record, we return back to the trial of Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 8,
+        "source_line": 106,
+        "timestamp_display": "25:59",
+        "timestamp_seconds": 1559,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "All right. Everyone, thank you. Commonwealth, call your next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 9,
+        "source_line": 110,
+        "timestamp_display": "26:03",
+        "timestamp_seconds": 1563,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "Thank you. Commonwealth calls Amy Bevins.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 10,
+        "source_line": 114,
+        "timestamp_display": "26:35",
+        "timestamp_seconds": 1595,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Can you stop right there? Raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 11,
+        "source_line": 118,
+        "timestamp_display": "26:54",
+        "timestamp_seconds": 1614,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending [inaudible 00:26:55] whole truth and nothing but the truth, so help you God? You may have a seat.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 66,
+        "source_line": 338,
+        "timestamp_display": "30:18",
+        "timestamp_seconds": 1818,
+        "url": null
+      },
+      "speaker": "Amy Bevins",
+      "text": "She was pretty a calm person. She was nice and had a very calm approach to herself.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 149,
+        "source_line": 670,
+        "timestamp_display": "36:44",
+        "timestamp_seconds": 2204,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "At any point in time, did she break down in tears and cry about her children?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 238,
+        "source_line": 1026,
+        "timestamp_display": "45:07",
+        "timestamp_seconds": 2707,
+        "url": null
+      },
+      "speaker": "Speaker 6",
+      "text": "All right. Thank you, ma'am. You may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 239,
+        "source_line": 1030,
+        "timestamp_display": "45:16",
+        "timestamp_seconds": 2716,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Commonwealth calls Christopher Clancy.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 241,
+        "source_line": 1038,
+        "timestamp_display": "45:20",
+        "timestamp_seconds": 2720,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Okay. Good afternoon, sir. Can you stop right there? Raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 242,
+        "source_line": 1042,
+        "timestamp_display": "45:49",
+        "timestamp_seconds": 2749,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good afternoon. Do you solemnly swear that the testimony [inaudible 00:45:51] the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 364,
+        "source_line": 1530,
+        "timestamp_display": "53:15",
+        "timestamp_seconds": 3195,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "And did you all... Well, strike that. The following day on Christmas, did you go over to Lindsay's home before going to mass?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 368,
+        "source_line": 1546,
+        "timestamp_display": "53:33",
+        "timestamp_seconds": 3213,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "And let me approach. It's going to be page 33. If you can just read to yourself lines two through seven, and then just look up when you're done.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 392,
+        "source_line": 1642,
+        "timestamp_display": "55:06",
+        "timestamp_seconds": 3306,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "And do you recall saying before that... Strike that. Do you recall, after that conversation, you guys hugged each other and went your separate ways?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 410,
+        "source_line": 1714,
+        "timestamp_display": "56:40",
+        "timestamp_seconds": 3400,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Thank you for clarifying that. (56:46) In terms of your interaction with Lindsay and Patrick and the kids while there were some struggles going on, did you and your wife offer to take the kids to your house overnight to kind of give them a break?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 458,
+        "source_line": 1911,
+        "timestamp_display": "01:00:22",
+        "timestamp_seconds": 3622,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Can we go to sidebar?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 490,
+        "source_line": 2039,
+        "timestamp_display": "01:07:27",
+        "timestamp_seconds": 4047,
+        "url": null
+      },
+      "speaker": "Speaker 6",
+      "text": "All right. Thank you, sir. You may step down. Thank you.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 493,
+        "source_line": 2051,
+        "timestamp_display": "01:07:37",
+        "timestamp_seconds": 4057,
+        "url": null
+      },
+      "speaker": "Speaker 6",
+      "text": "Commonwealth, can I see you over here just [inaudible 01:07:38]? Start the next witness for just a couple of minutes, and we're going to break till 2:00. So I'm going to ask you to be ready to come back here at 2:00. Same instructions I've been giving you the whole time during the break. Don't talk about this case with anybody. Don't do any research about this. Don't look into anything about this case or any similar cases. And I'll see you at 2:00. Hope you have a nice break. Okay? Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 496,
+        "source_line": 2063,
+        "timestamp_display": "01:10:00",
+        "timestamp_seconds": 4200,
+        "url": null
+      },
+      "speaker": "Speaker 8",
+      "text": "All right, so we'll be in recess on this matter till two o'clock.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 499,
+        "source_line": 2075,
+        "timestamp_display": "01:44:57",
+        "timestamp_seconds": 6297,
+        "url": null
+      },
+      "speaker": "Speaker 7",
+      "text": "Court's in recess, [inaudible 01:10:25].",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 512,
+        "source_line": 2127,
+        "timestamp_display": "02:36:27",
+        "timestamp_seconds": 9387,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good afternoon, Your Honor. For the purpose of the record, we returned back to the trial of Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 514,
+        "source_line": 2138,
+        "timestamp_display": "02:36:42",
+        "timestamp_seconds": 9402,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Yes, Your Honor. Commonwealth calls Kyle Carney.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 516,
+        "source_line": 2146,
+        "timestamp_display": "02:37:05",
+        "timestamp_seconds": 9425,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Good afternoon, sir. Stop right here, raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 517,
+        "source_line": 2150,
+        "timestamp_display": "02:37:25",
+        "timestamp_seconds": 9445,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth [inaudible 02:37:26] so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 521,
+        "source_line": 2166,
+        "timestamp_display": "02:37:25",
+        "timestamp_seconds": 9445,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "Excuse me. Can we approach?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 615,
+        "source_line": 2542,
+        "timestamp_display": "02:44:05",
+        "timestamp_seconds": 9845,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Thank you, sir. You may step down. Thank you.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 618,
+        "source_line": 2554,
+        "timestamp_display": "02:44:20",
+        "timestamp_seconds": 9860,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "Your Honor, the Commonwealth would call Andrew Chiachio as its next witness.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 620,
+        "source_line": 2562,
+        "timestamp_display": "02:45:16",
+        "timestamp_seconds": 9916,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Good afternoon, sir. Stop right there, raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 621,
+        "source_line": 2566,
+        "timestamp_display": "02:45:17",
+        "timestamp_seconds": 9917,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth and [inaudible 02:45:17], so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 749,
+        "source_line": 3080,
+        "timestamp_display": "02:52:04",
+        "timestamp_seconds": 10324,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "Objection at this point. It's hearsay and it's already been cross-examined above.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 795,
+        "source_line": 3264,
+        "timestamp_display": "02:54:33",
+        "timestamp_seconds": 10473,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "I'm just going to approach, if I may.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 797,
+        "source_line": 3272,
+        "timestamp_display": "02:54:39",
+        "timestamp_seconds": 10479,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "I have no problem with the approach.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 798,
+        "source_line": 3276,
+        "timestamp_display": "02:54:40",
+        "timestamp_seconds": 10480,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "No objection? Okay.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 803,
+        "source_line": 3296,
+        "timestamp_display": "02:54:53",
+        "timestamp_seconds": 10493,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "I would move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 804,
+        "source_line": 3300,
+        "timestamp_display": "02:54:55",
+        "timestamp_seconds": 10495,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "No objection. That may be admitted.",
+      "event_types": [
+        "objection",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 808,
+        "source_line": 3316,
+        "timestamp_display": "02:55:08",
+        "timestamp_seconds": 10508,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "That's okay. (02:55:25) Sergeant Calcio (phonetic), just showing you what's now been marked as Exhibit 217 on the screen. Is that a Facebook post from the Attachment Parenting for Littles Facebook group?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 822,
+        "source_line": 3378,
+        "timestamp_display": "02:57:46",
+        "timestamp_seconds": 10666,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "So this would be Exhibit 217, which is the Parenting for Littles post by Lindsay, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 837,
+        "source_line": 3438,
+        "timestamp_display": "02:58:29",
+        "timestamp_seconds": 10709,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Thank you, sir. You may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 841,
+        "source_line": 3454,
+        "timestamp_display": "02:58:32",
+        "timestamp_seconds": 10712,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "May we approach?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 844,
+        "source_line": 3475,
+        "timestamp_display": "03:02:17",
+        "timestamp_seconds": 10937,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "All right. So we're going to be in recess until 3:00. We're going to come back. We'll have a hearing on the defendant's motion for permission to call certain witnesses. And so we'll have a hearing on that at 3:00. All right. So we'll be in recess. basically so parties can kind of get themselves oriented in regards to that motion. So we'll be in recess.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 848,
+        "source_line": 3497,
+        "timestamp_display": "03:28:32",
+        "timestamp_seconds": 12512,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "Thank you. Your Honor, obviously I don't have to belabor the obvious. This is a murder trial, very serious business. And we've all been working very hard on the discovery, which as you can tell is voluminous. Hundreds and hundreds and hundreds of pages of state police interviews. And I mentioned about with the government, they have cops, they have people going out and interviewing, they have videos, they have chemists, they have detectives, they have local cops. They want a cup of coffee, they can send five cops down the street to get one. I'm it, except for my son Patrick, who helps me out getting coffee. And the reason I sound frustrated is that they are objecting two weeks ago because they need time to review, to cross-examine doctors on very basic items of evidence that are their items of evidence. Now one of those witnesses is adding or bringing anything new to the discovery, if you will. (03:29:33) And not by way of excuse, but I am a sole practitioner. In the past May, June, July... In the past three months, I've had a murder, a rape, and two back-to-back federal trials that ended one week before we empaneled on this case. I have worked really hard to pull this case together with expert witnesses, civilian witnesses, private investigators been investigating. I provide everything to them as soon as I get it, and they have been doing the-",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 849,
+        "source_line": 3504,
+        "timestamp_display": "03:30:00",
+        "timestamp_seconds": 12600,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "... as soon as I get it. And they have been doing the same with me. I haven't objected to one thing that they have offered. They put an AutoCAD computer animated display disc on my desk last week. I didn't complain about it, run to you and try to exclude it. I said, \"Fine, no problem. Put it in my pile and move on.\" That's it. (03:30:22) So to suggest that they need time to be able to cross-examine both... I've had trials with both of these prosecutors. They're both experienced. They're very, very familiar with the trial of major criminal cases. I feel that they're more than capable of being able to cross examine, for example, number one, Dr. Vukovich, who is a board certified emergency medicine physician. His report indicates that he has taken a look at South Shore Hospital. He's taken a look at the Brigham and Women's Hospital. He's taken a look at the photographs. That's their evidence. That's all he looked at. (03:31:05) And all he's doing is basically what all of their South Shore doctors came in and testified to as to the nature of the injuries in his opinion, the type of injury that she suffered. Talking about the injuries to the right and left wrist, as well as the neck. In his opinion, dealing with suicide attempts, that it's a legitimate suicide attempt. There's no secrets. There's nothing new that they have to prepare to cross-examine him on. (03:31:33) Dr. Laposata is a doctor that is well known to most of us, and I've been using Dr. Laposata's fine services for the past decade or longer. I know that both of these attorneys are familiar with her. She's not bringing anything new to the table. She's bringing her opinion based upon their evidence as to the medical records, x-rays, all of the rest of the indicia of the injury that she suffered. (03:32:01) Now, they're talking about Lindsay going out and hanging off of a window and then doing, like I said, the Spider-Man slide down the side of the house apparently. Absolutely ridiculous. She dove out that window. She hit her head and she suffered what Dr. Laposata refers to as a Jefferson fracture of the spine that is very, very, very typical for this type of an injury. When somebody dives into the shallow end of a pool, they get that injury, unfortunately. When somebody, kids are on a boat and they're drunk and one of them jumps off a mast into the shallow end of the water off of Cape Cod, they get that type of injury. Superman, when he gets thrown off the horse, six feet high, same injury. That's all. She's not bringing any esoteric theory to this case that they need time to prepare. Interestingly enough, the Brigham and Women's Hospital records do make reference to the Jefferson fracture right from jump. (03:32:57) She also assists me as she always does on autopsy photographs, any indicia of injuries. And it's her opinion that if they try to say that there are bruises to these little babies that were inflicted by her, they're absolutely wrong. And Dr. Laposata would indicate that these are consistent with either EMT. God bless those first responders, but they were in a panic and they're trying to take care of these kids and pick them up and run them up to their trucks and vehicles. And other, obviously the intraosseous injection into the legs, the shins, the thighs, all of these bruises are from medical intervention, not Lindsay Clancy. That's what she would testify to. That's it. They don't need time to prepare to cross-examine for that. (03:33:45) Finally, I have Dr. Conti. Dr. Conti signed even better than a report. He signed an affidavit. And again, it's based upon medical records that we all have. Way back when this case first started, the government presented the case to the grand jury. First thing I said to Lindsay was sign a release. Let the government give all the medical records. We'll all have access to them. This case is obviously going to be predicated upon the medical records, psychiatric records. We signed every release. They got every document and had them into the grand jury. I got copies. They have copies. Conti would testify to the horrific, in his opinion, failure to comply with the standard of care that would govern psychiatrists, psychologists, Dr. Tufts, who's going to be testifying tomorrow, Nurse Practitioner Jollotta, the other individual from the McLean Hospital, all records that they had for years. So they don't need time to prepare for cross-examination. (03:34:53) So weeks ago, counsel, after I gave them copies of all of these reports and affidavit. Strike that. I'm sorry. The reports I just got and I just sent them the affidavit from Conti they already have. I disclosed to them what my opinion would be of the opinions from these doctors that would be testifying, and the report carries that out. (03:35:19) I suggest to the court that to strip Lindsay's ability to present evidence in support of her defense, number one, it would not be in the interest of justice. I'd like to hear a DA stand up and say in the interest of justice in this case, because weeks ago we got this information and were not prepared to cross-examine the testifying witnesses. I think even Your Honor would agree is a disingenuous argument. She came in and said to you, \"Rule 14 matters and it applies to the government just as it applies to the defense. And therefore you should exclude these witnesses.\" Well, if I messed up and it's my trial schedule that caused me to not be able to have written reports of the stuff that they've had for years to prepare to cross-examine these witnesses, then it's my fault. And it deprives her of effective assistance of counsel because that would then deprive her of her defense. (03:36:26) This is a pathologist, an emergency room doctor, and a doctor who would testify to the standards that would apply to these doctors that they're going to call as their witnesses, which is another interesting fillip, if you will, where they're calling Tufts, Jollotta, the other individuals from McLean, all treating physicians of her that are all lined up to come in and testify against her on this case. Fine, bring it. But at least give me the ammunition to counter it.",
+      "event_types": [
+        "cross_explicit",
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 863,
+        "source_line": 3587,
+        "timestamp_display": "03:41:16",
+        "timestamp_seconds": 13276,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Thank you, Your Honor. With regard to Dr. Conti, one of my points is going to be that his affidavit addresses the standard of care, which is more of the civil issue, but you've already addressed that with defense counsel's pivot that he would then instead testify about the treatment of the defendant in toxicology. Looking at the affidavit in which he outlines his qualifications, he's not a toxicologist. He's a physician licensed here in Massachusetts. He's done a residency in general psychiatry, child and adolescent psychiatry and forensic psychiatry, but he's not a toxicologist. And also, it's not just us having all the same records that makes for cross-examination to be fundamentally fair. There's more to cross-examination than just having the underlying data. It's also knowing more about the expert, being able to look into their publications and their prior testimony and being able to prepare to rebut anything that they might testify to. (03:42:21) And where we have this late disclosure, which was one week prior to trial starting, that's fundamentally unfair to the Commonwealth. And I think what Dr. Conti would be testifying to, if it's just limited to her treatment and what was prescribed to her, that's covered by the other three experts that defense already has. They all talk about her treatment, the prescription she was on and the effects those had on her. So I think that would be redundant and it would be unfair to the Commonwealth to add this fourth expert to talk about the same things that the other three experts are going to talk about when we haven't had a chance to prepare for this particular expert. For Dr. Laposata, what we have is a two and a half page letter to attorney Reddington outlining her thoughts, but it doesn't say what her opinions are based on. (03:43:11) It doesn't say which materials she's reviewed and what she's relying on. So I would suggest that it's an insufficient report. And again, with the delayed disclosure... For example, she talks about Jefferson fracture causing the injuries. Well, if we had this information previously and knew this is what they were going to argue, we could have obtained our own expert to talk about the mechanism of injury and Jefferson fractures and all of those things. But we weren't told until a week before trial that she would even potentially be a witness. And then we get this report on July 26th that's a two and a half page letter.",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 865,
+        "source_line": 3601,
+        "timestamp_display": "03:44:19",
+        "timestamp_seconds": 13459,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "Well, your Honor, we had a trauma surgeon from the South Shore Hospital testify who said that the injuries that Ms. Clancy sustained were a level one and she had to be transported to another hospital where doctors who were trained in those injuries could operate on her. So we didn't think that she would have the knowledge and the training and experience to testify about the nature of those injuries and how they occur. The trauma surgeon from Brigham and Women's Hospital is with the military and is overseas in the Middle East and so was unavailable. But had we known that this was going to be an issue and they were going to allege this particular type of fracture, we would have endeavored to get another expert in replace of the doctor who treated her at Brigham and Women's. But we didn't know that this would even be an issue until a week before trial. (03:45:10) And again, this letter is dated July 26th and it doesn't tell us which records, which reports or what medical journals or training or anything that these opinions are based on.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 866,
+        "source_line": 3608,
+        "timestamp_display": "03:45:23",
+        "timestamp_seconds": 13523,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Well, that could be done by voir dire. I mean, the Commonwealth has at least inferred through their case that this was not a serious suicide attempt. Right?",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 874,
+        "source_line": 3640,
+        "timestamp_display": "03:47:38",
+        "timestamp_seconds": 13658,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "And this is why I didn't make a decision on this earlier because I have to see how the case develops. And this issue of how this injury occurs is certainly, it's either been specifically and explicitly raised or inferred in multiple questions, even to the length of, to the part of the cuts and things like that. It's been over and over and over. So if the Commonwealth seeks to get somebody to rebut that, I would strongly consider that. In regards to Dr. Laposata's opinion, we may need a voir dire in regards to, but I wouldn't imagine the voir dire would take that long. It would be, did you view the x-rays? I mean, that kind of an injury is probably pretty clear on the x-rays or the MRIs.",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 878,
+        "source_line": 3656,
+        "timestamp_display": "03:49:21",
+        "timestamp_seconds": 13761,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "And just note our objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 897,
+        "source_line": 3732,
+        "timestamp_display": "03:52:17",
+        "timestamp_seconds": 13937,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Well, that's going to probably be for the jury to determine. But I would allow going into the characteristics that have already been testified to. We need a further voir dire on that doctor as well. But I think he lists in there what he reviewed.",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 906,
+        "source_line": 3768,
+        "timestamp_display": "03:53:33",
+        "timestamp_seconds": 14013,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "Understood. Just note my objection for what it's worth.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 907,
+        "source_line": 3772,
+        "timestamp_display": "03:53:34",
+        "timestamp_seconds": 14014,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. And so I'll note the Commonwealth's objection. I'll note the defendant's objection. And like I said, I'll take it under advisement and everybody can renew those objections",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 914,
+        "source_line": 3800,
+        "timestamp_display": "03:54:12",
+        "timestamp_seconds": 14052,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "Just in case there's a problem. Dr. Laposata has been working with a gentleman by the name of Mr. Drake, Drake Laboratories that is putting together an auto computer animated display of coming out the window, the injuries to the neck, showing the vertebrae and that type of thing, which is all based upon evidence that's already in evidence here. So I haven't got it yet. It's not done yet. So I don't want to not say anything about it now because they'll be objecting to it tomorrow, I'm sure. Or whenever it's ready.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 916,
+        "source_line": 3808,
+        "timestamp_display": "03:55:02",
+        "timestamp_seconds": 14102,
+        "url": null
+      },
+      "speaker": "Attorney Sprague",
+      "text": "The commonwealth would have an objection to it.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 921,
+        "source_line": 3828,
+        "timestamp_display": "03:55:31",
+        "timestamp_seconds": 14131,
+        "url": null
+      },
+      "speaker": "Mr. Reddington",
+      "text": "And I just note that, as I said, the medical records that the government has talks about Jefferson Fracture. You might remember two weeks ago or two and a half weeks ago when they first raised their objection, I told you that I can't know what they're going to argue until they argue it. So I didn't know whether or not they were going to say that it's a fake suicide or that she didn't jump out the window. I had to wait to see what their opening was. Now I know I have to rebut it.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 926,
+        "source_line": 3848,
+        "timestamp_display": "03:56:30",
+        "timestamp_seconds": 14190,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "So we'll be in recess on this matter till tomorrow morning at 9:00 o'clock. All right. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}

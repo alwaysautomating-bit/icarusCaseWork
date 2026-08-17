@@ -1,0 +1,1378 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-10_Rev-Transcript.txt",
+    "sha256": "fd94972c56cd53dc8cb812cab41e563f96efadf50bdc1c8080c7991fc617aab3"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 2843,
+    "witness_blocks": 1,
+    "phase_sets": 1,
+    "procedural_markers": 87
+  },
+  "witness_blocks": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Julie Paul",
+      "start": {
+        "segment_index": 2370,
+        "source_line": 9545,
+        "timestamp_display": "03:52:14",
+        "timestamp_seconds": 13934,
+        "url": null
+      },
+      "end": {
+        "segment_index": 2842,
+        "source_line": 11435,
+        "timestamp_display": "04:43:58",
+        "timestamp_seconds": 17038,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    }
+  ],
+  "phase_sets": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Julie Paul",
+      "examiner_candidates": [
+        "Attorney Buckingham",
+        "William F. Sullivan"
+      ],
+      "phases": [
+        {
+          "phase": "setup",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2370,
+            "source_line": 9545,
+            "timestamp_display": "03:52:14",
+            "timestamp_seconds": 13934,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2375,
+            "source_line": 9565,
+            "timestamp_display": "03:52:56",
+            "timestamp_seconds": 13976,
+            "url": null
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2376,
+            "source_line": 9569,
+            "timestamp_display": "03:52:58",
+            "timestamp_seconds": 13978,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2833,
+            "source_line": 11399,
+            "timestamp_display": "04:40:33",
+            "timestamp_seconds": 16833,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2834,
+            "source_line": 11403,
+            "timestamp_display": "04:41:51",
+            "timestamp_seconds": 16911,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2835,
+            "source_line": 11407,
+            "timestamp_display": "04:41:51",
+            "timestamp_seconds": 16911,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 2836,
+            "source_line": 11411,
+            "timestamp_display": "04:42:02",
+            "timestamp_seconds": 16922,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2837,
+            "source_line": 11415,
+            "timestamp_display": "04:42:51",
+            "timestamp_seconds": 16971,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2838,
+            "source_line": 11419,
+            "timestamp_display": "04:43:29",
+            "timestamp_seconds": 17009,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2842,
+            "source_line": 11435,
+            "timestamp_display": "04:43:58",
+            "timestamp_seconds": 17038,
+            "url": null
+          }
+        }
+      ]
+    }
+  ],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 2,
+        "source_line": 55,
+        "timestamp_display": "00:14",
+        "timestamp_seconds": 14,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "All right. Next, is there any other serious matter or concern bearing on your service as a juror in this case that anybody needs to bring to my attention? All right. Thank you for following those instructions. And then in regards to today's schedule, we've got a number of witnesses. I'm not quite sure how long it may go. So we may break a little bit early today, just kind of depending on the way the case comes in. And then, in regards to where we are right now, we're going to, if you remember, when we broke on Friday, there was a witness, a Dr. Tufts. The Commonwealth had finished their direct examination. We're now going to have that witness return to the stand and the cross-examination by the defendant will begin. All right. And so with that, if we could recall that witness.",
+      "event_types": [
+        "jury_in",
+        "recess",
+        "direct_explicit",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 5,
+        "source_line": 67,
+        "timestamp_display": "01:31",
+        "timestamp_seconds": 91,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Stop right there and raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 6,
+        "source_line": 71,
+        "timestamp_display": "01:43",
+        "timestamp_seconds": 103,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good morning. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth and the defendant shall be the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 32,
+        "source_line": 175,
+        "timestamp_display": "02:59",
+        "timestamp_seconds": 179,
+        "url": null
+      },
+      "speaker": "Dr Jennifer Tufts",
+      "text": "Well, you do a lot. A lot of different things. You rotate in all the different aspects of psychiatry as well as internal medicine so that you have a foundational knowledge of broad medical topics. You admit patients into the inpatient hospital. You manage emergencies in the hospital and in the emergency room. Decide whether patients need to be admitted psychiatrically or not, and also carry a panel of outpatients.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 169,
+        "source_line": 723,
+        "timestamp_display": "18:22",
+        "timestamp_seconds": 1102,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now understand that your records, Exhibit 219, I believe that the jury will have access to the Tufts records. Okay? You're aware of that, right? You know it's an exhibit?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 171,
+        "source_line": 731,
+        "timestamp_display": "18:39",
+        "timestamp_seconds": 1119,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Because you have talked to the prosecution about what an exhibit is, and you know that your records are now in evidence before this jury, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 180,
+        "source_line": 767,
+        "timestamp_display": "19:09",
+        "timestamp_seconds": 1149,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 181,
+        "source_line": 771,
+        "timestamp_display": "19:15",
+        "timestamp_seconds": 1155,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 188,
+        "source_line": 799,
+        "timestamp_display": "19:44",
+        "timestamp_seconds": 1184,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 189,
+        "source_line": 803,
+        "timestamp_display": "19:45",
+        "timestamp_seconds": 1185,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 274,
+        "source_line": 1143,
+        "timestamp_display": "25:39",
+        "timestamp_seconds": 1539,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection. Give the witness time to answer.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 359,
+        "source_line": 1483,
+        "timestamp_display": "32:31",
+        "timestamp_seconds": 1951,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 360,
+        "source_line": 1487,
+        "timestamp_display": "32:31",
+        "timestamp_seconds": 1951,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Sustained as to form.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 369,
+        "source_line": 1523,
+        "timestamp_display": "00:14",
+        "timestamp_seconds": 14,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "All right. Next, is there any other serious matter or concern bearing on your service as a juror in this case that anybody needs to bring to my attention? All right. Thank you for following those instructions. And then in regards to today's schedule, we've got a number of witnesses. I'm not quite sure how long it may go. So we may break a little bit early today, just kind of depending on the way the case comes in. And then, in regards to where we are right now, we're going to, if you remember, when we broke on Friday, there was a witness, a Dr. Tufts. The Commonwealth had finished their direct examination. We're now going to have that witness return to the stand and the cross-examination by the defendant will begin. All right. And so with that, if we could recall that witness.",
+      "event_types": [
+        "jury_in",
+        "recess",
+        "direct_explicit",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 372,
+        "source_line": 1535,
+        "timestamp_display": "01:31",
+        "timestamp_seconds": 91,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Stop right there and raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 373,
+        "source_line": 1539,
+        "timestamp_display": "01:43",
+        "timestamp_seconds": 103,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Good morning. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth and the defendant shall be the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 399,
+        "source_line": 1643,
+        "timestamp_display": "02:59",
+        "timestamp_seconds": 179,
+        "url": null
+      },
+      "speaker": "Dr Jennifer Tufts",
+      "text": "Well, you do a lot. A lot of different things. You rotate in all the different aspects of psychiatry as well as internal medicine so that you have a foundational knowledge of broad medical topics. You admit patients into the inpatient hospital. You manage emergencies in the hospital and in the emergency room. Decide whether patients need to be admitted psychiatrically or not, and also carry a panel of outpatients.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 536,
+        "source_line": 2191,
+        "timestamp_display": "18:22",
+        "timestamp_seconds": 1102,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now understand that your records, Exhibit 219, I believe that the jury will have access to the Tufts records. Okay? You're aware of that, right? You know it's an exhibit?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 538,
+        "source_line": 2199,
+        "timestamp_display": "18:39",
+        "timestamp_seconds": 1119,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Because you have talked to the prosecution about what an exhibit is, and you know that your records are now in evidence before this jury, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 547,
+        "source_line": 2235,
+        "timestamp_display": "19:09",
+        "timestamp_seconds": 1149,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 548,
+        "source_line": 2239,
+        "timestamp_display": "19:15",
+        "timestamp_seconds": 1155,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 555,
+        "source_line": 2267,
+        "timestamp_display": "19:44",
+        "timestamp_seconds": 1184,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 556,
+        "source_line": 2271,
+        "timestamp_display": "19:45",
+        "timestamp_seconds": 1185,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 641,
+        "source_line": 2611,
+        "timestamp_display": "25:39",
+        "timestamp_seconds": 1539,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection. Give the witness time to answer.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 726,
+        "source_line": 2951,
+        "timestamp_display": "32:31",
+        "timestamp_seconds": 1951,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 727,
+        "source_line": 2955,
+        "timestamp_display": "32:31",
+        "timestamp_seconds": 1951,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Sustained as to form.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 737,
+        "source_line": 2997,
+        "timestamp_display": "33:15",
+        "timestamp_seconds": 1995,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 738,
+        "source_line": 3001,
+        "timestamp_display": "33:16",
+        "timestamp_seconds": 1996,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 772,
+        "source_line": 3137,
+        "timestamp_display": "37:11",
+        "timestamp_seconds": 2231,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 778,
+        "source_line": 3161,
+        "timestamp_display": "37:15",
+        "timestamp_seconds": 2235,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "You asked the question. Sustained. I'm going to let her finish and then you can follow up with any questions you want.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1000,
+        "source_line": 4049,
+        "timestamp_display": "58:31",
+        "timestamp_seconds": 3511,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1001,
+        "source_line": 4053,
+        "timestamp_display": "58:32",
+        "timestamp_seconds": 3512,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1162,
+        "source_line": 4697,
+        "timestamp_display": "01:14:58",
+        "timestamp_seconds": 4498,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1164,
+        "source_line": 4705,
+        "timestamp_display": "01:14:58",
+        "timestamp_seconds": 4498,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled. Go ahead.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1203,
+        "source_line": 4863,
+        "timestamp_display": "01:19:08",
+        "timestamp_seconds": 4748,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1204,
+        "source_line": 4867,
+        "timestamp_display": "01:19:09",
+        "timestamp_seconds": 4749,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1226,
+        "source_line": 4955,
+        "timestamp_display": "01:20:56",
+        "timestamp_seconds": 4856,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1227,
+        "source_line": 4959,
+        "timestamp_display": "01:20:58",
+        "timestamp_seconds": 4858,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1235,
+        "source_line": 4991,
+        "timestamp_display": "01:21:52",
+        "timestamp_seconds": 4912,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1236,
+        "source_line": 4995,
+        "timestamp_display": "01:21:53",
+        "timestamp_seconds": 4913,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1250,
+        "source_line": 5051,
+        "timestamp_display": "01:23:02",
+        "timestamp_seconds": 4982,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1252,
+        "source_line": 5059,
+        "timestamp_display": "01:23:02",
+        "timestamp_seconds": 4982,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Hold on. Sustained. Next question.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1282,
+        "source_line": 5179,
+        "timestamp_display": "01:25:48",
+        "timestamp_seconds": 5148,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1283,
+        "source_line": 5183,
+        "timestamp_display": "01:25:48",
+        "timestamp_seconds": 5148,
+        "url": null
+      },
+      "speaker": "Judge Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1407,
+        "source_line": 5679,
+        "timestamp_display": "01:36:35",
+        "timestamp_seconds": 5795,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Objection. If we could have a date.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1428,
+        "source_line": 5763,
+        "timestamp_display": "01:38:35",
+        "timestamp_seconds": 5915,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Objection. If you could just have a date.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1546,
+        "source_line": 6235,
+        "timestamp_display": "01:47:29",
+        "timestamp_seconds": 6449,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1568,
+        "source_line": 6323,
+        "timestamp_display": "01:48:55",
+        "timestamp_seconds": 6535,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "... it's probably a good spot to stop. We're going to take the morning recess and then we'll come right back. Okay?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1577,
+        "source_line": 6362,
+        "timestamp_display": "01:51:03",
+        "timestamp_seconds": 6663,
+        "url": null
+      },
+      "speaker": "Madam Clerk",
+      "text": "Your Honor, for the purpose of the record, we returned back to the trial of Commonwealth v. Lindsay Clancy. All parties are present, including the defendant and the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1631,
+        "source_line": 6578,
+        "timestamp_display": "02:40:06",
+        "timestamp_seconds": 9606,
+        "url": null
+      },
+      "speaker": "Dr Jennifer Tufts",
+      "text": "Well, she was assessed in the emergency room and was not admitted. And I assessed her on that day again. And while she was certainly struggling, she did not require hospitalization at that moment. So she was planning on going to the [inaudible 02:40:27] program, and I supported that.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1714,
+        "source_line": 6910,
+        "timestamp_display": "02:47:45",
+        "timestamp_seconds": 10065,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "She's got an objection, Judge.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1716,
+        "source_line": 6918,
+        "timestamp_display": "02:47:45",
+        "timestamp_seconds": 10065,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1717,
+        "source_line": 6922,
+        "timestamp_display": "02:47:50",
+        "timestamp_seconds": 10070,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1723,
+        "source_line": 6946,
+        "timestamp_display": "02:48:10",
+        "timestamp_seconds": 10090,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1725,
+        "source_line": 6954,
+        "timestamp_display": "02:48:12",
+        "timestamp_seconds": 10092,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled. Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1747,
+        "source_line": 7042,
+        "timestamp_display": "02:50:14",
+        "timestamp_seconds": 10214,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "And she admitted herself to the locked wards at McLean, right?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1882,
+        "source_line": 7582,
+        "timestamp_display": "03:01:43",
+        "timestamp_seconds": 10903,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Members of the jury, we're going to take the afternoon recess at this time. All right?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1884,
+        "source_line": 7593,
+        "timestamp_display": "03:01:43",
+        "timestamp_seconds": 10903,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Dr. Lee. Stand. Counsel, anything we need to discuss before the break?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1887,
+        "source_line": 7605,
+        "timestamp_display": "03:01:43",
+        "timestamp_seconds": 10903,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "[inaudible 03:03:06]. We'll be in recess. [inaudible 03:03:11].",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1889,
+        "source_line": 7616,
+        "timestamp_display": "03:03:55",
+        "timestamp_seconds": 11035,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "[inaudible 03:03:53] Clancy, all parties are present, including the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1890,
+        "source_line": 7620,
+        "timestamp_display": "03:03:56",
+        "timestamp_seconds": 11036,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Thank you, Madam Clerk. Commonwealth, redirect.",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1893,
+        "source_line": 7635,
+        "timestamp_display": "03:04:06",
+        "timestamp_seconds": 11046,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "You were asked on cross-examination about your residency. At that point, you were already a doctor, correct?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2063,
+        "source_line": 8317,
+        "timestamp_display": "03:18:48",
+        "timestamp_seconds": 11928,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Going to the October 20th, 2022 appointment. You were asked about this on cross-examination about documenting side effects in your notes. Did you document the side effects that the defendant reported from the Zoloft on October 20th, 2022?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2119,
+        "source_line": 8541,
+        "timestamp_display": "03:25:44",
+        "timestamp_seconds": 12344,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "It's the fact that the two of them together, Ativan and Benadryl. Well, let me strike that question. Why did you prescribe the hydroxyzine?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2157,
+        "source_line": 8693,
+        "timestamp_display": "03:29:39",
+        "timestamp_seconds": 12579,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "So if Ms. Clancy had told you she had thoughts of hurting herself... Or, actually, strike that. If she told you that she had a plan to hurt herself or a plan to hurt her children, would you have moved to commit her?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2223,
+        "source_line": 8957,
+        "timestamp_display": "03:39:22",
+        "timestamp_seconds": 13162,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Showing you the bottle from Exhibit 155 of amitriptyline. Would you agree with me that this shows that the prescription was filled on that same day, January 16th, 2023?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2236,
+        "source_line": 9009,
+        "timestamp_display": "03:40:38",
+        "timestamp_seconds": 13238,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "All right. Then recross, briefly.",
+      "event_types": [
+        "recross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2244,
+        "source_line": 9041,
+        "timestamp_display": "03:41:54",
+        "timestamp_seconds": 13314,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2245,
+        "source_line": 9045,
+        "timestamp_display": "03:41:54",
+        "timestamp_seconds": 13314,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2273,
+        "source_line": 9157,
+        "timestamp_display": "03:43:48",
+        "timestamp_seconds": 13428,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Objection. Didn't ask about these records.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2276,
+        "source_line": 9169,
+        "timestamp_display": "03:43:53",
+        "timestamp_seconds": 13433,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Overruled. You can answer the question.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2282,
+        "source_line": 9193,
+        "timestamp_display": "03:44:13",
+        "timestamp_seconds": 13453,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2283,
+        "source_line": 9197,
+        "timestamp_display": "03:44:14",
+        "timestamp_seconds": 13454,
+        "url": null
+      },
+      "speaker": "Speaker 9",
+      "text": "Okay. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2290,
+        "source_line": 9225,
+        "timestamp_display": "03:44:50",
+        "timestamp_seconds": 13490,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. If I could approach you with Exhibit 220, excuse me. And see the second paragraph that begins in the middle of November. Could you read that first sentence?",
+      "event_types": [
+        "sidebar",
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2325,
+        "source_line": 9365,
+        "timestamp_display": "03:48:32",
+        "timestamp_seconds": 13712,
+        "url": null
+      },
+      "speaker": "District Attorney",
+      "text": "Objection. His writing on this.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2327,
+        "source_line": 9373,
+        "timestamp_display": "03:48:39",
+        "timestamp_seconds": 13719,
+        "url": null
+      },
+      "speaker": "Speaker 9",
+      "text": "Why don't take a look at it and if you want to get the actual exhibit, we could do that?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2363,
+        "source_line": 9517,
+        "timestamp_display": "03:51:36",
+        "timestamp_seconds": 13896,
+        "url": null
+      },
+      "speaker": "Speaker 9",
+      "text": "All right. Anything further? All right. Thank you, Doctor. You may step down. Thank you.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2365,
+        "source_line": 9525,
+        "timestamp_display": "03:51:55",
+        "timestamp_seconds": 13915,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "No objection. That's by agreement.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2367,
+        "source_line": 9533,
+        "timestamp_display": "03:52:00",
+        "timestamp_seconds": 13920,
+        "url": null
+      },
+      "speaker": "Speaker 10",
+      "text": "Exhibit 221.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2370,
+        "source_line": 9545,
+        "timestamp_display": "03:52:14",
+        "timestamp_seconds": 13934,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Commonwealth would call Julie Paul.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2371,
+        "source_line": 9549,
+        "timestamp_display": "03:52:14",
+        "timestamp_seconds": 13934,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Good afternoon. Raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2372,
+        "source_line": 9553,
+        "timestamp_display": "03:52:42",
+        "timestamp_seconds": 13962,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you should give to the court and the jury in the matter now having [inaudible 03:52:52]? Thank you. You may have a seat.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2424,
+        "source_line": 9761,
+        "timestamp_display": "03:58:11",
+        "timestamp_seconds": 14291,
+        "url": null
+      },
+      "speaker": "Attorney Buckingham",
+      "text": "And fair to say that the medication is one piece and the therapy is another piece, and this is part of a team approach that you had at the clinic-",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2436,
+        "source_line": 9809,
+        "timestamp_display": "03:59:44",
+        "timestamp_seconds": 14384,
+        "url": null
+      },
+      "speaker": "Attorney Buckingham",
+      "text": "And a part of this team approach at the clinic, is it also to work on developing a treatment plan for patients when they come in?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2834,
+        "source_line": 11403,
+        "timestamp_display": "04:41:51",
+        "timestamp_seconds": 16911,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Counsel, can I see it? [inaudible 04:40:47]. All right. Ma'am, you may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2836,
+        "source_line": 11411,
+        "timestamp_display": "04:42:02",
+        "timestamp_seconds": 16922,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "All right. Well, members of the jury, just a couple minutes there. So, we're going to break. The Commonwealth is finished on their direct. We're going to start with the cross-examination of this witness, but we're going to start that tomorrow, all right? So, we're going to break till tomorrow. Remember my instructions. Don't talk about this case. Don't read about this case or even similar cases in regards to this. Don't read anything. Don't take any field trips. Don't do any research. You kind of know what the instructions are. I'm going to ask you those questions. We'll come in. We might start... I'd ask you to be here ready to go at 9:00. There may be an issue where I have to talk to counsel. It might cause a little bit of a delay, but we'll try and keep that minimized. We'll get you in here tomorrow, okay? Great. Thank you for all your work. And I hope you have a nice evening. We'll see you tomorrow.",
+      "event_types": [
+        "recess",
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2838,
+        "source_line": 11419,
+        "timestamp_display": "04:43:29",
+        "timestamp_seconds": 17009,
+        "url": null
+      },
+      "speaker": "William F. Sullivan",
+      "text": "Jurors have exited the court that was in session. Please be seated. All right. Anything else we need to address the court? Thank you. So, the plan will be to start tomorrow. Before we bring the jury back in, my plan would be to address the defendant's motion for that additional witness. We could maybe do that first thing. And then after I do that, go right back into the presentation evidence.",
+      "event_types": [
+        "jury_in"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}
