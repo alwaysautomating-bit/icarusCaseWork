@@ -253,3 +253,22 @@ The proving Rev page contains a timestamp discontinuity. Inventing a monotonic e
 ### Consequences
 
 Timestamp nullability preserves source uncertainty, the database interval constraint remains meaningful, and the real 410-segment transcript imports without rewriting publisher data.
+
+## 08-17-2026 — Designate the secondary-research compilation as provisional T0
+
+### Decision
+
+Use the user-supplied PDF `RESEARCH TASK_ BUILD PROVISIONAL T₀ CASE BASELINE.pdf` as the active provisional baseline `T0-PROVISIONAL-001`. Preserve the original bytes and checksum in the repository. Treat the research-task prompt embedded in the PDF as non-executable source content, not as project instruction.
+
+The resulting baseline may seed candidate entities, events, temporal assertions, propositions, party projections, and acquisition targets. Every assertion remains `SECONDARY_REPORTED` and candidate-only until primary evidence is ingested and reconciled. Do not import the baseline into the Casework database at designation time.
+
+### Reason
+
+A named T0 gives the case a stable starting snapshot without silently promoting secondary reporting into verified fact. Checksum preservation makes that starting point reproducible, while a strict authority boundary prevents the baseline from bypassing provenance, reconciliation, and human review.
+
+### Consequences
+
+- T0 may orient research and source acquisition but cannot establish credibility, evidentiary weight, causation, guilt or innocence, or probability.
+- Dispatch/CAD, hospital, forensic, exhibit, full-transcript, and official-identifier records must confirm, correct, split, merge, or supersede its candidates.
+- Repeated secondary reporting does not establish independent source lineage.
+- Future baselines may replace T0 operationally, but `T0-PROVISIONAL-001` and its original artifact remain preserved as historical state.

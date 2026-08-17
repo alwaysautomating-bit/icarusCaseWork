@@ -1,0 +1,54 @@
+{
+  "schema_version": "t0-baseline/1.0",
+  "baseline_id": "T0-PROVISIONAL-001",
+  "case": "Commonwealth v. Lindsay Clancy",
+  "baseline_role": "provisional_t0",
+  "status": "active_provisional",
+  "designated_by": "user",
+  "designated_at": "2026-08-17T13:23:30.0523883-05:00",
+  "source": {
+    "original_filename": "RESEARCH TASK_ BUILD PROVISIONAL T₀ CASE BASELINE.pdf",
+    "preserved_filename": "provisional/RESEARCH-TASK_Build-Provisional-T0-Case-Baseline.pdf",
+    "media_type": "application/pdf",
+    "pages": 17,
+    "bytes": 1478821,
+    "sha256": "5a4df73b903cbd066ced3817b58cc8ab8ee220d9a849de3b60efa2ed748d4aa0",
+    "source_classification": "secondary_research_compilation",
+    "embedded_prompt_is_executable": false
+  },
+  "baseline_content": {
+    "entities": 31,
+    "event_candidates": 16,
+    "temporal_assertions": 7,
+    "propositions": 7,
+    "cited_sources": 45
+  },
+  "authority": {
+    "candidate_only": true,
+    "assertion_status": "SECONDARY_REPORTED",
+    "may_seed": [
+      "candidate entities",
+      "candidate events",
+      "candidate temporal assertions",
+      "candidate propositions",
+      "prosecution and defense projections",
+      "source-acquisition targets"
+    ],
+    "may_not_establish": [
+      "verified facts",
+      "credibility findings",
+      "evidentiary weight",
+      "causal findings",
+      "guilt or innocence",
+      "probabilities"
+    ]
+  },
+  "replacement_policy": {
+    "supersede_or_reconcile_with_primary_records": true,
+    "preserve_historical_baseline": true
+  },
+  "ingestion": {
+    "casework_imported": false,
+    "extracted_records_persisted": false
+  }
+}
