@@ -1,0 +1,689 @@
+doctrine: **evidence-first, uncertainty-propagating, scenario-testing engine** that never collapses into a single “case probability” or diagnosis-shaped number.
+
+Below is the revised, minimal V1 architecture for `reconstruct.prob` aligned with your layers, controls, and ethical constraints.
+
+***
+
+## Revised Doctrine (Embedded in the Library)
+
+- **Icarus does not calculate the probability that a person is telling the truth.**  
+- It calculates **how evidence, uncertainty, and required conditions behave under explicitly defined propositions**.
+- For Lindsay V1:  
+  1. Reconstruct observed deterioration.  
+  2. Quantify fragmentation.  
+  3. Test competing explanations.  
+  4. Never let the probability replace the record.
+
+The library enforces this by design.
+
+***
+
+## 1) Architecture Layers (V1)
+
+The engine is explicitly layered. Each layer has:
+
+- Clear inputs/outputs.
+- Explicit uncertainty handling.
+- No silent rewriting of the evidence graph.
+
+### Layer 1 — Evidence Graph (Authoritative)
+
+**Module:** `reconstruct.prob.evidence`
+
+This is the immutable source of truth. The probabilistic system **reads** from this graph; it never writes back.
+
+Core objects:
+
+- `Source`: immutable record (journal page, medical note, call log, trial transcript).
+- `Claim`: attributed statement with source lineage.
+- `ObservableEvent`: time-indexed event with:
+  - `interval` (not just point time),
+  - `measurement_uncertainty`,
+  - `source_dependence`,
+  - `missingness_flags`.
+- `Entity`: resolved via SAME (your identity control layer).
+- `Relationship`: accepted/rejected relationships from SAME, not raw probabilistic matches.
+- `Contradiction`: explicit conflicts between claims/events.
+- `EvidentiaryState`: e.g., “record missing”, “clock drift suspected”, “device possession unknown”.
+
+Key principle:
+
+- Probabilistic models consume `ObservableEvent` objects with their uncertainty metadata intact.
+- No model is allowed to “clean” or “impute away” uncertainty at this layer.
+
+***
+
+### Layer 2 — Measurement Uncertainty
+
+**Module:** `reconstruct.prob.evidence.measurement_uncertainty`
+
+This is where Monte Carlo begins: propagating uncertainty already present in the record.
+
+Responsibilities:
+
+- Represent:
+  - Approximate witness times (intervals, not points).
+  - Clock drift.
+  - Location accuracy.
+  - Medication adherence uncertainty.
+  - Ambiguous dates.
+  - Incomplete sleep estimates.
+  - Source dependence.
+  - Uncertain device possession.
+  - Medical measurement intervals.
+- Attach uncertainty distributions to event attributes:
+  - `timestamp ~ Uniform(t_min, t_max)`
+  - `sleep_hours ~ Normal(mu, sigma)` with sigma reflecting self-report noise.
+  - `med_taken ~ Bernoulli(p_adherence)` where `p_adherence` comes from patient report or clinical notes.
+
+Core API:
+
+```python
+class UncertainEvent:
+    base_event: ObservableEvent
+    uncertainty_specs: Dict[str, DistributionSpec]
+
+class DistributionSpec:
+    family: str          # "uniform", "normal", "beta", "bernoulli", etc.
+    params: Dict[str, float]
+    rationale: str       # why this uncertainty model?
+    source_refs: List[str]
+
+def attach_uncertainty(
+    event: ObservableEvent,
+    specs: Dict[str, DistributionSpec],
+) -> UncertainEvent:
+    ...
+
+def sample_event(
+    ue: UncertainEvent,
+    rng: np.random.Generator,
+) -> ObservableEvent:
+    """
+    Draw one Monte Carlo realization of the event.
+    """
+    ...
+```
+
+Outputs:
+
+- A collection of `UncertainEvent` objects ready for Monte Carlo simulation.
+- All uncertainty rationales are stored and auditable.
+
+***
+
+### Layer 3 — Longitudinal Pattern Detection
+
+**Module:** `reconstruct.prob.longitudinal`
+
+Goal: detect **when** patterns materially change, not **why**.
+
+Models (V1):
+
+- **Bayesian change-point detection** (primary).
+- **CUSUM / EWMA** (transparent, easy-to-explain comparators).
+- **Recurrence analysis** (e.g., repeated crises, repeated help-seeking).
+- **Conditional sequence frequency** (e.g., “med change → worsening sleep”).
+- **Rolling-window burden measures**:
+  - Sleep-loss accumulation.
+  - Medication-change density.
+  - Care-contact fragmentation.
+  - Social-network contraction.
+  - Escalation following autonomy or help-seeking.
+
+Core API:
+
+```python
+class LongitudinalPatternEngine:
+    """
+    Detects change-points and pattern shifts in event-derived time series.
+    """
+
+    def __init__(
+        self,
+        series_fn: callable,  # events -> (times, values)
+        methods: List[str] = ["bayesian_cp", "cusum", "ewma"],
+    ):
+        ...
+
+    def detect_changes(
+        self,
+        events: List[ObservableEvent],
+        variable: str,  # e.g. "sleep_hours", "suicidality_score"
+    ) -> List[ChangePointResult]:
+        ...
+
+class ChangePointResult:
+    time: datetime
+    magnitude: float
+    credible_interval: Tuple[float, float]
+    method: str
+    contributing_events: List[str]  # event IDs
+    missing_periods: List[Tuple[datetime, datetime]]
+    sensitivity_notes: Optional[str]
+```
+
+Outputs:
+
+- Posterior change-point dates with:
+  - Credible intervals.
+  - Contributing evidence.
+  - Missing periods.
+  - Sensitivity notes (e.g., “result unstable if journal entries from week 3 excluded”).
+
+These results feed into Layer 4 but do **not** themselves assert diagnoses.
+
+***
+
+### Layer 4 — Bounded Latent-State Modeling
+
+**Module:** `reconstruct.prob.longitudinal.latent_states`
+
+Purpose: estimate **functional patterns**, not clinical or legal labels.
+
+Recommended state vocabulary (example):
+
+- `baseline_consistent`
+- `materially_changed`
+- `severe_functional_disruption`
+- `acute_high_concern_interval`
+- `post_incident`
+
+Avoid: `stable`, `psychotic`, `criminally_responsible`.
+
+Core API:
+
+```python
+class BoundedStateModel:
+    """
+    HMM/HSMM for functional patterns, not diagnoses.
+    """
+
+    def __init__(
+        self,
+        state_labels: List[str],
+        observation_features: List[str],
+        prior_transition: Optional[np.ndarray] = None,
+        prior_emission: Optional[np.ndarray] = None,
+    ):
+        ...
+
+    def fit(
+        self,
+        events: List[ObservableEvent],
+        time_bin: str = "D",
+        feature_fn: callable = None,
+    ) -> "BoundedStateModel":
+        ...
+
+    def infer_state_probabilities(
+        self,
+        events: List[ObservableEvent],
+        time_bin: str = "D",
+        feature_fn: callable = None,
+    ) -> List[Dict[str, float]]:
+        """
+        Returns, for each time bin, P(state | data, model assumptions).
+        Keys are state_labels.
+        """
+        ...
+
+class StateInferenceResult:
+    time: datetime
+    state_distribution: Dict[str, float]
+    credible_intervals: Dict[str, Tuple[float, float]]
+    driving_observations: List[str]
+    missing_observations: List[str]
+    prior_sensitivity: str          # e.g. "low", "moderate", "high"
+    alternate_specs: List[str]       # IDs of alternate model specs
+    disputed_sources_excluded: bool  # whether run excluded disputed sources
+```
+
+Output discipline:
+
+- Always present as:  
+  “The model assigns a 0.76 posterior probability to the `severe_functional_disruption` pattern on January 3, based on the declared observations and model assumptions.”
+- Always show:
+  - Credible interval.
+  - Driving observations.
+  - Missing observations.
+  - Sensitivity to prior selection.
+  - Alternate specifications.
+  - Stability when disputed sources are excluded.
+
+***
+
+### Layer 5 — Scenario Lab (Competing Propositions)
+
+**Module:** `reconstruct.prob.scenarios`
+
+Each account (prosecution, defense, media, research hypothesis) is a **proposition set**, not a monolithic story.
+
+Core objects:
+
+```python
+class Proposition:
+    id: str
+    name: str  # e.g. "prosecution_timeline_v1"
+    required_events: List[EventConstraint]
+    required_states: List[StateConstraint]
+    timing_constraints: List[TimingConstraint]
+    causal_assumptions: List[str]
+    asserted_knowledge: List[KnowledgeClaim]
+    asserted_capability: List[CapabilityClaim]
+    expected_evidence: List[EvidenceExpectation]
+    acceptable_contradictions: List[str]
+
+class Scenario:
+    id: str
+    propositions: List[Proposition]
+    metadata: Dict
+```
+
+Engine:
+
+- Evaluates **likelihoods**: \( P(E \mid H_i) \), not posteriors \( P(H_i \mid E) \).
+- For each hypothesis \( H_i \):
+  - Simulate evidence under \( H_i \) given uncertainty.
+  - Compare simulated evidence to actual evidence.
+  - Compute likelihood or likelihood ratio.
+
+Core API:
+
+```python
+class ScenarioLab:
+    def __init__(
+        self,
+        scenarios: List[Scenario],
+        evidence_graph: EvidenceGraph,
+        uncertainty_engine: UncertaintyEngine,
+    ):
+        ...
+
+    def evaluate_likelihoods(
+        self,
+        events: List[ObservableEvent],
+        n_simulations: int = 10000,
+    ) -> Dict[str, ScenarioResult]:
+        ...
+
+class ScenarioResult:
+    scenario_id: str
+    log_likelihood: float
+    likelihood_ratio_vs_baseline: Optional[float]
+    feasibility_rate: float         # fraction of simulations satisfying constraints
+    failure_reasons: Dict[str, int] # counts of why sequences failed
+    required_conditions: List[str]
+    sensitivity_analysis: Dict[str, Any]
+    missing_discriminating_evidence: List[str]
+```
+
+Key discipline:
+
+- Do **not** convert likelihood ratios into “probability the prosecution is correct”.
+- Present:
+  - “Under hypothesis H₁, the observed evidence has log-likelihood −23.4.”
+  - “8% of sampled timelines satisfy the prosecution’s proposed sequence.”
+  - “This result is highly sensitive to assumptions about X and Y.”
+
+***
+
+## 2) The Three Probability Types (Explicit in the API)
+
+The library keeps these distinct and never blends them into one number.
+
+### 1) Event Probability
+
+**Module:** `reconstruct.prob.temporal`
+
+Question: *Could this sequence occur within the available time and physical constraints?*
+
+Tools:
+
+- Temporal feasibility engine.
+- Monte Carlo over:
+  - Timestamp intervals.
+  - Travel-time distributions.
+  - Action-duration ranges.
+  - Location uncertainty.
+  - Medical timing.
+  - Device possession assumptions.
+
+Outputs:
+
+- Surviving sequences.
+- Failure reasons.
+- Required conditions.
+- Sensitivity analysis.
+- Missing discriminating evidence.
+
+### 2) Evidence Likelihood
+
+**Module:** `reconstruct.prob.scenarios`
+
+Question: *How expected is this observation under a particular hypothesis?*
+
+Tools:
+
+- Scenario Lab.
+- Likelihood ratios.
+- Feasibility rates.
+- Assumption counts.
+- Sensitivity analyses.
+
+Outputs:
+
+- \( P(E \mid H_i) \) for each hypothesis.
+- Likelihood ratios between hypotheses.
+- Explicit assumptions and their impact.
+
+### 3) State Probability
+
+**Module:** `reconstruct.prob.longitudinal.latent_states`
+
+Question: *How likely was a person to occupy a latent functional pattern?*
+
+Tools:
+
+- Bounded HMM/HSMM.
+- Change-point informed priors.
+- Longitudinal burden measures.
+
+Outputs:
+
+- Posterior probabilities over functional patterns.
+- Credible intervals.
+- Driving and missing observations.
+- Sensitivity to priors and disputed sources.
+
+The library never computes a single “case probability” that blends these.
+
+***
+
+## 3) Revised V1 Trio (Implementation Priority)
+
+Per your recommendation, V1 focuses on:
+
+### 1) Temporal Feasibility Engine
+
+**Module:** `reconstruct.prob.temporal`
+
+Inputs:
+
+- Timestamp intervals.
+- Travel-time distributions.
+- Action-duration ranges.
+- Location uncertainty.
+- Medical timing.
+- Device possession assumptions.
+
+Outputs:
+
+- Surviving sequences.
+- Failure reasons.
+- Required conditions.
+- Sensitivity analysis.
+- Missing discriminating evidence.
+
+Core API:
+
+```python
+class TemporalFeasibilityEngine:
+    def __init__(
+        self,
+        constraints: List[TemporalConstraint],
+        duration_distributions: Dict[str, DistributionSpec],
+        travel_model: TravelModel,
+    ):
+        ...
+
+    def simulate_sequences(
+        self,
+        events: List[UncertainEvent],
+        n_simulations: int = 10000,
+    ) -> FeasibilityResult:
+        ...
+
+class FeasibilityResult:
+    surviving_fraction: float
+    surviving_sequences: List[Sequence]
+    failure_reasons: Dict[str, int]
+    required_conditions: List[str]
+    sensitivity_analysis: Dict[str, Any]
+    missing_discriminating_evidence: List[str]
+```
+
+### 2) Longitudinal Change Engine
+
+**Module:** `reconstruct.prob.longitudinal`
+
+Inputs:
+
+- Journal-derived observations.
+- Sleep.
+- Medications.
+- Clinical contacts.
+- Suicidality.
+- Cognition.
+- Appetite/weight.
+- Childcare burden.
+- Help-seeking.
+
+Outputs:
+
+- Posterior change-point dates.
+- Pre/post change magnitude.
+- Evidence contributing to each shift.
+- Agreement across alternate models.
+- Uncertainty from missing periods.
+
+### 3) Care Fragmentation Engine
+
+**Module:** `reconstruct.prob.systems.fragmentation`
+
+Start with observable graph conditions:
+
+- Provider did not receive another provider’s record.
+- Medication reconciliation absent.
+- Conflicting instructions.
+- Requested admission declined.
+- Follow-up not completed.
+- Responsibility unclear.
+- High-risk information present in one record but absent from the next.
+- Worsening trajectory without coordinated reassessment.
+
+Then estimate:
+
+\[
+P(\text{material fragmentation} \mid \text{observed handoff evidence})
+\]
+
+But UI always shows underlying operational failures, not just a score.
+
+Core API:
+
+```python
+class FragmentationEngine:
+    def __init__(
+        self,
+        prior: Prior,  # on fragmentation probability
+    ):
+        ...
+
+    def compute_fragmentation(
+        self,
+        events: List[ObservableEvent],
+        handoff_types: List[str],
+        failure_types: List[str],
+    ) -> FragmentationResult:
+        ...
+
+class FragmentationResult:
+    p_material_fragmentation: float
+    credible_interval: Tuple[float, float]
+    operational_failures: List[OperationalFailure]
+    sensitivity_notes: Optional[str]
+
+class OperationalFailure:
+    description: str
+    evidence_refs: List[str]
+    time: datetime
+```
+
+Example output (what the user sees):
+
+> Four clinicians treated her across 31 days. Three lacked another active provider’s notes. Two medication transitions occurred without documented reconciliation. Suicidality appeared in one record and was absent from the next assessment.  
+>  
+> Estimated \( P(\text{material fragmentation} \mid \text{evidence}) = 0.79 \) (95% CI 0.61–0.91).
+
+***
+
+## 4) Priors with Applicability Metadata
+
+**Module:** `reconstruct.prob.audit.prior_registry`
+
+Every prior is a versioned object with full lineage.
+
+Schema (as you specified):
+
+```python
+class Prior:
+    id: str                     # e.g. "postpartum_sleep_crisis_v1"
+    parameter: str
+    population: PopulationSpec
+    source: SourceSpec
+    distribution: DistributionSpec
+    applicability: ApplicabilitySpec
+    limitations: List[str]
+    created_at: datetime
+    version: str
+
+class PopulationSpec:
+    geography: str
+    postpartum_window: str
+    inclusion_criteria: List[str]
+
+class SourceSpec:
+    type: str                   # "meta_analysis", "cohort", "internal"
+    citation: str
+    sample_size: int
+
+class DistributionSpec:
+    family: str                 # "beta", "normal", etc.
+    params: Dict[str, float]
+
+class ApplicabilitySpec:
+    directness: str             # "high", "moderate", "low"
+    differences: List[str]
+```
+
+The posterior always retains the prior’s lineage in `ModelRun` metadata.
+
+***
+
+## 5) Required Uncertainty Controls (Audit Layer)
+
+**Module:** `reconstruct.prob.audit`
+
+Every `ModelRun` must record:
+
+- Model version.
+- Evidence cutoff date.
+- Included and excluded sources.
+- Prior versions.
+- Distribution assumptions.
+- Missing-data treatment.
+- Source-dependence adjustments.
+- Random seed.
+- Simulation count.
+- Convergence diagnostics.
+- Posterior predictive checks.
+- Sensitivity analysis.
+- Generated output timestamp.
+
+And the critical control:
+
+- **Re-run excluding each disputed or interested source** to test robustness.
+
+Schema:
+
+```python
+class ModelRun:
+    id: str
+    model_type: str
+    model_version: str
+    subject_id: str
+    evidence_cutoff: datetime
+    included_source_ids: List[str]
+    excluded_source_ids: List[str]
+    prior_ids: List[str]
+    distribution_assumptions: Dict[str, Any]
+    missing_data_treatment: str
+    source_dependence_adjustments: Dict[str, Any]
+    random_seed: int
+    n_simulations: int
+    convergence_diagnostics: Dict[str, Any]
+    posterior_predictive_checks: Dict[str, Any]
+    sensitivity_analyses: List[SensitivityResult]
+    created_at: datetime
+    outputs: Dict[str, Any]
+```
+
+***
+
+## 6) Revised Library Shape
+
+```
+reconstruct.prob
+├── evidence
+│   ├── graph.py              # EvidenceGraph, ObservableEvent, Claim, Source
+│   ├── same_integration.py   # SAME resolution wrapper
+│   ├── measurement_uncertainty.py
+│   ├── source_dependence.py
+│   └── missingness.py
+├── temporal
+│   ├── interval_constraints.py
+│   ├── monte_carlo.py
+│   └── feasibility.py        # TemporalFeasibilityEngine
+├── longitudinal
+│   ├── trajectories.py
+│   ├── change_points.py
+│   ├── burden_windows.py
+│   └── latent_states.py      # BoundedStateModel
+├── systems
+│   ├── handoffs.py
+│   ├── fragmentation.py      # FragmentationEngine
+│   └── responsibility_gaps.py
+├── scenarios
+│   ├── propositions.py
+│   ├── likelihoods.py
+│   ├── feasibility.py
+│   └── sensitivity.py        # ScenarioLab
+└── audit
+    ├── model_runs.py
+    ├── prior_registry.py
+    └── reproducibility.py
+```
+
+***
+
+## 7) Operational Doctrine (Enforced by Design)
+
+- The **evidence graph is authoritative**; models read, never rewrite.
+- **SAME** is the identity control layer; probabilistic linkage is only candidate generation.
+- No model output is shown without:
+  - Uncertainty intervals.
+  - Source lists (included/excluded).
+  - Sensitivity analyses.
+  - Alternate specifications.
+- The library never produces:
+  - A single “probability the prosecution is correct”.
+  - A diagnosis-like label without explicit functional wording and uncertainty.
+- Every probability has **provenance**: prior lineage, data cuts, assumptions.
+
+***
+
+If you’d like, next I can:
+
+- Generate a minimal code skeleton for `reconstruct.prob` with these modules and stub classes.
+- Or design the Supabase schema for `evidence_graph`, `priors`, `model_runs`, and `scenarios` to back this architecture.

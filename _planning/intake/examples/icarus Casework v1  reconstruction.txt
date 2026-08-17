@@ -1,0 +1,283 @@
+icarus Casework v1 : reconstruction engine for True Crime podcast research
+
+### 1) Purpose and Scope
+
+Icarus v1 is a reconstruction engine that assembles a multi-source, time-indexed narrative of a person’s deterioration and the surrounding system failures, using their own records plus institutional fragments—without allowing any single actor or institution to become the default narrator. 
+
+For the Lindsay Clancy case, the goal is not to argue guilt/innocence or identify an alternative perpetrator, but to answer: **What had to happen to this woman—in her body, brain, household, and healthcare system—for January 24 to become possible?** 
+
+This becomes a reusable framework for other postpartum cases where suffering becomes a tragedy, a diagnosis attached only to them, or a criminal case.
+
+***
+
+### 2) Core Principles
+
+These principles protect the work from advocacy drift and narrative capture:
+
+- **Preserve her voice.** Her dated words, messages, and journal entries are primary. 
+- **Reconstruct the conditions.** Model sleep, meds, clinical contacts, workload, childcare, and household demands as first-class data. 
+- **Test every account equally.** Police, clinicians, family, media, prosecution, defense—all are treated as partial, time-stamped observations. 
+- **Show evidence and uncertainty.** Every claim is traceable to a source, with explicit confidence/uncertainty tags. 
+- **No default narrator.** The system, not a person or institution, is the narrator; all attributions are explicit. 
+
+***
+
+### 3) Narrative Structure (V1 Story Arc)
+
+The reconstruction is organized into five sections, each driven by time-indexed evidence.
+
+#### 3.1 The Woman
+
+Baseline reconstruction:
+
+- Identity and roles: labor-and-delivery nurse, partner, parent of three young children. 
+- Work patterns, shifts, on-call expectations, commute, and support network. 
+- Pregnancy, birth, postpartum physiology, prior mental health history, and functioning before deterioration. 
+
+Outputs:
+
+- A “baseline profile” with timelines of work, caregiving load, and known health status.
+
+#### 3.2 The Deterioration
+
+A layered timeline built from her own words plus parallel streams:
+
+- **Her journal and communications**: dated entries, texts, emails, posts. 
+- **Sleep**: documented or inferred sleep duration/quality. 
+- **Medications**: prescriptions, changes, adherence, side effects. 
+- **Clinical contacts**: OB, psychiatry, primary care, ER visits, telehealth. 
+- **Weight/appetite/cognition**: self-reports, clinical notes. 
+- **Suicidality and ideation**: explicit statements, plans, urges. 
+- **Hospital admissions**: psych holds, medical admissions, discharge plans. 
+- **Observations from others**: partner, family, friends, coworkers, clinicians. 
+- **Childcare and household demands**: who did what, when, and under what constraints. 
+
+Outputs:
+
+- A **multi-stream deterioration timeline** with confidence scores and source attributions for each event.
+
+#### 3.3 The System Around Her
+
+Focus on information flow and responsibility:
+
+- **Who knew what, when?** Map each clinician’s view of the record at each point. 
+- **Fragmentation**: what information failed to move between providers, settings, or caregivers? 
+- **Support offered vs. responsibility retained**: referrals, safety plans, follow-ups, and what remained her burden. 
+- **Institutional constraints**: visit lengths, documentation burdens, handoff practices, insurance/coverage limits. 
+
+Outputs:
+
+- A **system graph** showing nodes (clinicians, institutions, family) and edges (information shared, referrals, missed handoffs).
+
+#### 3.4 The Incident Window
+
+A constrained, evidence-only reconstruction of the final catastrophic interval:
+
+- **Timestamps**: calls, texts, device activity, location pings, known movements. 
+- **Physical evidence**: scene reports, medical examiner findings, photos, 911 logs. 
+- **Medical evidence**: vitals, injuries, intubation, core temperature (~82.1°F), thoracic-spine fractures, paralysis, communication via whiteboard while intubated. 
+- **Explicit uncertainty**: mark unknowns, conflicting accounts, and gaps; do not fill with speculation. 
+
+Outputs:
+
+- A **minute-by-minute (or best-available) incident timeline** with confidence levels and “unknown” markers.
+
+#### 3.5 The Narrative Capture
+
+Track how her story became public narrative:
+
+- **Attributed statements → police assumptions**: which quotes or behaviors became “facts” in the investigation? 
+- **Media facts**: how headlines and stories hardened partial accounts into settled narrative. 
+- **Prosecution/defense theories**: how each side framed intent, responsibility, and mental state. 
+- **Public beliefs**: dominant narratives about postpartum women, “monsters,” and maternal fitness. 
+
+Outputs:
+
+- A **narrative genealogy** showing how specific claims traveled and mutated across actors and time.
+
+#### 3.6 The Postpartum Story (Synthesis)
+
+Use the reconstruction to articulate what her case reveals:
+
+- Treatment of maternal distress as an individual defect vs. a system-level failure. 
+- Unmeasured burdens: care load, sleep deprivation, relationship strain, treatment fragmentation, operating environment. 
+- Design implications for clinical, legal, and social systems to recognize at-risk postpartum women earlier. 
+
+***
+
+### 4) Data Model (V1)
+
+Icarus treats everything as time-indexed, source-attributed events.
+
+#### 4.1 Core Entities
+
+- **Person**: Lindsay (primary subject), plus other actors (partner, clinicians, family, institutions).
+- **Event**: Any time-stamped occurrence (journal entry, med change, call, visit, observation).
+- **Document**: Source artifact (journal page, medical record, text thread, trial transcript, news article).
+- **Claim**: A derived statement (e.g., “She reported suicidal ideation on X date”) with:
+  - source_refs: list of document IDs
+  - confidence: low/medium/high or numeric
+  - uncertainty_notes: what is unclear or contested
+- **SystemNode**: Clinician, clinic, hospital, insurer, family member, etc.
+- **InformationFlow**: Directed edge showing what information moved between nodes and when.
+
+#### 4.2 Event Schema (Simplified)
+
+Each event includes:
+
+- `id`
+- `timestamp` (or range)
+- `type` (journal_entry, med_change, clinical_visit, call, observation, etc.)
+- `actor` (who generated or is described)
+- `content` (text, summary, or structured fields)
+- `source_documents` (IDs)
+- `confidence`
+- `uncertainty_flags`
+- `tags` (sleep, meds, suicidality, cognition, childcare, etc.)
+
+***
+
+### 5) Ingestion and Evidence Pipeline
+
+#### 5.1 Source Types (V1)
+
+For the Lindsay case, prioritize:
+
+- **Her journal and personal writings** (as reported in media and trial coverage). 
+- **Medical records**: OB, psychiatry, ER, hospitalizations, discharge summaries. 
+- **Communications**: texts, emails, voicemails referenced in reporting or court. 
+- **Witness testimony**: partner, family, coworkers, clinicians (via trial transcripts, news). 
+- **Trial record**: prosecution/defense filings, expert testimony, judge’s instructions, verdict/coverage. 
+- **Media coverage**: AP, local news, long-form features that cite documents or testimony. 
+
+#### 5.2 Ingestion Steps
+
+1. **Collect and normalize** documents into a canonical format (PDF/text/structured).
+2. **Extract time-indexed events** using:
+   - Deterministic rules (dates, times, med names, dosages, visit types).
+   - LLM-assisted extraction with strict schema and human review for sensitive claims.
+3. **Link events to source documents** with page/section references.
+4. **Tag events** by domain (sleep, meds, suicidality, cognition, childcare, system failures).
+5. **Assign confidence and uncertainty** based on:
+   - Directness (her own words vs. secondhand report).
+   - Corroboration (multiple independent sources).
+   - Consistency (internal and cross-source).
+
+***
+
+### 6) Reconstruction Engine
+
+#### 6.1 Timeline Construction
+
+- Build a **unified chronological stream** of events across all domains.
+- Allow multiple “views”:
+  - Her-voice view (her entries and communications prioritized).
+  - Clinical view (medical/psych events).
+  - Household view (childcare, sleep, domestic load).
+  - System view (information flows and missed handoffs).
+  - Incident view (final interval only).
+
+#### 6.2 Uncertainty Handling
+
+- Every claim has:
+  - `confidence_level`
+  - `conflicting_accounts` (if any)
+  - `unknowns` (explicit gaps)
+- Visual cues in UI: solid lines (high confidence), dashed (medium), dotted (low), gray gaps (unknown).
+
+#### 6.3 Narrative Capture Module
+
+- Track how specific claims evolve:
+  - Original statement → police report → indictment → media headline → public narrative.
+- Tag transformations:
+  - Omission, amplification, re-framing, decontextualization.
+
+***
+
+### 7) Ethical and Legal Guardrails
+
+These are non-negotiable design constraints.
+
+- **No advocacy mode.** The system does not start from “save Lindsay,” “convict Lindsay,” or “prove Patrick did it.” 
+- **Human-in-the-loop for sensitive inferences.** Any mental-state or intent-related inference must be reviewable and editable by a human researcher.
+- **Privacy and dignity.** Even in a public case, minimize gratuitous detail; focus on structural understanding.
+- **Clear provenance.** Every displayed fact must be traceable to a source; no hidden AI inference presented as fact.
+- **Uncertainty-first framing.** When evidence is weak or conflicting, the UI must foreground that, not bury it.
+
+***
+
+### 8) User Experience (V1)
+
+Target users: researchers, journalists, advocates, clinicians, policy designers.
+
+#### 8.1 Core Views
+
+- **Timeline Explorer**: scrollable, filterable by domain (sleep, meds, clinical, household, system).
+- **System Map**: graph of actors and information flows, with highlighted breaks/missed handoffs.
+- **Incident Reconstructor**: focused view on the final interval, with explicit unknowns.
+- **Narrative Genealogy**: flow diagram of how specific claims traveled and mutated.
+- **Evidence Panel**: for any selected event/claim, show source excerpts, confidence, and notes.
+
+#### 8.2 Interaction Patterns
+
+- Click any claim → see sources, confidence, and conflicting accounts.
+- Toggle filters: “Show only Lindsay’s own words,” “Show only clinical events,” etc.
+- Export: generate a report for a specific question (e.g., “What did clinicians know by date X?”).
+
+***
+
+### 9) Technical Architecture (High Level)
+
+Given your stack preferences, a pragmatic V1:
+
+- **Backend**: Python (FastAPI) + Supabase (Postgres + storage) for events, documents, and claims. [your background]
+- **Ingestion**:
+  - LlamaParse/LlamaIndex or similar for document parsing and chunking. [your background]
+  - LLM layer (Claude or equivalent) for structured event extraction with strict JSON schemas. [your background]
+- **Data Model**:
+  - Tables: `persons`, `documents`, `events`, `claims`, `system_nodes`, `information_flows`.
+  - Heavy use of JSONB for flexible event payloads, with core fields indexed.
+- **Reconstruction Engine**:
+  - Time-sorting, tagging, confidence scoring, and view generation as pure functions over the event table.
+- **Frontend**:
+  - React/Next.js or similar, with timeline and graph visualizations.
+  - Clear provenance and uncertainty UI patterns.
+
+***
+
+### 10) V1 Scope for the Lindsay Case
+
+To keep V1 achievable:
+
+- **In scope**:
+  - Journal and key personal writings (as available via reporting). 
+  - Major medical/psychiatric contacts and hospitalizations. 
+  - Key witness observations cited in trial/media. 
+  - Core incident-window facts from trial reporting and AP accounts. 
+  - Narrative capture for 5–10 pivotal claims (e.g., “she was fine,” “she planned this,” “no one knew”). 
+
+- **Out of scope (for V1)**:
+  - Full trial transcript ingestion.
+  - Exhaustive media corpus.
+  - Deep forensic reconstruction beyond what’s publicly documented.
+
+***
+
+### 11) Success Criteria (V1)
+
+Icarus v1 succeeds if it can:
+
+- Produce a **coherent, source-backed timeline** of Lindsay’s deterioration and system context. 
+- Make her **own voice clearly audible** alongside institutional fragments. 
+- Surface **specific, concrete system failures** (missed handoffs, fragmented care, unshared information). 
+- Represent the **incident window** with disciplined uncertainty, not speculation. 
+- Show how **narratives formed and hardened** from partial accounts. 
+- Be adaptable as a template for other postpartum cases without re-architecting.
+
+***
+
+If you’d like, I can next:
+
+- Turn this into a more formal Markdown spec file you can drop into your repo.
+- Sketch a concrete Supabase schema (tables + key fields) for the V1 data model.
+- Outline a minimal ingestion pipeline for one source type (e.g., journal entries + major news articles) as a proof-of-concept.

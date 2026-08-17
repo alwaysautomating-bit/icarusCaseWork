@@ -1,0 +1,13 @@
+CREATE TYPE review_disposition AS ENUM ('accepted','amended_accepted','rejected','deferred','cancelled');
+CREATE TYPE claim_status AS ENUM ('candidate','accepted','rejected','deferred');
+CREATE TYPE time_precision AS ENUM ('exact','approximate','interval','relative','unknown');
+CREATE TABLE cases (id uuid PRIMARY KEY, title text NOT NULL, purpose text NOT NULL, public_record_cutoff timestamptz NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE source_artifacts (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), title text NOT NULL, media_type text NOT NULL, sha256 text NOT NULL, byte_length integer NOT NULL, object_key text NOT NULL, acquired_from text NOT NULL, is_authorized boolean NOT NULL, created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(case_id, sha256));
+CREATE TABLE source_segments (id uuid PRIMARY KEY, artifact_id uuid NOT NULL REFERENCES source_artifacts(id), locator_type text NOT NULL, locator jsonb NOT NULL, exact_text text NOT NULL);
+CREATE TABLE claims (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), source_segment_id uuid NOT NULL REFERENCES source_segments(id), claimant text NOT NULL, assertion text NOT NULL, claimed_event_time timestamptz, statement_time timestamptz, status claim_status NOT NULL DEFAULT 'candidate', created_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX claim_case_idx ON claims(case_id);
+CREATE TABLE review_decisions (id uuid PRIMARY KEY, claim_id uuid NOT NULL REFERENCES claims(id), reviewer_name text NOT NULL, disposition review_disposition NOT NULL, rationale text NOT NULL, reviewed_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE events (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), promoted_from_claim_id uuid NOT NULL UNIQUE REFERENCES claims(id), title text NOT NULL, event_time_start timestamptz, event_time_end timestamptz, time_precision time_precision NOT NULL, epistemic_state text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE evidence_snapshots (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), manifest_sha256 text NOT NULL, created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE snapshot_artifacts (snapshot_id uuid NOT NULL REFERENCES evidence_snapshots(id), artifact_id uuid NOT NULL REFERENCES source_artifacts(id), PRIMARY KEY(snapshot_id, artifact_id));
+CREATE INDEX event_case_time_idx ON events(case_id, event_time_start);

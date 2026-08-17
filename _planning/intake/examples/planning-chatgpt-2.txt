@@ -1,0 +1,259 @@
+Yes. That is a real V1 because you already have a bounded set of testable anomalies, a public trial record unfolding in real time, competing legal accounts, and a longitudinal health history.
+
+But the model must split your observations into different evidentiary roles. Some constrain the incident directly; others supply context, base rates, or hypotheses requiring verification.
+
+## V1 research question
+
+> **What conditions must be true for each proposed reconstruction of the deaths, Lindsay Clancy’s actions, and her mental state to remain consistent with the physical evidence, verified timeline, treatment record, household conditions, and relevant population-level research?**
+
+The trial currently centers primarily on criminal responsibility. Her defense does not dispute that she caused the deaths; it argues that severe mental illness prevented legal responsibility, while prosecutors contend that she acted deliberately and understood the wrongfulness of her conduct. The trial is ongoing, so every reconstruction needs versioning by trial date. [Associated Press trial overview](https://apnews.com/article/c977c42546d3b496df6d44924149451b)
+
+## Four synchronized reconstructions
+
+### 1. Physical event reconstruction
+
+* Exact ligature material
+* Configuration around each child
+* Whether knots were present
+* Knot type and consistency across victims
+* Required tying sequence
+* Required force and dexterity
+* Estimated duration
+* Locations and movement between locations
+* Injury timing
+* Lindsay’s injuries and physical capacity
+* Available incident window
+* DNA, fingerprints, and trace evidence
+* Whether the scene was altered
+
+The “specific sailor knot” claim must remain **unverified** until it can be tied to testimony, photographs, an exhibit description, or qualified knot analysis. Reliable public reporting I found confirms exercise-band ligatures, but does not yet establish the precise knot characterization.
+
+If the configuration matters, the research process would be:
+
+1. Obtain the best legally public images or exhibit descriptions.
+2. Have the structure classified without telling the examiner the preferred theory.
+3. Determine whether it is genuinely specialized.
+4. Estimate how quickly novices and experienced people can reproduce it.
+5. Search the record for demonstrated knot experience, occupation, hobbies, instructional searches, or prior exposure for every person with opportunity.
+
+“Women don’t know sailor knots” cannot serve as a model input. A defensible variable is:
+
+> **Does this individual have demonstrated knowledge or exposure sufficient to construct this specific configuration under the available conditions?**
+
+Gender can inform a carefully sourced population prior, but individual evidence must dominate it.
+
+### 2. Mental and physical state reconstruction
+
+Build a day-by-day record for at least the preceding 90 days, with intensive resolution over the final 30:
+
+* prescribed medications
+* actual administration when known
+* starts, stops, dose changes, and cross-tapers
+* blood concentrations and collection times
+* insomnia and estimated sleep
+* appetite and weight changes
+* suicidal thoughts
+* intrusive thoughts
+* unusual beliefs or reported voices
+* speech, affect, functioning, and cognition
+* clinical contacts and rejected admissions
+* diagnoses considered
+* clinician disagreements
+* inpatient admission and discharge
+* help-seeking behavior
+* family observations
+* physical illness and postpartum recovery
+
+Medication evidence should not be compressed into “overmedicated” or “noncompliant.” Each medication becomes an event series:
+
+[
+\text{prescribed}
+\rightarrow
+\text{dispensed}
+\rightarrow
+\text{reportedly taken}
+\rightarrow
+\text{detected}
+\rightarrow
+\text{possible clinical effect}
+]
+
+Trial testimony has addressed multiple psychiatric medications, disputed treatment interpretation, and detected blood concentrations. [Guardian toxicology report](https://www.theguardian.com/us-news/2026/aug/05/lindsay-clancy-trial-toxicologist-testimony)
+
+### 3. Care environment reconstruction
+
+This is the missing postpartum operating record:
+
+* Who provided childcare each day?
+* Who protected her sleep?
+* Who prepared meals?
+* Who scheduled and transported her to appointments?
+* Who managed children’s health needs?
+* What help was offered?
+* Who accepted or declined it?
+* What reasons were given at the time?
+* What workload remained hers despite documented deterioration?
+* When was she left alone with all three children?
+* How did responsibilities change after hospitalization?
+
+Your Miralax observation belongs here as a sequence, with no motive assigned:
+
+1. A child needed an OTC medication.
+2. Lindsay researched availability.
+3. Lindsay contacted CVS.
+4. Lindsay asked Patrick to retrieve it.
+5. Patrick also retrieved dinner.
+6. Determine who selected, ordered, and otherwise coordinated the meal.
+7. Compare this with the reported severity of her condition and previously offered support.
+
+Trial reporting confirms testimony that Lindsay contacted CVS about children’s Miralax and that Patrick left to collect medication and takeout. [Reported trial timeline](https://www.ctinsider.com/connecticut/article/lindsay-clancy-murder-trial-timeline-jan-24-2023-22375201.php)
+
+The analytical question is:
+
+> **Why did household care coordination remain assigned this way if the family understood her condition to be severe and deteriorating?**
+
+Possible explanations remain open: routine habit, apparent improvement, her preference, his judgment, clinical reassurance, unequal mental load, misunderstanding of risk, or something else.
+
+The family offer to care for the children should enter initially as attributed claims:
+
+* Who offered?
+* Exact words?
+* When?
+* To whom?
+* Who declined?
+* Stated reason?
+* Was the offer documented contemporaneously?
+* Was it discussed with clinicians?
+* Did later testimony alter the account?
+
+### 4. Narrative and legal-path reconstruction
+
+Track how the public and courtroom story formed:
+
+* Patrick’s initial 911 statement
+* first police theory
+* Lindsay’s earliest statements
+* later statements after hospitalization and expert contact
+* prosecution’s theory at each stage
+* defense theory at each stage
+* claims repeated through media
+* evidence collected because of the initial theory
+* evidence apparently not collected
+* stipulations
+* excluded or impounded evidence
+* expert conclusions and their source material
+
+This reveals whether later “facts” are independent findings or repetitions of an originating claim.
+
+## How the gender and method research belongs
+
+The relevant research needs a carefully defined reference class:
+
+* neonaticide versus infanticide versus filicide
+* one victim versus multiple children
+* maternal versus paternal filicide
+* filicide-suicide or attempted suicide
+* psychotic versus nonpsychotic perpetrator
+* biological parent versus stepparent
+* strangulation versus suffocation versus ligature strangulation
+* familicide involving a spouse versus children alone
+* victim ages
+* planned versus impulsive methods
+
+These cannot be mixed casually.
+
+Existing literature does report sex-linked differences at the group level. Reviews describe maternal filicide methods as including drowning, suffocation, strangulation, and head trauma, while fathers more consistently use active violent methods and are more likely to kill or attempt to kill a spouse as well. Another study found suffocation/smothering more frequent among mothers and more violent methods among fathers. [Filicide overview](https://pmc.ncbi.nlm.nih.gov/articles/PMC2922347/), [filicide and mental illness study](https://pmc.ncbi.nlm.nih.gov/articles/PMC3617183/)
+
+But the exact proposition you want is narrower:
+
+> **How frequently do female filicide perpetrators use separately prepared ligatures with deliberately maintained pressure, and how often is that method associated with particular diagnoses, planning, multiple victims, offender sex, or a second participant?**
+
+That may require building a new coded dataset from published cases because existing category labels often collapse hand strangulation, ligature strangulation, and suffocation together.
+
+Your “objects close at hand” idea can become a testable variable:
+
+[
+\text{method preparation distance}
+==================================
+
+\text{planning}
++
+\text{specialized knowledge}
++
+\text{material acquisition}
++
+\text{departure from routine caregiving context}
+]
+
+Drowning during bathing, smothering with bedding, manual strangulation, and constructing a maintained ligature should not be treated as equivalent simply because all involve asphyxia. The preparation, affordances, physical interaction, and required skill may differ materially.
+
+## The actual simulation
+
+For each competing proposition, run three stages.
+
+### Stage A: Hard feasibility
+
+Reject sequences that violate:
+
+* authenticated timestamps
+* minimum travel time
+* physical location
+* action duration
+* medical constraints
+* necessary precursors
+* known access limitations
+
+### Stage B: Monte Carlo uncertainty
+
+Sample uncertain values:
+
+* departure and return windows
+* clock error
+* action durations
+* movement time
+* injury-time estimates
+* medication exposure
+* sleep estimates
+* witness-time error
+* knot-construction time
+* required recovery or transition time
+
+### Stage C: Bayesian evidence comparison
+
+Ask whether each observation is more expected under different propositions:
+
+* deliberate conduct with intact criminal responsibility
+* conduct during psychosis or severe mood disorder
+* another specified impaired mental state
+* incomplete or inaccurate event reconstruction
+* third-party involvement, only if actual evidence justifies testing it
+
+The model would never convert population method statistics into “a woman would not do this.” It would report something like:
+
+> “This method appears uncommon in the selected maternal-filicide reference dataset. Its evidentiary value remains limited because the dataset contains only N comparable cases, method coding is inconsistent, and individual skill evidence is incomplete.”
+
+## The V1 output
+
+The strongest deliverable would be an interactive reconstruction with five views:
+
+1. **What the jury has heard**
+2. **What the underlying sources establish**
+3. **Lindsay’s 90-day state trajectory**
+4. **The care and household operating environment**
+5. **Conditions required by each competing reconstruction**
+
+The scenario report might say:
+
+> The prosecution reconstruction requires the incident sequence to fit within X–Y minutes, assumes Lindsay independently constructed three ligatures, and relies on these indicators of planning and concealment.
+
+> The defense reconstruction requires severe impairment at the incident time despite apparently organized behaviors, and relies on this medication, sleep, symptom, hospitalization, and post-incident evidence.
+
+> The knot-origin hypothesis remains unresolved because the public record currently lacks adequate classification, construction-time testing, and individual skill evidence.
+
+> The household record shows that childcare coordination remained substantially assigned to Lindsay despite documented deterioration; the significance of that fact is interpretive and requires comparison with testimony concerning support offers and perceived functioning.
+
+That is an extraordinary V1 because it does not begin with “Lindsay is innocent,” “Patrick did it,” or “postpartum psychosis explains everything.”
+
+It begins with:
+
+> **Here is every proposition. Here is its source. Here is the sequence. Here are the conditions each story requires. Here is where the evidence supports, strains, or fails to distinguish among them.**

@@ -1,0 +1,340 @@
+This is the correct probabilistic engine for Casework, with one major refinement: **V1 should estimate uncertainty around observable events and system conditions before estimating an individual’s latent psychiatric state.**
+
+Otherwise a mathematically sophisticated model could recreate the same institutional failure you’re trying to expose—turning a fragmented record into a confident diagnosis-shaped number.
+
+The architecture should be:
+
+[
+\text{Evidence reconstruction}
+\rightarrow
+\text{measurement uncertainty}
+\rightarrow
+\text{longitudinal patterns}
+\rightarrow
+\text{bounded probabilistic inference}
+\rightarrow
+\text{competing-scenario testing}
+]
+
+## The load-bearing distinction
+
+There are three different probabilities here:
+
+1. **Event probability**
+   Could this sequence occur within the available time and physical constraints?
+
+2. **Evidence likelihood**
+   How expected is this observation under a particular hypothesis?
+
+3. **State probability**
+   How likely was a person to occupy a latent condition such as severe deterioration?
+
+Those cannot be blended into one “case probability.”
+
+A simulation might find that 8% of sampled timelines satisfy the prosecution’s proposed sequence. That does not mean an 8% probability the prosecution is correct.
+
+A state model might estimate elevated correspondence with a crisis-state pattern. That does not determine diagnosis, intent, criminal responsibility, or what occurred during the incident.
+
+## Recommended engine layers
+
+### Layer 1 — Evidence graph
+
+This remains authoritative:
+
+* immutable sources
+* attributed claims
+* observable events
+* source lineage
+* entities resolved through SAME
+* temporal intervals
+* contradictions
+* evidentiary states
+* missing records
+
+The probabilistic system reads from this graph. It never silently rewrites it.
+
+For entity resolution, Splink or Fellegi–Sunter scoring can provide candidate-match evidence, but SAME should remain the identity control layer:
+
+[
+\text{probabilistic candidate}
+\rightarrow
+\text{SAME resolution}
+\rightarrow
+\text{accepted/rejected relationship}
+]
+
+### Layer 2 — Measurement uncertainty
+
+Represent uncertainty inherent in the records:
+
+* approximate witness times
+* clock drift
+* location accuracy
+* medication adherence uncertainty
+* ambiguous dates
+* incomplete sleep estimates
+* source dependence
+* uncertain device possession
+* medical measurement intervals
+
+This is where Monte Carlo belongs immediately. It propagates uncertainty already present in the evidence.
+
+### Layer 3 — Longitudinal pattern detection
+
+Begin with models that require fewer diagnostic assumptions:
+
+* Bayesian change-point detection
+* CUSUM/EWMA as transparent comparison methods
+* recurrence analysis
+* conditional sequence frequency
+* rolling-window burden measures
+* social-network contraction
+* care-contact fragmentation
+* medication-change density
+* sleep-loss accumulation
+* escalation following autonomy or help-seeking
+
+These answer:
+
+> When did the observed pattern materially change?
+
+They do not need to declare why.
+
+### Layer 4 — Bounded latent-state modeling
+
+An HMM could eventually estimate states such as:
+
+* baseline-consistent
+* materially changed
+* severe functional disruption
+* acute high-concern interval
+* post-incident
+
+I would avoid naming hidden states `stable`, `psychotic`, or `criminally responsible`. Those labels imply more clinical or legal knowledge than the emissions can establish.
+
+The output should read:
+
+> “The model assigns a 0.76 posterior probability to the severe functional-disruption pattern on January 3, based on the declared observations and model assumptions.”
+
+It should also show:
+
+* credible interval
+* observations driving the estimate
+* missing observations
+* sensitivity to prior selection
+* alternate model specifications
+* whether the result remains stable when disputed sources are excluded
+
+### Layer 5 — Scenario Lab
+
+Each courtroom or research account becomes a **proposition set**, not a monolithic story:
+
+* required events
+* required states
+* timing constraints
+* assumed causal relationships
+* asserted knowledge
+* asserted capability
+* expected evidence
+* acceptable contradictions
+
+Then Icarus evaluates:
+
+[
+P(E\mid H_i)
+]
+
+That is the likelihood of observing evidence (E) if hypothesis (H_i) were true.
+
+I would be extremely cautious about calculating:
+
+[
+P(H_i\mid E)
+]
+
+That posterior requires defensible priors over the competing hypotheses—and selecting those priors in a criminal case is ethically and statistically explosive. Likelihood ratios, feasibility rates, assumption counts, and sensitivity analyses are safer and often more informative.
+
+## Where the proposed methods belong
+
+| Method                      | V1 role                                                 | Main limitation                                          |
+| --------------------------- | ------------------------------------------------------- | -------------------------------------------------------- |
+| Monte Carlo                 | Incident timing and uncertainty propagation             | Results inherit every input assumption                   |
+| Bayesian change points      | Detect trajectory shifts                                | Finds change, not cause or diagnosis                     |
+| Beta-Binomial models        | Repeated system events with defensible reference counts | Comparable-event definitions must be stable              |
+| HMM/HSMM                    | Later-stage longitudinal state patterns                 | Hidden-state labels can overclaim                        |
+| Hierarchical Bayesian model | Population-to-case partial pooling                      | Requires comparable, sufficiently rich cases             |
+| Dynamic Bayesian network    | Research-stage interaction model                        | Causal edges cannot be learned responsibly from one case |
+| Survival analysis           | Population research across many cases                   | Inappropriate for a single-case incident prediction      |
+| Likelihood ratios           | Compare how expected evidence is under propositions     | Must avoid converting LR into guilt probability          |
+| Probabilistic linkage       | Candidate entity matching                               | Identity uncertainty must propagate downstream           |
+
+## The better V1 trio
+
+I would change the minimal V1 from “HMM + fragmentation probability + change points” to:
+
+### 1. Temporal Feasibility Engine
+
+Inputs:
+
+* timestamp intervals
+* travel-time distributions
+* action-duration ranges
+* location uncertainty
+* medical timing
+* device possession assumptions
+
+Outputs:
+
+* surviving sequences
+* failure reasons
+* required conditions
+* sensitivity analysis
+* missing discriminating evidence
+
+### 2. Longitudinal Change Engine
+
+Inputs:
+
+* journal-derived observations
+* sleep
+* medications
+* clinical contacts
+* suicidality
+* cognition
+* appetite and weight
+* childcare burden
+* help-seeking
+
+Outputs:
+
+* posterior change-point dates
+* pre/post change magnitude
+* evidence contributing to each shift
+* agreement across alternate models
+* uncertainty created by missing periods
+
+### 3. Care Fragmentation Engine
+
+Start with observable graph conditions:
+
+* provider did not receive another provider’s record
+* medication reconciliation absent
+* conflicting instructions
+* requested admission declined
+* follow-up not completed
+* responsibility unclear
+* high-risk information present in one record but absent from the next
+* worsening trajectory without coordinated reassessment
+
+Then estimate:
+
+[
+P(\text{material fragmentation}\mid\text{observed handoff evidence})
+]
+
+But the UI should always show the underlying operational failures. A `79% fragmentation` badge is far less useful than:
+
+> Four clinicians treated her across 31 days. Three lacked another active provider’s notes. Two medication transitions occurred without documented reconciliation. Suicidality appeared in one record and was absent from the next assessment.
+
+That is measurable without hiding behind a score.
+
+## Priors need applicability metadata
+
+Every prior should be an actual versioned object:
+
+```yaml
+prior_id: postpartum_sleep_crisis_v1
+parameter: probability_of_acute_deterioration
+population:
+  geography: United States
+  postpartum_window: 0-12_months
+  inclusion_criteria: documented_severe_insomnia
+source:
+  type: meta_analysis
+  citation: ...
+  sample_size: 1842
+distribution:
+  family: beta
+  alpha: 23
+  beta: 177
+applicability:
+  directness: moderate
+  differences:
+    - psychiatric_medication_exposure
+    - number_of_children
+    - clinical_setting
+limitations:
+  - outcome definitions varied
+  - sleep measured primarily by self-report
+```
+
+Then the posterior retains the prior’s lineage.
+
+This is very Icarus:
+
+> **The probability has provenance.**
+
+## Required uncertainty controls
+
+Every model run needs:
+
+* model version
+* evidence cutoff date
+* included and excluded sources
+* prior versions
+* distribution assumptions
+* missing-data treatment
+* source-dependence adjustments
+* random seed
+* simulation count
+* convergence diagnostics
+* posterior predictive checks
+* sensitivity analysis
+* generated output timestamp
+
+And the most important control:
+
+> Run the model again after excluding each disputed or interested source.
+
+That reveals whether a conclusion is robust or whether one narrator effectively controls the posterior.
+
+## The reusable library shape
+
+This naturally becomes the case-agnostic `reconstruct.prob` library:
+
+```text
+reconstruct.prob
+├── evidence
+│   ├── source_dependence
+│   ├── measurement_uncertainty
+│   └── missingness
+├── temporal
+│   ├── interval_constraints
+│   ├── monte_carlo
+│   └── change_points
+├── longitudinal
+│   ├── trajectories
+│   ├── latent_states
+│   └── burden_windows
+├── systems
+│   ├── handoffs
+│   ├── fragmentation
+│   └── responsibility_gaps
+├── scenarios
+│   ├── propositions
+│   ├── likelihoods
+│   ├── feasibility
+│   └── sensitivity
+└── audit
+    ├── model_runs
+    ├── prior_registry
+    └── reproducibility
+```
+
+The sharpest doctrine for the probabilistic layer is:
+
+> **Icarus does not calculate the probability that a person is telling the truth. It calculates how evidence, uncertainty, and required conditions behave under explicitly defined propositions.**
+
+And for Lindsay V1:
+
+> **Reconstruct the observed deterioration first. Quantify fragmentation second. Test the competing explanations third. Never let the probability replace the record.**

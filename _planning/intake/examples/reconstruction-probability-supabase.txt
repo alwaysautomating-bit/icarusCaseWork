@@ -1,0 +1,626 @@
+I’ll design a minimal but complete Supabase (Postgres) schema that directly backs the `reconstruct.prob` library: `events`, `claims`, `priors`, `model_runs`, plus the supporting tables you’ll need for subjects, sources, actors, obligations, and responsibility allocation.
+
+Everything is case-agnostic and reusable across postpartum, construction, defense, fraud, etc.
+
+***
+
+## 1) Core Design Choices
+
+- **One schema per deployment** (e.g., `reconstruct_prob`), or just use `public` if this is your only app.
+- All time fields in UTC (`timestamptz`).
+- Use `uuid` primary keys for all tables.
+- Heavy use of `jsonb` for flexible payloads while keeping key fields typed.
+- Explicit foreign keys for traceability (events → sources, claims → events, model_runs → priors/events).
+- RLS-ready (row-level security) if you later multi-tenant by org/case.
+
+***
+
+## 2) Enumerations
+
+```sql
+-- Core event/claim/model types (extend as needed)
+create type event_type as enum (
+  'journal_entry',
+  'med_change',
+  'clinical_visit',
+  'call',
+  'text',
+  'email',
+  'hospital_admission',
+  'hospital_discharge',
+  'er_visit',
+  'psych_hold',
+  'work_shift',
+  'childcare_activity',
+  'system_handoff',
+  'other'
+);
+
+create type claim_status as enum (
+  'provisional',
+  'reviewed',
+  'disputed',
+  'retracted'
+);
+
+create type model_type as enum (
+  'hmm_risk',
+  'hbm_deterioration',
+  'survival_time_to_crisis',
+  'change_point',
+  'system_fragmentation',
+  'narrative_likelihood',
+  'temporal_feasibility',
+  'responsibility_allocation',
+  'other'
+);
+
+create type obligation_status as enum (
+  'fulfilled',
+  'failed',
+  'unknown'
+);
+```
+
+You can adjust enums as your domains evolve.
+
+***
+
+## 3) Core Tables
+
+### 3.1 `subjects`
+
+The people (or entities) cases are about.
+
+```sql
+create table subjects (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  name text,
+  role text,               -- e.g. "mother", "worker", "vendor"
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_subjects_case_id on subjects(case_id);
+```
+
+***
+
+### 3.2 `sources`
+
+Immutable source artifacts (documents, records, transcripts).
+
+```sql
+create table sources (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  source_type text not null,   -- "journal", "medical_record", "call_log", "trial_transcript", etc.
+  title text,
+  description text,
+  storage_url text,            -- e.g. S3/Drive link
+  metadata jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_sources_case_id on sources(case_id);
+```
+
+***
+
+### 3.3 `events`
+
+Time-indexed observable events.
+
+```sql
+create table events (
+  id uuid primary key default gen_random_uuid(),
+  subject_id uuid not null references subjects(id) on delete cascade,
+  event_type event_type not null,
+  timestamp timestamptz,              -- can be null if only interval known
+  timestamp_start timestamptz,        -- for intervals
+  timestamp_end timestamptz,
+  payload jsonb not null default '{}',-- sleep_hours, sentiment_score, etc.
+  tags text[] not null default '{}',
+  source_ids uuid[] not null default '{}',
+  confidence numeric not null default 1.0 check (confidence between 0 and 1),
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_events_subject_id on events(subject_id);
+create index idx_events_timestamp on events(timestamp);
+create index idx_events_tags on events using gin(tags);
+create index idx_events_source_ids on events using gin(source_ids);
+```
+
+Notes:
+
+- Use `timestamp` for point events; `timestamp_start`/`timestamp_end` for intervals.
+- `payload` is where you put domain-specific fields.
+
+***
+
+### 3.4 `claims`
+
+Derived statements with provenance.
+
+```sql
+create table claims (
+  id uuid primary key default gen_random_uuid(),
+  subject_id uuid not null references subjects(id) on delete cascade,
+  text text not null,
+  timestamp timestamptz,
+  event_refs uuid[] not null default '{}',
+  confidence numeric not null default 1.0 check (confidence between 0 and 1),
+  uncertainty_notes text,
+  status claim_status not null default 'provisional',
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_claims_subject_id on claims(subject_id);
+create index idx_claims_event_refs on claims using gin(event_refs);
+```
+
+***
+
+### 3.5 `priors`
+
+Versioned prior definitions with applicability metadata.
+
+```sql
+create table priors (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  domain text not null,          -- "postpartum", "construction_safety", etc.
+  parameter text not null,       -- e.g. "p_crisis_given_sleep_deprivation"
+  distribution text not null,    -- "beta", "normal", "gamma"
+  params jsonb not null,         -- e.g. {"alpha": 3, "beta": 97}
+  source text not null,          -- dataset, paper, internal analysis
+  population jsonb not null default '{}',
+  applicability jsonb not null default '{}',
+  limitations text[] not null default '{}',
+  version text not null,
+  created_at timestamptz not null default now()
+);
+
+create index idx_priors_domain on priors(domain);
+create index idx_priors_parameter on priors(parameter);
+```
+
+Example `population`:
+
+```json
+{
+  "geography": "United States",
+  "postpartum_window": "0-12_months",
+  "inclusion_criteria": ["documented_severe_insomnia"]
+}
+```
+
+Example `applicability`:
+
+```json
+{
+  "directness": "moderate",
+  "differences": [
+    "psychiatric_medication_exposure",
+    "number_of_children",
+    "clinical_setting"
+  ]
+}
+```
+
+***
+
+### 3.6 `model_runs`
+
+Record of each model execution.
+
+```sql
+create table model_runs (
+  id uuid primary key default gen_random_uuid(),
+  subject_id uuid not null references subjects(id) on delete cascade,
+  model_type model_type not null,
+  model_version text not null,
+  input_event_ids uuid[] not null default '{}',
+  prior_ids uuid[] not null default '{}',
+  outputs jsonb not null default '{}',
+  evidence_cutoff timestamptz,
+  included_source_ids uuid[] not null default '{}',
+  excluded_source_ids uuid[] not null default '{}',
+  distribution_assumptions jsonb not null default '{}',
+  missing_data_treatment text,
+  source_dependence_adjustments jsonb not null default '{}',
+  random_seed bigint,
+  n_simulations int,
+  convergence_diagnostics jsonb not null default '{}',
+  posterior_predictive_checks jsonb not null default '{}',
+  sensitivity_analyses jsonb not null default '{}',
+  started_at timestamptz not null default now(),
+  completed_at timestamptz,
+  meta jsonb not null default '{}'
+);
+
+create index idx_model_runs_subject_id on model_runs(subject_id);
+create index idx_model_runs_model_type on model_runs(model_type);
+create index idx_model_runs_input_events on model_runs using gin(input_event_ids);
+create index idx_model_runs_prior_ids on model_runs using gin(prior_ids);
+```
+
+`outputs` is where you store serialized results: state probabilities, change-points, fragmentation scores, responsibility shares, etc.
+
+***
+
+## 4) Responsibility & Obligations Schema
+
+To support the responsibility allocation engine.
+
+### 4.1 `actors`
+
+People or institutions with obligations.
+
+```sql
+create table actors (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  actor_type text not null,   -- "mother", "partner", "clinician_OB", "insurer_health", etc.
+  name text,
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_actors_case_id on actors(case_id);
+```
+
+You can link `actors` to `subjects` where appropriate (e.g., mother is both subject and actor).
+
+***
+
+### 4.2 `obligations`
+
+Versioned obligation definitions.
+
+```sql
+create table obligations (
+  id uuid primary key default gen_random_uuid(),
+  actor_type text not null,
+  name text not null,
+  description text not null,
+  trigger_conditions jsonb not null default '[]',
+  required_actions jsonb not null default '[]',
+  time_window interval,
+  evidence_types text[] not null default '{}',
+  standard_source text not null,
+  weight numeric not null default 1.0,
+  version text not null,
+  applicability jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_obligations_actor_type on obligations(actor_type);
+```
+
+Example `trigger_conditions`:
+
+```json
+[
+  {
+    "variable": "suicidality_reported",
+    "operator": "eq",
+    "value": true
+  }
+]
+```
+
+Example `required_actions`:
+
+```json
+[
+  {
+    "action": "document_risk_assessment",
+    "within_hours": 72
+  },
+  {
+    "action": "refer_to_mental_health",
+    "within_hours": 72
+  }
+]
+```
+
+***
+
+### 4.3 `obligation_fulfillments`
+
+Per-case, per-actor assessment of each obligation.
+
+```sql
+create table obligation_fulfillments (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  obligation_id uuid not null references obligations(id) on delete cascade,
+  actor_id uuid not null references actors(id) on delete cascade,
+  status obligation_status not null,
+  evidence_refs uuid[] not null default '{}',  -- event or source IDs
+  uncertainty_notes text,
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_fulfillments_case_id on obligation_fulfillments(case_id);
+create index idx_fulfillments_obligation_id on obligation_fulfillments(obligation_id);
+create index idx_fulfillments_actor_id on obligation_fulfillments(actor_id);
+```
+
+***
+
+### 4.4 `responsibility_allocations`
+
+Results of the responsibility engine per case.
+
+```sql
+create table responsibility_allocations (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  model_run_id uuid not null references model_runs(id) on delete cascade,
+  actor_id uuid not null references actors(id) on delete cascade,
+  score numeric not null,            -- S_a
+  responsibility_share numeric not null, -- R_a (0–1)
+  obligations_summary jsonb not null default '[]',
+  sensitivity_notes text,
+  created_at timestamptz not null default now()
+);
+
+create index idx_responsibility_case_id on responsibility_allocations(case_id);
+create index idx_responsibility_actor_id on responsibility_allocations(actor_id);
+```
+
+`obligations_summary` can be a compact JSON summarizing which obligations were failed/fulfilled for this actor.
+
+***
+
+## 5) Supporting Tables (Optional but Useful)
+
+### 5.1 `cases`
+
+If you want an explicit case container.
+
+```sql
+create table cases (
+  id uuid primary key default gen_random_uuid(),
+  name text not null,
+  domain text not null,         -- "postpartum", "construction_safety", etc.
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+```
+
+Then `subjects.case_id`, `sources.case_id`, `actors.case_id` all reference `cases(id)`.
+
+***
+
+### 5.2 `event_uncertainty_specs`
+
+If you want to store uncertainty distributions separately from events.
+
+```sql
+create table event_uncertainty_specs (
+  id uuid primary key default gen_random_uuid(),
+  event_id uuid not null references events(id) on delete cascade,
+  field_name text not null,
+  distribution text not null,   -- "uniform", "normal", "beta", "bernoulli"
+  params jsonb not null,
+  rationale text,
+  source_refs uuid[] not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_uncertainty_event_id on event_uncertainty_specs(event_id);
+```
+
+Alternatively, embed this in `events.meta` if you prefer denormalization.
+
+***
+
+### 5.3 `scenario_propositions` and `scenario_results`
+
+For the Scenario Lab.
+
+```sql
+create table scenarios (
+  id uuid primary key default gen_random_uuid(),
+  case_id uuid not null,
+  name text not null,
+  description text,
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create table scenario_propositions (
+  id uuid primary key default gen_random_uuid(),
+  scenario_id uuid not null references scenarios(id) on delete cascade,
+  name text not null,
+  required_events jsonb not null default '[]',
+  required_states jsonb not null default '[]',
+  timing_constraints jsonb not null default '[]',
+  causal_assumptions text[] not null default '{}',
+  asserted_knowledge jsonb not null default '[]',
+  asserted_capability jsonb not null default '[]',
+  expected_evidence jsonb not null default '[]',
+  acceptable_contradictions text[] not null default '{}',
+  meta jsonb not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create table scenario_results (
+  id uuid primary key default gen_random_uuid(),
+  scenario_id uuid not null references scenarios(id) on delete cascade,
+  model_run_id uuid not null references model_runs(id) on delete cascade,
+  log_likelihood numeric,
+  likelihood_ratio_vs_baseline numeric,
+  feasibility_rate numeric,
+  failure_reasons jsonb not null default '{}',
+  required_conditions text[] not null default '{}',
+  sensitivity_analysis jsonb not null default '{}',
+  missing_discriminating_evidence text[] not null default '{}',
+  created_at timestamptz not null default now()
+);
+
+create index idx_scenarios_case_id on scenarios(case_id);
+create index idx_propositions_scenario_id on scenario_propositions(scenario_id);
+create index idx_scenario_results_scenario_id on scenario_results(scenario_id);
+```
+
+***
+
+## 6) Example Queries (Library ↔ Supabase)
+
+### 6.1 Load Events for a Subject
+
+```sql
+select
+  id,
+  subject_id,
+  event_type,
+  timestamp,
+  timestamp_start,
+  timestamp_end,
+  payload,
+  tags,
+  source_ids,
+  confidence,
+  meta
+from events
+where subject_id = $1
+order by timestamp;
+```
+
+### 6.2 Load Priors by Domain/Parameter
+
+```sql
+select
+  id,
+  name,
+  domain,
+  parameter,
+  distribution,
+  params,
+  source,
+  population,
+  applicability,
+  limitations,
+  version
+from priors
+where domain = $1
+  and parameter = $2
+order by created_at desc;
+```
+
+### 6.3 Insert a Model Run
+
+```sql
+insert into model_runs (
+  subject_id,
+  model_type,
+  model_version,
+  input_event_ids,
+  prior_ids,
+  outputs,
+  evidence_cutoff,
+  included_source_ids,
+  excluded_source_ids,
+  random_seed,
+  n_simulations,
+  meta
+) values (
+  $1,
+  $2,
+  $3,
+  $4,
+  $5,
+  $6,
+  $7,
+  $8,
+  $9,
+  $10,
+  $11,
+  $12
+)
+returning id;
+```
+
+### 6.4 Responsibility Allocation Summary per Case
+
+```sql
+select
+  a.actor_type,
+  a.name,
+  ra.score,
+  ra.responsibility_share,
+  ra.obligations_summary,
+  ra.sensitivity_notes
+from responsibility_allocations ra
+join actors a on a.id = ra.actor_id
+where ra.case_id = $1
+order by ra.responsibility_share desc;
+```
+
+***
+
+## 7) Mapping to Python Data Classes
+
+In `reconstruct.prob.data.py`, you’d map:
+
+- `Event` ↔ `events` row.
+- `Claim` ↔ `claims` row.
+- `Prior` ↔ `priors` row.
+- `ModelRun` ↔ `model_runs` row.
+- `Obligation` ↔ `obligations` row.
+- `ObligationFulfillment` ↔ `obligation_fulfillments` row.
+- `ResponsibilityAllocationResult` ↔ `responsibility_allocations` row.
+
+Use a simple repository layer (or Supabase client) to translate between SQL rows and your dataclasses.
+
+***
+
+## 8) RLS and Multi-Tenancy (If Needed)
+
+If you later multi-tenant by org:
+
+- Add `org_id` to `cases`, `subjects`, `sources`, etc.
+- Enable RLS on each table.
+- Add policies like:
+
+```sql
+alter table events enable row level security;
+
+create policy "Users can see events in their org's cases"
+on events
+for select
+using (
+  exists (
+    select 1 from subjects s
+    join cases c on c.id = s.case_id
+    where c.org_id = current_setting('app.current_org_id')::uuid
+      and subjects.id = events.subject_id
+  )
+);
+```
+
+But for V1, you can skip RLS and just use `case_id` filters in your app.
+
+***
+
+## 9) Migration Strategy
+
+- Start with core tables: `cases`, `subjects`, `sources`, `events`, `claims`, `priors`, `model_runs`.
+- Add obligations/responsibility tables once you implement the responsibility engine.
+- Add scenario tables once Scenario Lab is in use.
+
+***
+
+If you’d like, next I can:
+
+- Generate a single SQL migration file you can run directly in Supabase to create all these tables.
+- Or sketch a minimal Python repository layer that maps these tables to your `reconstruct.prob` dataclasses.

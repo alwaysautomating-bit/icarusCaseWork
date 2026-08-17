@@ -1,0 +1,190 @@
+{
+  "project": {
+    "name": "IcarusCasework",
+    "status": "kickoff_ready",
+    "purpose": "Reconstruct heterogeneous case material into a source-linked operational record that separates claims, evidence, chronology, and uncertainty.",
+    "product_boundary": "Public-record case reconstruction workspace for true-crime and long-form case research first; not a verdict, diagnosis, admissibility, or law-enforcement decision engine."
+  },
+  "v1_proof_obligation": "Given a bounded corpus of public or authorized case materials, Icarus Casework can produce a reproducible, source-linked longitudinal reconstruction that separates reported claims from supported events, preserves contradictions and source lineage, shows cumulative change over time, and tests the conditions required by competing accounts.",
+  "primitive_map": {
+    "entities": [
+      "Case",
+      "Person",
+      "Organization",
+      "SourceArtifact",
+      "Device",
+      "Location",
+      "LegalProceeding",
+      "SystemNode"
+    ],
+    "events": [
+      "statement_made",
+      "source_published",
+      "communication_sent",
+      "filing_entered",
+      "evidence_collected",
+      "clinical_contact",
+      "medication_changed",
+      "household_care_activity",
+      "incident_window_activity",
+      "information_flow"
+    ],
+    "evidence": [
+      "SourceArtifact",
+      "Document classification",
+      "personal_writings",
+      "testimony",
+      "medical_records",
+      "communications",
+      "trial_records",
+      "photos_audio_video",
+      "device_time_location_records",
+      "derived_calculations_with_provenance"
+    ],
+    "relationships": [
+      "person_made_claim",
+      "claim_derived_from_source",
+      "event_concerns_entity",
+      "evidence_supports_claim",
+      "evidence_contradicts_claim",
+      "source_depends_on_prior_source",
+      "information_flow_between_nodes"
+    ],
+    "projections": [
+      "layered_timeline",
+      "source_reader",
+      "evidence_map",
+      "contradiction_view",
+      "case_brief",
+      "cited_narrative_builder",
+      "narrative_genealogy",
+      "Hypothesis"
+    ]
+  },
+  "canonical_workflows": [
+    "ingest_sources",
+    "read_sources_with_provenance",
+    "extract_attributed_claims",
+    "resolve_entities_and_aliases",
+    "construct_layered_timeline",
+    "surface_contradictions_and_gaps",
+    "produce_cited_narrative_output"
+  ],
+  "invariants": [
+    "Every consequential claim must remain attributable to source.",
+    "Repeated reporting does not equal independent corroboration.",
+    "Evidence and claims must remain distinct.",
+    "Unknowns and unresolved intervals must remain explicit.",
+    "Narrative output must not silently collapse uncertainty."
+  ],
+  "control_boundaries": [
+    "No guilt or innocence scoring in v1.",
+    "No diagnosis engine in v1.",
+    "No court-admissibility claims in v1.",
+    "No private medical-record collection in v1.",
+    "Do not let probabilistic tooling redefine the authoritative evidence graph."
+  ],
+  "source_types": [
+    "public records",
+    "reports",
+    "trial material",
+    "communications",
+    "testimony",
+    "medical records when public and lawful",
+    "media coverage with traceable sourcing"
+  ],
+  "derived_types": [
+    "Claim",
+    "Contradiction",
+    "InformationFlow",
+    "Reconstruction",
+    "NarrativeOutput",
+    "Hypothesis"
+  ],
+  "human_decisions": [
+    "Whether SystemNode is canonical or role-based in the persisted schema",
+    "Exact citation-location representation",
+    "Exact claim-lineage schema representation"
+  ],
+  "deterministic_operations": [
+    "source normalization",
+    "timestamp extraction where explicit",
+    "provenance retention",
+    "entity linking candidates",
+    "timeline ordering with known timestamps",
+    "claim lineage tracing"
+  ],
+  "model_assisted_operations": [
+    "structured claim extraction",
+    "uncertainty-aware event extraction",
+    "contradiction detection",
+    "constrained feasibility testing",
+    "scenario comparison as projection",
+    "narrative draft generation with citations"
+  ],
+  "known_decisions": [
+    "Casework has its own repo boundary.",
+    "Planning intake precedes kickoff.",
+    "ONTOLOGY.md will be a stable root operating file after kickoff.",
+    "Casework should be constrained by Five Core Primitives before scaffolding.",
+    "The build must not infer a product contract directly from a research pile.",
+    "SourceArtifact is the immutable evidence object.",
+    "Document is a format/type classification of SourceArtifact.",
+    "Source is provenance context, not a catch-all object.",
+    "Claim is a first-class evidentiary assertion.",
+    "Hypothesis is a Projection.",
+    "Probabilistic output is always a Projection.",
+    "The evidence substrate remains authoritative.",
+    "True-crime/public-record research is the approved first wedge.",
+    "Approved demonstration case: Lindsay Clancy."
+  ],
+  "open_questions": [
+    "Exact persisted schema for source, claim, event, and lineage structures",
+    "Whether SystemNode is modeled as a canonical entity or role wrapper",
+    "Exact representation of event time vs report time"
+  ],
+  "rejected_scope": [
+    "verdict engine",
+    "diagnosis engine",
+    "admissibility engine",
+    "law-enforcement operational platform",
+    "full unbounded monorepo for all future Icarus products"
+  ],
+  "future_scope": [
+    "Scenario Lab",
+    "Monte Carlo reconstruction",
+    "Bayesian proposition comparison",
+    "responsibility allocation",
+    "pattern-of-life analysis",
+    "regulated domain extensions"
+  ],
+  "required_doctrine": [
+    "Five Core Primitives",
+    "Semantic Integrity Doctrine",
+    "Project Operating System",
+    "Project Definition Compiler"
+  ],
+  "required_skills": [
+    "project-kickoff-session-lifecycle"
+  ],
+  "required_adapters": [
+    "document parsing",
+    "source provenance retention",
+    "entity resolution",
+    "timeline construction"
+  ],
+  "required_tests": [
+    "claim vs evidence separation",
+    "provenance retention",
+    "repeated-report vs independent-corroboration distinction",
+    "timeline uncertainty handling",
+    "contradiction surfacing",
+    "two competing accounts tested against explicit conditions",
+    "same-evidence snapshot reproducibility"
+  ],
+  "kickoff_readiness": {
+    "status": "READY",
+    "blocking_reasons": []
+  },
+  "first_build_slice": "Ingest one source artifact -> preserve the original -> extract one attributed claim with an exact citation -> review it -> represent one supported event -> display both on a source-linked timeline."
+}

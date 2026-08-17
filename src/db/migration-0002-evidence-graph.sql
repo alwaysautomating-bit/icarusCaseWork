@@ -1,0 +1,13 @@
+CREATE TYPE entity_kind AS ENUM ('person','organization','location','device','proceeding','system_node');
+CREATE TYPE lineage_kind AS ENUM ('origin','quotes','paraphrases','repeats','derives_from');
+CREATE TYPE contradiction_status AS ENUM ('unresolved','resolved_by_evidence','clarified','superseded','cancelled');
+CREATE TABLE entities (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), canonical_name text NOT NULL, kind entity_kind NOT NULL, description text NOT NULL DEFAULT '', created_at timestamptz NOT NULL DEFAULT now(), UNIQUE(case_id, canonical_name));
+CREATE TABLE entity_aliases (id uuid PRIMARY KEY, entity_id uuid NOT NULL REFERENCES entities(id), alias text NOT NULL, source_artifact_id uuid REFERENCES source_artifacts(id));
+CREATE TABLE artifact_provenance (id uuid PRIMARY KEY, artifact_id uuid NOT NULL REFERENCES source_artifacts(id), role text NOT NULL, entity_id uuid NOT NULL REFERENCES entities(id), note text NOT NULL DEFAULT '');
+CREATE TABLE claim_lineage (parent_claim_id uuid NOT NULL REFERENCES claims(id), child_claim_id uuid NOT NULL REFERENCES claims(id), kind lineage_kind NOT NULL, rationale text NOT NULL, PRIMARY KEY(parent_claim_id, child_claim_id), CHECK(parent_claim_id <> child_claim_id));
+CREATE TABLE contradictions (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), title text NOT NULL, description text NOT NULL, status contradiction_status NOT NULL DEFAULT 'unresolved', created_at timestamptz NOT NULL DEFAULT now());
+CREATE TABLE contradiction_claims (contradiction_id uuid NOT NULL REFERENCES contradictions(id), claim_id uuid NOT NULL REFERENCES claims(id), position text NOT NULL, PRIMARY KEY(contradiction_id, claim_id));
+CREATE TABLE audit_events (id uuid PRIMARY KEY, case_id uuid NOT NULL REFERENCES cases(id), actor_id text NOT NULL, action text NOT NULL, subject_type text NOT NULL, subject_id text NOT NULL, details jsonb NOT NULL, occurred_at timestamptz NOT NULL DEFAULT now());
+CREATE INDEX entity_case_idx ON entities(case_id);
+CREATE INDEX contradiction_case_status_idx ON contradictions(case_id, status);
+CREATE INDEX audit_case_time_idx ON audit_events(case_id, occurred_at DESC);

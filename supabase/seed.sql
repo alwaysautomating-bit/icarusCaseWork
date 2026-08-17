@@ -1,0 +1,1 @@
+-- Intentionally empty. Casework is created per authenticated user on first access.

@@ -1,0 +1,236 @@
+Yes. That could be **Scenario Lab** inside Icarus Casework.
+
+The most useful question would be:
+
+> **For a proposed account to be true, what else must also be true—and are those required conditions consistent with the evidence, known uncertainty, and credible public reference data?**
+
+Monte Carlo would not discover the truth or calculate guilt. It would repeatedly sample uncertain inputs and test which proposed sequences remain physically, temporally, behaviorally, and procedurally feasible.
+
+## Two simulation layers
+
+### 1. Incident reconstruction
+
+This tests how the underlying events could have occurred.
+
+Inputs might include:
+
+* uncertain departure and arrival times
+* travel-time distributions
+* phone and vehicle locations
+* call durations
+* camera timestamps and clock drift
+* estimated medical-event windows
+* physical capabilities and environmental constraints
+* device ownership versus device possession
+* opportunity windows
+* witness-estimate uncertainty
+* time required to complete alleged actions
+
+Suppose the official account requires:
+
+1. Husband leaves between 5:08 and 5:14.
+2. Woman performs Actions A, B, and C.
+3. She places a call at 5:34.
+4. Husband arrives at the pharmacy before 5:38.
+5. Medical findings place the injuries within a certain interval.
+
+The system samples credible values for every uncertain variable thousands of times.
+
+Each run asks:
+
+* Does the sequence fit inside the available interval?
+* Can one person physically complete the necessary actions?
+* Do communications and device locations remain consistent?
+* Does it require undocumented movement?
+* Does it conflict with medical timing?
+* How much unexplained time remains?
+* Which evidence must be inaccurate for the sequence to work?
+
+The output is a feasibility profile:
+
+| Reconstruction      | Feasible runs | Primary failure                            |
+| ------------------- | ------------: | ------------------------------------------ |
+| Official Sequence A |           18% | Required actions exceed available interval |
+| Alternative B       |           61% | Requires uncertain device possession       |
+| Alternative C       |            4% | Conflicts with camera and call timestamps  |
+
+Those percentages would mean only:
+
+> “Given these inputs, distributions, and assumptions, this proportion of simulated sequences satisfied the defined constraints.”
+
+They would not mean “61% probability that Alternative B happened.”
+
+### 2. Court-system reconstruction
+
+This tests how an uncertain event became a settled legal narrative.
+
+The system could model:
+
+* who supplied the first account
+* which claims entered the police record
+* what evidence was collected or never collected
+* what the prosecution and defense received
+* which experts were retained
+* what was admitted or excluded
+* what instructions the jury received
+* plea incentives
+* charging options
+* statutory elements
+* jurisdiction-specific legal standards
+* procedural deadlines
+* resource differences
+* which evidence the factfinder actually heard
+
+This produces a second kind of question:
+
+> **What institutional conditions had to exist for this evidentiary record to produce this legal outcome?**
+
+For example:
+
+[
+\text{first narrator’s account}
+\rightarrow
+\text{investigative hypothesis}
+\rightarrow
+\text{evidence-selection decisions}
+\rightarrow
+\text{charging theory}
+\rightarrow
+\text{admissible trial record}
+\rightarrow
+\text{verdict}
+]
+
+The verdict is an event in the legal timeline. The model can reconstruct the pathway to it without treating the verdict as direct proof of every underlying factual proposition.
+
+## Use constraint solving before Monte Carlo
+
+The engine should operate in stages:
+
+1. **Hard constraints**
+   Impossible combinations are eliminated: a device cannot be in two places simultaneously; an event cannot precede a necessary precursor.
+
+2. **Interval reasoning**
+   Exact and approximate times become ranges rather than invented timestamps.
+
+3. **Monte Carlo uncertainty propagation**
+   Plausible values are repeatedly sampled from disclosed distributions.
+
+4. **Bayesian or likelihood comparison**
+   Where scientifically supportable, evaluate whether particular evidence is more expected under one proposition than another.
+
+5. **Sensitivity analysis**
+   Identify which assumptions control the result.
+
+The sensitivity analysis may be the best feature:
+
+> “Sequence A becomes feasible only if the departure occurred before 5:09, the medical estimate is near its outer limit, and the phone remained at the residence without its owner.”
+
+Now the creator knows precisely what must be investigated.
+
+## Public reference data
+
+Depending on the question, reference distributions could come from:
+
+* historical traffic and routing data
+* published medical and physiological research
+* device-manufacturer accuracy specifications
+* cell-site and GPS uncertainty research
+* local sunrise, weather, and visibility records
+* emergency-response timing
+* court dockets and disposition data
+* sentencing and plea statistics
+* statutory and procedural rules
+* peer-reviewed behavioral research
+
+Every distribution needs provenance:
+
+* exact source
+* population studied
+* date and geography
+* sample size
+* applicability to this case
+* uncertainty
+* whether it was measured or assumed
+
+A national average cannot quietly become the assumed behavior of one specific person.
+
+## The output should show requirements, not just rankings
+
+For each hypothesis, Icarus could generate:
+
+### Required conditions
+
+* Husband departed no later than 5:11.
+* Device A remained with the woman.
+* Witness B’s time estimate was at least seven minutes late.
+* Medical interval must fall in its earliest quartile.
+* No unrecorded participant entered the residence.
+
+### Supporting evidence
+
+* Camera timestamp
+* Pharmacy transaction
+* Call log
+* Medical examination
+
+### Conflicting evidence
+
+* Vehicle telemetry
+* Witness estimate
+* Device-location interval
+
+### Unsupported assumptions
+
+* Identity of the person carrying Device A
+* Exact duration of Action B
+* Accuracy of the household clock
+
+### Discriminating evidence
+
+* Pharmacy surveillance video
+* Original device extraction
+* Vehicle-door event log
+* Raw medical measurements
+* Timestamp calibration records
+
+That last category converts simulation into a research tool:
+
+> **What additional evidence would most reduce uncertainty between these competing accounts?**
+
+## Essential guardrails
+
+This kind of system can manufacture scientific-looking certainty if the inputs are chosen carelessly. NIST guidance on uncertainty propagation stresses that Monte Carlo results depend on assigning appropriate distributions to inputs; poorly specified distributions can yield misleading outputs. [NIST uncertainty guidance](https://nvlpubs.nist.gov/nistpubs/TechnicalNotes/NIST.TN.1900.pdf)
+
+So every result should expose:
+
+* assumptions
+* chosen distributions
+* data sources
+* excluded variables
+* correlations between variables
+* missing data
+* model version
+* number of simulations
+* sensitivity results
+* alternate reasonable specifications
+
+It must also avoid the prosecutor’s-fallacy shape of reasoning:
+
+> “This evidence is uncommon if the person were innocent, therefore innocence is unlikely.”
+
+Those are not equivalent. Evidence likelihood, prior probability, investigative selection, and competing explanations must remain distinct.
+
+And if this ever moves from creator research into expert testimony, the methods would face substantially higher validation and reliability requirements under rules governing expert evidence. [Federal Rule of Evidence 702](https://www.law.cornell.edu/rules/fre/rule_702)
+
+## The product feature
+
+I would position it as:
+
+> **Scenario Lab tests competing case reconstructions against time, location, physical constraints, source evidence, and published reference data. It shows which sequences are feasible, which assumptions they require, where they fail, and what evidence would best distinguish them.**
+
+The sharp version:
+
+> **Don’t ask the model what happened. Ask what would have to be true.**
+
+That is extraordinarily Icarus. It establishes the conditions under which a story can survive contact with the record.

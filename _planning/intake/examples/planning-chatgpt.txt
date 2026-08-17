@@ -1,0 +1,193 @@
+planning Exactly. **Icarus for true-crime research is the correct first wedge.**
+
+It lets you demonstrate the core capability using material already available to researchers and creators, without beginning inside healthcare, law enforcement, legal evidence, or HIPAA-regulated workflows.
+
+The first product is:
+
+> **A case-reconstruction workspace that turns scattered source material into an attributable claim graph, verified timeline, evidence map, and supportable narrative.**
+
+### The research problem
+
+True-crime creators currently work across:
+
+* police reports and affidavits
+* court filings and transcripts
+* interviews and testimony
+* 911 calls and body-camera footage
+* medical information made public in proceedings
+* texts, call logs, calendars, and location records
+* news reporting
+* podcasts and documentaries
+* social posts and public statements
+
+They manually create timelines in spreadsheets or documents. Reported claims, verified facts, repeated allegations, and creator interpretations gradually blend together.
+
+Icarus preserves the distinctions.
+
+### The product’s central question
+
+It would not promise:
+
+> “Here is what really happened.”
+
+It would answer:
+
+> **What was claimed, by whom, based on what, when did it enter the record, what independently supports it, what contradicts it, and which reconstruction best fits the available evidence?**
+
+That is already transformative.
+
+### What users would see
+
+For every material assertion:
+
+| Layer                | Example                                                      |
+| -------------------- | ------------------------------------------------------------ |
+| Original source      | Police report, page 18                                       |
+| Attributed claim     | Husband said she was asleep when he left                     |
+| Event described      | Woman reportedly asleep at approximately 6:10 p.m.           |
+| Independent evidence | Phone activity, camera footage, witness observation          |
+| Status               | Reported / supported / contested / contradicted / unresolved |
+| Claim lineage        | Husband → police → news → podcast                            |
+| Narrative use        | Included with qualification and citation                     |
+
+A creator could immediately see that six publications repeating one statement still trace back to one originating source.
+
+### The killer feature
+
+The strongest initial experience is probably:
+
+> **Upload everything about a case and receive a reconstructed, source-linked timeline with claims separated from evidence.**
+
+Then users can toggle:
+
+* reported account
+* independently timestamped activity
+* physical evidence
+* location and communications
+* medical history contained in the public record
+* witness testimony
+* contradictions
+* unknown intervals
+* competing reconstructions
+* behavioral changes over weeks, months, or years
+
+Clicking any timeline point opens the exact page, quotation, recording timestamp, or data row supporting it.
+
+### Longitudinal pattern-of-life becomes the differentiator
+
+Most research tools could summarize a police report. Icarus could reconstruct how the case evolved:
+
+* What was the person’s baseline?
+* What changed?
+* Who observed the change?
+* Were those observations independent?
+* Did sleep, language, movement, relationships, healthcare, or routines change?
+* Did repeated conflicts produce the same outcome?
+* Which later claims are consistent with contemporaneous records?
+* Which popular “facts” entered the story only after the incident?
+* How did the official narrative change over time?
+
+That gives creators something far better than a dossier. It gives them the **structure of the case**.
+
+### The minimum viable product
+
+Start with six capabilities:
+
+1. **Case room**
+   Upload PDFs, transcripts, audio, video, spreadsheets, screenshots, and links.
+
+2. **Source reader**
+   Search everything while retaining page- and timestamp-level citations.
+
+3. **Claim extraction**
+   Convert statements into attributed claims without promoting them to facts.
+
+4. **Entity resolution**
+   Connect aliases, people, devices, phone numbers, addresses, and organizations.
+
+5. **Layered timeline**
+   Compare testimony and reported accounts with timestamps, calls, locations, and other records.
+
+6. **Cited story builder**
+   Draft a video script, article, episode outline, or evidence brief where each assertion links back to its source.
+
+### Keep the first boundary clean
+
+The research version should explicitly avoid:
+
+* guilt or innocence scores
+* psychiatric diagnoses
+* “narcissist detection”
+* automated credibility verdicts
+* claims that evidence is court-admissible
+* private medical-record collection
+* direct law-enforcement integrations
+* clinical recommendations
+
+It reconstructs the available record and exposes its epistemic structure.
+
+A creator can say:
+
+> “This event is supported by three independent records.”
+
+Or:
+
+> “This claim appears 14 times online, but every version originates with the husband’s first statement.”
+
+That alone could materially improve true-crime reporting.
+
+### Why this is the right demonstration environment
+
+True-crime cases are difficult enough to prove what Icarus can do:
+
+* multiple people with conflicting accounts
+* aliases and shifting descriptions
+* enormous document collections
+* uncertain and approximate times
+* repeated claims mistaken for corroboration
+* evidence scattered across formats
+* critical gaps
+* emotionally powerful narratives
+* behavior that only becomes meaningful longitudinally
+
+And the output is naturally demonstrable. You could take one well-documented public case and show:
+
+**Before Icarus:** 3,000 pages, 40 hours of media, dozens of accounts, one dominant narrative.
+
+**After Icarus:** every claim attributed, every source connected, every contradiction surfaced, and every supported reconstruction reproducible.
+
+Then, after proving that the architecture works, the higher-stakes versions become possible:
+
+* investigative journalism
+* innocence projects and defense research
+* forensic psychiatric reconstruction
+* law-enforcement case analysis
+* perinatal-health longitudinal records
+* multi-informant clinical monitoring
+* authenticated legal evidence systems
+
+Those later versions would require their own validation, governance, security, consent, and compliance. But the core reasoning object remains identical:
+
+[
+\text{Sources}
+\rightarrow
+\text{Claims}
+\rightarrow
+\text{Events}
+\rightarrow
+\text{Evidence}
+\rightarrow
+\text{Sequences}
+\rightarrow
+\text{Competing hypotheses}
+\rightarrow
+\text{Supportable narrative}
+]
+
+The clean positioning is:
+
+> **Icarus Casework reconstructs true-crime cases from the source record—showing what was said, what the evidence supports, where accounts conflict, and what remains unknown.**
+
+Or more pointedly:
+
+> **Every claim has a source. Every timeline has gaps. See the case before the story swallowed it.**

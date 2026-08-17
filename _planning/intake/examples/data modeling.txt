@@ -1,0 +1,324 @@
+data modeling I’ll outline a set of algorithms and modeling patterns you can use in Icarus to turn fragmented data into **priors** and **statistical probabilities** about deterioration, system failure, and risk—without reducing the person to a diagnosis or letting any single institution define the narrative.
+
+This is framed for your stack (Python + Supabase + AI orchestration) and for the Lindsay-style case as a template.
+
+***
+
+## 1) Modeling Goals (in Probabilistic Terms)
+
+You’re trying to estimate, over time, quantities like:
+
+- \( P(\text{severe deterioration}_t \mid \text{history}_{0:t}) \)
+- \( P(\text{system missed handoff}_t \mid \text{contacts}_{0:t}, \text{records}_{0:t}) \)
+- \( P(\text{unrecognized crisis}_t \mid \text{signals}_{0:t}, \text{care structure}_t) \)
+
+“Data as priors” means:
+
+- Use historical cases (Lindsay + other postpartum cases) to form **base-rate priors**.
+- Update those priors with **case-specific evidence** (her journal, meds, sleep, clinical contacts).
+- Keep uncertainty explicit and auditable.
+
+***
+
+## 2) Core Probabilistic Frameworks
+
+### 2.1 Hierarchical Bayesian Models (HBMs)
+
+Use HBMs to encode:
+
+- **Population-level priors**: typical postpartum trajectories for sleep, mood, suicidality, treatment response.
+- **Case-level parameters**: Lindsay’s specific trajectory, deviations from population norms.
+- **System-level parameters**: typical fragmentation rates, handoff failure rates, follow-up adherence.
+
+Structure:
+
+- Level 1 (population):  
+  \[
+  \theta_{\text{pop}} \sim \text{Prior}(\cdot)
+  \]
+- Level 2 (case-specific):  
+  \[
+  \theta_{\text{Lindsay}} \sim \text{Distribution}(\theta_{\text{pop}})
+  \]
+- Level 3 (observations):  
+  \[
+  y_t \sim \text{Likelihood}(\theta_{\text{Lindsay}}, \text{context}_t)
+  \]
+
+Algorithms / tools:
+
+- **MCMC** (PyMC, Stan) for full posterior inference when data is modest but rich.
+- **Variational inference** (PyMC, TensorFlow Probability) for faster approximate posteriors.
+- Use these to estimate:
+  - Probability she was in a “high-risk” latent state at each time slice.
+  - Probability the system was in a “fragmented care” state.
+
+Output:
+
+- Time-indexed posterior distributions, not just point estimates.
+- Clear priors derived from aggregate data; posteriors updated by her specific record.
+
+***
+
+### 2.2 State-Space Models / Hidden Markov Models (HMMs)
+
+Model her **latent mental/physiological state** over time as hidden states, with observed data as emissions.
+
+States might include:
+
+- \( S_t \in \{\text{stable}, \text{distressed}, \text{crisis}, \text{post-crisis}\} \)
+- Or finer-grained: sleep-deprived, medicated, suicidal, psychotic, etc.
+
+Observations:
+
+- Journal sentiment and content tags.
+- Sleep duration/quality.
+- Med changes.
+- Clinical contacts.
+- Observed behavior from others.
+
+Model:
+
+- Transition model:  
+  \[
+  P(S_t \mid S_{t-1}, \text{context}_t)
+  \]
+- Emission model:  
+  \[
+  P(\text{observations}_t \mid S_t)
+  \]
+
+Algorithms:
+
+- **Baum–Welch** for parameter learning in HMMs.
+- **Viterbi** for most likely state sequence.
+- **Forward–backward** for \( P(S_t \mid \text{all observations}) \).
+
+Use cases:
+
+- Estimate probability she was in a “crisis” state on specific dates.
+- Identify change-points where transition probabilities shift (e.g., postpartum week 6, med change).
+
+***
+
+### 2.3 Dynamic Bayesian Networks (DBNs)
+
+Extend HMMs to multiple interacting variables:
+
+- Nodes: sleep, meds, suicidality, cognition, childcare load, clinical contact, system fragmentation.
+- Edges: causal or correlational dependencies over time.
+
+Example:
+
+\[
+P(\text{suicidality}_t \mid \text{suicidality}_{t-1}, \text{sleep}_{t-1}, \text{meds}_{t-1}, \text{stress}_t)
+\]
+
+Algorithms:
+
+- Structure learning (if you have many cases):
+  - Score-based (BIC, BDeu) with search (greedy, hill-climbing).
+  - Constraint-based (PC algorithm).
+- Parameter learning:
+  - Maximum likelihood or Bayesian estimation for conditional probability tables.
+- Inference:
+  - Belief propagation, variable elimination, or sampling.
+
+Use:
+
+- To quantify how much a missed follow-up or med change increases probability of crisis.
+- To simulate “what-if” scenarios: what if a handoff had succeeded?
+
+***
+
+### 2.4 Survival Analysis / Time-to-Event Models
+
+Model time to key events:
+
+- Time from birth → first documented crisis.
+- Time from first help-seeking → hospitalization.
+- Time from last clinical contact → incident.
+
+Models:
+
+- **Cox proportional hazards**:  
+  \[
+  h(t \mid X) = h_0(t) \exp(\beta^\top X)
+  \]
+- **Parametric survival models** (Weibull, exponential).
+- **Competing risks** if multiple possible endpoints (e.g., psych admission vs. medical admission vs. incident).
+
+Inputs:
+
+- Covariates: sleep, meds, number of children, work hours, prior mental health, system fragmentation metrics.
+
+Outputs:
+
+- Hazard ratios showing which factors most increase risk of catastrophic outcomes.
+- Baseline hazard functions as priors for new cases.
+
+***
+
+### 2.5 Change-Point Detection
+
+Identify moments where her trajectory fundamentally shifts.
+
+Methods:
+
+- **Bayesian change-point detection**: infer posterior over change-point locations.
+- **CUSUM / EWMA** for simpler, online detection of shifts in mean/variance of signals (sleep, sentiment).
+- **Hidden semi-Markov models** if you want explicit duration modeling for states.
+
+Use:
+
+- To mark “deterioration phases” objectively.
+- To align system events (med changes, missed appointments) with detected change-points.
+
+***
+
+## 3) Using Data to Establish Priors
+
+You want priors that reflect real postpartum populations and system behaviors, not just assumptions.
+
+### 3.1 Prior Sources
+
+- **Aggregate postpartum datasets** (if accessible):
+  - Sleep patterns by week postpartum.
+  - Prevalence of postpartum depression, anxiety, psychosis.
+  - Treatment response rates.
+- **Health system data** (de-identified, aggregated):
+  - Follow-up adherence rates postpartum.
+  - Handoff failure rates between OB ↔ psychiatry ↔ primary care.
+- **Literature-derived rates**:
+  - Meta-analyses for postpartum mental health trajectories.
+  - Known risk factors (prior mental health, sleep deprivation, multiples, complications).
+
+These become your **population-level priors** in HBMs and DBNs.
+
+### 3.2 Prior Construction Patterns
+
+For a parameter \( \theta \) (e.g., probability of crisis given severe sleep deprivation):
+
+1. Start with a **Beta prior** if it’s a probability:
+   \[
+   \theta \sim \text{Beta}(\alpha, \beta)
+   \]
+   where \( \alpha, \beta \) come from aggregate counts (e.g., crises / non-crises under similar conditions).
+
+2. Update with case-specific data:
+   \[
+   \theta \mid \text{data} \sim \text{Beta}(\alpha + k, \beta + n - k)
+   \]
+   where \( k \) = observed crises, \( n \) = total similar windows.
+
+3. For multi-parameter models, use **weakly informative priors** (e.g., Normal(0, 2.5) on log-odds) to avoid overfitting with limited data.
+
+***
+
+## 4) Entity Resolution and Record Linkage
+
+Before modeling, you need to be confident that records refer to the same entities (Lindsay, clinicians, visits).
+
+Algorithms:
+
+- **Probabilistic record linkage** (Fellegi–Sunter model):
+  - Compute match probabilities based on name, DOB, address, phone, dates.
+- **Bayesian entity resolution**:
+  - Latent true entities; observed records are noisy manifestations.
+  - Use MCMC or variational inference to infer posterior over linkages.
+
+Why it matters:
+
+- Mislinked records distort priors and posteriors.
+- You can propagate linkage uncertainty into downstream models (e.g., integrate over possible linkages).
+
+***
+
+## 5) Narrative Uncertainty and “Competing Stories” as Models
+
+You can treat prosecution/defense/media narratives as **competing generative models** of the same data.
+
+For each narrative \( N_i \):
+
+- Define a set of assumptions (e.g., “she was fully aware,” “she was psychotic,” “no one could have known”).
+- Compute likelihood of observed data under each narrative:
+  \[
+  P(\text{data} \mid N_i)
+  \]
+- With priors \( P(N_i) \), get posterior:
+  \[
+  P(N_i \mid \text{data}) \propto P(\text{data} \mid N_i) P(N_i)
+  \]
+
+This doesn’t “pick a side”; it quantifies how well each story explains the evidence given the priors.
+
+***
+
+## 6) Practical Algorithm Stack (Python-Centric)
+
+Given your preferences:
+
+- **Probabilistic programming**:
+  - PyMC (Bayesian models, HBMs, DBNs, change-point).
+  - Stan (via PyStan) for robust MCMC.
+- **Time-series / state-space**:
+  - `statsmodels` (HMM-like via custom state-space).
+  - `hmmlearn` for HMMs.
+- **Survival analysis**:
+  - `lifelines` (Cox, parametric models).
+- **Graphical models**:
+  - `pgmpy` (Bayesian networks, DBNs).
+- **Entity resolution**:
+  - `splink` (scalable probabilistic linkage).
+  - Custom PyMC models for Bayesian entity resolution.
+
+Integration pattern:
+
+1. Ingest → clean → link entities (splink / custom).
+2. Build event table in Supabase.
+3. Export aggregates to Python for model fitting.
+4. Store model parameters and key posterior summaries back in Supabase for UI consumption.
+
+***
+
+## 7) Example: A Minimal V1 Model
+
+For V1, you might implement:
+
+1. **Latent risk state HMM**:
+   - States: stable, distressed, crisis.
+   - Observations: sleep, journal sentiment, med changes, clinical contacts.
+   - Output: \( P(\text{crisis}_t) \) for each day.
+
+2. **System fragmentation score**:
+   - Simple Bayesian model:
+     - Prior: base rate of missed handoffs from literature/aggregates.
+     - Data: count of missed follow-ups, unshared records, contradictory instructions.
+     - Output: \( P(\text{high fragmentation} \mid \text{case data}) \).
+
+3. **Change-point detection** on:
+   - Sleep + sentiment + suicidality tags.
+   - Output: dates where deterioration accelerates.
+
+These three together give you:
+
+- A probabilistic deterioration curve.
+- A system-failure probability.
+- Objective markers of key turning points.
+
+***
+
+## 8) Guardrails for Ethical Use of Probabilities
+
+- Never present probabilities as verdicts; always as **contextual risk estimates**.
+- Show **credible intervals**, not just point estimates.
+- Make priors explicit and auditable: “This prior comes from X dataset / Y study.”
+- Allow users to adjust priors (e.g., “assume higher base-rate of system failure”) and see how posteriors change.
+
+***
+
+If you want, next step can be:
+
+- A concrete PyMC sketch for the HMM + hierarchical prior structure.
+- A Supabase schema tailored to store events, states, and model outputs.
+- A small synthetic-data example to demonstrate how priors → posteriors work in this context.
