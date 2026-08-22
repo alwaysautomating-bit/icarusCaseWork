@@ -51,6 +51,13 @@ export function structureHref(caseId: string, state: StructureRouteState = {}) {
   return `/cases/${encodeURIComponent(caseId)}/structure${suffix ? `?${suffix}` : ""}`;
 }
 
+export function reconstructionHref(caseId: string, compareVersionIds: string[] = []) {
+  const params = new URLSearchParams();
+  for (const id of compareVersionIds.slice(0, 4)) params.append("compare", id);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/reconstruction${suffix ? `?${suffix}` : ""}`;
+}
+
 export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {
   return structureObjectTypes.includes(value as StructureObjectType) ? value as StructureObjectType : "all";
 }

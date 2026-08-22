@@ -5,7 +5,7 @@ import { signOut } from "@/app/login/actions";
 import { CaseSwitcher } from "@/app/cases/_components/case-switcher";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
-import { caseSetupHref, courtRecordHref, structureHref } from "@/lib/case-routes";
+import { caseSetupHref, courtRecordHref, reconstructionHref, structureHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
@@ -24,7 +24,7 @@ export default async function CaseLayout({ children, params }: { children: React
     <nav className="case-lifecycle-nav" aria-label="Case lifecycle">
       <Link href={caseSetupHref(currentCase.id)}>Foundation</Link>
       <Link href={courtRecordHref(currentCase.id)}>Court Record</Link>
-      <Link href={structureHref(currentCase.id)}>Structure</Link><span aria-disabled="true">Reconcile</span><span aria-disabled="true">Reconstruct</span><span aria-disabled="true">Actor Knowledge</span><span aria-disabled="true">Gaps</span>
+      <Link href={structureHref(currentCase.id)}>Structure</Link><span aria-disabled="true">Reconcile</span><Link href={reconstructionHref(currentCase.id)}>Reconstruct</Link><span aria-disabled="true">Actor Knowledge</span><span aria-disabled="true">Gaps</span>
     </nav>
     {children}
   </div>;

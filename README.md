@@ -56,6 +56,16 @@ To process one source elsewhere, pass its path explicitly. The compiler copies t
 
 The intake uses trial day—not a publisher display date—as filename identity. It never promotes a publisher date to `proceeding_date`, never edits the source, and stops with `SOURCE_CONFLICT` if a trial day already has a different preserved checksum. Re-running an identical source validates and reuses both its manifest and first-pass output.
 
+## Testimony reconstruction
+
+The Day 3 first-responder acceptance slice compiles reviewed assertions from Stephen Hall, Brian Josephine, PJ Hussey, Loring Nudd, Keith Nette, and Patrick Dwyer into a candidate-only reconstruction. It preserves witness attribution, exact source-segment lineage, approximate/relative/unknown time, proposed order and overlap, and unresolved tensions. It creates no canonical events and performs no entity merges.
+
+```powershell
+pnpm testimony:reconstruction-day3
+```
+
+The command is idempotent for the timeline candidate run and saves the reconstruction snapshot once per snapshot hash. Open `/cases/<case-id>/reconstruction` to pin and compare up to four immutable versions side by side. The incident spine and its grouping edges are analytical proposals, not findings of fact.
+
 ## Verify
 
 ```powershell

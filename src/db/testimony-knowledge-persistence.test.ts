@@ -136,9 +136,24 @@ describe("testimony knowledge persistence", () => {
     expect(savedV1.rows[0].snapshot).toMatchObject({ schema_version: "timeline-candidate-view/1.0" });
     expect(savedV1.rows[0].snapshot.items).toHaveLength(1);
     expect(savedV1.rows[0].snapshot.items[0].source_segment_ids).toEqual([segments[2].id, segments[3].id]);
+    const reconstructionSnapshot = {
+      schema_version: "testimony-reconstruction/1.0", case_id: caseId, snapshot_sha256: "c".repeat(64),
+      source_run_ids: [timeline.run.id], source_event_candidate_ids: timeline.event_candidates.map((item) => item.id),
+      source_temporal_assertion_ids: timeline.temporal_assertions.map((item) => item.id), nodes: [{ key: "fixture" }], tensions: [],
+      boundaries: { canonical_events_created: 0, same_resolutions_created: 0, testimony_timestamps_used_as_event_time: 0, unresolved_tensions_collapsed: 0 },
+    };
+    const saveReconstruction = () => db.query<{ version: number; snapshot_sha256: string }>(`
+      select version,snapshot_sha256 from public.save_reconstruction_version($1::uuid,$2::text,$3::text,$4::jsonb)
+    `, [caseId, "Responder reconstruction", "Persistence fixture", JSON.stringify(reconstructionSnapshot)]);
+    const reconstructionV1 = await saveReconstruction();
+    const reconstructionV2 = await saveReconstruction();
+    expect(reconstructionV1.rows[0]).toEqual({ version: 1, snapshot_sha256: "c".repeat(64) });
+    expect(reconstructionV2.rows[0].version).toBe(2);
     await db.exec("reset role; insert into auth.users(id) values('ffffffff-ffff-4fff-8fff-ffffffffffff'); set request.jwt.claim.sub='ffffffff-ffff-4fff-8fff-ffffffffffff'; set role authenticated;");
     const outsiderViews = await db.query<{ count: number }>("select count(*)::int count from public.saved_timeline_views");
     expect(outsiderViews.rows[0].count).toBe(0);
+    const outsiderReconstructions = await db.query<{ count: number }>("select count(*)::int count from public.saved_reconstruction_versions");
+    expect(outsiderReconstructions.rows[0].count).toBe(0);
     await db.exec(`reset role; set request.jwt.claim.sub='${userId}'`);
     const orders = await db.query<{ logical_order: number }>("select logical_order from public.case_ledger order by logical_order");
     expect(orders.rows.map((row) => row.logical_order)).toEqual(orders.rows.map((_, index) => index + 1));

@@ -324,10 +324,11 @@ The current configuration intentionally targets PostgreSQL 17. Do not change the
 Verified locally on 2026-08-22:
 
 - Docker-backed Supabase database, API, Auth, Storage, Studio, and Mailpit are operational.
-- All 13 committed migrations through `20260822102136_saved_timeline_view_versions.sql` are applied locally.
+- All 14 versioned migrations through `20260822143000_testimony_reconstruction_versions_v1.sql` are applied locally.
 - Local database advisors report no security or performance issues.
 - Database lint completes without errors; one existing warning remains in `review_extraction_candidate` for a text-to-`uuid[]` assignment.
-- ESLint, TypeScript, 91 tests, and the Next.js production build pass.
+- ESLint, TypeScript, 95 tests, and the Next.js production build pass.
+- Candidate-only reconstruction snapshots are case-scoped, immutable, RLS-readable, and saved atomically through `save_reconstruction_version`; the function rejects snapshots that claim canonical event creation, SAME resolution, courtroom-timestamp substitution, or collapsed tensions.
 
 Hosted deployment remains blocked until:
 

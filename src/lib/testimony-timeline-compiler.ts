@@ -29,6 +29,7 @@ const qualificationPatterns = [
 const relativePattern = /\b(before|after|when I arrived|for about|(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:minutes?|hours?|days?|weeks?|months?|years?)\s+later|that morning|that evening|that night|the next day|the following day)\b/i;
 const sequencePattern = /\b(then|later|earlier|first|already|not yet|had already|had not yet|subsequently|previously)\b/i;
 const recurrencePattern = /\b(yearly|annually|daily|weekly|monthly|every\s+(?:day|week|month|year|morning|evening))\b/i;
+const durationRangePattern = /\b(?:anywhere\s+from\s+)?(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:to|-)\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(minutes?|hours?|days?|weeks?|months?|years?)\b/i;
 
 export type TemporalParseResult = {
   precision: "exact_timestamp" | "exact_date" | "exact_time" | "approximate" | "interval" | "bounded_interval" | "relative_only" | "sequence_only" | "unknown";
@@ -87,6 +88,7 @@ export function parseTestimonyTemporalLanguage(rawWording: string): TemporalPars
   const bandMatch = wording.match(/\b(early morning|morning|afternoon|evening|night|overnight)\b/i);
   const timeOfDayBand = bandMatch ? bandMatch[1].toLowerCase().replace(/\s+/g, "_") : null;
   const duration = durationFromWording(wording);
+  const durationRange = wording.match(durationRangePattern);
   const relative = wording.match(relativePattern)?.[0] ?? null;
   const sequence = wording.match(sequencePattern)?.[0] ?? null;
   const recurrence = wording.match(recurrencePattern)?.[0] ?? null;
@@ -95,6 +97,7 @@ export function parseTestimonyTemporalLanguage(rawWording: string): TemporalPars
 
   let precision: TemporalParseResult["precision"] = "unknown";
   if (unknownWhen) precision = "unknown";
+  else if (durationRange) precision = "bounded_interval";
   else if (duration) precision = "interval";
   else if (assertedDate && assertedTimeOfDayStart) precision = approximate ? "approximate" : "exact_timestamp";
   else if (assertedDate && timeOfDayBand) precision = "approximate";
@@ -163,7 +166,7 @@ export type ReviewedTimelineUnit = z.input<typeof reviewedTimelineUnitSchema>;
 
 function assertExactWording(label: string, wording: string, sourceSegmentIds: string[], segmentText: Map<string, string>) {
   const source = sourceSegmentIds.map((id) => segmentText.get(id) ?? "").join("\n");
-  if (!source.includes(wording)) throw new Error(`${label} is not an exact substring of its cited testimony source.`);
+  if (!source.includes(wording)) throw new Error(`${label} is not an exact substring of its cited testimony source: “${wording}”.`);
 }
 
 export function compileTestimonyTimelineCandidates(input: {

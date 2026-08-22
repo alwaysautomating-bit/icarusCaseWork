@@ -16,6 +16,7 @@
     "testimony:day6": "tsx scripts/reprocess-day6.ts",
     "testimony:knowledge-day6": "tsx scripts/map-day6-knowledge.ts",
     "testimony:timeline-day6": "tsx scripts/map-day6-timeline.ts",
+    "testimony:reconstruction-day3": "tsx scripts/map-day3-reconstruction.ts",
     "testimony:publish-corpus": "tsx scripts/publish-transcript-corpus.ts",
     "supabase:start": "supabase start",
     "supabase:status": "supabase status",
