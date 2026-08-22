@@ -1,0 +1,95 @@
+{
+  "schemaVersion": "testimony-knowledge-acceptance/1.0",
+  "generatedAt": "2026-08-18T09:28:19.594Z",
+  "acceptanceCorpus": "MA v. Lindsay Clancy Day 6",
+  "caseId": "5e37c3a1-7b8d-4661-9d89-e3dae6bbd9c5",
+  "proceedingId": "2d249535-5449-4e93-87b2-7b2f201a1a6b",
+  "extractionRunId": "6ed12eed-ad88-58c0-aa94-bf3614c2d31d",
+  "source": {
+    "sha256": "48cca058a0bc10ec900010f0271d2bd6ede40c88b7db57e2790ee07aa2de55d2",
+    "detected": 2197,
+    "parsed": 2197,
+    "committed": 2197,
+    "finalTimestamp": "04:16:42"
+  },
+  "deterministicStructure": {
+    "witnessBlocks": 8,
+    "testimonyStartOrdinal": 63,
+    "preWitnessSegmentsPreserved": 63,
+    "blockOverlaps": 0,
+    "invalidBlocks": 0,
+    "providerTimestampRegressions": [
+      {
+        "previousSegmentId": "4e9d4b1c-a9b3-52b7-ae3f-4792ad8a129c",
+        "segmentId": "de418f62-77cf-57aa-a65b-9136b9b09399",
+        "deltaMs": -2000
+      },
+      {
+        "previousSegmentId": "1ec18925-002a-5e88-adaa-ef5cc755d861",
+        "segmentId": "245f0b67-5d4e-58cb-a44c-7ea51652d545",
+        "deltaMs": -3000
+      },
+      {
+        "previousSegmentId": "bca54e7b-080e-52bb-a6a7-3cc781b1d897",
+        "segmentId": "f3051577-9a29-5565-ad94-49995b9e3787",
+        "deltaMs": -2000
+      }
+    ],
+    "impossibleTimestampRegressions": 0
+  },
+  "mapped": {
+    "testimonyUnits": 2,
+    "knowledgeItems": 2,
+    "claims": 2,
+    "entityMentions": 2,
+    "canonicalEntitiesCreated": 0,
+    "eventCandidates": 2,
+    "canonicalEventsCreated": 0,
+    "temporalAssertions": 2,
+    "relationships": 2,
+    "flags": 2,
+    "provenanceActivities": 3,
+    "provenanceRelations": 13,
+    "ledgerEntries": 42
+  },
+  "regressionResults": {
+    "temperature82_1": {
+      "questionTimestamp": "00:19:43",
+      "answerTimestamp": "00:19:56",
+      "numericValueIndependentlyAffirmed": false,
+      "informationBasis": "READ_IN_RECORD",
+      "eventTimePrecision": "relative_only",
+      "assertedStart": null,
+      "assertedEnd": null
+    },
+    "temperature95_2": {
+      "questionTimestamp": "00:21:12",
+      "answerTimestamp": "00:21:18",
+      "answer": "Yes.",
+      "eventTimePrecision": "unknown",
+      "assertedStart": null,
+      "assertedEnd": null
+    }
+  },
+  "boundaries": {
+    "sameResolutionsCreated": 0,
+    "supportAssessmentsCreated": 0,
+    "contradictionAssessmentsCreated": 0,
+    "verificationAssessmentsCreated": 0,
+    "truthOrCausationAssessmentsCreated": 0
+  },
+  "persistence": {
+    "status": "complete",
+    "idempotentReplay": true,
+    "rpc": "commit_testimony_knowledge_map",
+    "migrations": [
+      "20260818090150_testimony_knowledge_mapping_v1.sql",
+      "20260818092634_testimony_knowledge_mapping_security.sql"
+    ]
+  },
+  "remainingScope": [
+    "Only the two temperature Q/A content windows are semantically mapped in this acceptance slice; the full Day 6 transcript remains preserved and structurally addressable.",
+    "Three 2–3 second provider timestamp reversals are preserved and flagged; no source timestamp was rewritten.",
+    "Canonical entity resolution remains pending in SAME."
+  ]
+}

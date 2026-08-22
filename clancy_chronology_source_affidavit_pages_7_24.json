@@ -1,0 +1,838 @@
+{
+  "manifest": {
+    "package_type": "ICARUS_CASEWORK_CHRONOLOGY_SOURCE",
+    "package_version": "1.0.0",
+    "case_name": "Commonwealth v. Lindsay Clancy",
+    "source_title": "Search Warrant Affidavit Investigation History and Chronology Extract",
+    "source_file": "679857984-Lindsay-Clancy-Sw-Court-Docs-Pt-2(1).pdf",
+    "source_page_range": {
+      "start": 7,
+      "end": 24
+    },
+    "source_status": "PRIMARY_COURT_RECORD",
+    "purpose": "Uploadable chronology source preserving events, claims, temporal constraints, source attribution, and investigator conclusions without collapsing reported statements into direct observations.",
+    "generated_on": "2026-08-22",
+    "doctrine": [
+      "One chronology event represents one real-world occurrence or state transition.",
+      "Separate event records from claims/assertions supporting those events.",
+      "Preserve direct observation, reported speech, dispatch transmission, medical statement, and investigator inference as distinct claim types.",
+      "Do not convert investigator conclusions into chronology facts.",
+      "Do not manufacture exact timestamps where the source provides only approximate or relative time."
+    ],
+    "sha256_pre_finalization": "5168ac7b3775cf15ed2f9bffccdd59f82fe1d38596e437daccc54ff35518e11e"
+  },
+  "source": {
+    "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+    "source_type": "search_warrant_affidavit",
+    "title": "Affidavit in Support of Application for Search Warrant",
+    "affiant": "Trooper Daniel R. Lawlor",
+    "jurisdiction": "Commonwealth of Massachusetts",
+    "court": "Plymouth District Court",
+    "document_date": "2023-03-09",
+    "pages_used": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "sections": [
+      {
+        "label": "Investigation History",
+        "start_page": 7,
+        "end_page": 21
+      },
+      {
+        "label": "Probable cause / tablet-search reasoning",
+        "start_page": 21,
+        "end_page": 23
+      },
+      {
+        "label": "Conclusion",
+        "start_page": 24,
+        "end_page": 24
+      }
+    ]
+  },
+  "events": [
+    {
+      "event_id": "EVT-PATRICK-CVS-ENTER",
+      "event_type": "location_presence",
+      "actor": "Patrick Clancy",
+      "location": "CVS, Kingston, Massachusetts",
+      "event_time": {
+        "value": "2023-01-24T17:32:32",
+        "precision": "EXACT_TO_SECOND"
+      },
+      "label": "Patrick enters CVS",
+      "status": "DOCUMENTED",
+      "basis": "surveillance_video",
+      "source_claim_ids": [
+        "CLM-AFF-035-CVS"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-CVS-REGISTER",
+      "event_type": "location_presence",
+      "actor": "Patrick Clancy",
+      "location": "CVS, Kingston, Massachusetts",
+      "event_time": {
+        "value": "2023-01-24T17:36:12",
+        "precision": "EXACT_TO_SECOND"
+      },
+      "label": "Patrick reaches CVS register",
+      "status": "DOCUMENTED",
+      "basis": "surveillance_video",
+      "source_claim_ids": [
+        "CLM-AFF-035-CVS"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-CVS-EXIT",
+      "event_type": "location_presence",
+      "actor": "Patrick Clancy",
+      "location": "CVS, Kingston, Massachusetts",
+      "event_time": {
+        "value": "2023-01-24T17:37:08",
+        "precision": "EXACT_TO_SECOND"
+      },
+      "label": "Patrick exits CVS",
+      "status": "DOCUMENTED",
+      "basis": "surveillance_video",
+      "source_claim_ids": [
+        "CLM-AFF-035-CVS"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-THREEV-ENTER",
+      "event_type": "location_presence",
+      "actor": "Patrick Clancy",
+      "location": "ThreeV, Plymouth, Massachusetts",
+      "event_time": {
+        "value": "2023-01-24T17:54:14",
+        "precision": "EXACT_TO_SECOND"
+      },
+      "label": "Patrick enters ThreeV",
+      "status": "DOCUMENTED",
+      "basis": "surveillance_video",
+      "source_claim_ids": [
+        "CLM-AFF-031-THREEV"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-THREEV-PAY",
+      "event_type": "transaction",
+      "actor": "Patrick Clancy",
+      "location": "ThreeV, Plymouth, Massachusetts",
+      "event_time": {
+        "value": "2023-01-24T17:55:01",
+        "precision": "EXACT_TO_SECOND"
+      },
+      "label": "Patrick pays for order at ThreeV",
+      "status": "DOCUMENTED",
+      "basis": "surveillance_video_and_receipt",
+      "source_claim_ids": [
+        "CLM-AFF-031-THREEV"
+      ]
+    },
+    {
+      "event_id": "EVT-1811-DISPATCH",
+      "event_type": "dispatch",
+      "event_time": {
+        "value": "2023-01-24T18:11:00",
+        "precision": "APPROXIMATE"
+      },
+      "label": "Duxbury police dispatch radios cruisers to 47 Summer Street",
+      "location": "47 Summer Street, Duxbury, Massachusetts",
+      "status": "DOCUMENTED_IN_AFFIDAVIT",
+      "source_claim_ids": [
+        "CLM-AFF-006-DISPATCH"
+      ]
+    },
+    {
+      "event_id": "EVT-POLICE-ARRIVE",
+      "event_type": "responder_arrival",
+      "event_time": {
+        "relative_to": "EVT-1811-DISPATCH",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Duxbury police arrive and locate Lindsay outside with Patrick",
+      "participants": [
+        "Lindsay Clancy",
+        "Patrick Clancy",
+        "Duxbury Police"
+      ],
+      "location": "47 Summer Street, exterior",
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-AFF-006-DISPATCH",
+        "CLM-JOSEPHINE-ARRIVAL",
+        "CLM-HALL-ARRIVAL"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-ENTERS-HOUSE",
+      "event_type": "movement",
+      "event_time": {
+        "relative_to": "EVT-POLICE-ARRIVE",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Patrick enters residence while officers assess Lindsay",
+      "participants": [
+        "Patrick Clancy"
+      ],
+      "location": "47 Summer Street",
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-AFF-006-DISPATCH"
+      ]
+    },
+    {
+      "event_id": "EVT-DISPATCH-CHILDREN-WONT-WAKE",
+      "event_type": "information_transfer",
+      "event_time": {
+        "relative_to": "EVT-PATRICK-ENTERS-HOUSE",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Dispatch advises officers Patrick is in basement and children will not wake",
+      "participants": [
+        "Patrick Clancy",
+        "911/Dispatch",
+        "Responding Officers"
+      ],
+      "information_state_change": {
+        "recipient": "Responding Officers",
+        "learned": [
+          "Patrick is in basement",
+          "Children reportedly will not wake"
+        ]
+      },
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-AFF-006-DISPATCH",
+        "CLM-HALL-DISPATCH"
+      ]
+    },
+    {
+      "event_id": "EVT-SCREAMING-HEARD",
+      "event_type": "sensory_observation",
+      "event_time": {
+        "relative_to": "EVT-DISPATCH-CHILDREN-WONT-WAKE",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Responding officers hear loud screaming from residence",
+      "status": "MULTI-WITNESS_REPORTED",
+      "source_claim_ids": [
+        "CLM-AFF-007-SCREAMING",
+        "CLM-JOSEPHINE-SCREAMING",
+        "CLM-HALL-SCREAMING"
+      ]
+    },
+    {
+      "event_id": "EVT-JOSEPHINE-ENTERS-HOUSE",
+      "event_type": "movement",
+      "event_time": {
+        "relative_to": "EVT-SCREAMING-HEARD",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Josephine enters through rear sliding door and proceeds toward basement",
+      "participants": [
+        "Brian Josephine"
+      ],
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-JOSEPHINE-BASEMENT-ENTRY"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-EXITS-REAR-ROOM",
+      "event_type": "movement",
+      "event_time": {
+        "relative_to": "EVT-JOSEPHINE-ENTERS-HOUSE",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Patrick comes out of rear basement room toward officers",
+      "participants": [
+        "Patrick Clancy"
+      ],
+      "location": "Basement",
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-JOSEPHINE-PATRICK-EXITS",
+        "CLM-HALL-PATRICK-EXITS"
+      ]
+    },
+    {
+      "event_id": "EVT-PATRICK-SAYS-SHE-KILLED-KIDS",
+      "event_type": "information_transfer",
+      "event_time": {
+        "relative_to": "EVT-PATRICK-EXITS-REAR-ROOM",
+        "relation": "DURING_OR_IMMEDIATELY_AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Patrick tells officers \"she killed the kids\"",
+      "speaker": "Patrick Clancy",
+      "recipients": [
+        "Brian Josephine",
+        "Stephen Hall"
+      ],
+      "propositions": [
+        "Children have been killed",
+        "Lindsay is asserted as actor"
+      ],
+      "status": "REPORTED_SPEECH",
+      "source_claim_ids": [
+        "CLM-JOSEPHINE-STATEMENT"
+      ]
+    },
+    {
+      "event_id": "EVT-DAWSON-FIRST-POLICE-OBSERVATION",
+      "event_type": "medical_observation",
+      "subject": "Dawson Clancy",
+      "event_time": {
+        "relative_to": "EVT-PATRICK-SAYS-SHE-KILLED-KIDS",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Josephine observes Dawson in rear basement room",
+      "observations": [
+        {
+          "observer": "Brian Josephine",
+          "finding": "supine and unresponsive"
+        },
+        {
+          "observer": "Brian Josephine",
+          "finding": "face appeared blue and purple"
+        },
+        {
+          "observer": "Brian Josephine",
+          "finding": "believed he observed bruising on neck",
+          "certainty": "OBSERVER_INTERPRETATION"
+        }
+      ],
+      "status": "DIRECT_OBSERVATION_REPORTED",
+      "source_claim_ids": [
+        "CLM-JOSEPHINE-DAWSON"
+      ]
+    },
+    {
+      "event_id": "EVT-DAWSON-CARRIED-UPSTAIRS",
+      "event_type": "patient_movement",
+      "subject": "Dawson Clancy",
+      "event_time": {
+        "relative_to": "EVT-DAWSON-FIRST-POLICE-OBSERVATION",
+        "relation": "AFTER",
+        "precision": "RELATIVE"
+      },
+      "label": "Dawson is carried upstairs and out to arriving ambulance",
+      "participants": [
+        "Brian Josephine",
+        "Stephen Hall"
+      ],
+      "destination": "Arriving ambulance",
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-JOSEPHINE-DAWSON-TRANSPORT",
+        "CLM-HALL-DAWSON-TRANSPORT"
+      ]
+    },
+    {
+      "event_id": "EVT-CORA-BASEMENT-OBSERVATION",
+      "event_type": "medical_observation",
+      "subject": "Cora Clancy",
+      "event_time": {
+        "relative_to": "EVT-DAWSON-CARRIED-UPSTAIRS",
+        "relation": "AROUND_SAME_RESPONSE_INTERVAL",
+        "precision": "RELATIVE"
+      },
+      "label": "Cora observed on basement floor",
+      "observations": [
+        "unresponsive",
+        "blood on hand",
+        "blood around mouth"
+      ],
+      "observer": "Vincent Cahill",
+      "status": "DIRECT_OBSERVATION_REPORTED",
+      "source_claim_ids": [
+        "CLM-CAHILL-CORA"
+      ]
+    },
+    {
+      "event_id": "EVT-CALLAN-BASEMENT-OBSERVATION",
+      "event_type": "medical_observation",
+      "subject": "Callan Clancy",
+      "event_time": {
+        "relative_to": "EVT-CORA-BASEMENT-OBSERVATION",
+        "relation": "AROUND_SAME_RESPONSE_INTERVAL",
+        "precision": "RELATIVE"
+      },
+      "label": "Callan observed on basement floor",
+      "observations": [
+        "unresponsive"
+      ],
+      "observer": "Vincent Cahill",
+      "status": "DIRECT_OBSERVATION_REPORTED",
+      "source_claim_ids": [
+        "CLM-CAHILL-CALLAN"
+      ]
+    },
+    {
+      "event_id": "EVT-BLUE-BAND-OBSERVED",
+      "event_type": "evidence_observation",
+      "object": "Blue exercise resistance band",
+      "event_time": {
+        "relative_to": "EVT-CALLAN-BASEMENT-OBSERVATION",
+        "relation": "DURING",
+        "precision": "RELATIVE"
+      },
+      "location": "Basement floor near Callan",
+      "observer": "Vincent Cahill",
+      "status": "DIRECT_OBSERVATION_REPORTED",
+      "source_claim_ids": [
+        "CLM-CAHILL-BAND"
+      ]
+    },
+    {
+      "event_id": "EVT-EMS-LIFESAVING-MEASURES-CORA-CALLAN",
+      "event_type": "medical_intervention",
+      "event_time": {
+        "relative_to": "EVT-DAWSON-CARRIED-UPSTAIRS",
+        "relation": "AFTER_OR_CONCURRENT",
+        "precision": "RELATIVE"
+      },
+      "label": "EMS performs lifesaving measures on Cora and Callan in basement",
+      "subjects": [
+        "Cora Clancy",
+        "Callan Clancy"
+      ],
+      "status": "REPORTED",
+      "source_claim_ids": [
+        "CLM-HALL-EMS",
+        "CLM-JOSEPHINE-EMS"
+      ]
+    },
+    {
+      "event_id": "EVT-DAWSON-ED-ARRIVAL",
+      "event_type": "medical_state",
+      "subject": "Dawson Clancy",
+      "event_time": {
+        "precision": "UNKNOWN"
+      },
+      "location": "Beth Israel Deaconess Hospital - Plymouth",
+      "state": "CARDIAC_ARREST_ON_ARRIVAL",
+      "label": "Dawson arrives at BID Plymouth in cardiac arrest",
+      "status": "PHYSICIAN_STATEMENT_REPORTED_BY_RABBITT",
+      "source_claim_ids": [
+        "CLM-TENEROWICZ-DAWSON-ARRIVAL"
+      ]
+    },
+    {
+      "event_id": "EVT-CORA-ED-ARRIVAL",
+      "event_type": "medical_state",
+      "subject": "Cora Clancy",
+      "event_time": {
+        "precision": "UNKNOWN"
+      },
+      "location": "Beth Israel Deaconess Hospital - Plymouth",
+      "state": "CARDIAC_ARREST_ON_ARRIVAL",
+      "label": "Cora arrives at BID Plymouth in cardiac arrest",
+      "status": "PHYSICIAN_STATEMENT_REPORTED_BY_RABBITT",
+      "source_claim_ids": [
+        "CLM-SNYDER-CORA-ARRIVAL"
+      ]
+    },
+    {
+      "event_id": "EVT-DAWSON-PRONOUNCED",
+      "event_type": "pronouncement",
+      "subject": "Dawson Clancy",
+      "event_time": {
+        "value": "2023-01-24T19:28:00",
+        "precision": "APPROXIMATE"
+      },
+      "location": "Beth Israel Deaconess Hospital - Plymouth",
+      "pronounced_by": "Dr. Mark Tenerowicz",
+      "label": "Dawson pronounced deceased",
+      "status": "PHYSICIAN_STATEMENT_REPORTED_BY_RABBITT",
+      "source_claim_ids": [
+        "CLM-TENEROWICZ-DAWSON-PRONOUNCEMENT"
+      ]
+    },
+    {
+      "event_id": "EVT-CORA-PRONOUNCED",
+      "event_type": "pronouncement",
+      "subject": "Cora Clancy",
+      "event_time": {
+        "value": "2023-01-24T19:28:00",
+        "precision": "APPROXIMATE"
+      },
+      "location": "Beth Israel Deaconess Hospital - Plymouth",
+      "pronounced_by": "Dr. Michael Snyder",
+      "label": "Cora pronounced deceased",
+      "status": "PHYSICIAN_STATEMENT_REPORTED_BY_RABBITT",
+      "source_claim_ids": [
+        "CLM-SNYDER-CORA-PRONOUNCEMENT"
+      ]
+    },
+    {
+      "event_id": "EVT-RABBITT-BID-ARRIVAL",
+      "event_type": "investigator_arrival",
+      "actor": "Trooper Joseph Rabbitt",
+      "event_time": {
+        "value": "2023-01-24T19:29:00",
+        "precision": "APPROXIMATE"
+      },
+      "location": "Beth Israel Deaconess Hospital - Plymouth",
+      "label": "Rabbitt arrives at BID Plymouth",
+      "status": "DOCUMENTED_IN_AFFIDAVIT",
+      "source_claim_ids": [
+        "CLM-AFF-009-RABBITT"
+      ]
+    },
+    {
+      "event_id": "EVT-CALLAN-MEDFLIGHTED",
+      "event_type": "patient_transport",
+      "subject": "Callan Clancy",
+      "event_time": {
+        "relative_to": "EVT-RABBITT-BID-ARRIVAL",
+        "relation": "BEFORE",
+        "precision": "RELATIVE"
+      },
+      "from": "Beth Israel Deaconess Hospital - Plymouth",
+      "to": "Boston Children's Hospital",
+      "label": "Callan is med-flighted to Boston Children's before Rabbitt arrives",
+      "status": "DOCUMENTED_IN_AFFIDAVIT",
+      "source_claim_ids": [
+        "CLM-AFF-009-RABBITT",
+        "CLM-KAUFFMAN-CALLAN"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "CLM-AFF-006-DISPATCH",
+      "claim_type": "affidavit_summary_of_dispatch_and_response",
+      "asserted_by": "Trooper Daniel R. Lawlor",
+      "claim": "At approximately 1811 hours dispatch radioed cruisers to 47 Summer Street; police located Lindsay outside with Patrick; while officers assessed Lindsay, Patrick entered the home to check on the children; dispatch then radioed that Patrick was in the basement and something was wrong because the children would not wake up.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 7
+    },
+    {
+      "claim_id": "CLM-AFF-007-SCREAMING",
+      "claim_type": "affidavit_summary",
+      "asserted_by": "Trooper Daniel R. Lawlor",
+      "claim": "Duxbury officers heard extremely loud yelling and entered the home responding to the basement.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 7
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-ARRIVAL",
+      "claim_type": "witness_report",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine arrived at the same time as Hall, was directed toward the rear, and located Lindsay with Patrick outside.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-SCREAMING",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine heard extremely loud screaming coming from the house and Patrick was still screaming when Josephine entered.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-BASEMENT-ENTRY",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine entered through the rear sliding door, entered the kitchen, and went to the basement.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-PATRICK-EXITS",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Patrick came out of the rear room in the basement.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-STATEMENT",
+      "claim_type": "reported_speech",
+      "asserted_by": "Brian Josephine",
+      "speaker": "Patrick Clancy",
+      "claim": "Patrick said \"she killed the kids\" as he came out of the rear room.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-DAWSON",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine entered the rear room and observed Dawson lying on his back, unresponsive, blue and purple in the face, and believed he saw bruising on the child's neck.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-DAWSON-TRANSPORT",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine grabbed Dawson, ran him upstairs, and out the front door to an arriving ambulance.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-HALL-ARRIVAL",
+      "claim_type": "witness_report",
+      "asserted_by": "Stephen Hall",
+      "claim": "Hall arrived at approximately the same time as Josephine and encountered Lindsay and Patrick outside.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-HALL-DISPATCH",
+      "claim_type": "received_dispatch_report",
+      "asserted_by": "Stephen Hall",
+      "claim": "Hall heard dispatch radio that Patrick was in the basement and the children would not wake up.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-HALL-SCREAMING",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Stephen Hall",
+      "claim": "Hall heard loud screaming coming from the house.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-HALL-PATRICK-EXITS",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Stephen Hall",
+      "claim": "Hall saw Patrick coming out of the rear room, breathing heavily.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-HALL-DAWSON-TRANSPORT",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Stephen Hall",
+      "claim": "Hall assisted Josephine in transporting Dawson upstairs and out to the arriving ambulance.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-HALL-EMS",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Stephen Hall",
+      "claim": "When Hall returned to the basement, EMS was performing lifesaving measures on the other two children.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 11
+    },
+    {
+      "claim_id": "CLM-CAHILL-CORA",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Vincent Cahill",
+      "claim": "Cahill observed Cora on the left side of the basement, with blood on her hand and blood on her face and nose, and she was unresponsive.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 12
+    },
+    {
+      "claim_id": "CLM-CAHILL-CALLAN",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Vincent Cahill",
+      "claim": "Cahill realized Callan was lying behind him on the ground and was unresponsive.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 12
+    },
+    {
+      "claim_id": "CLM-CAHILL-BAND",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Vincent Cahill",
+      "claim": "Cahill observed a blue exercise resistance band on the ground next to Callan.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 12
+    },
+    {
+      "claim_id": "CLM-JOSEPHINE-EMS",
+      "claim_type": "direct_observation_reported_in_affidavit",
+      "asserted_by": "Brian Josephine",
+      "claim": "Josephine later observed the other two children unresponsive and having lifesaving measures performed by Duxbury EMS.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 10
+    },
+    {
+      "claim_id": "CLM-TENEROWICZ-DAWSON-ARRIVAL",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Mark Tenerowicz",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Dawson arrived at the emergency department in cardiac arrest.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 8
+    },
+    {
+      "claim_id": "CLM-TENEROWICZ-DAWSON-PRONOUNCEMENT",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Mark Tenerowicz",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Dawson was declared dead at approximately 1928 hours.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 8
+    },
+    {
+      "claim_id": "CLM-TENEROWICZ-DAWSON-STRANGULATION",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Mark Tenerowicz",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Dawson had signs of strangulation, particularly petechiae on the side of his face.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 8
+    },
+    {
+      "claim_id": "CLM-TENEROWICZ-BAND-HEARSAY",
+      "claim_type": "reported_hearsay",
+      "asserted_by": "Dr. Mark Tenerowicz",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Tenerowicz had been told Dawson had an exercise band tied around his neck prior to transport.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 8
+    },
+    {
+      "claim_id": "CLM-SNYDER-CORA-ARRIVAL",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Michael Snyder",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Cora was in cardiac arrest upon arrival at BID Plymouth.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 9
+    },
+    {
+      "claim_id": "CLM-SNYDER-CORA-PRONOUNCEMENT",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Michael Snyder",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Cora was declared deceased at 1928 hours.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 9
+    },
+    {
+      "claim_id": "CLM-KAUFFMAN-CALLAN",
+      "claim_type": "physician_statement_reported_by_investigator",
+      "asserted_by": "Dr. Benjamin Kauffman",
+      "reported_to": "Trooper Joseph Rabbitt",
+      "claim": "Callan was in cardiac arrest and critical condition prior to being med-flighted.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 9
+    },
+    {
+      "claim_id": "CLM-AFF-009-RABBITT",
+      "claim_type": "investigator_observation",
+      "asserted_by": "Trooper Joseph Rabbitt",
+      "claim": "Rabbitt arrived at BID Plymouth at approximately 1929 hours; Cora was in Exam Room 3, Dawson in Trauma 1, and Callan had been in Trauma 2 but had already been med-flighted to Boston Children's.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 8
+    },
+    {
+      "claim_id": "CLM-AFF-031-THREEV",
+      "claim_type": "surveillance_and_receipt_summary",
+      "asserted_by": "Trooper Daniel R. Lawlor",
+      "claim": "ThreeV surveillance showed Patrick entered at 17:54:14; after waiting and using his phone he paid at 17:55:01; receipt time was approximately 17:10:00 according to the affidavit's summary of the printed receipt.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 14
+    },
+    {
+      "claim_id": "CLM-AFF-035-CVS",
+      "claim_type": "surveillance_summary",
+      "asserted_by": "Trooper Daniel R. Lawlor",
+      "claim": "CVS surveillance showed Patrick entered at 17:32:32, reached the register at 17:36:12, and exited at 17:37:08.",
+      "source_id": "SRC-SW-AFFIDAVIT-PT2-P7-24",
+      "source_page": 15
+    }
+  ],
+  "temporal_constraints": [
+    {
+      "constraint_id": "TMP-HOME-CVS",
+      "constraint_type": "estimated_travel_duration",
+      "from_location": "47 Summer Street, Duxbury",
+      "to_location": "CVS, Kingston",
+      "duration_minutes": 8,
+      "precision": "APPROXIMATE",
+      "derived_by": "Trooper Andrew Chiachio",
+      "source_page": 14
+    },
+    {
+      "constraint_id": "TMP-CVS-THREEV",
+      "constraint_type": "estimated_travel_duration",
+      "from_location": "CVS, Kingston",
+      "to_location": "ThreeV, Plymouth",
+      "duration_minutes": 8,
+      "precision": "APPROXIMATE",
+      "derived_by": "Trooper Andrew Chiachio",
+      "source_page": 14
+    },
+    {
+      "constraint_id": "TMP-THREEV-HOME",
+      "constraint_type": "estimated_travel_duration",
+      "from_location": "ThreeV, Plymouth",
+      "to_location": "47 Summer Street, Duxbury",
+      "duration_minutes": 9,
+      "precision": "APPROXIMATE",
+      "derived_by": "Trooper Andrew Chiachio",
+      "source_page": 14
+    }
+  ],
+  "projections": [
+    {
+      "projection_id": "PRJ-LAWLOR-PC-TABLET-001",
+      "projection_type": "investigator_probable_cause_conclusion",
+      "author": "Trooper Daniel R. Lawlor",
+      "source_page": 24,
+      "label": "Probable-cause conclusion supporting tablet search warrant",
+      "summary": "Lawlor states that, based on the investigation and collective opinions of investigators, probable cause exists regarding the listed offenses and that related evidence may be found within the tablet.",
+      "status": "INVESTIGATOR_CONCLUSION",
+      "not_timeline_fact": true
+    }
+  ],
+  "viewer_hints": {
+    "default_lanes": [
+      "Patrick / Information State",
+      "Dawson",
+      "Cora",
+      "Callan",
+      "Police / Dispatch",
+      "Medical / Transport"
+    ],
+    "recommended_rendering": {
+      "events": "timeline_nodes",
+      "claims": "expandable_provenance_stack",
+      "temporal_constraints": "dashed_duration_links",
+      "projections": "separate_projection_panel"
+    }
+  },
+  "known_limits": [
+    "This package reflects pages 7-24 of the search-warrant affidavit only.",
+    "The affidavit summarizes interviews and other records; it is not a substitute for underlying dispatch audio, CAD, 911 audio, EMS records, hospital records, or sworn trial testimony.",
+    "Relative event ordering should remain provisional until synchronized against primary timestamped records.",
+    "The source does not establish an exact ED arrival time for Dawson or Cora in this extract.",
+    "The package does not infer an exact time of cardiac arrest onset, strangulation, or death."
+  ]
+}

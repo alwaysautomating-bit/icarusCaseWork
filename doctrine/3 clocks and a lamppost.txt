@@ -1,0 +1,239 @@
+3 clocks and a lamppost 
+
+Yes. That could become one of the strongest pieces of the architecture.
+
+You can give every persisted object a stable identity and also assign it a **logical position in the case record**. Then events, claims, witnesses, evidence objects, transcript segments, propositions, and relationships all become addressable nodes that can be ordered, linked, compared, and traversed.
+
+Something like:
+
+```text
+EVT-000184   event
+CLM-001922   claim
+WIT-000031   witness
+SRC-000087   source
+SEG-004410   transcript segment
+PRP-000266   proposition
+REL-002771   relationship
+EVD-000144   evidence item
+```
+
+Then separately give each object a logical sequence value:
+
+```text
+logical_order = 4817
+```
+
+or a case-scoped sortable identifier:
+
+```text
+CASE-CLANCY / 00004817 / CLM-001922
+```
+
+That gives you a deterministic **total ordering of the record** for storage, replay, audit, pagination, snapshots, and reproducibility.
+
+But I’d preserve another distinction:
+
+```text
+TOTAL RECORD ORDER
+≠
+TEMPORAL ORDER
+≠
+CAUSAL ORDER
+```
+
+A claim entered into Icarus after an event can have a later logical ID while describing something that happened months earlier.
+
+For example:
+
+```text
+LOGICAL RECORD ORDER
+
+4817  SEG — Carpio testimony
+4818  CLM — Carpio says she was told X
+4819  PRP — mechanism was approximately 20-foot fall
+4820  REL — claim concerns proposition
+4821  REL — Carpio received information from EMS
+```
+
+Meanwhile the actual chronology might be:
+
+```text
+EVENT TIME
+
+E1  fall
+E2  EMS encounter
+E3  EMS tells trauma team
+E4  Carpio evaluates patient
+E5  Carpio testifies years later
+```
+
+And causal/information order:
+
+```text
+E2
+ ↓ information transmitted
+E3
+ ↓ informs
+Carpio knowledge
+ ↓ later reported through
+E5
+```
+
+Now the graph can reason over all three.
+
+This also gives you an elegant answer to **“where did this come from?”**
+
+Take one proposition:
+
+```text
+PRP-000266
+"Patient fell approximately 20 feet."
+```
+
+You can traverse backward:
+
+```text
+PRP-000266
+    ↑ concerns
+CLM-001922
+    ↑ extracted from
+SEG-004410
+    ↑ contained in
+SRC-000087
+    ↑ testimony of
+WIT-000031
+```
+
+And sideways:
+
+```text
+PRP-000266
+    ← supports — CLM-002005
+    ← qualifies — CLM-002117
+    ← contradicts — CLM-003004
+```
+
+And forward:
+
+```text
+PRP-000266
+    ↓ candidate causal relation
+EVT-000191 → EVT-000198
+```
+
+That is where causal and relationship modeling gets much easier, because everything has a durable address.
+
+I’d probably make the relationship model generic enough to connect any node type:
+
+```text
+relationships
+-------------
+id
+case_id
+from_node_type
+from_node_id
+relation_type
+to_node_type
+to_node_id
+source_claim_id
+logical_order
+review_status
+```
+
+Then you can express:
+
+```text
+claim → concerns → proposition
+claim → describes → event
+claim → contradicts → claim
+event → before → event
+event → claimed_causes → event
+source → contains → segment
+segment → produces → claim
+witness → made → claim
+evidence → supports → proposition
+proposition → used_by → prosecution_theory
+```
+
+And once every relationship also has an ID, even the **edges become first-class records** that can be reviewed, challenged, superseded, or cited.
+
+That matters because sometimes the dispute is not about either node.
+
+It is about the arrow.
+
+For example:
+
+```text
+E1 occurred       ✓
+E2 occurred       ✓
+
+E1 CAUSED E2      ?
+```
+
+You might have:
+
+```text
+REL-501
+E1 → caused → E2
+Source: prosecution argument
+
+REL-502
+E1 → contributed_to → E2
+Source: witness testimony
+
+REL-503
+E1 → no causal relation established → E2
+Source: expert testimony
+```
+
+Now Icarus can model the disagreement at the relationship level instead of forcing one event to win.
+
+And the total ordering gives you another benefit: **reproducible case snapshots**.
+
+You can say:
+
+```text
+CASE SNAPSHOT
+through logical record 12,884
+```
+
+Then every projection—timeline, prosecution theory, defense theory, causal graph, contradiction report—can be regenerated against exactly the same state of the evidence.
+
+That is very close to event sourcing:
+
+```text
+immutable additions
+        ↓
+logical ordering
+        ↓
+case state at N
+        ↓
+projections
+```
+
+Which is a very natural fit for Icarus.
+
+So I think the deeper model becomes:
+
+```text
+IDENTITY
+Every object has a stable ID.
+
+ORDER
+Every persisted change has a case-scoped logical order.
+
+TIME
+Events retain real-world time separately.
+
+DEPENDENCY
+Explicit relations establish before/after, information flow,
+causal claims, support, contradiction, derivation, etc.
+
+PROJECTION
+Timelines, theories, witness accounts, causal graphs,
+and narratives are computed from those nodes + edges.
+```
+
+That gives you both a **totally ordered ledger of the case record** and a **partially ordered model of reality**.
+
+Those are two different things, and keeping both is what makes the causal modeling much stronger.

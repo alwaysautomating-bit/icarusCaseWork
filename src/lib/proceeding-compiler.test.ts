@@ -54,6 +54,26 @@ describe("opening-statement proceeding compiler", () => {
     expect(routed.positions.every((position) => position.evidenceStatus === "not_evidence")).toBe(true);
   });
 
+  it("uses manifest metadata when a plain-text capture omits its canonical title line", () => {
+    const captured = [
+      "Day 13 of the MA v. Lindsay Clancy trial. Read the transcript here.",
+      "Bailiff (00:01):",
+      "Court is now in session.",
+      "Judge William Sullivan (00:02):",
+      "Good morning.",
+    ].join("\n\n");
+    const compiled = compileProceedingSource({
+      provider: "rev",
+      representation: "rev_plain_text",
+      proceedingType: "trial_day",
+      artifactName: "Lindsay-Clancy_Trial-Day-13_Rev-Transcript.txt",
+      title: "MA v. Lindsay Clancy Day 13",
+      sourceUrl: null,
+    }, captured);
+
+    expect(compiled.proceeding.title).toBe("MA v. Lindsay Clancy Day 13");
+  });
+
   it("commits the complete preserved artifact while keeping opening advocacy out of testimony claims", () => {
     const compiled = compileUnifiedProceeding({ provider: "rev", representation: "rev_plain_text", proceedingType: "opening_statements", artifactName: "opening.rev.txt", sourceUrl: null }, source);
     expect(compiled.coverage.detectedSegments).toBe(1_364);

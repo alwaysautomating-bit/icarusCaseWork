@@ -392,6 +392,7 @@ export type PreservedTranscriptManifest = {
   provider: "rev";
   representation: "rev_html" | "rev_markdown" | "rev_plain_text";
   artifactName: string;
+  title?: string;
   sourceUrl?: string | null;
   proceedingType: "trial_day" | "opening_statements";
 };
@@ -422,7 +423,7 @@ export function compileProceedingSource(manifest: PreservedTranscriptManifest, s
       if (lines[end]?.trim() === "Keep reading") break;
       index = end;
     }
-    const title = source.match(/^#\s*(MA v\. Lindsay Clancy Day \d+)\s*$/m)?.[1] ?? manifest.artifactName;
+    const title = manifest.title ?? source.match(/^#\s*(MA v\. Lindsay Clancy Day \d+)\s*$/m)?.[1] ?? manifest.artifactName;
     const canonical = manifest.sourceUrl ?? `https://www.rev.com/transcripts/${title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
     const syntheticHtml = `<!doctype html><html><head><title>${escape(title)} | Rev</title><link href="${escape(canonical)}" rel="canonical"></head><body><div id="main-content">${turns.map((turn) => `<p>${escape(turn.speaker)} (<a href="${escape(turn.href)}">${escape(turn.timestamp)}</a>):</p><p>${escape(turn.text).replaceAll("\n", "<br/>")}</p>`).join("")}</div></body></html>`;
     const originalSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
@@ -446,7 +447,7 @@ export function compileProceedingSource(manifest: PreservedTranscriptManifest, s
       if (lines[end]?.trim() === "Keep reading") break;
       index = end;
     }
-    const title = source.match(/^(MA v\. Lindsay Clancy Day \d+)\s*$/m)?.[1] ?? manifest.artifactName;
+    const title = manifest.title ?? source.match(/^(MA v\. Lindsay Clancy Day \d+)\s*$/m)?.[1] ?? manifest.artifactName;
     const validationUrl = manifest.sourceUrl ?? "https://www.rev.com/transcripts/preserved-plain-text";
     const syntheticHtml = `<!doctype html><html><head><title>${escape(title)} | Rev</title><link href="${escape(validationUrl)}" rel="canonical"></head><body><div id="main-content">${turns.map((turn) => `<p>${escape(turn.speaker)} (<a href="">${escape(turn.timestamp)}</a>):</p><p>${escape(turn.text).replaceAll("\n", "<br/>")}</p>`).join("")}</div></body></html>`;
     const originalSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
@@ -463,7 +464,7 @@ export type IntakeManifest = {
   trial_day: number;
   proceeding_label: string;
   proceeding_date: string | null;
-  source: { publisher: "Rev"; preserved_filename: string; canonical_url: string | null };
+  source: { publisher: "Rev"; page_title: string; preserved_filename: string; canonical_url: string | null };
   integrity: { sha256: string };
 };
 
@@ -472,7 +473,7 @@ export function compilePreservedTranscriptManifest(manifest: IntakeManifest, sou
   if (manifest.source.publisher !== "Rev") throw new Error(`Unsupported transcript provider: ${manifest.source.publisher}`);
   const actualSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
   if (actualSha256 !== manifest.integrity.sha256) throw new Error("Preserved transcript checksum does not match its intake manifest.");
-  const compilerManifest = { provider: "rev" as const, artifactName: manifest.source.preserved_filename, sourceUrl: manifest.source.canonical_url, proceedingType: "trial_day" as const };
+  const compilerManifest = { provider: "rev" as const, artifactName: manifest.source.preserved_filename, title: manifest.source.page_title, sourceUrl: manifest.source.canonical_url, proceedingType: "trial_day" as const };
   if (manifest.source.preserved_filename.toLowerCase().endsWith(".txt")) {
     return compileProceedingSource({ ...compilerManifest, representation: "rev_plain_text" }, source);
   }

@@ -1,98 +1,10 @@
-Product
 
-Industries
-
-Resources
-
-[About Rev](https://www.rev.com/about-rev)
-
-[Pricing](https://www.rev.com/pricing)
-
-[Login](https://www.rev.com/app)
-
-[Talk to a Specialist](https://www.rev.com/contact-sales)[Try Rev Free](https://www.rev.com/subscription/signup/groups/24/plans/79)
-
-[Blog Home](https://www.rev.com/blog)[Legal](https://www.rev.com/category/legal)[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)[Transcription ](https://www.rev.com/category/transcription)[Rev Spotlight](https://www.rev.com/category/rev-spotlight)
-
-[Accessibility](https://www.rev.com/category/accessibility)
-
-[AI & Speech Recognition](https://www.rev.com/category/ai-speech-recognition)
-
-[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)
-
-[Business](https://www.rev.com/category/business)
-
-[Captions & Subtitles](https://www.rev.com/category/captions-and-subtitles)
-
-[Congressional Testimony](https://www.rev.com/category/congressional-testimony)
-
-[Court Reporting & Depositions](https://www.rev.com/category/depositions-and-court-reporting)
-
-[Criminal Defense](https://www.rev.com/category/criminal-defense)
-
-[Donald Trump](https://www.rev.com/category/donald-trump)
-
-[Education](https://www.rev.com/category/education)
-
-[Historical Speeches & Events](https://www.rev.com/category/historical-speeches-events)
-
-[Holidays](https://www.rev.com/category/holidays)
-
-[Interviews](https://www.rev.com/category/interviews)
-
-[Investigation](https://www.rev.com/category/investigation)
-
-[Joe Biden](https://www.rev.com/category/joe-biden)
-
-[Journalism](https://www.rev.com/category/journalism)
-
-[Legal](https://www.rev.com/category/legal)
-
-[Legal AI](https://www.rev.com/category/legal-ai)
-
-[Legal Event](https://www.rev.com/category/legal-event)
-
-[Legal Operations](https://www.rev.com/category/legal-operations)
-
-[Litigation](https://www.rev.com/category/litigation)
-
-[Marketing](https://www.rev.com/category/marketing)
-
-[Media & Entertainment](https://www.rev.com/category/media-and-entertainment)
-
-[News](https://www.rev.com/category/news)
-
-[Paralegal Resources](https://www.rev.com/category/paralegal)
-
-[Personal Injury](https://www.rev.com/category/personal-injury-law)
-
-[Politics](https://www.rev.com/category/politics)
-
-[Productivity](https://www.rev.com/category/productivity)
-
-[Rev Spotlight](https://www.rev.com/category/rev-spotlight)
-
-[Speech to Text Technology](https://www.rev.com/category/speech-to-text-technology)
-
-[Supreme Court](https://www.rev.com/category/supreme-court)
-
-[Surveys and Data](https://www.rev.com/category/surveys-and-data)
-
-[Transcription](https://www.rev.com/category/transcription)
-
-[Video Editing](https://www.rev.com/category/video-editing)
-
-[World News](https://www.rev.com/category/world-news)
-
-[Transcripts Home](https://www.rev.com/transcripts)
-
-[Legal Event](https://www.rev.com/category/legal-event)
 
 MA v. Lindsay Clancy Day 2
 
 # MA v. Lindsay Clancy Day 2
 
-Day 2 of the MA v. Lindsay Clancy trial. Read the transcript here. 
+Day 2 of the MA v. Lindsay Clancy trial. Read the transcript here.
 
 July 30, 2026
 
@@ -148,7 +60,7 @@ All right. Before we get started, could I see Counsel at sidebar briefly?
 
 Court Reporter ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15)):
 
-[inaudible 00:21:29].
+\[inaudible 00:21:29].
 
 Judge William F. Sullivan ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15)):
 
@@ -156,7 +68,7 @@ Yeah. That's the final.
 
 Court Reporter ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15)):
 
-[inaudible 00:21:37].
+\[inaudible 00:21:37].
 
 Judge William F. Sullivan ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15)):
 
@@ -175,14 +87,14 @@ Yes.
 
 Court Reporter ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.15)):
 
-[inaudible 00:22:00].
+\[inaudible 00:22:00].
 
 Judge William F. Sullivan ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.93)):
 
 Okay.
 
 ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.93))
-[inaudible 00:23:05].
+\[inaudible 00:23:05].
 
 Bailiff ([24:45](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1485.93)):
 
@@ -235,11 +147,11 @@ Thank you, Your Honor. We recall Patrick Clancy.
 
 Bailiff ([27:42](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1662.21)):
 
-[inaudible 00:27:40]. I want you to watch your step. [inaudible 00:27:44].
+\[inaudible 00:27:40]. I want you to watch your step. \[inaudible 00:27:44].
 
 Court Reporter ([27:49](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1669.89)):
 
-Please  raise your right hand, sir. Do you solemnly swear that the testimony  and the evidence you shall give to the court and the jury in the matter  now pending between the Commonwealth and the defendant [inaudible  00:27:54] shall be the truth, the whole truth, and nothing but the  truth, so help you God?
+Please  raise your right hand, sir. Do you solemnly swear that the testimony  and the evidence you shall give to the court and the jury in the matter  now pending between the Commonwealth and the defendant \[inaudible  00:27:54] shall be the truth, the whole truth, and nothing but the  truth, so help you God?
 
 Patrick Clancy ([27:54](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1674.84)):
 
@@ -311,7 +223,7 @@ All right. Any objection?
 
 Kevin Reddington ([29:28](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1768.62)):
 
-No. [inaudible 00:29:29].
+No. \[inaudible 00:29:29].
 
 Judge William F. Sullivan ([29:28](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1768.68)):
 
@@ -319,7 +231,7 @@ All right. That may be admitted.
 
 Jennifer Sprague ([29:38](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1778.67)):
 
-[inaudible  00:29:31]. Now, as you're getting ready to leave the house to head out  to get the takeout, did Lindsay say anything to you?
+\[inaudible  00:29:31]. Now, as you're getting ready to leave the house to head out  to get the takeout, did Lindsay say anything to you?
 
 Patrick Clancy ([29:50](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=1790.97)):
 
@@ -795,7 +707,7 @@ Exhibit 30 so marked, Your Honor.
 
 Patrick Clancy ([40:02](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2402.73)):
 
-[Inaudible 00:40:03]
+\[Inaudible 00:40:03]
 
 Judge ([40:05](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=2405.04)):
 
@@ -2470,7 +2382,7 @@ Follow me, please.
 
 Speaker 8 ([01:28:43](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=5323.05)):
 
-My [inaudible 01:29:09] go.
+My \[inaudible 01:29:09] go.
 
 Speaker 7 ([01:29:19](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=5359.11)):
 
@@ -3014,7 +2926,7 @@ Good morning, ma'am. Can you stop right here and raise your right hand for the c
 
 Speaker 21 ([02:52:12](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10332.63)):
 
-Please  raise your right hand. Do you solemnly swear that the testimony and the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the [inaudible 02:52:19] shall be  the truth, the whole truth, and nothing but the truth, so help you God?
+Please  raise your right hand. Do you solemnly swear that the testimony and the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the \[inaudible 02:52:19] shall be  the truth, the whole truth, and nothing but the truth, so help you God?
 
 Saria Shelgren ([02:52:21](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10341.75)):
 
@@ -3062,7 +2974,7 @@ Thank you, Your Honor.
 
 Speaker 18 ([02:52:36](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10356.69)):
 
-[inaudible 02:52:37].
+\[inaudible 02:52:37].
 
 Speaker 17 ([02:52:37](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=10357.41)):
 
@@ -3458,7 +3370,7 @@ Good morning, ma'am. Can you stop right here and raise your right hand for the c
 
 Speaker 21 ([03:03:41](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11021.04)):
 
-Please  raise your right hand. Do you solemnly swear that the testimony of the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the [inaudible 03:03:47] shall be  the truth, the whole truth, and nothing but the truth so help you God?
+Please  raise your right hand. Do you solemnly swear that the testimony of the  evidence you shall give to the court and the jury in the matter now  pending between the Commonwealth and the \[inaudible 03:03:47] shall be  the truth, the whole truth, and nothing but the truth so help you God?
 
 Saria Shelgren ([03:03:49](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11029.65)):
 
@@ -3490,7 +3402,7 @@ Sure. Absolutely.
 
 Speaker 18 ([03:04:03](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11043.99)):
 
-Yes. [inaudible 03:04:05].
+Yes. \[inaudible 03:04:05].
 
 Speaker 17 ([03:04:04](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=11044.89)):
 
@@ -4113,7 +4025,7 @@ But not-
 
 Julia Jenae ([03:54:28](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14068.26)):
 
-He  heard it back in September, maybe even November, I think, when she  started the [inaudible 03:54:35] type drug. But I was asking  specifically about voices though, because I think the prosecution is  trying to thread that needle. She didn't necessarily say a male voice  was telling her to do things, and that hasn't come out in the evidence  yet until after. When he talked to her, when she was hospitalized,  that's when she told him that the reason she did it was because a man's  voice told her, "You're going to run out of time. You have to do it now,  basically, or else." Does it matter that he didn't know that particular  part? He did say that she had thoughts of harming herself and even  harming the kids prior to.
+He  heard it back in September, maybe even November, I think, when she  started the \[inaudible 03:54:35] type drug. But I was asking  specifically about voices though, because I think the prosecution is  trying to thread that needle. She didn't necessarily say a male voice  was telling her to do things, and that hasn't come out in the evidence  yet until after. When he talked to her, when she was hospitalized,  that's when she told him that the reason she did it was because a man's  voice told her, "You're going to run out of time. You have to do it now,  basically, or else." Does it matter that he didn't know that particular  part? He did say that she had thoughts of harming herself and even  harming the kids prior to.
 
 Terri Austin ([03:55:08](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14108.4)):
 
@@ -4144,7 +4056,7 @@ Welcome  back to CourtTV Live. I'm Julia Janae. Thank you for being with us this
 
 Speaker 26 ([04:02:38](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14558.49)):
 
-[inaudible 04:02:57].
+\[inaudible 04:02:57].
 
 Speaker 28 ([04:03:02](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=14582.01)):
 
@@ -4263,7 +4175,7 @@ Yep.
 
 Kevin Reddington ([05:25:35](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19535.07)):
 
-So I'm going to [inaudible 05:25:38].
+So I'm going to \[inaudible 05:25:38].
 
 Judge William Sullivan ([05:25:35](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19535.07)):
 
@@ -4407,11 +4319,11 @@ Yeah.
 
 Kevin Reddington ([05:28:33](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19713.84)):
 
-One of the photographs that the government had. [inaudible 05:28:36].
+One of the photographs that the government had. \[inaudible 05:28:36].
 
 Jennifer Sprague ([05:28:35](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19715.91)):
 
-[inaudible 05:28:36]. Oh, yeah.
+\[inaudible 05:28:36]. Oh, yeah.
 
 Kevin Reddington ([05:28:36](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19716.03)):
 
@@ -4431,7 +4343,7 @@ That's the playroom.
 
 Kevin Reddington ([05:28:56](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19736.4)):
 
-[inaudible 05:28:56] this room?
+\[inaudible 05:28:56] this room?
 
 Judge William Sullivan ([05:28:57](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19737.33)):
 
@@ -4487,7 +4399,7 @@ I think it was Dawson's.
 
 Kevin Reddington ([05:29:50](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19790.43)):
 
-Okay. [inaudible 05:29:50].
+Okay. \[inaudible 05:29:50].
 
 Judge William Sullivan ([05:29:50](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19790.46)):
 
@@ -4583,7 +4495,7 @@ That one's Dawson.
 
 Kevin Reddington ([05:31:12](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19872.51)):
 
-Dawson. Did you have occasion to see her interact with Dawson as a [inaudible 05:31:25]?
+Dawson. Did you have occasion to see her interact with Dawson as a \[inaudible 05:31:25]?
 
 Judge William Sullivan ([05:31:24](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19884.66)):
 
@@ -4591,7 +4503,7 @@ Hey, did you wish to introduce those photographs?
 
 Kevin Reddington ([05:31:36](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19896.12)):
 
-[inaudible 05:31:28]. Thank you. I appreciate it. [inaudible 05:31:36].
+\[inaudible 05:31:28]. Thank you. I appreciate it. \[inaudible 05:31:36].
 
 Speaker 35 ([05:31:36](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=19896.24)):
 
@@ -4659,7 +4571,7 @@ Exhibits 63 through 75.
 
 Kevin Reddington ([05:39:23](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20363.67)):
 
-Mr.  Clancy, and if I ask a question and it's difficult or if you need a  break, I'm sure that [inaudible 05:39:30] we'll certainly give you a  break. If I push too hard, just let me know. All right?
+Mr.  Clancy, and if I ask a question and it's difficult or if you need a  break, I'm sure that \[inaudible 05:39:30] we'll certainly give you a  break. If I push too hard, just let me know. All right?
 
 Patrick Clancy ([05:39:36](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20376.21)):
 
@@ -4675,7 +4587,7 @@ That's Cora.
 
 Speaker 36 ([05:39:54](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20394.42)):
 
-[inaudible 05:39:56].
+\[inaudible 05:39:56].
 
 Kevin Reddington ([05:40:03](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20403.48)):
 
@@ -5025,7 +4937,7 @@ Patrick Clancy ([05:48:19](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1Nz
 
 Speaker 37 ([05:48:21](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20901.6)):
 
-Okay.  So the jury can [inaudible 05:48:23]. So when you're dealing with these  things on the computers, it's a little hard sometimes to understand  what they're depicting, and I'm having a hard time moving it. Here it  is. All right. Right there, you see that there? That's the date that  we're talking about, right?
+Okay.  So the jury can \[inaudible 05:48:23]. So when you're dealing with these  things on the computers, it's a little hard sometimes to understand  what they're depicting, and I'm having a hard time moving it. Here it  is. All right. Right there, you see that there? That's the date that  we're talking about, right?
 
 Patrick Clancy ([05:48:51](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=20931.12)):
 
@@ -5109,7 +5021,7 @@ So  I think we had Exhibit 76. They're making a copy of that. Do you want  to ma
 
 Speaker 38 ([05:51:01](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21061.86)):
 
-[inaudible 05:51:02] 76.
+\[inaudible 05:51:02] 76.
 
 Speaker 37 ([05:51:07](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21067.56)):
 
@@ -5165,7 +5077,7 @@ I don't know actually. It could have been sent from my iPhone.
 
 Speaker 37 ([05:52:18](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21138)):
 
-Okay. [inaudible 05:52:18]. It's all we got.
+Okay. \[inaudible 05:52:18]. It's all we got.
 
 Judge ([05:52:18](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=21138.03)):
 
@@ -5713,11 +5625,11 @@ And your mother was a nurse also at South Shore Hospital?
 
 Patrick Clancy ([06:07:13](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22033.74)):
 
-In L&D, yeah.
+In L\&D, yeah.
 
 Speaker 37 ([06:07:15](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22035.12)):
 
-L&D,  Labor and Delivery. Same thing. Okay. And your mother was good enough  to refer Lindsay to this person to consult with, right?
+L\&D,  Labor and Delivery. Same thing. Okay. And your mother was good enough  to refer Lindsay to this person to consult with, right?
 
 Patrick Clancy ([06:07:24](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=22044.54)):
 
@@ -7011,7 +6923,7 @@ Sixty seven.
 
 Speaker 42 ([06:32:27](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23547.03)):
 
-[inaudible 06:32:37].
+\[inaudible 06:32:37].
 
 Speaker 40 ([06:32:38](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=23558.61)):
 
@@ -7608,7 +7520,7 @@ That may be admitted.
 
 Court Cerk ([06:49:15](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24555.42)):
 
-[inaudible 06:49:16].
+\[inaudible 06:49:16].
 
 Defense ([06:49:19](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=24559.08)):
 
@@ -8714,7 +8626,7 @@ Okay.
 
 Court Cerk ([07:16:01](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26161.23)):
 
-[inaudible 07:16:04].
+\[inaudible 07:16:04].
 
 Judge ([07:16:05](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26165.79)):
 
@@ -8725,7 +8637,7 @@ So  I'm going to excuse you. I hope you have a nice evening. We'll come  back he
 
 Speaker 44 ([07:18:47](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26327.04)):
 
-All right. All rise. Good. [inaudible 07:18:50] please.
+All right. All rise. Good. \[inaudible 07:18:50] please.
 
 Judge ([07:19:20](https://www.rev.com/app/transcript/NmE2YjMwODZlN2E1NzUzYjBmNDcyMTllNkE1enR3WEVSelB0/o/VEMwMTcwODA3MDY1?ts=26360.97)):
 
@@ -8761,7 +8673,7 @@ Sign up to get Rev content delivered straight to your inbox.
 
 Product
 
-[Multi-File Evidence Analysis](https://www.rev.com/services/insights)[Document Editor](https://www.rev.com/services/document-editor)[Image Analysis](https://www.rev.com/services/ai-image-analyzer)[Transcript Editor & Clipping](https://www.rev.com/services/suggested-clips)[AI Templates](https://www.rev.com/services/legal-ai-templates)[Mobile App](https://www.rev.com/apps-and-tools/voice-recorder)[Pricing](https://www.rev.com/pricing)
+[Multi-File Evidence Analysis](https://www.rev.com/services/insights)[Document Editor](https://www.rev.com/services/document-editor)[Image Analysis](https://www.rev.com/services/ai-image-analyzer)[Transcript Editor \& Clipping](https://www.rev.com/services/suggested-clips)[AI Templates](https://www.rev.com/services/legal-ai-templates)[Mobile App](https://www.rev.com/apps-and-tools/voice-recorder)[Pricing](https://www.rev.com/pricing)
 
 Human-Verified
 
@@ -8769,11 +8681,11 @@ Human-Verified
 
 Industries
 
-[Criminal Prosecution](https://www.rev.com/solutions/prosecution)[Criminal Defense](https://www.rev.com/solutions/criminal-defense)[Law Enforcement](https://www.rev.com/solutions/law-enforcement-and-investigators)[Civil Law](https://www.rev.com/solutions/law-firms)[Court Reporting Agencies](https://www.rev.com/services/self-serve-court-reporting-transcripts)[Research & Consulting](https://www.rev.com/solutions/market-research)[Newsrooms & Journalists](https://www.rev.com/solutions/news-broadcast)[Education](https://www.rev.com/solutions/education)[Video Distribution & Accessibility](https://www.rev.com/solutions/video-distribution)
+[Criminal Prosecution](https://www.rev.com/solutions/prosecution)[Criminal Defense](https://www.rev.com/solutions/criminal-defense)[Law Enforcement](https://www.rev.com/solutions/law-enforcement-and-investigators)[Civil Law](https://www.rev.com/solutions/law-firms)[Court Reporting Agencies](https://www.rev.com/services/self-serve-court-reporting-transcripts)[Research \& Consulting](https://www.rev.com/solutions/market-research)[Newsrooms \& Journalists](https://www.rev.com/solutions/news-broadcast)[Education](https://www.rev.com/solutions/education)[Video Distribution \& Accessibility](https://www.rev.com/solutions/video-distribution)
 
 Resources
 
-[Blog](https://www.rev.com/blog)[Reports & Guides](https://www.rev.com/resources)[Learning Center](https://www.rev.com/resources/platform-how-to-guides)[Transcript Library](https://www.rev.com/transcripts)[Success Stories](https://www.rev.com/customers)[Webinars](https://www.rev.com/resources/discovery-session-webinar-series)[Reviews](https://www.rev.com/reviews)[Apps & Tools](https://www.rev.com/apps-and-tools)[Services By Location](https://www.rev.com/locations)
+[Blog](https://www.rev.com/blog)[Reports \& Guides](https://www.rev.com/resources)[Learning Center](https://www.rev.com/resources/platform-how-to-guides)[Transcript Library](https://www.rev.com/transcripts)[Success Stories](https://www.rev.com/customers)[Webinars](https://www.rev.com/resources/discovery-session-webinar-series)[Reviews](https://www.rev.com/reviews)[Apps \& Tools](https://www.rev.com/apps-and-tools)[Services By Location](https://www.rev.com/locations)
 
 Developers
 
@@ -8795,8 +8707,9 @@ About
 
 [Download on the App Store](https://apps.apple.com/us/app/rev-voice-recorder-memos/id598332111)
 
-[Get it on Google Play](https://play.google.com/store/apps/details?id=com.rev.revcorder\&hl=en\&gl=US)
+[Get it on Google Play](https://play.google.com/store/apps/details?id=com.rev.revcorder&hl=en&gl=US)
 
 © rev.com
 
 [Legal](https://www.rev.com/legal)[Security](https://www.rev.com/security)[Terms](https://www.rev.com/legal/terms)[PrivacyCA Privacy Policy](https://www.rev.com/legal/privacy)[Sitemap](https://www.rev.com/sitemap)[Login](https://www.rev.com/app)
+

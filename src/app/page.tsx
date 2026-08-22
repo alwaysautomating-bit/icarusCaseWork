@@ -32,7 +32,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ v
   return <main className="casework-shell">
     <header className="masthead">
       <Wordmark />
-      <nav aria-label="Workspace modes"><a href="/compiler">Testimony Compiler</a><a href="#dossier">Dossier / Paper</a><a href="#console">Console</a></nav>
+      <nav aria-label="Workspace modes"><Link href="/search">Search testimony</Link><a href="/compiler">Testimony Compiler</a><a href="#dossier">Dossier / Paper</a><a href="#console">Console</a></nav>
       <div className="account"><span>{actor.email}</span><form action={signOut}><button className="text-button">Sign out</button></form></div>
     </header>
 

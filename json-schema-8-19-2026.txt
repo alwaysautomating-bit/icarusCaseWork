@@ -1,0 +1,502 @@
+[
+  {
+    "table_name": "artifact_provenance",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "artifact_provenance",
+    "column_name": "artifact_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "artifact_provenance",
+    "column_name": "role",
+    "data_type": "text"
+  },
+  {
+    "table_name": "artifact_provenance",
+    "column_name": "entity_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "artifact_provenance",
+    "column_name": "note",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "actor_user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "action",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "subject_type",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "subject_id",
+    "data_type": "text"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "details",
+    "data_type": "jsonb"
+  },
+  {
+    "table_name": "audit_events",
+    "column_name": "occurred_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "logical_order",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "object_type",
+    "data_type": "text"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "object_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "object_code",
+    "data_type": "text"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "operation",
+    "data_type": "text"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "extraction_run_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "actor_user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "system_agent",
+    "data_type": "text"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "details",
+    "data_type": "jsonb"
+  },
+  {
+    "table_name": "case_ledger",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "case_ledger_heads",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_ledger_heads",
+    "column_name": "next_logical_order",
+    "data_type": "bigint"
+  },
+  {
+    "table_name": "case_members",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_members",
+    "column_name": "user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "case_members",
+    "column_name": "role",
+    "data_type": "text"
+  },
+  {
+    "table_name": "case_members",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "owner_user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "title",
+    "data_type": "text"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "purpose",
+    "data_type": "text"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "public_record_cutoff",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "incident_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "incident_window_start",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "incident_window_end",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "cases",
+    "column_name": "workspace_key",
+    "data_type": "text"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "package_version_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "import_status",
+    "data_type": "text"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "imported_segments",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "analytical_assessments_created",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "imported_by_user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "casework_proceeding_imports",
+    "column_name": "imported_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "claim_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "entity_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "attribution_role",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "sequence",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "source_document_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_attributions",
+    "column_name": "notes",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claim_lineage",
+    "column_name": "parent_claim_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_lineage",
+    "column_name": "child_claim_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_lineage",
+    "column_name": "kind",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claim_lineage",
+    "column_name": "rationale",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claim_source_segments",
+    "column_name": "claim_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_source_segments",
+    "column_name": "source_segment_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_source_segments",
+    "column_name": "ordinal",
+    "data_type": "integer"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "supporting_claim_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "target_proposition_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "evidence_lane",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "source_lineage_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "independence_group",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "relation_type",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "assessment_origin",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "weight_override",
+    "data_type": "numeric"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "notes",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "created_by_user_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claim_support",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "case_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "source_segment_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "claimant",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "assertion",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "claimed_event_time",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "statement_time",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "status",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "created_at",
+    "data_type": "timestamp with time zone"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "source_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "proposition_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "evidence_lane",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "provenance_type",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "epistemic_status",
+    "data_type": "USER-DEFINED"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "extraction_confidence",
+    "data_type": "numeric"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "source_quote",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "review_required",
+    "data_type": "boolean"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "review_reasons",
+    "data_type": "jsonb"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "object_code",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "knowledge_item_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "asserted_by_entity_id",
+    "data_type": "uuid"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "asserted_by_raw",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "speaker_capacity",
+    "data_type": "text"
+  },
+  {
+    "table_name": "claims",
+    "column_name": "normalized_assertion",
+    "data_type": "text"
+  }
+]

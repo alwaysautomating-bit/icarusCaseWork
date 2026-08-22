@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { compilePreservedTranscriptManifest, compileUnifiedProceeding, type IntakeManifest } from "../src/lib/proceeding-compiler";
@@ -90,24 +90,50 @@ function validatePackage(input: CorpusInput) {
   }
 }
 
-async function loadInputs(): Promise<CorpusInput[]> {
+function requestedTrialDays() {
+  const values = process.argv.slice(2);
+  if (values.length === 0) return null;
+
+  const days = values.map((value) => Number(value));
+  assert.ok(days.every((day) => Number.isInteger(day) && day > 0), "Transcript day arguments must be positive integers.");
+  return new Set(days);
+}
+
+async function loadInputs(selectedDays: Set<number> | null): Promise<CorpusInput[]> {
   const inputs: CorpusInput[] = [];
-  for (const day of [2, 3, 4, 5, 7]) {
+  const manifestDirectory = path.resolve("transcripts/manifests");
+  const manifestFiles = (await readdir(manifestDirectory))
+    .map((filename) => ({ filename, match: /^Lindsay-Clancy_Trial-Day-(\d{2,3})_Intake-Manifest\.json$/.exec(filename) }))
+    .filter((entry): entry is { filename: string; match: RegExpExecArray } => entry.match !== null)
+    .map((entry) => ({ filename: entry.filename, day: Number(entry.match[1]) }))
+    .filter((entry) => selectedDays === null || selectedDays.has(entry.day))
+    .sort((a, b) => a.day - b.day);
+
+  if (selectedDays !== null) {
+    const discoveredDays = new Set(manifestFiles.map((entry) => entry.day));
+    const missingDays = [...selectedDays].filter((day) => !discoveredDays.has(day));
+    assert.deepEqual(missingDays, [], `No intake manifest exists for requested day(s): ${missingDays.join(", ")}`);
+  }
+
+  for (const { day, filename } of manifestFiles) {
     const key = `day-${day}`;
-    const stem = `Lindsay-Clancy_Trial-Day-${String(day).padStart(2, "0")}`;
-    const manifestPath = path.resolve(`transcripts/manifests/${stem}_Intake-Manifest.json`);
+    const manifestPath = path.join(manifestDirectory, filename);
     const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as CorpusInput["manifest"];
     assert.ok(manifest);
+    assert.equal(manifest.trial_day, day, `${filename}: filename day must match manifest trial_day`);
     const artifactPath = path.resolve("transcripts/preserved", manifest.source.preserved_filename);
     const bytes = await readFile(artifactPath);
     const compiled = compilePreservedTranscriptManifest(manifest, bytes.toString("utf8"));
     inputs.push({ key, artifactPath, artifactName: manifest.source.preserved_filename, manifest, package: compiled, bytes });
   }
-  const artifactPath = path.resolve("fixtures/ma-v-lindsay-clancy-opening-statements.rev.txt");
-  const bytes = await readFile(artifactPath);
-  const artifactName = path.basename(artifactPath);
-  const compiled = compileUnifiedProceeding({ provider: "rev", representation: "rev_plain_text", artifactName, sourceUrl: null, proceedingType: "opening_statements" }, bytes.toString("utf8"));
-  inputs.push({ key: "opening-statements", artifactPath, artifactName, package: compiled, bytes });
+  if (selectedDays === null) {
+    const artifactPath = path.resolve("fixtures/ma-v-lindsay-clancy-opening-statements.rev.txt");
+    const bytes = await readFile(artifactPath);
+    const artifactName = path.basename(artifactPath);
+    const compiled = compileUnifiedProceeding({ provider: "rev", representation: "rev_plain_text", artifactName, sourceUrl: null, proceedingType: "opening_statements" }, bytes.toString("utf8"));
+    inputs.push({ key: "opening-statements", artifactPath, artifactName, package: compiled, bytes });
+  }
+  assert.ok(inputs.length > 0, "No transcript inputs matched the publication request.");
   return inputs;
 }
 
@@ -189,12 +215,12 @@ async function countRows(client: SupabaseClient, table: string, caseId: string) 
   return result.count ?? 0;
 }
 
-function markdownReport(report: Record<string, unknown> & { batch: PublicationResult[]; batchTotals: Record<string, number>; corpusTotalsIncludingDay6: Record<string, number> | null; integrity: Record<string, unknown> }) {
+function markdownReport(report: Record<string, unknown> & { scope: string[]; batch: PublicationResult[]; batchTotals: Record<string, number>; corpusTotalsIncludingDay6: Record<string, number> | null; integrity: Record<string, unknown> }) {
   const rows = report.batch.map((item) => `| ${item.key} | ${item.detected} | ${item.parsed} | ${item.committed} | ${item.finalTimestamp} | ${item.qaExchanges} | ${item.positions} | ${item.exhibits} | ${item.stipulations} | ${item.resolutionItems} | ${item.publicationStatus} |`).join("\n");
-  return `# Testimony Compiler corpus integrity report\n\nGenerated: ${String(report.generatedAt)}\n\nScope: Days 2–5, Day 7, and the preserved Opening Statements artifact. Day 6 is included only as the previously published acceptance reference. No Casework analytical assessment or import was created by this batch.\n\n| Input | Detected | Parsed | Committed | Final timestamp | Q/A | Positions | Exhibits | Stipulations | Resolution items | Package |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|\n${rows}\n\n## Batch totals\n\n- Segments: ${report.batchTotals.segments}\n- Q/A exchanges: ${report.batchTotals.qaExchanges}\n- Extraction candidates: ${report.batchTotals.extractionCandidates}\n- Positions: ${report.batchTotals.positions}\n- Procedural actions: ${report.batchTotals.proceduralActions}\n- Exhibits: ${report.batchTotals.exhibits}\n- Stipulations: ${report.batchTotals.stipulations}\n- Resolution items: ${report.batchTotals.resolutionItems}\n\n## Integrity checks\n\n- detected = parsed = committed for every proceeding: ${report.integrity.completeness ? "PASS" : "FAIL"}\n- Preserved-byte SHA-256 equals package source SHA-256: ${report.integrity.checksums ? "PASS" : "FAIL"}\n- Every compiled item cites committed source segments: ${report.integrity.provenance ? "PASS" : "FAIL"}\n- Opening advocacy remains position / not evidence: ${report.integrity.openingPositionsNotEvidence ? "PASS" : "FAIL"}\n- Published package for all six inputs: ${report.integrity.allPublished ? "PASS" : "FAIL"}\n- Idempotent rerun reused all six existing packages: ${report.integrity.idempotentReuse ? "PASS" : "NOT CHECKED"}\n- Casework imports created: ${report.integrity.caseworkImports}\n- Claims/events/support/verification/contradiction assessments created: ${report.integrity.analyticalRows}\n- Missing original source URLs retained as null: ${report.integrity.missingSourceUrls}\n\n## Day 6 acceptance reference\n\n${report.day6Acceptance ? `Existing published Day 6: ${JSON.stringify(report.day6Acceptance)}\n\nPublished corpus including Day 6: ${report.corpusTotalsIncludingDay6?.proceedings} proceedings and ${report.corpusTotalsIncludingDay6?.segments} committed segments.` : "No prior Day 6 publication was found."}\n`;
+  return `# Testimony Compiler corpus integrity report\n\nGenerated: ${String(report.generatedAt)}\n\nScope: ${report.scope.join(", ")}. Day 6 is included only as the previously published acceptance reference. No Casework analytical assessment or import was created by this batch.\n\n| Input | Detected | Parsed | Committed | Final timestamp | Q/A | Positions | Exhibits | Stipulations | Resolution items | Package |\n|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|\n${rows}\n\n## Batch totals\n\n- Segments: ${report.batchTotals.segments}\n- Q/A exchanges: ${report.batchTotals.qaExchanges}\n- Extraction candidates: ${report.batchTotals.extractionCandidates}\n- Positions: ${report.batchTotals.positions}\n- Procedural actions: ${report.batchTotals.proceduralActions}\n- Exhibits: ${report.batchTotals.exhibits}\n- Stipulations: ${report.batchTotals.stipulations}\n- Resolution items: ${report.batchTotals.resolutionItems}\n\n## Integrity checks\n\n- detected = parsed = committed for every proceeding: ${report.integrity.completeness ? "PASS" : "FAIL"}\n- Preserved-byte SHA-256 equals package source SHA-256: ${report.integrity.checksums ? "PASS" : "FAIL"}\n- Every compiled item cites committed source segments: ${report.integrity.provenance ? "PASS" : "FAIL"}\n- Opening advocacy remains position / not evidence when included: ${report.integrity.openingPositionsNotEvidence ? "PASS" : "FAIL"}\n- Published package for every batch input: ${report.integrity.allPublished ? "PASS" : "FAIL"}\n- Idempotent rerun reused every batch package: ${report.integrity.idempotentReuse ? "PASS" : "NOT CHECKED"}\n- Casework imports created: ${report.integrity.caseworkImports}\n- Claims/events/support/verification/contradiction assessments created: ${report.integrity.analyticalRows}\n- Missing original source URLs retained as null: ${report.integrity.missingSourceUrls}\n\n## Day 6 acceptance reference\n\n${report.day6Acceptance ? `Existing published Day 6: ${JSON.stringify(report.day6Acceptance)}\n\nPublished corpus including Day 6: ${report.corpusTotalsIncludingDay6?.proceedings} proceedings and ${report.corpusTotalsIncludingDay6?.segments} committed segments.` : "No prior Day 6 publication was found."}\n`;
 }
 
-const inputs = await loadInputs();
+const inputs = await loadInputs(requestedTrialDays());
 for (const input of inputs) validatePackage(input);
 const allSegmentIds = inputs.flatMap((input) => input.package.segments.map((segment) => segment.id));
 assert.equal(new Set(allSegmentIds).size, allSegmentIds.length, "Segment IDs must be unique across the corpus.");
@@ -301,7 +327,7 @@ const report = {
   schemaVersion: "testimony-corpus-integrity/1.0",
   generatedAt: new Date().toISOString(),
   caseId,
-  scope: ["Day 2", "Day 3", "Day 4", "Day 5", "Day 7", "Opening Statements"],
+  scope: inputs.map((input) => input.key === "opening-statements" ? "Opening Statements" : `Day ${input.manifest!.trial_day}`),
   batch,
   batchTotals,
   day6Acceptance,
@@ -310,7 +336,7 @@ const report = {
     completeness: batch.every((item) => item.detected === item.parsed && item.parsed === item.committed),
     checksums: inputs.every((input) => input.package.source.sha256 === sha256(input.bytes)),
     provenance: true,
-    openingPositionsNotEvidence: inputs.find((input) => input.key === "opening-statements")!.package.positions.every((position) => position.evidenceStatus === "not_evidence"),
+    openingPositionsNotEvidence: inputs.find((input) => input.key === "opening-statements")?.package.positions.every((position) => position.evidenceStatus === "not_evidence") ?? true,
     allPublished: batch.every((item) => item.publicationStatus === "published"),
     idempotentReuse: batch.every((item) => item.duplicate),
     crossCorpusSegmentIdsUnique: new Set(allSegmentIds).size === allSegmentIds.length,

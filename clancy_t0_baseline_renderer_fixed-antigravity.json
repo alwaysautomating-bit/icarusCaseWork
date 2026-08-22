@@ -1,0 +1,376 @@
+[
+  {
+    "id": "EV1",
+    "title": "ENT1 reportedly begins intensified psychiatric care related to postpartum mental health after birth of ENT5.",
+    "description": "ENT1 reportedly begins intensified psychiatric care related to postpartum mental health after birth of ENT5.",
+    "date": null,
+    "rawDate": "May–Sept 2022",
+    "datePrecision": "interval",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "May–Sept 2022",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT18",
+      "ENT17"
+    ],
+    "location": "Outpatient settings (ENT17, telehealth)",
+    "assertedOrDocumentedBy": [
+      "civil_suits",
+      "news_timelines"
+    ],
+    "supportingSources": [
+      "web:17",
+      "web:36",
+      "web:38",
+      "web:42"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV2",
+    "title": "ENT1 is evaluated at Women & Infants behavioral health program and reportedly told she does not have postpartum depression.",
+    "description": "ENT1 is evaluated at Women & Infants behavioral health program and reportedly told she does not have postpartum depression.",
+    "date": "2022-12-20",
+    "rawDate": "2022-12-20",
+    "datePrecision": "day",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2022-12-20",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT16"
+    ],
+    "location": "ENT16",
+    "assertedOrDocumentedBy": [
+      "prosecution_timeline",
+      "civil_suits"
+    ],
+    "supportingSources": [
+      "web:17",
+      "web:27",
+      "web:28",
+      "web:26"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV4",
+    "title": "ENT1 self-admits to ENT14 for inpatient psychiatric care around New Year’s.",
+    "description": "ENT1 self-admits to ENT14 for inpatient psychiatric care around New Year’s.",
+    "date": "2023-01-01",
+    "rawDate": "2023-01-01/2023-01-05",
+    "datePrecision": "interval",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2023-01-01/2023-01-05",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT14",
+      "ENT20"
+    ],
+    "location": "ENT14",
+    "assertedOrDocumentedBy": [
+      "ENT20_testimony",
+      "news_timelines",
+      "civil_suits"
+    ],
+    "supportingSources": [
+      "web:16",
+      "web:17",
+      "web:22",
+      "web:27",
+      "web:28",
+      "web:38"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": [],
+    "timeRange": {
+      "start": "2023-01-01",
+      "end": "2023-01-05"
+    }
+  },
+  {
+    "id": "EV6",
+    "title": "ENT1 allegedly tracks medications, symptoms, and intrusive thoughts in journals and a medical diary.",
+    "description": "ENT1 allegedly tracks medications, symptoms, and intrusive thoughts in journals and a medical diary.",
+    "date": "2022-10-13",
+    "rawDate": "2022-10-13/2023-01-18",
+    "datePrecision": "interval",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2022-10-13/2023-01-18",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT25"
+    ],
+    "location": "ENT13",
+    "assertedOrDocumentedBy": [
+      "MSP_officers",
+      "trial_readings"
+    ],
+    "supportingSources": [
+      "web:19",
+      "web:20",
+      "web:25"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": [],
+    "timeRange": {
+      "start": "2022-10-13",
+      "end": "2023-01-18"
+    }
+  },
+  {
+    "id": "EV10",
+    "title": "ENT2 runs errands (CVS and restaurant) after ENT1 suggests takeout, leaving children at ENT13 with ENT1.",
+    "description": "ENT2 runs errands (CVS and restaurant) after ENT1 suggests takeout, leaving children at ENT13 with ENT1.",
+    "date": "2023-01-24",
+    "rawDate": "2023-01-24 evening",
+    "datePrecision": "approximate",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2023-01-24 evening",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT2",
+      "ENT3",
+      "ENT4",
+      "ENT5"
+    ],
+    "location": "ENT13; local CVS; restaurant",
+    "assertedOrDocumentedBy": [
+      "ENT2_testimony"
+    ],
+    "supportingSources": [
+      "web:4",
+      "web:5",
+      "web:6"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV11",
+    "title": "ENT2 reports returning to ENT13, observing unusual quiet, blood, ENT1 on ground outside, and children in basement with exercise bands around their necks.",
+    "description": "ENT2 reports returning to ENT13, observing unusual quiet, blood, ENT1 on ground outside, and children in basement with exercise bands around their necks.",
+    "date": "2023-01-24",
+    "rawDate": "2023-01-24 evening",
+    "datePrecision": "approximate",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2023-01-24 evening",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT2",
+      "ENT3",
+      "ENT4",
+      "ENT5"
+    ],
+    "location": "ENT13",
+    "assertedOrDocumentedBy": [
+      "ENT2_testimony"
+    ],
+    "supportingSources": [
+      "web:4",
+      "web:6",
+      "web:43"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT_CANDIDATE",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV12",
+    "title": "ENT2’s 911 call is made, recorded, and later admitted into evidence under limitations on public distribution.",
+    "description": "ENT2’s 911 call is made, recorded, and later admitted into evidence under limitations on public distribution.",
+    "date": "2023-01-24",
+    "rawDate": "2023-01-24 evening",
+    "datePrecision": "approximate",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2023-01-24 evening",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT2",
+      "ENT26",
+      "ENT11"
+    ],
+    "location": "ENT13; ENT12",
+    "assertedOrDocumentedBy": [
+      "court_orders",
+      "news_reports"
+    ],
+    "supportingSources": [
+      "web:31",
+      "web:33",
+      "web:37",
+      "web:43"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV13",
+    "title": "Autopsy and crime-scene photographs and 3D home model are authorized for use in trial, with restrictions on public release.",
+    "description": "Autopsy and crime-scene photographs and 3D home model are authorized for use in trial, with restrictions on public release.",
+    "date": "2026-06-29",
+    "rawDate": "2026-06-29",
+    "datePrecision": "day",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2026-06-29",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT11",
+      "ENT27"
+    ],
+    "location": "ENT12",
+    "assertedOrDocumentedBy": [
+      "court_orders"
+    ],
+    "supportingSources": [
+      "web:33",
+      "web:37"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  },
+  {
+    "id": "EV14",
+    "title": "Criminal trial of ENT1 begins, with opening statements and ENT2 called as first witness for Commonwealth.",
+    "description": "Criminal trial of ENT1 begins, with opening statements and ENT2 called as first witness for Commonwealth.",
+    "date": "2026-07-27",
+    "rawDate": "2026-07-27",
+    "datePrecision": "day",
+    "thread": "General",
+    "lanes": [
+      "General"
+    ],
+    "eventType": "case_event",
+    "eventTime": "2026-07-27",
+    "reportTime": "unknown",
+    "recordTime": "unknown",
+    "participants": [
+      "ENT1",
+      "ENT2",
+      "ENT6",
+      "ENT8",
+      "ENT9",
+      "ENT11"
+    ],
+    "location": "ENT12",
+    "assertedOrDocumentedBy": [
+      "news_reports"
+    ],
+    "supportingSources": [
+      "web:1",
+      "web:2",
+      "web:13"
+    ],
+    "conflictingSources": [],
+    "status": "EVENT",
+    "facts": [],
+    "medications": [],
+    "symptoms": [],
+    "clinicalSignificance": [],
+    "trajectoryTags": [],
+    "sourceRefs": [],
+    "notes": []
+  }
+]

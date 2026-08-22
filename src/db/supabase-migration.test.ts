@@ -1,15 +1,17 @@
 import { readFile, readdir } from "node:fs/promises";
 import { PGlite } from "@electric-sql/pglite";
+import { pg_trgm } from "@electric-sql/pglite/contrib/pg_trgm";
 import { describe, expect, it } from "vitest";
 
 describe("Supabase deployment migration", () => {
   it("applies from zero with the Supabase auth contract present", async () => {
-    const db = new PGlite();
+    const db = new PGlite({ extensions: { pg_trgm } });
     await db.exec(`
       create role authenticated;
       create role anon;
       create role service_role;
       create schema auth;
+      create schema extensions;
       create table auth.users(id uuid primary key);
       create function auth.uid() returns uuid language sql stable as $$ select null::uuid $$;
     `);
@@ -22,9 +24,14 @@ describe("Supabase deployment migration", () => {
     const tables = await db.query<{ table_name: string }>("select table_name from information_schema.tables where table_schema='public'");
     expect(tables.rows.map((row) => row.table_name)).toContain("saved_research_views");
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["evidence_intakes", "sources", "proceedings", "proceeding_speakers", "qa_exchanges", "extraction_candidates", "extraction_review_versions", "proceeding_positions", "procedural_actions", "proceeding_exhibits", "proceeding_stipulations", "resolution_items", "proceeding_package_versions", "casework_proceeding_imports"]));
+    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["knowledge_extraction_runs", "case_ledger", "witness_blocks", "testimony_units", "knowledge_items", "knowledge_item_versions", "claim_source_segments", "entity_mentions", "event_candidates", "temporal_bands", "temporal_assertions", "knowledge_relationships", "knowledge_flags", "provenance_activities", "provenance_relations"]));
     const functions = await db.query<{ routine_name: string }>("select routine_name from information_schema.routines where routine_schema='public'");
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_url_intake");
     expect(functions.rows.map((row) => row.routine_name)).toEqual(expect.arrayContaining(["commit_testimony_compiler_run", "review_extraction_candidate", "publish_proceeding_package", "import_proceeding_package_to_casework"]));
+    expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_knowledge_map");
+    expect(functions.rows.map((row) => row.routine_name)).toContain("search_testimony");
+    const indexes = await db.query<{ indexname: string }>("select indexname from pg_indexes where schemaname='public'");
+    expect(indexes.rows.map((row) => row.indexname)).toEqual(expect.arrayContaining(["source_segments_search_vector_gin", "source_segments_exact_text_trgm_gin"]));
     await db.close();
   }, 30_000);
 
@@ -43,5 +50,20 @@ describe("Supabase deployment migration", () => {
     expect(migration).toContain("v_committed<>v_detected or v_committed<>v_parsed");
     expect(migration).toContain("revoke execute on function public.commit_testimony_url_intake(jsonb) from authenticated");
     expect(migration).toContain("analytical_assessments_created integer not null default 0 check(analytical_assessments_created=0)");
+  });
+
+  it("keeps transcript mapping separate from analysis and SAME resolution", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260818090150_testimony_knowledge_mapping_v1.sql", import.meta.url), "utf8");
+    expect(migration).toContain("'entity_merges','entity_aliases','canonical_entities'");
+    expect(migration).toContain("'claim_support','support','contradictions','verification_assessments'");
+    expect(migration).toContain("check(precision <> 'unknown' or (asserted_start is null and asserted_end is null))");
+    expect(migration).toContain("check(relation_type not in ('causes','caused_by'))");
+    expect(migration).toContain("revoke all on function public.commit_testimony_knowledge_map(jsonb) from public,anon");
+    expect(migration).toContain("grant execute on function public.commit_testimony_knowledge_map(jsonb) to authenticated");
+    expect(migration).not.toMatch(/grant\s+[^;]*insert[^;]*public\.case_ledger/i);
+    const securityMigration = await readFile(new URL("../../supabase/migrations/20260818092634_testimony_knowledge_mapping_security.sql", import.meta.url), "utf8");
+    expect(securityMigration).toContain("revoke all on public.knowledge_extraction_runs,public.case_ledger_heads,public.case_ledger");
+    expect(securityMigration).toContain("grant select on public.knowledge_extraction_runs,public.case_ledger");
+    expect(securityMigration).not.toMatch(/grant\s+(?:insert|update|delete|truncate|all)[^;]*authenticated/i);
   });
 });

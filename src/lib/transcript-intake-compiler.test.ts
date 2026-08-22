@@ -103,6 +103,30 @@ describe("Rev metadata detection", () => {
     });
   });
 
+  it("recognizes a Rev blog capture whose canonical title line is absent", () => {
+    const source = [
+      "Day 13 of the MA v. Lindsay Clancy trial. Read the transcript here.",
+      "August 17, 2026",
+      "Hungry For More?",
+      "Luckily for you, we deliver. Subscribe to our blog today.",
+      "Share this post",
+      "Copyright Disclaimer",
+      "Bailiff (00:01):",
+      "Court is in session.",
+      "Judge William Sullivan (03:15:22):",
+      "Court is adjourned.",
+    ].join("\n\n");
+
+    expect(parseRevTranscript(Buffer.from(source), "day-13.txt")).toMatchObject({
+      trialDay: 13,
+      pageTitle: "MA v. Lindsay Clancy Day 13",
+      publisher: "Rev",
+      sourceDisplayDate: "2026-08-17",
+      firstTimestamp: "00:01",
+      lastTimestamp: "03:15:22",
+    });
+  });
+
   it("rejects a research or conversation dump that merely mentions a Rev trial day", () => {
     const source = [
       "MA v. Lindsay Clancy Day 6",

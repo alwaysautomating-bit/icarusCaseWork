@@ -1,0 +1,184 @@
+plus PROV
+
+PROV gives you three core things: `Entity`, `Activity`, and `Agent`, plus relationships such as `wasGeneratedBy`, `used`, `wasAssociatedWith`, `wasAttributedTo`, and `wasDerivedFrom`. It also has temporal properties such as activity start/end and entity generation time. ([W3C][1]) That maps naturally to Casework:
+
+```text
+AGENT
+Christina Carpio
+
+ACTIVITY
+Carpio trial testimony
+
+ENTITY
+Rev transcript segment
+
+ENTITY
+Carpio claim
+
+ENTITY
+South Shore medical note
+```
+
+with provenance like:
+
+```text
+Carpio testimony
+    wasAssociatedWith → Carpio
+
+Transcript segment
+    wasGeneratedBy → testimony activity
+
+Claim
+    wasDerivedFrom → transcript segment
+
+Medical note
+    wasAttributedTo → clinician
+
+Carpio testimony
+    used → medical note
+```
+
+Where I would be careful is **real-world occurrence time**. PROV's time fields mostly describe provenance processes — when an activity started/ended or when an entity was generated. They do not automatically mean “this is when the underlying real-world event happened.”
+
+So I’d preserve both:
+
+```text
+PROVENANCE TIME
+When was this record / statement / extraction produced?
+
+IRL EVENT TIME
+When does the evidence say the underlying event occurred?
+```
+
+For example:
+
+```text
+EVENT E-142
+Lindsay arrives at South Shore
+
+IRL TIME
+~18:45
+precision = approximate
+
+SUPPORTED BY
+hospital record
+EMS record
+Carpio testimony
+```
+
+Then PROV handles each support path separately:
+
+```text
+Hospital record
+  wasGeneratedBy → hospital documentation activity
+
+Carpio claim
+  wasDerivedFrom → Day 6 transcript segment
+
+Day 6 transcript segment
+  wasGeneratedBy → courtroom testimony
+
+Courtroom testimony
+  wasAssociatedWith → Carpio
+```
+
+For the actual temporal geometry — exact instant, approximate interval, before/after, overlaps — **OWL-Time is a natural companion to PROV**. W3C's OWL-Time explicitly models `Instant` and `Interval` and relationships among temporal entities. ([W3C][2])
+
+So the conceptual model could be:
+
+```text
+                    CASE EVENT
+                  E-142 Arrival
+                       |
+                 has IRL time
+                       ↓
+              [18:42–18:47 interval]
+                       |
+       ┌───────────────┼──────────────┐
+       ↓               ↓              ↓
+ hospital record   EMS record    Carpio testimony
+       |               |              |
+       └──────── PROV lineage ─────────┘
+```
+
+And then an event can have **multiple competing time assertions** without you having to choose prematurely:
+
+```text
+E-142
+
+Claim A
+18:43:12
+source = CAD
+precision = exact
+
+Claim B
+"about 6:45"
+source = witness
+precision = approximate
+
+Claim C
+18:46
+source = hospital record
+precision = minute
+
+REVIEWED IRL BOUND
+18:43:12–18:46
+```
+
+That is where PROV becomes especially valuable: every temporal assertion can itself have provenance.
+
+I’d model the key distinction as:
+
+```text
+EVENT
+what happened
+
+TEMPORAL ASSERTION
+when a source says it happened
+
+PROVENANCE
+why we possess/believe that temporal assertion
+
+REVIEWED TIME BOUND
+what Icarus can currently establish from the evidence
+```
+
+And then relationships can also be provenance-backed:
+
+```text
+E1 must_precede E2
+    ↑
+supported by CLM-184
+    ↑
+derived from SEG-421
+    ↑
+Day 6 testimony
+```
+
+So you can eventually ask:
+
+> Why does Icarus place E1 before E2?
+
+and get an actual answer:
+
+```text
+E1 → BEFORE → E2
+
+Basis:
+- exact timestamp from surveillance
+- testimony segment 00:14:39
+- medical record timestamp
+
+Confidence:
+reviewed
+
+Conflicting basis:
+- Witness B estimated E2 occurred earlier
+```
+
+That is much stronger than merely storing a timestamp on an `events` row.
+
+I’d therefore use **PROV as the lineage grammar**, a very small **IRL-time primitive for case chronology**, and optionally borrow **OWL-Time semantics for instants/intervals/order relations**. PROV tells you *where the assertion came from*; the temporal layer tells you *when the underlying thing happened*. Together, they give you the factual chronological map you’ve been describing.
+
+[1]: https://www.w3.org/TR/prov-o/?utm_source=chatgpt.com "PROV-O: The PROV Ontology"
+[2]: https://www.w3.org/TR/owl-time/?utm_source=chatgpt.com "Time Ontology in OWL"

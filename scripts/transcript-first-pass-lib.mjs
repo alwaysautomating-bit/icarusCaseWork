@@ -105,6 +105,7 @@ function calledName(text) {
     if (match?.groups?.name) return match.groups.name
       .replace(/[ .,:;-]+$/, "")
       .replace(/\s+as\s+(?:(?:its|the)\s+)?next\s+witness$/i, "")
+      .replace(/\s+to\s+the\s+stand$/i, "")
       .replace(/\s+(?:please|as)$/i, "")
       .replace(/\.\s+(?:Good|Thank|Your|Do|Please)$/, "");
   }

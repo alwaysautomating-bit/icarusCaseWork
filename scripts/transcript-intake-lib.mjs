@@ -168,8 +168,9 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
   const text = buffer.toString("utf8").replace(/^\uFEFF/, "");
   const titlePattern = /^(?:#\s*)?(MA\s+v\.?\s+Lindsay\s+Clancy\s+Day\s+(\d{1,3}))\s*$/gim;
   const titleMatch = titlePattern.exec(text);
+  const descriptionMatch = /^Day\s+(\d{1,3})\s+of the MA v\. Lindsay Clancy trial\. Read the transcript here\.\s*$/im.exec(text);
 
-  if (!titleMatch) {
+  if (!titleMatch && !descriptionMatch) {
     throw new TranscriptIntakeError(
       "UNKNOWN_TRANSCRIPT",
       "Could not determine a supported case title and trial day from the source artifact.",
@@ -177,12 +178,16 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
     );
   }
 
-  const trialDay = Number(titleMatch[2]);
+  const trialDay = Number(titleMatch?.[2] ?? descriptionMatch?.[1]);
+  const descriptionPattern = new RegExp(`^Day\\s+${trialDay}\\s+of the MA v\\. Lindsay Clancy trial\\. Read the transcript here\\.\\s*$`, "im");
   const hasRevUrl = /https?:\/\/(?:www\.)?rev\.com\/(?:app\/transcript|transcripts|category)\//i.test(text);
-  const hasRevPlainTextProvenance = /^About[\u00a0 ]Rev\s*$/im.test(text)
-    && /^Transcripts Home\s*$/im.test(text)
-    && /^Copyright Disclaimer\s*$/im.test(text)
-    && new RegExp(`^Day\\s+${trialDay}\\s+of the MA v\\. Lindsay Clancy trial\\. Read the transcript here\\.\\s*$`, "im").test(text);
+  const hasRevNavigation = /^About[\u00a0 ]Rev\s*$/im.test(text) && /^Transcripts Home\s*$/im.test(text);
+  const hasRevBlogCapture = /^Hungry For More\?\s*$/im.test(text)
+    && /Subscribe to our blog today\./i.test(text)
+    && /^Share this post\s*$/im.test(text);
+  const hasRevPlainTextProvenance = /^Copyright Disclaimer\s*$/im.test(text)
+    && descriptionPattern.test(text)
+    && (hasRevNavigation || hasRevBlogCapture);
   if (!hasRevUrl && !hasRevPlainTextProvenance) {
     throw new TranscriptIntakeError(
       "UNKNOWN_PUBLISHER",
@@ -192,7 +197,8 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
   }
 
   const pageTitle = `MA v. Lindsay Clancy Day ${trialDay}`;
-  const titleWindow = text.slice(titleMatch.index, titleMatch.index + 2_000);
+  const titleIndex = titleMatch?.index ?? descriptionMatch?.index ?? 0;
+  const titleWindow = text.slice(titleIndex, titleIndex + 2_000);
   const dateMatch = titleWindow.match(
     /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})\b/i,
   );
