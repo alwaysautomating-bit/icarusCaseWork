@@ -4,7 +4,7 @@ Date: 2026-08-22
 
 ## Executive position
 
-Icarus Casework has a working, local, source-grounded evidence-navigation spine. Phase 0/Foundation, Court Record, testimony search, canonical source navigation, read-only Structure, governed Structure review, testimony timeline candidates, immutable timeline views, and the first read-only Testimony Reconstruction slice are implemented.
+Icarus Casework has a working, local, source-grounded evidence-navigation spine. Phase 0/Foundation, the Trial Navigation Index, Court Record, testimony search, canonical source navigation, read-only Structure, governed Structure review, testimony timeline candidates, immutable timeline views, and the first read-only Testimony Reconstruction slice are implemented.
 
 The governed middle layer between extraction and downstream analysis now exists. The next requirement is the interactive graph and Reconcile workspace over reviewed candidates. Editable reconstruction, Actor Knowledge, operational Evidence Gaps, Outputs, and hosted release work remain after that boundary.
 
@@ -14,6 +14,7 @@ The governed middle layer between extraction and downstream analysis now exists.
 | --- | --- | --- |
 | Explicit case shell and routing | Complete locally | Active case is URL-addressed; case creation and switching are available. |
 | Foundation / Phase 0 | Complete for the first vertical slice | Case definition, source inventory, proceedings/speakers, entities/aliases, provisional T0, event/temporal skeleton, and deterministic readiness are production-backed. Durable versioned T0 remains deferred. |
+| Trial Navigation Index | Complete locally | Historical and live cases can maintain trial day/date, witness, general topic, phase, status, references, and canonical proceeding links. It is searchable, immutable-versioned, owner/reviewer managed, and explicitly never evidence or reconstruction input. |
 | Court Record | Complete locally | Canonical, windowed transcript reader with exact segment highlighting, surrounding context, provenance, and linked structure. |
 | Testimony search | Complete locally | RLS-aware lexical FTS, natural-question normalization, and trigram/fuzzy retrieval over the canonical corpus. Search returns source testimony, not generated answers. |
 | Search to canonical source | Complete locally | Search state and `source_segments.id` are URL-backed and survive reload and browser history. |
@@ -36,6 +37,7 @@ The governed middle layer between extraction and downstream analysis now exists.
 - Day 3 Reconstruction v1: 1,873 source segments; six witness lanes; 25 reviewed assertions; 10 proposed reconstruction nodes across five incident lanes; nine ordering/overlap constraints; four unresolved tensions; zero canonical events; zero SAME resolutions; zero testimony timestamps used as event time.
 - Reconstruction versions are immutable, case-scoped, source-linked, and comparable four at a time.
 - Structure Review v1 browser acceptance: one four-source Day 6 event amendment recorded as immutable version 1 and ledger order 233; the next pending event remained selected under the same filters; the exact Court Record jump and browser Back path passed; viewer mutation controls remained unavailable.
+- Trial Navigation Index acceptance: 18 days, 14 canonical proceeding links, four editorial-only days, 36 witness entries, and 54 topic entries. “Apple Watch” located Day 14 and its canonical link opened the matching Court Record proceeding. Day 1’s date disagreement remains visibly preserved; Day 18’s corrected current state is immutable version 3.
 
 ## Epistemic boundary
 
@@ -43,15 +45,16 @@ The governed middle layer between extraction and downstream analysis now exists.
 - Search retrieves real testimony and does not produce generated case answers.
 - Transcript/proceeding timestamps remain source provenance and are not substituted for real-world event time.
 - Candidate review does not automatically create canonical events or resolve entity identity.
+- Trial-index summaries and reporting references are navigation-only and never become claims, findings, canonical events, or reconstruction input.
 - Uncertainty, competing temporal assertions, attribution differences, and unresolved tensions remain visible.
 
 ## Verification at this checkpoint
 
 - ESLint: passed.
 - TypeScript: passed.
-- Vitest: 23 files and 101 tests passed.
+- Vitest: 25 files and 106 tests passed.
 - Next.js 16.3 production build: passed.
-- Local Supabase migration chain: 16 migrations applied through `20260822204848_protect_legacy_claim_promotion.sql`; the Structure Review chain passed a full Docker reset, the protected legacy boundary passed zero-state replay, and the 29,757-segment local corpus remains preserved.
+- Local Supabase migration chain: 17 migrations applied through `20260822214141_trial_navigation_index_v1.sql`; the complete chain passes automated zero-state replay, and the 29,757-segment local corpus remains preserved.
 - Supabase database advisors: no issues.
 - Database lint: no schema errors or warnings. The legacy `review_extraction_candidate` UUID-array initialization is corrected without changing its review contract.
 - Direct authenticated writes to all seven Structure Review targets are denied. The older claim-to-event promotion behavior remains available only through its separate atomic `review_and_promote_claim` RPC and is not part of Structure Review.
@@ -59,7 +62,8 @@ The governed middle layer between extraction and downstream analysis now exists.
 ## Repository checkpoint
 
 - Reconstruction v1 remains included in `main` through checkpoint `242a97d`.
-- Structure Review v1 is implemented on `codex/structure-review-v1` with its migration, loader, route contract, UI, database tests, browser acceptance, and operational documentation ready for the slice checkpoint.
+- Structure Review v1 is merged into local `main` with its migration, loader, route contract, UI, database tests, browser acceptance, and operational documentation.
+- Trial Navigation Index v1 is merged into local `main` with governed persistence, search, Foundation and Court Record integration, immutable revision history, Day 1–18 acceptance data, browser acceptance, tests, and operating documentation.
 
 ## Next delivery boundary
 

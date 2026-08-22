@@ -112,7 +112,7 @@ export type FoundationWorkspace = {
   acquisitions: Array<{ id: string; title: string; source_family: string; acquisition_status: string; priority: string; known_to_exist: boolean; possessed_by_us: boolean; completeness: string | null; discovered_from_segment_id: string | null }>;
   flags: Array<{ id: string; flag_type: string; rationale: string; origin: string; status: string; source_segment_ids: string[] }>;
   intakes: Array<{ id: string; source_id: string | null; page_title: string | null; processing_status: string; review_required: boolean; error_message: string | null; detected_segments: number; parsed_segments: number; committed_segments: number; parser_warnings: unknown }>;
-  counts: { segments: number; claims: number; extractionCandidates: number; provenanceActivities: number };
+  counts: { segments: number; claims: number; extractionCandidates: number; provenanceActivities: number; trialIndexDays: number };
   readiness: CaseReadiness;
   deferredFields: string[];
 };
@@ -161,9 +161,10 @@ export async function getFoundationWorkspace(actorId: string, caseId: string): P
     supabase.from("source_segments").select("id", { count: "exact", head: true }).eq("case_id", caseId),
     supabase.from("extraction_candidates").select("id", { count: "exact", head: true }).eq("case_id", caseId),
     supabase.from("provenance_activities").select("id", { count: "exact", head: true }).eq("case_id", caseId),
+    supabase.from("trial_index_days").select("id", { count: "exact", head: true }).eq("case_id", caseId),
   ]);
 
-  const [membersResult, sourcesResult, artifactsResult, intakesResult, proceedingsResult, speakersResult, entitiesResult, aliasesResult, eventsResult, eventCandidatesResult, temporalResult, acquisitionsResult, flagsResult, claimsResult, claimSegmentsResult, segmentCountResult, candidateCountResult, provenanceCountResult] = results;
+  const [membersResult, sourcesResult, artifactsResult, intakesResult, proceedingsResult, speakersResult, entitiesResult, aliasesResult, eventsResult, eventCandidatesResult, temporalResult, acquisitionsResult, flagsResult, claimsResult, claimSegmentsResult, segmentCountResult, candidateCountResult, provenanceCountResult, trialIndexCountResult] = results;
   const members = rowsOrThrow(membersResult) as FoundationWorkspace["members"];
   const sources = rowsOrThrow(sourcesResult) as FoundationSource[];
   const artifacts = rowsOrThrow(artifactsResult) as FoundationArtifact[];
@@ -211,6 +212,7 @@ export async function getFoundationWorkspace(actorId: string, caseId: string): P
   const segmentCount = segmentCountResult.error ? (() => { throw new Error(segmentCountResult.error.message); })() : segmentCountResult.count ?? 0;
   if (candidateCountResult.error) throw new Error(candidateCountResult.error.message);
   if (provenanceCountResult.error) throw new Error(provenanceCountResult.error.message);
+  if (trialIndexCountResult.error) throw new Error(trialIndexCountResult.error.message);
 
   const readiness = deriveCaseReadiness({
     hasTitle: currentCase.title.trim().length > 0,
@@ -253,7 +255,7 @@ export async function getFoundationWorkspace(actorId: string, caseId: string): P
     acquisitions,
     flags,
     intakes,
-    counts: { segments: segmentCount, claims: rawClaims.length, extractionCandidates: candidateCountResult.count ?? 0, provenanceActivities: provenanceCountResult.count ?? 0 },
+    counts: { segments: segmentCount, claims: rawClaims.length, extractionCandidates: candidateCountResult.count ?? 0, provenanceActivities: provenanceCountResult.count ?? 0, trialIndexDays: trialIndexCountResult.count ?? 0 },
     readiness,
     deferredFields: ["Jurisdiction", "Case timezone", "Controlled-vocabulary version", "Durable versioned T0 baseline"],
   };

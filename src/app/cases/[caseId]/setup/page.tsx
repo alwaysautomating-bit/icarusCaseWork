@@ -5,7 +5,7 @@ import { updateCaseDefinitionAction } from "@/app/cases/actions";
 import { SourceAnchorLink } from "@/app/cases/[caseId]/_components/source-anchor-link";
 import { requireCaseActor } from "@/lib/authority";
 import { getFoundationWorkspace } from "@/lib/case-foundation";
-import { courtRecordHref } from "@/lib/case-routes";
+import { courtRecordHref, trialIndexHref } from "@/lib/case-routes";
 import { revTranscriptPage } from "@/lib/provider-source";
 
 export const dynamic = "force-dynamic";
@@ -58,6 +58,11 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
         </form> : <div className="definition-summary"><p><span>Purpose</span>{currentCase.purpose}</p><p><span>Evidentiary cutoff</span>{displayDate(currentCase.public_record_cutoff)}</p><p><span>Provisional T0</span>{displayDate(currentCase.incident_at)}</p></div>}
         <aside className="case-definition-aside"><div><MonoLabel>MEMBERSHIP</MonoLabel>{workspace.members.map((member) => <p key={member.user_id}><strong>{member.role}</strong><code>{member.user_id}</code></p>)}</div><div><MonoLabel>NOT YET MODELED</MonoLabel><ul>{workspace.deferredFields.map((field) => <li key={field}>{field}</li>)}</ul></div></aside>
       </div>
+    </section>
+
+    <section className="foundation-section foundation-trial-index" id="trial-index">
+      <header className="foundation-section-heading"><div><MonoLabel>01A · TRIAL NAVIGATION INDEX</MonoLabel><h2>Establish the day-by-day lookup spine</h2></div><span>{workspace.counts.trialIndexDays} indexed trial days</span></header>
+      <div><p>Record trial day/date, witnesses, and broad topics for historical cases or as proceedings unfold. Index entries locate the record; they are not evidence and never substitute for canonical testimony.</p><Link href={trialIndexHref(currentCase.id)}>{workspace.counts.trialIndexDays > 0 ? "Open Trial Index" : "Establish Trial Index"} →</Link></div>
     </section>
 
     <section className="foundation-section" id="sources">

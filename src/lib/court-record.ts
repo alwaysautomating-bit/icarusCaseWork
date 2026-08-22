@@ -72,24 +72,28 @@ export type CourtRecordWorkspace = {
 
 const segmentColumns = "id,case_id,artifact_id,proceeding_id,proceeding_speaker_id,speaker_entity_id,ordinal,timestamp_start_ms,timestamp_end_ms,deep_link,transcript_provider,exact_text,locator_type,locator";
 
-export async function getCourtRecordWorkspace(actorId: string, caseId: string, requestedSegmentId?: string): Promise<CourtRecordWorkspace | null> {
+export async function getCourtRecordWorkspace(actorId: string, caseId: string, requestedSegmentId?: string, requestedProceedingId?: string): Promise<CourtRecordWorkspace | null> {
   const currentCase = await getAccessibleCase(actorId, caseId);
   if (!currentCase) return null;
   const supabase = await createClient();
   const parsedSegmentId = requestedSegmentId ? segmentIdSchema.safeParse(requestedSegmentId) : null;
+  const parsedProceedingId = requestedProceedingId ? segmentIdSchema.safeParse(requestedProceedingId) : null;
   const requestedIsValid = !requestedSegmentId || Boolean(parsedSegmentId?.success);
+  const requestedProceedingIsValid = !requestedProceedingId || Boolean(parsedProceedingId?.success);
 
   let selectedResult;
   if (parsedSegmentId?.success) {
     selectedResult = await supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).eq("id", parsedSegmentId.data).maybeSingle();
+  } else if (parsedProceedingId?.success) {
+    selectedResult = await supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).eq("proceeding_id", parsedProceedingId.data).order("ordinal").limit(1).maybeSingle();
   } else {
     selectedResult = await supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).order("ordinal").order("id").limit(1).maybeSingle();
   }
   if (selectedResult.error) throw new Error(selectedResult.error.message);
 
   let rawSelected = selectedResult.data as RawSegment | null;
-  const selectedMissing = Boolean(requestedSegmentId) && (!requestedIsValid || !rawSelected);
-  if (!rawSelected && requestedSegmentId) {
+  const selectedMissing = (Boolean(requestedSegmentId) && (!requestedIsValid || !rawSelected)) || (Boolean(requestedProceedingId) && (!requestedProceedingIsValid || !rawSelected));
+  if (!rawSelected && (requestedSegmentId || requestedProceedingId)) {
     const fallback = await supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).order("ordinal").order("id").limit(1).maybeSingle();
     if (fallback.error) throw new Error(fallback.error.message);
     rawSelected = fallback.data as RawSegment | null;

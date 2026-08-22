@@ -5,7 +5,7 @@ import { signOut } from "@/app/login/actions";
 import { CaseSwitcher } from "@/app/cases/_components/case-switcher";
 import { requireCaseActor } from "@/lib/authority";
 import { canReviewStructure, getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
-import { caseSetupHref, courtRecordHref, reconstructionHref, structureHref, structureReviewHref } from "@/lib/case-routes";
+import { caseSetupHref, courtRecordHref, reconstructionHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
@@ -23,6 +23,7 @@ export default async function CaseLayout({ children, params }: { children: React
     <div className="case-identity-strip"><div><span>ACTIVE CASE · {currentCase.membershipRole.toUpperCase()}</span><strong>{currentCase.title}</strong></div><code>{currentCase.id}</code></div>
     <nav className="case-lifecycle-nav" aria-label="Case lifecycle">
       <Link href={caseSetupHref(currentCase.id)}>Foundation</Link>
+      <Link href={trialIndexHref(currentCase.id)}>Trial Index</Link>
       <Link href={courtRecordHref(currentCase.id)}>Court Record</Link>
       <Link href={structureHref(currentCase.id)}>Structure</Link>{canReviewStructure(currentCase.membershipRole) ? <Link href={structureReviewHref(currentCase.id, { reviewStatus: "pending" })}>Review</Link> : null}<span aria-disabled="true">Reconcile</span><Link href={reconstructionHref(currentCase.id)}>Reconstruct</Link><span aria-disabled="true">Actor Knowledge</span><span aria-disabled="true">Gaps</span>
     </nav>

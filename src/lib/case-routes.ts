@@ -1,7 +1,10 @@
 type CourtRecordRouteState = {
   query?: string;
   segmentId?: string;
+  proceedingId?: string;
 };
+
+type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved" };
 
 export const structureObjectTypes = ["knowledge", "claim", "event", "temporal", "mention", "entity", "relationship", "flag"] as const;
 
@@ -34,6 +37,7 @@ export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {
   const query = state.query?.trim();
   if (query) params.set("q", query);
   if (state.segmentId) params.set("segment", state.segmentId);
+  if (state.proceedingId) params.set("proceeding", state.proceedingId);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/record${suffix ? `?${suffix}` : ""}`;
 }
@@ -69,6 +73,15 @@ export function structureReviewHref(caseId: string, state: StructureReviewRouteS
   if (state.notice) params.set("notice", state.notice);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/structure/review${suffix ? `?${suffix}` : ""}`;
+}
+
+export function trialIndexHref(caseId: string, state: TrialIndexRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.dayNumber && state.dayNumber > 0) params.set("day", String(state.dayNumber));
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.notice) params.set("notice", state.notice);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/trial-index${suffix ? `?${suffix}` : ""}`;
 }
 
 export function reconstructionHref(caseId: string, compareVersionIds: string[] = []) {

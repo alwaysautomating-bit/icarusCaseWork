@@ -10,5 +10,5 @@ const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = { title: "Icarus Casework", description: "Source-grounded case reconstruction for true-crime researchers." };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><body className={`${inter.variable} ${mono.variable}`}>{children}</body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><body className={`${inter.variable} ${mono.variable}`}>{children}</body></html>;
 }

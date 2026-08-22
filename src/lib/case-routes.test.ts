@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { caseSetupHref, courtRecordHref, parseStructureObjectType, structureHref, structureReviewHref } from "@/lib/case-routes";
+import { caseSetupHref, courtRecordHref, parseStructureObjectType, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
   it("builds an explicit Foundation route", () => {
@@ -36,6 +36,11 @@ describe("case-scoped routes", () => {
   it("normalizes unknown structure types to the all-objects view", () => {
     expect(parseStructureObjectType("graph")).toBe("all");
     expect(parseStructureObjectType("event")).toBe("event");
+  });
+
+  it("builds proceeding-scoped Court Record and Trial Index navigation URLs", () => {
+    expect(courtRecordHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { proceedingId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/record?proceeding=bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb");
+    expect(trialIndexHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { dayNumber: 14, query: "Apple Watch", notice: "saved" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/trial-index?day=14&q=Apple+Watch&notice=saved");
   });
 
   it("round-trips every Structure review queue filter", () => {
