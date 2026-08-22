@@ -21,6 +21,10 @@ export type StructureRouteState = {
   compareViewIds?: string[];
 };
 
+export type StructureReviewRouteState = Pick<StructureRouteState,
+  "type" | "objectId" | "segmentId" | "proceedingId" | "reviewStatus" | "assertedBy" | "unresolvedOnly" | "temporalOnly" | "query"
+> & { notice?: "reviewed" };
+
 export function caseSetupHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/setup`;
 }
@@ -49,6 +53,22 @@ export function structureHref(caseId: string, state: StructureRouteState = {}) {
   for (const viewId of state.compareViewIds?.slice(0, 4) ?? []) params.append("compare", viewId);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/structure${suffix ? `?${suffix}` : ""}`;
+}
+
+export function structureReviewHref(caseId: string, state: StructureReviewRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.type && state.type !== "all" && state.type !== "entity") params.set("type", state.type);
+  if (state.objectId) params.set("object", state.objectId);
+  if (state.segmentId) params.set("segment", state.segmentId);
+  if (state.proceedingId) params.set("proceeding", state.proceedingId);
+  if (state.reviewStatus) params.set("status", state.reviewStatus);
+  if (state.assertedBy?.trim()) params.set("assertedBy", state.assertedBy.trim());
+  if (state.unresolvedOnly) params.set("unresolved", "1");
+  if (state.temporalOnly) params.set("temporal", "1");
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.notice) params.set("notice", state.notice);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/structure/review${suffix ? `?${suffix}` : ""}`;
 }
 
 export function reconstructionHref(caseId: string, compareVersionIds: string[] = []) {

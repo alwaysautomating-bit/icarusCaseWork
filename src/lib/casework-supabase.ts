@@ -35,13 +35,15 @@ async function audit(supabase: SupabaseClient, caseId: string, actor: CaseActor,
 export async function reviewAndPromote(actor: CaseActor, claimId: string, rationale: string, eventTitle: string, precision: string, eventTimeEnd?: string, uncertaintyNote = "") {
   const input = z.object({ claimId: z.uuid(), rationale: z.string().trim().min(5), eventTitle: z.string().trim().min(5), precision: z.enum(["exact", "approximate", "interval", "relative", "unknown"]), eventTimeEnd: z.string().optional(), uncertaintyNote: z.string().trim().max(1000) }).parse({ claimId, rationale, eventTitle, precision, eventTimeEnd, uncertaintyNote });
   const { supabase, caseId } = await caseContext(actor);
-  const claim = rowsOrThrow(await supabase.from("claims").select("claimed_event_time,status").eq("id", input.claimId).eq("case_id", caseId).single()) as { claimed_event_time: string | null; status: string };
-  if (claim.status !== "candidate") throw new Error("Claim has already been reviewed.");
-  rowsOrThrow(await supabase.from("claims").update({ status: "accepted" }).eq("id", input.claimId).eq("status", "candidate").select("id").single());
-  rowsOrThrow(await supabase.from("review_decisions").insert({ id: randomUUID(), claim_id: input.claimId, reviewer_user_id: actor.id, disposition: "accepted", rationale: input.rationale }).select("id").single());
-  const eventId = randomUUID();
-  rowsOrThrow(await supabase.from("events").insert({ id: eventId, case_id: caseId, promoted_from_claim_id: input.claimId, title: input.eventTitle, event_time_start: claim.claimed_event_time, event_time_end: input.eventTimeEnd || null, time_precision: input.precision, epistemic_state: "reviewed_observable", uncertainty_note: input.uncertaintyNote }).select("id").single());
-  await audit(supabase, caseId, actor, "claim.accepted_and_event.promoted", "event", eventId, { claimId: input.claimId, precision: input.precision });
+  rowsOrThrow(await supabase.rpc("review_and_promote_claim", {
+    p_case_id: caseId,
+    p_claim_id: input.claimId,
+    p_rationale: input.rationale,
+    p_event_title: input.eventTitle,
+    p_precision: input.precision,
+    p_event_time_end: input.eventTimeEnd || null,
+    p_uncertainty_note: input.uncertaintyNote,
+  }));
 }
 
 export async function reviewExtractionCandidate(actor: CaseActor, candidateId: string, action: string, payloadText: string, note: string) {

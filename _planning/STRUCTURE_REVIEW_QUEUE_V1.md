@@ -1,6 +1,6 @@
 # Structure Review Queue v1
 
-Status: approved next build slice
+Status: implemented and accepted locally on 2026-08-22
 
 Prepared: 2026-08-22
 
@@ -437,3 +437,5 @@ Run an authenticated browser acceptance against the local Docker-backed Supabase
 ## Completion boundary
 
 The slice is complete when authorized human decisions are atomic, immutable, source-visible, case-scoped, concurrency-safe, and auditable across all seven candidate object types—without creating canonical events, resolving entities, modifying source evidence, or changing saved timeline snapshots.
+
+Implementation note (2026-08-22): direct authenticated claim mutations were removed in the follow-on migration `20260822204848_protect_legacy_claim_promotion.sql`. The older claim-to-event action is preserved behind the separate atomic `review_and_promote_claim` RPC and remains outside this slice's UI and `review_structure_object` contract.

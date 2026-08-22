@@ -23,8 +23,15 @@ export type AccessibleCase = {
   incident_window_start: string | null;
   incident_window_end: string | null;
   created_at: string;
-  membershipRole: string;
+  membershipRole: CaseMembershipRole;
 };
+
+export const caseMembershipRoles = ["owner", "reviewer", "researcher", "viewer"] as const;
+export type CaseMembershipRole = (typeof caseMembershipRoles)[number];
+
+export function canReviewStructure(role: CaseMembershipRole) {
+  return role === "owner" || role === "reviewer";
+}
 
 export async function listAccessibleCases(actorId: string): Promise<AccessibleCase[]> {
   const supabase = await createClient();
@@ -32,10 +39,13 @@ export async function listAccessibleCases(actorId: string): Promise<AccessibleCa
     supabase.from("cases").select("id,title,workspace_key,purpose,public_record_cutoff,incident_at,incident_window_start,incident_window_end,created_at").order("created_at", { ascending: false }),
     supabase.from("case_members").select("case_id,role").eq("user_id", actorId),
   ]);
-  const memberships = rowsOrThrow(membershipsResult) as Array<{ case_id: string; role: string }>;
+  const memberships = rowsOrThrow(membershipsResult) as Array<{ case_id: string; role: CaseMembershipRole }>;
   const roleByCase = new Map(memberships.map((item) => [item.case_id, item.role]));
   return (rowsOrThrow(casesResult) as Array<Omit<AccessibleCase, "membershipRole">>)
-    .map((item) => ({ ...item, membershipRole: roleByCase.get(item.id) ?? "member" }));
+    .flatMap((item) => {
+      const membershipRole = roleByCase.get(item.id);
+      return membershipRole ? [{ ...item, membershipRole }] : [];
+    });
 }
 
 export const getAccessibleCase = cache(async (actorId: string, rawCaseId: string): Promise<AccessibleCase | null> => {
@@ -49,7 +59,7 @@ export const getAccessibleCase = cache(async (actorId: string, rawCaseId: string
   if (caseResult.error) throw new Error(caseResult.error.message);
   if (membershipResult.error) throw new Error(membershipResult.error.message);
   if (!caseResult.data || !membershipResult.data) return null;
-  return { ...(caseResult.data as Omit<AccessibleCase, "membershipRole">), membershipRole: membershipResult.data.role as string };
+  return { ...(caseResult.data as Omit<AccessibleCase, "membershipRole">), membershipRole: membershipResult.data.role as CaseMembershipRole };
 });
 
 export function parseCaseId(value: string) {

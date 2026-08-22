@@ -57,6 +57,7 @@ type TemporalRow = {
   asserted_time_of_day_end: string | null; time_of_day_band: string | null; date_precision: string | null; time_of_day_precision: string | null;
   qualification: string; qualifier_text: string | null; confidence_basis: string; sequence_language: string | null; duration_iso8601: string | null;
   relative_offset_value: number | null; relative_offset_unit: string | null; recurrence_pattern: unknown;
+  lower_bound_event_candidate_id: string | null; upper_bound_event_candidate_id: string | null;
 };
 type RelationshipRow = {
   id: string; object_code: string; from_node_type: string; from_node_id: string; relation_type: string; to_node_type: string;
@@ -65,7 +66,7 @@ type RelationshipRow = {
 };
 type FlagRow = {
   id: string; object_code: string; target_node_type: string; target_node_id: string; flag_type: string; rationale: string;
-  origin: string; status: string; source_segment_ids: string[]; logical_order: number; created_at: string;
+  origin: string; status: string; source_segment_ids: string[]; supporting_context: unknown; logical_order: number; created_at: string;
 };
 type EntityRow = { id: string; canonical_name: string; kind: string; description: string; created_at: string };
 type LinkRow = { source_segment_id: string };
@@ -114,6 +115,8 @@ export type StructureListItem = {
   confidence: number | null;
   extractionRunId: string | null;
   logicalOrder: number | null;
+  reviewable: boolean;
+  reviewFields: Record<string, unknown>;
   details: Array<{ label: string; value: string }>;
 };
 
@@ -184,9 +187,9 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
     supabase.from("claims").select("id,source_segment_id,claimant,assertion,status,object_code,knowledge_item_id,asserted_by_entity_id,asserted_by_raw,speaker_capacity,normalized_assertion,assertion_status,information_basis,extraction_confidence,source_quote,review_required,logical_order,created_at").eq("case_id", caseId).order("created_at").limit(objectLimit),
     supabase.from("entity_mentions").select("id,knowledge_item_id,object_code,raw_mention,normalized_candidate,mention_type,resolved_entity_id,resolution_status,resolution_confidence,resolution_basis,source_segment_ids,review_status,logical_order,created_at").eq("case_id", caseId).order("logical_order").limit(objectLimit),
     supabase.from("event_candidates").select("id,proceeding_id,knowledge_item_id,object_code,neutral_description,participant_mentions,source_claim_ids,extraction_confidence,review_status,reconciled_event_id,reconciliation_basis,logical_order,created_at,event_class,source_wording,recurrence_pattern").eq("case_id", caseId).order("logical_order").limit(objectLimit),
-    supabase.from("temporal_assertions").select("id,knowledge_item_id,source_claim_id,event_id,event_candidate_id,object_code,raw_temporal_language,asserted_start,asserted_end,precision,asserted_by_entity_id,asserted_by_raw,source_segment_ids,extraction_confidence,review_status,logical_order,created_at,asserted_date,asserted_time_of_day_start,asserted_time_of_day_end,time_of_day_band,date_precision,time_of_day_precision,qualification,qualifier_text,confidence_basis,sequence_language,duration_iso8601,relative_offset_value,relative_offset_unit,recurrence_pattern").eq("case_id", caseId).order("logical_order").limit(objectLimit),
+    supabase.from("temporal_assertions").select("id,knowledge_item_id,source_claim_id,event_id,event_candidate_id,object_code,raw_temporal_language,asserted_start,asserted_end,precision,asserted_by_entity_id,asserted_by_raw,source_segment_ids,extraction_confidence,review_status,logical_order,created_at,asserted_date,asserted_time_of_day_start,asserted_time_of_day_end,time_of_day_band,date_precision,time_of_day_precision,qualification,qualifier_text,confidence_basis,sequence_language,duration_iso8601,relative_offset_value,relative_offset_unit,recurrence_pattern,lower_bound_event_candidate_id,upper_bound_event_candidate_id").eq("case_id", caseId).order("logical_order").limit(objectLimit),
     supabase.from("knowledge_relationships").select("id,object_code,from_node_type,from_node_id,relation_type,to_node_type,to_node_id,source_claim_id,knowledge_item_id,assertion_status,extraction_confidence,review_status,logical_order,created_at").eq("case_id", caseId).order("logical_order").limit(objectLimit),
-    supabase.from("knowledge_flags").select("id,object_code,target_node_type,target_node_id,flag_type,rationale,origin,status,source_segment_ids,logical_order,created_at").eq("case_id", caseId).order("logical_order").limit(objectLimit),
+    supabase.from("knowledge_flags").select("id,object_code,target_node_type,target_node_id,flag_type,rationale,origin,status,source_segment_ids,supporting_context,logical_order,created_at").eq("case_id", caseId).order("logical_order").limit(objectLimit),
     supabase.from("entities").select("id,canonical_name,kind,description,created_at").eq("case_id", caseId).order("canonical_name").limit(objectLimit),
     supabase.from("provenance_relations").select("id,object_code,from_node_type,from_node_id,relation_type,to_node_type,to_node_id,source_segment_ids,extraction_run_id,logical_order,created_at").eq("case_id", caseId).order("logical_order").limit(objectLimit),
     supabase.from("knowledge_extraction_runs").select("id,proceeding_id,compiler_name,compiler_version,extraction_method,model_name,model_version,extraction_contract_version,configuration_sha256,status,created_at,completed_at").eq("case_id", caseId).order("created_at"),
@@ -245,6 +248,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       reviewStatus: item.review_status, proceedingId: item.proceeding_id, proceedingTitle: proceedingTitle(item.proceeding_id), assertedBy: item.witness_label_raw,
       sourceSegmentIds: unique([...(knowledgeSources.get(item.id) ?? []), ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: unresolvedTargetIds.has(item.id),
       hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: null, extractionRunId: item.extraction_run_id, logicalOrder: item.logical_order,
+      reviewable: ["pending", "deferred"].includes(item.review_status), reviewFields: { summary: item.summary, unknowns: item.unknowns },
       details: compactDetails([detail("Witness", item.witness_label_raw), detail("Witness resolution", item.witness_resolution_status), detail("Phase candidate", item.phase_candidate), detail("Unknowns", item.unknowns), detail("Extraction method", item.extraction_method), detail("Created", item.created_at)]),
     });
   }
@@ -255,6 +259,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       reviewStatus: item.status, proceedingId: context?.proceeding_id ?? null, proceedingTitle: proceedingTitle(context?.proceeding_id), assertedBy: item.asserted_by_raw || item.claimant,
       sourceSegmentIds: unique([...(claimSources.get(item.id) ?? []), ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: unresolvedTargetIds.has(item.id),
       hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: Number(item.extraction_confidence), extractionRunId: context?.extraction_run_id ?? null, logicalOrder: item.logical_order,
+      reviewable: ["candidate", "deferred"].includes(item.status) && !["stipulated", "court_found"].includes(item.assertion_status), reviewFields: { normalized_assertion: item.normalized_assertion, assertion_status: item.assertion_status, information_basis: item.information_basis },
       details: compactDetails([detail("Claimant", item.claimant), detail("Asserted by", item.asserted_by_raw), detail("Capacity", item.speaker_capacity), detail("Assertion status", item.assertion_status), detail("Information basis", item.information_basis), detail("Review required", item.review_required ? "Yes" : "No"), detail("Created", item.created_at)]),
     });
   }
@@ -266,6 +271,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       sourceSegmentIds: unique([...sourcesForClaims(item.source_claim_ids), ...(knowledgeSources.get(item.knowledge_item_id) ?? []), ...provenanceSourcesFor(item.id)]),
       hasUnresolvedFlags: unresolvedTargetIds.has(item.id), hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: Number(item.extraction_confidence),
       extractionRunId: context?.extraction_run_id ?? null, logicalOrder: item.logical_order,
+      reviewable: ["pending", "deferred"].includes(item.review_status) && item.reconciled_event_id === null, reviewFields: { neutral_description: item.neutral_description, participant_mentions: item.participant_mentions },
       details: compactDetails([detail("Event class", item.event_class), detail("Source wording", item.source_wording), detail("Participants", item.participant_mentions), detail("Recurrence", item.recurrence_pattern), detail("Reconciled event", item.reconciled_event_id), detail("Reconciliation basis", item.reconciliation_basis), detail("Created", item.created_at)]),
     });
   }
@@ -276,6 +282,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       reviewStatus: item.review_status, proceedingId: context?.proceeding_id ?? null, proceedingTitle: proceedingTitle(context?.proceeding_id), assertedBy: item.asserted_by_raw || context?.witness_label_raw || null,
       sourceSegmentIds: unique([...item.source_segment_ids, ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: unresolvedTargetIds.has(item.id), hasTemporalAssertion: true,
       confidence: Number(item.extraction_confidence), extractionRunId: context?.extraction_run_id ?? null, logicalOrder: item.logical_order,
+      reviewable: ["pending", "deferred"].includes(item.review_status) && item.event_id === null, reviewFields: { asserted_start: item.asserted_start, asserted_end: item.asserted_end, precision: item.precision, asserted_date: item.asserted_date, asserted_time_of_day_start: item.asserted_time_of_day_start, asserted_time_of_day_end: item.asserted_time_of_day_end, time_of_day_band: item.time_of_day_band, date_precision: item.date_precision, time_of_day_precision: item.time_of_day_precision, qualification: item.qualification, qualifier_text: item.qualifier_text, sequence_language: item.sequence_language, duration_iso8601: item.duration_iso8601, relative_offset_value: item.relative_offset_value, relative_offset_unit: item.relative_offset_unit, recurrence_pattern: item.recurrence_pattern, lower_bound_event_candidate_id: item.lower_bound_event_candidate_id, upper_bound_event_candidate_id: item.upper_bound_event_candidate_id },
       details: compactDetails([detail("Precision", item.precision), detail("Qualification", item.qualification), detail("Qualifier", item.qualifier_text), detail("Asserted start", item.asserted_start), detail("Asserted end", item.asserted_end), detail("Asserted date", item.asserted_date), detail("Time of day", [item.asserted_time_of_day_start, item.asserted_time_of_day_end].filter(Boolean).join(" – ")), detail("Time band", item.time_of_day_band), detail("Sequence language", item.sequence_language), detail("Duration", item.duration_iso8601), detail("Confidence basis", item.confidence_basis), detail("Created", item.created_at)]),
     });
   }
@@ -286,6 +293,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       reviewStatus: item.review_status, proceedingId: context?.proceeding_id ?? null, proceedingTitle: proceedingTitle(context?.proceeding_id), assertedBy: context?.witness_label_raw ?? null,
       sourceSegmentIds: unique([...item.source_segment_ids, ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: unresolvedTargetIds.has(item.id) || item.resolution_status === "unresolved",
       hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: item.resolution_confidence === null ? null : Number(item.resolution_confidence), extractionRunId: context?.extraction_run_id ?? null, logicalOrder: item.logical_order,
+      reviewable: ["pending", "deferred"].includes(item.review_status) && item.resolved_entity_id === null, reviewFields: { normalized_candidate: item.normalized_candidate, mention_type: item.mention_type },
       details: compactDetails([detail("Mention type", item.mention_type), detail("Resolution status", item.resolution_status), detail("Resolution basis", item.resolution_basis), detail("Resolved entity", item.resolved_entity_id), detail("Created", item.created_at)]),
     });
   }
@@ -296,6 +304,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       summary: `${item.from_node_id} → ${item.to_node_id}`, reviewStatus: item.review_status, proceedingId: context?.proceeding_id ?? null, proceedingTitle: proceedingTitle(context?.proceeding_id), assertedBy: context?.witness_label_raw ?? null,
       sourceSegmentIds: unique([...(item.source_claim_id ? claimSources.get(item.source_claim_id) ?? [] : []), ...(knowledgeSources.get(item.knowledge_item_id) ?? []), ...provenanceSourcesFor(item.id)]),
       hasUnresolvedFlags: unresolvedTargetIds.has(item.id), hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: Number(item.extraction_confidence), extractionRunId: context?.extraction_run_id ?? null, logicalOrder: item.logical_order,
+      reviewable: ["pending", "deferred"].includes(item.review_status), reviewFields: { relation_type: item.relation_type, assertion_status: item.assertion_status },
       details: compactDetails([detail("From", `${item.from_node_type} · ${item.from_node_id}`), detail("Relation", item.relation_type), detail("To", `${item.to_node_type} · ${item.to_node_id}`), detail("Assertion status", item.assertion_status), detail("Created", item.created_at)]),
     });
   }
@@ -306,6 +315,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       proceedingId: target?.proceedingId ?? null, proceedingTitle: target?.proceedingTitle ?? "Case-level object", assertedBy: target?.assertedBy ?? null,
       sourceSegmentIds: unique([...item.source_segment_ids, ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: !["resolved", "rejected"].includes(item.status), hasTemporalAssertion: false,
       confidence: null, extractionRunId: target?.extractionRunId ?? null, logicalOrder: item.logical_order,
+      reviewable: ["proposed", "deferred"].includes(item.status), reviewFields: { rationale: item.rationale, supporting_context: item.supporting_context },
       details: compactDetails([detail("Target", `${item.target_node_type} · ${item.target_node_id}`), detail("Origin", item.origin), detail("Created", item.created_at)]),
     });
   }
@@ -318,6 +328,7 @@ export async function getCaseStructureWorkspace(actorId: string, caseId: string,
       proceedingId: contexts.length === 1 ? contexts[0] : null, proceedingTitle: contexts.length === 1 ? proceedingTitle(contexts[0]) : "Case-level canonical entity", assertedBy: null,
       sourceSegmentIds: unique([...entityMentions.flatMap((mention) => mention.source_segment_ids), ...provenanceSourcesFor(item.id)]), hasUnresolvedFlags: unresolvedTargetIds.has(item.id),
       hasTemporalAssertion: temporalTargetIds.has(item.id), confidence: null, extractionRunId: extractionRuns.length === 1 ? extractionRuns[0] : null, logicalOrder: null,
+      reviewable: false, reviewFields: {},
       details: compactDetails([detail("Entity kind", item.kind), detail("Resolved mentions", entityMentions.length), detail("Created", item.created_at)]),
     });
   }

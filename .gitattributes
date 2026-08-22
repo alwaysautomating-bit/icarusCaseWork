@@ -1,0 +1,2 @@
+transcripts/manifests/*.json text eol=lf
+transcripts/preserved/*.md text eol=lf

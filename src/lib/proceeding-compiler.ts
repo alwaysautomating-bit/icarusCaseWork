@@ -471,13 +471,17 @@ export type IntakeManifest = {
 /** Bridges standardized intake manifests into the same provider-neutral compiler. */
 export function compilePreservedTranscriptManifest(manifest: IntakeManifest, source: string) {
   if (manifest.source.publisher !== "Rev") throw new Error(`Unsupported transcript provider: ${manifest.source.publisher}`);
-  const actualSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
-  if (actualSha256 !== manifest.integrity.sha256) throw new Error("Preserved transcript checksum does not match its intake manifest.");
+  // Git may materialize Markdown artifacts with CRLF on Windows; accept the recorded bytes or their canonical LF form.
+  const canonicalSource = source.replaceAll("\r\n", "\n");
+  const rawSha256 = createHash("sha256").update(Buffer.from(source, "utf8")).digest("hex");
+  const canonicalSha256 = createHash("sha256").update(Buffer.from(canonicalSource, "utf8")).digest("hex");
+  if (rawSha256 !== manifest.integrity.sha256 && canonicalSha256 !== manifest.integrity.sha256) throw new Error("Preserved transcript checksum does not match its intake manifest.");
+  const verifiedSource = rawSha256 === manifest.integrity.sha256 ? source : canonicalSource;
   const compilerManifest = { provider: "rev" as const, artifactName: manifest.source.preserved_filename, title: manifest.source.page_title, sourceUrl: manifest.source.canonical_url, proceedingType: "trial_day" as const };
   if (manifest.source.preserved_filename.toLowerCase().endsWith(".txt")) {
-    return compileProceedingSource({ ...compilerManifest, representation: "rev_plain_text" }, source);
+    return compileProceedingSource({ ...compilerManifest, representation: "rev_plain_text" }, verifiedSource);
   }
-  return compileProceedingSource({ ...compilerManifest, representation: "rev_markdown" }, source);
+  return compileProceedingSource({ ...compilerManifest, representation: "rev_markdown" }, verifiedSource);
 }
 
 export function compileUnifiedProceeding(manifest: PreservedTranscriptManifest, source: string): ProceedingPackageV1 {

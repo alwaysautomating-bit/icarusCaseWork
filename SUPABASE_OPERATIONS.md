@@ -324,11 +324,13 @@ The current configuration intentionally targets PostgreSQL 17. Do not change the
 Verified locally on 2026-08-22:
 
 - Docker-backed Supabase database, API, Auth, Storage, Studio, and Mailpit are operational.
-- All 14 versioned migrations through `20260822143000_testimony_reconstruction_versions_v1.sql` are applied locally.
+- All 16 versioned migrations through `20260822204848_protect_legacy_claim_promotion.sql` are applied locally. The Structure Review chain passed a full Docker-backed reset before the preserved local corpus was restored, and the complete chain passes automated zero-state replay.
 - Local database advisors report no security or performance issues.
-- Database lint completes without errors; one existing warning remains in `review_extraction_candidate` for a text-to-`uuid[]` assignment.
-- ESLint, TypeScript, 95 tests, and the Next.js production build pass.
+- Database lint and advisors report no issues. The legacy `review_extraction_candidate` UUID-array warning is fixed in the Structure Review migration without changing that RPC's contract.
+- ESLint, TypeScript, 101 tests, and the Next.js production build pass.
 - Candidate-only reconstruction snapshots are case-scoped, immutable, RLS-readable, and saved atomically through `save_reconstruction_version`; the function rejects snapshots that claim canonical event creation, SAME resolution, courtroom-timestamp substitution, or collapsed tensions.
+- Structure review versions are append-only and case-scoped. The public invoker RPC delegates to a fixed-search-path private mutation core that authorizes owner/reviewer membership, locks the target, enforces type-specific patch allowlists and expected versions, captures source lineage server-side, and appends the target change, immutable version, and case-ledger event atomically.
+- Knowledge-mapping claims are select-only to authenticated clients. The separately governed legacy claim-to-event action is preserved through the atomic `review_and_promote_claim` RPC; Structure Review never calls it.
 
 Hosted deployment remains blocked until:
 

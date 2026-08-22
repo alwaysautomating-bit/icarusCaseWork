@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { caseSetupHref, courtRecordHref, parseStructureObjectType, structureHref } from "@/lib/case-routes";
+import { caseSetupHref, courtRecordHref, parseStructureObjectType, structureHref, structureReviewHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
   it("builds an explicit Foundation route", () => {
@@ -36,5 +36,20 @@ describe("case-scoped routes", () => {
   it("normalizes unknown structure types to the all-objects view", () => {
     expect(parseStructureObjectType("graph")).toBe("all");
     expect(parseStructureObjectType("event")).toBe("event");
+  });
+
+  it("round-trips every Structure review queue filter", () => {
+    expect(structureReviewHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", {
+      type: "event",
+      objectId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      segmentId: "cccccccc-cccc-4ccc-8ccc-cccccccccccc",
+      proceedingId: "dddddddd-dddd-4ddd-8ddd-dddddddddddd",
+      reviewStatus: "pending",
+      assertedBy: " Hartnett ",
+      unresolvedOnly: true,
+      temporalOnly: true,
+      query: "return context",
+      notice: "reviewed",
+    })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/structure/review?type=event&object=bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb&segment=cccccccc-cccc-4ccc-8ccc-cccccccccccc&proceeding=dddddddd-dddd-4ddd-8ddd-dddddddddddd&status=pending&assertedBy=Hartnett&unresolved=1&temporal=1&q=return+context&notice=reviewed");
   });
 });

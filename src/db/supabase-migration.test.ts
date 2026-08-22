@@ -25,13 +25,14 @@ describe("Supabase deployment migration", () => {
     expect(tables.rows.map((row) => row.table_name)).toContain("saved_research_views");
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["evidence_intakes", "sources", "proceedings", "proceeding_speakers", "qa_exchanges", "extraction_candidates", "extraction_review_versions", "proceeding_positions", "procedural_actions", "proceeding_exhibits", "proceeding_stipulations", "resolution_items", "proceeding_package_versions", "casework_proceeding_imports"]));
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["knowledge_extraction_runs", "case_ledger", "witness_blocks", "testimony_units", "knowledge_items", "knowledge_item_versions", "claim_source_segments", "entity_mentions", "event_candidates", "temporal_bands", "temporal_assertions", "knowledge_relationships", "knowledge_flags", "provenance_activities", "provenance_relations"]));
-    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["saved_timeline_views", "saved_reconstruction_versions"]));
+    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["saved_timeline_views", "saved_reconstruction_versions", "structure_review_versions"]));
     const functions = await db.query<{ routine_name: string }>("select routine_name from information_schema.routines where routine_schema='public'");
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_url_intake");
     expect(functions.rows.map((row) => row.routine_name)).toEqual(expect.arrayContaining(["commit_testimony_compiler_run", "review_extraction_candidate", "publish_proceeding_package", "import_proceeding_package_to_casework"]));
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_knowledge_map");
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_timeline_candidates");
     expect(functions.rows.map((row) => row.routine_name)).toContain("save_reconstruction_version");
+    expect(functions.rows.map((row) => row.routine_name)).toContain("review_structure_object");
     expect(functions.rows.map((row) => row.routine_name)).toContain("search_testimony");
     const indexes = await db.query<{ indexname: string }>("select indexname from pg_indexes where schemaname='public'");
     expect(indexes.rows.map((row) => row.indexname)).toEqual(expect.arrayContaining(["source_segments_search_vector_gin", "source_segments_exact_text_trgm_gin"]));
@@ -91,5 +92,32 @@ describe("Supabase deployment migration", () => {
     expect(migration).toContain("candidate-only boundaries");
     expect(migration).toContain("revoke all on function public.save_reconstruction_version(uuid,text,text,jsonb) from public,anon");
     expect(migration).not.toMatch(/insert\s+into\s+public\.(events|entities|entity_aliases)/i);
+  });
+
+  it("governs Structure review through one append-only authenticated RPC", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260822161023_structure_review_queue_v1.sql", import.meta.url), "utf8");
+    expect(migration).toContain("create table public.structure_review_versions");
+    expect(migration).toContain("alter table public.structure_review_versions enable row level security");
+    expect(migration).toContain("revoke all on public.structure_review_versions from public,anon,authenticated");
+    expect(migration).toContain("grant select on public.structure_review_versions to authenticated");
+    expect(migration).toContain("create function private.can_review_case(target_case_id uuid)");
+    expect(migration).toContain("member.role in ('owner','reviewer')");
+    expect(migration).toContain("for update");
+    expect(migration).toContain("STRUCTURE_REVIEW_STALE_VERSION");
+    expect(migration).toContain("v_child_ids uuid[] := '{}'::uuid[]");
+    expect(migration).toContain("revoke all on function public.review_structure_object(uuid,text,uuid,text,jsonb,text,integer) from public,anon");
+    expect(migration).toContain("grant execute on function public.review_structure_object(uuid,text,uuid,text,jsonb,text,integer) to authenticated");
+    expect(migration).not.toMatch(/insert\s+into\s+public\.(events|entities|entity_aliases)/i);
+  });
+
+  it("keeps claims select-only while preserving legacy promotion behind an atomic RPC", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260822204848_protect_legacy_claim_promotion.sql", import.meta.url), "utf8");
+    expect(migration).toContain("drop policy if exists claims_all on public.claims");
+    expect(migration).toContain("create policy claims_select on public.claims for select to authenticated");
+    expect(migration).toContain("revoke all on public.claims from authenticated");
+    expect(migration).toContain("grant select on public.claims to authenticated");
+    expect(migration).toContain("create function public.review_and_promote_claim");
+    expect(migration).toContain("for update");
+    expect(migration).toContain("grant execute on function public.review_and_promote_claim(uuid,uuid,text,text,text,timestamptz,text) to authenticated");
   });
 });
