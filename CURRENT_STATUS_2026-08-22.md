@@ -32,7 +32,7 @@ The governed middle layer between extraction and downstream analysis now exists.
 
 ## Canonical corpus and acceptance evidence
 
-- Canonical testimony corpus: 14 proceedings and approximately 27,150 committed source segments.
+- Canonical testimony corpus: 15 published proceeding rows representing 14 distinct titles; 29,347 proceeding-linked source segments plus 410 legacy/unlinked segments, for 29,757 total locally preserved segments. Day 6 currently exists under two proceeding identities and remains an explicit reconciliation item.
 - Day 6 Timeline Candidate Compiler acceptance: 488-segment Maureen Hartnett witness block; 11 reviewed testimony units, 12 event candidates, 12 temporal assertions, 19 unresolved entity mentions, zero canonical events, and zero SAME resolutions.
 - Day 3 Reconstruction v1: 1,873 source segments; six witness lanes; 25 reviewed assertions; 10 proposed reconstruction nodes across five incident lanes; nine ordering/overlap constraints; four unresolved tensions; zero canonical events; zero SAME resolutions; zero testimony timestamps used as event time.
 - Reconstruction versions are immutable, case-scoped, source-linked, and comparable four at a time.
