@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Card Compiler"
+  short_description: "Compile markdown into catalog artifacts"
+  default_prompt: "Use $context-card-compiler to turn a canonical context.md file into card.json, agent-pack.json, and relationships.json."

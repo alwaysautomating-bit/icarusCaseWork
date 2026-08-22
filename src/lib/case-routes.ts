@@ -1,0 +1,56 @@
+type CourtRecordRouteState = {
+  query?: string;
+  segmentId?: string;
+};
+
+export const structureObjectTypes = ["knowledge", "claim", "event", "temporal", "mention", "entity", "relationship", "flag"] as const;
+
+export type StructureObjectType = (typeof structureObjectTypes)[number];
+
+export type StructureRouteState = {
+  type?: StructureObjectType | "all";
+  objectId?: string;
+  segmentId?: string;
+  proceedingId?: string;
+  reviewStatus?: string;
+  assertedBy?: string;
+  unresolvedOnly?: boolean;
+  temporalOnly?: boolean;
+  query?: string;
+  timelineRunId?: string;
+  compareViewIds?: string[];
+};
+
+export function caseSetupHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/setup`;
+}
+
+export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {
+  const params = new URLSearchParams();
+  const query = state.query?.trim();
+  if (query) params.set("q", query);
+  if (state.segmentId) params.set("segment", state.segmentId);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/record${suffix ? `?${suffix}` : ""}`;
+}
+
+export function structureHref(caseId: string, state: StructureRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.type && state.type !== "all") params.set("type", state.type);
+  if (state.objectId) params.set("object", state.objectId);
+  if (state.segmentId) params.set("segment", state.segmentId);
+  if (state.proceedingId) params.set("proceeding", state.proceedingId);
+  if (state.reviewStatus) params.set("status", state.reviewStatus);
+  if (state.assertedBy?.trim()) params.set("assertedBy", state.assertedBy.trim());
+  if (state.unresolvedOnly) params.set("unresolved", "1");
+  if (state.temporalOnly) params.set("temporal", "1");
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.timelineRunId) params.set("run", state.timelineRunId);
+  for (const viewId of state.compareViewIds?.slice(0, 4) ?? []) params.append("compare", viewId);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/structure${suffix ? `?${suffix}` : ""}`;
+}
+
+export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {
+  return structureObjectTypes.includes(value as StructureObjectType) ? value as StructureObjectType : "all";
+}

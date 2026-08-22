@@ -25,10 +25,12 @@ const informationBasisSchema = z.enum([
 const temporalPrecisionSchema = z.enum([
   "exact_timestamp",
   "exact_date",
+  "exact_time",
   "approximate",
   "interval",
   "bounded_interval",
   "relative_only",
+  "sequence_only",
   "unknown",
 ]);
 const contextRoleSchema = z.enum(["substantive", "question", "answer", "procedural", "context"]);
@@ -37,6 +39,7 @@ export const semanticKnowledgeCandidateSchema = z.object({
   key: z.string().min(1),
   witnessBlockImportedId: z.string().regex(/^witness_\d{3}$/),
   unitKind: z.enum(["qa_thread", "substantive_thread", "procedural_context", "mixed"]),
+  reviewStatus: z.enum(["pending", "accepted", "amended", "split", "rejected", "deferred"]).default("pending"),
   segments: z.array(z.object({ segmentId: z.string().uuid(), contextRole: contextRoleSchema })).min(1),
   summary: z.string().min(1),
   unknowns: z.array(z.string().min(1)).default([]),
@@ -59,12 +62,23 @@ export const semanticKnowledgeCandidateSchema = z.object({
   })).default([]),
   eventCandidates: z.array(z.object({
     key: z.string().min(1), neutralDescription: z.string().min(1), participantMentions: z.array(z.string()).default([]),
-    sourceClaimKeys: z.array(z.string()).default([]), extractionConfidence: z.number().min(0).max(1),
+    eventClass: z.string().min(1).default("event"), sourceWording: z.string().min(1).nullable().default(null),
+    recurrencePattern: z.record(z.string(), z.unknown()).nullable().default(null),
+    sourceClaimKeys: z.array(z.string()).min(1), extractionConfidence: z.number().min(0).max(1),
   })).default([]),
   temporalAssertions: z.array(z.object({
     key: z.string().min(1), eventCandidateKey: z.string().min(1), sourceClaimKey: z.string().nullable().default(null),
     rawTemporalLanguage: z.string().min(1), assertedStart: z.string().datetime({ offset: true }).nullable().default(null),
     assertedEnd: z.string().datetime({ offset: true }).nullable().default(null), precision: temporalPrecisionSchema,
+    assertedDate: z.string().date().nullable().default(null),
+    assertedTimeOfDayStart: z.string().nullable().default(null), assertedTimeOfDayEnd: z.string().nullable().default(null),
+    timeOfDayBand: z.string().nullable().default(null), datePrecision: z.string().nullable().default(null),
+    timeOfDayPrecision: z.string().nullable().default(null), qualification: z.string().min(1).default("asserted"),
+    qualifierText: z.string().nullable().default(null), confidenceBasis: z.string().min(1).default("wording:unqualified"),
+    sequenceLanguage: z.string().nullable().default(null), durationIso8601: z.string().nullable().default(null),
+    relativeOffsetValue: z.number().int().nullable().default(null), relativeOffsetUnit: z.string().nullable().default(null),
+    recurrencePattern: z.record(z.string(), z.unknown()).nullable().default(null),
+    lowerBoundEventCandidateKey: z.string().nullable().default(null), upperBoundEventCandidateKey: z.string().nullable().default(null),
     assertedByRaw: z.string().min(1), sourceSegmentIds: z.array(z.string().uuid()).min(1), extractionConfidence: z.number().min(0).max(1),
   })).default([]),
   relationships: z.array(z.object({
@@ -120,6 +134,10 @@ export type CompileKnowledgeMapInput = {
   extractionMethod?: "deterministic" | "model" | "hybrid" | "reviewed_import";
   modelName?: string | null;
   modelVersion?: string | null;
+  compilerName?: string;
+  compilerVersion?: string;
+  contractVersion?: string;
+  activityType?: string;
 };
 
 function stableUuid(namespace: string, value: string) {
@@ -208,7 +226,10 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
 
   const segmentById = new Map(input.transcript.segments.map((segment) => [segment.id, segment]));
   const segmentIds = new Set(segmentById.keys());
-  const configuration = JSON.stringify({ contract: KNOWLEDGE_CONTRACT_VERSION, candidates });
+  const compilerName = input.compilerName ?? KNOWLEDGE_MAPPER_NAME;
+  const compilerVersion = input.compilerVersion ?? KNOWLEDGE_MAPPER_VERSION;
+  const contractVersion = input.contractVersion ?? KNOWLEDGE_CONTRACT_VERSION;
+  const configuration = JSON.stringify({ contract: contractVersion, candidates });
   const configurationSha256 = createHash("sha256").update(configuration).digest("hex");
   const runId = stableUuid("knowledge-run", `${input.proceedingId}:${configurationSha256}`);
   const extractionMethod = input.extractionMethod ?? "hybrid";
@@ -257,14 +278,14 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
       id: unitId, object_code: objectCode("TST", unitId), witness_block_id: block.id, unit_kind: candidate.unitKind,
       witness_label_raw: block.witness_label_raw, phase_candidate: phase.phase, phase_confidence: phase.confidence,
       jury_state_candidate: phase.juryState, procedural_context: block.procedural_markers.filter((marker: { locator: { segment_index: number } }) => marker.locator.segment_index >= sorted[0].ordinal && marker.locator.segment_index <= sorted.at(-1)!.ordinal),
-      start_segment_id: sorted[0].id, end_segment_id: sorted.at(-1)!.id, review_status: "pending",
+      start_segment_id: sorted[0].id, end_segment_id: sorted.at(-1)!.id, review_status: candidate.reviewStatus,
       segments: candidate.segments.map((item) => ({ source_segment_id: item.segmentId, context_role: item.contextRole })),
     });
     knowledgeItems.push({
       id: knowledgeItemId, object_code: objectCode("KI", knowledgeItemId), testimony_unit_id: unitId, summary: candidate.summary,
       witness_label_raw: block.witness_label_raw, witness_entity_id: null, witness_resolution_status: "unresolved",
       phase_candidate: phase.phase, phase_confidence: phase.confidence, jury_state_candidate: phase.juryState,
-      unknowns: candidate.unknowns, review_status: "pending", source_segment_ids: sourceSegmentIds,
+      unknowns: candidate.unknowns, review_status: candidate.reviewStatus, source_segment_ids: sourceSegmentIds,
     });
 
     const localIds = new Map<string, string>();
@@ -299,7 +320,8 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
         neutral_description: event.neutralDescription, participant_mentions: event.participantMentions,
         source_claim_ids: event.sourceClaimKeys.map((key) => {
           const claimId = localIds.get(`claim:${key}`); if (!claimId) throw new Error(`Unknown source claim key: ${key}`); return claimId;
-        }), extraction_confidence: event.extractionConfidence, review_status: "pending" });
+        }), event_class: event.eventClass, source_wording: event.sourceWording, recurrence_pattern: event.recurrencePattern,
+        extraction_confidence: event.extractionConfidence, review_status: "pending" });
     });
     candidate.temporalAssertions.forEach((temporal) => {
       if (["unknown", "relative_only"].includes(temporal.precision) && (temporal.assertedStart || temporal.assertedEnd)) throw new Error(`${temporal.precision} time cannot include an asserted timestamp.`);
@@ -313,6 +335,15 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
         source_claim_id: sourceClaimId, event_id: null, event_candidate_id: eventCandidateId,
         raw_temporal_language: temporal.rawTemporalLanguage, asserted_start: temporal.assertedStart, asserted_end: temporal.assertedEnd,
         precision: temporal.precision, temporal_band_id: null, lower_bound_event_id: null, upper_bound_event_id: null,
+        asserted_date: temporal.assertedDate, asserted_time_of_day_start: temporal.assertedTimeOfDayStart,
+        asserted_time_of_day_end: temporal.assertedTimeOfDayEnd, time_of_day_band: temporal.timeOfDayBand,
+        date_precision: temporal.datePrecision, time_of_day_precision: temporal.timeOfDayPrecision,
+        qualification: temporal.qualification, qualifier_text: temporal.qualifierText, confidence_basis: temporal.confidenceBasis,
+        sequence_language: temporal.sequenceLanguage, duration_iso8601: temporal.durationIso8601,
+        relative_offset_value: temporal.relativeOffsetValue, relative_offset_unit: temporal.relativeOffsetUnit,
+        recurrence_pattern: temporal.recurrencePattern,
+        lower_bound_event_candidate_id: temporal.lowerBoundEventCandidateKey ? localIds.get(`event_candidate:${temporal.lowerBoundEventCandidateKey}`) ?? null : null,
+        upper_bound_event_candidate_id: temporal.upperBoundEventCandidateKey ? localIds.get(`event_candidate:${temporal.upperBoundEventCandidateKey}`) ?? null : null,
         asserted_by_entity_id: null, asserted_by_raw: temporal.assertedByRaw, source_segment_ids: temporal.sourceSegmentIds,
         extraction_confidence: temporal.extractionConfidence, review_status: "pending" });
     });
@@ -351,7 +382,7 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
   const provenanceActivities = [
     { id: parseActivityId, object_code: objectCode("ACT", parseActivityId), activity_type: "transcript_parse", compiler_name: "Icarus Testimony Compiler", compiler_version: "2.0.0", model_name: null, model_version: null, extraction_contract_version: null, configuration_sha256: null, started_at: null, ended_at: null, system_agent: "deterministic" },
     { id: structureActivityId, object_code: objectCode("ACT", structureActivityId), activity_type: "deterministic_structure", compiler_name: "icarus-testimony-first-pass", compiler_version: "0.2.0", model_name: null, model_version: null, extraction_contract_version: null, configuration_sha256: null, started_at: null, ended_at: null, system_agent: "deterministic" },
-    { id: knowledgeActivityId, object_code: objectCode("ACT", knowledgeActivityId), activity_type: "knowledge_extraction", compiler_name: KNOWLEDGE_MAPPER_NAME, compiler_version: KNOWLEDGE_MAPPER_VERSION, model_name: input.modelName ?? null, model_version: input.modelVersion ?? null, extraction_contract_version: KNOWLEDGE_CONTRACT_VERSION, configuration_sha256: configurationSha256, started_at: null, ended_at: null, system_agent: extractionMethod },
+    { id: knowledgeActivityId, object_code: objectCode("ACT", knowledgeActivityId), activity_type: input.activityType ?? "knowledge_extraction", compiler_name: compilerName, compiler_version: compilerVersion, model_name: input.modelName ?? null, model_version: input.modelVersion ?? null, extraction_contract_version: contractVersion, configuration_sha256: configurationSha256, started_at: null, ended_at: null, system_agent: extractionMethod },
   ];
   const baseRelations = [
     { key: "parse-used-artifact", fromType: "provenance_activity", fromId: parseActivityId, relation: "used", toType: "source_artifact", toId: input.sourceArtifactId },
@@ -364,12 +395,12 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
   });
 
   return {
-    schema_version: KNOWLEDGE_CONTRACT_VERSION,
+    schema_version: contractVersion,
     case_id: input.caseId,
     proceeding_id: input.proceedingId,
-    run: { id: runId, source_artifact_id: input.sourceArtifactId, compiler_name: KNOWLEDGE_MAPPER_NAME,
-      compiler_version: KNOWLEDGE_MAPPER_VERSION, extraction_method: extractionMethod, model_name: input.modelName ?? null,
-      model_version: input.modelVersion ?? null, extraction_contract_version: KNOWLEDGE_CONTRACT_VERSION,
+    run: { id: runId, source_artifact_id: input.sourceArtifactId, compiler_name: compilerName,
+      compiler_version: compilerVersion, extraction_method: extractionMethod, model_name: input.modelName ?? null,
+      model_version: input.modelVersion ?? null, extraction_contract_version: contractVersion,
       configuration_sha256: configurationSha256 },
     witness_blocks: witnessBlocks,
     testimony_units: testimonyUnits,

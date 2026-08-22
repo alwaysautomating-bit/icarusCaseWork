@@ -178,7 +178,10 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
     );
   }
 
-  const trialDay = Number(titleMatch?.[2] ?? descriptionMatch?.[1]);
+  // Public Rev page copies can omit the article heading while retaining newer
+  // transcript titles in the footer. The article description is specific to
+  // the captured transcript, so it must win over unrelated navigation titles.
+  const trialDay = Number(descriptionMatch?.[1] ?? titleMatch?.[2]);
   const descriptionPattern = new RegExp(`^Day\\s+${trialDay}\\s+of the MA v\\. Lindsay Clancy trial\\. Read the transcript here\\.\\s*$`, "im");
   const hasRevUrl = /https?:\/\/(?:www\.)?rev\.com\/(?:app\/transcript|transcripts|category)\//i.test(text);
   const hasRevNavigation = /^About[\u00a0 ]Rev\s*$/im.test(text) && /^Transcripts Home\s*$/im.test(text);
@@ -197,7 +200,7 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
   }
 
   const pageTitle = `MA v. Lindsay Clancy Day ${trialDay}`;
-  const titleIndex = titleMatch?.index ?? descriptionMatch?.index ?? 0;
+  const titleIndex = descriptionMatch?.index ?? titleMatch?.index ?? 0;
   const titleWindow = text.slice(titleIndex, titleIndex + 2_000);
   const dateMatch = titleWindow.match(
     /\b(January|February|March|April|May|June|July|August|September|October|November|December)\s+(\d{1,2}),\s+(\d{4})\b/i,
@@ -230,6 +233,10 @@ export function parseRevTranscript(buffer, originalFilename = "transcript.md") {
       break;
     }
   }
+  // Rev's plain-text page copy does not preserve the browser URL. Once the
+  // case, publisher, and trial day have all been positively identified, the
+  // public transcript route is deterministic.
+  canonicalUrl ??= `https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-${trialDay}`;
 
   return {
     caseName: "Commonwealth v. Lindsay Clancy",

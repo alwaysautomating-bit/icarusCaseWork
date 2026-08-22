@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import type { ParsedTranscriptSegment } from "@/lib/rev-testimony";
 import { compileTestimonyKnowledgeMap } from "@/lib/testimony-knowledge-mapper";
+import { compileTestimonyTimelineCandidates } from "@/lib/testimony-timeline-compiler";
 
 const userId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 const caseId = "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb";
@@ -24,6 +25,8 @@ async function migratedDatabase() {
     create function auth.uid() returns uuid language sql stable as $$
       select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
     $$;
+    grant usage on schema auth to authenticated;
+    grant execute on function auth.uid() to authenticated;
   `);
   const migrationsUrl = new URL("../../supabase/migrations/", import.meta.url);
   for (const name of (await readdir(migrationsUrl)).filter((item) => item.endsWith(".sql")).sort()) {
@@ -87,6 +90,23 @@ describe("testimony knowledge persistence", () => {
     const duplicate = await db.query<{ result: { duplicate: boolean } }>("select public.commit_testimony_knowledge_map($1::jsonb) result", [JSON.stringify(map)]);
     expect(duplicate.rows[0].result.duplicate).toBe(true);
 
+    const timeline = compileTestimonyTimelineCandidates({
+      caseId, proceedingId, sourceArtifactId: artifactId, transcript: { sourceSha256: "a".repeat(64), segments },
+      reviewedUnits: [{
+        key: "temperature-timeline", witnessBlockImportedId: "witness_001", unitKind: "qa_thread",
+        sourceSegmentIds: [segments[2].id, segments[3].id],
+        summary: "The reviewed Q&A described a temperature being reached later, without an event timestamp.",
+        unknowns: ["The measurement time remains relative-only."],
+        claim: { key: "temperature-timeline", assertedByRaw: "Dr. Jane Example", speakerCapacity: "witness", normalizedAssertion: "The witness affirmed that the recorded temperature later reached 95.2 degrees.", informationBasis: "UNKNOWN_BASIS", sourceSegmentIds: [segments[2].id, segments[3].id], extractionConfidence: 1 },
+        entityMentions: [{ key: "witness", rawMention: "Dr. Jane Example", mentionType: "person", sourceSegmentIds: [segments[3].id] }],
+        events: [{ key: "temperature-event", neutralDescription: "A recorded temperature reached 95.2 degrees.", eventClass: "temperature_measurement", sourceClaimKey: "temperature-timeline", sourceWording: "Yes.", sourceSegmentIds: [segments[3].id], temporalWording: "later", temporalSourceSegmentIds: [segments[2].id], participantMentions: ["Dr. Jane Example"], extractionConfidence: 1 }],
+      }],
+    });
+    const timelineFirst = await db.query<{ result: { duplicate: boolean; event_candidates: number; temporal_assertions: number; canonical_events_created: number; same_resolutions_created: number } }>("select public.commit_testimony_timeline_candidates($1::jsonb) result", [JSON.stringify(timeline)]);
+    expect(timelineFirst.rows[0].result).toMatchObject({ duplicate: false, event_candidates: 1, temporal_assertions: 1, canonical_events_created: 0, same_resolutions_created: 0 });
+    const timelineDuplicate = await db.query<{ result: { duplicate: boolean } }>("select public.commit_testimony_timeline_candidates($1::jsonb) result", [JSON.stringify(timeline)]);
+    expect(timelineDuplicate.rows[0].result.duplicate).toBe(true);
+
     const counts = await db.query<{ knowledge_items: number; claims: number; event_candidates: number; temporal_assertions: number; ledger: number; entities: number; support: number; contradictions: number }>(`select
       (select count(*)::int from public.knowledge_items) knowledge_items,
       (select count(*)::int from public.claims) claims,
@@ -96,10 +116,30 @@ describe("testimony knowledge persistence", () => {
       (select count(*)::int from public.entities) entities,
       (select count(*)::int from public.claim_support) support,
       (select count(*)::int from public.contradictions) contradictions`);
-    expect(counts.rows[0]).toMatchObject({ knowledge_items: 1, claims: 1, event_candidates: 1, temporal_assertions: 1, entities: 0, support: 0, contradictions: 0 });
+    expect(counts.rows[0]).toMatchObject({ knowledge_items: 2, claims: 2, event_candidates: 2, temporal_assertions: 2, entities: 0, support: 0, contradictions: 0 });
     expect(counts.rows[0].ledger).toBeGreaterThan(8);
     const time = await db.query<{ precision: string; asserted_start: string | null; asserted_end: string | null }>("select precision,asserted_start,asserted_end from public.temporal_assertions");
-    expect(time.rows[0]).toEqual({ precision: "relative_only", asserted_start: null, asserted_end: null });
+    expect(time.rows.map((row) => row.precision).sort()).toEqual(["relative_only", "sequence_only"]);
+    expect(time.rows.every((row) => row.asserted_start === null && row.asserted_end === null)).toBe(true);
+    const projection = await db.query<{ exact_source_text: string; source_speaker: string; temporal_precision: string; event_class: string; testimony_unit_review_status: string }>("select exact_source_text,source_speaker,temporal_precision,event_class,testimony_unit_review_status from public.timeline_candidate_projection");
+    expect(projection.rows).toEqual([{ exact_source_text: segments[2].text, source_speaker: segments[2].speaker, temporal_precision: "sequence_only", event_class: "temperature_measurement", testimony_unit_review_status: "accepted" }]);
+    await db.exec("set role authenticated");
+    const saveTimelineVersion = () => db.query<{ version: number; snapshot: { schema_version: string; items: Array<{ event_candidate_id: string; temporal_assertion_id: string; source_segment_ids: string[] }> } }>(`
+      select version,snapshot from public.save_timeline_view_version(
+        $1::uuid,$2::text,$3::text,$4::uuid[],$5::uuid[],$6::uuid[],$7::jsonb
+      )
+    `, [caseId, "Temperature candidates", "Reviewed fixture", [timeline.run.id], timeline.event_candidates.map((item) => item.id), timeline.temporal_assertions.map((item) => item.id), JSON.stringify({ lane: "candidate" })]);
+    const savedV1 = await saveTimelineVersion();
+    const savedV2 = await saveTimelineVersion();
+    expect(savedV1.rows[0].version).toBe(1);
+    expect(savedV2.rows[0].version).toBe(2);
+    expect(savedV1.rows[0].snapshot).toMatchObject({ schema_version: "timeline-candidate-view/1.0" });
+    expect(savedV1.rows[0].snapshot.items).toHaveLength(1);
+    expect(savedV1.rows[0].snapshot.items[0].source_segment_ids).toEqual([segments[2].id, segments[3].id]);
+    await db.exec("reset role; insert into auth.users(id) values('ffffffff-ffff-4fff-8fff-ffffffffffff'); set request.jwt.claim.sub='ffffffff-ffff-4fff-8fff-ffffffffffff'; set role authenticated;");
+    const outsiderViews = await db.query<{ count: number }>("select count(*)::int count from public.saved_timeline_views");
+    expect(outsiderViews.rows[0].count).toBe(0);
+    await db.exec(`reset role; set request.jwt.claim.sub='${userId}'`);
     const orders = await db.query<{ logical_order: number }>("select logical_order from public.case_ledger order by logical_order");
     expect(orders.rows.map((row) => row.logical_order)).toEqual(orders.rows.map((_, index) => index + 1));
     await db.close();

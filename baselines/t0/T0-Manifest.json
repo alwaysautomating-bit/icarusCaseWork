@@ -16,6 +16,41 @@
     "source_classification": "secondary_research_compilation",
     "embedded_prompt_is_executable": false
   },
+  "registered_materials": [
+    {
+      "material_id": "T0-EVIDENCE-PACKET-COURT-DOCS-PT2",
+      "original_filename": "679857984-Lindsay-Clancy-Sw-Court-Docs-Pt-2.pdf",
+      "preserved_filename": "evidence-packets/679857984-Lindsay-Clancy-Sw-Court-Docs-Pt-2.pdf",
+      "media_type": "application/pdf",
+      "pages": 177,
+      "bytes": 6925349,
+      "sha256": "5f7c76cab4d7204ebde87ab424acd43388f4716451c12e725a6af61d48827d6c",
+      "source_classification": "primary_court_record_packet",
+      "document_family": "search_warrant_returns_attachments_and_affidavits",
+      "text_layer": "scanned_image_no_extractable_text",
+      "status": "preserved_unindexed"
+    },
+    {
+      "material_id": "T0-CANDIDATE-JSON-V0",
+      "original_filename": "clancy_t0_baseline.json",
+      "preserved_filename": "provisional/clancy_t0_baseline.v0.json",
+      "media_type": "application/json",
+      "bytes": 21136,
+      "sha256": "c68a67858acaad8d65cecbe7c29713b1af715c72ad787d76f868178ae697f4fe",
+      "source_classification": "secondary_reported_candidate_baseline",
+      "declared_basis": "secondary reporting as of 2026-08-17",
+      "content_counts": {
+        "entities": 23,
+        "events": 9,
+        "temporal_anchors": 4,
+        "propositions": 3,
+        "sources": 3
+      },
+      "dangling_entity_references": ["ENT8", "ENT9", "ENT11", "ENT19"],
+      "status": "received_unreconciled",
+      "casework_imported": false
+    }
+  ],
   "baseline_content": {
     "entities": 31,
     "event_candidates": 16,
@@ -49,6 +84,7 @@
   },
   "ingestion": {
     "casework_imported": false,
-    "extracted_records_persisted": false
+    "extracted_records_persisted": false,
+    "supplemental_materials_registered": true
   }
 }

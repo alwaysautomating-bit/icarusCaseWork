@@ -29,6 +29,7 @@ describe("Supabase deployment migration", () => {
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_url_intake");
     expect(functions.rows.map((row) => row.routine_name)).toEqual(expect.arrayContaining(["commit_testimony_compiler_run", "review_extraction_candidate", "publish_proceeding_package", "import_proceeding_package_to_casework"]));
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_knowledge_map");
+    expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_timeline_candidates");
     expect(functions.rows.map((row) => row.routine_name)).toContain("search_testimony");
     const indexes = await db.query<{ indexname: string }>("select indexname from pg_indexes where schemaname='public'");
     expect(indexes.rows.map((row) => row.indexname)).toEqual(expect.arrayContaining(["source_segments_search_vector_gin", "source_segments_exact_text_trgm_gin"]));
@@ -65,5 +66,17 @@ describe("Supabase deployment migration", () => {
     expect(securityMigration).toContain("revoke all on public.knowledge_extraction_runs,public.case_ledger_heads,public.case_ledger");
     expect(securityMigration).toContain("grant select on public.knowledge_extraction_runs,public.case_ledger");
     expect(securityMigration).not.toMatch(/grant\s+(?:insert|update|delete|truncate|all)[^;]*authenticated/i);
+  });
+
+  it("exposes timeline candidates through a security-invoker projection without canonical writes", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260822092008_testimony_timeline_candidate_v1.sql", import.meta.url), "utf8");
+    expect(migration).toContain("create or replace view public.timeline_candidate_projection");
+    expect(migration).toContain("with (security_invoker=true)");
+    expect(migration).toContain("grant select on public.timeline_candidate_projection to authenticated");
+    expect(migration).toContain("revoke all on function public.commit_testimony_timeline_candidates(jsonb) from public,anon");
+    expect(migration).toContain("grant execute on function public.commit_testimony_timeline_candidates(jsonb) to authenticated");
+    expect(migration).toContain("'canonical_events_created',0");
+    expect(migration).toContain("'same_resolutions_created',0");
+    expect(migration).not.toMatch(/insert\s+into\s+public\.(events|entities|entity_aliases)/i);
   });
 });

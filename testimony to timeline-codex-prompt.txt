@@ -1,0 +1,177 @@
+testimony to timeline 
+Next milestone: Testimony → Timeline Candidate Compiler v1
+
+Use the existing TESTIMONY-KNOWLEDGE-MAPPING contract and Day 6 implementation.
+Do not create a parallel schema.
+
+Objective:
+Convert reviewed testimony units into timeline-ready candidates while preserving:
+- exact source text
+- speaker
+- proceeding
+- testimony timestamp
+- event-time assertion
+- temporal precision
+- sequence language
+- qualification/uncertainty
+- provenance
+- unresolved entity mentions
+- source irregularities
+
+The compiler must produce reviewable candidates, not canonical events.
+
+Required output model:
+
+1. Testimony Unit
+   Existing object.
+
+2. Knowledge Item
+   Existing object.
+
+3. Claim
+   Existing object.
+
+4. Event Candidate
+   Existing object.
+   Add/use fields sufficient to represent:
+   - neutral event description
+   - participants/entities as unresolved mentions when necessary
+   - event class/type
+   - source claim linkage
+   - candidate status
+
+5. Temporal Assertion
+   Existing object.
+   Must support:
+   - exact date/time
+   - approximate time
+   - interval
+   - relative time
+   - sequence-only
+   - unknown
+   - lower/upper bounds where applicable
+   - source wording
+   - qualification/confidence derived only from wording, not analyst inference
+
+6. Timeline Candidate Projection
+   Create a read/query layer or derived object that joins:
+   Event Candidate
+   + Temporal Assertion
+   + Claim
+   + Knowledge Item
+   + Testimony Unit
+   + Source Segment
+   + Witness/Proceeding metadata
+
+Do not duplicate underlying source data.
+
+Core extraction behaviors:
+
+Recognize temporal language such as:
+- explicit dates
+- explicit clock times
+- approximate times
+- “before”
+- “after”
+- “then”
+- “later”
+- “earlier”
+- “when I arrived”
+- “for about X minutes”
+- “three days later”
+- “that morning”
+- “the next day”
+- “I had already…”
+- “I had not yet…”
+- recurring events
+- sequence relationships
+- knowledge-state changes
+
+Preserve qualification:
+“I believe”
+“I think”
+“approximately”
+“around”
+“maybe”
+“I don’t recall exactly”
+must survive into the temporal assertion.
+
+Do not normalize qualified testimony into exact fact.
+
+Example:
+
+Source testimony:
+“I believe she completed the form on the 12th. The appointment was on the 15th.”
+
+Produce two candidates:
+
+Candidate A
+event: intake form completed
+time: 2022-09-12
+precision: date
+qualification: witness-qualified
+source wording preserved
+
+Candidate B
+event: appointment occurred
+time: 2022-09-15
+precision: date
+qualification: asserted
+source wording preserved
+
+Both must link back to the exact source segment(s).
+
+Acceptance slice:
+Use one complete Day 6 witness block rather than the entire transcript.
+
+Choose a block with:
+- multiple explicit dates/times
+- relative temporal language
+- sequence relationships
+- at least one qualified recollection
+- at least one event with unknown time
+- at least one unresolved entity mention
+
+Acceptance criteria:
+- no canonical events created automatically
+- no SAME resolutions created automatically
+- no unsupported date/time normalization
+- every event candidate linked to source claim
+- every temporal assertion linked to exact testimony source
+- relative-only times remain relative-only
+- unknown times remain unknown
+- qualification preserved
+- source timestamp irregularities preserved
+- rerun is idempotent
+- RLS behavior unchanged
+- ledger/provenance entries generated
+- existing human-readable ID conventions reused
+
+Create:
+- compiler implementation
+- focused tests
+- acceptance fixture
+- Markdown acceptance report
+- JSON acceptance report
+- repeatable pnpm command
+
+Report:
+- testimony units reviewed
+- knowledge items created
+- claims created
+- event candidates created
+- temporal assertions created
+- exact times
+- approximate times
+- intervals
+- relative-only assertions
+- sequence-only assertions
+- unknown-time assertions
+- qualified assertions
+- unresolved entity mentions
+- canonical events created
+- SAME resolutions created
+- source irregularities encountered
+
+Canonical events created must remain 0 for this milestone.
+SAME resolutions created must remain 0.

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { MonoLabel, Wordmark } from "@/app/casework-ui";
 import { signOut } from "@/app/login/actions";
 import { requireCaseActor } from "@/lib/authority";
+import { courtRecordHref } from "@/lib/case-routes";
 import { getSearchableCases, searchTestimony, type TestimonySearchContext, type TestimonySearchResult } from "@/lib/testimony-search";
 
 export const dynamic = "force-dynamic";
@@ -33,7 +34,7 @@ function ContextSegment({ segment }: { segment: TestimonySearchContext }) {
   </div>;
 }
 
-function SearchHit({ result, index }: { result: TestimonySearchResult; index: number }) {
+function SearchHit({ result, index, query }: { result: TestimonySearchResult; index: number; query: string }) {
   const sourceHref = result.deep_link ?? result.canonical_url ?? result.source_url;
   return <article className="search-hit">
     <header>
@@ -51,7 +52,7 @@ function SearchHit({ result, index }: { result: TestimonySearchResult; index: nu
     {result.context_after.length > 0 ? <div className="search-context after" aria-label="Testimony after the match">{result.context_after.map((segment) => <ContextSegment segment={segment} key={segment.source_segment_id} />)}</div> : null}
     <footer>
       <span>{result.artifact_title}</span>
-      {sourceHref ? <a href={sourceHref} target="_blank" rel="noreferrer">OPEN SOURCE →</a> : <span>SOURCE LINK NOT RECORDED</span>}
+      <span><Link href={courtRecordHref(result.case_id, { query, segmentId: result.source_segment_id })}>OPEN IN COURT RECORD →</Link>{sourceHref ? <> · <a href={sourceHref} target="_blank" rel="noreferrer">PROVIDER SOURCE ↗</a></> : null}</span>
     </footer>
   </article>;
 }
@@ -62,7 +63,7 @@ export default async function TestimonySearchPage({ searchParams }: { searchPara
   const params = await searchParams;
   const query = params.q?.trim() ?? "";
   const requestedCase = cases.find((item) => item.id === params.case);
-  const selectedCase = requestedCase ?? cases[0] ?? null;
+  const selectedCase = requestedCase ?? null;
   const results = selectedCase && query.length >= 2 ? await searchTestimony(actor, selectedCase.id, query, { contextSize: 3 }) : [];
 
   return <main className="search-shell">
@@ -78,7 +79,8 @@ export default async function TestimonySearchPage({ searchParams }: { searchPara
       <p>Find exact words, phrases, partial wording, and lexical matches without leaving the source record.</p>
       <form className="search-form" method="get">
         <label>Case
-          <select name="case" defaultValue={selectedCase?.id} disabled={cases.length === 0}>
+          <select name="case" defaultValue={selectedCase?.id ?? ""} disabled={cases.length === 0} required>
+            <option value="" disabled>Select an explicit case</option>
             {cases.map((item) => <option value={item.id} key={item.id}>{item.title}</option>)}
           </select>
         </label>
@@ -95,7 +97,7 @@ export default async function TestimonySearchPage({ searchParams }: { searchPara
         <div><MonoLabel>SEARCH RESULTS</MonoLabel><h2>{query.length >= 2 ? `“${query}”` : "Ready for a query"}</h2></div>
         <strong>{results.length} {results.length === 1 ? "HIT" : "HITS"}</strong>
       </header>
-      {cases.length === 0 ? <div className="search-empty">No case is available to this signed-in user.</div> : query.length < 2 ? <div className="search-empty">Enter at least two characters. Results will include their source, locator, score, and surrounding testimony.</div> : results.length === 0 ? <div className="search-empty">No lexical or fragment match was found in this case.</div> : <div className="search-hit-list">{results.map((result, index) => <SearchHit result={result} index={index} key={result.source_segment_id} />)}</div>}
+      {cases.length === 0 ? <div className="search-empty">No case is available to this signed-in user.</div> : !selectedCase ? <div className="search-empty">Select a case explicitly. Global search never assumes the first accessible case.</div> : query.length < 2 ? <div className="search-empty">Enter at least two characters. Results will include their source, locator, score, and surrounding testimony.</div> : results.length === 0 ? <div className="search-empty">No lexical or fragment match was found in this case.</div> : <div className="search-hit-list">{results.map((result, index) => <SearchHit result={result} index={index} query={query} key={result.source_segment_id} />)}</div>}
     </section>
   </main>;
 }

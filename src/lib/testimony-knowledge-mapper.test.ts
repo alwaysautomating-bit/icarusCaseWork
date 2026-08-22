@@ -69,9 +69,13 @@ describe.runIf(existsSync(artifact))("testimony knowledge mapping", () => {
       candidates: [{
         key: "invalid-time", witnessBlockImportedId: "witness_001", unitKind: "qa_thread",
         segments: [exchange.questionSegmentId, ...exchange.answerSegmentIds].map((segmentId) => ({ segmentId, contextRole: "substantive" as const })),
-        summary: "Invalid test candidate.", unknowns: [], claims: [], entityMentions: [],
-        eventCandidates: [{ key: "event", neutralDescription: "Candidate event.", participantMentions: [], sourceClaimKeys: [], extractionConfidence: 0.5 }],
-        temporalAssertions: [{ key: "time", eventCandidateKey: "event", sourceClaimKey: null, rawTemporalLanguage: "at some point", assertedStart: "2023-01-24T00:00:00Z", assertedEnd: null, precision: "unknown", assertedByRaw: "test", sourceSegmentIds: [exchange.questionSegmentId], extractionConfidence: 0.5 }],
+        summary: "Invalid test candidate.", unknowns: [], claims: [{
+          key: "claim", assertedByRaw: "test", assertedByEntityId: null, speakerCapacity: "witness",
+          normalizedAssertion: "A candidate event was described.", assertionStatus: "asserted", informationBasis: "UNKNOWN_BASIS",
+          provenanceType: "trial_testimony", sourceSegmentIds: [exchange.questionSegmentId], extractionConfidence: 0.5, propositionId: null,
+        }], entityMentions: [],
+        eventCandidates: [{ key: "event", neutralDescription: "Candidate event.", participantMentions: [], sourceClaimKeys: ["claim"], extractionConfidence: 0.5 }],
+        temporalAssertions: [{ key: "time", eventCandidateKey: "event", sourceClaimKey: "claim", rawTemporalLanguage: "at some point", assertedStart: "2023-01-24T00:00:00Z", assertedEnd: null, precision: "unknown", assertedByRaw: "test", sourceSegmentIds: [exchange.questionSegmentId], extractionConfidence: 0.5 }],
         relationships: [], flags: [],
       }],
     })).toThrow("unknown time cannot include an asserted timestamp");

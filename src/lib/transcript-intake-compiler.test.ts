@@ -97,7 +97,7 @@ describe("Rev metadata detection", () => {
     expect(parseRevTranscript(Buffer.from(source), "day7.txt")).toMatchObject({
       trialDay: 7,
       publisher: "Rev",
-      canonicalUrl: null,
+      canonicalUrl: "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-7",
       firstTimestamp: "00:00",
       lastTimestamp: "04:12:09",
     });
@@ -122,8 +122,33 @@ describe("Rev metadata detection", () => {
       pageTitle: "MA v. Lindsay Clancy Day 13",
       publisher: "Rev",
       sourceDisplayDate: "2026-08-17",
+      canonicalUrl: "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-13",
       firstTimestamp: "00:01",
       lastTimestamp: "03:15:22",
+    });
+  });
+
+  it("uses the article description instead of unrelated transcript titles in page navigation", () => {
+    const source = [
+      "Day 6 of the MA v. Lindsay Clancy trial. Read the transcript here.",
+      "August 5, 2026",
+      "Hungry For More?",
+      "Luckily for you, we deliver. Subscribe to our blog today.",
+      "Share this post",
+      "Copyright Disclaimer",
+      "Court Clerk (00:00):",
+      "Court is in session.",
+      "Judge William Sullivan (03:12:22):",
+      "Court is adjourned.",
+      "MA v. Lindsay Clancy Day 17",
+      "MA v. Lindsay Clancy Day 16",
+    ].join("\n\n");
+
+    expect(parseRevTranscript(Buffer.from(source), "day-6.txt")).toMatchObject({
+      trialDay: 6,
+      pageTitle: "MA v. Lindsay Clancy Day 6",
+      sourceDisplayDate: "2026-08-05",
+      canonicalUrl: "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-6",
     });
   });
 

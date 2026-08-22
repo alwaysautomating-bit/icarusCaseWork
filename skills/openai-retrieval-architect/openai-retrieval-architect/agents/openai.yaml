@@ -1,0 +1,4 @@
+interface:
+  display_name: "OpenAI Retrieval Architect"
+  short_description: "Design memory and retrieval systems on OpenAI."
+  default_prompt: "Use this skill to decide how knowledge and memory should work on the OpenAI platform."

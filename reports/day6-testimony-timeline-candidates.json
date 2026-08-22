@@ -1,0 +1,90 @@
+{
+  "schemaVersion": "testimony-timeline-candidate-acceptance/1.0",
+  "generatedAt": "2026-08-22T09:38:22.118Z",
+  "acceptanceCorpus": "MA v. Lindsay Clancy Day 6 — complete Maureen Hartnett witness block",
+  "caseId": "5e37c3a1-7b8d-4661-9d89-e3dae6bbd9c5",
+  "proceedingId": "2d249535-5449-4e93-87b2-7b2f201a1a6b",
+  "extractionRunId": "e4eb5aa2-8507-5b48-a7a3-043be0587d15",
+  "source": {
+    "sha256": "48cca058a0bc10ec900010f0271d2bd6ede40c88b7db57e2790ee07aa2de55d2",
+    "detected": 2197,
+    "parsed": 2197,
+    "committed": 2197,
+    "finalTimestamp": "04:16:42"
+  },
+  "acceptanceWitnessBlock": {
+    "importedId": "witness_003",
+    "witnessLabel": "Maureen Hartnett",
+    "startOrdinal": 609,
+    "endOrdinal": 1096,
+    "segmentCount": 488,
+    "persistedWitnessBlockId": "7a5ae7d6-883b-5e7f-ae7d-46af1955ac26",
+    "completeBlockSourceSegmentsReviewed": 488
+  },
+  "created": {
+    "testimonyUnitsReviewed": 11,
+    "knowledgeItems": 11,
+    "claims": 11,
+    "eventCandidates": 12,
+    "temporalAssertions": 12,
+    "exactTimes": 0,
+    "exactDates": 3,
+    "approximateTimes": 1,
+    "intervals": 2,
+    "relativeOnlyAssertions": 1,
+    "sequenceOnlyAssertions": 1,
+    "unknownTimeAssertions": 4,
+    "qualifiedAssertions": 4,
+    "unresolvedEntityMentions": 19,
+    "canonicalEvents": 0,
+    "sameResolutions": 0,
+    "ledgerEntries": 190,
+    "provenanceRelations": 78
+  },
+  "sourceIrregularities": {
+    "selectedWitnessBlock": 0,
+    "completeProceedingPreserved": 3,
+    "details": [
+      {
+        "previousSegmentId": "4e9d4b1c-a9b3-52b7-ae3f-4792ad8a129c",
+        "segmentId": "de418f62-77cf-57aa-a65b-9136b9b09399",
+        "deltaMs": -2000
+      },
+      {
+        "previousSegmentId": "1ec18925-002a-5e88-adaa-ef5cc755d861",
+        "segmentId": "245f0b67-5d4e-58cb-a44c-7ea51652d545",
+        "deltaMs": -3000
+      },
+      {
+        "previousSegmentId": "bca54e7b-080e-52bb-a6a7-3cc781b1d897",
+        "segmentId": "f3051577-9a29-5565-ad94-49995b9e3787",
+        "deltaMs": -2000
+      }
+    ]
+  },
+  "projection": {
+    "view": "public.timeline_candidate_projection",
+    "rows": 13,
+    "sourceDataDuplicated": false,
+    "exactSourceTextPresent": true,
+    "testimonyTimestampPresent": true
+  },
+  "boundaries": {
+    "canonicalEventsCreated": 0,
+    "sameResolutionsCreated": 0,
+    "unsupportedDateTimeNormalizations": 0,
+    "relativeTimesAnchoredAutomatically": 0,
+    "unknownTimesAssignedAutomatically": 0
+  },
+  "persistence": {
+    "rpc": "public.commit_testimony_timeline_candidates",
+    "status": "complete",
+    "idempotentReplay": true,
+    "migration": "20260822092008_testimony_timeline_candidate_v1.sql"
+  },
+  "remainingGaps": [
+    "This acceptance run compiles reviewed event-bearing units from one complete witness block; it does not auto-extract the entire block without human review.",
+    "Unresolved person, organization, and location mentions remain for SAME review.",
+    "Timeline candidates remain pending for event-level review and are not canonical events."
+  ]
+}

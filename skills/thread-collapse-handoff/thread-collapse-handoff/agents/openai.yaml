@@ -1,0 +1,4 @@
+interface:
+  display_name: "Thread Collapse"
+  short_description: "Convert long threads into operational memory"
+  default_prompt: "Use $thread-collapse-handoff to convert this conversation into a durable operational handoff artifact."

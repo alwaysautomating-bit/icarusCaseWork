@@ -1,0 +1,3907 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-06_Rev-Transcript.txt",
+    "sha256": "0f5a57915e66eba806400bac1ffcd54d33092d1268e2755a673e5a3ce1097b79"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 2197,
+    "witness_blocks": 8,
+    "phase_sets": 8,
+    "procedural_markers": 194
+  },
+  "witness_blocks": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Christina Carpio",
+      "start": {
+        "segment_index": 63,
+        "source_line": 269,
+        "timestamp_display": "12:00",
+        "timestamp_seconds": 720,
+        "url": null
+      },
+      "end": {
+        "segment_index": 342,
+        "source_line": 1385,
+        "timestamp_display": "35:06",
+        "timestamp_seconds": 2106,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Joseph Rabbit",
+      "start": {
+        "segment_index": 343,
+        "source_line": 1389,
+        "timestamp_display": "35:06",
+        "timestamp_seconds": 2106,
+        "url": null
+      },
+      "end": {
+        "segment_index": 608,
+        "source_line": 2454,
+        "timestamp_display": "59:05",
+        "timestamp_seconds": 3545,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_003",
+      "witness_name_candidate": "Maureen Hartnett",
+      "start": {
+        "segment_index": 609,
+        "source_line": 2458,
+        "timestamp_display": "59:07",
+        "timestamp_seconds": 3547,
+        "url": null
+      },
+      "end": {
+        "segment_index": 1096,
+        "source_line": 4420,
+        "timestamp_display": "01:48:06",
+        "timestamp_seconds": 6486,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    },
+    {
+      "block_id": "witness_004",
+      "witness_name_candidate": "Jonathan O'Loughlin",
+      "start": {
+        "segment_index": 1097,
+        "source_line": 4424,
+        "timestamp_display": "01:48:06",
+        "timestamp_seconds": 6486,
+        "url": null
+      },
+      "end": {
+        "segment_index": 1295,
+        "source_line": 5221,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_005",
+      "witness_name_candidate": "Hillary Griffiths",
+      "start": {
+        "segment_index": 1296,
+        "source_line": 5225,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "end": {
+        "segment_index": 1515,
+        "source_line": 6110,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    },
+    {
+      "block_id": "witness_006",
+      "witness_name_candidate": "Lisa Yelle",
+      "start": {
+        "segment_index": 1516,
+        "source_line": 6114,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "end": {
+        "segment_index": 1648,
+        "source_line": 6645,
+        "timestamp_display": "02:53:28",
+        "timestamp_seconds": 10408,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_007",
+      "witness_name_candidate": "Alicia Zimmermann",
+      "start": {
+        "segment_index": 1649,
+        "source_line": 6673,
+        "timestamp_display": "03:00:20",
+        "timestamp_seconds": 10820,
+        "url": null
+      },
+      "end": {
+        "segment_index": 1749,
+        "source_line": 7075,
+        "timestamp_display": "03:09:52",
+        "timestamp_seconds": 11392,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": false,
+      "boundary_confidence": 0.88
+    },
+    {
+      "block_id": "witness_008",
+      "witness_name_candidate": "Sherri Crook",
+      "start": {
+        "segment_index": 1750,
+        "source_line": 7079,
+        "timestamp_display": "03:09:53",
+        "timestamp_seconds": 11393,
+        "url": null
+      },
+      "end": {
+        "segment_index": 2196,
+        "source_line": 8895,
+        "timestamp_display": "04:16:42",
+        "timestamp_seconds": 15402,
+        "url": null
+      },
+      "oath_detected": true,
+      "excusal_detected": true,
+      "boundary_confidence": 0.93
+    }
+  ],
+  "phase_sets": [
+    {
+      "block_id": "witness_001",
+      "witness_name_candidate": "Christina Carpio",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 63,
+            "source_line": 269,
+            "timestamp_display": "12:00",
+            "timestamp_seconds": 720,
+            "url": null
+          },
+          "end": {
+            "segment_index": 189,
+            "source_line": 773,
+            "timestamp_display": "23:11",
+            "timestamp_seconds": 1391,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 190,
+            "source_line": 777,
+            "timestamp_display": "23:15",
+            "timestamp_seconds": 1395,
+            "url": null
+          },
+          "end": {
+            "segment_index": 262,
+            "source_line": 1065,
+            "timestamp_display": "29:09",
+            "timestamp_seconds": 1749,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 263,
+            "source_line": 1069,
+            "timestamp_display": "29:23",
+            "timestamp_seconds": 1763,
+            "url": null
+          },
+          "end": {
+            "segment_index": 265,
+            "source_line": 1077,
+            "timestamp_display": "29:34",
+            "timestamp_seconds": 1774,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 266,
+            "source_line": 1081,
+            "timestamp_display": "29:38",
+            "timestamp_seconds": 1778,
+            "url": null
+          },
+          "end": {
+            "segment_index": 313,
+            "source_line": 1269,
+            "timestamp_display": "33:35",
+            "timestamp_seconds": 2015,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 314,
+            "source_line": 1273,
+            "timestamp_display": "33:38",
+            "timestamp_seconds": 2018,
+            "url": null
+          },
+          "end": {
+            "segment_index": 321,
+            "source_line": 1301,
+            "timestamp_display": "34:04",
+            "timestamp_seconds": 2044,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 322,
+            "source_line": 1305,
+            "timestamp_display": "34:14",
+            "timestamp_seconds": 2054,
+            "url": null
+          },
+          "end": {
+            "segment_index": 326,
+            "source_line": 1321,
+            "timestamp_display": "34:23",
+            "timestamp_seconds": 2063,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 327,
+            "source_line": 1325,
+            "timestamp_display": "34:23",
+            "timestamp_seconds": 2063,
+            "url": null
+          },
+          "end": {
+            "segment_index": 334,
+            "source_line": 1353,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 335,
+            "source_line": 1357,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          },
+          "end": {
+            "segment_index": 335,
+            "source_line": 1357,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 336,
+            "source_line": 1361,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          },
+          "end": {
+            "segment_index": 340,
+            "source_line": 1377,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 341,
+            "source_line": 1381,
+            "timestamp_display": "34:49",
+            "timestamp_seconds": 2089,
+            "url": null
+          },
+          "end": {
+            "segment_index": 342,
+            "source_line": 1385,
+            "timestamp_display": "35:06",
+            "timestamp_seconds": 2106,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_002",
+      "witness_name_candidate": "Joseph Rabbit",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 343,
+            "source_line": 1389,
+            "timestamp_display": "35:06",
+            "timestamp_seconds": 2106,
+            "url": null
+          },
+          "end": {
+            "segment_index": 347,
+            "source_line": 1405,
+            "timestamp_display": "35:18",
+            "timestamp_seconds": 2118,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 348,
+            "source_line": 1409,
+            "timestamp_display": "35:18",
+            "timestamp_seconds": 2118,
+            "url": null
+          },
+          "end": {
+            "segment_index": 350,
+            "source_line": 1417,
+            "timestamp_display": "35:18",
+            "timestamp_seconds": 2118,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 351,
+            "source_line": 1421,
+            "timestamp_display": "35:18",
+            "timestamp_seconds": 2118,
+            "url": null
+          },
+          "end": {
+            "segment_index": 554,
+            "source_line": 2235,
+            "timestamp_display": "53:55",
+            "timestamp_seconds": 3235,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 555,
+            "source_line": 2242,
+            "timestamp_display": "54:15",
+            "timestamp_seconds": 3255,
+            "url": null
+          },
+          "end": {
+            "segment_index": 604,
+            "source_line": 2438,
+            "timestamp_display": "58:51",
+            "timestamp_seconds": 3531,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 605,
+            "source_line": 2442,
+            "timestamp_display": "58:52",
+            "timestamp_seconds": 3532,
+            "url": null
+          },
+          "end": {
+            "segment_index": 608,
+            "source_line": 2454,
+            "timestamp_display": "59:05",
+            "timestamp_seconds": 3545,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_003",
+      "witness_name_candidate": "Maureen Hartnett",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "Kevin Reddington",
+        "Atty. Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 609,
+            "source_line": 2458,
+            "timestamp_display": "59:07",
+            "timestamp_seconds": 3547,
+            "url": null
+          },
+          "end": {
+            "segment_index": 610,
+            "source_line": 2462,
+            "timestamp_display": "59:22",
+            "timestamp_seconds": 3562,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 611,
+            "source_line": 2466,
+            "timestamp_display": "59:22",
+            "timestamp_seconds": 3562,
+            "url": null
+          },
+          "end": {
+            "segment_index": 621,
+            "source_line": 2506,
+            "timestamp_display": "59:55",
+            "timestamp_seconds": 3595,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 622,
+            "source_line": 2510,
+            "timestamp_display": "01:00:00",
+            "timestamp_seconds": 3600,
+            "url": null
+          },
+          "end": {
+            "segment_index": 984,
+            "source_line": 3972,
+            "timestamp_display": "01:36:44",
+            "timestamp_seconds": 5804,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 985,
+            "source_line": 3976,
+            "timestamp_display": "01:36:46",
+            "timestamp_seconds": 5806,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1084,
+            "source_line": 4372,
+            "timestamp_display": "01:46:47",
+            "timestamp_seconds": 6407,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1085,
+            "source_line": 4376,
+            "timestamp_display": "01:46:47",
+            "timestamp_seconds": 6407,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1096,
+            "source_line": 4420,
+            "timestamp_display": "01:48:06",
+            "timestamp_seconds": 6486,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_004",
+      "witness_name_candidate": "Jonathan O'Loughlin",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "Atty. Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1097,
+            "source_line": 4424,
+            "timestamp_display": "01:48:06",
+            "timestamp_seconds": 6486,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1198,
+            "source_line": 4831,
+            "timestamp_display": "01:59:23",
+            "timestamp_seconds": 7163,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1199,
+            "source_line": 4835,
+            "timestamp_display": "01:59:27",
+            "timestamp_seconds": 7167,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1200,
+            "source_line": 4839,
+            "timestamp_display": "01:59:30",
+            "timestamp_seconds": 7170,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1201,
+            "source_line": 4843,
+            "timestamp_display": "01:59:35",
+            "timestamp_seconds": 7175,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1273,
+            "source_line": 5131,
+            "timestamp_display": "02:07:24",
+            "timestamp_seconds": 7644,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1274,
+            "source_line": 5135,
+            "timestamp_display": "02:07:32",
+            "timestamp_seconds": 7652,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1292,
+            "source_line": 5209,
+            "timestamp_display": "02:09:15",
+            "timestamp_seconds": 7755,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1293,
+            "source_line": 5213,
+            "timestamp_display": "02:09:16",
+            "timestamp_seconds": 7756,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1295,
+            "source_line": 5221,
+            "timestamp_display": "02:09:16",
+            "timestamp_seconds": 7756,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_005",
+      "witness_name_candidate": "Hillary Griffiths",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1296,
+            "source_line": 5225,
+            "timestamp_display": "02:09:16",
+            "timestamp_seconds": 7756,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1356,
+            "source_line": 5465,
+            "timestamp_display": "02:15:19",
+            "timestamp_seconds": 8119,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1357,
+            "source_line": 5472,
+            "timestamp_display": "02:16:01",
+            "timestamp_seconds": 8161,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1359,
+            "source_line": 5480,
+            "timestamp_display": "02:16:06",
+            "timestamp_seconds": 8166,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1360,
+            "source_line": 5484,
+            "timestamp_display": "02:16:12",
+            "timestamp_seconds": 8172,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1407,
+            "source_line": 5675,
+            "timestamp_display": "02:24:35",
+            "timestamp_seconds": 8675,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1408,
+            "source_line": 5679,
+            "timestamp_display": "02:24:35",
+            "timestamp_seconds": 8675,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1431,
+            "source_line": 5771,
+            "timestamp_display": "02:27:01",
+            "timestamp_seconds": 8821,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1432,
+            "source_line": 5775,
+            "timestamp_display": "02:27:03",
+            "timestamp_seconds": 8823,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1434,
+            "source_line": 5783,
+            "timestamp_display": "02:27:04",
+            "timestamp_seconds": 8824,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1435,
+            "source_line": 5787,
+            "timestamp_display": "02:27:12",
+            "timestamp_seconds": 8832,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1507,
+            "source_line": 6075,
+            "timestamp_display": "02:31:21",
+            "timestamp_seconds": 9081,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1508,
+            "source_line": 6079,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1509,
+            "source_line": 6083,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1510,
+            "source_line": 6090,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1510,
+            "source_line": 6090,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1511,
+            "source_line": 6094,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1515,
+            "source_line": 6110,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_006",
+      "witness_name_candidate": "Lisa Yelle",
+      "examiner_candidates": [
+        "Shannon Buckingham",
+        "William Sullivan",
+        "Kevin Reddington"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1516,
+            "source_line": 6114,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1516,
+            "source_line": 6114,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1517,
+            "source_line": 6118,
+            "timestamp_display": "02:31:22",
+            "timestamp_seconds": 9082,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1528,
+            "source_line": 6162,
+            "timestamp_display": "02:35:10",
+            "timestamp_seconds": 9310,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1529,
+            "source_line": 6166,
+            "timestamp_display": "02:35:11",
+            "timestamp_seconds": 9311,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1559,
+            "source_line": 6286,
+            "timestamp_display": "02:37:28",
+            "timestamp_seconds": 9448,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1560,
+            "source_line": 6290,
+            "timestamp_display": "02:37:28",
+            "timestamp_seconds": 9448,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1561,
+            "source_line": 6294,
+            "timestamp_display": "02:37:29",
+            "timestamp_seconds": 9449,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1562,
+            "source_line": 6298,
+            "timestamp_display": "02:37:32",
+            "timestamp_seconds": 9452,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1606,
+            "source_line": 6474,
+            "timestamp_display": "02:42:09",
+            "timestamp_seconds": 9729,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1607,
+            "source_line": 6478,
+            "timestamp_display": "02:42:10",
+            "timestamp_seconds": 9730,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1621,
+            "source_line": 6534,
+            "timestamp_display": "02:43:18",
+            "timestamp_seconds": 9798,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1622,
+            "source_line": 6538,
+            "timestamp_display": "02:43:19",
+            "timestamp_seconds": 9799,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1622,
+            "source_line": 6538,
+            "timestamp_display": "02:43:19",
+            "timestamp_seconds": 9799,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1623,
+            "source_line": 6542,
+            "timestamp_display": "02:43:20",
+            "timestamp_seconds": 9800,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1634,
+            "source_line": 6589,
+            "timestamp_display": "02:51:32",
+            "timestamp_seconds": 10292,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1635,
+            "source_line": 6593,
+            "timestamp_display": "02:51:44",
+            "timestamp_seconds": 10304,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1648,
+            "source_line": 6645,
+            "timestamp_display": "02:53:28",
+            "timestamp_seconds": 10408,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_007",
+      "witness_name_candidate": "Alicia Zimmermann",
+      "examiner_candidates": [
+        "Shannon Buckingham"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1649,
+            "source_line": 6673,
+            "timestamp_display": "03:00:20",
+            "timestamp_seconds": 10820,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1749,
+            "source_line": 7075,
+            "timestamp_display": "03:09:52",
+            "timestamp_seconds": 11392,
+            "url": null
+          }
+        }
+      ]
+    },
+    {
+      "block_id": "witness_008",
+      "witness_name_candidate": "Sherri Crook",
+      "examiner_candidates": [
+        "Jennifer Sprague",
+        "Ms. Sprague",
+        "Kevin Reddington",
+        "The Court"
+      ],
+      "phases": [
+        {
+          "phase": "direct",
+          "jury_present": true,
+          "start": {
+            "segment_index": 1750,
+            "source_line": 7079,
+            "timestamp_display": "03:09:53",
+            "timestamp_seconds": 11393,
+            "url": null
+          },
+          "end": {
+            "segment_index": 1855,
+            "source_line": 7511,
+            "timestamp_display": "03:23:34",
+            "timestamp_seconds": 12214,
+            "url": null
+          }
+        },
+        {
+          "phase": "direct",
+          "jury_present": false,
+          "start": {
+            "segment_index": 1856,
+            "source_line": 7515,
+            "timestamp_display": "03:23:44",
+            "timestamp_seconds": 12224,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2039,
+            "source_line": 8258,
+            "timestamp_display": "03:50:58",
+            "timestamp_seconds": 13858,
+            "url": null
+          }
+        },
+        {
+          "phase": "cross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 2040,
+            "source_line": 8262,
+            "timestamp_display": "03:51:00",
+            "timestamp_seconds": 13860,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2165,
+            "source_line": 8765,
+            "timestamp_display": "04:11:00",
+            "timestamp_seconds": 15060,
+            "url": null
+          }
+        },
+        {
+          "phase": "redirect",
+          "jury_present": false,
+          "start": {
+            "segment_index": 2166,
+            "source_line": 8769,
+            "timestamp_display": "04:11:12",
+            "timestamp_seconds": 15072,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2166,
+            "source_line": 8769,
+            "timestamp_display": "04:11:12",
+            "timestamp_seconds": 15072,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": false,
+          "start": {
+            "segment_index": 2167,
+            "source_line": 8773,
+            "timestamp_display": "04:11:13",
+            "timestamp_seconds": 15073,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2187,
+            "source_line": 8853,
+            "timestamp_display": "04:13:31",
+            "timestamp_seconds": 15211,
+            "url": null
+          }
+        },
+        {
+          "phase": "recross",
+          "jury_present": true,
+          "start": {
+            "segment_index": 2188,
+            "source_line": 8857,
+            "timestamp_display": "04:13:32",
+            "timestamp_seconds": 15212,
+            "url": null
+          },
+          "end": {
+            "segment_index": 2196,
+            "source_line": 8895,
+            "timestamp_display": "04:16:42",
+            "timestamp_seconds": 15402,
+            "url": null
+          }
+        }
+      ]
+    }
+  ],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 6,
+        "source_line": 38,
+        "timestamp_display": "00:18",
+        "timestamp_seconds": 18,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Good morning, Ms. Clancy. All right, can I see counsel sidebar, please?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 7,
+        "source_line": 42,
+        "timestamp_display": "00:47",
+        "timestamp_seconds": 47,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Exhibit J for ID.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 12,
+        "source_line": 62,
+        "timestamp_display": "01:36",
+        "timestamp_seconds": 96,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Please raise your right hand. Do you solemnly swear that [inaudible 00:01:40], so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 14,
+        "source_line": 70,
+        "timestamp_display": "01:45",
+        "timestamp_seconds": 105,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. Ms. Clancy, I have been shown a list or a summary of stipulations that's been marked as Exhibit J for identification. So it's my understanding that you are requesting or offering to stipulate to certain facts. Is that correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 46,
+        "source_line": 198,
+        "timestamp_display": "05:22",
+        "timestamp_seconds": 322,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right, I make the following findings. I find that Ms. Clancy is knowingly, intelligently, voluntarily, and willingly entered into the stipulation of the facts that are contained and summarized in Exhibit J for identification. I find that she is competent to enter into this stipulation, and I find she understands the consequences of entering into this stipulation. So accordingly, I now accept the proposed stipulation of facts. Thank you.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 62,
+        "source_line": 262,
+        "timestamp_display": "10:29",
+        "timestamp_seconds": 629,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. Last question. Is there any other matter, serious matter or concern bearing on your service as a juror in this case that anybody needs to bring to my attention at this time? Again, thank you for following those instructions. Now, in regards to the schedule, if you remember, I said yesterday that sometimes we have to adjust on the fly and it's going to be my call. Well, we may have to do that a little bit, all right? So today we're going to go through some cases. Now, we may break a little bit early today, all right? And then tomorrow there is a matter I'm going to have to talk to counsel pretty much in the afternoon. (11:11) So the thought is tomorrow, the plan for you should be pretty much 9:00 to 1:00, all right? And then in the afternoon I'm going to deal with counsel in regards to some other issues that will, I believe, keep this case going well on track, and that's kind of where we are. So I just kind of wanted to give you that update. So that's, like I said, the best we could do. Give you as much notice in regards to that. But you will not, I say we, you will not be sitting here tomorrow afternoon. We may be. [inaudible 00:11:49]. So with that, what we're going to do is continue with the Commonwealth's case. We're going to go back. Commonwealth, call your next witness, please.",
+      "event_types": [
+        "recess",
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 63,
+        "source_line": 269,
+        "timestamp_display": "12:00",
+        "timestamp_seconds": 720,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Thank you. The Commonwealth would call Christina Carpio.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 66,
+        "source_line": 281,
+        "timestamp_display": "12:31",
+        "timestamp_seconds": 751,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Can you stop right there and raise your right hand for the clerk?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 67,
+        "source_line": 285,
+        "timestamp_display": "12:35",
+        "timestamp_seconds": 755,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Do you solemnly swear that the testimony [inaudible 00:12:39] so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 158,
+        "source_line": 649,
+        "timestamp_display": "20:11",
+        "timestamp_seconds": 1211,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. If I may approach you just with one of the pages from the notes, read your review. And you could just tell me if I'm misinterpreting.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 198,
+        "source_line": 809,
+        "timestamp_display": "23:39",
+        "timestamp_seconds": 1419,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "What time... If you remember, what time approximately was she admitted to South Shore Hospital?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 199,
+        "source_line": 813,
+        "timestamp_display": "23:46",
+        "timestamp_seconds": 1426,
+        "url": null
+      },
+      "speaker": "Christina Carpio",
+      "text": "The word admission means that she would've remained there as a patient, so she was never formally admitted. For the time that she was brought in by EMS, I would have to refer to that information from the record.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 223,
+        "source_line": 909,
+        "timestamp_display": "26:01",
+        "timestamp_seconds": 1561,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 314,
+        "source_line": 1273,
+        "timestamp_display": "33:38",
+        "timestamp_seconds": 2018,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "Commonwealth, any redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 343,
+        "source_line": 1389,
+        "timestamp_display": "35:06",
+        "timestamp_seconds": 2106,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. The Commonwealth would call Joseph Rabbit to the stand.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 344,
+        "source_line": 1393,
+        "timestamp_display": "35:18",
+        "timestamp_seconds": 2118,
+        "url": null
+      },
+      "speaker": "Speaker 9",
+      "text": "Good morning, sir. Can you stop right here? Raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 345,
+        "source_line": 1397,
+        "timestamp_display": "35:18",
+        "timestamp_seconds": 2118,
+        "url": null
+      },
+      "speaker": "Speaker 7",
+      "text": "Good morning. Do you solemnly swear and affirm the testimony you'll give [inaudible 00:35:51] whole truth and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 403,
+        "source_line": 1629,
+        "timestamp_display": "40:28",
+        "timestamp_seconds": 2428,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. And I'm going to show you what's already been marked as Exhibit 144. If you could look at the screen. Are you familiar with that photograph or what's depicted in that photograph?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 413,
+        "source_line": 1671,
+        "timestamp_display": "41:09",
+        "timestamp_seconds": 2469,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. I'm just going to show you exhibit number 40. That's a little bit of a closer view of the bag, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 417,
+        "source_line": 1687,
+        "timestamp_display": "41:21",
+        "timestamp_seconds": 2481,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And I'm going to just approach you with what's been already marked as Exhibit 31. Is that also familiar to you?",
+      "event_types": [
+        "sidebar",
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 421,
+        "source_line": 1703,
+        "timestamp_display": "41:39",
+        "timestamp_seconds": 2499,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And fair to say all of these things, the CVS bag, the receipt, were noted and certain things were collected, including the receipt, Exhibit 31, and the CVS bag?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 433,
+        "source_line": 1751,
+        "timestamp_display": "42:39",
+        "timestamp_seconds": 2559,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. If I may approach.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 444,
+        "source_line": 1795,
+        "timestamp_display": "43:15",
+        "timestamp_seconds": 2595,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "All right. It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 446,
+        "source_line": 1803,
+        "timestamp_display": "43:33",
+        "timestamp_seconds": 2613,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "So just showing you now on the screen, Exhibit 152, and that's just the cabinet open and there looks to be like an air fryer below it, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 454,
+        "source_line": 1835,
+        "timestamp_display": "44:30",
+        "timestamp_seconds": 2670,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I'm going to move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 455,
+        "source_line": 1839,
+        "timestamp_display": "44:34",
+        "timestamp_seconds": 2674,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "All right. It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 456,
+        "source_line": 1843,
+        "timestamp_display": "44:43",
+        "timestamp_seconds": 2683,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Exhibit number 154? And how many bottles were there?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 458,
+        "source_line": 1851,
+        "timestamp_display": "44:50",
+        "timestamp_seconds": 2690,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I'm going to approach you with a bag. [inaudible 00:44:54] take a look at what's it's in the bag. Do those appear to be the four bottles that were in the cabinet?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 460,
+        "source_line": 1859,
+        "timestamp_display": "45:07",
+        "timestamp_seconds": 2707,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I would move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 461,
+        "source_line": 1863,
+        "timestamp_display": "45:10",
+        "timestamp_seconds": 2710,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 484,
+        "source_line": 1955,
+        "timestamp_display": "47:01",
+        "timestamp_seconds": 2821,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to move this as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 485,
+        "source_line": 1959,
+        "timestamp_display": "47:01",
+        "timestamp_seconds": 2821,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 500,
+        "source_line": 2019,
+        "timestamp_display": "48:14",
+        "timestamp_seconds": 2894,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 501,
+        "source_line": 2023,
+        "timestamp_display": "48:28",
+        "timestamp_seconds": 2908,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 508,
+        "source_line": 2051,
+        "timestamp_display": "48:58",
+        "timestamp_seconds": 2938,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. And I'm just going to approach with what's previously been marked as Exhibit number 2.",
+      "event_types": [
+        "sidebar",
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 609,
+        "source_line": 2458,
+        "timestamp_display": "59:07",
+        "timestamp_seconds": 3547,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "The Commonwealth would call Maureen Hartnett as its next witness.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 613,
+        "source_line": 2474,
+        "timestamp_display": "59:37",
+        "timestamp_seconds": 3577,
+        "url": null
+      },
+      "speaker": "Speaker 9",
+      "text": "Can stop right here and raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 615,
+        "source_line": 2482,
+        "timestamp_display": "59:54",
+        "timestamp_seconds": 3594,
+        "url": null
+      },
+      "speaker": "Speaker 7",
+      "text": "Good morning. Do you solemnly swear that the testimony and the evidence you shall give to the court, [inaudible 00:59:55]?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 687,
+        "source_line": 2770,
+        "timestamp_display": "01:06:59",
+        "timestamp_seconds": 4019,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. I'm going to approach with the photo. Is that familiar to you?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 691,
+        "source_line": 2786,
+        "timestamp_display": "01:07:10",
+        "timestamp_seconds": 4030,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 692,
+        "source_line": 2790,
+        "timestamp_display": "01:07:10",
+        "timestamp_seconds": 4030,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 693,
+        "source_line": 2794,
+        "timestamp_display": "01:07:10",
+        "timestamp_seconds": 4030,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 158.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 695,
+        "source_line": 2802,
+        "timestamp_display": "01:07:23",
+        "timestamp_seconds": 4043,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I'm showing you now on the screen what's been marked as Exhibit 158. Obviously this appears to be on carpet, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 726,
+        "source_line": 2926,
+        "timestamp_display": "01:10:06",
+        "timestamp_seconds": 4206,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "May be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 727,
+        "source_line": 2930,
+        "timestamp_display": "01:10:14",
+        "timestamp_seconds": 4214,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 159.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 734,
+        "source_line": 2958,
+        "timestamp_display": "01:11:03",
+        "timestamp_seconds": 4263,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 735,
+        "source_line": 2962,
+        "timestamp_display": "01:11:05",
+        "timestamp_seconds": 4265,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 736,
+        "source_line": 2966,
+        "timestamp_display": "01:11:08",
+        "timestamp_seconds": 4268,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 160.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 747,
+        "source_line": 3010,
+        "timestamp_display": "01:12:08",
+        "timestamp_seconds": 4328,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 748,
+        "source_line": 3014,
+        "timestamp_display": "01:12:08",
+        "timestamp_seconds": 4328,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 749,
+        "source_line": 3018,
+        "timestamp_display": "01:12:08",
+        "timestamp_seconds": 4328,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 161.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 763,
+        "source_line": 3074,
+        "timestamp_display": "01:13:15",
+        "timestamp_seconds": 4395,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 764,
+        "source_line": 3078,
+        "timestamp_display": "01:13:16",
+        "timestamp_seconds": 4396,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 162 and 163.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 778,
+        "source_line": 3134,
+        "timestamp_display": "01:14:37",
+        "timestamp_seconds": 4477,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right, that may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 779,
+        "source_line": 3138,
+        "timestamp_display": "01:14:37",
+        "timestamp_seconds": 4477,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 164.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 783,
+        "source_line": 3154,
+        "timestamp_display": "01:14:54",
+        "timestamp_seconds": 4494,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 784,
+        "source_line": 3158,
+        "timestamp_display": "01:15:05",
+        "timestamp_seconds": 4505,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 165.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 785,
+        "source_line": 3162,
+        "timestamp_display": "01:15:09",
+        "timestamp_seconds": 4509,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "So first, Exhibit 164, you observed several stains in that location?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 789,
+        "source_line": 3178,
+        "timestamp_display": "01:15:27",
+        "timestamp_seconds": 4527,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And just now showing Exhibit 165, if you can see at the top, there's a stain on the outside of the windowsill. Did you observe that on January 24?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 805,
+        "source_line": 3242,
+        "timestamp_display": "01:16:49",
+        "timestamp_seconds": 4609,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 806,
+        "source_line": 3246,
+        "timestamp_display": "01:16:53",
+        "timestamp_seconds": 4613,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 807,
+        "source_line": 3250,
+        "timestamp_display": "01:16:54",
+        "timestamp_seconds": 4614,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 166.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 848,
+        "source_line": 3414,
+        "timestamp_display": "01:20:48",
+        "timestamp_seconds": 4848,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I would move to admit this photo as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 849,
+        "source_line": 3418,
+        "timestamp_display": "01:20:50",
+        "timestamp_seconds": 4850,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 851,
+        "source_line": 3426,
+        "timestamp_display": "01:20:59",
+        "timestamp_seconds": 4859,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "So again, on June 15th when you were there, 2023, showing you now Exhibit 167, kind of closing in on underneath that window, there's that orange ball that you described. It appeared to be some sort of insulation.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 865,
+        "source_line": 3484,
+        "timestamp_display": "01:22:12",
+        "timestamp_seconds": 4932,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Those may be admitted. (01:22:26) Counsel, it's just about 11:00. Why don't we take the morning recess at this time? All right. So we're going to take the morning break at this time, members of the jury.",
+      "event_types": [
+        "recess",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 867,
+        "source_line": 3501,
+        "timestamp_display": "01:23:23",
+        "timestamp_seconds": 5003,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Counsel, anything we need to talk about before the break?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 869,
+        "source_line": 3509,
+        "timestamp_display": "01:23:26",
+        "timestamp_seconds": 5006,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. So we'll be in the morning recess at this time. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 870,
+        "source_line": 3513,
+        "timestamp_display": "01:23:30",
+        "timestamp_seconds": 5010,
+        "url": null
+      },
+      "speaker": "Speaker 12",
+      "text": "Court stands in recess. (01:23:38) This court is back in session. You may be seated.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 879,
+        "source_line": 3552,
+        "timestamp_display": "01:25:44",
+        "timestamp_seconds": 5144,
+        "url": null
+      },
+      "speaker": "Speaker 13",
+      "text": "Your Honor, for the purpose of the record, we return back to the trial of Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 889,
+        "source_line": 3592,
+        "timestamp_display": "01:26:31",
+        "timestamp_seconds": 5191,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 890,
+        "source_line": 3596,
+        "timestamp_display": "01:26:33",
+        "timestamp_seconds": 5193,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 891,
+        "source_line": 3600,
+        "timestamp_display": "01:26:33",
+        "timestamp_seconds": 5193,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 170.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 892,
+        "source_line": 3604,
+        "timestamp_display": "01:26:43",
+        "timestamp_seconds": 5203,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And showing you now on the screen what's been marked as Exhibit 170. You're aware that the knife depicted in this photograph was collected from 47 Summer Street on January 24th, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 894,
+        "source_line": 3612,
+        "timestamp_display": "01:27:00",
+        "timestamp_seconds": 5220,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Now, going back to where I think we left off before the break, we were talking about returning to the home on June 15th of 2023, and that you examined some stains on the shingles on the outside of the house. Do you recall that line of questioning?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 905,
+        "source_line": 3656,
+        "timestamp_display": "01:29:14",
+        "timestamp_seconds": 5354,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 926,
+        "source_line": 3740,
+        "timestamp_display": "01:31:32",
+        "timestamp_seconds": 5492,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And as far as the knife that we just were referring to, the knife that was recovered, what's in Exhibit 170, you were able to examine that further or swabs taken from that knife at the lab?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 952,
+        "source_line": 3844,
+        "timestamp_display": "01:34:00",
+        "timestamp_seconds": 5640,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I would move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 953,
+        "source_line": 3848,
+        "timestamp_display": "01:34:02",
+        "timestamp_seconds": 5642,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 954,
+        "source_line": 3852,
+        "timestamp_display": "01:34:03",
+        "timestamp_seconds": 5643,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 174.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 956,
+        "source_line": 3860,
+        "timestamp_display": "01:34:28",
+        "timestamp_seconds": 5668,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. So Ms. Hartnett, now showing you what's been marked as Exhibit 174, the yellow exercise band. You indicated that you took swabbings from around the handle areas, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 962,
+        "source_line": 3884,
+        "timestamp_display": "01:35:00",
+        "timestamp_seconds": 5700,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "And was your approach on each one of the bands the same?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 968,
+        "source_line": 3908,
+        "timestamp_display": "01:35:24",
+        "timestamp_seconds": 5724,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 969,
+        "source_line": 3912,
+        "timestamp_display": "01:35:24",
+        "timestamp_seconds": 5724,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 970,
+        "source_line": 3916,
+        "timestamp_display": "01:35:24",
+        "timestamp_seconds": 5724,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 175.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 975,
+        "source_line": 3936,
+        "timestamp_display": "01:36:01",
+        "timestamp_seconds": 5761,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 976,
+        "source_line": 3940,
+        "timestamp_display": "01:36:02",
+        "timestamp_seconds": 5762,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right, that may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 977,
+        "source_line": 3944,
+        "timestamp_display": "01:36:02",
+        "timestamp_seconds": 5762,
+        "url": null
+      },
+      "speaker": "Speaker 11",
+      "text": "Exhibit 176.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1036,
+        "source_line": 4180,
+        "timestamp_display": "01:41:17",
+        "timestamp_seconds": 6077,
+        "url": null
+      },
+      "speaker": "Atty. Kevin Reddington",
+      "text": "All right. Now, one of the exhibits that the district attorney had pointed out to you was the mirror, Exhibit 161. Do you remember that, the mirror?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1044,
+        "source_line": 4212,
+        "timestamp_display": "01:42:16",
+        "timestamp_seconds": 6136,
+        "url": null
+      },
+      "speaker": "Atty. Kevin Reddington",
+      "text": "Well, there's no doubt that the stains that are depicted on the full-length mirror that we can see in Exhibit 161, and the stains that were on the floor next to the bed, and the stains that were on the floor in front of the bed heading towards the door, all were the same consistency, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1085,
+        "source_line": 4376,
+        "timestamp_display": "01:46:47",
+        "timestamp_seconds": 6407,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Commonwealth, any redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1093,
+        "source_line": 4408,
+        "timestamp_display": "01:48:05",
+        "timestamp_seconds": 6485,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Anything further? All right. Thank you. You may step down. Thank you.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1097,
+        "source_line": 4424,
+        "timestamp_display": "01:48:06",
+        "timestamp_seconds": 6486,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "The Commonwealth would call Jonathan O'Loughlin.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1098,
+        "source_line": 4428,
+        "timestamp_display": "01:48:54",
+        "timestamp_seconds": 6534,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Good afternoon, sir. Up right here, raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1099,
+        "source_line": 4432,
+        "timestamp_display": "01:48:55",
+        "timestamp_seconds": 6535,
+        "url": null
+      },
+      "speaker": "Court Clerk",
+      "text": "Good afternoon. Do you solemnly swear that the testimony [inaudible 01:48:58]?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1185,
+        "source_line": 4779,
+        "timestamp_display": "01:58:05",
+        "timestamp_seconds": 7085,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1191,
+        "source_line": 4803,
+        "timestamp_display": "01:58:25",
+        "timestamp_seconds": 7105,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1199,
+        "source_line": 4835,
+        "timestamp_display": "01:59:27",
+        "timestamp_seconds": 7167,
+        "url": null
+      },
+      "speaker": "Atty. Kevin Reddington",
+      "text": "There's no objection to any of this physical evidence being introduced.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1207,
+        "source_line": 4867,
+        "timestamp_display": "02:00:09",
+        "timestamp_seconds": 7209,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. And so, I'm just going to approach and show you an item. Is that item familiar to you?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1211,
+        "source_line": 4883,
+        "timestamp_display": "02:00:49",
+        "timestamp_seconds": 7249,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Thank you. I would move to admit this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1212,
+        "source_line": 4887,
+        "timestamp_display": "02:00:58",
+        "timestamp_seconds": 7258,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1213,
+        "source_line": 4891,
+        "timestamp_display": "02:00:59",
+        "timestamp_seconds": 7259,
+        "url": null
+      },
+      "speaker": "Court Clerk",
+      "text": "Exhibit 1379.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1266,
+        "source_line": 5103,
+        "timestamp_display": "02:06:47",
+        "timestamp_seconds": 7607,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Okay. I would move to admit these as an exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1267,
+        "source_line": 5107,
+        "timestamp_display": "02:06:49",
+        "timestamp_seconds": 7609,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Those may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1281,
+        "source_line": 5165,
+        "timestamp_display": "02:08:26",
+        "timestamp_seconds": 7706,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1293,
+        "source_line": 5213,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1296,
+        "source_line": 5225,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "The Commonwealth would call Hillary Griffiths as its next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1298,
+        "source_line": 5233,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Good afternoon, ma'am. Step right there and raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1299,
+        "source_line": 5237,
+        "timestamp_display": "02:09:16",
+        "timestamp_seconds": 7756,
+        "url": null
+      },
+      "speaker": "Court Clerk",
+      "text": "Good afternoon. Do you solemnly swear that the testimony of the evidence you shall give to the court and the jury [inaudible 02:10:11]?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1358,
+        "source_line": 5476,
+        "timestamp_display": "02:16:03",
+        "timestamp_seconds": 8163,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Overruled. I'll allow it. Go ahead.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1422,
+        "source_line": 5735,
+        "timestamp_display": "02:26:33",
+        "timestamp_seconds": 8793,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. And it's hard to follow through with that. So, I'm going to approach you. This is a copy of the blood toxicology report that you're referring to, right?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1431,
+        "source_line": 5771,
+        "timestamp_display": "02:27:01",
+        "timestamp_seconds": 8821,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1433,
+        "source_line": 5779,
+        "timestamp_display": "02:27:04",
+        "timestamp_seconds": 8824,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1458,
+        "source_line": 5879,
+        "timestamp_display": "02:28:47",
+        "timestamp_seconds": 8927,
+        "url": null
+      },
+      "speaker": "Hillary Griffiths",
+      "text": "When we consume drugs, our body will break down the drug often into another molecule before it's being excreted. And sometimes, our testing can detect these breakdown molecules as well. So, this test detected both quetiapine as well as its breakdown product.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1495,
+        "source_line": 6027,
+        "timestamp_display": "02:30:42",
+        "timestamp_seconds": 9042,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now, you had also, in your direct examination, made reference to another lab that you all work with apparently, or that you've had occasion to work with, right?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1507,
+        "source_line": 6075,
+        "timestamp_display": "02:31:21",
+        "timestamp_seconds": 9081,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. I'm going to approach you with a toxicology report.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1508,
+        "source_line": 6079,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "[inaudible 02:31:25] sidebar.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1511,
+        "source_line": 6094,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1513,
+        "source_line": 6102,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Okay. Thank you, ma'am. You may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1516,
+        "source_line": 6114,
+        "timestamp_display": "02:31:22",
+        "timestamp_seconds": 9082,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "The Commonwealth would call Lisa Yelle as its next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1521,
+        "source_line": 6134,
+        "timestamp_display": "02:35:10",
+        "timestamp_seconds": 9310,
+        "url": null
+      },
+      "speaker": "Speaker 15",
+      "text": "Can you stop right here and raise your right hand for the clerk, please?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1522,
+        "source_line": 6138,
+        "timestamp_display": "02:35:10",
+        "timestamp_seconds": 9310,
+        "url": null
+      },
+      "speaker": "Speaker 16",
+      "text": "Good afternoon. Do you solemnly swear that the testimony that you shall give to the Court and the jury [inaudible 02:35:11] shall be the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1560,
+        "source_line": 6290,
+        "timestamp_display": "02:37:28",
+        "timestamp_seconds": 9448,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1562,
+        "source_line": 6298,
+        "timestamp_display": "02:37:32",
+        "timestamp_seconds": 9452,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "I can actually show you what's been already marked as Exhibit 183.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1601,
+        "source_line": 6454,
+        "timestamp_display": "02:41:22",
+        "timestamp_seconds": 9682,
+        "url": null
+      },
+      "speaker": "Lisa Yelle",
+      "text": "There are certain, we would call them parent drugs and metabolites. Once you ingest the medication, your body will begin to metabolize or break that drug down. So there could be metabolites that are related to the parent compound of the medication that was taken.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1623,
+        "source_line": 6542,
+        "timestamp_display": "02:43:20",
+        "timestamp_seconds": 9800,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. Thank you, ma'am. You step down. Thank you. Counsel, can I see you at sidebar. (02:43:23) Afternoon recess at this point, I'm going to ask you to come back 2:00, there's another couple of witnesses. Are we still... I'm not even going to make a commitment, but we'll have a couple witnesses this afternoon. We'll kind of see where we go. Okay? All right. Thank you.",
+      "event_types": [
+        "sidebar",
+        "recess",
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1626,
+        "source_line": 6557,
+        "timestamp_display": "02:45:33",
+        "timestamp_seconds": 9933,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. So we'll be in recess on this matter till two o'clock. Okay. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1631,
+        "source_line": 6577,
+        "timestamp_display": "02:46:06",
+        "timestamp_seconds": 9966,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Counsel, can I see it sidebar just for a second?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1633,
+        "source_line": 6585,
+        "timestamp_display": "02:51:24",
+        "timestamp_seconds": 10284,
+        "url": null
+      },
+      "speaker": "Speaker 17",
+      "text": "Your Honor, for the purpose of the record, we return back to the trial of Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1634,
+        "source_line": 6589,
+        "timestamp_display": "02:51:32",
+        "timestamp_seconds": 10292,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Again, members of the jury, thank you for your patience with us. We're going to do at this point, we're going to return now to the Commonwealth's presentation of the evidence. And Commonwealth, call your next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1637,
+        "source_line": 6601,
+        "timestamp_display": "02:52:39",
+        "timestamp_seconds": 10359,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Thank you. The next exhibit, it's a stipulation regarding postmortem toxicology testing of Cora Clancy?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1638,
+        "source_line": 6605,
+        "timestamp_display": "02:52:45",
+        "timestamp_seconds": 10365,
+        "url": null
+      },
+      "speaker": "Speaker 19",
+      "text": "Exhibit 184.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1639,
+        "source_line": 6609,
+        "timestamp_display": "02:52:54",
+        "timestamp_seconds": 10374,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "As the next exhibit, a stipulation regarding the postmortem toxicology testing of Dawson Clancy?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1640,
+        "source_line": 6613,
+        "timestamp_display": "02:52:59",
+        "timestamp_seconds": 10379,
+        "url": null
+      },
+      "speaker": "Speaker 19",
+      "text": "Exhibit 185.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1642,
+        "source_line": 6621,
+        "timestamp_display": "02:53:12",
+        "timestamp_seconds": 10392,
+        "url": null
+      },
+      "speaker": "Speaker 19",
+      "text": "Exhibit 186.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1648,
+        "source_line": 6645,
+        "timestamp_display": "02:53:28",
+        "timestamp_seconds": 10408,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. All right. So members of the jury, I'm going to read you what these stipulations are. But keep in mind, you'll have these since they've been entered as exhibits. You'll have them with you back in the deliberations during the deliberations. All right? Back in the jury room. So you'll have these, but let me just read these to you so you can kind of have this as the case is going forward. All right? (02:53:49) So Exhibit 184 is a stipulation regarding the postmortem toxicology testing of Cora Clancy. In the above captioned matter, the parties agree to the following facts as it pertains to postmortem toxicology testing conducted for Cora Clancy. (02:54:08) Number one, in accordance with laboratory policy and procedure, laboratory staff screen, analyze and review samples submitted for testing using batch testing processing prior to final review and interpretation by the assigned analyst. Two, all policies and procedures were followed in this case. And three, in addition to forensic scientist two, Alicia Zimmermann being the assigned analyst and processing samples associated with case number 23-01875, Cora Clancy, laboratory staff had the following roles in the testing process. (02:54:47) A, Brittany Massett and Natalie Law conducted screening analysis on item 1-01, which was the heart blood of Cora Clancy. B, Hannah Knowles conducted batch review analysis of screening tests conducted by Messette and Law. C, Marissa Dreyer and Seth Utter conducted further analysis on items 1-1-01. D, Emily McCall and Jacob O'Connell conducted batch review analysis of testing by Dreyer and Utter respectively. E, Tashie Washington conducted a technical review of the entire case prior to the issuance of Alicia Zimmermann's report. And F, Jennifer Mejia documented the measurements of the specimens collected for possible postmortem toxicology testing. So that's the stipulation on Exhibit 184 regarding the testing related to Cora Clancy. (02:55:55) Exhibit 185 is a stipulation regarding postmortem toxicology testing relating to Dawson Clancy. And so number one, in accordance with laboratory policy and procedure, laboratory staff screen, analyze and review samples submitted for testing using batch testing processing prior to final review and interpretation by the assigned analyst. Two, all policies and procedures were followed in this case. Three, in addition to forensic scientist two, Alicia Zimmermann being the assigned analyst and processing samples associated with case number 23-01874, which was Dawson Clancy. Laboratory staff had the following roles in the testing process. (02:56:45) A, Brittany Massett and Natalie Law conducted screening analysis on item 1-1-01, which was the heart blood of Dawson Clancy. B, Hannah Knowles conducted batch review analysis of screening tests conducted by Messette and Law. C, Marissa Dreyer and Seth Utter conducted further analysis on item 1-1-01. D, Emily McCall and Jacob O'Connell conducted batch review analysis of testing by Dreyer and Utter respectfully. E, Tashie Washington conducted a technical review of the entire case prior to the issuance of Alicia Zimmermann's report. And F, Jennifer Mejia documented the measurements of the specimens collected for possible postmortem toxicology testing. And that's the exhibit regarding Dawson Clancy. All right. (02:57:48) And then the last stipulation at this time is Exhibit 186. And that stipulation is regarding the postmortem toxicology testing of Callan Clancy. Number one, in accordance with laboratory policy and procedures, laboratory staff screen, analyze and review samples submitted for testing using batch testing processing prior to final review and interpretation by the assigned analyst. Two, all policies and procedures were followed in this case. Three, in addition to forensic scientist two, Alicia Zimmermann, being the assigned analyst and processing samples associated with case number 23-0214, which was for Callan Clancy. Laboratory staff had the following roles in the testing process. (02:58:43) A, Brittany Massett was a screening analyst for item 1-1-01, which was blood from Beth Israel Deaconess Hospital in Plymouth. B, Natalie Law and Marissa Dreyer conducted further analysis on item 1-1-01. C, Hannah Knowles and Emily McCall conducted batch review analysis of item 1-1-01. D, Seth Utter conducted analysis on item 1-1-07, which was blood from Boston Children's Hospital. And 1-1-04, which was urine from Beth Israel Deaconess Hospital Plymouth. E, Nathaniel Almeda, conducted batch review analysis on item 1-1-07. And F, Robert Anderson conducted batch review analysis on item 1-1-04. He also conducted a technical review of the entire case prior to the issuance of Alicia Zimmermann's report. And G, Jennifer Mejia documented the measurements of the specimens collected for possible postmortem toxicology testing. (03:00:08) So those are the stipulations at this time. Keeping in mind that you'll have those with you and everything that's contained there with you back in the jury room. Okay? All right. Commonwealth?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1649,
+        "source_line": 6673,
+        "timestamp_display": "03:00:20",
+        "timestamp_seconds": 10820,
+        "url": null
+      },
+      "speaker": "Shannon Buckingham",
+      "text": "Thank you. The Commonwealth would call Alicia Zimmermann.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1650,
+        "source_line": 6677,
+        "timestamp_display": "03:00:53",
+        "timestamp_seconds": 10853,
+        "url": null
+      },
+      "speaker": "Speaker 18",
+      "text": "Stop right here and raise your right hand.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1651,
+        "source_line": 6681,
+        "timestamp_display": "03:00:57",
+        "timestamp_seconds": 10857,
+        "url": null
+      },
+      "speaker": "Speaker 17",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court [inaudible 03:01:01]",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1750,
+        "source_line": 7079,
+        "timestamp_display": "03:09:53",
+        "timestamp_seconds": 11393,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Thank you, Your Honor. Commonwealth calls Sherri Crook.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1751,
+        "source_line": 7083,
+        "timestamp_display": "03:10:55",
+        "timestamp_seconds": 11455,
+        "url": null
+      },
+      "speaker": "Speaker 18",
+      "text": "Stop right here. Raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1752,
+        "source_line": 7087,
+        "timestamp_display": "03:10:56",
+        "timestamp_seconds": 11456,
+        "url": null
+      },
+      "speaker": "Speaker 17",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury [inaudible 03:10:57]",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1864,
+        "source_line": 7547,
+        "timestamp_display": "03:25:19",
+        "timestamp_seconds": 12319,
+        "url": null
+      },
+      "speaker": "Witness",
+      "text": "So a satellite stain is a secondary stain. So if you think about my drip stain as it's dripping from my finger, as it hits the ground or the surface, it can break apart. When it breaks apart, those little stains are called satellite stains. They come from the original parent stain.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1881,
+        "source_line": 7615,
+        "timestamp_display": "03:28:42",
+        "timestamp_seconds": 12522,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Mark this as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1882,
+        "source_line": 7619,
+        "timestamp_display": "03:28:44",
+        "timestamp_seconds": 12524,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Any objection? All right. That may be admitted.",
+      "event_types": [
+        "objection",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1893,
+        "source_line": 7663,
+        "timestamp_display": "03:30:23",
+        "timestamp_seconds": 12623,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "I could have this marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1894,
+        "source_line": 7667,
+        "timestamp_display": "03:30:25",
+        "timestamp_seconds": 12625,
+        "url": null
+      },
+      "speaker": "Speaker 20",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1895,
+        "source_line": 7671,
+        "timestamp_display": "03:30:26",
+        "timestamp_seconds": 12626,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1896,
+        "source_line": 7675,
+        "timestamp_display": "03:30:27",
+        "timestamp_seconds": 12627,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 188.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1910,
+        "source_line": 7731,
+        "timestamp_display": "03:31:39",
+        "timestamp_seconds": 12699,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have this marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1911,
+        "source_line": 7735,
+        "timestamp_display": "03:31:41",
+        "timestamp_seconds": 12701,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1913,
+        "source_line": 7743,
+        "timestamp_display": "03:31:42",
+        "timestamp_seconds": 12702,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1914,
+        "source_line": 7747,
+        "timestamp_display": "03:31:49",
+        "timestamp_seconds": 12709,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 189.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1939,
+        "source_line": 7847,
+        "timestamp_display": "03:34:23",
+        "timestamp_seconds": 12863,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Okay. Objection to this? Move to submit this as the next exhibit.",
+      "event_types": [
+        "objection",
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1940,
+        "source_line": 7851,
+        "timestamp_display": "03:34:30",
+        "timestamp_seconds": 12870,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1941,
+        "source_line": 7855,
+        "timestamp_display": "03:34:30",
+        "timestamp_seconds": 12870,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 190.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1956,
+        "source_line": 7920,
+        "timestamp_display": "03:36:51",
+        "timestamp_seconds": 13011,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We should have E12 as the next exhibit and E13 as the following.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1957,
+        "source_line": 7924,
+        "timestamp_display": "03:36:56",
+        "timestamp_seconds": 13016,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1958,
+        "source_line": 7928,
+        "timestamp_display": "03:36:56",
+        "timestamp_seconds": 13016,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 191 and 192.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1959,
+        "source_line": 7932,
+        "timestamp_display": "03:37:11",
+        "timestamp_seconds": 13031,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "And just for clarification, showing you what's been previously marked as Exhibit 159. That's that same area for E12 and E13?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1961,
+        "source_line": 7940,
+        "timestamp_display": "03:37:48",
+        "timestamp_seconds": 13068,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Now, showing you what's been marked previously as Exhibit 161. Is that the mirror we were just discussing?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1973,
+        "source_line": 7988,
+        "timestamp_display": "03:39:53",
+        "timestamp_seconds": 13193,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have E14 as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1974,
+        "source_line": 7992,
+        "timestamp_display": "03:39:55",
+        "timestamp_seconds": 13195,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1976,
+        "source_line": 8000,
+        "timestamp_display": "03:40:04",
+        "timestamp_seconds": 13204,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Showing you what's been previously marked as Exhibit 162. It's the bedroom window sill.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1984,
+        "source_line": 8032,
+        "timestamp_display": "03:41:20",
+        "timestamp_seconds": 13280,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Showing you what's been marked Exhibit 164. Is this the area that you examined?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1994,
+        "source_line": 8075,
+        "timestamp_display": "03:44:18",
+        "timestamp_seconds": 13458,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have this photo marked as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1995,
+        "source_line": 8079,
+        "timestamp_display": "03:44:21",
+        "timestamp_seconds": 13461,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2003,
+        "source_line": 8111,
+        "timestamp_display": "03:45:47",
+        "timestamp_seconds": 13547,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have E17 marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2004,
+        "source_line": 8115,
+        "timestamp_display": "03:45:49",
+        "timestamp_seconds": 13549,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Sure. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2005,
+        "source_line": 8119,
+        "timestamp_display": "03:45:53",
+        "timestamp_seconds": 13553,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 195.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2012,
+        "source_line": 8147,
+        "timestamp_display": "03:46:33",
+        "timestamp_seconds": 13593,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "And at some point in time... Oh, strike that. (03:46:39) What, if anything, can you tell us about these blood stains?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2020,
+        "source_line": 8182,
+        "timestamp_display": "03:47:26",
+        "timestamp_seconds": 13646,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "If we could have this photo marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2021,
+        "source_line": 8186,
+        "timestamp_display": "03:47:29",
+        "timestamp_seconds": 13649,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2022,
+        "source_line": 8190,
+        "timestamp_display": "03:47:29",
+        "timestamp_seconds": 13649,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 196.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2023,
+        "source_line": 8194,
+        "timestamp_display": "03:48:03",
+        "timestamp_seconds": 13683,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Excuse me. Did you also look at what's depicted here in Exhibit 46?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2037,
+        "source_line": 8250,
+        "timestamp_display": "03:50:39",
+        "timestamp_seconds": 13839,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "We could have this photograph marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2038,
+        "source_line": 8254,
+        "timestamp_display": "03:50:41",
+        "timestamp_seconds": 13841,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2039,
+        "source_line": 8258,
+        "timestamp_display": "03:50:58",
+        "timestamp_seconds": 13858,
+        "url": null
+      },
+      "speaker": "Clerk",
+      "text": "Exhibit 197.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2040,
+        "source_line": 8262,
+        "timestamp_display": "03:51:00",
+        "timestamp_seconds": 13860,
+        "url": null
+      },
+      "speaker": "Ms. Sprague",
+      "text": "Let me show you some photos of the exterior of the house, what's been marked as Exhibit 106, what's been marked as Exhibit 105 and 108. Are these areas or photographs that you examined as part of your analysis?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2065,
+        "source_line": 8365,
+        "timestamp_display": "03:57:21",
+        "timestamp_seconds": 14241,
+        "url": null
+      },
+      "speaker": "Ms. Sprague",
+      "text": "We could mark E19 as the next exhibit and then E20.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2066,
+        "source_line": 8369,
+        "timestamp_display": "03:57:25",
+        "timestamp_seconds": 14245,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "All right. Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2068,
+        "source_line": 8377,
+        "timestamp_display": "03:57:28",
+        "timestamp_seconds": 14248,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "All right. That may be admitted. Or they may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2069,
+        "source_line": 8381,
+        "timestamp_display": "03:57:43",
+        "timestamp_seconds": 14263,
+        "url": null
+      },
+      "speaker": "Ms. Sprague",
+      "text": "And then showing you what's been marked as Exhibit 105 and zooming in here on the open window and the orange ball there at the bottom, the red-brown staining right above that. Did you examine photos of that?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2079,
+        "source_line": 8421,
+        "timestamp_display": "03:59:18",
+        "timestamp_seconds": 14358,
+        "url": null
+      },
+      "speaker": "Ms. Sprague",
+      "text": "We could have E18 marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2080,
+        "source_line": 8425,
+        "timestamp_display": "03:59:24",
+        "timestamp_seconds": 14364,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2081,
+        "source_line": 8429,
+        "timestamp_display": "03:59:35",
+        "timestamp_seconds": 14375,
+        "url": null
+      },
+      "speaker": "Ms. Sprague",
+      "text": "And then showing you what's previously been marked as Exhibit 108, the top of the first floor windowsill, did you examine those red-brown stains?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2115,
+        "source_line": 8565,
+        "timestamp_display": "04:04:41",
+        "timestamp_seconds": 14681,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Looking at Exhibit 106, that shows the first floor window, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2127,
+        "source_line": 8613,
+        "timestamp_display": "04:05:50",
+        "timestamp_seconds": 14750,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. So it shows in Exhibit 105, the same window with the little hornet ball or that substance that was injected, like insulation is what I think you described it. That also has red-brown substance on it, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2143,
+        "source_line": 8677,
+        "timestamp_display": "04:07:52",
+        "timestamp_seconds": 14872,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "And looking at Exhibit 162, that would show the left side that you were referring to as to the red marks or the blood, if you will, on the window, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2157,
+        "source_line": 8733,
+        "timestamp_display": "04:09:44",
+        "timestamp_seconds": 14984,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now, the photograph in Exhibit 45 is the mirror?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2166,
+        "source_line": 8769,
+        "timestamp_display": "04:11:12",
+        "timestamp_seconds": 15072,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2186,
+        "source_line": 8849,
+        "timestamp_display": "04:13:30",
+        "timestamp_seconds": 15210,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "All right. Thank you, ma'am. You may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2188,
+        "source_line": 8857,
+        "timestamp_display": "04:13:32",
+        "timestamp_seconds": 15212,
+        "url": null
+      },
+      "speaker": "The Court",
+      "text": "And counsel, could I just talk to you a second? Sidebar. (04:13:35) Jury, rather than start another witness and break it up, I'm going to excuse you till tomorrow. All right? I don't think we'd finish with this next witness anyway. So I'm going to excuse you. (04:15:06) Now tomorrow's schedule, we are not going to be sitting in the afternoon. All right? I can tell you that. So I'm going to ask you to be here at 9:00. Remember, I'm going to ask you those same questions, same instructions. Don't talk about this, don't do any research, don't watch anything. Don't listen to anything about this. I appreciate all the work you've done so far. I appreciate all your time. And so I'm going to ask you to follow those and continue to follow those instructions. And I'll see you tomorrow morning and we'll get right back to the case. Okay?",
+      "event_types": [
+        "sidebar",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 2196,
+        "source_line": 8895,
+        "timestamp_display": "04:16:42",
+        "timestamp_seconds": 15402,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Court stands in recess. ‍ Keep reading MA v. Lindsay Clancy Day 17 Tupac Shakur Murder Trial Day 3 MA v. Lindsay Clancy Day 16 Tupac Shakur Murder Trial Day 2 MA v. Lindsay Clancy Day 15 Tupac Murder Trial Opening Remarks Subscribe to The Rev Blog Sign up to get Rev content delivered straight to your inbox. Product Multi-File Evidence Analysis Document Editor Image Analysis Transcript Editor & Clipping AI Templates Mobile App Pricing Human-Verified Human Transcription Human Captions Legal Rough Draft Legal Premium Transcript Court Reporting Self-Service Global Subtitles SmartDepo Industries Criminal Prosecution Criminal Defense Law Enforcement Civil Law Court Reporting Agencies Research & Consulting Newsrooms & Journalists Education Video Distribution & Accessibility Resources Blog Reports & Guides Learning Center Transcript Library Success Stories Webinars Reviews Apps & Tools Services By Location Developers API ↗ Documentation ↗ API Status ↗ Changelog ↗ About Company Careers Press Partners Security Freelancers Support Visit Rev on Facebook Visit Rev on X Visit Rev on Instagram Visit Rev on LinkedIn Visit Rev on YouTube Download on the App Store Download on the App Store Get it on Google Play Get it on Google Play © rev.com Legal Security Terms Privacy CA Privacy Policy Sitemap Login",
+      "event_types": [
+        "recess"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}

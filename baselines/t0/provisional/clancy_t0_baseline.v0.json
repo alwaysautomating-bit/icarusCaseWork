@@ -1,0 +1,739 @@
+{
+  "version": "V0",
+  "case_name": "Commonwealth v. Lindsay Clancy",
+  "notes": "PROVISIONAL baseline built from secondary reporting as of Aug 17, 2026; all entries subject to reconciliation against primary court records, exhibits, and transcripts.",
+  "entities": [
+    {
+      "entity_id": "ENT1",
+      "canonical_name": "Lindsay Marie Clancy",
+      "aliases": [
+        "Lindsay Clancy"
+      ],
+      "entity_type": "person",
+      "known_role": "Criminal defendant charged with three counts of murder in Plymouth Superior Court.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT2",
+      "canonical_name": "Patrick Clancy",
+      "aliases": [
+        "Pat Clancy"
+      ],
+      "entity_type": "person",
+      "known_role": "Ex-husband of ENT1; father of three deceased children; prosecution and defense witness; civil plaintiff.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT3",
+      "canonical_name": "Cora Clancy",
+      "aliases": [
+        "Cora"
+      ],
+      "entity_type": "person",
+      "known_role": "Child of ENT1 and ENT2; alleged homicide victim.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT4",
+      "canonical_name": "Dawson Clancy",
+      "aliases": [
+        "Dawson"
+      ],
+      "entity_type": "person",
+      "known_role": "Child of ENT1 and ENT2; alleged homicide victim.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT5",
+      "canonical_name": "Callan Clancy",
+      "aliases": [
+        "Callan"
+      ],
+      "entity_type": "person",
+      "known_role": "Child of ENT1 and ENT2; alleged homicide victim.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT6",
+      "canonical_name": "Commonwealth of Massachusetts",
+      "aliases": [
+        "Commonwealth"
+      ],
+      "entity_type": "organization",
+      "known_role": "Prosecuting authority in criminal case.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT12",
+      "canonical_name": "Plymouth Superior Court",
+      "aliases": [
+        "Plymouth County Superior Court"
+      ],
+      "entity_type": "facility",
+      "known_role": "Trial venue for criminal case.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT13",
+      "canonical_name": "Duxbury home of Clancy family",
+      "aliases": [
+        "Clancy residence"
+      ],
+      "entity_type": "location",
+      "known_role": "Alleged crime scene; family home in Duxbury, Massachusetts.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT14",
+      "canonical_name": "McLean Hospital",
+      "aliases": [
+        "McLean"
+      ],
+      "entity_type": "facility",
+      "known_role": "Psychiatric facility where ENT1 had inpatient stay around Jan 1\u20135, 2023.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT15",
+      "canonical_name": "Massachusetts General Hospital",
+      "aliases": [
+        "MGH"
+      ],
+      "entity_type": "facility",
+      "known_role": "Hospital where ENT1 reportedly received emergency psychiatric care in late 2022.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT16",
+      "canonical_name": "Women & Infants Hospital Center for Women\u2019s Behavioral Health",
+      "aliases": [
+        "Women & Infants program"
+      ],
+      "entity_type": "facility",
+      "known_role": "Postpartum behavioral health program evaluating ENT1 in Dec 2022.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT17",
+      "canonical_name": "Aster Mental Health",
+      "aliases": [
+        "Aster"
+      ],
+      "entity_type": "organization",
+      "known_role": "Outpatient psychiatric practice where ENT1 saw Dr. Tufts.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT18",
+      "canonical_name": "Dr. Jennifer Tufts",
+      "aliases": [
+        "Tufts"
+      ],
+      "entity_type": "person",
+      "known_role": "Psychiatrist treating ENT1 from Sept 2022; civil-suit defendant; trial witness.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT20",
+      "canonical_name": "Dr. Alia Goodheart",
+      "aliases": [
+        "Goodheart"
+      ],
+      "entity_type": "person",
+      "known_role": "McLean psychiatrist treating ENT1 during Jan 2023 inpatient stay; trial witness; civil-suit defendant.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT21",
+      "canonical_name": "Massachusetts State Police",
+      "aliases": [
+        "MSP"
+      ],
+      "entity_type": "organization",
+      "known_role": "Investigating agency; forensic and digital-forensics work.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT22",
+      "canonical_name": "Trooper Kyle Pavao",
+      "aliases": [
+        "Pavao"
+      ],
+      "entity_type": "person",
+      "known_role": "MSP trooper testifying re Surface Pro laptop searches.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT25",
+      "canonical_name": "Lindsay Clancy journals",
+      "aliases": [
+        "journals"
+      ],
+      "entity_type": "document",
+      "known_role": "Handwritten journals recovered from ENT13; include mental-state and medication tracking; read in court.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT26",
+      "canonical_name": "911 call by Patrick Clancy",
+      "aliases": [
+        "Patrick 911 recording"
+      ],
+      "entity_type": "evidence",
+      "known_role": "Audio recording of ENT2\u2019s emergency call on Jan 24, 2023; admitted but impounded.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT27",
+      "canonical_name": "Autopsy photographs of children",
+      "aliases": [
+        "autopsy photos"
+      ],
+      "entity_type": "evidence",
+      "known_role": "Crime-scene and autopsy photographs of ENT3\u2013ENT5; restricted public use.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT28",
+      "canonical_name": "Exercise bands",
+      "aliases": [
+        "workout bands"
+      ],
+      "entity_type": "device",
+      "known_role": "Alleged ligatures used in strangulation; shown to jury.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT29",
+      "canonical_name": "Knife recovered at scene",
+      "aliases": [
+        "knife"
+      ],
+      "entity_type": "device",
+      "known_role": "Sharp instrument with partial friction-ridge impression; subject of stipulation.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT30",
+      "canonical_name": "Surface Pro laptop",
+      "aliases": [
+        "family Surface Pro"
+      ],
+      "entity_type": "device",
+      "known_role": "Laptop found in ENT13 basement; subject of digital-forensics testimony.",
+      "source_status": "SECONDARY_REPORTED"
+    },
+    {
+      "entity_id": "ENT31",
+      "canonical_name": "Lindsay Clancy smartphone",
+      "aliases": [
+        "Lindsay\u2019s phone"
+      ],
+      "entity_type": "device",
+      "known_role": "Smartphone providing search-history and messaging data analyzed by MSP.",
+      "source_status": "SECONDARY_REPORTED"
+    }
+  ],
+  "events": [
+    {
+      "event_id": "EV1",
+      "neutral_description": "ENT1 reportedly begins intensified psychiatric care related to postpartum mental health after birth of ENT5.",
+      "participants": [
+        "ENT1",
+        "ENT18",
+        "ENT17"
+      ],
+      "event_time": "May\u2013Sept 2022",
+      "temporal_precision": "INTERVAL",
+      "location": "Outpatient settings (ENT17, telehealth)",
+      "asserted_or_documented_by": [
+        "civil_suits",
+        "news_timelines"
+      ],
+      "supporting_sources": [
+        "web:17",
+        "web:36",
+        "web:38",
+        "web:42"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV2",
+      "neutral_description": "ENT1 is evaluated at Women & Infants behavioral health program and reportedly told she does not have postpartum depression.",
+      "participants": [
+        "ENT1",
+        "ENT16"
+      ],
+      "event_time": "2022-12-20",
+      "temporal_precision": "EXACT",
+      "location": "ENT16",
+      "asserted_or_documented_by": [
+        "prosecution_timeline",
+        "civil_suits"
+      ],
+      "supporting_sources": [
+        "web:17",
+        "web:27",
+        "web:28",
+        "web:26"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV4",
+      "neutral_description": "ENT1 self-admits to ENT14 for inpatient psychiatric care around New Year\u2019s.",
+      "participants": [
+        "ENT1",
+        "ENT14",
+        "ENT20"
+      ],
+      "event_time": "2023-01-01/2023-01-05",
+      "temporal_precision": "INTERVAL",
+      "location": "ENT14",
+      "asserted_or_documented_by": [
+        "ENT20_testimony",
+        "news_timelines",
+        "civil_suits"
+      ],
+      "supporting_sources": [
+        "web:16",
+        "web:17",
+        "web:22",
+        "web:27",
+        "web:28",
+        "web:38"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV6",
+      "neutral_description": "ENT1 allegedly tracks medications, symptoms, and intrusive thoughts in journals and a medical diary.",
+      "participants": [
+        "ENT1",
+        "ENT25"
+      ],
+      "event_time": "2022-10-13/2023-01-18",
+      "temporal_precision": "INTERVAL",
+      "location": "ENT13",
+      "asserted_or_documented_by": [
+        "MSP_officers",
+        "trial_readings"
+      ],
+      "supporting_sources": [
+        "web:19",
+        "web:20",
+        "web:25"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV10",
+      "neutral_description": "ENT2 runs errands (CVS and restaurant) after ENT1 suggests takeout, leaving children at ENT13 with ENT1.",
+      "participants": [
+        "ENT1",
+        "ENT2",
+        "ENT3",
+        "ENT4",
+        "ENT5"
+      ],
+      "event_time": "2023-01-24 evening",
+      "temporal_precision": "APPROXIMATE",
+      "location": "ENT13; local CVS; restaurant",
+      "asserted_or_documented_by": [
+        "ENT2_testimony"
+      ],
+      "supporting_sources": [
+        "web:4",
+        "web:5",
+        "web:6"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV11",
+      "neutral_description": "ENT2 reports returning to ENT13, observing unusual quiet, blood, ENT1 on ground outside, and children in basement with exercise bands around their necks.",
+      "participants": [
+        "ENT1",
+        "ENT2",
+        "ENT3",
+        "ENT4",
+        "ENT5"
+      ],
+      "event_time": "2023-01-24 evening",
+      "temporal_precision": "APPROXIMATE",
+      "location": "ENT13",
+      "asserted_or_documented_by": [
+        "ENT2_testimony"
+      ],
+      "supporting_sources": [
+        "web:4",
+        "web:6",
+        "web:43"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT_CANDIDATE"
+    },
+    {
+      "event_id": "EV12",
+      "neutral_description": "ENT2\u2019s 911 call is made, recorded, and later admitted into evidence under limitations on public distribution.",
+      "participants": [
+        "ENT2",
+        "ENT26",
+        "ENT11"
+      ],
+      "event_time": "2023-01-24 evening",
+      "temporal_precision": "APPROXIMATE",
+      "location": "ENT13; ENT12",
+      "asserted_or_documented_by": [
+        "court_orders",
+        "news_reports"
+      ],
+      "supporting_sources": [
+        "web:31",
+        "web:33",
+        "web:37",
+        "web:43"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT"
+    },
+    {
+      "event_id": "EV13",
+      "neutral_description": "Autopsy and crime-scene photographs and 3D home model are authorized for use in trial, with restrictions on public release.",
+      "participants": [
+        "ENT11",
+        "ENT27"
+      ],
+      "event_time": "2026-06-29",
+      "temporal_precision": "EXACT",
+      "location": "ENT12",
+      "asserted_or_documented_by": [
+        "court_orders"
+      ],
+      "supporting_sources": [
+        "web:33",
+        "web:37"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT"
+    },
+    {
+      "event_id": "EV14",
+      "neutral_description": "Criminal trial of ENT1 begins, with opening statements and ENT2 called as first witness for Commonwealth.",
+      "participants": [
+        "ENT1",
+        "ENT2",
+        "ENT6",
+        "ENT8",
+        "ENT9",
+        "ENT11"
+      ],
+      "event_time": "2026-07-27",
+      "temporal_precision": "EXACT",
+      "location": "ENT12",
+      "asserted_or_documented_by": [
+        "news_reports"
+      ],
+      "supporting_sources": [
+        "web:1",
+        "web:2",
+        "web:13"
+      ],
+      "conflicting_sources": [],
+      "status": "EVENT"
+    }
+  ],
+  "temporal_anchors": [
+    {
+      "temporal_assertion_id": "TA1",
+      "event_id": "EV4",
+      "time_range": "2023-01-01/2023-01-05",
+      "precision": "INTERVAL",
+      "asserted_by": [
+        "ENT20_testimony",
+        "news_timelines"
+      ],
+      "basis": [
+        "web:16",
+        "web:17",
+        "web:22",
+        "web:27",
+        "web:28",
+        "web:38"
+      ],
+      "conflicting_temporal_assertions": []
+    },
+    {
+      "temporal_assertion_id": "TA2",
+      "event_id": "EV2",
+      "time_range": "2022-12-20",
+      "precision": "EXACT",
+      "asserted_by": [
+        "prosecution_timeline"
+      ],
+      "basis": [
+        "web:17",
+        "web:27",
+        "web:28",
+        "web:26"
+      ],
+      "conflicting_temporal_assertions": []
+    },
+    {
+      "temporal_assertion_id": "TA3",
+      "event_id": "EV11",
+      "time_range": "2023-01-24 evening",
+      "precision": "APPROXIMATE",
+      "asserted_by": [
+        "ENT2_testimony"
+      ],
+      "basis": [
+        "web:4",
+        "web:6",
+        "web:43"
+      ],
+      "conflicting_temporal_assertions": []
+    },
+    {
+      "temporal_assertion_id": "TA4",
+      "event_id": "EV14",
+      "time_range": "2026-07-27",
+      "precision": "EXACT",
+      "asserted_by": [
+        "news_reports"
+      ],
+      "basis": [
+        "web:1",
+        "web:2",
+        "web:13"
+      ],
+      "conflicting_temporal_assertions": []
+    }
+  ],
+  "provenance_chains": [
+    {
+      "chain_id": "PC1",
+      "description": "Journals and mental-state entries",
+      "originating_source": "ENT25",
+      "lineage": [
+        "seizure_by_MSP",
+        "inventory_as_evidence",
+        "court_readings",
+        "news_summaries"
+      ],
+      "lineage_classification": "same_known_origin"
+    },
+    {
+      "chain_id": "PC2",
+      "description": "911 call by ENT2",
+      "originating_source": "ENT26",
+      "lineage": [
+        "dispatch_recording",
+        "court_orders",
+        "trial_playback",
+        "news_summaries"
+      ],
+      "lineage_classification": "same_known_origin"
+    },
+    {
+      "chain_id": "PC3",
+      "description": "Digital search-history claims",
+      "originating_source": [
+        "ENT30",
+        "ENT31"
+      ],
+      "lineage": [
+        "MSP_extraction",
+        "forensic_reports",
+        "trooper_testimony",
+        "news_summaries"
+      ],
+      "lineage_classification": "partially_shared_lineage"
+    },
+    {
+      "chain_id": "PC4",
+      "description": "Mental-health treatment chronology",
+      "originating_source": [
+        "ENT14",
+        "ENT15",
+        "ENT16",
+        "ENT17",
+        "ENT18",
+        "ENT19"
+      ],
+      "lineage": [
+        "clinical_records",
+        "civil_complaints",
+        "provider_testimony",
+        "news_analyses"
+      ],
+      "lineage_classification": "partially_shared_lineage"
+    }
+  ],
+  "propositions": [
+    {
+      "proposition_id": "P1",
+      "neutral_proposition": "Did ENT1 experience postpartum psychosis (including auditory hallucinations) between late 2022 and Jan 24, 2023?",
+      "status": "UNRESOLVED",
+      "claims_supporting": [
+        "civil_complaints_allege_auditory_hallucinations",
+        "defense_opening_emphasizes_postpartum_psychosis"
+      ],
+      "claims_conflicting": [
+        "some_providers_document_major_depressive_disorder_without_psychotic_features"
+      ],
+      "source_lineages": [
+        "PC1",
+        "PC4"
+      ]
+    },
+    {
+      "proposition_id": "P2",
+      "neutral_proposition": "Did medication changes and polypharmacy significantly worsen ENT1\u2019s mental state before Jan 24, 2023?",
+      "status": "UNRESOLVED",
+      "claims_supporting": [
+        "civil_suits_allege_overmedication_and_deterioration"
+      ],
+      "claims_conflicting": [
+        "prosecution_questions_medication_adherence_and_causality"
+      ],
+      "source_lineages": [
+        "PC4"
+      ]
+    },
+    {
+      "proposition_id": "P4",
+      "neutral_proposition": "What exact sequence of actions occurred in ENT13 on the evening of Jan 24, 2023?",
+      "status": "UNRESOLVED",
+      "claims_supporting": [
+        "ENT2_testimony_provides_a_reported_sequence"
+      ],
+      "claims_conflicting": [
+        "minute_by_minute_actions_and_timing_remain_unavailable_in_secondary_sources"
+      ],
+      "source_lineages": [
+        "PC2",
+        "PC3"
+      ]
+    }
+  ],
+  "projections": {
+    "prosecution": [
+      {
+        "projection_id": "PROS1",
+        "type": "PROSECUTION",
+        "description": "Theory of deliberate, planned killings with deliberate premeditation and extreme atrocity or cruelty.",
+        "relies_on": [
+          "EV10",
+          "EV11",
+          "ENT28",
+          "ENT29",
+          "PC3"
+        ]
+      },
+      {
+        "projection_id": "PROS2",
+        "type": "PROSECUTION",
+        "description": "Assertion that ENT1 was lucid and criminally responsible at the time of the killings.",
+        "relies_on": [
+          "EV4",
+          "EV5",
+          "PC4"
+        ]
+      }
+    ],
+    "defense": [
+      {
+        "projection_id": "DEF1",
+        "type": "DEFENSE",
+        "description": "Lack of criminal responsibility due to postpartum psychosis and bipolar disorder; actions during severe mental illness.",
+        "relies_on": [
+          "P1",
+          "PC1",
+          "PC4"
+        ]
+      },
+      {
+        "projection_id": "DEF2",
+        "type": "DEFENSE",
+        "description": "Overmedication and systemic treatment failures contributed to ENT1\u2019s deterioration and actions.",
+        "relies_on": [
+          "P2",
+          "PC4"
+        ]
+      }
+    ]
+  },
+  "evidence_documents": [
+    {
+      "evidence_id": "DOC1",
+      "description": "ENT26 \u2013 ENT2\u2019s 911 call audio recording.",
+      "category": "audio",
+      "case_possession_status": "POSSESSED",
+      "research_access_status": "REFERENCED_NOT_POSSESSED",
+      "classification": "PRIMARY_in_case_but_SECONDARY_REPORTED_here"
+    },
+    {
+      "evidence_id": "DOC2",
+      "description": "ENT27 \u2013 Autopsy and crime-scene photographs of ENT3\u2013ENT5.",
+      "category": "photo",
+      "case_possession_status": "POSSESSED",
+      "research_access_status": "REFERENCED_NOT_POSSESSED",
+      "classification": "PRIMARY_in_case_but_SECONDARY_REPORTED_here"
+    },
+    {
+      "evidence_id": "DOC3",
+      "description": "Search-warrant applications and affidavits for digital devices.",
+      "category": "court_document",
+      "case_possession_status": "POSSESSED",
+      "research_access_status": "REFERENCED_NOT_POSSESSED",
+      "classification": "PRIMARY"
+    }
+  ],
+  "unknowns": [
+    {
+      "unknown_id": "UN1",
+      "description": "Exact timestamps within Jan 24, 2023 event sequence are UNKNOWN pending CAD and forensic timeline ingestion."
+    },
+    {
+      "unknown_id": "UN2",
+      "description": "Full text of ENT25 journal entries and ENT26 911 call is UNKNOWN in this baseline; only partial quotations available."
+    },
+    {
+      "unknown_id": "UN3",
+      "description": "Complete list and chronology of all medications, doses, and adherence is UNKNOWN."
+    }
+  ],
+  "sources": [
+    {
+      "source_id": "S1",
+      "tool_id": "web:1",
+      "title": "Massachusetts mother goes on trial for killing her three children",
+      "publisher": "Reuters",
+      "source_type": "news_article",
+      "classification": "SECONDARY_REPORTED"
+    },
+    {
+      "source_id": "S8",
+      "tool_id": "web:17",
+      "title": "Lindsay Clancy: A timeline of the Duxbury mother's mental health",
+      "publisher": "Boston.com",
+      "source_type": "news_article",
+      "classification": "SECONDARY_REPORTED"
+    },
+    {
+      "source_id": "S9",
+      "tool_id": "web:19",
+      "title": "Lindsay Clancy trial: Journal entries detail her struggles",
+      "publisher": "Boston Globe",
+      "source_type": "news_article",
+      "classification": "SECONDARY_REPORTED"
+    }
+  ]
+}
