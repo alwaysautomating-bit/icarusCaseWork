@@ -57,8 +57,9 @@ The product is now at the middle analytical layer between source retrieval and h
 ## Repository checkpoint
 
 - Reconstruction v1, migration `20260822143000_testimony_reconstruction_versions_v1.sql`, acceptance reports, documentation, and reviewed Supabase Studio query snippets are included in Git history.
-- The `codex/provisional-t0` feature history is merged into `main` for this checkpoint.
-- The intended completion state is a clean working tree with no untracked files.
+- Reconstruction checkpoint commit: `242a97d`.
+- The `codex/provisional-t0` feature history is merged into `main`, and `main` is the local and GitHub default branch.
+- The working tree was clean at completion, with no untracked files.
 
 ## Next delivery boundary
 
