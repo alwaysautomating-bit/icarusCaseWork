@@ -17,8 +17,13 @@
     "testimony:knowledge-day6": "tsx scripts/map-day6-knowledge.ts",
     "testimony:timeline-day6": "tsx scripts/map-day6-timeline.ts",
     "testimony:publish-corpus": "tsx scripts/publish-transcript-corpus.ts",
+    "supabase:start": "supabase start",
+    "supabase:status": "supabase status",
+    "supabase:stop": "supabase stop --project-id IcarusCasework",
     "supabase:migrations": "supabase migration list --local",
-    "supabase:reset": "supabase db reset",
+    "supabase:reset": "supabase db reset --local",
+    "supabase:lint": "supabase db lint --local --level warning --fail-on error",
+    "supabase:advisors": "supabase db advisors --local --type all --level warn --fail-on error",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {

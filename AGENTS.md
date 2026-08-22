@@ -33,3 +33,12 @@ Do not use Clerk.
 - Use versioned, controlled migrations in every environment.
 - If Prisma is introduced, production migrations must run with `prisma migrate deploy`.
 - Never use `prisma db push` as the production migration strategy.
+
+## Local Supabase runtime
+
+- `SUPABASE_OPERATIONS.md` is the canonical Supabase architecture and operations guide. Read it before changing local infrastructure, Auth, RLS, grants, migrations, storage, or deployment behavior.
+- Docker Desktop with WSL 2 is the container engine for the complete local Supabase stack. The pinned Supabase CLI orchestrates the containers from `supabase/config.toml`; do not introduce a separate local `docker-compose.yml` without a documented requirement.
+- Run the repository-pinned CLI through `pnpm exec supabase`.
+- Use explicit `--local` or `--linked` targeting for database commands. Until a hosted project is deliberately selected and linked, use `--local` only.
+- Never expose the local stack publicly, commit credentials printed by `supabase status`, or place service-role/secret keys in browser-visible environment variables.
+- Never change a hosted schema directly in Studio or the SQL editor. Create, replay, verify, and commit a migration before applying it through the controlled deployment workflow.

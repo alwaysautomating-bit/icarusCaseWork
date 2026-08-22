@@ -27,16 +27,22 @@ The application supports public records and authorized research material. It doe
 
 The legacy PGlite adapter remains as an isolated reference implementation; the application runtime uses Supabase.
 
+Docker Desktop is the container engine for the complete local Supabase stack. The pinned Supabase CLI coordinates Postgres, Auth, the Data API, Storage, Realtime, Studio, Mailpit, and supporting services from `supabase/config.toml`. See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for the canonical architecture, startup, migration, security, recovery, and deployment procedures.
+
 ## Run locally
 
 ```powershell
 pnpm install
 Copy-Item .env.example .env.local
-pnpm supabase:reset
+pnpm exec supabase start
+pnpm exec supabase status
+pnpm exec supabase db reset --local
 pnpm dev
 ```
 
-Populate `.env.local` with the Supabase URL and publishable key shown by `pnpm exec supabase status`, then open [http://localhost:3000](http://localhost:3000). Local magic-link emails appear in Mailpit at [http://127.0.0.1:54324](http://127.0.0.1:54324). Use the guided form to preserve a source, extract a cited claim, review it, and promote it to a distinct timeline event.
+Start Docker Desktop before the Supabase command. Populate `.env.local` with only the Supabase URL and publishable key shown by `pnpm exec supabase status`; never copy the service-role or secret key into a `NEXT_PUBLIC_` variable. The reset command rebuilds the local database from committed migrations and destroys unexported local database data.
+
+Open [http://localhost:3000](http://localhost:3000) for Icarus Casework, [local Supabase Studio](http://127.0.0.1:54323/project/default) for the local stack, and [Mailpit](http://127.0.0.1:54324) for local magic-link emails. Use the guided form to preserve a source, extract a cited claim, review it, and promote it to a distinct timeline event.
 
 ## Transcript intake
 
@@ -56,14 +62,16 @@ The intake uses trial day—not a publisher display date—as filename identity.
 pnpm verify
 ```
 
-The Supabase deployment migration is exercised from zero by the test suite. Full local replay requires Docker:
+The Supabase migration chain is exercised from zero by the test suite. Full local replay requires Docker Desktop and the local Supabase stack:
 
 ```powershell
-pnpm supabase:reset
-pnpm supabase:migrations
+pnpm exec supabase db reset --local
+pnpm exec supabase migration list --local
+pnpm exec supabase db lint --local --level warning --fail-on error
+pnpm exec supabase db advisors --local --type all --level warn --fail-on error
 ```
 
-See `DEPLOYMENT_08-16-2026.md` for the controlled cloud deployment gate.
+See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_08-16-2026.md](DEPLOYMENT_08-16-2026.md) for the controlled cloud deployment gate.
 
 ## Data constraints
 

@@ -2,6 +2,8 @@
 
 Status: LOCAL STACK VERIFIED — cloud resources not provisioned
 
+Canonical Supabase architecture, operations, migration, security, recovery, and troubleshooting procedures live in `SUPABASE_OPERATIONS.md`. This file records the deployment gate and must not duplicate or override that operational contract.
+
 ## Target Infrastructure
 
 - Application: Vercel-compatible Next.js deployment
@@ -21,13 +23,13 @@ Clerk is prohibited. OAuth secrets must be environment references and must never
 
 ## Controlled Migration Workflow
 
-1. Create migrations with `supabase migration new <name>`.
+1. Create migrations with `pnpm exec supabase migration new <name>`.
 2. Review SQL, RLS policies, grants, ownership, and rollback implications.
-3. Run `supabase db reset` against the local Docker stack.
-4. Run `supabase migration list --local` and the automated migration test.
+3. Run `pnpm exec supabase db reset --local` against the local Docker stack.
+4. Run local migration history, database lint, database advisors, and the automated verification suite as specified in `SUPABASE_OPERATIONS.md`.
 5. Link the intended remote project explicitly.
-6. Preview with `supabase db push --dry-run`.
-7. Apply pending migrations with `supabase db push` through the deployment workflow.
+6. Preview with `pnpm exec supabase db push --linked --dry-run`.
+7. Apply pending migrations with `pnpm exec supabase db push --linked` through the deployment workflow.
 
 Never reset a production database. Never include seed data in a production push. If Prisma is introduced, production uses `prisma migrate deploy`; `prisma db push` remains prohibited.
 
@@ -45,13 +47,13 @@ Never reset a production database. Never include seed data in a production push.
 - Supabase CLI version pinned: `2.113.0`
 - WSL 2 with Ubuntu is installed and verified on the Microsoft WSL 2 kernel
 - Docker Desktop `4.86.0` and Docker CLI `29.7.2` are installed and the local engine runs successfully
-- Bootstrap and testimony migrations apply from zero through `supabase db reset`; `supabase migration list --local` confirms `20260813090819` and `20260817035154`
+- All 13 migrations through `20260822102136_saved_timeline_view_versions.sql` apply locally and are recorded in local migration history
 - RLS, policies, grants, private authorization helpers, and the owner-membership trigger are exercised by an authenticated browser session
 - Local magic-link delivery, OTP confirmation, cookie session refresh, case bootstrap, artifact/claim insertion, and authenticated audit attribution are verified end to end
 - Testimony intake RLS, cross-user denial, atomic commit, forbidden reconciliation fields, duplicate reuse, and read-only support/verification contracts pass against the live local Data API
 - The real Rev MA v. Lindsay Clancy Day 6 page passes the authenticated browser flow with 410 segments, 123 claims, four acquisition targets, and zero support or verification rows
-- Supabase database lint reports no schema errors
-- ESLint, TypeScript, 20 Vitest tests, the maintained local integration script, and the Next.js production build pass
+- Supabase database advisors report no security or performance issues; database lint has no errors and retains one known text-to-`uuid[]` warning in `review_extraction_candidate`
+- ESLint, TypeScript, 91 tests across 20 test files, the maintained local integration script, and the Next.js production build pass
 - Private Vercel Blob adapter is implemented with pinned `@vercel/blob` `2.8.0`; credentialed cloud verification is still pending
 
 ## Deployment Gate
