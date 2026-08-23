@@ -17,6 +17,7 @@
     "testimony:knowledge-day6": "tsx scripts/map-day6-knowledge.ts",
     "testimony:timeline-day6": "tsx scripts/map-day6-timeline.ts",
     "testimony:reconstruction-day3": "tsx scripts/map-day3-reconstruction.ts",
+    "reconcile:day3": "tsx scripts/create-day3-reconciliation-acceptance.ts",
     "testimony:publish-corpus": "tsx scripts/publish-transcript-corpus.ts",
     "trial-index:lindsay": "tsx scripts/import-lindsay-trial-index.ts",
     "supabase:start": "supabase start",

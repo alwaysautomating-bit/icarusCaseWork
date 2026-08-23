@@ -1,10 +1,10 @@
 {
   "schemaVersion": "testimony-timeline-candidate-acceptance/1.0",
-  "generatedAt": "2026-08-22T09:38:22.118Z",
+  "generatedAt": "2026-08-22T23:31:45.246Z",
   "acceptanceCorpus": "MA v. Lindsay Clancy Day 6 — complete Maureen Hartnett witness block",
-  "caseId": "5e37c3a1-7b8d-4661-9d89-e3dae6bbd9c5",
-  "proceedingId": "2d249535-5449-4e93-87b2-7b2f201a1a6b",
-  "extractionRunId": "e4eb5aa2-8507-5b48-a7a3-043be0587d15",
+  "caseId": "4bb69f20-dc18-4bef-a88a-cc7041cfc799",
+  "proceedingId": "b8f3a686-3658-4c0c-b4a9-3f83c30743f1",
+  "extractionRunId": "c44e3d7a-af1f-5def-a317-11cc04143ae0",
   "source": {
     "sha256": "48cca058a0bc10ec900010f0271d2bd6ede40c88b7db57e2790ee07aa2de55d2",
     "detected": 2197,

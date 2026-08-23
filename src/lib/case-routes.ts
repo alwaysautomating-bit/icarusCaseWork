@@ -6,6 +6,15 @@ type CourtRecordRouteState = {
 
 type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved" };
 
+export type ReconcileRouteState = {
+  groupId?: string;
+  newGroup?: boolean;
+  proceedingId?: string;
+  type?: "all" | "knowledge" | "claim" | "event" | "temporal" | "mention" | "relationship" | "flag";
+  query?: string;
+  notice?: "saved" | "unchanged";
+};
+
 export const structureObjectTypes = ["knowledge", "claim", "event", "temporal", "mention", "entity", "relationship", "flag"] as const;
 
 export type StructureObjectType = (typeof structureObjectTypes)[number];
@@ -82,6 +91,18 @@ export function trialIndexHref(caseId: string, state: TrialIndexRouteState = {})
   if (state.notice) params.set("notice", state.notice);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/trial-index${suffix ? `?${suffix}` : ""}`;
+}
+
+export function reconcileHref(caseId: string, state: ReconcileRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.newGroup) params.set("group", "new");
+  else if (state.groupId) params.set("group", state.groupId);
+  if (state.proceedingId) params.set("proceeding", state.proceedingId);
+  if (state.type && state.type !== "all") params.set("type", state.type);
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.notice) params.set("notice", state.notice);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/reconcile${suffix ? `?${suffix}` : ""}`;
 }
 
 export function reconstructionHref(caseId: string, compareVersionIds: string[] = []) {

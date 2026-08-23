@@ -1,8 +1,8 @@
 {
   "schemaVersion": "testimony-reconstruction-acceptance/1.0",
-  "generatedAt": "2026-08-22T11:27:32.965Z",
-  "caseId": "f6d3035b-1e63-4292-9945-3d9abfa9fc88",
-  "proceedingId": "65580af1-a7ab-464a-8217-61c1e441a08c",
+  "generatedAt": "2026-08-22T23:32:23.723Z",
+  "caseId": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "proceedingId": "56067e10-b6ce-4ed3-8e0d-eb8e5ca7ce1f",
   "sourceSha256": "6393970b4e8c473364cb115cd212bd7573f5cbadf3890a8abf631f9b993921d7",
   "sourceSegments": 1873,
   "witnesses": [
@@ -30,10 +30,10 @@
     }
   },
   "persistence": {
-    "timelineRunId": "6c816e29-fc00-5e1b-a302-2832f543c91e",
-    "reconstructionVersionId": "b6551c06-5e63-44c2-a2b7-35a536115385",
+    "timelineRunId": "c1857c49-c557-507c-a6fb-93c64b635e91",
+    "reconstructionVersionId": "97dbaceb-84c7-48fe-a173-a993c760b44d",
     "reconstructionVersion": 1,
-    "snapshotSha256": "94cb6bc84dbc202d78c24098f866d7738aef58723c255aaf7bba18cace87d422",
+    "snapshotSha256": "164856f3d819da7cc64ce40bdaed8fc736e1a40051f85f69fb13dfa5d2be80e7",
     "idempotentTimelineReplay": true,
     "savedVersionsInCase": 1
   },

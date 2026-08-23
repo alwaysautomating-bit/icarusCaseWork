@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { caseSetupHref, courtRecordHref, parseStructureObjectType, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
+import { caseSetupHref, courtRecordHref, parseStructureObjectType, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
   it("builds an explicit Foundation route", () => {
@@ -41,6 +41,11 @@ describe("case-scoped routes", () => {
   it("builds proceeding-scoped Court Record and Trial Index navigation URLs", () => {
     expect(courtRecordHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { proceedingId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/record?proceeding=bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb");
     expect(trialIndexHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { dayNumber: 14, query: "Apple Watch", notice: "saved" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/trial-index?day=14&q=Apple+Watch&notice=saved");
+  });
+
+  it("builds Reconcile graph and saved-group URLs", () => {
+    expect(reconcileHref("case 1", { groupId: "group-1", proceedingId: "day-3", type: "event", query: "arrival", notice: "saved" }))
+      .toBe("/cases/case%201/reconcile?group=group-1&proceeding=day-3&type=event&q=arrival&notice=saved");
   });
 
   it("round-trips every Structure review queue filter", () => {

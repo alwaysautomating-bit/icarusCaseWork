@@ -2,11 +2,13 @@
 
 Date: 2026-08-22
 
+Last verified: 2026-08-23
+
 ## Executive position
 
-Icarus Casework has a working, local, source-grounded evidence-navigation spine. Phase 0/Foundation, the Trial Navigation Index, Court Record, testimony search, canonical source navigation, read-only Structure, governed Structure review, testimony timeline candidates, immutable timeline views, and the first read-only Testimony Reconstruction slice are implemented.
+Icarus Casework has a working, local, source-grounded evidence-navigation spine. Phase 0/Foundation, the Trial Navigation Index, Court Record, testimony search, canonical source navigation, read-only Structure, governed Structure review, the governed Reconcile graph, testimony timeline candidates, immutable timeline views, and the first read-only Testimony Reconstruction slice are implemented.
 
-The governed middle layer between extraction and downstream analysis now exists. The next requirement is the interactive graph and Reconcile workspace over reviewed candidates. Editable reconstruction, Actor Knowledge, operational Evidence Gaps, Outputs, and hosted release work remain after that boundary.
+The governed middle layer between extraction and downstream analysis now includes both Structure Review and Reconcile. The next requirement is editable Reconstruction with governed draft/version/diff behavior. Actor Knowledge, operational Evidence Gaps, Outputs, and hosted release work remain after that boundary.
 
 ## Capability status
 
@@ -20,7 +22,7 @@ The governed middle layer between extraction and downstream analysis now exists.
 | Search to canonical source | Complete locally | Search state and `source_segments.id` are URL-backed and survive reload and browser history. |
 | Read-only Structure workspace | Complete for browsing | Knowledge items, claims, event candidates, temporal assertions, entity mentions, canonical entities, relationships, and flags are filterable and source-linked. |
 | Structure review workflow | Complete locally | Owners/reviewers can accept, amend, reject, or defer seven candidate types beside complete source lineage; decisions are atomic, immutable, concurrency-safe, and case-ledger audited. Researchers/viewers remain read-only. |
-| Interactive graph and Reconcile | Not built | Source-backed data and route seams exist, but no graph, clustering, conflict, or derivation-lineage workspace exists. |
+| Interactive graph and Reconcile | Complete locally | Owners/reviewers can cluster accepted/amended source-backed objects, inspect derived lineage, classify nine relationship types, preserve conflicts/unknowns, and save immutable ledger-linked versions. Researchers/viewers are read-only. |
 | Timeline Candidate Compiler v1 | Complete as a reviewed acceptance slice | Day 6 Maureen Hartnett acceptance produced 12 event candidates and 12 temporal assertions with zero canonical-event or SAME promotion. |
 | Immutable timeline views | Complete locally | Saved case-scoped snapshots can be compared four at a time. |
 | Testimony Reconstruction v1 | Complete as a read-only acceptance slice | Day 3 first-responder testimony is compiled into source-linked proposed nodes, lanes, constraints, tensions, and immutable comparison versions. |
@@ -32,12 +34,13 @@ The governed middle layer between extraction and downstream analysis now exists.
 
 ## Canonical corpus and acceptance evidence
 
-- Canonical testimony corpus: 15 published proceeding rows representing 14 distinct titles; 29,347 proceeding-linked source segments plus 410 legacy/unlinked segments, for 29,757 total locally preserved segments. Day 6 currently exists under two proceeding identities and remains an explicit reconciliation item.
+- Canonical testimony corpus: 15 published proceeding rows representing 14 distinct titles and 29,347 proceeding-linked source segments. Day 6 currently exists under two proceeding identities and remains an explicit reconciliation item. A clean migration replay confirmed that the previously reported 410 unlinked legacy rows were local database-only state not represented by migrations, seed, or a committed restore fixture; they are absent after the 2026-08-23 replay and are not counted as canonical corpus.
 - Day 6 Timeline Candidate Compiler acceptance: 488-segment Maureen Hartnett witness block; 11 reviewed testimony units, 12 event candidates, 12 temporal assertions, 19 unresolved entity mentions, zero canonical events, and zero SAME resolutions.
 - Day 3 Reconstruction v1: 1,873 source segments; six witness lanes; 25 reviewed assertions; 10 proposed reconstruction nodes across five incident lanes; nine ordering/overlap constraints; four unresolved tensions; zero canonical events; zero SAME resolutions; zero testimony timestamps used as event time.
 - Reconstruction versions are immutable, case-scoped, source-linked, and comparable four at a time.
 - Structure Review v1 browser acceptance: one four-source Day 6 event amendment recorded as immutable version 1 and ledger order 233; the next pending event remained selected under the same filters; the exact Court Record jump and browser Back path passed; viewer mutation controls remained unavailable.
 - Trial Navigation Index acceptance: 18 days, 14 canonical proceeding links, four editorial-only days, 36 witness entries, and 54 topic entries. “Apple Watch” located Day 14 and its canonical link opened the matching Court Record proceeding. Day 1’s date disagreement remains visibly preserved; Day 18’s corrected current state is immutable version 3.
+- Reconcile v1 acceptance: one reviewed Day 3 responder-timing group with four reviewed nodes, two governed edges, three distinct exact source segments, one immutable version, and idempotent replay. Browser graph, history, action replay, and exact Court Record navigation passed; canonical events, entities/SAME resolutions, and source mutations remained zero.
 
 ## Epistemic boundary
 
@@ -52,9 +55,9 @@ The governed middle layer between extraction and downstream analysis now exists.
 
 - ESLint: passed.
 - TypeScript: passed.
-- Vitest: 25 files and 106 tests passed.
+- Vitest: 26 files and 110 tests passed.
 - Next.js 16.3 production build: passed.
-- Local Supabase migration chain: 17 migrations applied through `20260822214141_trial_navigation_index_v1.sql`; the complete chain passes automated zero-state replay, and the 29,757-segment local corpus remains preserved.
+- Local Supabase migration chain: 18 migrations applied through `20260822225846_governed_reconciliation_groups_v1.sql`; the complete chain passes automated zero-state replay, and all 29,347 reproducible proceeding-linked source segments were republished.
 - Supabase database advisors: no issues.
 - Database lint: no schema errors or warnings. The legacy `review_extraction_candidate` UUID-array initialization is corrected without changing its review contract.
 - Direct authenticated writes to all seven Structure Review targets are denied. The older claim-to-event promotion behavior remains available only through its separate atomic `review_and_promote_claim` RPC and is not part of Structure Review.
@@ -64,7 +67,8 @@ The governed middle layer between extraction and downstream analysis now exists.
 - Reconstruction v1 remains included in `main` through checkpoint `242a97d`.
 - Structure Review v1 is merged into local `main` with its migration, loader, route contract, UI, database tests, browser acceptance, and operational documentation.
 - Trial Navigation Index v1 is merged into local `main` with governed persistence, search, Foundation and Court Record integration, immutable revision history, Day 1–18 acceptance data, browser acceptance, tests, and operating documentation.
+- Reconcile v1 is complete on `codex/reconcile-v1` with governed graph persistence, source-derived context, reviewer relationship classification, immutable history, Day 3 acceptance data, browser acceptance, tests, and operating documentation; merge/push is pending the final verification gate.
 
 ## Next delivery boundary
 
-The next build slice is the interactive graph and Reconcile workspace over reviewed candidates: source-backed graph traversal, clustering, conflicts, derivation lineage, and governed reconciliation without silently promoting events or resolving identity. Reconstruction editing remains the following slice.
+The next build slice is the Reconstruction editor: source-backed draft regrouping and ordering, cycle detection, reviewed tension decisions, change notes, immutable v2 publication, and version diffs. It must consume reviewed Structure/Reconcile inputs without silently promoting events, resolving identity, anchoring unknown time, or rewriting prior snapshots.

@@ -2,7 +2,7 @@
 
 Status: canonical infrastructure and operations guide
 
-Last verified: 2026-08-22
+Last verified: 2026-08-23
 
 Local project ID: `IcarusCasework`
 
@@ -324,14 +324,15 @@ The current configuration intentionally targets PostgreSQL 17. Do not change the
 Verified locally on 2026-08-22:
 
 - Docker-backed Supabase database, API, Auth, Storage, Studio, and Mailpit are operational.
-- All 17 versioned migrations through `20260822214141_trial_navigation_index_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
+- All 18 versioned migrations through `20260822225846_governed_reconciliation_groups_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
 - Local database advisors report no security or performance issues.
 - Database lint and advisors report no issues. The legacy `review_extraction_candidate` UUID-array warning is fixed in the Structure Review migration without changing that RPC's contract.
-- ESLint, TypeScript, 106 tests, and the Next.js production build pass.
+- ESLint, TypeScript, 110 tests, and the Next.js production build pass.
 - Candidate-only reconstruction snapshots are case-scoped, immutable, RLS-readable, and saved atomically through `save_reconstruction_version`; the function rejects snapshots that claim canonical event creation, SAME resolution, courtroom-timestamp substitution, or collapsed tensions.
 - Structure review versions are append-only and case-scoped. The public invoker RPC delegates to a fixed-search-path private mutation core that authorizes owner/reviewer membership, locks the target, enforces type-specific patch allowlists and expected versions, captures source lineage server-side, and appends the target change, immutable version, and case-ledger event atomically.
 - Knowledge-mapping claims are select-only to authenticated clients. The separately governed legacy claim-to-event action is preserved through the atomic `review_and_promote_claim` RPC; Structure Review never calls it.
 - Trial-index days are case-scoped and permanently navigation-only. Direct writes to `trial_index_days` and `trial_index_day_versions` are denied; owner/reviewer changes pass through `upsert_trial_index_day`, which validates linked case objects and atomically appends an immutable version and audit event. Normal fixture-import reruns preserve existing index days unless one day is explicitly selected for update.
+- Reconciliation groups are case-scoped and permanently analytical-only. Direct writes to current groups and immutable versions are denied; `save_reconciliation_group` re-authorizes owner/reviewer membership, captures reviewed status and exact source IDs server-side, validates governed edges, enforces expected versions, and atomically appends the group version and case-ledger event. Identical replay creates no duplicate version or ledger entry.
 
 Hosted deployment remains blocked until:
 

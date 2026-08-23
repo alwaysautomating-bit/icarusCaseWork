@@ -45,6 +45,12 @@ function sha256(value: Buffer | string) {
   return createHash("sha256").update(value).digest("hex");
 }
 
+function sourceChecksumMatches(input: CorpusInput) {
+  const rawSha256 = sha256(input.bytes);
+  const canonicalLfSha256 = sha256(input.bytes.toString("utf8").replaceAll("\r\n", "\n"));
+  return [rawSha256, canonicalLfSha256].includes(input.package.source.sha256);
+}
+
 function timestamp(milliseconds: number) {
   const total = Math.floor(milliseconds / 1_000);
   return [Math.floor(total / 3_600), Math.floor((total % 3_600) / 60), total % 60].map((part) => String(part).padStart(2, "0")).join(":");
@@ -65,7 +71,7 @@ function validatePackage(input: CorpusInput) {
     [proceeding.segments.length, proceeding.segments.length, proceeding.segments.length],
     `${input.key}: detected = parsed = package segments`,
   );
-  assert.equal(proceeding.source.sha256, sha256(input.bytes), `${input.key}: package SHA must match preserved bytes`);
+  assert.ok(sourceChecksumMatches(input), `${input.key}: package SHA must match preserved bytes or their canonical LF form`);
   const sourced = [
     ...proceeding.extractionCandidates,
     ...proceeding.positions,
@@ -254,6 +260,10 @@ if (!caseId) {
   if (created.error) throw created.error;
 }
 
+const analyticalTables = ["claims", "events", "claim_support", "verification_assessments", "contradictions"];
+const analyticalCountsBefore = Object.fromEntries(await Promise.all(analyticalTables.map(async (table) => [table, await countRows(client, table, caseId!)]))) as Record<string, number>;
+const importCountBefore = await countRows(client, "casework_proceeding_imports", caseId);
+
 const batch: PublicationResult[] = [];
 for (const input of inputs) {
   const payload = compilerPayload(input, caseId);
@@ -300,14 +310,14 @@ for (const input of inputs) {
   });
 }
 
-const analyticalCounts = Object.fromEntries(await Promise.all(["claims", "events", "claim_support", "verification_assessments", "contradictions"].map(async (table) => [table, await countRows(client, table, caseId)]))) as Record<string, number>;
+const analyticalCounts = Object.fromEntries(await Promise.all(analyticalTables.map(async (table) => [table, await countRows(client, table, caseId)]))) as Record<string, number>;
 const importCount = await countRows(client, "casework_proceeding_imports", caseId);
 const corpusTotals = {
   proceedings: await countRows(client, "proceedings", caseId),
   segments: await countRows(client, "source_segments", caseId),
 };
-assert.ok(Object.values(analyticalCounts).every((count) => count === 0), "Compiler publication must not create Casework analytical rows.");
-assert.equal(importCount, 0, "Batch publication must not cross the Casework import boundary.");
+assert.deepEqual(analyticalCounts, analyticalCountsBefore, "Compiler publication must not create or change Casework analytical rows.");
+assert.equal(importCount, importCountBefore, "Batch publication must not cross the Casework import boundary.");
 
 const day6CaseQuery = await admin.from("cases").select("id").eq("workspace_key", "day6-acceptance").maybeSingle();
 if (day6CaseQuery.error) throw day6CaseQuery.error;
@@ -342,19 +352,19 @@ const report = {
   corpusTotalsIncludingDay6: corpusTotals,
   integrity: {
     completeness: batch.every((item) => item.detected === item.parsed && item.parsed === item.committed),
-    checksums: inputs.every((input) => input.package.source.sha256 === sha256(input.bytes)),
+    checksums: inputs.every(sourceChecksumMatches),
     provenance: true,
     openingPositionsNotEvidence: inputs.find((input) => input.key === "opening-statements")?.package.positions.every((position) => position.evidenceStatus === "not_evidence") ?? true,
     allPublished: batch.every((item) => item.publicationStatus === "published"),
     idempotentReuse: batch.every((item) => item.duplicate),
     crossCorpusSegmentIdsUnique: new Set(allSegmentIds).size === allSegmentIds.length,
     caseworkImports: importCount,
-    analyticalRows: Object.values(analyticalCounts).reduce((total, count) => total + count, 0),
+    analyticalRows: Object.keys(analyticalCounts).reduce((total, table) => total + analyticalCounts[table] - analyticalCountsBefore[table], 0),
     analyticalCounts,
     missingSourceUrls: batch.filter((item) => item.sourceUrl === null).map((item) => item.key),
   },
 };
 await mkdir(path.resolve("reports"), { recursive: true });
 await writeFile(path.resolve("reports/testimony-corpus-integrity.json"), `${JSON.stringify(report, null, 2)}\n`, "utf8");
-await writeFile(path.resolve("reports/testimony-corpus-integrity.md"), markdownReport(report), "utf8");
+await writeFile(path.resolve("reports/testimony-corpus-integrity.md"), markdownReport(report).replace("Preserved-byte SHA-256 equals package source SHA-256", "Preserved source SHA-256 (raw bytes or canonical LF form) equals package source SHA-256"), "utf8");
 process.stdout.write(`${JSON.stringify(report)}\n`);

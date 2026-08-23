@@ -25,7 +25,7 @@ describe("Supabase deployment migration", () => {
     expect(tables.rows.map((row) => row.table_name)).toContain("saved_research_views");
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["evidence_intakes", "sources", "proceedings", "proceeding_speakers", "qa_exchanges", "extraction_candidates", "extraction_review_versions", "proceeding_positions", "procedural_actions", "proceeding_exhibits", "proceeding_stipulations", "resolution_items", "proceeding_package_versions", "casework_proceeding_imports"]));
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["knowledge_extraction_runs", "case_ledger", "witness_blocks", "testimony_units", "knowledge_items", "knowledge_item_versions", "claim_source_segments", "entity_mentions", "event_candidates", "temporal_bands", "temporal_assertions", "knowledge_relationships", "knowledge_flags", "provenance_activities", "provenance_relations"]));
-    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["saved_timeline_views", "saved_reconstruction_versions", "structure_review_versions", "trial_index_days", "trial_index_day_versions"]));
+    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["saved_timeline_views", "saved_reconstruction_versions", "structure_review_versions", "trial_index_days", "trial_index_day_versions", "reconciliation_groups", "reconciliation_group_versions"]));
     const functions = await db.query<{ routine_name: string }>("select routine_name from information_schema.routines where routine_schema='public'");
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_url_intake");
     expect(functions.rows.map((row) => row.routine_name)).toEqual(expect.arrayContaining(["commit_testimony_compiler_run", "review_extraction_candidate", "publish_proceeding_package", "import_proceeding_package_to_casework"]));
@@ -133,5 +133,20 @@ describe("Supabase deployment migration", () => {
     expect(migration).toContain("private.can_review_case(p_case_id)");
     expect(migration).toContain("TRIAL_INDEX_LINK_UNAVAILABLE");
     expect(migration).not.toMatch(/insert\s+into\s+public\.(claims|events|saved_reconstruction_versions)/i);
+  });
+
+  it("stores governed reconciliation graphs as immutable analytical snapshots", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260822225846_governed_reconciliation_groups_v1.sql", import.meta.url), "utf8");
+    expect(migration).toContain("create table public.reconciliation_groups");
+    expect(migration).toContain("create table public.reconciliation_group_versions");
+    expect(migration).toContain("analytical_only boolean not null default true check(analytical_only)");
+    expect(migration).toContain("with (security_invoker=true)");
+    expect(migration).toContain("private.can_review_case(p_case_id)");
+    expect(migration).toContain("RECONCILIATION_STALE_VERSION");
+    expect(migration).toContain("'canonical_events_created',0");
+    expect(migration).toContain("'same_resolutions_created',0");
+    expect(migration).toContain("revoke all on function public.save_reconciliation_group(uuid,uuid,integer,jsonb) from public,anon");
+    expect(migration).toContain("grant execute on function public.save_reconciliation_group(uuid,uuid,integer,jsonb) to authenticated");
+    expect(migration).not.toMatch(/insert\s+into\s+public\.(events|entities|entity_aliases|saved_reconstruction_versions)/i);
   });
 });

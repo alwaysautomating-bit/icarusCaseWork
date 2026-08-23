@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "reconciliation-group-acceptance/1.0",
+  "generatedAt": "2026-08-22T23:32:49.242Z",
+  "caseId": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "groupId": "a49e745f-d0cd-4f2a-b487-880d3c5cbe89",
+  "groupName": "Day 3 responder timing — governed reconciliation",
+  "currentVersion": 1,
+  "status": "reviewed",
+  "reviewedMembers": 4,
+  "governedEdges": 2,
+  "exactSourceSegments": 3,
+  "immutableVersions": 1,
+  "idempotentReplay": true,
+  "boundaries": {
+    "canonicalEvents": 0,
+    "entities": 0,
+    "savedReconstructions": 1,
+    "sameResolutionsCreated": 0,
+    "sourceObjectsMutated": 0
+  },
+  "interpretation": "This group is a reviewer classification over accepted/amended, source-backed structure objects. It is not evidence, a canonical event, an entity resolution, or a finding."
+}

@@ -115,6 +115,13 @@ async function review(db: PGlite, type: string, id: string, action: string, patc
   );
 }
 
+async function saveReconciliation(db: PGlite, groupId: string | null, expectedVersion: number, payload: object) {
+  return db.query<{ result: { group_id: string; version: number; duplicate: boolean; analytical_only: boolean } }>(
+    "select public.save_reconciliation_group($1::uuid,$2::uuid,$3::integer,$4::jsonb) result",
+    [caseId, groupId, expectedVersion, JSON.stringify(payload)],
+  );
+}
+
 describe("governed structure review persistence", () => {
   it("enforces roles, immutable versions, allowlists, source capture, concurrency, and analytical boundaries", async () => {
     const db = await migratedDatabase();
@@ -175,6 +182,41 @@ describe("governed structure review persistence", () => {
     await expect(db.query("insert into public.structure_review_versions(case_id,target_type,target_id,version,action,previous_status,resulting_status,before_state,after_state,source_segment_ids,reviewed_by_user_id,ledger_logical_order) values($1,'event',$2,99,'accept','pending','accepted','{}','{}','{}',$3,999)", [caseId, targets.event, ownerId])).rejects.toThrow(/permission denied/);
     await expect(db.query("update public.event_candidates set neutral_description='Direct write' where id=$1", [targets.event])).rejects.toThrow(/permission denied|row-level security/);
     await expect(db.query("update public.claims set normalized_assertion='Direct write' where id=$1", [targets.claim])).rejects.toThrow(/permission denied|row-level security/);
+
+    const reconciliationPayload = {
+      name: "Reported temperature relationship",
+      description: "Keeps the reviewed event candidate linked to its reviewed testimony unit without promoting either object.",
+      status: "reviewed",
+      members: [
+        { node_type: "knowledge", node_id: targets.knowledge, role: "supporting" },
+        { node_type: "event", node_id: targets.event, role: "anchor" },
+      ],
+      edges: [{ from_type: "knowledge", from_id: targets.knowledge, relation_type: "supports", to_type: "event", to_id: targets.event, rationale: "Both reviewed objects preserve the same exact source-backed testimony." }],
+      change_note: "Initial governed relationship.",
+    };
+    await asActor(db, researcherId);
+    await expect(saveReconciliation(db, null, 0, reconciliationPayload)).rejects.toThrow(/RECONCILIATION_NOT_AUTHORIZED/);
+    await asActor(db, reviewerId);
+    const createdGroup = await saveReconciliation(db, null, 0, reconciliationPayload);
+    expect(createdGroup.rows[0].result).toMatchObject({ version: 1, duplicate: false, analytical_only: true });
+    const reconciliationGroupId = createdGroup.rows[0].result.group_id;
+    const firstSnapshot = (await db.query<{ snapshot: { members: Array<{ source_segment_ids: string[] }>; boundaries: Record<string, number> } }>("select snapshot from public.reconciliation_group_versions where reconciliation_group_id=$1 and version=1", [reconciliationGroupId])).rows[0].snapshot;
+    expect(firstSnapshot.members).toHaveLength(2);
+    expect(firstSnapshot.members.every((member) => member.source_segment_ids.length > 0)).toBe(true);
+    expect(firstSnapshot.boundaries).toEqual({ canonical_events_created: 0, same_resolutions_created: 0, entity_resolutions_created: 0, source_objects_mutated: 0 });
+    const duplicateGroup = await saveReconciliation(db, reconciliationGroupId, 1, reconciliationPayload);
+    expect(duplicateGroup.rows[0].result).toMatchObject({ version: 1, duplicate: true });
+    const revisedPayload = { ...reconciliationPayload, status: "deferred", change_note: "Deferred while the relative measurement time remains unresolved." };
+    const revisedGroup = await saveReconciliation(db, reconciliationGroupId, 1, revisedPayload);
+    expect(revisedGroup.rows[0].result).toMatchObject({ version: 2, duplicate: false });
+    await expect(saveReconciliation(db, reconciliationGroupId, 1, { ...revisedPayload, description: "Stale update." })).rejects.toThrow(/RECONCILIATION_STALE_VERSION/);
+    expect((await db.query<{ count: number }>("select count(*)::int count from public.reconciliation_group_versions where reconciliation_group_id=$1", [reconciliationGroupId])).rows[0].count).toBe(2);
+    await expect(db.query("insert into public.reconciliation_group_versions(case_id,reconciliation_group_id,version,snapshot,changed_by_user_id,ledger_logical_order) values($1,$2,99,'{}',$3,999)", [caseId, reconciliationGroupId, reviewerId])).rejects.toThrow(/permission denied/);
+    await asActor(db, outsiderId);
+    expect((await db.query<{ count: number }>("select count(*)::int count from public.reconciliation_groups")).rows[0].count).toBe(0);
+    await asActor(db, ownerId);
+    const reconciliationBoundaries = await db.query<{ events: number; entities: number; reconstructions: number }>("select (select count(*)::int from public.events) events,(select count(*)::int from public.entities) entities,(select count(*)::int from public.saved_reconstruction_versions where case_id=$1) reconstructions", [caseId]);
+    expect(reconciliationBoundaries.rows[0]).toEqual({ events: 0, entities: 0, reconstructions: 1 });
 
     const legacyClaimId = "f0000000-0000-4000-8000-000000000001";
     await db.exec("reset role");

@@ -1,10 +1,10 @@
 {
   "schemaVersion": "testimony-knowledge-acceptance/1.0",
-  "generatedAt": "2026-08-18T09:28:19.594Z",
+  "generatedAt": "2026-08-22T23:31:34.260Z",
   "acceptanceCorpus": "MA v. Lindsay Clancy Day 6",
-  "caseId": "5e37c3a1-7b8d-4661-9d89-e3dae6bbd9c5",
-  "proceedingId": "2d249535-5449-4e93-87b2-7b2f201a1a6b",
-  "extractionRunId": "6ed12eed-ad88-58c0-aa94-bf3614c2d31d",
+  "caseId": "4bb69f20-dc18-4bef-a88a-cc7041cfc799",
+  "proceedingId": "b8f3a686-3658-4c0c-b4a9-3f83c30743f1",
+  "extractionRunId": "85148d9b-2969-50fd-a142-4ca4c98a39a6",
   "source": {
     "sha256": "48cca058a0bc10ec900010f0271d2bd6ede40c88b7db57e2790ee07aa2de55d2",
     "detected": 2197,

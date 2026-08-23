@@ -1,6 +1,6 @@
 # Day 3 first-responder testimony reconstruction v1
 
-Generated: 2026-08-22T11:27:32.965Z
+Generated: 2026-08-22T23:32:23.723Z
 
 - Canonical source: **MA v. Lindsay Clancy Day 3**, 1,873 committed segments
 - Witness lanes: **6** (Officer Stephen Hall, Officer Brian Josephine, Loring Nudd, Patrick Dwyer, PJ Hussey, Keith Nette)
@@ -10,7 +10,7 @@ Generated: 2026-08-22T11:27:32.965Z
 - Unresolved tensions preserved: **4**
 - Canonical events created: **0**
 - SAME resolutions created: **0**
-- Immutable reconstruction version: **1** (94cb6bc84dbc202d78c24098f866d7738aef58723c255aaf7bba18cace87d422)
+- Immutable reconstruction version: **1** (164856f3d819da7cc64ce40bdaed8fc736e1a40051f85f69fb13dfa5d2be80e7)
 - Idempotent candidate replay: **PASS**
 
 ## Interpretation boundary

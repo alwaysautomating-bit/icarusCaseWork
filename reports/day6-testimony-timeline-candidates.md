@@ -1,6 +1,6 @@
 # Day 6 Testimony → Timeline Candidate Compiler v1 acceptance
 
-Generated: 2026-08-22T09:38:22.118Z
+Generated: 2026-08-22T23:31:45.246Z
 
 - Acceptance witness: **Maureen Hartnett**, complete **488-segment** block
 - Proceeding completeness: **2197 detected = 2197 parsed = 2197 committed**
