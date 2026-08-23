@@ -112,6 +112,10 @@ export function reconstructionHref(caseId: string, compareVersionIds: string[] =
   return `/cases/${encodeURIComponent(caseId)}/reconstruction${suffix ? `?${suffix}` : ""}`;
 }
 
+export function careTrajectoryHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/trajectory`;
+}
+
 export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {
   return structureObjectTypes.includes(value as StructureObjectType) ? value as StructureObjectType : "all";
 }

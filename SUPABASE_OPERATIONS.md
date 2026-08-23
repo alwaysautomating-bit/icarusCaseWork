@@ -68,7 +68,7 @@ The project pins Supabase CLI `2.113.0` in `package.json` and PostgreSQL major v
 - Windows with WSL 2 available.
 - Docker Desktop running with Linux containers.
 - At least 7 GB of memory available to the complete Supabase stack.
-- Node.js 20 or later.
+- Node.js 22 or later.
 - pnpm `11.19.0` through the repository's `packageManager` declaration.
 - Dependencies installed with `pnpm install`.
 
@@ -103,7 +103,7 @@ The CLI is a pinned project dependency. Run it as `pnpm exec supabase ...`; do n
    pnpm exec supabase db reset --local
    ```
 
-   This destroys and recreates the local database. Do not run it when unexported local data must be preserved.
+   This destroys and recreates the local database. Before running it, complete the mandatory go/no-go gate in [SUPABASE_DATA_RECOVERY_SOP.md](SUPABASE_DATA_RECOVERY_SOP.md). Do not run it when data is unclassified, unexported, or lacks verified restoration coverage.
 
 6. Start the application:
 
@@ -136,7 +136,7 @@ All environments use controlled, timestamped migrations. Never use a production 
    ```
 
 2. Write and review the SQL. Review schema ownership, locks, RLS, grants, function execution privileges, view security, data backfills, idempotency where required, and rollback implications.
-3. Rebuild the local database from zero:
+3. Complete the preflight, backup, restore-verification, and go/no-go requirements in [SUPABASE_DATA_RECOVERY_SOP.md](SUPABASE_DATA_RECOVERY_SOP.md), then rebuild the local database from zero:
 
    ```powershell
    pnpm exec supabase db reset --local
@@ -245,7 +245,9 @@ The automated migration, persistence, and RLS tests are part of the security bou
 
 The migration files are the canonical schema backup. Docker volumes are convenient local state, not a durable backup strategy.
 
-Before a destructive local reset when data matters, export it with a reviewed destination outside Git. Do not commit dumps containing case data or credentials. For hosted environments, configure platform backups and rehearse restore before deployment approval.
+The mandatory classification, preflight inventory, backup, restore rehearsal, go/no-go decision, validation, and incident procedure is [SUPABASE_DATA_RECOVERY_SOP.md](SUPABASE_DATA_RECOVERY_SOP.md). It applies before every reset, `stop --no-backup`, Docker-volume deletion, destructive upgrade, or material overwrite. A passing migration replay does not prove data restoration coverage.
+
+Before a destructive local reset, export all mutable data with a reviewed destination outside Git and prove that the export restores successfully. Do not commit dumps containing case data or credentials. For hosted environments, configure platform backups and rehearse restore before deployment approval.
 
 The repository ignores `.data/`, so a local data-only export can be placed there deliberately:
 
@@ -254,7 +256,7 @@ New-Item -ItemType Directory -Force .data\backups
 pnpm exec supabase db dump --local --data-only --use-copy --file .data\backups\supabase-local-data.sql
 ```
 
-Confirm the dump exists and is protected before resetting. Restoring a data-only dump can conflict with seed rows, foreign-key ordering, or newer migrations, so rehearse and review the restore against a disposable local database instead of treating the dump as automatically restorable.
+Confirm the dump exists, is protected, has a recorded checksum and inventory manifest, and restores successfully before resetting. Restoring a data-only dump can conflict with seed rows, foreign-key ordering, or newer migrations, so rehearse and review the restore against a disposable database instead of treating the dump as automatically restorable.
 
 Recovery order for a disposable local environment:
 
@@ -262,7 +264,7 @@ Recovery order for a disposable local environment:
 2. Stop only this project without deleting volumes.
 3. Restart Docker Desktop if the engine is unhealthy.
 4. Start Supabase again.
-5. If the database remains disposable and broken, run `db reset --local` to rebuild it from migrations.
+5. If the database remains disposable and broken, complete the recovery SOP gate and run `db reset --local` to rebuild it from migrations.
 6. Run migration history, lint, advisors, tests, and application smoke checks.
 
 ## Troubleshooting
@@ -349,6 +351,7 @@ Hosted deployment remains blocked until:
 - [Local development workflow](https://supabase.com/docs/guides/local-development/cli-workflows)
 - [CLI configuration](https://supabase.com/docs/guides/local-development/cli/config)
 - [Database migrations](https://supabase.com/docs/guides/deployment/database-migrations)
+- [Database seeding](https://supabase.com/docs/guides/local-development/seeding-your-database)
 - [Securing the Data API](https://supabase.com/docs/guides/api/securing-your-api)
 - [Row Level Security](https://supabase.com/docs/guides/database/postgres/row-level-security)
 - [Supabase changelog](https://supabase.com/changelog?types=breaking-change)

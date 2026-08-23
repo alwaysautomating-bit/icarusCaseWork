@@ -27,7 +27,7 @@ The application supports public records and authorized research material. It doe
 
 The legacy PGlite adapter remains as an isolated reference implementation; the application runtime uses Supabase.
 
-Docker Desktop is the container engine for the complete local Supabase stack. The pinned Supabase CLI coordinates Postgres, Auth, the Data API, Storage, Realtime, Studio, Mailpit, and supporting services from `supabase/config.toml`. See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for the canonical architecture, startup, migration, security, recovery, and deployment procedures.
+Docker Desktop is the container engine for the complete local Supabase stack. The pinned Supabase CLI coordinates Postgres, Auth, the Data API, Storage, Realtime, Studio, Mailpit, and supporting services from `supabase/config.toml`. See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for the canonical architecture, startup, migration, security, recovery, and deployment procedures. Before any reset or Docker-volume deletion, complete [SUPABASE_DATA_RECOVERY_SOP.md](SUPABASE_DATA_RECOVERY_SOP.md).
 
 ## Run locally
 
@@ -72,7 +72,7 @@ The command is idempotent for the timeline candidate run and saves the reconstru
 pnpm verify
 ```
 
-The Supabase migration chain is exercised from zero by the test suite. Full local replay requires Docker Desktop and the local Supabase stack:
+The Supabase migration chain is exercised from zero by the test suite. Full local replay requires Docker Desktop and the local Supabase stack. Because replay destroys local data, complete the mandatory recovery SOP before running the reset:
 
 ```powershell
 pnpm exec supabase db reset --local
