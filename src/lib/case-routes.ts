@@ -116,6 +116,10 @@ export function careTrajectoryHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/trajectory`;
 }
 
+export function referenceReportsHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/reports`;
+}
+
 export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {
   return structureObjectTypes.includes(value as StructureObjectType) ? value as StructureObjectType : "all";
 }

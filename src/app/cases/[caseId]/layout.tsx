@@ -5,7 +5,7 @@ import { signOut } from "@/app/login/actions";
 import { CaseSwitcher } from "@/app/cases/_components/case-switcher";
 import { requireCaseActor } from "@/lib/authority";
 import { canReviewStructure, getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
-import { careTrajectoryHref, caseSetupHref, courtRecordHref, reconcileHref, reconstructionHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
+import { careTrajectoryHref, caseSetupHref, courtRecordHref, reconcileHref, reconstructionHref, referenceReportsHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
@@ -25,7 +25,7 @@ export default async function CaseLayout({ children, params }: { children: React
       <Link href={caseSetupHref(currentCase.id)}>Foundation</Link>
       <Link href={trialIndexHref(currentCase.id)}>Trial Index</Link>
       <Link href={courtRecordHref(currentCase.id)}>Court Record</Link>
-      <Link href={structureHref(currentCase.id)}>Structure</Link>{canReviewStructure(currentCase.membershipRole) ? <Link href={structureReviewHref(currentCase.id, { reviewStatus: "pending" })}>Review</Link> : null}<Link href={reconcileHref(currentCase.id)}>Reconcile</Link><Link href={reconstructionHref(currentCase.id)}>Reconstruct</Link><Link href={careTrajectoryHref(currentCase.id)}>Care Trajectory</Link><span aria-disabled="true">Actor Knowledge</span><span aria-disabled="true">Gaps</span>
+      <Link href={structureHref(currentCase.id)}>Structure</Link>{canReviewStructure(currentCase.membershipRole) ? <Link href={structureReviewHref(currentCase.id, { reviewStatus: "pending" })}>Review</Link> : null}<Link href={reconcileHref(currentCase.id)}>Reconcile</Link><Link href={reconstructionHref(currentCase.id)}>Reconstruct</Link><Link href={careTrajectoryHref(currentCase.id)}>Care Trajectory</Link><Link href={referenceReportsHref(currentCase.id)}>Reports</Link><span aria-disabled="true">Actor Knowledge</span><span aria-disabled="true">Gaps</span>
     </nav>
     {children}
   </div>;
