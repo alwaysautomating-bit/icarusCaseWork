@@ -326,7 +326,7 @@ The current configuration intentionally targets PostgreSQL 17. Do not change the
 Verified locally on 2026-08-22:
 
 - Docker-backed Supabase database, API, Auth, Storage, Studio, and Mailpit are operational.
-- All 18 versioned migrations through `20260822225846_governed_reconciliation_groups_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
+- All 19 versioned migrations through `20260824081931_court_packet_document_intelligence_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
 - Local database advisors report no security or performance issues.
 - Database lint and advisors report no issues. The legacy `review_extraction_candidate` UUID-array warning is fixed in the Structure Review migration without changing that RPC's contract.
 - ESLint, TypeScript, 110 tests, and the Next.js production build pass.
@@ -335,6 +335,7 @@ Verified locally on 2026-08-22:
 - Knowledge-mapping claims are select-only to authenticated clients. The separately governed legacy claim-to-event action is preserved through the atomic `review_and_promote_claim` RPC; Structure Review never calls it.
 - Trial-index days are case-scoped and permanently navigation-only. Direct writes to `trial_index_days` and `trial_index_day_versions` are denied; owner/reviewer changes pass through `upsert_trial_index_day`, which validates linked case objects and atomically appends an immutable version and audit event. Normal fixture-import reruns preserve existing index days unless one day is explicitly selected for update.
 - Reconciliation groups are case-scoped and permanently analytical-only. Direct writes to current groups and immutable versions are denied; `save_reconciliation_group` re-authorizes owner/reviewer membership, captures reviewed status and exact source IDs server-side, validates governed edges, enforces expected versions, and atomically appends the group version and case-ledger event. Identical replay creates no duplicate version or ledger entry.
+- Court-packet document intelligence is case-scoped and review-only. `commit_court_packet_parse` atomically preserves the immutable artifact, every page, parser provenance, and deterministic boundary candidates; it rejects analytical payloads and is idempotent on the artifact/configuration identity. Only owner/reviewer calls to `review_court_packet_boundary` can create or amend accepted document boundaries, with immutable review versions and optimistic concurrency.
 
 Hosted deployment remains blocked until:
 
