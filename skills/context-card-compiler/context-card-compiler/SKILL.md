@@ -1,6 +1,6 @@
 ---
 name: context-card-compiler
-description: Compile a canonical markdown context object into synchronized catalog artifacts for humans, UI, and agents. Use when creating or refreshing `context.md`, `card.json`, `agent-pack.json`, and `relationships.json` in a context catalog, especially for project briefs, infrastructure objects, operating systems, or agent-readable catalogs.
+description: Compile a canonical markdown context object into synchronized artifacts for humans, UI, and agents. Use for ordinary context objects and for artifact-only Day Intelligence with the legal_case_analysis profile.
 ---
 
 # Context Card Compiler
@@ -12,7 +12,12 @@ Turn a full markdown context file into a reusable catalog object with four artif
 3. `agent-pack.json`
 4. `relationships.json`
 
-The markdown file remains the source of truth.
+For ordinary context objects, the markdown file remains the source of truth. For `legal_case_analysis`, the evidentiary source remains `source_artifact + source_segments`; `context.md` is canonical only for that version of the generated analysis.
+
+## Profiles
+
+- `default`: preserve the existing workflow.
+- `legal_case_analysis`: compile a `day-intelligence/1.0` analytical context without reinterpreting its legal or provenance fields.
 
 ## Workflow
 
@@ -21,6 +26,16 @@ The markdown file remains the source of truth.
 3. Keep the UI card short and readable.
 4. Keep the agent pack explicit and versioned.
 5. Keep relationships declared in V1. Do not infer graph edges.
+
+For `legal_case_analysis`:
+
+1. Require `contract_version: day-intelligence/1.0` and the shared artifact identity/version.
+2. Preserve stable item IDs, exact segment IDs, speaker/examination context, source roles, derivation, epistemic class, extraction confidence, evidentiary assessment, source-linkage state, review state, limitations, and generation provenance exactly.
+3. Generate `card.json` as a concise UI projection.
+4. Generate `agent-pack.json` as the complete machine-readable analytical projection.
+5. Generate only accepted, declared, within-day relationships in `relationships.json`.
+6. Validate that all four files identify the same artifact set and version.
+7. Write corrections as a new versioned artifact directory. Do not create or prescribe database records.
 
 ## Preferred Path
 
@@ -46,6 +61,17 @@ If the compiler supports flags, pass metadata overrides there rather than hand-e
 - Generate declared `relationships.json` edges only.
 - Mark uncertain fields as `unknown`, `draft`, or `needs_review`.
 - Do not invent implementation details that are not present or clearly implied.
+
+Additional `legal_case_analysis` rules:
+
+- Do not repair missing provenance by inference.
+- Do not convert repeated assertions into corroborated assertions.
+- Do not convert analytical inference into source statement.
+- Do not collapse competing assertions.
+- Do not promote accepted analysis into canonical fact, Structure, Evidence, or agent memory.
+- Do not ingest Scratchpad content.
+- Do not create cross-day merges or trusted cross-day relationships.
+- Require governance that disables automatic action, factual promotion, cross-day promotion, and Scratchpad input.
 
 ## Relationship Policy
 
@@ -82,6 +108,8 @@ Example:
 ```bash
 npm run validate:context-catalog
 ```
+
+For `legal_case_analysis`, also validate against `contracts/day-intelligence-1.0.md`. The generated artifacts live under `generated/day-intelligence/day-NN/vN/` and remain a filesystem artifact set, not a database subsystem.
 
 ## Reference
 

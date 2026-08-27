@@ -1,0 +1,424 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-04-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-04",
+  "day_number": 4,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:e42f3ec7f9c737cdbebac60ff0d69f32a1f1d6bc93a355d6dfc8f5e536b07012"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:7008965180a6313668348c369ca15e0a7d4b9c4acc3e9316f7374a97cc0ed0de"
+  },
+  "summary": {
+    "title": "Day 4 Intelligence",
+    "subtitle": "Jury view, scene photographs, and continued responder evidence",
+    "one_liner": "The jury received spatial and visual context for the residence while responder and medical testimony continued.",
+    "purpose": "Preserve what the jury view and scene evidence added without treating visual context as a substitute for exact testimony or admitted exhibits.",
+    "what_changed": "The physical layout and photographed condition of 47 Summer Street became central context for evaluating movement, discovery, and response testimony.",
+    "primary_topics": [
+      "jury view",
+      "scene photographs",
+      "residence layout",
+      "medical response"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day04-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "The jury viewed 47 Summer Street, and police, fire, and medical witnesses continued describing the scene and emergency response while photographs were used in court.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84774a46-73f8-5376-a37b-ac65a343e634",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Mark Anthony Maffeo",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:04:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f83f6c8f-5d82-5655-a5ee-9b3bbf2d6b0b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Mark Tenerowicz",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:42:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "28598280-a9fd-5d11-af24-f2710991a08c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Benjamin Kaufman",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:48:23"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d6dcab93-d5b8-54de-a6f1-786c42b457b7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Melissa Arcadipane",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:53:37"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day04-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 4 strengthens spatial context for earlier responder accounts, but the jury view, photographs, and verbal descriptions are distinct sources with different limits.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84774a46-73f8-5376-a37b-ac65a343e634",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Mark Anthony Maffeo",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:04:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f83f6c8f-5d82-5655-a5ee-9b3bbf2d6b0b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Mark Tenerowicz",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:42:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "28598280-a9fd-5d11-af24-f2710991a08c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Benjamin Kaufman",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:48:23"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d6dcab93-d5b8-54de-a6f1-786c42b457b7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Melissa Arcadipane",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:53:37"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day04-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Residence layout and scene photographs provide orientation; witness testimony supplies actions and observations; admitted-exhibit status determines what visual material is part of the evidentiary record.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84774a46-73f8-5376-a37b-ac65a343e634",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Mark Anthony Maffeo",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:04:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f83f6c8f-5d82-5655-a5ee-9b3bbf2d6b0b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Mark Tenerowicz",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:42:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "28598280-a9fd-5d11-af24-f2710991a08c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Benjamin Kaufman",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:48:23"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d6dcab93-d5b8-54de-a6f1-786c42b457b7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Melissa Arcadipane",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:53:37"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day04-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "A later reconstruction can accidentally fill gaps from photographs or a jury view that the transcript itself does not establish. Exhibit identity and scope must remain explicit.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day04-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which photographs were admitted, what did each depict, and which witness authenticated or interpreted each image?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day04-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Link every spatial proposition to the exact testimony and, where available, the corresponding admitted photograph or jury-view record.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day04-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 5 broadens the case from immediate response to medical care, crime-scene processing, and investigative collection.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "jury view",
+        "scene photographs",
+        "residence layout",
+        "medical response"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day04-coverage",
+        "day04-working-position",
+        "day04-evidence-chain",
+        "day04-boundary-risk",
+        "day04-review-question",
+        "day04-next-action",
+        "day04-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day04-coverage",
+        "day04-working-position",
+        "day04-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

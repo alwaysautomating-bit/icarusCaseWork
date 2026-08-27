@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-08-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-08",
+  "day_number": 8,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:100e9122089d8795a37e527fb7ef5b383199ed7108ca7b566eb2879eeca9dcba"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:23ea75b0a6d01f4195e15874fde1c791fe193abb6b556ae8e0f915de9b01f894"
+  },
+  "summary": {
+    "title": "Day 8 Intelligence",
+    "subtitle": "Friends, relatives, surveillance evidence, and expert-disclosure litigation",
+    "one_liner": "Personal witnesses described Lindsay and the family, a State Police witness addressed ThreeV surveillance, and the court heard disputes over defense experts.",
+    "purpose": "Separate lay observations, business-surveillance timing, and counsel's expert-disclosure arguments into their correct evidentiary and procedural lanes.",
+    "what_changed": "The record gained observations from Amy Bevins, Christopher Clancy, and Kyle Carney, plus Andrew Chiachio's investigative testimony and a substantial procedural dispute about proposed defense experts.",
+    "primary_topics": [
+      "family observations",
+      "friends",
+      "ThreeV surveillance",
+      "expert disclosure",
+      "procedural argument"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day08-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Amy Bevins, Christopher Clancy, and Kyle Carney supplied personal context. State Police witness Andrew Chiachio addressed follow-up investigation including restaurant surveillance; later argument concerned defense expert disclosures.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "ebb0fb6b-8de8-5c09-ab50-706eb58bc99a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Amy Bevins",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:34:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b87798e1-384d-52fd-ac51-911a35aca01e",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christopher Clancy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:50:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "67fe64fd-91ce-508f-a543-55f111305a71",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kyle Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:24"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5f74c19d-a5a0-5a68-a56a-d2a403056ef8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Andrew Chiachio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:52:55"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day08-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 8 supplies both collateral observations and an independently recorded business timestamp, but counsel's descriptions of proposed expert opinions remain advocacy until the experts testify.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "ebb0fb6b-8de8-5c09-ab50-706eb58bc99a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Amy Bevins",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:34:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b87798e1-384d-52fd-ac51-911a35aca01e",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christopher Clancy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:50:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "67fe64fd-91ce-508f-a543-55f111305a71",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kyle Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:24"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5f74c19d-a5a0-5a68-a56a-d2a403056ef8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Andrew Chiachio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:52:55"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day08-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Personal witnesses provide behavioral context; surveillance can test part of the errand timeline; expert-disclosure argument identifies anticipated opinion evidence but does not itself establish those opinions.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "ebb0fb6b-8de8-5c09-ab50-706eb58bc99a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Amy Bevins",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:34:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b87798e1-384d-52fd-ac51-911a35aca01e",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christopher Clancy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:50:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "67fe64fd-91ce-508f-a543-55f111305a71",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kyle Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:24"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5f74c19d-a5a0-5a68-a56a-d2a403056ef8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Andrew Chiachio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:52:55"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day08-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Counsel's detailed proffer of a proposed expert can sound evidentiary. The proffer must remain a party position and should not be attributed to the expert as sworn testimony.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day08-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which proposed expert opinions were ultimately admitted and testified to, and how did the final opinions differ from the Day 8 proffers?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day08-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Link the ThreeV surveillance segment to the Day 2 errand chronology and maintain a separate proffer-versus-testimony comparison for defense experts.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day08-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 9 turns to personal observers and treating psychiatrists, with Dr. Jennifer Tufts beginning extensive treatment testimony.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "family observations",
+        "friends",
+        "ThreeV surveillance",
+        "expert disclosure",
+        "procedural argument"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day08-coverage",
+        "day08-working-position",
+        "day08-evidence-chain",
+        "day08-boundary-risk",
+        "day08-review-question",
+        "day08-next-action",
+        "day08-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day08-coverage",
+        "day08-working-position",
+        "day08-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

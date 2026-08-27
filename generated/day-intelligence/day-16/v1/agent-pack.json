@@ -1,0 +1,390 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-16-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-16",
+  "day_number": 16,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:68452dc944508a3b6567bd19125cf49a117f47e2ff5d108ca1452276f0c97b95"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:af23897db16de2662d5b5a09aba2286c386aa21a7781f74c870fefbaa7c7696b"
+  },
+  "summary": {
+    "title": "Day 16 Intelligence",
+    "subtitle": "Dr. Condie continued; McLean staffing evidence was litigated",
+    "one_liner": "Dr. Condie's psychiatric testimony continued, and the court excluded Emily Thorndike's proposed testimony while allowing relevant McLean records.",
+    "purpose": "Preserve Condie's opinions and the separate evidentiary ruling concerning proposed testimony about McLean staffing and programming.",
+    "what_changed": "The defense continued its psychiatric case through Dr. Condie; Emily Thorndike testified in a voir dire, after which the court denied the motion to call her before the jury but permitted specified records.",
+    "primary_topics": [
+      "Donald Condie",
+      "psychiatric opinion",
+      "Emily Thorndike",
+      "McLean records",
+      "voir dire"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day16-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Dr. Donald Condie continued testifying. Emily Thorndike described her experience with the McLean unit during a voir dire; the court ruled her proposed jury testimony inadmissible while allowing specified staffing and program records.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "8dd17e04-f36f-57c0-af51-29fa8ac2d0f7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Donald Condie",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:00:02"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9f991c78-6a4c-5b00-a267-9fd4d44e0980",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Emily Thorndike",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:11:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b222c2cd-b732-5591-a3b6-d8db97fe63cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Judge William Sullivan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:58"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day16-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 16 materially narrows what may be used from the Thorndike episode: the voir-dire testimony is not jury evidence, while the permitted records retain their own evidentiary status and scope.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "8dd17e04-f36f-57c0-af51-29fa8ac2d0f7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Donald Condie",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:00:02"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9f991c78-6a4c-5b00-a267-9fd4d44e0980",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Emily Thorndike",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:11:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b222c2cd-b732-5591-a3b6-d8db97fe63cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Judge William Sullivan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:58"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day16-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Condie's opinions continued through records and psychiatric analysis; the defense proffered Thorndike to contextualize McLean; voir dire tested foundation; the court chose records rather than her jury testimony.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "8dd17e04-f36f-57c0-af51-29fa8ac2d0f7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Donald Condie",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:00:02"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9f991c78-6a4c-5b00-a267-9fd4d44e0980",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Emily Thorndike",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:11:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "b222c2cd-b732-5591-a3b6-d8db97fe63cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Judge William Sullivan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:58"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day16-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Thorndike's voir-dire statements can be mistaken for admitted trial testimony. The ruling and the jury's absence must travel with every reference to that material.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day16-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which McLean records were actually admitted after the ruling, and what precise staffing or programming propositions do those records support?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day16-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Flag every Thorndike segment as voir-dire context only and link any later McLean proposition to the admitted records rather than to excluded testimony.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day16-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 17 features Sheila Cavanaugh's hospital conversations with Lindsay, including statements about a male voice and the children's safety.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Donald Condie",
+        "psychiatric opinion",
+        "Emily Thorndike",
+        "McLean records",
+        "voir dire"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day16-coverage",
+        "day16-working-position",
+        "day16-evidence-chain",
+        "day16-boundary-risk",
+        "day16-review-question",
+        "day16-next-action",
+        "day16-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day16-coverage",
+        "day16-working-position",
+        "day16-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

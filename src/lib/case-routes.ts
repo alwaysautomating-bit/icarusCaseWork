@@ -4,7 +4,7 @@ type CourtRecordRouteState = {
   proceedingId?: string;
 };
 
-type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved" };
+type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved"; view?: "navigation" | "intelligence" };
 
 export type ReconcileRouteState = {
   groupId?: string;
@@ -89,6 +89,7 @@ export function trialIndexHref(caseId: string, state: TrialIndexRouteState = {})
   if (state.dayNumber && state.dayNumber > 0) params.set("day", String(state.dayNumber));
   if (state.query?.trim()) params.set("q", state.query.trim());
   if (state.notice) params.set("notice", state.notice);
+  if (state.view === "intelligence") params.set("view", state.view);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/trial-index${suffix ? `?${suffix}` : ""}`;
 }

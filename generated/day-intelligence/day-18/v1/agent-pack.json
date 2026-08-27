@@ -1,0 +1,348 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-18-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-18",
+  "day_number": 18,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:18f2d738ed22b71a58d9b1f2f501c87126c2a51da6254a7af8288d37b42e3279"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:056beaafe2f44923415b54139f989afaf9820aee70ba438416137700f6801e8e"
+  },
+  "summary": {
+    "title": "Day 18 Intelligence",
+    "subtitle": "Resnick's defense opinion and Mack's rebuttal",
+    "one_liner": "The defense completed its criminal-responsibility case through Dr. Phillip Resnick, then the Commonwealth began rebuttal through Dr. Avram Mack.",
+    "purpose": "Place the opposing forensic opinions side by side while preserving their separate records, assumptions, methods, and legal conclusions.",
+    "what_changed": "Resnick offered a defense opinion concerning psychosis, a command hallucination, control, and motive; the defense rested; Mack began disputing psychosis and addressing behavioral control.",
+    "primary_topics": [
+      "Phillip Resnick",
+      "Avram Mack",
+      "psychosis",
+      "command hallucination",
+      "criminal responsibility"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day18-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Dr. Phillip Resnick testified for the defense on psychosis, command hallucination, control, and motive. After the defense rested, Dr. Avram Mack began Commonwealth rebuttal.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "df1bfd83-0fe2-55b1-a1d8-5099c550a099",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Phillip Resnick",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:08"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "01c95c9b-afa4-5a62-a515-e2f41351c906",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Avram Mack",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:33:32"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day18-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 18 makes the expert disagreement explicit: the dispute concerns not only diagnosis but the reliability of the reported experience, retained capacities, and the meaning of behavior before and after the deaths.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "df1bfd83-0fe2-55b1-a1d8-5099c550a099",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Phillip Resnick",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:08"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "01c95c9b-afa4-5a62-a515-e2f41351c906",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Avram Mack",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:33:32"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day18-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Records, interviews, collateral accounts, and conduct formed expert premises; each expert interpreted those premises clinically; the opinions were then mapped to the legal tests for criminal responsibility.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "df1bfd83-0fe2-55b1-a1d8-5099c550a099",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Phillip Resnick",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:08"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "01c95c9b-afa4-5a62-a515-e2f41351c906",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Avram Mack",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:33:32"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day18-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Diagnostic disagreement, credibility assessment, and legal-capacity opinion are related but distinct. A summary should not treat one as automatically deciding the others.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day18-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which premises did Resnick and Mack share, which did they weight differently, and which material sources did either expert omit or treat as unreliable?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day18-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Create a premise-by-premise comparison of Resnick and Mack rather than comparing only their ultimate conclusions.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day18-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 19 completes Mack's rebuttal testimony and begins Dr. Kirk Heilbrun's Commonwealth rebuttal opinion.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Phillip Resnick",
+        "Avram Mack",
+        "psychosis",
+        "command hallucination",
+        "criminal responsibility"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day18-coverage",
+        "day18-working-position",
+        "day18-evidence-chain",
+        "day18-boundary-risk",
+        "day18-review-question",
+        "day18-next-action",
+        "day18-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day18-coverage",
+        "day18-working-position",
+        "day18-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "day-intelligence:413d071f-6299-46ae-aa85-46390aca38a6:day-05:v1",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-05-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-05",
+  "day_number": 5,
+  "version": 1,
+  "title": "Day 5 Intelligence",
+  "subtitle": "Medical care, crime-scene processing, and investigative collection",
+  "one_liner": "A long witness day connected hospital evidence concerning Lindsay and the children with crime-scene documentation and police searches.",
+  "purpose": "Organize the medical and investigative streams without combining clinical observations, expert opinions, and police collection into a single factual narrative.",
+  "what_changed": "The prosecution added hospital witnesses, crime-scene personnel, and police witnesses who addressed injuries, care, scene documentation, and evidence collection.",
+  "primary_topics": [
+    "medical care",
+    "injuries",
+    "crime scene",
+    "evidence collection",
+    "hospital records"
+  ],
+  "review_status": "needs_review",
+  "source_linkage_status": "partial",
+  "item_counts": {
+    "insights": 1,
+    "positions_working_conclusions": 1,
+    "evidence_chains": 1,
+    "relationships": 0,
+    "risks_tensions": 1,
+    "open_questions": 1,
+    "actions": 1,
+    "memory_candidates": 0,
+    "handoff": 1
+  },
+  "generated_at": "2026-08-27T02:22:41.099Z",
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md"
+  }
+}

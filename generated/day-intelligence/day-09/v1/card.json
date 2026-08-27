@@ -1,0 +1,40 @@
+{
+  "id": "day-intelligence:413d071f-6299-46ae-aa85-46390aca38a6:day-09:v1",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-09-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-09",
+  "day_number": 9,
+  "version": 1,
+  "title": "Day 9 Intelligence",
+  "subtitle": "Personal observers and treating-psychiatrist testimony",
+  "one_liner": "Childcare and family-context witnesses preceded psychiatric testimony from Alia Goodheart and Jennifer Tufts.",
+  "purpose": "Preserve the transition from lay observations to treating-clinician evidence about symptoms, diagnosis, medication, and treatment decisions.",
+  "what_changed": "The prosecution added Kimberlee Hardy and Sarah Carney's observations, then moved into psychiatric evidence through Alia Goodheart and Dr. Jennifer Tufts.",
+  "primary_topics": [
+    "lay observations",
+    "psychiatric treatment",
+    "diagnosis",
+    "medication",
+    "Jennifer Tufts"
+  ],
+  "review_status": "needs_review",
+  "source_linkage_status": "partial",
+  "item_counts": {
+    "insights": 1,
+    "positions_working_conclusions": 1,
+    "evidence_chains": 1,
+    "relationships": 0,
+    "risks_tensions": 1,
+    "open_questions": 1,
+    "actions": 1,
+    "memory_candidates": 0,
+    "handoff": 1
+  },
+  "generated_at": "2026-08-27T02:22:41.099Z",
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md"
+  }
+}

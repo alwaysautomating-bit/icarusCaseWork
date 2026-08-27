@@ -1,0 +1,683 @@
+opening statements 
+
+Pasted markdown(20260817-044025).md
+File
+what was covered in this days proceedings 
+Called tool
+
+Yes. This was Day 6 — August 5, 2026, and it covered considerably more than the medical testimony. The Commonwealth moved through Lindsay’s hospital treatment, the physical scene at the Clancy home, evidence collection, toxicology, and then into bloodstain analysis.
+
+The day opened with an important procedural development: Lindsay personally agreed to a broad stipulation of facts. Judge Sullivan questioned her under oath about the rights she was giving up and found that she entered the stipulation knowingly, intelligently and voluntarily. Reddington explained the practical reason: the defense was not contesting much of the Commonwealth’s foundational evidence, and the stipulation avoided calling “dozens” of witnesses merely to establish chain of custody for blood, fluids, bands, DNA and similar evidence.
+
+Then the Commonwealth called its witnesses.
+
+1. Dr. Christina Carpio — Lindsay’s initial trauma treatment at South Shore Hospital. Carpio is a general surgeon trained in trauma and critical care who was the on-call surgeon at South Shore on January 24, 2023. Lindsay arrived as a Level 1 trauma after a reported fall of roughly 20 feet with concern for neurologic/spinal injury.
+
+This testimony supplied some of the most significant medical evidence of the day. Lindsay was intubated shortly after arrival. Carpio observed wounds to her neck and wrists, but characterized those particular wounds as superficial and not requiring immediate surgery. Imaging showed no definite acute intracranial injury, while the cervical/thoracic spinal injuries were serious.
+
+And this is the day the 82.1°F temperature entered the trial record through Carpio's testimony. Her documentation identified Lindsay as hypothermic to 82.1°F. Her temperature subsequently rose to 95.2°F. The complex thoracic spinal fractures ultimately prompted consultation with neurosurgery and transfer to Brigham for tertiary-level care.
+
+Reddington's cross also explored the EMS information available to the trauma team, blood loss/hypotension and what Carpio did or did not know about Lindsay's subsequent treatment at Brigham. Carpio testified that the spinal-cord injury itself could cause difficulty maintaining blood pressure and that she did not know at the time about the later massive transfusion at the Boston hospital.
+
+2. Lt. Joseph Rabbitt — police/scene investigation. After Carpio, the Commonwealth called Lieutenant Joseph Rabbitt. His testimony moved the jury away from the hospital and into the law-enforcement investigation of the Clancy property and evidence associated with the scene.
+
+3. Maureen Hartnett — forensic processing/evidence collection. Hartnett followed Rabbitt and gave extensive testimony concerning processing and collecting evidence from the property. One specific subject was the red-brown staining on the exterior/shingles and subsequent swabbing/collection. The Commonwealth established that she had previously observed stains in those locations and that shingles had been collected back in January.
+
+4. Jonathan O'Loughlin — additional scene documentation. O'Loughlin was called next. His testimony concerned documenting/photographing the house and what was—and was not—observed there. Reddington used cross-examination to establish, among other things, that if drugs, blood and the knife had been visibly present together on a bedroom nightstand, O'Loughlin would have photographed them; O'Loughlin testified that he did not see that scene.
+
+That point is worth keeping separate from broader claims about what medications existed in the house: his testimony addresses what he personally observed/documented, not necessarily everything that may have existed elsewhere.
+
+5. Hillary Griffiths — further evidence/scene testimony. Griffiths followed O'Loughlin and was examined and cross-examined before being excused.
+
+6. Lisa Yelle — additional Commonwealth evidence testimony. Yelle followed Griffiths before the court took another break.
+
+After the break came another important evidentiary shortcut. The parties entered three postmortem toxicology stipulations:
+
+Exhibit 184 — Cora
+Exhibit 185 — Dawson
+Exhibit 186 — Callan
+
+The judge explained to the jury that stipulated facts could be accepted and relied upon as facts. The stipulations established the laboratory personnel, procedures, screening, analysis, review and chain involved in the children's postmortem toxicology rather than requiring every lab employee involved in the process to testify. For example, the Dawson stipulation identified the analysts/reviewers involved with his heart-blood testing, and the Callan stipulation did the same for his case.
+
+7. Alicia Zimmermann — postmortem toxicology. After the stipulations, the Commonwealth called forensic scientist Alicia Zimmermann, the assigned analyst referenced in the children's toxicology stipulations. Reddington declined to cross-examine her.
+
+8. Sherri Crook — bloodstain pattern analysis. The final major witness was Sherri Crook, a Massachusetts State Police Crime Lab supervisor with 26 years at the lab and approximately 18 years supervising the Crime Scene Response Unit. Her work includes testing physical evidence for biological fluids and trace materials.
+
+Crook was presented as the bloodstain-pattern witness. She explained how analysts distinguish individual bloodstains from bloodstain patterns and how patterns can provide information about the mechanism by which blood was deposited and the incident that produced it.
+
+So the thematic progression of Day 6 was basically:
+
+Lindsay's physical condition → police reconstruction of the property → collection/documentation of physical evidence → children's toxicology foundation → bloodstain reconstruction.
+
+And for our reconstruction work, I would flag three Day 6 items as especially important:
+
+82.1°F → 95.2°F. We now have sworn testimony placing both temperatures in Lindsay's South Shore treatment. That's useful, but we still need the actual timestamp of the 82.1 measurement rather than treating the testimony timestamp as a medical timestamp.
+The scene witnesses give us provenance. We can distinguish what investigators actually saw, photographed, swabbed and collected from later descriptions or assumptions about the scene.
+The stipulation dramatically collapses the evidentiary graph. Instead of dozens of chain-of-custody witnesses, the parties agreed to foundational facts. For Casework, those should be represented as stipulated facts, with the stipulation itself as the evidence source—not inferred as independently proven testimony from every named technician. Reddington expressly explained that this was why the defense agreed to it.
+
+The 82.1 testimony is probably the piece I'd pull apart next, because this transcript gives us enough to start separating measurement time, documentation time, arrival time, rewarming trajectory, transfer time, blood pressure, spinal shock, blood loss, and the later Brigham transfusion instead of treating “82.1” as a standalone number.
+
+Pasted markdown(20260817-044614).md
+File
+additionally opening statements... 
+Called tool
+
+Additionally, the trial’s opening statements on July 29, 2026 are essential context because the Commonwealth and defense laid out almost completely opposite explanations for the same underlying events. The judge expressly reminded jurors that openings were only roadmaps, not evidence. He also explained that the Commonwealth had to prove both the charged murders and Lindsay’s criminal responsibility beyond a reasonable doubt.
+
+The Commonwealth’s theory was essentially planning + control + opportunity = criminal responsibility. Prosecutor Shannon Buckingham told jurors Lindsay deliberately strangled Dawson, Cora and Callan with exercise bands, in that order. The prosecution promised scene photographs, first-responder testimony, forensic evidence, medical evidence and testimony from family, friends, teachers and clinicians.
+
+Their reconstruction of January 24 was highly specific. Buckingham said Lindsay researched ThreeV, checked the driving route/time, contacted CVS about the laxative recommended for Cora, suggested that Patrick pick up takeout, and therefore knew approximately how long he would be away. The Commonwealth characterized Patrick leaving the house as the beginning of the opportunity window and alleged that Lindsay used that interval to take the children downstairs, kill them, return upstairs, injure herself and jump from the window.
+
+The prosecution also previewed its attack on the reported command hallucination. Buckingham said jurors would hear different accounts concerning whether the male voice appeared immediately after Patrick left or after his CVS phone call, and urged them to scrutinize the source, timing and content of Lindsay’s statements about the voice. Its position was that Lindsay was functioning rationally that day—attending Cora’s appointment, caring for the children, communicating normally and planning logistics—and therefore was not psychotic at the relevant time.
+
+The Commonwealth also framed Lindsay’s history in terms of personality and agency: an overachiever who was highly controlling, meticulous and, according to the prosecution, manipulative. It alleged that she withheld information from providers, changed doctors or medications when dissatisfied, disengaged from treatment and ultimately made an intentional decision to die while taking the children with her.
+
+That led to the Commonwealth’s legal thesis: mental illness alone did not remove responsibility. According to the prosecution, the question would be whether Lindsay could appreciate the wrongfulness of her conduct and control her actions. They argued that the timing, Patrick’s removal from the house, the killings and the suicide attempt demonstrated that she could.
+
+Reddington’s opening took the case in almost the exact opposite direction: the physical acts were largely not the contested issue; Lindsay’s mental state was. He told jurors the central question was what was happening in her mind and explicitly made postpartum mental illness central to the case.
+
+His presentation then became essentially a longitudinal medical timeline. He argued Lindsay had been a loving, highly functional mother whose condition began deteriorating after Callan’s birth, particularly beginning around September 2022. According to the defense opening, she developed severe insomnia, depression, inability to experience emotion, dissociation and confusion and repeatedly sought professional help.
+
+Reddington emphasized the enormous medication churn. He walked jurors through prescriptions including sertraline/Zoloft, lorazepam, hydroxyzine, buspirone, trazodone, fluoxetine, mirtazapine/Remeron, quetiapine, diazepam and amitriptyline, prescribed by multiple clinicians over a relatively compressed period. The defense specifically disputed the prosecution’s “doctor shopping” characterization, arguing that changes in providers largely reflected referrals, provider departures and attempts to obtain appropriate perinatal psychiatric care.
+
+Reddington also previewed repeated escalations in care: South Shore Hospital, South Shore Perinatal Behavioral Health, Women & Infants in Rhode Island, Mass General and ultimately an inpatient McLean admission around New Year’s. He told jurors that Lindsay continued seeing Jennifer Tufts on January 6, 10, 16 and January 23—the day before the deaths.
+
+A major defense point was that Lindsay and Patrick were actively trying to get help rather than concealing the problem. Reddington said she reported suicidality and suicidal ideation and had told Patrick and her mother in December about thoughts involving harming the children. His theory was that these disclosures undercut the prosecution’s characterization that she manipulated clinicians while hiding serious symptoms.
+
+He also strongly rejected the idea of a staged suicide attempt. The defense said Lindsay cut her neck and wrists and jumped from the second-story window because she genuinely intended to die.
+
+And importantly, Reddington previewed evidence he said would corroborate the command-voice account independently of lawyers. He told jurors a hospital religious-services worker encountered Lindsay after she emerged from her coma and that Lindsay spoke about the command voice before meeting Reddington and another defense-associated individual he referenced. His argument was that the hallucination account therefore was not a defense invention created after counsel became involved.
+
+The defense’s ultimate theory was that Lindsay was suffering from psychosis when she went into the basement, had no conventional motive to kill children she loved, intended to die herself, and had repeatedly sought treatment during a rapidly deteriorating psychiatric course. Reddington framed the case as one in which the mental-health system and medication/treatment trajectory were directly relevant to determining criminal responsibility.
+
+So if we fold opening statements into our Casework reconstruction, we now have two explicit hypotheses to test against every later piece of evidence:
+
+H₁ — Commonwealth: Lindsay intentionally created an opportunity window, planned and executed the killings, understood what she was doing, could control her behavior, and later psychiatric explanations do not negate criminal responsibility.
+
+H₂ — Defense: Lindsay’s months-long postpartum psychiatric deterioration culminated in psychosis/command hallucination; her treatment history, suicidality, intrusive thoughts, medication changes, hospitalizations and genuine suicide attempt demonstrate impaired criminal responsibility.
+
+That distinction is extremely useful because now every Day 6 fact we just reviewed can be tagged as supports prosecution theory / supports defense theory / compatible with both / contradicts one / presently non-discriminating.
+
+And the 82.1°F evidence is a great example: neither opening appears to have built its core theory around severe hypothermia. Yet Day 6 later establishes that fact in the medical record. That makes it especially interesting for reconstruction because it is comparatively less contaminated by the opening narratives and can be tested independently against the physical timeline.
+
+Yes. I’d give Codex a prompt that tells it to change the architecture deliberately without throwing away the Rev work you already built.
+
+I want to change the architecture before continuing the current Day 6 UI/capability work.
+
+
+STOP treating testimony/proceeding intake as a feature that Icarus Casework itself owns.
+
+
+New architectural boundary:
+
+
+TESTIMONY COMPILER
+owns:
+raw proceeding source
+→ immutable source capture
+→ completeness verification
+→ transcript parsing
+→ speaker segmentation
+→ timestamps/deep links
+→ entity extraction
+→ testimony claims
+→ candidate events
+→ exhibit references
+→ procedural events
+→ party positions
+→ unresolved extraction/reference items
+→ human review/correction
+→ versioned Proceeding Package
+
+
+ICARUS CASEWORK
+owns:
+Proceeding Package
++ other case evidence
+→ entity reconciliation
+→ cross-source event reconstruction
+→ evidentiary timeline
+→ propositions/hypotheses
+→ support/contradiction analysis
+→ evidentiary gaps
+→ resolution queue
+→ findings
+→ case-level synthesis/reconstruction
+
+
+Core rule:
+
+
+The Testimony Compiler determines:
+"Who said what, when, where did it come from, what structured objects can be extracted, and did we capture the complete proceeding?"
+
+
+Icarus Casework determines:
+"What does this evidence mean when reconciled with the rest of the case?"
+
+
+Do not let the Testimony Compiler decide whether evidence supports the prosecution, defense, guilt, innocence, criminal responsibility, or another case-level hypothesis.
+
+
+IMPORTANT: preserve the Rev testimony intake work that already exists. Do not rewrite working functionality merely to satisfy the new naming/boundary.
+
+
+Before changing code, inspect the repository and produce an implementation plan for separating the existing testimony intake into this architecture.
+
+
+Use the current Day 6 intake as the acceptance case.
+
+
+We already discovered a critical completeness failure:
+
+
+- Saved Day 6 HTML contains 2,197 timestamped transcript segments through 04:16:42.
+- Current parser committed only 410 segments through 00:40:58.
+- Intake nevertheless marked itself complete.
+- The original source artifact was preserved correctly.
+
+
+This must become impossible.
+
+
+Design a hard completeness contract.
+
+
+At minimum track:
+
+
+source_detected_segments
+parsed_segments
+committed_segments
+source_start_time
+source_end_time
+parsed_start_time
+parsed_end_time
+coverage_ratio
+parse/extraction errors
+completion_status
+
+
+A proceeding MUST NOT become COMPLETE merely because parsing terminated successfully.
+
+
+Example:
+
+
+source_detected_segments = 2197
+committed_segments = 410
+coverage_ratio = 0.1866
+
+
+
+I especially like making Codex answer A/B/C on the physical separation only after inspecting the repo. My architectural instinct is that this should initially be a bounded package/module rather than immediately spawning another repo. You get the conceptual boundary now without introducing deployment, auth, database, versioning, and local-development overhead before the contract has stabilized.
+
+i havent prompted codex about anything, this build jsut finished The current build is a strong intake/review foundation, but it cannot yet generate the supplied Day 6 summary end to end. The most urgent gap is parser completeness—not another analytical screen.
+
+Critical finding
+
+The preserved Day 6 HTML contains:
+
+2,197 timestamped transcript segments
+A final timestamp of 04:16:42
+The complete 727 KB source artifact
+
+The database currently contains:
+
+410 segments
+A final timestamp of 00:40:58
+123 candidate assertions
+4 acquisition targets
+
+Only about 19% of the transcript reached the structured record. The intake was nevertheless marked complete.
+
+The cause is the transcript-body extraction in [rev-testimony.ts (line 74)](C:/Projects/IcarusCasework/src/lib/rev-testimony.ts:74): the regular expression stops at the first nested closing div.
+
+There is also a concrete extraction failure around the key temperature evidence:
+
+82.1°F appears in an attorney’s question.
+Carpio confirms that Lindsay was hypothermic but does not repeat the number.
+95.2°F is likewise followed by a short “Yes.”
+Questions and short answers are deliberately filtered from candidate claims.
+
+Therefore, neither numeric measurement currently becomes a reviewable assertion. The raw segments are preserved, but the current pipeline cannot reconstruct the question-and-answer unit necessary to support the summary.
+
+Screens already built
+
+There are currently two actual routes: /login and /. The workspace sections below are all composed into the main route rather than separate navigable screens.
+
+WorkspaceBuilt nowImportant limitation		
+Authentication	Google, Apple, magic-link interface	Hosted OAuth still needs configuration
+Source Intake	Authorized Rev URL capture and result messaging	Rev only
+Source Registry	Publisher, publication date, capture date, checksum, canonical URL	No intake-completeness report
+Source Reader	Timestamped extracted assertions with selection	Displays 123 assertion segments, not all transcript segments
+Provenance Inspector	Exact quote, speaker, proposition, attribution chain, confidence, gaps, source links	Proposition is currently essentially copied text, not reviewed normalization
+Embedded Media	Separately identified media references	Referenced rather than possessed
+Chronology	Human-reviewed events and saved time-window views	No editable temporal constraint model
+Entities	Durable entity registry, aliases, provenance roles	No identity-resolution queue
+Acquisition Console	Known-but-unpossessed records and exhibits	Detection is regex-based and substantially incomplete
+Human Review	Accept candidate assertion and promote it to an event	No amend, reject, defer, merge, or classification workflow
+Lineage	Repeats, quotes, paraphrases, derivation, origin	Uses large unsearchable selectors
+Conflicts	Open contradiction and record terminal disposition	Not yet connected to proposition-level assessment
+Authority Log	Recent consequential mutations	Built and attributed
+
+The new Source Reader and provenance presentation are in [testimony-source-reader.tsx (line 39)](C:/Projects/IcarusCasework/src/app/testimony-source-reader.tsx:39), while the complete paper/console workspace composition is in [page.tsx (line 46)](C:/Projects/IcarusCasework/src/app/page.tsx:46).
+
+What the present pipeline genuinely supports
+
+It can already:
+
+Capture and preserve the original URL artifact immutably.
+Record canonical URL, publisher metadata, checksum, and parser version.
+Prevent exact-checksum copies from masquerading as independent evidence.
+Preserve timestamped source segments and deep links.
+Create testimony-lane candidate assertions.
+Keep extraction confidence separate from evidentiary assessment.
+Preserve ordered attribution such as witness → Rev.
+Identify some referenced exhibits and underlying records without claiming possession.
+Promote a human-reviewed assertion into a distinct event.
+Record entities, provenance, claim lineage, conflicts, dispositions, saved views, and audit history.
+
+That is the substrate required for Casework. It is not yet the Day 6 analytical product described in your summary.
+
+Screens that need to be built
+P0 — Make Day 6 complete and trustworthy
+
+Intake Integrity / Processing Report
+
+Show preserved-segment count versus parsed-segment count, first/last timestamp, parser warnings, skipped structures, and completeness state. The current complete status should not survive a 410-of-2,197 result.
+
+Full Transcript Reader
+
+Display every source segment, not only extracted claims. It needs:
+
+Question-and-answer context
+Speaker and witness filters
+Direct/cross/redirect sections
+Search
+Procedural versus testimony markers
+Selected-segment and selected-exchange states
+Virtualized or paginated rendering
+
+Claim Review Workbench
+
+A reviewer must be able to:
+
+Combine a question with a short answer
+Amend the extracted assertion
+Normalize or merge propositions
+Classify testimony, procedure, advocacy, expert opinion, or court instruction
+Accept, reject, defer, or split
+Preserve every edit as a review decision
+
+Proceeding Day Overview
+
+“Day 6 — August 5, 2026” should become a durable workspace with:
+
+Record
+Transcript
+Claims
+Events
+Issues
+Theories
+This is the missing container that turns isolated sources into a trial-day record.
+
+Exhibits and Stipulations Register
+
+Exhibits J and 184–186 need first-class records. A stipulation must represent the agreed foundational facts and its procedural effect—not manufacture independent testimony from every technician named inside it.
+
+Resolution Queue
+
+This must be distinct from acquisition. It should capture questions such as:
+
+When was 82.1°F actually measured?
+What was the measurement method?
+When did rewarming begin?
+When was the CTA interpretation available?
+What did scene investigators personally observe?
+Which underlying record could resolve the question?
+P1 — Build the analytical Casework layer
+
+Event Detail / Temporal Reconstruction
+
+Separate observed, measured, recorded, reported, estimated, bounded, and unknown time. Support temporal constraints such as “after ED arrival” and “before 95.2°F.”
+
+Proposition Reconciliation
+
+The schema already reserves support and verification tables, but they are read-only and have no reconciliation workflow. This screen should assess support, conflict, corroboration, dispute, qualification, lineage independence, and limitations.
+
+Positions and Theory Matrix
+
+Represent prosecution and defense positions separately from evidence. Evaluate evidence against narrow propositions rather than broadly marking it “for” one side.
+
+Opening Statement Audit
+
+Compare each advocacy claim with evidence later introduced, contrary evidence, and current status. Opening statements must remain tagged as advocacy—not evidence.
+
+Cross-source Case Views
+
+Medical timeline, scene reconstruction, stipulations, toxicology, witnesses, command-hallucination evidence, and other subject dossiers should roll up across proceeding days.
+
+Recommended next build slice
+
+Do not start with the theory matrix. The correct next slice is:
+
+Fix the Rev parser to process the complete stored Day 6 artifact.
+Add completeness validation so truncation cannot be marked complete.
+Reprocess Day 6 from the already-preserved artifact.
+Upgrade Source Reader to show all transcript segments and Q/A exchanges.
+Build the Proceeding Day overview and Claim Review Workbench.
+Then add exhibits, stipulations, and resolution items.
+Add reconciliation and competing-theory analysis only after those source structures are trustworthy.
+
+Day 6 is an excellent acceptance corpus. A successful slice should expose all 2,197 preserved segments through 04:16:42, retain the 82.1°F → 95.2°F exchange without inventing a measurement timestamp, model the stipulations correctly, and keep every analytical conclusion human-reviewed.
+
+One source-hygiene issue also needs attention: the first newly attached text file is headed “MA v. Lindsay Clancy Opening Statements,” not Day 6. It should not be merged into the Day 6 proceeding merely because it arrived with this request.
+
+The UI pass itself builds cleanly: lint, TypeScript, all 20 tests, and the Next.js production build passed. Desktop and mobile were visually checked, the dev server is stopped, and the disposable UI-test account was removed. The changes remain uncommitted.
+
+Yes — this changes the prompt quite a bit.
+
+Codex has already completed the audit and reached the same architectural conclusion we were circling around: the present build is a strong substrate, the urgent blocker is testimony-ingestion completeness, and the Day/analysis layer should come after the source structures are trustworthy.
+
+So I would not send the earlier “audit the repo and tell me what belongs where” prompt. That would make Codex repeat work it just finished.
+
+The next prompt should tell Codex to act on the completed audit by creating the architectural boundary and fixing the testimony pipeline first, while preserving the Casework foundation it already built.
+
+Use the completed Day 6 capability audit as the starting point.
+
+
+Do not redo the audit.
+
+
+The architectural decision is now:
+
+
+Separate the testimony/proceeding ingestion concern from the downstream Icarus Casework analytical layer.
+
+
+For now, implement this as a bounded Testimony Compiler / Proceeding Intake module inside the existing repository. Do not create a separate repository or deployment yet.
+
+
+The goal of this slice is:
+
+
+raw proceeding source
+→ immutable capture
+→ complete transcript parsing
+→ source-aligned structured extraction
+→ reviewable proceeding record
+→ publishable proceeding package
+
+
+Icarus Casework remains the downstream consumer responsible for cross-source reconciliation, propositions, theory analysis, findings, and case reconstruction.
+
+
+Do not build the theory matrix or opening-statement audit yet.
+
+
+FIRST PRIORITY: FIX COMPLETENESS
+
+
+You identified the critical Day 6 failure:
+
+
+- preserved source artifact: 2,197 timestamped segments
+- final source timestamp: 04:16:42
+- current structured record: 410 segments
+- final parsed timestamp: 00:40:58
+- intake incorrectly marked complete
+- root cause: rev-testimony.ts transcript-body extraction stops at the first nested closing div
+
+
+Fix that first.
+
+
+Requirements:
+
+
+1. Replace the fragile transcript-body extraction with a robust parser appropriate for the stored Rev HTML.
+
+
+2. Reprocess Day 6 from the already-preserved immutable artifact.
+
+
+3. Verify that all 2,197 source segments are represented through 04:16:42.
+
+
+4. Do not refetch or replace the original source artifact unless technically unavoidable.
+
+
+5. Preserve existing provenance, checksum, canonical URL, parser versioning, and duplicate-source behavior.
+
+
+ADD A HARD INTAKE INTEGRITY CONTRACT
+
+
+Create first-class processing/completeness metadata.
+
+
+At minimum track:
+
+
+- source_detected_segments
+- parsed_segments
+- committed_segments
+- source_first_timestamp
+- source_last_timestamp
+- parsed_first_timestamp
+- parsed_last_timestamp
+- coverage_ratio
+- parser_warnings
+- parse_errors
+- skipped_structures
+- parser_version
+- completion_state
+
+
+A run MUST NOT be marked complete solely because the parser exited normally.
+
+
+Example:
+
+
+source_detected_segments = 2197
+committed_segments = 410
+coverage_ratio = 0.1866
+
+
+must result in a terminal non-complete state.
+
+
+Respect the existing Icarus doctrine:
+- no half states
+- no generic pending state
+- source artifact remains authoritative
+- no surrogate becomes the source
+- extraction confidence is separate from evidentiary assessment
+- every derived object retains exact source lineage
+
+
+Define explicit terminal states with clear semantics. Prefer vocabulary already used by the application where possible.
+
+The big difference now is that this prompt starts with “use the completed audit; do not redo it.” That keeps Codex moving forward instead of burning another cycle telling you what you already know.
+
+And I agree with the build’s own sequencing: fix 410 / 2197 first. Until that invariant is real, every downstream analytical feature is operating over potentially incomplete testimony.
+
+super simplify the goal and the outcome here
+
+The goal is much simpler than that giant prompt made it sound.
+
+Goal: Build a reliable Testimony Compiler that turns a court proceeding into clean, structured data for Icarus Casework.
+
+It should do this:
+
+Transcript in → complete, provenance-preserved proceeding out.
+
+For each trial day, it captures the entire transcript and extracts:
+
+Who testified and what they said
+Q&A exchanges
+Claims made
+Events described
+Exhibits and stipulations
+Procedural actions
+Prosecution/defense positions
+Questions or facts that still need to be resolved
+
+Everything stays linked to the exact transcript passage, speaker, timestamp, and original source.
+
+The output is essentially:
+
+“Here is everything that entered the record today, where it came from, what we extracted from it, and what remains unresolved.”
+
+Then Icarus Casework takes over and asks the harder analytical questions:
+
+How does this fit with the rest of the case?
+What corroborates or conflicts?
+What does the evidence support?
+What remains unknown?
+What does the reconstructed timeline look like?
+
+For the immediate build, success is very concrete:
+
+Give it Day 6 → get all 2,197 segments back, correctly structured, with the 82.1°F Q&A preserved, exhibits/stipulations identified, unresolved questions surfaced, and every item traceable to the source.
+
+Then give it Opening Statements → get the same structured proceeding, except prosecution and defense arguments are correctly preserved as positions rather than evidence.
+
+That’s the product boundary:
+
+Testimony Compiler = build the trustworthy record.
+Icarus Casework = reason over the record.
+
+Ẍ̟̍n̫̓̒̎p̮̙̝̒́
+9999
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+Product
+
+
+Industries
+
+
+Resources
+
+
+[About Rev](https://www.rev.com/about-rev)
+
+
+[Pricing](https://www.rev.com/pricing)
+
+
+[Login](https://www.rev.com/app)
+
+
+[Talk to a Specialist](https://www.rev.com/contact-sales)[Try Rev Free](https://www.rev.com/subscription/signup/groups/24/plans/79)
+
+
+[Blog Home](https://www.rev.com/blog)[Legal](https://www.rev.com/category/legal)[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)[Transcription ](https://www.rev.com/category/transcription)[Rev Spotlight](https://www.rev.com/category/rev-spotlight)
+
+
+[Accessibility](https://www.rev.com/category/accessibility)
+
+
+[AI & Speech Recognition](https://www.rev.com/category/ai-speech-recognition)
+
+
+[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)
+
+
+[Business](https://www.rev.com/category/business)
+
+
+[Captions & Subtitles](https://www.rev.com/category/captions-and-subtitles)
+
+
+[Congressional Testimony](https://www.rev.com/category/congressional-testimony)
+
+
+[Court Reporting & Depositions](https://www.rev.com/category/depositions-and-court-reporting)
+
+
+[Criminal Defense](https://www.rev.com/category/criminal-defense)
+
+
+[Donald Trump](https://www.rev.com/category/donald-trump)
+
+
+[Education](https://www.rev.com/category/education)
+
+
+Choose a syntax
+javascript
+typescript
+bash
+zsh
+html
+css
+python
+json
+sql
+go
+yaml
+java
+rust
+cpp
+swift
+php
+xml
+ruby
+haskell
+kotlin
+csharp
+vb
+c
+objectivec
+r
+lua
+dart
+scala
+perl
+commonlisp
+clojure
+ocaml
+powershell
+verilog
+dockerfile
+vue
+other
+Close

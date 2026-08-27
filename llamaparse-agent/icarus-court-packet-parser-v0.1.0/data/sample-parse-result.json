@@ -1,0 +1,22 @@
+{
+  "job": {"id": "fixture-job-001", "status": "COMPLETED"},
+  "markdown": {
+    "pages": [
+      {"page_number": 1, "markdown": "# SEARCH WARRANT\nCommonwealth of Massachusetts\nDevice: Apple iPhone"},
+      {"page_number": 2, "markdown": "The issuing court finds probable cause."},
+      {"page_number": 3, "markdown": "# AFFIDAVIT IN SUPPORT OF APPLICATION\nI, the affiant, state the following."},
+      {"page_number": 4, "markdown": "The investigation included review of digital records."},
+      {"page_number": 5, "markdown": "# RETURN OF SEARCH WARRANT\nThe warrant was executed on the stated date."}
+    ]
+  },
+  "text": {
+    "pages": [
+      {"page_number": 1, "text": "SEARCH WARRANT Commonwealth of Massachusetts Device Apple iPhone"},
+      {"page_number": 2, "text": "The issuing court finds probable cause."},
+      {"page_number": 3, "text": "AFFIDAVIT IN SUPPORT OF APPLICATION I the affiant state the following."},
+      {"page_number": 4, "text": "The investigation included review of digital records."},
+      {"page_number": 5, "text": "RETURN OF SEARCH WARRANT The warrant was executed on the stated date."}
+    ]
+  }
+}
+

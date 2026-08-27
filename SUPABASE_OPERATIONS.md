@@ -220,6 +220,18 @@ Current local state:
 - Anonymous sign-in is disabled.
 - Email confirmation is disabled locally for development convenience; hosted behavior must be reviewed deliberately.
 
+### Development-only automatic sign-in
+
+This workstation's local development environment bypasses the interactive sign-in screen while preserving a real Supabase session and the normal case-scoped RLS policies. The configured local identity is `alwaysautomating@gmail.com`. Enable and configure the convenience only in ignored `.env.local` or `.env.development.local`:
+
+```dotenv
+ICARUS_LOCAL_AUTH_BYPASS=true
+ICARUS_LOCAL_AUTH_EMAIL=<existing local Auth user>
+ICARUS_LOCAL_AUTH_PASSWORD=<that local user's local-only password>
+```
+
+The proxy signs in the local user only when no valid session exists. Set `ICARUS_LOCAL_AUTH_BYPASS=false` or remove the variables to restore interactive sign-in. The bypass is hard-disabled unless `NODE_ENV=development`, even if the flag is accidentally present. Never place credentials in `NEXT_PUBLIC_` variables, committed secret files, or hosted environment configuration. The user must still have an explicit `case_members` row; bypassing the interaction does not bypass RLS authorization.
+
 Secrets referenced through `env(...)` in `supabase/config.toml` belong in an ignored environment file or the deployment secret store. Never commit OAuth secrets, database passwords, service-role JWTs, secret API keys, signing keys, or Blob credentials.
 
 Only the Supabase URL and publishable key may use the `NEXT_PUBLIC_` prefix. Service-role and secret keys are server-only and must never be imported by browser code.
@@ -329,7 +341,7 @@ Verified locally on 2026-08-22:
 - All 19 versioned migrations through `20260824081931_court_packet_document_intelligence_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
 - Local database advisors report no security or performance issues.
 - Database lint and advisors report no issues. The legacy `review_extraction_candidate` UUID-array warning is fixed in the Structure Review migration without changing that RPC's contract.
-- ESLint, TypeScript, 110 tests, and the Next.js production build pass.
+- ESLint, TypeScript, 122 tests, and the Next.js production build pass.
 - Candidate-only reconstruction snapshots are case-scoped, immutable, RLS-readable, and saved atomically through `save_reconstruction_version`; the function rejects snapshots that claim canonical event creation, SAME resolution, courtroom-timestamp substitution, or collapsed tensions.
 - Structure review versions are append-only and case-scoped. The public invoker RPC delegates to a fixed-search-path private mutation core that authorizes owner/reviewer membership, locks the target, enforces type-specific patch allowlists and expected versions, captures source lineage server-side, and appends the target change, immutable version, and case-ledger event atomically.
 - Knowledge-mapping claims are select-only to authenticated clients. The separately governed legacy claim-to-event action is preserved through the atomic `review_and_promote_claim` RPC; Structure Review never calls it.

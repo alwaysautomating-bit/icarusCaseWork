@@ -1,0 +1,1128 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-15_Rev-Transcript.txt",
+    "sha256": "bcf8b1b0403b2711ead72c7679aa655f587f512617a844390e3eaa7a93d81cdc"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 1723,
+    "witness_blocks": 0,
+    "phase_sets": 0,
+    "procedural_markers": 78
+  },
+  "witness_blocks": [],
+  "phase_sets": [],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 32,
+        "source_line": 204,
+        "timestamp_display": "03:58",
+        "timestamp_seconds": 238,
+        "url": null
+      },
+      "speaker": "Officer 2",
+      "text": "Raise your right hand, ma'am.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 145,
+        "source_line": 662,
+        "timestamp_display": "11:33",
+        "timestamp_seconds": 693,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "So I'm going to approach you with extraction report. This is a report that is done by the DA's office and the state police, Mr. Whiffin, on what's called Cellebrite, where they can go into... Did they examine your phone?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 149,
+        "source_line": 678,
+        "timestamp_display": "11:57",
+        "timestamp_seconds": 717,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. I'm going to approach you with the extraction report, okay, and if you can just take a look and see if your telephone number is on there, just for foundation purposes. Or if you-",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 156,
+        "source_line": 709,
+        "timestamp_display": "13:00",
+        "timestamp_seconds": 780,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 157,
+        "source_line": 713,
+        "timestamp_display": "13:01",
+        "timestamp_seconds": 781,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Your Honor, the Commonwealth [inaudible 00:13:02] the same objection previously made [inaudible 00:13:04].",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 158,
+        "source_line": 717,
+        "timestamp_display": "13:05",
+        "timestamp_seconds": 785,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. Over the, yeah, Commonwealth's objection, that may be admitted.",
+      "event_types": [
+        "objection",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 363,
+        "source_line": 1546,
+        "timestamp_display": "30:50",
+        "timestamp_seconds": 1850,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 387,
+        "source_line": 1642,
+        "timestamp_display": "32:57",
+        "timestamp_seconds": 1977,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "And you were asked on direct examination about Lindsay going to see providers and you said, I think she was begging for help, right?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 402,
+        "source_line": 1702,
+        "timestamp_display": "33:46",
+        "timestamp_seconds": 2026,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. Mr. Reddington, any redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 440,
+        "source_line": 1854,
+        "timestamp_display": "36:21",
+        "timestamp_seconds": 2181,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. Thank you, ma'am. You may step down. Thank you. All right. All right. Well, members of the jury, this is one of those stops that I told you about we're going to have kind of throughout today. So I'm going to ask you to go back to the jury room, hopefully just for a short amount of time. Then we'll bring you right back in and we'll continue with the evidence. Okay?",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 447,
+        "source_line": 1882,
+        "timestamp_display": "38:03",
+        "timestamp_seconds": 2283,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "‍ And I think that at some point after we talk a little bit, we're going to have to take a short break just to make sure that logistically everything's all set up with the doctor and the system here. And I appreciate everybody's help technically in setting that up. And I know that the defendant has provided, I don't know, maybe five or six exhibits that counsel wanted to introduce through Dr. Laposata. And so I guess Commonwealth, have you had an opportunity to take a look at these?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 448,
+        "source_line": 1888,
+        "timestamp_display": "38:48",
+        "timestamp_seconds": 2328,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Yes. And we are objecting to these items. Yes.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 450,
+        "source_line": 1896,
+        "timestamp_display": "39:17",
+        "timestamp_seconds": 2357,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "The main objection is that the drawing is inaccurate. The window well is in the wrong place. And where they have her falling and landing in slide four would be where the window well is actually placed in the photograph. I can pass up the photograph to the court. This is in evidence, I believe, maybe a couple times. But talks are discretionary, but what they should not do is mislead a jury and present information that's not accurate. And so the drawing itself is inaccurate. And so we're objecting to these slides.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 451,
+        "source_line": 1900,
+        "timestamp_display": "40:04",
+        "timestamp_seconds": 2404,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Is that the Commonwealth's objection is that the window well is in the wrong place on the drawing?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 452,
+        "source_line": 1904,
+        "timestamp_display": "40:13",
+        "timestamp_seconds": 2413,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Putting aside the late disclosure and the fact that I don't know if anyone who created this is going to come in and testify that they created it and whether it's to scale or not. But the main objection is that it's inaccurate.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 456,
+        "source_line": 1920,
+        "timestamp_display": "40:55",
+        "timestamp_seconds": 2455,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "The window well is depicted on the diagram, I suggest, accurately. And in fact, measurements were taken by the gentleman who did the computer animation in conjunction with information by way of medical provided by Dr. Laposata. And it shows clearly that, as Your Honor can see, that we're talking about the X-rays that are included. There are exhibits that she attaches that shows the way that she falls, how she hits her head. The Commonwealth has been suggesting that, I guess, that they're confused as to how she would have ended up the way she did. This shows the way that she landed on her head, gets to Jefferson fracture, falls back, legs are facing out from the house. She's laying in the snow. They're all depicted there. If there's an issue with the window well that's off according to the government, they could raise that on cross. They could say, \"Well, the window well was really six inches to the left instead of to the right that never struck her anyway. It's totally irrelevant.\" (42:05) I think that they are useful for a jury to be able to review. I did have copies made for the jurors and the court as well as the DAs. And Dr. Laposata has it. And then I could go through, but you can see that we've taken the diagram, the window where the body lands, and then to the right of it would be the actual X-ray. Dr. Laposata can compare the injuries, talk about the Jefferson fracture. There's a photograph that shows the blood in the snow, shows the area in the photograph actually shows the window well. And I suggest the window well on page six is exactly the way we have it depicted. So I don't know what the objection is. I would ask that the court would allow this to be in.",
+      "event_types": [
+        "objection",
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 467,
+        "source_line": 1967,
+        "timestamp_display": "45:20",
+        "timestamp_seconds": 2720,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "[inaudible 00:45:21] objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 468,
+        "source_line": 1971,
+        "timestamp_display": "45:23",
+        "timestamp_seconds": 2723,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Yeah, objection noted. And then what we'll do is take a short break at this point set up the Zoom call. Also, I know we're going to have to probably make certain changes to the jury book that was going to be presented. So the only slides that will be in that book will be, like I said, just so we know-",
+      "event_types": [
+        "objection",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 482,
+        "source_line": 2027,
+        "timestamp_display": "46:18",
+        "timestamp_seconds": 2778,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. So why don't we do that? We'll take a short break so that those changes can be made and we can set up for the Zoom and then we'll come back out and we'll proceed with Dr. Laposata.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 508,
+        "source_line": 2131,
+        "timestamp_display": "47:58",
+        "timestamp_seconds": 2878,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "So why don't we take a further break? We'll figure this out.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 519,
+        "source_line": 2175,
+        "timestamp_display": "48:44",
+        "timestamp_seconds": 2924,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "And I know that we had talked about a possible voir dire in regards to Dr. Condie. Do the parties see the need for the doctor testify that or maybe we could just hear the offer of proof or what the expectations of the testimony is and then we can-",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 520,
+        "source_line": 2179,
+        "timestamp_display": "49:10",
+        "timestamp_seconds": 2950,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "I don't know what the objection is.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 522,
+        "source_line": 2187,
+        "timestamp_display": "49:12",
+        "timestamp_seconds": 2952,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "So the objection is that we were provided with an affidavit. The original affidavit that was provided, counsel agreed that it referred to standard of care, which is not the issue in this case. Really reflects his opinions in a civil case. So we were provided another affidavit which appears to factually have the same numbered paragraphs and just deletes the ultimate opinion section and adds that Dr. Tufts and Nurse Gelada were aware that Lindsay was experiencing symptoms of suicidal ideation and a critically deteriorating condition while under their care and failed to take reasonable steps. So it's unclear from his affidavit what exactly he's going to testify to. Is he going to just reiterate everything that has been presented in the records, everything that we would expect defense counsel to offer through expert testimony in the criminal responsibility error about the medication regimens that the defendant was on over the course of several months? Because if that's the case, then I would suggest that this is cumulative testimony and that it doesn't need to be presented in this manner to the jury.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 523,
+        "source_line": 2191,
+        "timestamp_display": "50:17",
+        "timestamp_seconds": 3017,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "But let me ask this similar to the question I asked earlier to a similar objection regarding cumulative. The defense hasn't put it, this is their first witness in regards to that. Wouldn't the cumulative analysis be done if there's a follow-up expert that would be addressing these areas?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 524,
+        "source_line": 2195,
+        "timestamp_display": "50:45",
+        "timestamp_seconds": 3045,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Potentially but that then becomes the defense's strategic choice about whether if they're going to call Dr. Condie for this piece of it and the other experts for another piece of it. It's unclear, especially where the reports we've been provided by Dr. Spinelli and Dr. Zeisel talk about polypharmacology as part of the basis of their opinions in this case. So it's difficult to assess that and we're obviously flagging in and objecting at this point based on what we know the anticipated evidence to be. So I don't know if a proffer is necessary at this point to outline what exactly he expects Dr. Condie to say and how that differs from the opinions of the other experts.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 525,
+        "source_line": 2199,
+        "timestamp_display": "51:34",
+        "timestamp_seconds": 3094,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "It seems to me that the main objection may lay in regards to Dr. Spinelli then, and depends on what her testimony is and how that overlaps with whatever Dr. Condie's is at this point.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 528,
+        "source_line": 2211,
+        "timestamp_display": "51:53",
+        "timestamp_seconds": 3113,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "And I appreciate the fact that you recognize that we have not yet put on a doc yet. I don't have to accept their evidence. I don't have to accept their doctors. Our doctors, this is our first doctor who is a very qualified psychopharmacologist. I expect to elicit from him the treatment very briefly that she received and the medications that she was on and the effect of these medications as it relates to her condition when she was seeking medical help. That's it. I'm not going to get into criminal responsibility with him. I'm not going to get into lack of criminal responsibility with him. Basically psychopharmacology and the treatment that she received. He's not going to be criticizing what Gelada did, what Tufts did. He's just going to detail her condition according to the medical records and the medications that were provided. (52:47) I am well aware and very experienced in trying jury cases and know when you lose the jury. I'm not going to have Dr. Zeisel and Dr... I'm not going to have make Spinelli wax eloquently for hours and bore the jury to death. I'm going to get right to the chase. Dr. Spinelli is a well-qualified doctor on the issues of postpartum psychosis and postpartum depression and treating a pregnant woman and/or a postpartum perinatal client or a patient. Dr. Zeisel is a general psychologist and will be discussing a number of issues as you're well aware, because he's been involved with Lindsay for literally three years, 46 times he's seen her or something like that. So I'm going to focus their testimony on those fields. I don't think it's necessary for us to have Dr. Condie get up here on a voir dire so that they can hear what he's going to testify to. I'm not going to have him rambling or going off the script. He signed an affidavit, which is even, I think, better than a medical report that you usually get. So they have plenty to cross-examine him from.",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 533,
+        "source_line": 2234,
+        "timestamp_display": "54:09",
+        "timestamp_seconds": 3249,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. So over the Commonwealth's objection, I'm going to allow at this point Dr. Condie's testimony in line with the affidavit, basically in line with that affidavit, with the holding he's not to testify as to the standard of care opinion as he had the original statement.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 544,
+        "source_line": 2278,
+        "timestamp_display": "56:00",
+        "timestamp_seconds": 3360,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Your Honor, could we approach while they're coming in?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 547,
+        "source_line": 2290,
+        "timestamp_display": "57:01",
+        "timestamp_seconds": 3421,
+        "url": null
+      },
+      "speaker": "Speaker 6",
+      "text": "Good morning. Do you solemnly swear that the testimony and the evidence you shall [inaudible 00:57:31] swear to God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 597,
+        "source_line": 2490,
+        "timestamp_display": "01:04:42",
+        "timestamp_seconds": 3882,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "All right. Your Honor, I'd offer his CV if I could, just as an exhibit, if that's accepted.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 599,
+        "source_line": 2498,
+        "timestamp_display": "01:04:53",
+        "timestamp_seconds": 3893,
+        "url": null
+      },
+      "speaker": "Speaker 16",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 600,
+        "source_line": 2502,
+        "timestamp_display": "01:04:53",
+        "timestamp_seconds": 3893,
+        "url": null
+      },
+      "speaker": "Speaker 15",
+      "text": "Okay. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 625,
+        "source_line": 2602,
+        "timestamp_display": "01:08:20",
+        "timestamp_seconds": 4100,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now, after she had her third child, Callan, was she in... Strike that. It's fair to say she was in treatment with Dr. Tufts as a treating physician?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 661,
+        "source_line": 2746,
+        "timestamp_display": "01:14:22",
+        "timestamp_seconds": 4462,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Well, let me just approach you then and hand you your affidavit, paragraph 13 and see if that refreshes your memory.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 853,
+        "source_line": 3519,
+        "timestamp_display": "01:39:31",
+        "timestamp_seconds": 5971,
+        "url": null
+      },
+      "speaker": "Dr. Donald Condie",
+      "text": "The next time she went to the emergency room, which was not very long after, she was admitted to McLean.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 910,
+        "source_line": 3747,
+        "timestamp_display": "01:46:03",
+        "timestamp_seconds": 6363,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 914,
+        "source_line": 3763,
+        "timestamp_display": "01:46:14",
+        "timestamp_seconds": 6374,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 915,
+        "source_line": 3767,
+        "timestamp_display": "01:46:14",
+        "timestamp_seconds": 6374,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 920,
+        "source_line": 3787,
+        "timestamp_display": "01:46:37",
+        "timestamp_seconds": 6397,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "You spent some time when you first got to the stand going over your qualifications and I think counsel now has admitted your curriculum vitae into evidence, right?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1006,
+        "source_line": 4131,
+        "timestamp_display": "01:57:07",
+        "timestamp_seconds": 7027,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "You've reviewed that. And so, I think you testified on direct examination that the initial dose was a low dose, 25 milligrams.",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1024,
+        "source_line": 4203,
+        "timestamp_display": "01:58:58",
+        "timestamp_seconds": 7138,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "And when the defendant was admitted to McLean Hospital on January 1st, she was already on a taper plan, meaning she had gone back down to approximately 100 milligrams per night?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1067,
+        "source_line": 4375,
+        "timestamp_display": "02:03:56",
+        "timestamp_seconds": 7436,
+        "url": null
+      },
+      "speaker": "Dr. Donald Condie",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1068,
+        "source_line": 4379,
+        "timestamp_display": "02:03:56",
+        "timestamp_seconds": 7436,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1073,
+        "source_line": 4399,
+        "timestamp_display": "02:04:32",
+        "timestamp_seconds": 7472,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection. Beyond the scope ...",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1074,
+        "source_line": 4403,
+        "timestamp_display": "02:04:33",
+        "timestamp_seconds": 7473,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1086,
+        "source_line": 4451,
+        "timestamp_display": "02:05:22",
+        "timestamp_seconds": 7522,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All Right. Thank you, Doctor. You may sit down. Thank you. Can I see you sidebar again scheduling? All right. So, members of the jury, what we're going to do is we're going to break at this point till 2:00. And much of the next longer break will be trying to resolve the technology issue that we had. And so, if it's resolved, we may call one witness. If it's not, we'll call another witness. So, we're going to try and get that all done during the break. So, with my skills and technology, that's why we probably need a little bit longer than just the hour or so. So, in recess till 2:00, we'll come back in for the next witness. Thank you.",
+      "event_types": [
+        "sidebar",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1089,
+        "source_line": 4463,
+        "timestamp_display": "02:08:09",
+        "timestamp_seconds": 7689,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. So, counsel, anything we need to discuss before the break? All right. So, we'll be in recess till 2:00 and we have one of two different witnesses depending on how things work out over the break.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1101,
+        "source_line": 4511,
+        "timestamp_display": "02:11:06",
+        "timestamp_seconds": 7866,
+        "url": null
+      },
+      "speaker": "Madam Clerk",
+      "text": "Your Honor, for the purpose of the record, we return back to the trial of Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1106,
+        "source_line": 4531,
+        "timestamp_display": "02:11:45",
+        "timestamp_seconds": 7905,
+        "url": null
+      },
+      "speaker": "Madam Clerk",
+      "text": "Dr. Laposata, please raise your right hand. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth and the defendant at the bar shall be the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1143,
+        "source_line": 4679,
+        "timestamp_display": "02:17:17",
+        "timestamp_seconds": 8237,
+        "url": null
+      },
+      "speaker": "Dr. Elizabeth Laposata",
+      "text": "Oh, yes. I looked at her South Shore medical records when she was admitted on the evening of January 24th. I looked at her Brigham and Women's Hospital records and photographs that were taken of her and published in her hospital records. I looked at the Department of State Police Crime Laboratory toxicology report, crime scene photos of the bedroom, the outside of the house, crime scene photos, approximately 500 of them, grand jury proceedings, and photographs of the round exercise band.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1151,
+        "source_line": 4711,
+        "timestamp_display": "02:19:18",
+        "timestamp_seconds": 8358,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Is there any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1153,
+        "source_line": 4719,
+        "timestamp_display": "02:19:20",
+        "timestamp_seconds": 8360,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Yeah. So, same ruling that may be admitted. Do you want to pass out those?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1155,
+        "source_line": 4727,
+        "timestamp_display": "02:19:34",
+        "timestamp_seconds": 8374,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Yeah. Thank you. The jury can pass out copies of what was just introduced as the exhibit. It's just so you can kind of follow along with the testimony. At the end, we can ask to pass it back to the courtroom. Mark that.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1184,
+        "source_line": 4843,
+        "timestamp_display": "02:24:27",
+        "timestamp_seconds": 8667,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1185,
+        "source_line": 4847,
+        "timestamp_display": "02:24:27",
+        "timestamp_seconds": 8667,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1189,
+        "source_line": 4863,
+        "timestamp_display": "02:24:50",
+        "timestamp_seconds": 8690,
+        "url": null
+      },
+      "speaker": "Dr. Elizabeth Laposata",
+      "text": "Yes. There were also linear superficial incised wounds to her neck. And there were several of them and one or two of them went deeper. There was bleeding also from the wounds on her wrist. And there were numerous attempts at cutting the skin, which we call hesitation marks, which are a classic finding in suicide attempts. And they did, those incisions did cut in through the skin and cut blood vessels that were under the skin. And you can also tell from looking at the photos of Lindsay taken in the hospital when she was first admitted and also when the photograph of the bedroom, her bedroom, you could see there was significant bloodshed event from those cutting injuries.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1201,
+        "source_line": 4926,
+        "timestamp_display": "02:32:56",
+        "timestamp_seconds": 9176,
+        "url": null
+      },
+      "speaker": "Dr. Elizabeth Laposata",
+      "text": "Yes. This is the final resting position of Lindsay's body. It's documenting all the materials I reviewed that are on the left-hand side. So, she is lying down on hard, frozen ground. Her clothing is wet, she has on indoor clothing. The time that this occurred, it was dark and no sun. The temperature was in the low 30s. So, she is going to be at risk of her body temperature going down, lying on that cold ground. In addition to now that her thoracic chest spine is fractured, that has totally disrupted the thermal regulation of the bottom half of her body. So, she is going to lose heat from the lower half of her body to approach ambient temperature. So, there she is lying there on the ground. (02:33:57) Then if we go to the right side of that, this is a steam photograph showing the area where Lindsay's body landed. You can see on the right at the base area, there is some medical debris from the EMS emergency treatment. Then circled in or put in a red square. It's a little bit of snow that has some blood on it, which would correspond to her position lying down as we see it in the left- hand side there.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1280,
+        "source_line": 5250,
+        "timestamp_display": "02:43:37",
+        "timestamp_seconds": 9817,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "And she fell head first to the frozen ground with enough force to break several vertebrae in her ribs, but did not have a skull fracture, a brain bleed or any other type of injury to her head, correct?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1283,
+        "source_line": 5262,
+        "timestamp_display": "02:44:10",
+        "timestamp_seconds": 9850,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Any objection? All right, they may be admitted.",
+      "event_types": [
+        "objection",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1295,
+        "source_line": 5310,
+        "timestamp_display": "02:45:24",
+        "timestamp_seconds": 9924,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Okay. And so you testified back in 2011 in that case, and you were asked, \"If you have a very complete...\" Strike that. You were asked, \"Unconsciousness due to oxygenation can occur within 10 to 20 seconds.\" And you said, \"If you have a very complete compression of the blood vessels of the neck, you can become unconscious within 10 to 20 seconds.\" And then you were asked, \"I'm just saying hypothetically, just strangulation alone is 10 to 20 seconds.\" And you said, \"If it is effectively and continuously applied, like in a lateral vascular neck restraint, most times there's a struggle going on, so you can't quite get that.\" (02:46:09) So in that case there, you didn't testify that it was 5 to 10 seconds. You testified that it was 10 to 20 seconds, and that if there's any struggling, it could be longer, correct?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1301,
+        "source_line": 5337,
+        "timestamp_display": "02:46:26",
+        "timestamp_seconds": 9986,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Hold on. Hold on. She's answered the question, and then we'll have a redirect if counsel would like to.",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1313,
+        "source_line": 5388,
+        "timestamp_display": "02:48:09",
+        "timestamp_seconds": 10089,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "I'm objecting the way she's asked.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1364,
+        "source_line": 5595,
+        "timestamp_display": "02:57:20",
+        "timestamp_seconds": 10640,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "I was going to see you just for a second. Short break to take the equipment down. It took us hours to get it up, but hopefully it'd take us about five minutes to take it down. So I'm just going to ask you a very quick break and then we'll bring you right back in. We'll call the next witness. Okay?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1368,
+        "source_line": 5611,
+        "timestamp_display": "02:58:49",
+        "timestamp_seconds": 10729,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. So we'll be in, I know we always say it, but we'll be in a short recess. As soon as we can get the equipment down, we'll come right back out and we'll take the next witness.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1379,
+        "source_line": 5655,
+        "timestamp_display": "02:59:30",
+        "timestamp_seconds": 10770,
+        "url": null
+      },
+      "speaker": "Speaker 20",
+      "text": "Your Honor, for the purpose of the record, we returned back to the trial, Commonwealth versus Lindsay Clancy. All parties are present, including the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1382,
+        "source_line": 5667,
+        "timestamp_display": "03:01:29",
+        "timestamp_seconds": 10889,
+        "url": null
+      },
+      "speaker": "Speaker 20",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to the court and the jury in the matter now pending between the Commonwealth and the Defendant at the bar shall be the truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1410,
+        "source_line": 5782,
+        "timestamp_display": "03:07:53",
+        "timestamp_seconds": 11273,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1420,
+        "source_line": 5822,
+        "timestamp_display": "03:09:12",
+        "timestamp_seconds": 11352,
+        "url": null
+      },
+      "speaker": "Jennifer Sprague",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1539,
+        "source_line": 6312,
+        "timestamp_display": "03:26:17",
+        "timestamp_seconds": 12377,
+        "url": null
+      },
+      "speaker": "Speaker 22",
+      "text": "Objection. Relevance.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1540,
+        "source_line": 6316,
+        "timestamp_display": "03:26:19",
+        "timestamp_seconds": 12379,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "Yeah. Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1544,
+        "source_line": 6332,
+        "timestamp_display": "03:26:26",
+        "timestamp_seconds": 12386,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "No, overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1547,
+        "source_line": 6344,
+        "timestamp_display": "03:26:48",
+        "timestamp_seconds": 12408,
+        "url": null
+      },
+      "speaker": "Speaker 22",
+      "text": "Your Honor, objection and move to strike. It's not responsive to the question.",
+      "event_types": [
+        "objection",
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1550,
+        "source_line": 6356,
+        "timestamp_display": "03:26:55",
+        "timestamp_seconds": 12415,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. So that answer, Lisa, that answer is stricken.",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1555,
+        "source_line": 6379,
+        "timestamp_display": "03:28:06",
+        "timestamp_seconds": 12486,
+        "url": null
+      },
+      "speaker": "Speaker 22",
+      "text": "Objection. Can we approach?",
+      "event_types": [
+        "objection",
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1717,
+        "source_line": 7030,
+        "timestamp_display": "03:41:26",
+        "timestamp_seconds": 13286,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right. So, members of the jury, we're going to recess until tomorrow morning. I would expect our schedule tomorrow will be similar to the schedule that we had today, hopefully without the technology issues. And I'm just going to remind everybody the same instructions. Don't read anything about this case or similar cases, don't talk about it, don't listen to anything. Keep an open mind, go home, have a nice evening. We'll see you tomorrow morning at 9:00. Okay.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1719,
+        "source_line": 7038,
+        "timestamp_display": "03:42:10",
+        "timestamp_seconds": 13330,
+        "url": null
+      },
+      "speaker": "William Sullivan",
+      "text": "All right, Doctor, if you want, you may step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1721,
+        "source_line": 7046,
+        "timestamp_display": "03:42:36",
+        "timestamp_seconds": 13356,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "I hesitate to ask. Can we approach?",
+      "event_types": [
+        "sidebar"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}

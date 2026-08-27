@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-14-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-14",
+  "day_number": 14,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:eac3320443440ef1a6c88c077e1572ceeabdc3aeed272b338294512182a11f5d"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:6f3a7c9f0e789cdbf11672a2a505c78b5ab24616f967ecc3b36136d2d8674e74"
+  },
+  "summary": {
+    "title": "Day 14 Intelligence",
+    "subtitle": "Prosecution rested; digital evidence and the defense case began",
+    "one_liner": "Ian Whiffin addressed phone and Apple Watch data, the prosecution rested, and the defense began with personal and medical witnesses.",
+    "purpose": "Preserve the procedural transition and the distinct digital, lay-observation, and emergency-medicine evidence introduced that day.",
+    "what_changed": "The prosecution closed its case; the required-finding motion was denied; the defense called Margaret Hamp, Allison Ozga, Paula Musgrove, and Dr. Michael Volfovich after Ian Whiffin's digital testimony.",
+    "primary_topics": [
+      "Apple Watch",
+      "prosecution rests",
+      "required finding",
+      "defense case",
+      "injury mechanism"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day14-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Ian Whiffin addressed phone and Apple Watch data. After the prosecution rested and the court denied a required-finding motion, defense witnesses offered coworker, family, and medical evidence.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "58de5817-ec27-569d-a144-8d11eda786cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Ian Whiffin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:06:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "490019b6-91de-5e10-ac7b-10ce43b0c763",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Margaret Hamp",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:39:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1ea5ad86-5154-5380-a607-4a61a2855c20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Paula Musgrove",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:12:26"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "45772458-e48d-57e9-aee8-1fe39b6a1874",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Michael Volfovich",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day14-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 14 is both an evidentiary and procedural pivot: digital records complete a prosecution proof stream, while the defense begins developing personal-history and injury-mechanism themes.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "58de5817-ec27-569d-a144-8d11eda786cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Ian Whiffin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:06:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "490019b6-91de-5e10-ac7b-10ce43b0c763",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Margaret Hamp",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:39:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1ea5ad86-5154-5380-a607-4a61a2855c20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Paula Musgrove",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:12:26"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "45772458-e48d-57e9-aee8-1fe39b6a1874",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Michael Volfovich",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day14-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Digital device data supplied time-linked measurements; the court resolved the midtrial sufficiency motion; lay witnesses supplied observations; Dr. Volfovich offered emergency-medicine evidence about injuries and treatment.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "58de5817-ec27-569d-a144-8d11eda786cc",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Ian Whiffin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:06:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "490019b6-91de-5e10-ac7b-10ce43b0c763",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Margaret Hamp",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:39:31"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1ea5ad86-5154-5380-a607-4a61a2855c20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Paula Musgrove",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:12:26"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "45772458-e48d-57e9-aee8-1fe39b6a1874",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Michael Volfovich",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day14-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "The denial of a required-finding motion is a procedural ruling on legal sufficiency, not a factual finding that the Commonwealth's evidence is true.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day14-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which Apple Watch metrics are technically reliable for the propositions asserted, and what assumptions did each side make when integrating them into the incident timeline?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day14-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Audit device timestamps and physiological metrics separately, and preserve the exact scope and rationale of the required-finding ruling.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day14-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 15 expands the defense case through Susan Clancy and medical, psychiatric, and psychological experts.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Apple Watch",
+        "prosecution rests",
+        "required finding",
+        "defense case",
+        "injury mechanism"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day14-coverage",
+        "day14-working-position",
+        "day14-evidence-chain",
+        "day14-boundary-risk",
+        "day14-review-question",
+        "day14-next-action",
+        "day14-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day14-coverage",
+        "day14-working-position",
+        "day14-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

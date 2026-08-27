@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-12-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-12",
+  "day_number": 12,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:12b26c491a4b7dab69a0e5d7860387e020f7ddf73928c42894a4503df77089de"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:91d9353a8cc50ee5b55250957daf12915fa773be7de1a063f0dbe1edb7436503"
+  },
+  "summary": {
+    "title": "Day 12 Intelligence",
+    "subtitle": "Investigation, clinical evidence, and autopsy testimony",
+    "one_liner": "Investigative and clinical witnesses were followed by medical-examiner and neuropathology evidence concerning the children.",
+    "purpose": "Keep investigative collection, clinical testimony, and postmortem medical opinions in distinct but traceable evidence chains.",
+    "what_changed": "The prosecution added Daniel Lawler, Latiesha Dukes, and Cameron Daley before Drs. Renee Stonebridge and Barbara Vidal Olson addressed postmortem medical evidence.",
+    "primary_topics": [
+      "investigation",
+      "clinical care",
+      "autopsy",
+      "neuropathology",
+      "cause and manner"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day12-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Daniel Lawler addressed investigation; Latiesha Dukes and Cameron Daley supplied additional evidence; Dr. Renee Stonebridge and Dr. Barbara Vidal Olson addressed medical-examiner and neuropathology subjects.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84cebb0d-90a8-586f-a880-abc2b4731e00",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dan Lawler",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:25:45"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5092949e-30b5-5ede-a7a5-56ac0500a821",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Latiesha Dukes",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:15:44"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f0527fad-075c-5dcc-ae80-d7087d4d2cd8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Renee Stonebridge",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:57"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "4ddda0d9-0452-581d-a952-81fbf44a14a4",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Barbara Olson",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:56:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day12-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 12 connects investigative provenance to specialized medical findings, but the observations, laboratory findings, cause opinions, and legal implications remain separate levels of analysis.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84cebb0d-90a8-586f-a880-abc2b4731e00",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dan Lawler",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:25:45"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5092949e-30b5-5ede-a7a5-56ac0500a821",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Latiesha Dukes",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:15:44"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f0527fad-075c-5dcc-ae80-d7087d4d2cd8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Renee Stonebridge",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:57"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "4ddda0d9-0452-581d-a952-81fbf44a14a4",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Barbara Olson",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:56:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day12-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Investigators collected and documented material; clinicians supplied records and observations; autopsy and neuropathology witnesses interpreted postmortem findings within their disciplines.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "84cebb0d-90a8-586f-a880-abc2b4731e00",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dan Lawler",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:25:45"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "5092949e-30b5-5ede-a7a5-56ac0500a821",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Latiesha Dukes",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:15:44"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "f0527fad-075c-5dcc-ae80-d7087d4d2cd8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Renee Stonebridge",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:42:57"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "4ddda0d9-0452-581d-a952-81fbf44a14a4",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Barbara Olson",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:56:53"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day12-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Cause and manner opinions should be quoted and attributed precisely. They do not by themselves decide identity, intent, mental state, or criminal responsibility.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day12-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which findings were direct observations, which were tests, which were interpretive opinions, and what alternative explanations were addressed on cross-examination?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day12-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Create child-specific medical evidence chains and link each opinion to its stated findings, records, and limitations.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day12-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 13 turns to computer and device evidence, including the scope and attribution limits of digital searches and artifacts.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "investigation",
+        "clinical care",
+        "autopsy",
+        "neuropathology",
+        "cause and manner"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day12-coverage",
+        "day12-working-position",
+        "day12-evidence-chain",
+        "day12-boundary-risk",
+        "day12-review-question",
+        "day12-next-action",
+        "day12-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day12-coverage",
+        "day12-working-position",
+        "day12-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

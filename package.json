@@ -19,6 +19,7 @@
     "testimony:reconstruction-day3": "tsx scripts/map-day3-reconstruction.ts",
     "reconcile:day3": "tsx scripts/create-day3-reconciliation-acceptance.ts",
     "testimony:publish-corpus": "tsx scripts/publish-transcript-corpus.ts",
+    "day-intelligence:generate": "tsx scripts/generate-day-intelligence-summaries.ts",
     "trial-index:lindsay": "tsx scripts/import-lindsay-trial-index.ts",
     "court-packet:parse": "tsx scripts/court-packet.ts parse",
     "court-packet:inspect": "tsx scripts/court-packet.ts inspect",

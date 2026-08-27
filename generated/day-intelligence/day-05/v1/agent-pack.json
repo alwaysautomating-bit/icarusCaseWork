@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-05-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-05",
+  "day_number": 5,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:c3d0ec9c5b6b81c4d9fc5a417a72c2f79336b09470f04001b6e54e41b8cc5c27"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:35c59ae98b91849ece9c9205c422311591c559c0ae8d703df775acb6ee821ae5"
+  },
+  "summary": {
+    "title": "Day 5 Intelligence",
+    "subtitle": "Medical care, crime-scene processing, and investigative collection",
+    "one_liner": "A long witness day connected hospital evidence concerning Lindsay and the children with crime-scene documentation and police searches.",
+    "purpose": "Organize the medical and investigative streams without combining clinical observations, expert opinions, and police collection into a single factual narrative.",
+    "what_changed": "The prosecution added hospital witnesses, crime-scene personnel, and police witnesses who addressed injuries, care, scene documentation, and evidence collection.",
+    "primary_topics": [
+      "medical care",
+      "injuries",
+      "crime scene",
+      "evidence collection",
+      "hospital records"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day05-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Medical witnesses including Drs. Michael Snyder, Andrew Capraro, David Casavant, Shah, and Biswas appeared alongside nurses, crime-scene personnel, and Duxbury and State Police witnesses.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "654563e2-ea3c-58a7-a899-7977bcb0790c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Michael Snyder",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:08:42"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "6fcb8ec6-1e1f-5b0b-a41a-874ed53e1de3",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rose Stoffers",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:19:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1e5a0748-2df6-5b37-abf6-86b9be68432f",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rachelle Amedee",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:17:18"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "c9b897c2-f92b-5313-ae62-04059823393a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "John Santos",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "05:58:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day05-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 5 tied clinical and physical-evidence lanes together procedurally, but the source of each injury description, treatment fact, photograph, and collected item remains witness-specific.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "654563e2-ea3c-58a7-a899-7977bcb0790c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Michael Snyder",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:08:42"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "6fcb8ec6-1e1f-5b0b-a41a-874ed53e1de3",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rose Stoffers",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:19:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1e5a0748-2df6-5b37-abf6-86b9be68432f",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rachelle Amedee",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:17:18"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "c9b897c2-f92b-5313-ae62-04059823393a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "John Santos",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "05:58:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day05-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Emergency and hospital care generated observations and records; crime-scene processing documented the residence; police witnesses described searches and collection. Those streams later become premises for expert analysis.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "654563e2-ea3c-58a7-a899-7977bcb0790c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Michael Snyder",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:08:42"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "6fcb8ec6-1e1f-5b0b-a41a-874ed53e1de3",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rose Stoffers",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:19:14"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1e5a0748-2df6-5b37-abf6-86b9be68432f",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Rachelle Amedee",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:17:18"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "c9b897c2-f92b-5313-ae62-04059823393a",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "John Santos",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "05:58:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day05-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "The day covers different patients and several professional roles. Summaries must not transfer an observation, injury, or opinion from one patient or witness to another.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day05-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "For each medical and scene proposition, who personally observed it, which record or exhibit supports it, and was the statement fact testimony or expert opinion?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day05-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Create patient-specific and artifact-specific source chains before using Day 5 material in a reconstruction or expert-premise audit.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day05-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 6 continues trauma and forensic evidence, adds scene-collection testimony, and uses stipulations to streamline parts of the prosecution proof.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "medical care",
+        "injuries",
+        "crime scene",
+        "evidence collection",
+        "hospital records"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day05-coverage",
+        "day05-working-position",
+        "day05-evidence-chain",
+        "day05-boundary-risk",
+        "day05-review-question",
+        "day05-next-action",
+        "day05-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day05-coverage",
+        "day05-working-position",
+        "day05-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

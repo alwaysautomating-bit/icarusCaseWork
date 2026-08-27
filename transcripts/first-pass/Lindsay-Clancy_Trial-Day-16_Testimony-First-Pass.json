@@ -1,0 +1,930 @@
+{
+  "schema_version": "1.0",
+  "classification": "candidate_structure_only",
+  "source": {
+    "preserved_filename": "Lindsay-Clancy_Trial-Day-16_Rev-Transcript.txt",
+    "sha256": "68452dc944508a3b6567bd19125cf49a117f47e2ff5d108ca1452276f0c97b95"
+  },
+  "compiler": {
+    "name": "icarus-testimony-first-pass",
+    "version": "0.2.0"
+  },
+  "counts": {
+    "segments": 1384,
+    "witness_blocks": 0,
+    "phase_sets": 0,
+    "procedural_markers": 64
+  },
+  "witness_blocks": [],
+  "phase_sets": [],
+  "procedural_markers": [
+    {
+      "locator": {
+        "segment_index": 9,
+        "source_line": 103,
+        "timestamp_display": "00:22",
+        "timestamp_seconds": 22,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Before we get going, we may have a little bit of a delay actually starting at this point through no fault really of anyone. So I just kind of wanted to come out so maybe we go sidebar, talk about what the day, the schedule is and just so everybody's aware that we're trying to get this moving. So counsel? All right. So at this point, what we're going to do is we're going to be in recess and we'll come back as soon as we can in regards to this. We'll resume the trial at that time. Okay. Thank you.",
+      "event_types": [
+        "sidebar",
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 24,
+        "source_line": 163,
+        "timestamp_display": "03:06",
+        "timestamp_seconds": 186,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Nice to see all of you. I appreciate you being here. So what I'm going to do is we're going to go over the questions that you know are coming, and then what we'll do is we'll get right back into the case. So the first question, has any member of the jury read, seen, heard, or overheard anything from any source about any aspect of this case that would affect your ability to be fair and impartial? Next question. Is there any other serious matter or concern bearing on your service as a juror in this case that anybody needs to bring to my attention? Again, thank you so much for following those instructions. And so what we're going to do now is we broke yesterday. There was a witness on the stand who was testifying on behalf of the defense. We're going to return to that witness at this point. And so if the witness could retake the stand at this time. Yeah.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 27,
+        "source_line": 175,
+        "timestamp_display": "03:57",
+        "timestamp_seconds": 237,
+        "url": null
+      },
+      "speaker": "Madam Clerk",
+      "text": "Good morning. Do you solemnly swear that the testimony you shall give to the court and the jury in the matter now pending between the Commonwealth and the defendant shall be the truth, the whole truth and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 34,
+        "source_line": 203,
+        "timestamp_display": "04:21",
+        "timestamp_seconds": 261,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Thank you, Judge. Sir, I'm going to try to just redirect towards the interview that you had of Lindsay regarding her journey. On November 29th of 2022, do you recall which healthcare provider she visited?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 140,
+        "source_line": 627,
+        "timestamp_display": "12:29",
+        "timestamp_seconds": 749,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "So December 30th or 31st of 2022, she was admitted voluntarily to McLean, right?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 173,
+        "source_line": 759,
+        "timestamp_display": "15:56",
+        "timestamp_seconds": 956,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 174,
+        "source_line": 763,
+        "timestamp_display": "16:00",
+        "timestamp_seconds": 960,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Is it an objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 176,
+        "source_line": 771,
+        "timestamp_display": "16:01",
+        "timestamp_seconds": 961,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "Yeah. Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 387,
+        "source_line": 1615,
+        "timestamp_display": "37:04",
+        "timestamp_seconds": 2224,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "I think you also write in that report... Well, strike that. Going back to your most recent evaluation in June of 2026, you would agree with me that in an evaluation for criminal responsibility, being a forensic psychologist, it's really important to be as accurate as possible in your reports, correct?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 414,
+        "source_line": 1723,
+        "timestamp_display": "40:50",
+        "timestamp_seconds": 2450,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 415,
+        "source_line": 1727,
+        "timestamp_display": "40:52",
+        "timestamp_seconds": 2452,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 580,
+        "source_line": 2389,
+        "timestamp_display": "56:09",
+        "timestamp_seconds": 3369,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Well, I have the bottle. Exhibit number two. Sertraline, that's Zoloft, right? Brand named Zoloft?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 592,
+        "source_line": 2437,
+        "timestamp_display": "57:42",
+        "timestamp_seconds": 3462,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Well, I'm looking at exhibit number one, a record from CVS Pharmacy, which all of these bottles are from. And the only time a prescription for sertraline is spelled is on September 15th, 2022 for 30 pills. You aware of that?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 631,
+        "source_line": 2593,
+        "timestamp_display": "01:03:20",
+        "timestamp_seconds": 3800,
+        "url": null
+      },
+      "speaker": "Speaker 1",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 632,
+        "source_line": 2597,
+        "timestamp_display": "01:03:20",
+        "timestamp_seconds": 3800,
+        "url": null
+      },
+      "speaker": "Speaker 2",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 706,
+        "source_line": 2893,
+        "timestamp_display": "01:12:39",
+        "timestamp_seconds": 4359,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 717,
+        "source_line": 2943,
+        "timestamp_display": "01:15:07",
+        "timestamp_seconds": 4507,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "[inaudible 01:15:08] Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 720,
+        "source_line": 2955,
+        "timestamp_display": "01:15:12",
+        "timestamp_seconds": 4512,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Can we have a sidebar? That's not the question.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 755,
+        "source_line": 3095,
+        "timestamp_display": "01:21:13",
+        "timestamp_seconds": 4873,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "How about on September 30th of 2024, page 1,229 of the Tewksbury record where it's noted that, \"She was visible in the unit, attended startup/coffee group, she was assisted with ADLs as needed. She was in safe behavioral control for the duration of the shift.\" And that later it reads, \"Patient visible in the hallways, seated in her wheelchair outside her bedroom using her cell phone. Pleasant upon approach. Social with select peers.\" That would've been on September 30th, 2024, which would've been Dawson's fifth birthday. Do you recall reviewing that in the record?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 783,
+        "source_line": 3207,
+        "timestamp_display": "01:27:06",
+        "timestamp_seconds": 5226,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Your Honor, I would move to admit these excerpts as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 784,
+        "source_line": 3211,
+        "timestamp_display": "01:27:11",
+        "timestamp_seconds": 5231,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 786,
+        "source_line": 3219,
+        "timestamp_display": "01:27:12",
+        "timestamp_seconds": 5232,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "All right. They may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 894,
+        "source_line": 3659,
+        "timestamp_display": "01:42:16",
+        "timestamp_seconds": 6136,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "One moment, please. Your Honor, I would move to admit the recording played as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 898,
+        "source_line": 3675,
+        "timestamp_display": "01:42:33",
+        "timestamp_seconds": 6153,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "... as the next exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 899,
+        "source_line": 3679,
+        "timestamp_display": "01:42:34",
+        "timestamp_seconds": 6154,
+        "url": null
+      },
+      "speaker": "Bailiff",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 903,
+        "source_line": 3695,
+        "timestamp_display": "01:42:56",
+        "timestamp_seconds": 6176,
+        "url": null
+      },
+      "speaker": "Speaker 3",
+      "text": "Exhibit 284.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 935,
+        "source_line": 3823,
+        "timestamp_display": "01:46:19",
+        "timestamp_seconds": 6379,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled. Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 938,
+        "source_line": 3835,
+        "timestamp_display": "01:46:25",
+        "timestamp_seconds": 6385,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Yeah. You can re-ask that question. That answer will be stricken.",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 946,
+        "source_line": 3867,
+        "timestamp_display": "01:47:18",
+        "timestamp_seconds": 6438,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 947,
+        "source_line": 3871,
+        "timestamp_display": "01:47:18",
+        "timestamp_seconds": 6438,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 953,
+        "source_line": 3895,
+        "timestamp_display": "01:47:40",
+        "timestamp_seconds": 6460,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 955,
+        "source_line": 3903,
+        "timestamp_display": "01:47:42",
+        "timestamp_seconds": 6462,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 960,
+        "source_line": 3923,
+        "timestamp_display": "01:49:31",
+        "timestamp_seconds": 6571,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 961,
+        "source_line": 3927,
+        "timestamp_display": "01:49:32",
+        "timestamp_seconds": 6572,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Yeah. Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 962,
+        "source_line": 3931,
+        "timestamp_display": "01:49:34",
+        "timestamp_seconds": 6574,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Sidebar?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 963,
+        "source_line": 3935,
+        "timestamp_display": "01:49:49",
+        "timestamp_seconds": 6589,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "You've been sitting here for a little bit. We're going to take a short break at this point, give you a chance to take a break, and then we'll come right back and we'll continue with the testimony of this witness. Okay?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 966,
+        "source_line": 3947,
+        "timestamp_display": "01:50:39",
+        "timestamp_seconds": 6639,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. We'll be in a short recess at this time. Thank you. (01:50:39) Yeah.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 969,
+        "source_line": 3965,
+        "timestamp_display": "01:53:05",
+        "timestamp_seconds": 6785,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. We'll return now to redirect counsel.",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 971,
+        "source_line": 3973,
+        "timestamp_display": "01:53:43",
+        "timestamp_seconds": 6823,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 972,
+        "source_line": 3977,
+        "timestamp_display": "01:53:45",
+        "timestamp_seconds": 6825,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 995,
+        "source_line": 4069,
+        "timestamp_display": "01:55:33",
+        "timestamp_seconds": 6933,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1011,
+        "source_line": 4133,
+        "timestamp_display": "01:57:21",
+        "timestamp_seconds": 7041,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1018,
+        "source_line": 4161,
+        "timestamp_display": "01:58:13",
+        "timestamp_seconds": 7093,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "And finally, doctor, I'm holding up what has been marked as Exhibit 1 or I. I don't know for identification. Have you seen this before?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1027,
+        "source_line": 4197,
+        "timestamp_display": "01:59:00",
+        "timestamp_seconds": 7140,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Yeah, sure. See sidebar, please.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1028,
+        "source_line": 4201,
+        "timestamp_display": "01:59:20",
+        "timestamp_seconds": 7160,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Your Honor, I would hand this to Chrissy to have it marked as an exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1029,
+        "source_line": 4205,
+        "timestamp_display": "01:59:24",
+        "timestamp_seconds": 7164,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Over the Commonwealth's objection, that may be admitted.",
+      "event_types": [
+        "objection",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1050,
+        "source_line": 4289,
+        "timestamp_display": "02:01:20",
+        "timestamp_seconds": 7280,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1078,
+        "source_line": 4401,
+        "timestamp_display": "02:04:09",
+        "timestamp_seconds": 7449,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "It's up to Your Honor as to the voir dire on McLean Hospital witness or Dr. Spinelli. I know.",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1079,
+        "source_line": 4405,
+        "timestamp_display": "02:04:16",
+        "timestamp_seconds": 7456,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Counsel, let me CC in regards to the timing on. (02:04:18) Members of the jury, this is another one of those moments I've got to talk to counsel about a matter that I've got to talk to them outside of your presence. All right. So I thought we'd do it at this point and excuse you till two o'clock. We'll take up the next witness. We're going to stay in here and we're going to take up that other matter. All right? And so with that, during the break, remember, same instructions. Don't talk about it. Don't do any research about it. Don't read anything. Don't go anywhere in regards to this. And I'll see everybody at two o'clock. Okay?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1082,
+        "source_line": 4420,
+        "timestamp_display": "02:06:50",
+        "timestamp_seconds": 7610,
+        "url": null
+      },
+      "speaker": "Judge",
+      "text": "All right. Counsel, are we ready to do the voir dire of Ms. Thorndike?",
+      "event_types": [
+        "voir_dire"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1084,
+        "source_line": 4428,
+        "timestamp_display": "02:07:42",
+        "timestamp_seconds": 7662,
+        "url": null
+      },
+      "speaker": "Speaker 4",
+      "text": "Raise your right hand. Do you solemnly swear that you shall make true answers to such questions [inaudible 02:07:49].",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1170,
+        "source_line": 4774,
+        "timestamp_display": "02:16:57",
+        "timestamp_seconds": 8217,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "And you had the occasion to hear the cross-examination of Patrick Clancy by the district attorney. Is that right?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1175,
+        "source_line": 4794,
+        "timestamp_display": "02:17:08",
+        "timestamp_seconds": 8228,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Sorry, you're right. It's been a long week. Okay. Direct examination. And the focus was on the fact that when Lindsay went into the hospital, it was on New Year's Eve. Is that correct?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1179,
+        "source_line": 4810,
+        "timestamp_display": "02:17:30",
+        "timestamp_seconds": 8250,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Okay. And you heard the direct examination of the district attorney asking about McClean being number one hospital in the country. McClean having all of these services available to the inmates that are in there, treating them, offering all these fantastic programs on the holiday weekends and the holidays, as opposed to what Patrick had testified to. Do you see that?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1183,
+        "source_line": 4826,
+        "timestamp_display": "02:18:16",
+        "timestamp_seconds": 8296,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "You heard Patrick Clancy make reference to the fact that his wife admitted herself into the STU on the holiday weekend, [inaudible 02:18:24].",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1226,
+        "source_line": 4998,
+        "timestamp_display": "02:23:39",
+        "timestamp_seconds": 8619,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "Now, the district attorney is objecting to your testimony, and I believe they're going to argue the change from that one year period. When did you leave working there?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1305,
+        "source_line": 5314,
+        "timestamp_display": "02:31:01",
+        "timestamp_seconds": 9061,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "And you were asked by Attorney Reddington here about observing that testimony or the direct examination of Patrick. And I think he mentioned where it was referred to that McLean was the best hospital in the country. Do you recall that being the question that was asked of Patrick Clancy?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1358,
+        "source_line": 5526,
+        "timestamp_display": "02:38:24",
+        "timestamp_seconds": 9504,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. All right. Mr. Reddington, I'll hear you on the motion. You may step down. Thank you very much.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1362,
+        "source_line": 5545,
+        "timestamp_display": "02:40:14",
+        "timestamp_seconds": 9614,
+        "url": null
+      },
+      "speaker": "Shanan Buckingham",
+      "text": "Your Honor, I would object to the witness. And even now after the voir dire, I think it's clear that the best evidence of what the defendant was provided by way of care, treatment, however you want to call it, is the record in and of itself. It's the record from McLean that documents each and every contact she had with each and every person that was on staff during the time period she was there. Now, just to be clear, there's been some indication that she went there on the 31st of December, but the records are clear to say she was transported and she didn't arrive at McLean until the early morning hours of January 1st. So that's when the records start. And they document her each and every day in each and every step of the way consistent with how Dr. Goodheart described the process of how... Your intake and then how you go through the day and what the general schedule is, and the contact with the treatment team. (02:41:07) This witness is offering no more information than what's contained within the record, and no more information that's what's contained in the records that were just received for the trial subpoena. And I would suggest to you that the fact that she, in her last role as a social worker from 2019 to 2021, where she was a day staffed person that worked Monday through Friday, that wasn't there on the weekends, that she does have a limited amount of information and it's attenuated, more attenuated than we initially believe from the dates in which the defendant was at this particular hospital. So I would suggest, or I would object and argue that the best evidence is the records in and of themselves, the records that now have been subpoenaed that can be admitted to identify the particular staff. I'd also like to point out that counsel's referring to offering this to rebut certain inferences or certain statements that the Commonwealth made in the direct examination of Mr. Clancy, but no one has said that McLean is a number one hospital. (02:42:05) That wasn't the testimony. That wasn't the question put before him. It was simply what he knew, what he observed, and if he knew what was contained within the record. So there's been no presentation of evidence that would suggest that a person needs to come in to dispute that the groups are the groups. The court and the jury can see from the record what the groups were and they can make their own decisions based on what they described them to be in the record, if that was treatment or not treatment. I don't believe that the Commonwealth presented it as treatment. I believe the Commonwealth presented it as resources available to the individual while they were there at the hospital. The treatment piece, or the therapy, comes from the psychiatrist, which this witness can't testify to because she's not. So I would object for her to being called as a witness for those reasons.",
+      "event_types": [
+        "voir_dire",
+        "direct_explicit",
+        "admitted"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1363,
+        "source_line": 5555,
+        "timestamp_display": "02:42:58",
+        "timestamp_seconds": 9778,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. All right. Well, I'm looking at this really as two issues. First is late disclosure of the witness. And that goes into a whole different analysis. And also analysis under Rule 403, which is relating to relevant evidence. And as that rule, proposed rule says, \"Evidence may be excluded if its probative value is substantially outweighed by the danger of unfair prejudice, confusion of the issues, or misleading the jury, or by considerations of...\" Well, that part doesn't apply. First off, I find this witness credible. I find that... And I appreciate her being willing to offer the information that she has, but that's not always the whole finding on this. And so under cases such as Taylor v. Illinois, Commonwealth v. Dunning, Commonwealth v. Steinmeier, a couple other cases, I have to look at a number of factors. The first is prevention of surprise. Well, the Commonwealth has been aware of this issue for at least a week or so. So I'm not considering that evidence of bad faith. There's no bad faith I see from either side in naming this or calling this person at this time. (02:44:17) The prejudice to the other party. I think there's just limited prejudice, if any, to the Commonwealth. However though, the final two are the issues that I think are more relevant in this. One is the materiality of the testimony in this. And I find that there's limited materiality, that's hard to say, because mainly this witness hadn't worked there for a year. So there's at least a gap between when she worked there and when the relevant time period is here. There's also, I imagine, different personnel that are working on different shifts. And so there's limited value to that testimony. I also, I don't remember any five star type inferences in fact. So I'm not going to... (02:45:17) That's going to be measured by the jury, but I didn't see any mentions that this was a five star facility. And then also, the concern is, or the factor is the effectiveness of less severe sanctions. And I would find that the records that have been brought in pursuant to the subpoena in the last couple of days from McLean's, talks about the staffing levels on holidays and not on holidays. So if there's a question of whether or not there was a, quote unquote, skeleton crew that was on for those, at least the first two days of this time that Ms. Clancy was there, that's reflected in the records. There also in the records here is a list of whatever programs were offered, and also when they were offered. So if there's a question of less programs being offered on a holiday than during the week, those are contained in the records. (02:46:24) And so I'm going to deny the defendant's motion to call this witness, but I am going to allow the defendant, if the defendant wishes, to submit those McLean's records specifically regarding the staffing and the programs that are available, not just on that weekend, but for the week. And I think there's records in there for the week before. So there could be a comparison between what was available to Ms. Clancy during the week, and what was available to her on a holiday weekend. So that's going to be my finding. I'll issue a written ruling on this, but I just wanted to give the parties at least some idea, as well as the witness who's been here I know a couple of days. I just wanted to thank her for that. So with that, we'll be in recess till 2:15 and we'll come back and resume the trial. Okay?",
+      "event_types": [
+        "recess",
+        "witness_called"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1366,
+        "source_line": 5576,
+        "timestamp_display": "02:47:30",
+        "timestamp_seconds": 10050,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "I know it's a technicality. Note my objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1372,
+        "source_line": 5600,
+        "timestamp_display": "02:48:00",
+        "timestamp_seconds": 10080,
+        "url": null
+      },
+      "speaker": "Kevin Reddington",
+      "text": "I would ask if we could approach, sir.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1375,
+        "source_line": 5612,
+        "timestamp_display": "02:48:00",
+        "timestamp_seconds": 10080,
+        "url": null
+      },
+      "speaker": "Speaker 5",
+      "text": "Your Honor, the purpose of the record was returned back to the title of Commonwealth v. Lindsay Clancy. All parties are present, including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "locator": {
+        "segment_index": 1380,
+        "source_line": 5632,
+        "timestamp_display": "02:52:39",
+        "timestamp_seconds": 10359,
+        "url": null
+      },
+      "speaker": "Judge William Sullivan",
+      "text": "All right. So we'll be in recess till tomorrow morning at 9: 00. Thank you everyone.",
+      "event_types": [
+        "recess"
+      ]
+    }
+  ],
+  "limitations": [
+    "Witness names, boundaries, examination phases, jury state, and procedural markers are deterministic candidates requiring review.",
+    "Boundary confidence measures cue coverage only; it does not measure truth, accuracy, credibility, or evidentiary weight.",
+    "A witness block may include court procedure before testimony begins or after testimony ends.",
+    "Transcript timestamps are source-media locators and are not automatically event times.",
+    "No extracted statement is promoted to a verified fact, event, proposition, or database record."
+  ]
+}

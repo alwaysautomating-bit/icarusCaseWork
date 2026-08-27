@@ -1,6 +1,6 @@
 ---
 name: thread-collapse-handoff
-description: Transform long conversations, research threads, brainstorming sessions, project discussions, and decision-making exchanges into durable operational memory. Use when Codex must extract decisions, insights, evidence, relationships, risks, open questions, project status, future actions, or a handoff brief for someone who did not read the original thread. Use for thread collapse, operational handoff, knowledge transfer, project dossiers, and future context retrieval artifacts.
+description: Transform long conversations and legal/evidentiary source discussions into durable operational memory. Use for thread collapse, operational handoff, and source-linked Day Intelligence generated from testimony or court records.
 ---
 
 # Thread Collapse Handoff
@@ -8,6 +8,56 @@ description: Transform long conversations, research threads, brainstorming sessi
 Produce a knowledge artifact, not a conversational summary.
 
 Assume the reader has never seen the original thread. Reconstruct the thread's meaning so future work can continue without replaying the conversation.
+
+## Modes
+
+- `standard`: use the existing workflow and output contract.
+- `legal_evidentiary`: use for testimony, court records, filings, expert reports, evidence packets, and legal case analysis. Apply every rule below in addition to the standard workflow.
+
+## Legal / Evidentiary Mode
+
+This mode produces an analytical artifact about the record. It does not replace the record or establish canonical facts.
+
+Authority hierarchy:
+
+```text
+source_artifact + source_segments
+  -> generated Day Intelligence context.md
+  -> card.json + agent-pack.json + relationships.json + UI
+```
+
+Required preservation rules:
+
+1. Treat testimony, expert opinion, party argument, investigative description, and generated interpretation as attributed assertions rather than established facts.
+2. Keep source artifacts, derivatives, source statements, witness testimony, expert opinions, party positions, court rulings, stipulations, and analytical inferences distinct.
+3. Preserve competing assertions independently. Do not reconcile or overwrite them unless the source contains an authoritative resolution whose scope is preserved.
+4. Never convert repetition into independent corroboration. Preserve known source ancestry.
+5. Never use provenance, extraction confidence, or human acceptance as proof of truth, credibility, admissibility, or legal sufficiency.
+6. Do not convert an attorney question into witness testimony unless the witness expressly adopts it.
+7. Use neutral attribution: “testified,” “opined,” “argued,” “the record reflects,” and “the analysis identifies.”
+8. Link every material source-backed item to exact `source_segments.id` values when available. If unresolved, use `source_linkage_incomplete`; never invent IDs or locators.
+9. Keep `extraction_confidence` separate from `evidentiary_assessment`.
+10. Do not ingest, reference, or promote private Scratchpad content.
+
+When creating `day-intelligence/1.0`, every material item requires:
+
+```yaml
+item_id: stable-id
+section: insights | positions_working_conclusions | evidence_chains | relationships | risks_tensions | open_questions | actions | memory_candidates | handoff
+epistemic_class: source_statement | witness_testimony | expert_opinion | party_position | court_ruling | stipulation | analytical_inference | working_conclusion | evidence_chain | relationship | tension | risk | research_question | research_action | memory_candidate | handoff_state
+title: short title
+content: neutral analytical content
+importance: high | medium | low
+extraction_confidence: 0.0
+evidentiary_assessment: direct | corroborated | partially_corroborated | single_source | derived | conflicted | unsupported | not_assessed
+source_linkage_status: complete | source_linkage_incomplete
+review_status: generated | needs_review | accepted | amended | rejected | deferred
+sources: []
+tags: []
+notes: []
+```
+
+Preserve artifact-level provenance: artifact set ID/version, input artifact IDs and hashes, skill/model/configuration versions, generation timestamp, and superseded artifact ID when applicable. A correction creates a new versioned directory; this mode neither requires nor prescribes database persistence.
 
 ## Operating Rules
 
@@ -257,3 +307,33 @@ Before finishing, check that:
 - The artifact is dense with reusable context and light on conversational residue.
 
 If a section has no meaningful content, keep the heading and state `None identified` rather than silently dropping it.
+
+## Legal Output Contract
+
+When `mode = legal_evidentiary`, replace `Decisions` with `Positions & Working Conclusions` and use these headings:
+
+### Thread / Proceeding Purpose
+
+### Key Insights
+
+### Positions & Working Conclusions
+
+### Evidence Chains
+
+### Relationships
+
+### Context Required For Future Work
+
+### Risks & Tensions
+
+### Open Questions
+
+### Next Actions
+
+### Memory Candidates
+
+### Features / Skills / Scripts / Code / Screens
+
+### Handoff Brief
+
+The structured item fields are authoritative for identity, provenance, epistemic class, review state, and source linkage. Follow `contracts/day-intelligence-1.0.md` for Day Intelligence artifact sets.

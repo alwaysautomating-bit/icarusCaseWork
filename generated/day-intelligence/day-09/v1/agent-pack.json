@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-09-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-09",
+  "day_number": 9,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:30346096b485ef2568dd2682e26330f4bebc312f6af1ead0cfb1fa2f12542926"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:acb904f75001b637a4627d3c6ef6d010d41c2a1e036a9aa92b98233c9a5ebc03"
+  },
+  "summary": {
+    "title": "Day 9 Intelligence",
+    "subtitle": "Personal observers and treating-psychiatrist testimony",
+    "one_liner": "Childcare and family-context witnesses preceded psychiatric testimony from Alia Goodheart and Jennifer Tufts.",
+    "purpose": "Preserve the transition from lay observations to treating-clinician evidence about symptoms, diagnosis, medication, and treatment decisions.",
+    "what_changed": "The prosecution added Kimberlee Hardy and Sarah Carney's observations, then moved into psychiatric evidence through Alia Goodheart and Dr. Jennifer Tufts.",
+    "primary_topics": [
+      "lay observations",
+      "psychiatric treatment",
+      "diagnosis",
+      "medication",
+      "Jennifer Tufts"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day09-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Kimberlee Hardy and Sarah Carney supplied personal or childcare context. Psychiatrist Alia Goodheart testified, and Dr. Jennifer Tufts began a lengthy account of treatment and clinical records.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "b4e23309-3331-5ab2-a968-6a0a810b1ece",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kimberlee Hardy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d330d38a-d4da-5c4f-ac63-bdd83f567bfe",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sarah Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:21:43"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "507c239d-7310-5704-ad39-8537229ea892",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Alia Goodheart",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:27:48"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "2826a2d6-e17a-53bb-a1f5-763e51dfe826",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:06"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day09-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 9 establishes multiple observation windows around Lindsay's functioning and treatment, but later expert use must distinguish contemporaneous clinical judgment from retrospective forensic opinion.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "b4e23309-3331-5ab2-a968-6a0a810b1ece",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kimberlee Hardy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d330d38a-d4da-5c4f-ac63-bdd83f567bfe",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sarah Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:21:43"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "507c239d-7310-5704-ad39-8537229ea892",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Alia Goodheart",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:27:48"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "2826a2d6-e17a-53bb-a1f5-763e51dfe826",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:06"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day09-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Lay observations supply behavior in ordinary settings; treating clinicians supply reported symptoms, examinations, diagnoses, and treatment decisions; forensic experts later interpret those records for a different legal question.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "b4e23309-3331-5ab2-a968-6a0a810b1ece",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kimberlee Hardy",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d330d38a-d4da-5c4f-ac63-bdd83f567bfe",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sarah Carney",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:21:43"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "507c239d-7310-5704-ad39-8537229ea892",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Alia Goodheart",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:27:48"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "2826a2d6-e17a-53bb-a1f5-763e51dfe826",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr. Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:53:06"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day09-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Clinical notes may contain patient report, collateral report, clinician observation, and clinician assessment in the same entry. Those layers should not be treated as interchangeable facts.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day09-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Which symptoms and concerns were directly observed, which were self-reported, which came from collateral sources, and how did treatment decisions respond to each?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day09-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Build a dated treatment-source table that separates report, observation, assessment, medication decision, and follow-up plan.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day09-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 10 continues Dr. Tufts's testimony and then adds psychiatric nurse practitioner Julie Paul.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "lay observations",
+        "psychiatric treatment",
+        "diagnosis",
+        "medication",
+        "Jennifer Tufts"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day09-coverage",
+        "day09-working-position",
+        "day09-evidence-chain",
+        "day09-boundary-risk",
+        "day09-review-question",
+        "day09-next-action",
+        "day09-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day09-coverage",
+        "day09-working-position",
+        "day09-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

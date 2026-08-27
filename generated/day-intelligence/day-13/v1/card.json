@@ -1,0 +1,40 @@
+{
+  "id": "day-intelligence:413d071f-6299-46ae-aa85-46390aca38a6:day-13:v1",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-13-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-13",
+  "day_number": 13,
+  "version": 1,
+  "title": "Day 13 Intelligence",
+  "subtitle": "Computer, phone, and digital-forensics evidence",
+  "one_liner": "State Police witnesses explained forensic extraction and presented computer and device artifacts while acknowledging attribution limits.",
+  "purpose": "Preserve what the digital artifacts show, how they were extracted, and what the data cannot establish about user identity or meaning.",
+  "what_changed": "The record gained forensic evidence from Kyle Pavao, Timothy Chiappini, and Joshua McKelligan concerning computers, phones, searches, and investigative handling.",
+  "primary_topics": [
+    "digital forensics",
+    "Surface Pro",
+    "phone extraction",
+    "search history",
+    "user attribution"
+  ],
+  "review_status": "needs_review",
+  "source_linkage_status": "partial",
+  "item_counts": {
+    "insights": 1,
+    "positions_working_conclusions": 1,
+    "evidence_chains": 1,
+    "relationships": 0,
+    "risks_tensions": 1,
+    "open_questions": 1,
+    "actions": 1,
+    "memory_candidates": 0,
+    "handoff": 1
+  },
+  "generated_at": "2026-08-27T02:22:41.099Z",
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md"
+  }
+}

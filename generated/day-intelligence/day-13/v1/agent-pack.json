@@ -1,0 +1,390 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-13-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-13",
+  "day_number": 13,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:2bae6361806288fe6f9f6cfafdf38d882a3ae2e236cbb296071bf47455ec189f"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:e7cf073f739f22fe3ba52152398006697b89f5c2d4690901b624ce2efdcd057f"
+  },
+  "summary": {
+    "title": "Day 13 Intelligence",
+    "subtitle": "Computer, phone, and digital-forensics evidence",
+    "one_liner": "State Police witnesses explained forensic extraction and presented computer and device artifacts while acknowledging attribution limits.",
+    "purpose": "Preserve what the digital artifacts show, how they were extracted, and what the data cannot establish about user identity or meaning.",
+    "what_changed": "The record gained forensic evidence from Kyle Pavao, Timothy Chiappini, and Joshua McKelligan concerning computers, phones, searches, and investigative handling.",
+    "primary_topics": [
+      "digital forensics",
+      "Surface Pro",
+      "phone extraction",
+      "search history",
+      "user attribution"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day13-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Kyle Pavao explained forensic computer analysis, Timothy Chiappini addressed device evidence, and Joshua McKelligan supplied investigative context for the digital material.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "e7500070-ce82-5e01-a857-7e36ac6a9bc8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kevin Pavao",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:18:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "a751ec2d-56df-51a8-aa53-0040bc8cd69b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Timothy Chiappini",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:57:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "16962833-b155-5a0b-a9d1-43861a602942",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Joshua McKelligan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:44:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day13-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 13 provides independently testable digital anchors, but an artifact's presence or timestamp does not automatically identify the user, purpose, state of mind, or surrounding event.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "e7500070-ce82-5e01-a857-7e36ac6a9bc8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kevin Pavao",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:18:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "a751ec2d-56df-51a8-aa53-0040bc8cd69b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Timothy Chiappini",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:57:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "16962833-b155-5a0b-a9d1-43861a602942",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Joshua McKelligan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:44:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day13-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Devices were seized or imaged; forensic tools parsed stored artifacts; witnesses selected and explained results; counsel then argued the significance and attribution of those results.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "e7500070-ce82-5e01-a857-7e36ac6a9bc8",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Kevin Pavao",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:18:03"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "a751ec2d-56df-51a8-aa53-0040bc8cd69b",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Timothy Chiappini",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:57:28"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "16962833-b155-5a0b-a9d1-43861a602942",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Joshua McKelligan",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:44:35"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day13-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Search and browser artifacts can be overread. Device ownership, account, session, timezone, sync behavior, extraction method, and user attribution must be tested separately.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day13-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "For each relied-on artifact, what device and account produced it, what timestamp semantics apply, who could have used the device, and what surrounding artifacts qualify its meaning?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day13-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Promote only validated digital timestamps into reconstruction and keep user identity and intent as separately sourced propositions.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day13-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 14 completes the prosecution case, addresses Apple Watch and phone data, and begins the defense with lay and medical witnesses.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "digital forensics",
+        "Surface Pro",
+        "phone extraction",
+        "search history",
+        "user attribution"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day13-coverage",
+        "day13-working-position",
+        "day13-evidence-chain",
+        "day13-boundary-risk",
+        "day13-review-question",
+        "day13-next-action",
+        "day13-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day13-coverage",
+        "day13-working-position",
+        "day13-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

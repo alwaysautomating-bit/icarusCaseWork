@@ -1,0 +1,785 @@
+Pasted markdown(20260817-044025).md
+File
+what was covered in this days proceedings 
+Called tool
+
+Yes. This was Day 6 — August 5, 2026, and it covered considerably more than the medical testimony. The Commonwealth moved through Lindsay’s hospital treatment, the physical scene at the Clancy home, evidence collection, toxicology, and then into bloodstain analysis.
+
+The day opened with an important procedural development: Lindsay personally agreed to a broad stipulation of facts. Judge Sullivan questioned her under oath about the rights she was giving up and found that she entered the stipulation knowingly, intelligently and voluntarily. Reddington explained the practical reason: the defense was not contesting much of the Commonwealth’s foundational evidence, and the stipulation avoided calling “dozens” of witnesses merely to establish chain of custody for blood, fluids, bands, DNA and similar evidence.
+
+Then the Commonwealth called its witnesses.
+
+1. Dr. Christina Carpio — Lindsay’s initial trauma treatment at South Shore Hospital. Carpio is a general surgeon trained in trauma and critical care who was the on-call surgeon at South Shore on January 24, 2023. Lindsay arrived as a Level 1 trauma after a reported fall of roughly 20 feet with concern for neurologic/spinal injury.
+
+This testimony supplied some of the most significant medical evidence of the day. Lindsay was intubated shortly after arrival. Carpio observed wounds to her neck and wrists, but characterized those particular wounds as superficial and not requiring immediate surgery. Imaging showed no definite acute intracranial injury, while the cervical/thoracic spinal injuries were serious.
+
+And this is the day the 82.1°F temperature entered the trial record through Carpio's testimony. Her documentation identified Lindsay as hypothermic to 82.1°F. Her temperature subsequently rose to 95.2°F. The complex thoracic spinal fractures ultimately prompted consultation with neurosurgery and transfer to Brigham for tertiary-level care.
+
+Reddington's cross also explored the EMS information available to the trauma team, blood loss/hypotension and what Carpio did or did not know about Lindsay's subsequent treatment at Brigham. Carpio testified that the spinal-cord injury itself could cause difficulty maintaining blood pressure and that she did not know at the time about the later massive transfusion at the Boston hospital.
+
+2. Lt. Joseph Rabbitt — police/scene investigation. After Carpio, the Commonwealth called Lieutenant Joseph Rabbitt. His testimony moved the jury away from the hospital and into the law-enforcement investigation of the Clancy property and evidence associated with the scene.
+
+3. Maureen Hartnett — forensic processing/evidence collection. Hartnett followed Rabbitt and gave extensive testimony concerning processing and collecting evidence from the property. One specific subject was the red-brown staining on the exterior/shingles and subsequent swabbing/collection. The Commonwealth established that she had previously observed stains in those locations and that shingles had been collected back in January.
+
+4. Jonathan O'Loughlin — additional scene documentation. O'Loughlin was called next. His testimony concerned documenting/photographing the house and what was—and was not—observed there. Reddington used cross-examination to establish, among other things, that if drugs, blood and the knife had been visibly present together on a bedroom nightstand, O'Loughlin would have photographed them; O'Loughlin testified that he did not see that scene.
+
+That point is worth keeping separate from broader claims about what medications existed in the house: his testimony addresses what he personally observed/documented, not necessarily everything that may have existed elsewhere.
+
+5. Hillary Griffiths — further evidence/scene testimony. Griffiths followed O'Loughlin and was examined and cross-examined before being excused.
+
+6. Lisa Yelle — additional Commonwealth evidence testimony. Yelle followed Griffiths before the court took another break.
+
+After the break came another important evidentiary shortcut. The parties entered three postmortem toxicology stipulations:
+
+Exhibit 184 — Cora
+Exhibit 185 — Dawson
+Exhibit 186 — Callan
+
+The judge explained to the jury that stipulated facts could be accepted and relied upon as facts. The stipulations established the laboratory personnel, procedures, screening, analysis, review and chain involved in the children's postmortem toxicology rather than requiring every lab employee involved in the process to testify. For example, the Dawson stipulation identified the analysts/reviewers involved with his heart-blood testing, and the Callan stipulation did the same for his case.
+
+7. Alicia Zimmermann — postmortem toxicology. After the stipulations, the Commonwealth called forensic scientist Alicia Zimmermann, the assigned analyst referenced in the children's toxicology stipulations. Reddington declined to cross-examine her.
+
+8. Sherri Crook — bloodstain pattern analysis. The final major witness was Sherri Crook, a Massachusetts State Police Crime Lab supervisor with 26 years at the lab and approximately 18 years supervising the Crime Scene Response Unit. Her work includes testing physical evidence for biological fluids and trace materials.
+
+Crook was presented as the bloodstain-pattern witness. She explained how analysts distinguish individual bloodstains from bloodstain patterns and how patterns can provide information about the mechanism by which blood was deposited and the incident that produced it.
+
+So the thematic progression of Day 6 was basically:
+
+Lindsay's physical condition → police reconstruction of the property → collection/documentation of physical evidence → children's toxicology foundation → bloodstain reconstruction.
+
+And for our reconstruction work, I would flag three Day 6 items as especially important:
+
+82.1°F → 95.2°F. We now have sworn testimony placing both temperatures in Lindsay's South Shore treatment. That's useful, but we still need the actual timestamp of the 82.1 measurement rather than treating the testimony timestamp as a medical timestamp.
+The scene witnesses give us provenance. We can distinguish what investigators actually saw, photographed, swabbed and collected from later descriptions or assumptions about the scene.
+The stipulation dramatically collapses the evidentiary graph. Instead of dozens of chain-of-custody witnesses, the parties agreed to foundational facts. For Casework, those should be represented as stipulated facts, with the stipulation itself as the evidence source—not inferred as independently proven testimony from every named technician. Reddington expressly explained that this was why the defense agreed to it.
+
+The 82.1 testimony is probably the piece I'd pull apart next, because this transcript gives us enough to start separating measurement time, documentation time, arrival time, rewarming trajectory, transfer time, blood pressure, spinal shock, blood loss, and the later Brigham transfusion instead of treating “82.1” as a standalone number.
+
+Pasted markdown(20260817-044614).md
+File
+additionally opening statements... 
+Called tool
+
+Additionally, the trial’s opening statements on July 29, 2026 are essential context because the Commonwealth and defense laid out almost completely opposite explanations for the same underlying events. The judge expressly reminded jurors that openings were only roadmaps, not evidence. He also explained that the Commonwealth had to prove both the charged murders and Lindsay’s criminal responsibility beyond a reasonable doubt.
+
+The Commonwealth’s theory was essentially planning + control + opportunity = criminal responsibility. Prosecutor Shannon Buckingham told jurors Lindsay deliberately strangled Dawson, Cora and Callan with exercise bands, in that order. The prosecution promised scene photographs, first-responder testimony, forensic evidence, medical evidence and testimony from family, friends, teachers and clinicians.
+
+Their reconstruction of January 24 was highly specific. Buckingham said Lindsay researched ThreeV, checked the driving route/time, contacted CVS about the laxative recommended for Cora, suggested that Patrick pick up takeout, and therefore knew approximately how long he would be away. The Commonwealth characterized Patrick leaving the house as the beginning of the opportunity window and alleged that Lindsay used that interval to take the children downstairs, kill them, return upstairs, injure herself and jump from the window.
+
+The prosecution also previewed its attack on the reported command hallucination. Buckingham said jurors would hear different accounts concerning whether the male voice appeared immediately after Patrick left or after his CVS phone call, and urged them to scrutinize the source, timing and content of Lindsay’s statements about the voice. Its position was that Lindsay was functioning rationally that day—attending Cora’s appointment, caring for the children, communicating normally and planning logistics—and therefore was not psychotic at the relevant time.
+
+The Commonwealth also framed Lindsay’s history in terms of personality and agency: an overachiever who was highly controlling, meticulous and, according to the prosecution, manipulative. It alleged that she withheld information from providers, changed doctors or medications when dissatisfied, disengaged from treatment and ultimately made an intentional decision to die while taking the children with her.
+
+That led to the Commonwealth’s legal thesis: mental illness alone did not remove responsibility. According to the prosecution, the question would be whether Lindsay could appreciate the wrongfulness of her conduct and control her actions. They argued that the timing, Patrick’s removal from the house, the killings and the suicide attempt demonstrated that she could.
+
+Reddington’s opening took the case in almost the exact opposite direction: the physical acts were largely not the contested issue; Lindsay’s mental state was. He told jurors the central question was what was happening in her mind and explicitly made postpartum mental illness central to the case.
+
+His presentation then became essentially a longitudinal medical timeline. He argued Lindsay had been a loving, highly functional mother whose condition began deteriorating after Callan’s birth, particularly beginning around September 2022. According to the defense opening, she developed severe insomnia, depression, inability to experience emotion, dissociation and confusion and repeatedly sought professional help.
+
+Reddington emphasized the enormous medication churn. He walked jurors through prescriptions including sertraline/Zoloft, lorazepam, hydroxyzine, buspirone, trazodone, fluoxetine, mirtazapine/Remeron, quetiapine, diazepam and amitriptyline, prescribed by multiple clinicians over a relatively compressed period. The defense specifically disputed the prosecution’s “doctor shopping” characterization, arguing that changes in providers largely reflected referrals, provider departures and attempts to obtain appropriate perinatal psychiatric care.
+
+Reddington also previewed repeated escalations in care: South Shore Hospital, South Shore Perinatal Behavioral Health, Women & Infants in Rhode Island, Mass General and ultimately an inpatient McLean admission around New Year’s. He told jurors that Lindsay continued seeing Jennifer Tufts on January 6, 10, 16 and January 23—the day before the deaths.
+
+A major defense point was that Lindsay and Patrick were actively trying to get help rather than concealing the problem. Reddington said she reported suicidality and suicidal ideation and had told Patrick and her mother in December about thoughts involving harming the children. His theory was that these disclosures undercut the prosecution’s characterization that she manipulated clinicians while hiding serious symptoms.
+
+He also strongly rejected the idea of a staged suicide attempt. The defense said Lindsay cut her neck and wrists and jumped from the second-story window because she genuinely intended to die.
+
+And importantly, Reddington previewed evidence he said would corroborate the command-voice account independently of lawyers. He told jurors a hospital religious-services worker encountered Lindsay after she emerged from her coma and that Lindsay spoke about the command voice before meeting Reddington and another defense-associated individual he referenced. His argument was that the hallucination account therefore was not a defense invention created after counsel became involved.
+
+The defense’s ultimate theory was that Lindsay was suffering from psychosis when she went into the basement, had no conventional motive to kill children she loved, intended to die herself, and had repeatedly sought treatment during a rapidly deteriorating psychiatric course. Reddington framed the case as one in which the mental-health system and medication/treatment trajectory were directly relevant to determining criminal responsibility.
+
+So if we fold opening statements into our Casework reconstruction, we now have two explicit hypotheses to test against every later piece of evidence:
+
+H₁ — Commonwealth: Lindsay intentionally created an opportunity window, planned and executed the killings, understood what she was doing, could control her behavior, and later psychiatric explanations do not negate criminal responsibility.
+
+H₂ — Defense: Lindsay’s months-long postpartum psychiatric deterioration culminated in psychosis/command hallucination; her treatment history, suicidality, intrusive thoughts, medication changes, hospitalizations and genuine suicide attempt demonstrate impaired criminal responsibility.
+
+That distinction is extremely useful because now every Day 6 fact we just reviewed can be tagged as supports prosecution theory / supports defense theory / compatible with both / contradicts one / presently non-discriminating.
+
+And the 82.1°F evidence is a great example: neither opening appears to have built its core theory around severe hypothermia. Yet Day 6 later establishes that fact in the medical record. That makes it especially interesting for reconstruction because it is comparatively less contaminated by the opening narratives and can be tested independently against the physical timeline.
+
+how to represent this in the icarucs casework app?  each days intake, what is extracted, preserved provonance, events and items that need resolved, or that case facts support or do not support 
+
+Yes. I’d make the day of proceedings itself a first-class Casework object, because that gives you a stable container for everything that entered the record that day without prematurely flattening it into “facts.”
+
+A good model is:
+
+Proceeding Day → Sources → Extracted Evidence → Claims → Events → Issues → Findings
+
+For example, “Day 6 — August 5, 2026” becomes one Proceeding record. Attached to it are the Rev transcript, court docket entry, exhibits introduced that day, stipulations, photographs if available, and later any official transcript. Each source retains its own provenance and can coexist with later/better versions.
+
+Inside the UI, I’d give every proceeding day a page with five primary panes.
+
+What entered the record
+
+This is the ingestion layer. It should show exactly what Casework received and where it came from:
+
+Rev transcript
+Official court transcript
+Exhibit 184
+Exhibit 185
+Exhibit 186
+Exhibit J stipulation
+Video/source URL
+Capture timestamp
+SHA-256
+Source publisher
+Original URL
+Acquisition method
+Parser version
+
+The important doctrine is that the source remains intact even if everything extracted from it later changes.
+
+So Rev might say:
+
+Source S-006-REV
+MA v. Lindsay Clancy Day 6
+Published: Aug 5 2026
+Captured: Aug 16 2026 23:xx
+410 transcript segments
+123 extracted claims
+27 named entities
+14 exhibits referenced
+
+Then the official transcript can later become another source rather than overwriting Rev.
+
+What was extracted
+
+This is where Casework turns testimony into structured objects, but still does not call them “true.”
+
+For Day 6, the extraction might produce things like:
+
+Testimony
+Christina Carpio
+→ trauma surgeon
+→ South Shore Hospital
+→ treated Lindsay Jan 24
+→ Lindsay arrived as Level 1 trauma
+→ shortly after arrival she was intubated
+→ neck/wrist wounds described as superficial
+→ serious cervical/thoracic spinal injury
+→ documentation included temperature of 82.1°F
+→ later temperature 95.2°F
+→ transferred to Brigham
+
+Procedural
+Lindsay Clancy entered stipulation
+→ Judge conducted colloquy
+→ Judge found stipulation knowing/voluntary
+→ defense explained stipulation avoided foundational chain-of-custody witnesses
+
+Forensic
+Postmortem toxicology stipulations
+→ Cora — Exhibit 184
+→ Dawson — Exhibit 185
+→ Callan — Exhibit 186
+
+Each individual extracted assertion becomes a Claim, with something like:
+
+Claim C-1842
+
+
+Text:
+"Lindsay Clancy was hypothermic to 82.1°F at South Shore Hospital."
+
+
+Asserted by:
+Christina Carpio
+
+
+Assertion type:
+testimony
+
+
+Source:
+Day 6 Rev transcript
+
+
+Source segment:
+19:43–20:21
+
+
+Evidence target:
+Lindsay Clancy / South Shore treatment
+
+
+Status:
+asserted
+
+
+Confidence in extraction:
+0.99
+
+
+Truth status:
+unresolved
+
+That last separation is essential.
+
+Extraction confidence is not evidentiary confidence.
+
+The parser can be 99.9% certain that Carpio said “82.1” while Casework remains completely agnostic about what that measurement establishes.
+
+What happened
+
+This is the event layer.
+
+Claims can generate candidate events, but events should have their own provenance.
+
+For example:
+
+EVENT
+Lindsay arrives at South Shore Hospital
+
+
+Time:
+unknown / bounded interval
+
+
+Participants:
+Lindsay Clancy
+South Shore ED
+Christina Carpio
+Kelly McDonough
+
+
+Evidence:
+Carpio testimony
+EMS records — not yet acquired
+hospital chart — not yet acquired
+
+
+Confidence:
+high that event occurred
+low confidence in precise time
+
+Then:
+
+EVENT
+Core temperature measured at 82.1°F
+
+
+Time:
+UNRESOLVED
+
+
+Location:
+South Shore Hospital
+
+
+Source:
+Carpio testimony referencing her documentation
+
+
+Direct underlying record:
+NOT YET ACQUIRED
+
+
+Temporal constraint:
+after ED arrival
+before documented warming to 95.2°F
+
+
+Needs:
+actual flowsheet/vital timestamp
+measurement method/site
+rewarming interventions
+EMS temperature, if any
+
+This is much stronger than putting 82.1°F at 7:10 PM into a timeline because somebody inferred the timestamp.
+
+Casework should visibly distinguish:
+
+observed time
+recorded time
+reported time
+estimated time
+bounded time
+unknown time
+
+That will matter constantly in this case.
+
+What needs resolving
+
+I would make this one of the most prominent pieces of the app.
+
+Not a generic task list.
+
+Call them something like Open Questions, Resolution Items, or Evidentiary Gaps.
+
+Day 6 would automatically produce:
+
+RI-0082
+When was Lindsay's 82.1°F temperature actually measured?
+
+
+Triggered by:
+Carpio testimony
+
+
+Why it matters:
+event timeline / exposure interval / medical reconstruction
+
+
+Known:
+82.1°F documented
+later 95.2°F documented
+
+
+Unknown:
+measurement timestamp
+measurement method
+arrival temperature
+rewarming start time
+EMS temperature
+environmental exposure duration
+
+
+Potential sources:
+South Shore flowsheet
+ED nursing record
+EMS run sheet
+transfer record
+Brigham intake record
+
+Another:
+
+RI-0091
+When was the CTA-neck interpretation available?
+
+
+Known:
+images were performed
+report was eventually completed
+
+
+Witness limitation:
+Carpio did not know whether report was completed before transfer
+
+
+Resolution source:
+radiology PACS timestamps / final report metadata
+
+Another:
+
+RI-0104
+What medications were physically present inside the residence?
+
+
+Conflict:
+prosecution descriptions
+scene-documentation testimony
+Patrick's testimony regarding medications stored in vehicle
+
+
+Do not resolve from:
+opening statements
+
+
+Needed:
+evidence inventory
+scene photographs
+property log
+lab submission records
+search-warrant return
+
+That is where Casework becomes more than a transcript reader.
+
+What does the evidence do to the competing case theories?
+
+This should be its own analytical layer, and I would avoid simple green/red “supports prosecution/defense.”
+
+Use the underlying hypothesis model.
+
+For this case:
+
+H-P
+Intentional / criminally responsible action
+
+
+H-D
+Psychosis / lack of criminal responsibility
+
+But individual pieces of evidence should be evaluated against specific propositions, not entire teams.
+
+For instance:
+
+P-17: Patrick's trip created a deliberately engineered opportunity window.
+
+P-31: Lindsay was capable of goal-directed behavior immediately before the deaths.
+
+P-42: Lindsay was experiencing psychosis at the relevant time.
+
+P-51: The suicide attempt reflected genuine intent to die.
+
+P-62: The reported command hallucination preceded lawyer involvement.
+
+P-73: Her treatment system had adequate information to identify escalating risk.
+
+Now a Day 6 fact can map to them.
+
+For example:
+
+Carpio: severe spinal injury
+
+May support:
+
+P-51 genuine suicide attempt
+
+But not necessarily establish it. A serious injury following the window fall makes a purely superficial characterization of the attempt harder to maintain, but intent still requires other evidence.
+
+Casework might display:
+
+Evidence E-00481
+Complex thoracic/cervical spinal injuries
+
+
+Relationship to P-51:
+SUPPORTIVE
+
+
+Strength:
+moderate
+
+
+Reason:
+Objective severity is consistent with a genuinely dangerous fall.
+
+
+Limit:
+Physical severity alone cannot establish subjective intent.
+
+By contrast:
+
+82.1°F
+
+Probably:
+
+P-17 deliberate opportunity window:
+NON-DISCRIMINATING pending temporal reconstruction
+
+
+P-51 genuine suicide attempt:
+possibly supportive, indirect
+
+
+Timeline model:
+HIGH relevance
+
+
+Needs resolution:
+YES
+
+And an opening statement assertion such as:
+
+Lindsay deliberately calculated Patrick's travel time.
+
+should appear differently:
+
+CLAIM
+Commonwealth alleges Lindsay calculated the available time while Patrick was away.
+
+
+Source class:
+advocacy / opening statement
+
+
+Evidence status:
+NOT EVIDENCE
+
+
+Requires support from:
+search history
+Maps records
+ThreeV order records
+CVS records
+Patrick testimony
+device extraction
+
+This is huge.
+
+Opening statements should live in Casework, but they should be tagged party_theory / advocacy_claim, not evidentiary fact.
+
+That lets you later produce something extremely useful:
+
+Opening Statement Audit
+
+COMMONWEALTH CLAIM
+"Lindsay knew exactly how long Patrick would be gone."
+
+
+Supporting evidence introduced:
+Apple Maps route search
+ThreeV search/order
+CVS call
+Patrick departure/return testimony
+
+
+Contrary evidence:
+...
+
+
+Status:
+partially supported / strongly supported / unresolved
+
+And the same for Reddington:
+
+DEFENSE CLAIM
+"She repeatedly sought help and did not hide her suicidality."
+
+
+Supporting evidence:
+provider encounters
+hospital visits
+Patrick testimony
+records showing suicidal ideation
+
+
+Contrary evidence:
+records showing declined sessions
+provider testimony regarding disclosures
+
+
+Status:
+mixed / requires synthesis
+
+That is an incredibly valuable trial-analysis feature.
+
+I’d therefore make the Day view look roughly like:
+
+DAY 6 · AUG 5 2026
+─────────────────────────────────────────
+8 witnesses     6 exhibits
+143 claims      37 events
+22 open issues   11 theory impacts
+
+
+[ RECORD ] [ TIMELINE ] [ CLAIMS ] [ ISSUES ] [ THEORIES ]
+
+
+TODAY'S RECORD
+Christina Carpio       testimony
+Joseph Rabbitt         testimony
+Maureen Hartnett       testimony
+Jonathan O'Loughlin    testimony
+Hillary Griffiths      testimony
+Lisa Yelle             testimony
+Alicia Zimmermann      testimony
+Sherri Crook           testimony
+
+
+Exhibit J              stipulation
+Exhibit 184            toxicology stipulation
+Exhibit 185            toxicology stipulation
+Exhibit 186            toxicology stipulation
+
+
+─────────────────────────────────────────
+KEY EXTRACTED EVENTS
+
+
+?        Lindsay arrives South Shore
+?        Intubation
+?        82.1°F temperature recorded
+?        Warming initiated
+?        95.2°F temperature recorded
+?        Transfer decision
+?        Transfer to Brigham
+
+
+─────────────────────────────────────────
+RESOLUTION QUEUE
+
+
+CRITICAL
+82.1°F measurement timestamp
+EMS arrival/run-sheet timestamps
+rewarming intervention timeline
+
+
+IMPORTANT
+CTA-neck report availability
+blood-loss documentation
+Brigham transfusion timeline
+
+
+─────────────────────────────────────────
+THEORY IMPACT
+
+
+Opportunity-window theory      ◐ mixed
+Psychosis proposition          ○ little new evidence
+Genuine suicide intent         ↑ supportive evidence
+Medical-system trajectory      ○ little new evidence
+Physical-event timeline        ↑ major new evidence
+
+Then at the case level, every proceeding rolls upward.
+
+So you can switch from:
+
+Day 6
+
+to:
+
+Medical timeline
+
+and see Carpio's testimony beside EMS, South Shore records and Brigham records.
+
+Or:
+
+Command hallucination
+
+and see the Commonwealth opening assertion, defense opening assertion, hospital chaplain testimony, Lindsay statements, Patrick testimony and expert opinions—all connected but never collapsed into one narrator.
+
+That is the core Casework architecture I would build around:
+
+Sources preserve what was said.
+Claims preserve who asserted what.
+Events model what may have happened.
+Resolution items preserve what we do not know.
+Evidence relationships measure what each fact does to a proposition.
+Findings only emerge after reconciliation.
+
+And I would add one more primitive specifically for Casework: Position.
+
+Because prosecution opening statements, defense opening statements, expert opinions and closing arguments are neither ordinary evidence nor ordinary claims. They are structured interpretations of the evidence.
+
+So the graph becomes:
+
+Entity → Event → Evidence → Claim → Position → Finding
+
+with relationships tying everything together.
+
+That would give Icarus Casework a very distinctive capability: you could ingest every day of a months-long trial and, instead of ending up with 50,000 transcript snippets, end up with a living evidentiary model that continuously shows what we know, why we think we know it, what remains unresolved, and which competing explanations survive the evidence.
+
+Ẍ̟̍n̫̓̒̎p̮̙̝̒́
+9999
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+Product
+
+
+Industries
+
+
+Resources
+
+
+[About Rev](https://www.rev.com/about-rev)
+
+
+[Pricing](https://www.rev.com/pricing)
+
+
+[Login](https://www.rev.com/app)
+
+
+[Talk to a Specialist](https://www.rev.com/contact-sales)[Try Rev Free](https://www.rev.com/subscription/signup/groups/24/plans/79)
+
+
+[Blog Home](https://www.rev.com/blog)[Legal](https://www.rev.com/category/legal)[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)[Transcription ](https://www.rev.com/category/transcription)[Rev Spotlight](https://www.rev.com/category/rev-spotlight)
+
+
+[Accessibility](https://www.rev.com/category/accessibility)
+
+
+[AI & Speech Recognition](https://www.rev.com/category/ai-speech-recognition)
+
+
+[Artificial Intelligence](https://www.rev.com/category/artificial-intelligence)
+
+
+[Business](https://www.rev.com/category/business)
+
+
+[Captions & Subtitles](https://www.rev.com/category/captions-and-subtitles)
+
+
+[Congressional Testimony](https://www.rev.com/category/congressional-testimony)
+
+
+[Court Reporting & Depositions](https://www.rev.com/category/depositions-and-court-reporting)
+
+
+[Criminal Defense](https://www.rev.com/category/criminal-defense)
+
+
+[Donald Trump](https://www.rev.com/category/donald-trump)
+
+
+[Education](https://www.rev.com/category/education)
+
+
+Choose a syntax
+javascript
+typescript
+bash
+zsh
+html
+css
+python
+json
+sql
+go
+yaml
+java
+rust
+cpp
+swift
+php
+xml
+ruby
+haskell
+kotlin
+csharp
+vb
+c
+objectivec
+r
+lua
+dart
+scala
+perl
+commonlisp
+clojure
+ocaml
+powershell
+verilog
+dockerfile
+vue
+other
+Close

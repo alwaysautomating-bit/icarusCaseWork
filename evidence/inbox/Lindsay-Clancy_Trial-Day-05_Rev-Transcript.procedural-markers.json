@@ -1,0 +1,1683 @@
+{
+  "source": "C:\\Projects\\IcarusCasework\\transcripts\\inbox\\Lindsay-Clancy_Trial-Day-05_Rev-Transcript.md",
+  "segment_count": 3041,
+  "marker_count": 152,
+  "markers": [
+    {
+      "segment_index": 4,
+      "speaker": "Judge William Sullivan",
+      "timestamp_display": "00:35",
+      "timestamp_seconds": 35.58,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=35.58",
+      "text": "All  right. Next question. Is there any other serious matter or concern  bearing on your service as a juror in this case that anybody needs to  bring to my attention? All right. Again, thank you for following those  instructions. Now, today's schedule, let me say first thing about the  schedule. I know I haven't always been completely correct on some of the  schedules we followed, but I want to just let you know that those  decisions about the scheduling is on me. All right? And sometimes I have  to take into consideration other factors or things that are going on.  So what I really wanted to tell you is that don't speculate why we might  go a little late or a little early on any certain days, but certainly  don't hold it against either side in regards to that. The person who's  making those decisions or that decision is me. All right? So you should  be aware of that. ([01:29](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=89.85)) So  that being said, the thought is today, we should go into the afternoon.  All right? And if that changes, I'll let you know. And what we're going  to do at this point, we're going to return to the Commonwealth's case.  And with that, Commonwealth, call your next witness, please.",
+      "event_types": [
+        "jury_in",
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 5,
+      "speaker": "Shanan Buckingham",
+      "timestamp_display": "01:49",
+      "timestamp_seconds": 109.8,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=109.8",
+      "text": "Thank you, Your Honor. The Commonwealth would call Michael Snyder.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 6,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "01:52",
+      "timestamp_seconds": 112.02,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=112.02",
+      "text": "Your Honor, while we're waiting for Dr. Snyder, could we just approach [inaudible 00:02:06]?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 10,
+      "speaker": "Court Officer 2",
+      "timestamp_display": "02:05",
+      "timestamp_seconds": 125.94,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=125.94",
+      "text": "[inaudible 00:03:43]. Dr. Snyder, raise your right hand for the clerk please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 11,
+      "speaker": "Clerk",
+      "timestamp_display": "03:46",
+      "timestamp_seconds": 226.56,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=226.56",
+      "text": "Good  morning. Do you solemnly swear that the testimony and the evidence that  you shall give to the court and the jury [inaudible 00:03:52] between  the Commonwealth and the defendant [inaudible 00:03:54]? Thank you. You  may have a seat, sir.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 113,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "13:46",
+      "timestamp_seconds": 826.74,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=826.74",
+      "text": "Commonwealth calls Dr. Andrew Capraro.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 116,
+      "speaker": "Court Officer 2",
+      "timestamp_display": "13:47",
+      "timestamp_seconds": 827.76,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=827.76",
+      "text": "[inaudible 00:13:48] right here, raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 117,
+      "speaker": "Clerk",
+      "timestamp_display": "13:47",
+      "timestamp_seconds": 827.88,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=827.88",
+      "text": "Good morning. Do you solemnly swear [inaudible 00:14:18]?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 202,
+      "speaker": "Judge William Sullivan",
+      "timestamp_display": "22:32",
+      "timestamp_seconds": 1352.31,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1352.31",
+      "text": "Thank you, Doctor. Please step down.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "segment_index": 205,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "22:42",
+      "timestamp_seconds": 1362.33,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1362.33",
+      "text": "Commonwealth calls Dr. David Casavant.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 206,
+      "speaker": "Court Officer 2",
+      "timestamp_display": "23:30",
+      "timestamp_seconds": 1410.66,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1410.66",
+      "text": "Good morning, sir. Please stand right there and raise your right hand to the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 207,
+      "speaker": "Clerk",
+      "timestamp_display": "23:31",
+      "timestamp_seconds": 1411.2,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1411.2",
+      "text": "Good  morning. Do you solemnly swear that the testimony and the evidence you  shall give to the court [inaudible 00:23:31] the Commonwealth and the  defendant shall be the truth, the whole truth, and nothing but the  truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 242,
+      "speaker": "Dr. David Casavant",
+      "timestamp_display": "25:48",
+      "timestamp_seconds": 1548.27,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1548.27",
+      "text": "Well,  the head CT is a picture of the brain, which was done in the emergency  room when he was admitted to Boston Children's Hospital. And the CT scan  showed an enormous amount of swelling of the brain itself.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 252,
+      "speaker": "Dr. David Casavant",
+      "timestamp_display": "27:43",
+      "timestamp_seconds": 1663.89,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1663.89",
+      "text": "Well,  one of the first things that I noticed as I approached him was that he  had a breathing tube in place. And I knew from my colleague that he was  not on any sedation, which is very difficult to tolerate having a  breathing tube through the vocal cords if you're not sedated. And he was  not sedated at the time. The next thing is when I approach a patient  such in their bed in the ICU, we always start with a quick introduction  that we're going to be coming near them in case they're asleep. And I  usually start with something along the lines of, \"I'm Dr. Dave. I'm just  going to listen to your heart.\" And I'd usually address them by name to  see if they start to respond. And then I'll go ahead with the rest of  the exam, but that's just to sort of warn them that someone might be  touching them. ([28:34](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1714.38)) And  then I'll listen to heart, lungs, and then to move forward to see how  responsive they are. So if you get no response at all from the initial,  just using your voice, the next thing is to... And then from the exam,  if they don't move around, then you start to sort of think, \"Well, let's  see how responsive they are.\" And so the next thing is sort of a gentle  touch often to the bottom of the foot to see, you stroke the bottom of  the foot, and you see if they pull away. And then you can move. If you  get no response from that, we'll do something that's a little bit more  noxious or painful where you can sort of pinch a little bit of skin to  see if they start to react or pushing on the fingernail and the nail bed  pressure, which is actually very noxious. ([29:19](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=1759.65)) And  if you can see two types or several types of response, either no  response, or you can see a very specific response where they pull away  from that area. And that's a specific... Or you can see generalized  response, which are all sort of graded along those that as we're sort of  getting a sense for what their level of consciousness was.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 335,
+      "speaker": "Judge William F. Sullivan",
+      "timestamp_display": "43:39",
+      "timestamp_seconds": 2619.84,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2619.84",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 336,
+      "speaker": "Attorney Kevin Reddington",
+      "timestamp_display": "43:40",
+      "timestamp_seconds": 2620.05,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2620.05",
+      "text": "Your  Honor. I have no objection because we both have the records. We both  want them in evidence. So I have no objection to any of the records that  they have. We signed releases for them for like Beth Israel, Brigham  and Women's, South Shore. They all can go in.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 338,
+      "speaker": "Judge William F. Sullivan",
+      "timestamp_display": "43:53",
+      "timestamp_seconds": 2633.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2633.52",
+      "text": "It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 339,
+      "speaker": "Court Reporter",
+      "timestamp_display": "43:53",
+      "timestamp_seconds": 2633.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2633.52",
+      "text": "Exhibit 137.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 343,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "44:17",
+      "timestamp_seconds": 2657.46,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2657.46",
+      "text": "The commonwealth would call Kelly McDonough as its next witness.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 349,
+      "speaker": "Court Clerk",
+      "timestamp_display": "45:04",
+      "timestamp_seconds": 2704.47,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2704.47",
+      "text": "Do  you solemnly swear that the testimony and the evidence you shall give  to the court and the jury [inaudible 00:45:05] shall be the truth, the  whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 421,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "49:50",
+      "timestamp_seconds": 2990.25,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=2990.25",
+      "text": "I'm  just going to show you some photos that have been already marked, if  that's okay? On the screen next to you. This has been marked as exhibit  number 111. Is that an accurate representation of the neck injuries you  observed?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 439,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "51:05",
+      "timestamp_seconds": 3065.85,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3065.85",
+      "text": "And  then just showing you exhibit 113, which is the other wrist. Same  thing. Did you observe anything in your assessment, your trauma one  assessments, to say whether these were acute at the time?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 495,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "55:14",
+      "timestamp_seconds": 3314.55,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3314.55",
+      "text": "May I approach the witness?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 521,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "57:33",
+      "timestamp_seconds": 3453.24,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3453.24",
+      "text": "Okay. If I may approach. Document.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 539,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "59:40",
+      "timestamp_seconds": 3580.92,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3580.92",
+      "text": "And  is it fair to say that when you strike either an artery or a vein that  they're of different pressure systems and so the manner in which the  blood comes out is different?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "segment_index": 541,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "59:52",
+      "timestamp_seconds": 3592.95,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3592.95",
+      "text": "In  either a circumstance where an artery or a vein is struck or nicked or  cut, would that be something that you'd have to stabilize for a patient  in order to make sure that they don't bleed out?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "segment_index": 557,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "01:01:29",
+      "timestamp_seconds": 3689.49,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3689.49",
+      "text": "At  this time, Your Honor, I would move to enter into evidence a copy of  the South Shore Hospital medical records for Lindsay Clancy from January  24th, 23 as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 558,
+      "speaker": "Judge William F. Sullivan",
+      "timestamp_display": "01:01:39",
+      "timestamp_seconds": 3699.42,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3699.42",
+      "text": "Is that by agreement? All right. They may be admitted, or they may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 560,
+      "speaker": "Attorney Shanan Buckingham",
+      "timestamp_display": "01:01:48",
+      "timestamp_seconds": 3708.48,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3708.48",
+      "text": "And  I would also move to enter as the next exhibit a certified copy of  imaging records from the South Shore Hospital for Lindsay Clancy from  January 24th, 2023.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 561,
+      "speaker": "Judge William F. Sullivan",
+      "timestamp_display": "01:01:59",
+      "timestamp_seconds": 3719.49,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3719.49",
+      "text": "All right. It may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 562,
+      "speaker": "Court Reporter",
+      "timestamp_display": "01:02:03",
+      "timestamp_seconds": 3723.96,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=3723.96",
+      "text": "Exhibit 139.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 727,
+      "speaker": "Judge",
+      "timestamp_display": "01:13:58",
+      "timestamp_seconds": 4438.89,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4438.89",
+      "text": "Any redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 734,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:15:16",
+      "timestamp_seconds": 4516.17,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4516.17",
+      "text": "Thank you. Now, Counsel asked you on cross-examination about pupils, right?",
+      "event_types": [
+        "cross_explicit"
+      ]
+    },
+    {
+      "segment_index": 756,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:17:00",
+      "timestamp_seconds": 4620.75,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4620.75",
+      "text": "You've now in direct examination identified those injuries as superficial. What characteristics make you say superficial?",
+      "event_types": [
+        "direct_explicit"
+      ]
+    },
+    {
+      "segment_index": 767,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:17:54",
+      "timestamp_seconds": 4674.57,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4674.57",
+      "text": "The Commonwealth would call Rose Stoffers as its next witness.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 771,
+      "speaker": "Speaker 2",
+      "timestamp_display": "01:18:29",
+      "timestamp_seconds": 4709.01,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4709.01",
+      "text": "Good  morning. Do you solemnly swear that the testimony you'll give  [inaudible 01:18:33] now pending between the common laws [inaudible  01:18:35].",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 820,
+      "speaker": "Attorney Reddington",
+      "timestamp_display": "01:21:52",
+      "timestamp_seconds": 4912.08,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4912.08",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 824,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:22:15",
+      "timestamp_seconds": 4935.21,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4935.21",
+      "text": "May I approach?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 828,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:22:27",
+      "timestamp_seconds": 4947.36,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4947.36",
+      "text": "To admit this as the next exhibit, please?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 829,
+      "speaker": "Judge",
+      "timestamp_display": "01:22:30",
+      "timestamp_seconds": 4950.54,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4950.54",
+      "text": "Any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 830,
+      "speaker": "Attorney Reddington",
+      "timestamp_display": "01:22:31",
+      "timestamp_seconds": 4951.92,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4951.92",
+      "text": "I have no objection to any of the photographs.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 831,
+      "speaker": "Judge",
+      "timestamp_display": "01:22:44",
+      "timestamp_seconds": 4964.7,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4964.7",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 832,
+      "speaker": "Speaker 2",
+      "timestamp_display": "01:22:44",
+      "timestamp_seconds": 4964.94,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4964.94",
+      "text": "Exhibit 140.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 833,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:22:45",
+      "timestamp_seconds": 4965.81,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=4965.81",
+      "text": "Sergeant, I'm just showing you now what's been marked as Exhibit 140. Can you see that from where you're sitting?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 857,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:24:18",
+      "timestamp_seconds": 5058.54,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=5058.54",
+      "text": "In  addition to... Well, strike that. The injuries that you observed or the  areas of the body that you documented, what were they?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "segment_index": 911,
+      "speaker": "Attorney Buckingham",
+      "timestamp_display": "01:28:14",
+      "timestamp_seconds": 5294.97,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=5294.97",
+      "text": "Can we approach?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 912,
+      "speaker": "Judge",
+      "timestamp_display": "01:28:44",
+      "timestamp_seconds": 5324.34,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=5324.34",
+      "text": "Yeah, please. ([01:28:44](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=5324.34)) ... recess at this point. And so I'm going to ask you to go back. We'll get you back in here in a short while. Okay, thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 918,
+      "speaker": "Attorney Reddington",
+      "timestamp_display": "01:29:34",
+      "timestamp_seconds": 5374.98,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=5374.98",
+      "text": "All right, so we'll be in recess on this matter at this time. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 926,
+      "speaker": "Clerk",
+      "timestamp_display": "02:05:53",
+      "timestamp_seconds": 7553.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=7553.52",
+      "text": "Your  Honor, for the purpose of the record, we return back to the trial of  Commonwealth versus Lindsay Clancy. All parties are present, including  the defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "segment_index": 927,
+      "speaker": "Rachelle Amedee",
+      "timestamp_display": "02:06:02",
+      "timestamp_seconds": 7562.07,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=7562.07",
+      "text": "All right, thank you. Commonwealth, call your next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 928,
+      "speaker": "Judge",
+      "timestamp_display": "02:06:05",
+      "timestamp_seconds": 7565.46,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=7565.46",
+      "text": "Your Honor, Commonwealth would call Rachelle Amedee.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 929,
+      "speaker": "Speaker 4",
+      "timestamp_display": "02:06:06",
+      "timestamp_seconds": 7566.75,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=7566.75",
+      "text": "Good morning. Stop right here, raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 930,
+      "speaker": "Clerk",
+      "timestamp_display": "02:06:50",
+      "timestamp_seconds": 7610.43,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=7610.43",
+      "text": "Good morning. Do you solemnly swear that the testimony [inaudible 02:06:51]? Thank you.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 1109,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:18:24",
+      "timestamp_seconds": 8304.57,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=8304.57",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1160,
+      "speaker": "William Francis Sullivan",
+      "timestamp_display": "02:22:23",
+      "timestamp_seconds": 8543.19,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=8543.19",
+      "text": "All right. Commonwealth, any objection?",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1167,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:22:53",
+      "timestamp_seconds": 8573.85,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=8573.85",
+      "text": "Now  let's talk about a lawyer first, since that was the last that they  asked you about. And correct me if I'm wrong on any of these dates or  facts. She was admitted on the 24th of January. Is that correct?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1205,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:25:15",
+      "timestamp_seconds": 8715.84,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=8715.84",
+      "text": "Okay.  Thank you. When she was admitted on the 24th, would you agree that she  was in the state of cardiac arrest shortly thereafter?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1300,
+      "speaker": "Shanan Buckingham",
+      "timestamp_display": "02:33:30",
+      "timestamp_seconds": 9210.09,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=9210.09",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1310,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:36:21",
+      "timestamp_seconds": 9381.21,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=9381.21",
+      "text": "Okay. And do you recall that, and this would be on... May I approach, Your Honor, the witness?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 1363,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:40:59",
+      "timestamp_seconds": 9659.79,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=9659.79",
+      "text": "Okay. And when she was admitted, she had the core temperature of 82 degrees. Is that correct?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1409,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "02:43:42",
+      "timestamp_seconds": 9822.09,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=9822.09",
+      "text": "Commonwealth, redirect.",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 1478,
+      "speaker": "Ms. Buckingham",
+      "timestamp_display": "02:48:25",
+      "timestamp_seconds": 10105.53,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10105.53",
+      "text": "The Commonwealth would call Meghan Collins.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 1479,
+      "speaker": "The Bailiff",
+      "timestamp_display": "02:48:26",
+      "timestamp_seconds": 10106.67,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10106.67",
+      "text": "All right here. Raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 1480,
+      "speaker": "The Clerk",
+      "timestamp_display": "02:48:26",
+      "timestamp_seconds": 10106.67,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10106.67",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony and the evidence  you shall give to the court and the jury in the matter now lodged with  the Commonwealth [inaudible 02:49:04] given to this court shall be the  whole truth and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 1520,
+      "speaker": "Meghan Collins",
+      "timestamp_display": "02:50:44",
+      "timestamp_seconds": 10244.19,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10244.19",
+      "text": "When she was admitted to our ICU, it was overnight.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1569,
+      "speaker": "Miss. Buckingham",
+      "timestamp_display": "02:54:30",
+      "timestamp_seconds": 10470.51,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10470.51",
+      "text": "May I approach the witness? ([02:54:36](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10476.36)) I'm going to show you two photographs, okay? Does that look familiar to you?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 1580,
+      "speaker": "Judge",
+      "timestamp_display": "02:55:05",
+      "timestamp_seconds": 10505.13,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10505.13",
+      "text": "Might they be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1582,
+      "speaker": "Miss. Buckingham",
+      "timestamp_display": "02:55:31",
+      "timestamp_seconds": 10531.89,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10531.89",
+      "text": "I'm  going to show you on the screen what's been marked as Exhibit 142 and  143. And you said that's, to the best of your memory, what the injuries  on her neck looked like, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 1615,
+      "speaker": "Miss. Buckingham",
+      "timestamp_display": "02:59:12",
+      "timestamp_seconds": 10752.63,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10752.63",
+      "text": "Is  that something that you often see when patients come out of intubation,  that when they're extubated that they exhibit signs of confusion or  delirium?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 1618,
+      "speaker": "Meghan Collins",
+      "timestamp_display": "02:59:36",
+      "timestamp_seconds": 10776.21,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=10776.21",
+      "text": "Yes. It was a multimodal approach to manage the delirium, agitation, and it did get better and it did improve.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 1670,
+      "speaker": "Commonwealth Attorney",
+      "timestamp_display": "03:04:37",
+      "timestamp_seconds": 11077.98,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11077.98",
+      "text": "Commonwealth calls Dr. Shah.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 1672,
+      "speaker": "The Bailiff",
+      "timestamp_display": "03:05:21",
+      "timestamp_seconds": 11121.45,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11121.45",
+      "text": "Raise your right hand for the clerk. Good",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 1673,
+      "speaker": "The Clerk",
+      "timestamp_display": "03:05:23",
+      "timestamp_seconds": 11123.7,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11123.7",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony and the evidence  you shall give to the court and the jury in the matter now lodged with  the Commonwealth shall be the truth, the whole truth, and nothing but  the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 1696,
+      "speaker": "Dr. Shah",
+      "timestamp_display": "03:06:47",
+      "timestamp_seconds": 11207.97,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11207.97",
+      "text": "Yeah.  So consultation liaison psychiatry is a subspecialty of psychiatry that  works at the interface of psychiatry and medicine. So we work both in  the inpatient and outpatient settings. In this particular instance, we  get called by other healthcare providers that may need help with their  patients or have a question related in the psychiatric realm. And so I  would see a patient that's admitted to the hospital and help provide  recommendations to the physicians and the rest of the care team that's  caring for that patient.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1742,
+      "speaker": "Mr. Reddington",
+      "timestamp_display": "03:13:59",
+      "timestamp_seconds": 11639.31,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11639.31",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1743,
+      "speaker": "Judge",
+      "timestamp_display": "03:14:00",
+      "timestamp_seconds": 11640.87,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=11640.87",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "segment_index": 1869,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "03:25:28",
+      "timestamp_seconds": 12328.59,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=12328.59",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1895,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "03:27:16",
+      "timestamp_seconds": 12436.23,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=12436.23",
+      "text": "One  of the things when she was admitted... I'm not going to go through all  the stuff we've already talked about with her medical condition and  everything else... you indicated that she was very, very ill, correct?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 1996,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "03:36:21",
+      "timestamp_seconds": 12981.42,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=12981.42",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 1997,
+      "speaker": "Judge",
+      "timestamp_display": "03:36:21",
+      "timestamp_seconds": 12981.99,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=12981.99",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "segment_index": 2000,
+      "speaker": "Judge",
+      "timestamp_display": "03:36:29",
+      "timestamp_seconds": 12989.61,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=12989.61",
+      "text": "Commonwealth, redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 2017,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "03:37:57",
+      "timestamp_seconds": 13077.3,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=13077.3",
+      "text": "You  talked about prescription and what she was taking. Were you aware that  in the timeframe just prior to her being admitted to the hospital, she  was only prescribed trazodone, Valium, and amitriptyline, just three  medications?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 2058,
+      "speaker": "Judge",
+      "timestamp_display": "03:41:26",
+      "timestamp_seconds": 13286.49,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=13286.49",
+      "text": "All  right. Members of the jury, we're going to take the afternoon recess at  this point, so I'm going to ask you to go back to your room and then  we'll come back here approximately two o'clock.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 2060,
+      "speaker": "Judge",
+      "timestamp_display": "03:42:26",
+      "timestamp_seconds": 13346.13,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=13346.13",
+      "text": "Counsel, anything we need to address before the break?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 2063,
+      "speaker": "Judge",
+      "timestamp_display": "03:42:29",
+      "timestamp_seconds": 13349.7,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=13349.7",
+      "text": "All right, so we'll be in recess till about two o'clock. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 2069,
+      "speaker": "Speaker 13",
+      "timestamp_display": "04:53:56",
+      "timestamp_seconds": 17636.19,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17636.19",
+      "text": "May we approach the stand?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 2077,
+      "speaker": "Madam Clerk",
+      "timestamp_display": "04:56:15",
+      "timestamp_seconds": 17775.69,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17775.69",
+      "text": "Your  Honor, for the purpose of the record, we return back to the trial of  Commonwealth v. Lindsay Clancy. All parties are present, including the  defendant and including the 18 jurors.",
+      "event_types": [
+        "jury_in"
+      ]
+    },
+    {
+      "segment_index": 2078,
+      "speaker": "Judge William F. Sullivan",
+      "timestamp_display": "04:56:24",
+      "timestamp_seconds": 17784.39,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17784.39",
+      "text": "All right. Thank you, Madam Clerk. Commonwealth, you ready to call your next witness?",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2079,
+      "speaker": "Speaker 17",
+      "timestamp_display": "04:56:27",
+      "timestamp_seconds": 17787.96,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17787.96",
+      "text": "Yes, your Honor. The Commonwealth calls Dr. Biswas.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2083,
+      "speaker": "Speaker 16",
+      "timestamp_display": "04:56:48",
+      "timestamp_seconds": 17808.48,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17808.48",
+      "text": "Can you stop right here and raise your right hand too?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2084,
+      "speaker": "Madam Clerk",
+      "timestamp_display": "04:56:49",
+      "timestamp_seconds": 17809.35,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=17809.35",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony [inaudible  04:56:49] the truth, the whole truth, and nothing but the truth, so help  you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2150,
+      "speaker": "Jhilam Biswas",
+      "timestamp_display": "05:03:03",
+      "timestamp_seconds": 18183.51,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18183.51",
+      "text": "Yes.  She was anxious and she needed breaks. And I said, \"Anytime you need a  break, we can leave.\" But she did write to us those particular answers.",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 2176,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:07:06",
+      "timestamp_seconds": 18426.51,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18426.51",
+      "text": "And this is January 26th, 2023, about a day and a half or so after she's admitted to Brigham and Women's?",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 2183,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "05:07:43",
+      "timestamp_seconds": 18463.71,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18463.71",
+      "text": "I don't know what that means. Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2253,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:14:46",
+      "timestamp_seconds": 18886.41,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18886.41",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2254,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:14:48",
+      "timestamp_seconds": 18888.51,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18888.51",
+      "text": "Overruled. I'll allow it.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "segment_index": 2265,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:15:34",
+      "timestamp_seconds": 18934.77,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18934.77",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2271,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "05:16:08",
+      "timestamp_seconds": 18968.58,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=18968.58",
+      "text": "Did  she exhibit, to your knowledge from the medical records, any periods of  hypomania, excessive cleaning, exercise, or activities, being awake at  night, things of that nature?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2282,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:17:29",
+      "timestamp_seconds": 19049.28,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19049.28",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2311,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:20:18",
+      "timestamp_seconds": 19218.81,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19218.81",
+      "text": "Objection, asked and answered.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2312,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:20:20",
+      "timestamp_seconds": 19220.31,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19220.31",
+      "text": "No, overruled.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "segment_index": 2318,
+      "speaker": "Jennifer Sprague",
+      "timestamp_display": "05:20:42",
+      "timestamp_seconds": 19242.09,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19242.09",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2319,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:20:43",
+      "timestamp_seconds": 19243.32,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19243.32",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "segment_index": 2350,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:22:35",
+      "timestamp_seconds": 19355.07,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19355.07",
+      "text": "Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 2362,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "05:23:54",
+      "timestamp_seconds": 19434.84,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19434.84",
+      "text": "I'm  going to object to that. Move to strike that. First of all, it wasn't  applied across. Secondly, this is the fourth time that counsel has tried  to accentuate that.",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "segment_index": 2363,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:24:02",
+      "timestamp_seconds": 19442.37,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19442.37",
+      "text": "Overruled. I'll allow that question. Go ahead.",
+      "event_types": [
+        "overruled"
+      ]
+    },
+    {
+      "segment_index": 2367,
+      "speaker": "Kevin Reddington",
+      "timestamp_display": "05:24:29",
+      "timestamp_seconds": 19469.37,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19469.37",
+      "text": "Objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2368,
+      "speaker": "William F. Sullivan",
+      "timestamp_display": "05:24:29",
+      "timestamp_seconds": 19469.91,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19469.91",
+      "text": "Sustained.",
+      "event_types": [
+        "sustained"
+      ]
+    },
+    {
+      "segment_index": 2388,
+      "speaker": "Shanan Buckingham",
+      "timestamp_display": "05:25:36",
+      "timestamp_seconds": 19536.81,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19536.81",
+      "text": "The Commonwealth would call Robert Flynn as its next witness, please.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2389,
+      "speaker": "Baliff",
+      "timestamp_display": "05:25:39",
+      "timestamp_seconds": 19539.84,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19539.84",
+      "text": "Good afternoon, sir. ([05:25:39](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19539.84)) Up here. Raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2390,
+      "speaker": "Clerk",
+      "timestamp_display": "05:26:11",
+      "timestamp_seconds": 19571.82,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19571.82",
+      "text": "Good afternoon. Do you solemnly swear that the testimony and the evidence you shall give to court [inaudible 05:26:15]?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2453,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:32:03",
+      "timestamp_seconds": 19923.6,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19923.6",
+      "text": "Okay. And if I may approach with a picture.",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 2454,
+      "speaker": "Mr. Reddington",
+      "timestamp_display": "05:32:10",
+      "timestamp_seconds": 19930.53,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19930.53",
+      "text": "Objection to the pictures, Judge.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2458,
+      "speaker": "Judge",
+      "timestamp_display": "05:32:20",
+      "timestamp_seconds": 19940.19,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19940.19",
+      "text": "That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 2459,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:32:27",
+      "timestamp_seconds": 19947.96,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19947.96",
+      "text": "Just  showing you on the screen what's now been marked as Exhibit 44. This is  the kitchen at 47 Summer Street and in the middle of the photograph is a  takeout bag, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2467,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:33:00",
+      "timestamp_seconds": 19980.66,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=19980.66",
+      "text": "And in the living room area... I'll show you what's been marked already as Exhibit 25. Is that familiar to you as well?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2501,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:35:00",
+      "timestamp_seconds": 20100.75,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20100.75",
+      "text": "And is there anything that kind of struck you about walking into that master bedroom as far as the temperature of the room?",
+      "event_types": [
+        "stricken"
+      ]
+    },
+    {
+      "segment_index": 2505,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:35:13",
+      "timestamp_seconds": 20113.71,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20113.71",
+      "text": "Okay.  So I'm just going to show you what's been marked as Exhibit 43. Is that  familiar to you as the window that you observed open?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2515,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:35:49",
+      "timestamp_seconds": 20149.26,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20149.26",
+      "text": "Okay.  I'm just going to show you what's already been marked as Exhibit 42.  Let me see. There's an object. Is that how it appeared when you first  entered into the bedroom?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2525,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:37:08",
+      "timestamp_seconds": 20228.4,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20228.4",
+      "text": "Show you Exhibit 38. Is that familiar as the backyard view?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2578,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:41:24",
+      "timestamp_seconds": 20484.12,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20484.12",
+      "text": "Commonwealth calls Mark Farioli.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2579,
+      "speaker": "Bailiff",
+      "timestamp_display": "05:41:25",
+      "timestamp_seconds": 20485.02,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20485.02",
+      "text": "Good afternoon, sir. Can you stop right there and raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2580,
+      "speaker": "Clerk",
+      "timestamp_display": "05:42:00",
+      "timestamp_seconds": 20520.81,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20520.81",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony and the evidence  you shall give to the court [inaudible 05:42:07] shall be the truth, the  whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2625,
+      "speaker": "Bailiff",
+      "timestamp_display": "05:45:10",
+      "timestamp_seconds": 20710.05,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20710.05",
+      "text": "Can you stop right here and raise your right hand for the clerk?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2626,
+      "speaker": "Clerk",
+      "timestamp_display": "05:45:22",
+      "timestamp_seconds": 20722.26,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20722.26",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony and the evidence  you shall give to the court and the jury in the matter upcoming between  the Commonwealth and the defendant [inaudible 05:45:18] shall be the  truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2658,
+      "speaker": "Judge",
+      "timestamp_display": "05:47:17",
+      "timestamp_seconds": 20837.76,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20837.76",
+      "text": "Okay. All right. Well, thank you. You may step down. Thank you.",
+      "event_types": [
+        "witness_excused"
+      ]
+    },
+    {
+      "segment_index": 2659,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:47:20",
+      "timestamp_seconds": 20840.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20840.52",
+      "text": "Commonwealth calls John Santos.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2663,
+      "speaker": "Bailiff",
+      "timestamp_display": "05:47:20",
+      "timestamp_seconds": 20840.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20840.52",
+      "text": "Good afternoon. Can you stop right here and raise your right hand for the clerk.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2664,
+      "speaker": "Clerk",
+      "timestamp_display": "05:47:20",
+      "timestamp_seconds": 20840.52,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=20840.52",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony and the evidence  you shall give to the court and the jury in the matter upcoming between  the Commonwealth and the defendant [inaudible 05:49:11] shall be the  truth, the whole truth, and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2687,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:50:42",
+      "timestamp_seconds": 21042.21,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21042.21",
+      "text": "I'm going to have this photo marked as the next exhibit.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2688,
+      "speaker": "Judge",
+      "timestamp_display": "05:50:56",
+      "timestamp_seconds": 21056.91,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21056.91",
+      "text": "All right. That may be admitted.",
+      "event_types": [
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 2690,
+      "speaker": "Speaker 19",
+      "timestamp_display": "05:50:56",
+      "timestamp_seconds": 21056.91,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21056.91",
+      "text": "Exhibit 145.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2691,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:50:57",
+      "timestamp_seconds": 21057.39,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21057.39",
+      "text": "Thank  you. I'm showing you Exhibit 145 on the screen here. So focusing your  attention on the top shelf, there were several notebooks and books that  were seized. Is that correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2717,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:53:51",
+      "timestamp_seconds": 21231.33,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21231.33",
+      "text": "And then Exhibit 147 is a notebook. Inside it had a postpartum depression and anxiety patient information sheet, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2727,
+      "speaker": "Ms. Sprague",
+      "timestamp_display": "05:54:35",
+      "timestamp_seconds": 21275.76,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21275.76",
+      "text": "And then finally, Exhibit 150, a notebook labeled Callan Patrick Clancy, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2807,
+      "speaker": "Mr. Reddington",
+      "timestamp_display": "06:01:12",
+      "timestamp_seconds": 21672.63,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21672.63",
+      "text": "There  were also other documents that were... items, I should say, that were  seized in the house that have already been introduced for the record,  Exhibit 81. And looks like a diary, Exhibit 83, of, \"Slept well last  night,\" things of that nature. That was seized as well, right?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2851,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:04:52",
+      "timestamp_seconds": 21892.8,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21892.8",
+      "text": "Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 2855,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:05:08",
+      "timestamp_seconds": 21908.85,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21908.85",
+      "text": "The Commonwealth would call Cory Melo as its next witness.",
+      "event_types": [
+        "witness_called"
+      ]
+    },
+    {
+      "segment_index": 2856,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:05:39",
+      "timestamp_seconds": 21939.81,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21939.81",
+      "text": "Stop right there, raise your right hand for the clerk, please.",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2857,
+      "speaker": "Speaker 25",
+      "timestamp_display": "06:05:40",
+      "timestamp_seconds": 21940.98,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=21940.98",
+      "text": "Good  afternoon. Do you solemnly swear that the testimony [inaudible  06:05:44] the whole truth and nothing but the truth, so help you God?",
+      "event_types": [
+        "oath"
+      ]
+    },
+    {
+      "segment_index": 2911,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:09:07",
+      "timestamp_seconds": 22147.17,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22147.17",
+      "text": "If I may approach the witness?",
+      "event_types": [
+        "sidebar"
+      ]
+    },
+    {
+      "segment_index": 2919,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:09:25",
+      "timestamp_seconds": 22165.32,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22165.32",
+      "text": "I would move to admit this ground journal as an exhibit, please.",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2920,
+      "speaker": "Mr. Reddington",
+      "timestamp_display": "06:09:28",
+      "timestamp_seconds": 22168.14,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22168.14",
+      "text": "No objection.",
+      "event_types": [
+        "objection"
+      ]
+    },
+    {
+      "segment_index": 2921,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:09:28",
+      "timestamp_seconds": 22168.65,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22168.65",
+      "text": "All right. That may be admitted. Counsel, can I see you sidebar just for a second? ([06:09:46](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22186.08)) All right, Commonwealth.",
+      "event_types": [
+        "sidebar",
+        "admitted"
+      ]
+    },
+    {
+      "segment_index": 2922,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:11:42",
+      "timestamp_seconds": 22302.78,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22302.78",
+      "text": "Thank  you. Trooper Melo, just in relation to now what's been marked as  Exhibit 151, the Brown Journal, and just noting that when the journal  opens to the first page, there's no dates on it, correct?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2934,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:13:22",
+      "timestamp_seconds": 22402.68,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22402.68",
+      "text": "And  there's one on November 18th. And November 18th, that page reads, \"It's  like I'm so desperate to get a mental break from taking care of  everyone that my mind is trying to make something physically wrong with  me.\" You recall reviewing that in the journal?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 2938,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:13:54",
+      "timestamp_seconds": 22434.42,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22434.42",
+      "text": "This journal I'm holding up, Exhibit number 147, is that familiar to you?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 2944,
+      "speaker": "Speaker 24",
+      "timestamp_display": "06:14:22",
+      "timestamp_seconds": 22462.44,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22462.44",
+      "text": "Okay.  And this third journal that you reviewed after the search warrant,  Exhibit number 50, the yellow journal with Callan Clancy's name on it,  do you recall that?",
+      "event_types": [
+        "exhibit"
+      ]
+    },
+    {
+      "segment_index": 3008,
+      "speaker": "Mr. Reddington",
+      "timestamp_display": "06:20:48",
+      "timestamp_seconds": 22848.12,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22848.12",
+      "text": "And  then the statement started getting smaller and smaller as time went by.  One occasion, \"It's like I'm desperate to get a mental break from  taking care of everyone. My mind is trying to make something physically  wrong with me. My mind never shuts off. It's constantly thinking of the  next thing someone needs. I can't shut it off. I desperately want to go  back to work, but now I don't know how I'm going to function and it  worries me.\" Wrote that, right?",
+      "event_types": [
+        "recess"
+      ]
+    },
+    {
+      "segment_index": 3033,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:23:07",
+      "timestamp_seconds": 22987.32,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=22987.32",
+      "text": "Okay. Redirect?",
+      "event_types": [
+        "redirect_explicit"
+      ]
+    },
+    {
+      "segment_index": 3035,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:24:54",
+      "timestamp_seconds": 23094.21,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=23094.21",
+      "text": "All right. Thank you, sir. You may step down. Counsel, can I see you at sidebar? ([06:24:54](https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=23094.21)) All  right. So members of the jury, we're going to break at this point till  tomorrow. All right? Talking to counsel, my expectation is we'd have a  similar schedule tomorrow. The hope would be it will go in the morning  and it should go into the afternoon, but just to give you the, that's  the best estimate that we have. All right? And so, I'm going to excuse  you till tomorrow. Remember I'm going to ask you those questions. Don't  listen to anything. Don't talk about this. Don't take any road trips or  do any research on this. Put this out of your head as best you can till  tomorrow morning. Hopefully the rain has stopped and we'll see everybody  tomorrow. Thank you so much for all your work here today. Thank you.",
+      "event_types": [
+        "sidebar",
+        "recess",
+        "witness_excused"
+      ]
+    },
+    {
+      "segment_index": 3037,
+      "speaker": "Speaker 23",
+      "timestamp_display": "06:26:21",
+      "timestamp_seconds": 23181.93,
+      "url": "https://www.rev.com/app/transcript/NmE3MWNiZTFhNjZmN2RkZjg4YTQ3NzkxM3I4RlVZNTZCWVVT/o/VEMwMTg3Mjg4MjU3?ts=23181.93",
+      "text": "All right. So we'll be in recess on this until tomorrow morning at 9:00. Thank you.",
+      "event_types": [
+        "recess"
+      ]
+    }
+  ]
+}

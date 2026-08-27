@@ -1,0 +1,348 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-10-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-10",
+  "day_number": 10,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:fd94972c56cd53dc8cb812cab41e563f96efadf50bdc1c8080c7991fc617aab3"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:08bf8769ee6786154fc783ec9aed66f5be74ad5f69b205332873adc52717c541"
+  },
+  "summary": {
+    "title": "Day 10 Intelligence",
+    "subtitle": "Dr. Jennifer Tufts continued; Julie Paul began",
+    "one_liner": "The treatment record deepened through extended testimony about symptoms, medication regimens, clinical notes, and care decisions.",
+    "purpose": "Organize a dense clinician day around what was reported, observed, assessed, prescribed, and documented at each encounter.",
+    "what_changed": "Dr. Tufts completed or substantially continued her account, and psychiatric mental-health nurse practitioner Julie Paul added another treatment perspective.",
+    "primary_topics": [
+      "Jennifer Tufts",
+      "Julie Paul",
+      "clinical notes",
+      "medication regimens",
+      "treatment decisions"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day10-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Most of the day consisted of Dr. Jennifer Tufts's continued testimony. Julie Paul then testified as a psychiatric mental-health nurse practitioner.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "6444ecc4-68eb-51c9-aa03-75ce6545dea7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:06:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1a8458a6-b70a-59f0-af62-9a9506d348a7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Julie Paul",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "04:28:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day10-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 10 is a core source for the pre-incident treatment chronology, but its evidentiary value depends on preserving dates, information source, medication changes, and the clinician's contemporaneous reasoning.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "6444ecc4-68eb-51c9-aa03-75ce6545dea7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:06:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1a8458a6-b70a-59f0-af62-9a9506d348a7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Julie Paul",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "04:28:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day10-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Reported symptoms and observed presentation informed clinical assessments; assessments informed medication and follow-up decisions; later experts used portions of that treatment record as opinion premises.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "6444ecc4-68eb-51c9-aa03-75ce6545dea7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Dr Jennifer Tufts",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:06:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "1a8458a6-b70a-59f0-af62-9a9506d348a7",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Julie Paul",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "04:28:56"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day10-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "A medication appearing in a chart does not by itself prove ingestion, effect, adverse reaction, or causation. Prescription, adherence, timing, and observed response remain separate questions.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day10-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "For every medication change, what was the stated indication, dose, start/stop timing, reported adherence, observed effect, and follow-up assessment?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day10-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Normalize Day 10 into an encounter-by-encounter medication and symptom chronology while retaining exact note and testimony provenance.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day10-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 11 focuses on Rebecca Jollotta's several weeks of perinatal behavioral-health care and cross-examination of symptom and medication decisions.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Jennifer Tufts",
+        "Julie Paul",
+        "clinical notes",
+        "medication regimens",
+        "treatment decisions"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day10-coverage",
+        "day10-working-position",
+        "day10-evidence-chain",
+        "day10-boundary-risk",
+        "day10-review-question",
+        "day10-next-action",
+        "day10-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day10-coverage",
+        "day10-working-position",
+        "day10-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

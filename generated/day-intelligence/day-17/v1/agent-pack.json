@@ -1,0 +1,306 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-17-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-17",
+  "day_number": 17,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:10fca698d59a3d5fd465deb12ea6d5ee44c2459cbfb4c48573bec936f943f1da"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:a004e9221297071dfd1067824cef987c08390b4048ca51ef8d1b6a587c0e1da3"
+  },
+  "summary": {
+    "title": "Day 17 Intelligence",
+    "subtitle": "Sheila Cavanaugh and post-extubation conversations",
+    "one_liner": "Cavanaugh described repeated hospital conversations and statements attributed to Lindsay about a male voice and the children's safety.",
+    "purpose": "Preserve the exact wording, sequence, circumstances, and transmission history of the hospital statements attributed to Lindsay.",
+    "what_changed": "The defense added a direct listener's account of post-extubation conversations that later experts used when evaluating psychosis and a reported command hallucination.",
+    "primary_topics": [
+      "Sheila Cavanaugh",
+      "hospital conversations",
+      "male voice",
+      "command hallucination",
+      "statement provenance"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day17-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Sheila Cavanaugh described visits and conversations with Lindsay after extubation, including statements concerning a male voice and concern for the children's safety. The jurors were re-sworn and the session ended early.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "db6b5a31-097c-5c89-a0d7-57e4cb588a7c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sheila Cavanaugh",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day17-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 17 is a primary provenance source for a disputed voice account, but later paraphrases must be compared against Cavanaugh's exact words, timing, and recollection.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "db6b5a31-097c-5c89-a0d7-57e4cb588a7c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sheila Cavanaugh",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day17-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Hospital conversation led to Cavanaugh's recollection and testimony; clinicians, investigators, or experts may later repeat or reinterpret that account; each transmission step can alter wording and meaning.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "db6b5a31-097c-5c89-a0d7-57e4cb588a7c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sheila Cavanaugh",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:07:40"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day17-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Different formulations of the reported voice may share a common origin. Multiple repetitions do not necessarily constitute multiple independent sources.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day17-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "What exact words did Cavanaugh attribute to Lindsay in each conversation, when did each occur, who else was present, and when were the statements first documented?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day17-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Construct a source-lineage table for every voice formulation before comparing expert characterizations of consistency or change.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day17-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 18 presents Dr. Phillip Resnick's defense opinion, the defense rests, and Dr. Avram Mack begins Commonwealth rebuttal.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "Sheila Cavanaugh",
+        "hospital conversations",
+        "male voice",
+        "command hallucination",
+        "statement provenance"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day17-coverage",
+        "day17-working-position",
+        "day17-evidence-chain",
+        "day17-boundary-risk",
+        "day17-review-question",
+        "day17-next-action",
+        "day17-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day17-coverage",
+        "day17-working-position",
+        "day17-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

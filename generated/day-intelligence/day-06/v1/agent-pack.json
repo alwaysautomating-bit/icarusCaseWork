@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-06-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-06",
+  "day_number": 6,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:0f5a57915e66eba806400bac1ffcd54d33092d1268e2755a673e5a3ce1097b79"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:7ca22d7a046241ca389d9a4a30468364ad84f8ecde1357c75791a4cb61eb09da"
+  },
+  "summary": {
+    "title": "Day 6 Intelligence",
+    "subtitle": "Trauma care, forensic laboratory work, scene collection, and stipulations",
+    "one_liner": "Clinical and forensic witnesses extended the injury and physical-evidence record while stipulations narrowed what required live proof.",
+    "purpose": "Preserve the boundaries among trauma testimony, laboratory work, scene collection, medication context, and stipulated facts.",
+    "what_changed": "The record gained trauma-surgery testimony, Massachusetts State Police crime-lab and scene evidence, additional personal or medication context, and stipulated proof.",
+    "primary_topics": [
+      "trauma care",
+      "crime laboratory",
+      "scene collection",
+      "stipulations",
+      "medication context"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day06-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Christina Carpio addressed trauma care; Maureen Hartnett and Sherri Crook addressed crime-lab work; State Police witnesses described scene documentation and collection; other witnesses supplied additional contextual evidence.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "f42e3b00-cf02-527c-a6b6-4c52609a276c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christina Carpio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:13:15"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "313e2b6d-c93c-5f5c-a152-a0c1ded19f20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Maureen Hartnett",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:46:59"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "49e985ac-0bc4-5cc0-ab8a-61bf8f79da6c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Jonathan O’Loughlin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:50:16"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9eeae265-8d28-5b1d-acec-edf2c5051c4c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sherri Crook",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:11:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day06-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "Day 6 developed the provenance of physical evidence and medical observations while reducing some proof through stipulation rather than witness-by-witness testimony.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "f42e3b00-cf02-527c-a6b6-4c52609a276c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christina Carpio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:13:15"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "313e2b6d-c93c-5f5c-a152-a0c1ded19f20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Maureen Hartnett",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:46:59"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "49e985ac-0bc4-5cc0-ab8a-61bf8f79da6c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Jonathan O’Loughlin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:50:16"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9eeae265-8d28-5b1d-acec-edf2c5051c4c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sherri Crook",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:11:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day06-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Hospital observations and scene collection produced records and physical items; forensic handling and stipulations defined how portions of that material entered the trial record.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "f42e3b00-cf02-527c-a6b6-4c52609a276c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Christina Carpio",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:13:15"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "313e2b6d-c93c-5f5c-a152-a0c1ded19f20",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Maureen Hartnett",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:46:59"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "49e985ac-0bc4-5cc0-ab8a-61bf8f79da6c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Jonathan O’Loughlin",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "01:50:16"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "9eeae265-8d28-5b1d-acec-edf2c5051c4c",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Sherri Crook",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "03:11:46"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day06-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "A stipulation proves only its agreed text and scope. It should not be expanded into unstated conclusions or used to erase uncertainty in related testimony.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day06-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "What exact facts were stipulated, which exhibits or items did each stipulation cover, and what related propositions remained disputed?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day06-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Index the stipulation text separately from witness summaries and link each collected item through its documented custody and examination steps.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day06-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 7 moves through hospital, toxicology, and injury evidence before adding Elaine Rossi's family observations as the former nanny.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "trauma care",
+        "crime laboratory",
+        "scene collection",
+        "stipulations",
+        "medication context"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day06-coverage",
+        "day06-working-position",
+        "day06-evidence-chain",
+        "day06-boundary-risk",
+        "day06-review-question",
+        "day06-next-action",
+        "day06-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day06-coverage",
+        "day06-working-position",
+        "day06-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

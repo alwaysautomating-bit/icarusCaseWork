@@ -1,0 +1,40 @@
+{
+  "id": "day-intelligence:413d071f-6299-46ae-aa85-46390aca38a6:day-19:v1",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-19-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-19",
+  "day_number": 19,
+  "version": 1,
+  "title": "Day 19 Intelligence",
+  "subtitle": "Mack concluded; Heilbrun began Commonwealth rebuttal",
+  "one_liner": "The Commonwealth completed Dr. Mack's rebuttal and opened a second forensic opinion through Dr. Kirk Heilbrun.",
+  "purpose": "Preserve the handoff between Commonwealth rebuttal experts and identify the premises Heilbrun began using before his Day 20 continuation.",
+  "what_changed": "Mack's cross-examination and rebuttal account concluded; Heilbrun was qualified and began describing his evaluation, materials, method, and criminal-responsibility framework.",
+  "primary_topics": [
+    "Avram Mack",
+    "Kirk Heilbrun",
+    "Commonwealth rebuttal",
+    "expert methodology",
+    "criminal responsibility"
+  ],
+  "review_status": "needs_review",
+  "source_linkage_status": "partial",
+  "item_counts": {
+    "insights": 1,
+    "positions_working_conclusions": 1,
+    "evidence_chains": 1,
+    "relationships": 0,
+    "risks_tensions": 1,
+    "open_questions": 1,
+    "actions": 1,
+    "memory_candidates": 0,
+    "handoff": 1
+  },
+  "generated_at": "2026-08-27T02:22:41.099Z",
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md"
+  }
+}

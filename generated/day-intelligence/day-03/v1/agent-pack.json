@@ -1,0 +1,432 @@
+{
+  "version": "1.0.0",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-03-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-03",
+  "day_number": 3,
+  "artifact_version": 1,
+  "supersedes_artifact_set_id": null,
+  "source_record": {
+    "proceeding_ids": [],
+    "transcript_artifact_ids": [],
+    "input_hashes": {
+      "transcript": "sha256:6393970b4e8c473364cb115cd212bd7573f5cbadf3890a8abf631f9b993921d7"
+    },
+    "source_segment_namespace": "source_segments.id",
+    "source_record_complete": false
+  },
+  "generation": {
+    "created_at": "2026-08-27T02:22:41.099Z",
+    "collapse_skill": {
+      "name": "thread-collapse-handoff",
+      "version": "1.1.0-artifact",
+      "mode": "legal_evidentiary"
+    },
+    "compiler": {
+      "name": "context-card-compiler",
+      "version": "1.1.0-artifact",
+      "profile": "legal_case_analysis"
+    },
+    "model": {
+      "provider": "OpenAI",
+      "name": "Codex",
+      "version": "2026-08-26"
+    },
+    "configuration_hash": "sha256:fa0d1dcd71f16c4a6849a75f468dc428c4ebf9a1f6abe750d3d88a1b89ac0f0e"
+  },
+  "summary": {
+    "title": "Day 3 Intelligence",
+    "subtitle": "First responders, basement entry, and resuscitation",
+    "one_liner": "Police, fire, and medical responders supplied overlapping but distinct accounts of arrival, scene access, the children, and emergency care.",
+    "purpose": "Organize the responder sequence while preserving each witness's vantage point, estimates, and actions as separate testimony.",
+    "what_changed": "The record gained multiple firsthand accounts of the exterior and basement scenes, the children's locations and conditions, and resuscitation efforts.",
+    "primary_topics": [
+      "first responders",
+      "47 Summer Street",
+      "basement",
+      "resuscitation",
+      "arrival sequence"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "day03-coverage",
+      "section": "insights",
+      "epistemic_class": "analytical_inference",
+      "title": "What the day covered",
+      "content": "Duxbury police, fire, and paramedic witnesses described responding to 47 Summer Street, encountering Lindsay outside, entering the home and basement, locating the children, and attempting resuscitation.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "36a794e9-80c1-5a07-a740-17dcd6151047",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Stephen Hall",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:04"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d4d505c7-e395-5fe1-a1db-358d683e9001",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Brian Josephine",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:41:22"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abe2ebbf-820a-5fe6-aafa-a15a0fb84c42",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Daniel Dougherty",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:02:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abaa9431-cfbd-598e-a535-3c6ca86fae41",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Vincent Cahill",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:10:33"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day03-working-position",
+      "section": "positions_working_conclusions",
+      "epistemic_class": "working_conclusion",
+      "title": "Working significance",
+      "content": "The responder testimony materially expands the observable scene record, but agreement among responders does not make their timing estimates one independent clock.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "36a794e9-80c1-5a07-a740-17dcd6151047",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Stephen Hall",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:04"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d4d505c7-e395-5fe1-a1db-358d683e9001",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Brian Josephine",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:41:22"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abe2ebbf-820a-5fe6-aafa-a15a0fb84c42",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Daniel Dougherty",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:02:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abaa9431-cfbd-598e-a535-3c6ca86fae41",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Vincent Cahill",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:10:33"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day03-evidence-chain",
+      "section": "evidence_chains",
+      "epistemic_class": "evidence_chain",
+      "title": "Evidence chain",
+      "content": "Dispatch and arrival led to exterior contact, entry, basement discovery, removal, and medical intervention; each link should be reconstructed from the witness who personally performed or observed it.",
+      "importance": "high",
+      "extraction_confidence": 0.82,
+      "evidentiary_assessment": "derived",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [
+        {
+          "source_segment_id": "36a794e9-80c1-5a07-a740-17dcd6151047",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Stephen Hall",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:26:04"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "d4d505c7-e395-5fe1-a1db-358d683e9001",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Brian Josephine",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "00:41:22"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abe2ebbf-820a-5fe6-aafa-a15a0fb84c42",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Daniel Dougherty",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:02:30"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        },
+        {
+          "source_segment_id": "abaa9431-cfbd-598e-a535-3c6ca86fae41",
+          "source_artifact_id": null,
+          "proceeding_id": null,
+          "speaker_name": "Vincent Cahill",
+          "speaker_capacity": "transcript_speaker",
+          "examination_phase": null,
+          "locator": {
+            "type": "timestamp",
+            "value": "02:10:33"
+          },
+          "role": "derived_from",
+          "source_status": "canonical"
+        }
+      ],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Day-level synthesis linked to representative canonical transcript segments; human item review remains required."
+      ]
+    },
+    {
+      "item_id": "day03-boundary-risk",
+      "section": "risks_tensions",
+      "epistemic_class": "risk",
+      "title": "Boundary to preserve",
+      "content": "Scene descriptions, estimated durations, and remembered order may converge without sharing the same precision. A synthesized chronology must retain uncertainty and witness-specific vantage points.",
+      "importance": "high",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day03-review-question",
+      "section": "open_questions",
+      "epistemic_class": "research_question",
+      "title": "Open review question",
+      "content": "Where do responder accounts differ on arrival order, entry route, child location, movement, condition, and the timing of interventions?",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day03-next-action",
+      "section": "actions",
+      "epistemic_class": "research_action",
+      "title": "Next review action",
+      "content": "Compare testimony against dispatch/CAD, radio, EMS, and hospital records before accepting a minute-level responder timeline.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    },
+    {
+      "item_id": "day03-handoff",
+      "section": "handoff",
+      "epistemic_class": "handoff_state",
+      "title": "Handoff brief",
+      "content": "Day 4 continues scene testimony, includes the jury view of the residence, and places crime-scene photographs before the jury.",
+      "importance": "medium",
+      "extraction_confidence": 0.78,
+      "evidentiary_assessment": "not_assessed",
+      "source_linkage_status": "source_linkage_incomplete",
+      "review_status": "needs_review",
+      "sources": [],
+      "tags": [
+        "first responders",
+        "47 Summer Street",
+        "basement",
+        "resuscitation",
+        "arrival sequence"
+      ],
+      "notes": [
+        "Generated analytical work product; not a canonical fact and not eligible for automatic promotion."
+      ]
+    }
+  ],
+  "limitations": [
+    {
+      "code": "human_review_pending",
+      "severity": "material",
+      "description": "This day-level synthesis has not been accepted by a human reviewer and must remain reference-only analytical work product.",
+      "affected_item_ids": [
+        "day03-coverage",
+        "day03-working-position",
+        "day03-evidence-chain",
+        "day03-boundary-risk",
+        "day03-review-question",
+        "day03-next-action",
+        "day03-handoff"
+      ]
+    },
+    {
+      "code": "representative_segment_linkage",
+      "severity": "material",
+      "description": "Source-backed synthesis items link to representative exact transcript segments; item-level proposition and examination-phase review remains required.",
+      "affected_item_ids": [
+        "day03-coverage",
+        "day03-working-position",
+        "day03-evidence-chain"
+      ]
+    },
+    {
+      "code": "database_identity_not_embedded",
+      "severity": "non_material",
+      "description": "This artifact-only build embeds deterministic source segment IDs and transcript hashes but does not persist or require proceeding and source-artifact database identities.",
+      "affected_item_ids": []
+    }
+  ],
+  "governance": {
+    "human_review_required": true,
+    "auto_action_allowed": false,
+    "audit_log_required": true,
+    "analytical_acceptance_is_canonical_fact": false,
+    "cross_day_auto_promotion_allowed": false,
+    "scratchpad_input_allowed": false
+  },
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md",
+    "generated_projection": "agent-pack.json"
+  }
+}

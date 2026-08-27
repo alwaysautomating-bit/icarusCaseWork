@@ -1,0 +1,39 @@
+{
+  "id": "day-intelligence:413d071f-6299-46ae-aa85-46390aca38a6:day-01:v1",
+  "profile": "legal_case_analysis",
+  "contract_version": "day-intelligence/1.0",
+  "artifact_set_id": "lindsay-clancy-day-01-v1",
+  "case_id": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "trial_day_id": "day-01",
+  "day_number": 1,
+  "version": 1,
+  "title": "Opening Statements Intelligence",
+  "subtitle": "Opening advocacy and Patrick Clancy's initial testimony",
+  "one_liner": "The parties framed the trial around criminal responsibility, and Patrick Clancy began the family and treatment chronology.",
+  "purpose": "Separate the parties' opening positions from the first testimony and preserve the questions those positions said the evidence would answer.",
+  "what_changed": "The central dispute was defined as legal responsibility in the setting of serious mental illness; Patrick then began supplying first-person family and treatment context.",
+  "primary_topics": [
+    "opening statements",
+    "criminal responsibility",
+    "family history",
+    "mental-health treatment"
+  ],
+  "review_status": "needs_review",
+  "source_linkage_status": "partial",
+  "item_counts": {
+    "insights": 1,
+    "positions_working_conclusions": 1,
+    "evidence_chains": 1,
+    "relationships": 0,
+    "risks_tensions": 1,
+    "open_questions": 1,
+    "actions": 1,
+    "memory_candidates": 0,
+    "handoff": 1
+  },
+  "generated_at": "2026-08-27T02:22:41.099Z",
+  "authority": {
+    "evidentiary_source_of_record": "source_artifact + source_segments",
+    "canonical_analytical_representation": "context.md"
+  }
+}
