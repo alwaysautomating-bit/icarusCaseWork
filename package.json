@@ -23,6 +23,8 @@
     "trial-index:lindsay": "tsx scripts/import-lindsay-trial-index.ts",
     "court-packet:parse": "tsx scripts/court-packet.ts parse",
     "court-packet:inspect": "tsx scripts/court-packet.ts inspect",
+    "lite:publish": "tsx scripts/icarus-lite.ts publish",
+    "lite:validate": "tsx scripts/icarus-lite.ts validate",
     "supabase:start": "supabase start",
     "supabase:status": "supabase status",
     "supabase:stop": "supabase stop --project-id IcarusCasework",
@@ -41,6 +43,7 @@
     "@vercel/blob": "2.8.0",
     "drizzle-orm": "^0.45.2",
     "next": "16.3.0",
+    "postgres": "3.4.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "zod": "^4.4.3"
