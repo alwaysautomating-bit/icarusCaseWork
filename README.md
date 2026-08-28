@@ -49,10 +49,16 @@ Open [http://localhost:3000](http://localhost:3000) for Icarus Casework, [local 
 Place new Rev markdown or text captures in `transcripts/inbox`, then run:
 
 ```powershell
-pnpm transcript:intake
+pnpm testimony:process
 ```
 
-To process one source elsewhere, pass its path explicitly. The compiler copies the source byte-for-byte to `transcripts/preserved`, writes a versioned JSON manifest to `transcripts/manifests`, and runs the experimental V2 deterministic structure pass into `transcripts/first-pass`. V2 accepts both Rev Markdown and plain-text transcript shapes. It identifies witness blocks, examination-phase runs, and procedural markers with source-line, timestamp, and deep-link locators. These outputs are reviewable navigation aids, not verified facts, credibility findings, or canonical legal classifications.
+The workflow copies each source byte-for-byte to `transcripts/preserved`, writes a versioned JSON manifest to `transcripts/manifests`, runs deterministic structure into `transcripts/first-pass`, and moves a successful inbox original to `transcripts/archive/processed-inputs`. Failed or conflicting files stay in the inbox for review. Both Rev Markdown and direct copy/paste plain-text transcript shapes are supported.
+
+Thread Collapse is an independent branch over the preserved raw transcript. Run `pnpm testimony:index` when an intentional Day X index rebuild is wanted. It does not read or depend on deterministic first-pass output, and deterministic publication does not read or depend on the Day X indexes.
+
+Witness blocks, examination phases, procedural markers, and thread-collapse day indexes are reviewable navigation aids—not verified facts, credibility findings, or canonical legal classifications. Run `pnpm testimony:verify` before publication. Canonical local Supabase publication remains the explicit `pnpm testimony:publish-corpus` operation.
+
+See [the testimony framework](transcripts/README.md) for folder roles, commands, and authority boundaries.
 
 The intake uses trial day—not a publisher display date—as filename identity. It never promotes a publisher date to `proceeding_date`, never edits the source, and stops with `SOURCE_CONFLICT` if a trial day already has a different preserved checksum. Re-running an identical source validates and reuses both its manifest and first-pass output.
 

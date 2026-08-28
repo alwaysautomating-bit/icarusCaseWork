@@ -1,0 +1,185 @@
+{
+  "schema_version": "trial-testimony-index/1.0",
+  "generated_at": "2026-08-28T06:20:47.8693898Z",
+  "day_count": 20,
+  "days": [
+    {
+      "day": 1,
+      "index": "day-01-index.md",
+      "artifact_set_id": "lindsay-clancy-day-01-v1",
+      "first_pass_available": false,
+      "sha256": "6488abc8d84e232cca9ef7a8efef94fa300e94581ceb3ab6603fc1a0ae74208d"
+    },
+    {
+      "day": 2,
+      "index": "day-02-index.md",
+      "artifact_set_id": "lindsay-clancy-day-02-v1",
+      "first_pass_available": true,
+      "sha256": "3c4ea2c897c545385828d0bd6d959223727be3ed4c08d0a28f3de18719a5eadb",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 3,
+      "index": "day-03-index.md",
+      "artifact_set_id": "lindsay-clancy-day-03-v1",
+      "first_pass_available": true,
+      "sha256": "792cded80dea03af31da76e9ff5daf670168ddec26ecdbaa13c9682dfc55cb1c",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 4,
+      "index": "day-04-index.md",
+      "artifact_set_id": "lindsay-clancy-day-04-v1",
+      "first_pass_available": true,
+      "sha256": "9cdec7b26f99ae1983b8255c63d9d9a42fabb51aa9bc18baabac9d844dedd379",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 5,
+      "index": "day-05-index.md",
+      "artifact_set_id": "lindsay-clancy-day-05-v1",
+      "first_pass_available": true,
+      "sha256": "80da95c98479179f84d429e1d9ca9ad5f1fb020857375a1dd1df7a2e75175c09",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 6,
+      "index": "day-06-index.md",
+      "artifact_set_id": "lindsay-clancy-day-06-v1",
+      "first_pass_available": true,
+      "sha256": "79d8a7121dc162820d9d7c938c984c97f374c20845e1716a151c3ef12d8bb0b5",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 7,
+      "index": "day-07-index.md",
+      "artifact_set_id": "lindsay-clancy-day-07-v1",
+      "first_pass_available": true,
+      "sha256": "d17a5716a1148728ded969af93a136e42fa6b65e12ca1c863490a65b46f8dae9",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 8,
+      "index": "day-08-index.md",
+      "artifact_set_id": "lindsay-clancy-day-08-v1",
+      "first_pass_available": true,
+      "sha256": "303ebd17caa8b8c67da6861c945c3fa451ad6b84305b89379c97a8a4f7ebc676",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 9,
+      "index": "day-09-index.md",
+      "artifact_set_id": "lindsay-clancy-day-09-v1",
+      "first_pass_available": true,
+      "sha256": "ef5fff39a36c9f145a447514af62613d95b9fbb6acef3e568f3819f1fa9f40fc",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 10,
+      "index": "day-10-index.md",
+      "artifact_set_id": "lindsay-clancy-day-10-v1",
+      "first_pass_available": true,
+      "sha256": "582d41a26fb60fa4d2daf7f3ff0d4a6aa9830808ce068e24a52375d325fc3e86",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 11,
+      "index": "day-11-index.md",
+      "artifact_set_id": "lindsay-clancy-day-11-v1",
+      "first_pass_available": true,
+      "sha256": "7f2de5ba0075f68d2c50bbd209c17202536ee9109f856eaebf94bd0a25253340",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 12,
+      "index": "day-12-index.md",
+      "artifact_set_id": "lindsay-clancy-day-12-v1",
+      "first_pass_available": true,
+      "sha256": "3ee8e752141d477a8fc28eea4f86915ccc0bfd233b5b834e2a421ce4f8c2e146",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 13,
+      "index": "day-13-index.md",
+      "artifact_set_id": "lindsay-clancy-day-13-v1",
+      "first_pass_available": true,
+      "sha256": "4110cd13c9ca68f50c1494f691ba14897125fd3c9db3b43158bf14a32617e4d5",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 14,
+      "index": "day-14-index.md",
+      "artifact_set_id": "lindsay-clancy-day-14-v1",
+      "first_pass_available": true,
+      "sha256": "25b553ea6f525ef84e120fa5b12fa32446bc8266b67a2bec6733c77d017853c3",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 15,
+      "index": "day-15-index.md",
+      "artifact_set_id": "lindsay-clancy-day-15-v1",
+      "first_pass_available": true,
+      "sha256": "6561ce8e0fa3aa4b9576b1e8568c79112a2871c8e86f8cf86d3cdf7375c6484c",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 16,
+      "index": "day-16-index.md",
+      "artifact_set_id": "lindsay-clancy-day-16-v1",
+      "first_pass_available": true,
+      "sha256": "df413d2fdbea6bc356f5faa17268b36e6efd00d2eab883bf268e105347668a83",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 17,
+      "index": "day-17-index.md",
+      "artifact_set_id": "lindsay-clancy-day-17-v1",
+      "first_pass_available": true,
+      "sha256": "ca81bea98f3a445375f9717490f47279fd14f4116911d7c7bda5e97bf19baa27",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 18,
+      "index": "day-18-index.md",
+      "artifact_set_id": "lindsay-clancy-day-18-v1",
+      "first_pass_available": true,
+      "sha256": "3bfd33f7f1267c999d1a67c36ce8d69488af4318a0a4906fe7ba923802710475",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 19,
+      "index": "day-19-index.md",
+      "artifact_set_id": "lindsay-clancy-day-19-v1",
+      "first_pass_available": true,
+      "sha256": "05461f441327ddadbffeeb6a620acc0819cd9e3bb71a1ff01cdd53d1a483af0f",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    },
+    {
+      "day": 20,
+      "index": "day-20-index.md",
+      "artifact_set_id": "lindsay-clancy-day-20-v1",
+      "first_pass_available": true,
+      "sha256": "ac15316ae290b31b8adccc60b2ba6fc66110c3f15c5704379cedf8b0a5f378db",
+      "imported_as_is": true,
+      "import_source": "collapse day 7.zip"
+    }
+  ]
+}

@@ -292,3 +292,36 @@ A multi-hour transcript is too coarse for precise, repeatable analysis. Addressa
 - The preserved transcript remains authoritative over every derived analytical layer.
 - Transcript-derived ChatGPT notes remain useful derived case data but are not transcript source artifacts.
 - The mixed inbox will be normalized later; current Markdown, copied-text, JSON, and derived-note files are retained without forced reclassification in this session.
+
+## 08-27-2026 — Establish one reusable testimony-processing workflow
+
+### Decision
+
+Use one repository-owned operational path: inbox intake, immutable preservation and manifesting, deterministic witness/phase/procedure structure, thread-collapse trial-day indexing, and an explicit governed Supabase publication command. Move successfully processed inbox originals into a processed-input archive only after every filesystem stage succeeds.
+
+Retain the JavaScript/TypeScript implementation as active. Archive the Python processors, generated sidecars, ZIP bundles, and prior test runs as superseded experiments rather than deleting them.
+
+### Reason
+
+The prior workspace mixed duplicate source copies, two independent parser implementations, generated sidecars, notes, and canonical publication inputs. That made it unclear which artifacts were authoritative and allowed recursive experiment tooling to process its own README and duplicate proceedings. A single queue and explicit folder authority make the workflow portable and auditable.
+
+### Consequences
+
+- `preserved/` plus `manifests/` govern source identity and canonical publication.
+- `first-pass/` and `trial-index/` remain derived, candidate-only navigation layers.
+- `archive/` is excluded from active discovery and publication.
+- `testimony:verify` is a mandatory preflight inside `testimony:publish-corpus`.
+- Conflicting sources are preserved under `archive/review-required`; they never overwrite a canonical source automatically.
+
+## 08-28-2026 — Make Thread Collapse and Deterministic Structure Sibling Derivations
+
+### Decision
+
+After preservation and manifesting, fork into two independent derived paths. Thread Collapse reads the preserved raw transcript and produces Day X navigation indexes. Deterministic processing independently produces segments, candidate witness blocks, examination phases, and procedural markers, and is the only branch eligible for explicit canonical Supabase publication.
+
+Neither branch consumes the other's outputs. Existing derived files remain retained and are not rerun merely to record this architecture correction.
+
+### Publication Idempotency
+
+The governed compiler RPC deduplicates by case and preserved artifact SHA-256 before inserting. Database uniqueness on `source_artifacts(case_id, sha256)`, one proceeding per `source_artifact_id`, and `source_segments(artifact_id, ordinal)` prevents duplicate canonical rows. A duplicate sequential publication reuses the existing proceeding and latest package version; package publication preserves its original `published_at` timestamp on replay.
+- No database schema change was required. Existing case-scoped, authenticated, security-invoker publication RPCs remain the canonical database boundary.

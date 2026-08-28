@@ -1,4 +1,4 @@
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -245,5 +245,22 @@ describe("source preservation", () => {
     await expect(
       processTranscriptFile({ inputPath: conflictPath, rootPath: path.join(root, "transcripts") }),
     ).rejects.toMatchObject({ code: "SOURCE_CONFLICT" });
+  });
+
+  it("moves a successfully processed inbox source into the processed-input archive", async () => {
+    const root = await makeTemporaryDirectory();
+    const transcriptRoot = path.join(root, "transcripts");
+    const inbox = path.join(transcriptRoot, "inbox");
+    await mkdir(inbox, { recursive: true });
+    const sourcePath = path.join(inbox, "day-5.txt");
+    const source = Buffer.from(revCapture());
+    await writeFile(sourcePath, source);
+
+    const result = await processTranscriptFile({ inputPath: sourcePath, rootPath: transcriptRoot });
+
+    expect(result.archivedInputPath).toBe(path.join(transcriptRoot, "archive", "processed-inputs", "day-5.txt"));
+    await expect(readFile(sourcePath)).rejects.toMatchObject({ code: "ENOENT" });
+    expect((await readFile(result.archivedInputPath!)).equals(source)).toBe(true);
+    expect((await readFile(result.preservedPath)).equals(source)).toBe(true);
   });
 });

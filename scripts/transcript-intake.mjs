@@ -100,6 +100,7 @@ function reportSuccess(result) {
   console.log(result.preservedPath);
   console.log(result.manifestPath);
   console.log(result.firstPassPath);
+  if (result.archivedInputPath) console.log(`Archived processed inbox source: ${result.archivedInputPath}`);
 }
 
 function reportFailure(inputPath, error) {

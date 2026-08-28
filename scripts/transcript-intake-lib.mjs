@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 import { constants as fsConstants } from "node:fs";
-import { access, copyFile, mkdir, readFile, stat, writeFile } from "node:fs/promises";
+import { access, copyFile, mkdir, readFile, rename, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import { z } from "zod";
@@ -305,6 +305,7 @@ export async function ensureTranscriptDirectories(rootPath) {
     preserved: path.join(resolvedRoot, "preserved"),
     manifests: path.join(resolvedRoot, "manifests"),
     firstPass: path.join(resolvedRoot, "first-pass"),
+    processedArchive: path.join(resolvedRoot, "archive", "processed-inputs"),
   };
 
   await Promise.all([
@@ -312,6 +313,7 @@ export async function ensureTranscriptDirectories(rootPath) {
     mkdir(directories.preserved, { recursive: true }),
     mkdir(directories.manifests, { recursive: true }),
     mkdir(directories.firstPass, { recursive: true }),
+    mkdir(directories.processedArchive, { recursive: true }),
   ]);
 
   return directories;
@@ -450,6 +452,28 @@ export async function processTranscriptFile({ inputPath, rootPath }) {
     firstPass = await writeFirstPass({ preservedPath, outputPath: firstPassPath, sourceSha256: incomingSha256 });
   }
 
+  let archivedInputPath = null;
+  if (path.dirname(resolvedInput).toLowerCase() === directories.inbox.toLowerCase()) {
+    const extension = path.extname(originalFilename);
+    const basename = path.basename(originalFilename, extension);
+    let candidate = path.join(directories.processedArchive, originalFilename);
+    if (await fileExists(candidate)) {
+      candidate = path.join(
+        directories.processedArchive,
+        `${basename}__sha256-${incomingSha256.slice(0, 12)}${extension}`,
+      );
+    }
+    if (await fileExists(candidate)) {
+      throw new TranscriptIntakeError(
+        "ARCHIVE_CONFLICT",
+        `A processed-input archive target already exists: ${candidate}`,
+        { inputPath: resolvedInput, archivePath: candidate },
+      );
+    }
+    await rename(resolvedInput, candidate);
+    archivedInputPath = candidate;
+  }
+
   return {
     disposition,
     manifestDisposition,
@@ -461,6 +485,7 @@ export async function processTranscriptFile({ inputPath, rootPath }) {
     preservedPath,
     manifestPath,
     firstPassPath,
+    archivedInputPath,
     warnings: [
       metadata.sourceDisplayDate
         ? `Publisher display date ${metadata.sourceDisplayDate} was not promoted to proceeding_date.`

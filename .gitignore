@@ -46,6 +46,14 @@ yarn-error.log*
 !/transcripts/manifests/
 !/transcripts/preserved/
 !/transcripts/first-pass/
+!/transcripts/README.md
+!/transcripts/trial-index/
+!/transcripts/archive/
+/transcripts/archive/*
+!/transcripts/archive/README.md
+!/transcripts/archive/experiments/
+/transcripts/archive/experiments/*
+!/transcripts/archive/experiments/README.md
 /transcripts/inbox/*
 !/transcripts/inbox/.gitkeep
 

@@ -10,10 +10,11 @@ Use the repository compiler for all transcript intake behavior. Keep source prep
 ## Workflow
 
 1. Work from the Icarus Casework repository root containing the `transcript:intake` package script.
-2. For files in `transcripts/inbox`, run `pnpm transcript:intake`.
-3. For specific files elsewhere, run `pnpm transcript:intake <path> [...more paths]`.
-4. Report each generated or reused preserved transcript path and manifest path.
-5. Surface every `WARN`, `SOURCE_CONFLICT`, or other failure without weakening or bypassing it.
+2. Run `pnpm testimony:process` to preserve and deterministically structure supported inbox transcripts and archive successful inbox originals.
+3. Run `pnpm testimony:index` separately when the request calls for Thread Collapse trial-day indexes. That branch reads preserved raw-source intelligence and must not consume deterministic first-pass output.
+4. For specific files elsewhere, run `pnpm transcript:intake <path> [...more paths]`.
+5. Report each generated or reused preserved transcript, manifest, first-pass artifact, and processed-input archive path. Report trial indexes separately when that independent branch is run.
+6. Surface every `WARN`, `SOURCE_CONFLICT`, or other failure without weakening or bypassing it.
 
 ## Guardrails
 
