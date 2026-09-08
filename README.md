@@ -87,7 +87,7 @@ pnpm exec supabase db lint --local --level warning --fail-on error
 pnpm exec supabase db advisors --local --type all --level warn --fail-on error
 ```
 
-See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_08-16-2026.md](DEPLOYMENT_08-16-2026.md) for the controlled cloud deployment gate.
+See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_09-08-2026.md](DEPLOYMENT_09-08-2026.md) for the controlled cloud deployment gate.
 
 ## Data constraints
 

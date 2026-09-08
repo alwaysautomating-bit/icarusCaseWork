@@ -1,6 +1,6 @@
 # Deployment
 
-Status: LOCAL STACK VERIFIED — cloud resources not provisioned
+Status: VERCEL, COCKROACH LITE, AND HOSTED SUPABASE ACTIVE — full production data/auth acceptance remains gated
 
 Canonical Supabase architecture, operations, migration, security, recovery, and troubleshooting procedures live in `SUPABASE_OPERATIONS.md`. This file records the deployment gate and must not duplicate or override that operational contract.
 
@@ -12,6 +12,7 @@ Canonical Supabase architecture, operations, migration, security, recovery, and 
 - Local development: Docker-backed Supabase and local checksum-addressed objects
 - Fallback database option: Neon if a documented constraint makes Supabase unsuitable
 - Firebase: prohibited as a default; requires a recorded concrete reason
+- Read-only trial index: CockroachDB Basic cluster `icarus-lite-dev` in AWS `us-east-2`, accessed only through the server-side `icarus_lite_app` SELECT role
 
 ## Authentication Order
 
@@ -44,26 +45,34 @@ Never reset a production database. Never include seed data in a production push.
 
 ## Current Verification
 
+- Vercel production: `https://icarus-case-work.vercel.app`
+- Cockroach Lite route: `/lite`; 21 proceedings, 18 witness blocks, 70 speakers, and 3,988 segments published and validated twice with identical counts and hashes
+- Hosted Supabase project: `Icarus Casework Full`, active and explicitly linked
+- All 19 hosted migration versions match the repository; linked dry run reports no pending migrations
+- Vercel holds the hosted Supabase URL and publishable key; no secret/service key is exposed to the client
+- Production `/login` returns `200`; unauthenticated `/casework` returns the expected `307` redirect to `/login`; no new server errors were observed
+- Hosted data inventory remains zero users, cases, proceedings, source segments, and trial-index days
+
 - Supabase CLI version pinned: `2.113.0`
 - WSL 2 with Ubuntu is installed and verified on the Microsoft WSL 2 kernel
 - Docker Desktop `4.86.0` and Docker CLI `29.7.2` are installed and the local engine runs successfully
-- All 13 migrations through `20260822102136_saved_timeline_view_versions.sql` apply locally and are recorded in local migration history
+- All 19 migrations through `20260824081931_court_packet_document_intelligence_v1.sql` apply locally and match hosted migration history
 - RLS, policies, grants, private authorization helpers, and the owner-membership trigger are exercised by an authenticated browser session
 - Local magic-link delivery, OTP confirmation, cookie session refresh, case bootstrap, artifact/claim insertion, and authenticated audit attribution are verified end to end
 - Testimony intake RLS, cross-user denial, atomic commit, forbidden reconciliation fields, duplicate reuse, and read-only support/verification contracts pass against the live local Data API
 - The real Rev MA v. Lindsay Clancy Day 6 page passes the authenticated browser flow with 410 segments, 123 claims, four acquisition targets, and zero support or verification rows
-- Supabase database advisors report no security or performance issues; database lint has no errors and retains one known text-to-`uuid[]` warning in `review_extraction_candidate`
-- ESLint, TypeScript, 91 tests across 20 test files, the maintained local integration script, and the Next.js production build pass
+- Remote advisors report the expected authenticated governed `SECURITY DEFINER` RPCs; each remains protected by its internal case-authorization contract
+- ESLint, TypeScript, the maintained test suites, and the Next.js production build pass
 - Private Vercel Blob adapter is implemented with pinned `@vercel/blob` `2.8.0`; credentialed cloud verification is still pending
 
 ## Deployment Gate
 
-Deployment is blocked until:
+Full Casework production acceptance is blocked until:
 
-- a Supabase project and Vercel project are explicitly selected;
+- a production user is created or confirmed and receives explicit case ownership/membership;
+- the Clancy corpus is published through the governed idempotent boundary and verified in the production UI;
 - Google, Apple, and magic-link redirect domains are configured for the hosted environment;
 - Blob storage is provisioned with case-scoped access rules;
-- remote migration dry-run is reviewed;
 - Google and Apple OAuth are verified with deployed credentials, and authentication/application authorization/RLS are retested against hosted Supabase;
 - the divergent Drizzle schema reference is reconciled or formally retired;
 - backup, restore, deletion, secret rotation, and incident procedures are rehearsed.

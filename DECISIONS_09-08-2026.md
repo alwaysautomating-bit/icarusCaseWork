@@ -325,3 +325,47 @@ Neither branch consumes the other's outputs. Existing derived files remain retai
 
 The governed compiler RPC deduplicates by case and preserved artifact SHA-256 before inserting. Database uniqueness on `source_artifacts(case_id, sha256)`, one proceeding per `source_artifact_id`, and `source_segments(artifact_id, ordinal)` prevents duplicate canonical rows. A duplicate sequential publication reuses the existing proceeding and latest package version; package publication preserves its original `published_at` timestamp on replay.
 - No database schema change was required. Existing case-scoped, authenticated, security-invoker publication RPCs remain the canonical database boundary.
+
+## 09-08-2026 — Keep Full Casework and Icarus Lite as explicit deployment surfaces
+
+### Decision
+
+Use hosted Supabase for authenticated, governed Full Casework and CockroachDB for the bounded, read-only Icarus Lite projection. Lite may expose trial-day and witness navigation, exact searchable testimony, timestamps, provenance, and REV deep links, but it cannot become the canonical evidence or mutation boundary.
+
+### Reason
+
+The lite surface provides fast, low-friction review without weakening the case-scoped authorization and governed transitions required by Full Casework. Sharing stable source identities preserves traceability while keeping responsibilities distinct.
+
+### Alternatives Considered
+
+- Make the Cockroach projection the primary case database
+- Require Supabase authentication for every read-only trial-index visit
+- Keep the original one-witness Cockroach proof slice
+
+### Consequences
+
+- Cockroach publication uses deterministic IDs, primary-key upserts, and unique segment identities; publishing the same corpus twice must leave counts and hashes unchanged.
+- The Cockroach application credential is a SELECT-only server-side role. The publisher/admin credential is never deployed.
+- Full Casework remains the only surface authorized to perform review, reconciliation, canonical promotion, and audit-bearing mutations.
+
+## 09-08-2026 — Activate hosted Supabase without treating infrastructure as production acceptance
+
+### Decision
+
+Use the linked `Icarus Casework Full` Supabase project for the Vercel Full Casework runtime. Configure only its hosted URL and publishable key in browser-visible environment variables. Do not install `@supabase/server`; retain `@supabase/ssr` because the Next.js application uses cookie-backed SSR sessions.
+
+### Reason
+
+The existing application architecture already implements the official SSR client pattern. Local `127.0.0.1` API values cannot serve a Vercel deployment, and a secret/service key is neither required nor safe in client-visible configuration.
+
+### Alternatives Considered
+
+- Point Vercel at the local Supabase stack
+- Add the stateless Bearer-token `@supabase/server` package
+- Put a Supabase secret key in Vercel's public application environment
+
+### Consequences
+
+- Hosted migration parity and a clean dry run are verified.
+- Production authentication routing is operational, but the hosted data plane remains empty.
+- Production acceptance remains open until a real hosted identity, case membership, governed corpus publication, RLS isolation test, and recovery evidence exist.

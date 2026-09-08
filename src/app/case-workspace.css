@@ -277,6 +277,13 @@
 
 :is(.trial-index-workspace,.court-record-grid,.structure-workspace-grid,.reconcile-workspace,.reconstruction-compare-grid,.care-timeline-workspace){margin:0 var(--workspace-gutter) 28px;overflow:hidden;border:1px solid var(--hairline-soft-2);border-radius:4px;background:var(--hairline-soft-2)}
 .trial-index-workspace,.reconcile-workspace{gap:1px}.court-record-grid,.structure-workspace-grid{height:calc(100vh - 314px);min-height:620px}
+.structure-review-grid{align-items:start;gap:12px;min-height:800px;margin:0 var(--workspace-gutter) 28px;background:transparent}
+.structure-review-queue,.structure-review-candidate,.structure-review-sources{overflow:hidden;border:1px solid var(--hairline-soft-2);border-radius:4px;box-shadow:0 1px 3px rgba(25,28,29,.05)}
+.structure-review-sources{max-height:1000px;overflow-y:auto}
+.structure-review-sources>article.selected{background:var(--signal-deep);color:var(--surface-paper);box-shadow:inset 5px 0 #B66A62}
+.structure-review-sources>article.selected :is(a,blockquote,dt,dd,code,span){color:inherit}
+.structure-review-sources>article.selected :is(header,footer,dl>div){border-color:rgba(251,251,250,.24)}
+.structure-review-sources>article.selected blockquote{border-left-color:#D9A29D}
 .trial-index-days>a.selected,.reconcile-groups>a.selected,.reconstruction-version-picker article.selected{background:#F3E9E8}.trial-index-canonical,.reconcile-current-boundaries,.reconcile-save{background:#E8F0EB}.trial-index-unlinked,.trial-index-editor,.reconcile-fields{background:#F3E9E8}
 .trial-index-detail>header{padding:18px 20px}.trial-index-detail>header h2{font-size:22px}.trial-index-summary{padding:17px 20px}.trial-index-edit-disclosure{background:var(--surface-alt)}
 .day-intelligence-view,.day-intelligence-mode .trial-index-detail{background:var(--surface-sand)}.day-intelligence-overview,.day-intelligence-item,.day-intelligence-limitations{border-color:var(--hairline-soft-2);border-radius:4px}.day-intelligence-overview{margin:20px;padding:24px}.day-intelligence-overview h3{font-size:25px}.day-intelligence-section{padding-top:22px}.day-intelligence-item{padding:21px 22px}.day-intelligence-item h4{font-size:20px}.day-intelligence-section>div{gap:14px}
@@ -291,6 +298,8 @@
 
 @media(max-width:900px){
   :is(.trial-index-heading,.court-record-heading,.structure-heading,.structure-review-heading,.reconcile-heading,.reconstruction-heading,.care-trajectory-heading,.reference-reports-heading){grid-template-columns:1fr}
+  .structure-review-grid{grid-template-columns:1fr}
+  .structure-review-sources{grid-column:auto;max-height:none}
   .reference-reports-heading aside{border-top:1px solid var(--hairline-soft-2);border-left:0}
   .court-record-grid,.structure-workspace-grid{height:auto}
   .care-view-controls{grid-template-columns:1fr auto}.care-view-controls p{grid-column:1/-1}

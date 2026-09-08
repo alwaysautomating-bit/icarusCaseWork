@@ -220,6 +220,16 @@ Status: Provisional
 
 Depends on: timelines, evidence maps, hypotheses, scenario results, narratives, exports
 
+### Icarus Lite Projection
+
+Definition: A bounded, read-only CockroachDB projection of canonical Casework proceedings, witness blocks, speakers, exact source segments, timestamps, and deep links. It exists for low-friction trial navigation and testimony search, uses a SELECT-only application role, and cannot create, amend, review, promote, or replace canonical Casework records.
+
+Status: Provisional
+
+Rejected synonyms: Canonical database, Evidence source, Full Casework
+
+Depends on: preserved source identity, governed Casework publication, stable source segment IDs, projection idempotency
+
 ### Material Narrative Sentence
 
 Definition: A publishable assertion whose truth, attribution, or qualification could materially affect a person, interpretation, or case account and therefore requires an exact citation or explicit interpretation label.
