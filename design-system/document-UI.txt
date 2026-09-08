@@ -1,0 +1,342 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Nexus Workspace | Client Command Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-container": "#4d1111",
+                        "outline": "#877271",
+                        "primary-fixed": "#ffdad7",
+                        "secondary-fixed-dim": "#9dd2b3",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "tertiary": "#260a00",
+                        "secondary": "#36684e",
+                        "on-primary-fixed": "#3d0507",
+                        "on-surface": "#191c1d",
+                        "on-secondary-fixed-variant": "#1d5038",
+                        "surface-container": "#edeeef",
+                        "outline-variant": "#d9c1bf",
+                        "surface-tint": "#944743",
+                        "tertiary-fixed-dim": "#ffb693",
+                        "inverse-on-surface": "#f0f1f2",
+                        "tertiary-container": "#471900",
+                        "surface-container-low": "#f3f4f5",
+                        "on-surface-variant": "#544341",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#002112",
+                        "surface-bright": "#f8f9fa",
+                        "on-tertiary-container": "#d27646",
+                        "on-primary-container": "#ce7570",
+                        "secondary-fixed": "#b9efce",
+                        "on-background": "#191c1d",
+                        "on-tertiary-fixed-variant": "#783105",
+                        "surface-container-lowest": "#ffffff",
+                        "background": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "inverse-primary": "#ffb3ae",
+                        "surface": "#f8f9fa",
+                        "primary": "#2f0002",
+                        "surface-container-high": "#e7e8e9",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#b6eccb",
+                        "inverse-surface": "#2e3132",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#77302e",
+                        "on-secondary-container": "#3b6c52",
+                        "tertiary-fixed": "#ffdbcc",
+                        "on-tertiary-fixed": "#351000"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "density-compact": "4px",
+                        "density-comfortable": "12px",
+                        "gutter": "12px",
+                        "margin-desktop": "32px",
+                        "unit": "4px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-xs": ["JetBrains Mono"],
+                        "headline-md": ["Montserrat"],
+                        "label-sm": ["JetBrains Mono"],
+                        "body-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-xs": ["9px", {"lineHeight": "12px", "fontWeight": "400"}],
+                        "headline-md": ["20px", {"lineHeight": "26px", "fontWeight": "600"}],
+                        "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "headline-lg": ["28px", {"lineHeight": "34px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f3f4f5;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #d9c1bf;
+            border-radius: 4px;
+        }
+        .timeline-gradient {
+            background: linear-gradient(180deg, rgba(25, 28, 29, 0.05) 0%, rgba(25, 28, 29, 0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="bg-surface border-b border-outline-variant h-14 flex items-center justify-between px-6 sticky top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="hub">hub</span>
+<div class="flex flex-col">
+<h1 class="font-headline-md text-[18px] text-primary leading-tight">Nexus <span class="text-on-surface-variant font-normal text-body-md ml-1 opacity-70">v4.2 • Client Intelligence</span></h1>
+<p class="text-[10px] font-label-xs uppercase text-on-surface-variant leading-none italic">Secure Research Workspace</p>
+</div>
+</div>
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-6 text-right">
+<div class="flex flex-col">
+<span class="font-label-xs text-[9px] uppercase opacity-60">Status</span>
+<span class="font-label-sm flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-500"></span> Live Monitoring</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-xs text-[9px] uppercase opacity-60">Data Latency</span>
+<span class="font-label-sm">42ms</span>
+</div>
+</div>
+<span class="h-8 w-px bg-outline-variant"></span>
+<div class="flex items-center gap-2">
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded font-label-sm flex items-center gap-2 hover:bg-opacity-90">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+                Refresh Feed
+            </button>
+</div>
+</div>
+</header>
+<div class="flex flex-1 overflow-hidden">
+<!-- Sidebar -->
+<aside class="w-16 bg-surface border-r border-outline-variant flex flex-col items-center py-6 gap-6 shrink-0">
+<a class="bg-primary-container text-on-primary-container flex flex-col items-center gap-1 p-2 rounded-xl transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: &quot;FILL&quot; 1;">dashboard</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">description</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">forum</span>
+</a>
+<div class="mt-auto flex flex-col items-center gap-6">
+<a class="flex flex-col items-center gap-1 p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex overflow-hidden">
+<!-- Left Panel: Client Profile (25%) -->
+<section class="w-1/4 bg-surface-container-lowest border-r border-outline-variant flex flex-col overflow-y-auto custom-scrollbar">
+<div class="p-6 space-y-6">
+<!-- Profile Header -->
+<div class="flex flex-col gap-1">
+<span class="font-label-xs uppercase text-primary font-bold tracking-[0.1em]">user nav</span>
+<h2 class="font-headline-lg text-on-surface">Aetheris Corp</h2>
+<p class="text-on-surface-variant text-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">location_on</span> San Francisco, CA
+                    </p>
+</div>
+<!-- Info Grid -->
+<div class="grid gap-5">
+<div class="p-4 bg-surface border border-outline-variant rounded-lg">
+<span class="block font-label-xs text-on-surface-variant uppercase mb-1">Industry</span>
+<p class="font-bold text-on-surface">Precision Bio-Manufacturing</p>
+</div>
+<div class="p-4 bg-surface border border-outline-variant rounded-lg">
+<span class="block font-label-xs text-on-surface-variant uppercase mb-1">Key Contact</span>
+<div class="flex items-center gap-3 mt-1">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed text-xs font-bold">EM</div>
+<div>
+<p class="text-sm font-semibold leading-none">Elena Moretti</p>
+<p class="text-[10px] text-on-surface-variant">Chief Operations Officer</p>
+</div>
+</div>
+</div>
+<div class="space-y-3">
+<span class="block font-label-xs text-on-surface-variant uppercase tracking-wider">Strategic Goals</span>
+<div class="space-y-2">
+<div class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">check_circle</span>
+<span class="">Scale EU GMP facilities by Q4 2024</span>
+</div>
+<div class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">check_circle</span>
+<span class="">Automate cell-line screening pipeline</span>
+</div>
+<div class="flex items-start gap-2 text-sm">
+<span class="material-symbols-outlined text-secondary text-base mt-0.5">check_circle</span>
+<span class="">Complete Series D funding round</span>
+</div>
+</div>
+</div>
+<!-- Quick Stats -->
+<div class="grid grid-cols-2 gap-3 mt-4">
+<div class="bg-surface-container p-3 rounded text-center">
+<span class="block font-label-xs opacity-60">ENGAGEMENT</span>
+<span class="text-lg font-bold">94%</span>
+</div>
+<div class="bg-surface-container p-3 rounded text-center">
+<span class="block font-label-xs opacity-60">HEALTH</span>
+<span class="text-lg font-bold text-secondary">Optimal</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Center Pane: Dynamic Insights Feed / Timeline (40%) -->
+<section class="flex-1 bg-surface-bright flex flex-col border-r border-outline-variant overflow-hidden">
+<div class="p-6 border-b border-outline-variant flex items-center justify-between shrink-0">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">timeline</span>
+<h3 class="font-label-sm uppercase font-bold tracking-widest">client profile is here</h3>
+</div>
+<div class="flex gap-1">
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-sm">filter_list</span></button>
+<button class="p-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined text-sm">download</span></button>
+</div>
+</div>
+</section>
+<!-- Right Panel: Modular Stack (35%) -->
+<section class="w-[35%] bg-surface-container-low overflow-y-auto custom-scrollbar p-6 space-y-6">
+<!-- AI Assistant LLM Card -->
+<div class="bg-primary-container border border-primary text-on-primary rounded-lg p-5 shadow-lg relative overflow-hidden shrink-0">
+<div class="absolute -top-4 -right-4 opacity-10">
+<span class="material-symbols-outlined text-[100px]">psychology</span>
+</div>
+<h3 class="font-label-sm uppercase font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">bolt</span>
+                    Nexus AI Assistant
+                </h3>
+<div class="space-y-4">
+<div class="bg-black/20 rounded-lg p-3 text-[12px] leading-relaxed border border-white/10">
+                        "Analyze recent Aetheris filings for mentions of supply chain risks in their Q4 European expansion."
+                    </div>
+<div class="flex items-center gap-2">
+<input class="flex-1 bg-white/10 border-white/20 rounded-md py-1.5 px-3 text-xs focus:ring-1 focus:ring-white/50 focus:border-white placeholder:text-white/40" placeholder="Query client data..." type="text">
+<button class="bg-on-primary text-primary-container px-2 rounded-md py-1.5 font-bold">
+<span class="material-symbols-outlined text-[18px] leading-none">send</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Client Documents Card -->
+<div class="bg-surface border border-outline-variant rounded-lg overflow-hidden shadow-sm">
+<div class="px-4 py-3 border-b border-outline-variant bg-surface-container flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">description</span>
+<h3 class="font-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Quick Access Documents</h3>
+</div>
+</div>
+<div class="p-1">
+<button class="w-full text-left p-3 hover:bg-surface-container-low flex items-center justify-between border-b border-outline-variant/30 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-500">article</span>
+<span class="text-sm">Strategic Master Brief v4</span>
+</div>
+<span class="font-label-xs opacity-40">2.4 MB</span>
+</button>
+<button class="w-full text-left p-3 hover:bg-surface-container-low flex items-center justify-between border-b border-outline-variant/30 transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-500">picture_as_pdf</span>
+<span class="text-sm">Compliance Certificate (EMA)</span>
+</div>
+<span class="font-label-xs opacity-40">512 KB</span>
+</button>
+<button class="w-full text-left p-3 hover:bg-surface-container-low flex items-center justify-between transition-colors">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-amber-500">contract</span>
+<span class="text-sm">MSA_Signed_2024.pdf</span>
+</div>
+<span class="font-label-xs opacity-40">1.1 MB</span>
+</button>
+</div>
+</div>
+<!-- Project File Explorer Card -->
+<div class="bg-surface border border-outline-variant rounded-lg p-5">
+<div class="flex items-center justify-between mb-4">
+<h3 class="font-label-sm text-on-surface uppercase font-bold">Project File Explorer</h3>
+<span class="font-label-xs bg-surface-container-high px-2 py-0.5 rounded">34 Folders</span>
+</div>
+<div class="space-y-1 font-mono text-[12px]">
+<div class="flex items-center gap-2 p-1 text-on-surface-variant hover:bg-surface-container cursor-pointer rounded">
+<span class="material-symbols-outlined text-[16px]">folder_open</span>
+<span class="">research-data/</span>
+</div>
+<div class="ml-4 space-y-1">
+<div class="flex items-center gap-2 p-1 text-on-surface-variant hover:bg-surface-container cursor-pointer rounded">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span class="">market-surveys/</span>
+</div>
+<div class="flex items-center gap-2 p-1 text-on-surface-variant hover:bg-surface-container cursor-pointer rounded">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span class="">competitor-benchmarks/</span>
+</div>
+<div class="flex items-center gap-2 p-1 text-primary font-bold bg-primary-fixed/30 rounded">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span class="">active-projections/</span>
+</div>
+</div>
+<div class="flex items-center gap-2 p-1 text-on-surface-variant hover:bg-surface-container cursor-pointer rounded">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span class="">legal-archive/</span>
+</div>
+<div class="flex items-center gap-2 p-1 text-on-surface-variant hover:bg-surface-container cursor-pointer rounded">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span class="">client-deliverables/</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<!-- Context Footer -->
+<footer class="h-8 bg-surface-container-high border-t border-outline-variant flex items-center px-6 justify-between text-label-xs text-on-surface-variant shrink-0">
+<div class="flex gap-4">
+<span class="">© 2024 Nexus Intelligence Systems</span>
+<span class="opacity-40">|</span>
+<span class="">Secure Session ID: NX-9001-A</span>
+</div>
+<div class="flex gap-4">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Analyzing Client Risk Vector</span>
+<span class="opacity-40">|</span>
+<span class="">Neural Engine Active</span>
+</div>
+</footer>
+</body></html>

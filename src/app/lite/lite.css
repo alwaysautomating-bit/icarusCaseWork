@@ -27,7 +27,7 @@
 
 .lite-masthead > p {
   color: #bfc9c3;
-  font: 11px/1 var(--font-mono), monospace;
+  font: 13px/1 var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -42,7 +42,7 @@
 }
 
 .lite-wordmark span { font-weight: 750; }
-.lite-wordmark strong { color: #deaa54; font: 11px/1 var(--font-mono), monospace; }
+.lite-wordmark strong { color: #deaa54; font: 13px/1 var(--font-mono), monospace; }
 
 .lite-layout {
   display: grid;
@@ -58,7 +58,7 @@
 
 .lite-eyebrow {
   color: #67706b;
-  font: 11px/1.4 var(--font-mono), monospace;
+  font: 13px/1.4 var(--font-mono), monospace;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
@@ -77,8 +77,8 @@
   border-left: 3px solid #ad7832;
 }
 
-.lite-nav-card strong { font-size: 14px; }
-.lite-nav-card span { color: #6d6d65; font: 11px/1.45 var(--font-mono), monospace; }
+.lite-nav-card strong { font-size: 16px; }
+.lite-nav-card span { color: #6d6d65; font: 13px/1.45 var(--font-mono), monospace; }
 
 .lite-boundary-note {
   margin-top: 38px;
@@ -86,8 +86,8 @@
   border-top: 1px solid #c7c1b2;
 }
 
-.lite-boundary-note strong { color: #7d5724; font-size: 12px; }
-.lite-boundary-note p { margin-top: 8px; color: #68685f; font-size: 12px; line-height: 1.55; }
+.lite-boundary-note strong { color: #7d5724; font-size: 14px; }
+.lite-boundary-note p { margin-top: 8px; color: #68685f; font-size: 14px; line-height: 1.55; }
 
 .lite-reader {
   width: min(980px, calc(100% - 64px));
@@ -112,7 +112,7 @@
   letter-spacing: -0.045em;
 }
 
-.lite-subtitle { color: #66675f; font-size: 15px; }
+.lite-subtitle { color: #66675f; font-size: 17px; }
 
 .lite-status-grid {
   display: grid;
@@ -122,8 +122,8 @@
 }
 
 .lite-status-grid div { display: grid; gap: 5px; }
-.lite-status-grid dt { color: #74766e; font: 10px/1 var(--font-mono), monospace; letter-spacing: 0.08em; text-transform: uppercase; }
-.lite-status-grid dd { margin: 0; font: 12px/1.2 var(--font-mono), monospace; }
+.lite-status-grid dt { color: #74766e; font: 12px/1 var(--font-mono), monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.lite-status-grid dd { margin: 0; font: 14px/1.2 var(--font-mono), monospace; }
 
 .lite-search {
   display: grid;
@@ -131,7 +131,7 @@
   margin: 30px 0;
 }
 
-.lite-search label { color: #5d615c; font: 11px/1 var(--font-mono), monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+.lite-search label { color: #5d615c; font: 13px/1 var(--font-mono), monospace; letter-spacing: 0.08em; text-transform: uppercase; }
 .lite-search div { display: flex; gap: 8px; }
 .lite-search input {
   min-width: 0;
@@ -141,7 +141,7 @@
   background: #faf8f1;
   border: 1px solid #aaa698;
   border-radius: 2px;
-  font: 14px/1.2 var(--font-display), sans-serif;
+  font: 16px/1.2 var(--font-display), sans-serif;
 }
 .lite-search button,
 .lite-search a {
@@ -152,7 +152,7 @@
   background: #26342f;
   border: 1px solid #26342f;
   border-radius: 2px;
-  font: 12px/1 var(--font-mono), monospace;
+  font: 14px/1 var(--font-mono), monospace;
   text-decoration: none;
   cursor: pointer;
 }
@@ -164,7 +164,7 @@
   padding: 11px 0;
   color: #66685f;
   border-block: 1px solid #cbc5b8;
-  font: 11px/1.3 var(--font-mono), monospace;
+  font: 13px/1.3 var(--font-mono), monospace;
 }
 
 .lite-transcript {
@@ -182,19 +182,19 @@
 }
 
 .lite-segment-meta { display: grid; align-content: start; gap: 7px; }
-.lite-segment-meta strong { font-size: 13px; }
-.lite-segment-meta span { color: #777970; font: 10px/1.4 var(--font-mono), monospace; }
-.lite-transcript li > p { font-family: Georgia, serif; font-size: 18px; line-height: 1.6; }
+.lite-segment-meta strong { font-size: 15px; }
+.lite-segment-meta span { color: #777970; font: 12px/1.4 var(--font-mono), monospace; }
+.lite-transcript li > p { font-family: Georgia, serif; font-size: 20px; line-height: 1.6; }
 .lite-transcript footer {
   grid-column: 2;
   display: flex;
   justify-content: space-between;
   gap: 20px;
   color: #777970;
-  font-size: 10px;
+  font-size: 12px;
 }
 .lite-transcript code { overflow: hidden; text-overflow: ellipsis; }
-.lite-transcript footer a { color: #87591f; font: 11px/1 var(--font-mono), monospace; }
+.lite-transcript footer a { color: #87591f; font: 13px/1 var(--font-mono), monospace; }
 
 .lite-empty { padding: 54px 0; text-align: center; }
 .lite-empty h2 { font-family: Georgia, serif; font-weight: 400; }
@@ -204,7 +204,7 @@
   margin-top: 36px;
   padding: 18px 0;
   border-top: 1px solid #aaa698;
-  font-size: 12px;
+  font-size: 14px;
 }
 .lite-provenance summary { cursor: pointer; font-family: var(--font-mono), monospace; }
 .lite-provenance dl { display: grid; gap: 10px; margin-top: 18px; }

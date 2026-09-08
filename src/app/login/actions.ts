@@ -9,6 +9,10 @@ import { createClient } from "@/lib/supabase/server";
 const emailSchema = z.email().trim();
 const providerSchema = z.enum(["google", "apple"]);
 
+function safeNext(value: FormDataEntryValue | null) {
+  return typeof value === "string" && value.startsWith("/") && !value.startsWith("//") ? value : "/research-room";
+}
+
 export async function sendMagicLink(formData: FormData) {
   const parsed = emailSchema.safeParse(formData.get("email"));
   if (!parsed.success) redirect("/login?error=Enter+a+valid+email+address.");
@@ -24,8 +28,11 @@ export async function sendMagicLink(formData: FormData) {
 
 export async function signInWithProvider(formData: FormData) {
   const provider = providerSchema.parse(formData.get("provider")) as Provider;
+  const next = safeNext(formData.get("next"));
   const supabase = await createClient();
-  const { data, error } = await supabase.auth.signInWithOAuth({ provider, options: { redirectTo: `${getSiteUrl()}/auth/callback` } });
+  const callback = new URL("/auth/callback", getSiteUrl());
+  callback.searchParams.set("next", next);
+  const { data, error } = await supabase.auth.signInWithOAuth({ provider, options: { redirectTo: callback.toString() } });
   if (error || !data.url) redirect(`/login?error=${encodeURIComponent(error?.message ?? "Unable to start sign-in.")}`);
   redirect(data.url);
 }

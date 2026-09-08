@@ -2,8 +2,14 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/proxy";
 
+const PUBLIC_PATHS = new Set(["/", "/join", "/success"]);
+
+export function isPublicResearchPath(pathname: string) {
+  return PUBLIC_PATHS.has(pathname);
+}
+
 export async function proxy(request: NextRequest) {
-  if (request.nextUrl.pathname === "/lite" || request.nextUrl.pathname.startsWith("/lite/")) {
+  if (isPublicResearchPath(request.nextUrl.pathname) || request.nextUrl.pathname === "/lite" || request.nextUrl.pathname.startsWith("/lite/")) {
     return NextResponse.next({ request });
   }
   return updateSession(request);

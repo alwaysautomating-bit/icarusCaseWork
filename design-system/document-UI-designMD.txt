@@ -1,0 +1,148 @@
+---
+name: Scientific Information Design System
+colors:
+  surface: '#f8f9fa'
+  surface-dim: '#d9dadb'
+  surface-bright: '#f8f9fa'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f3f4f5'
+  surface-container: '#edeeef'
+  surface-container-high: '#e7e8e9'
+  surface-container-highest: '#e1e3e4'
+  on-surface: '#191c1d'
+  on-surface-variant: '#544341'
+  inverse-surface: '#2e3132'
+  inverse-on-surface: '#f0f1f2'
+  outline: '#877271'
+  outline-variant: '#d9c1bf'
+  surface-tint: '#944743'
+  primary: '#2f0002'
+  on-primary: '#ffffff'
+  primary-container: '#4d1111'
+  on-primary-container: '#ce7570'
+  inverse-primary: '#ffb3ae'
+  secondary: '#36684e'
+  on-secondary: '#ffffff'
+  secondary-container: '#b6eccb'
+  on-secondary-container: '#3b6c52'
+  tertiary: '#260a00'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#471900'
+  on-tertiary-container: '#d27646'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#ffdad7'
+  primary-fixed-dim: '#ffb3ae'
+  on-primary-fixed: '#3d0507'
+  on-primary-fixed-variant: '#77302e'
+  secondary-fixed: '#b9efce'
+  secondary-fixed-dim: '#9dd2b3'
+  on-secondary-fixed: '#002112'
+  on-secondary-fixed-variant: '#1d5038'
+  tertiary-fixed: '#ffdbcc'
+  tertiary-fixed-dim: '#ffb693'
+  on-tertiary-fixed: '#351000'
+  on-tertiary-fixed-variant: '#783105'
+  background: '#f8f9fa'
+  on-background: '#191c1d'
+  surface-variant: '#e1e3e4'
+typography:
+  headline-lg:
+    fontFamily: Hanken Grotesk
+    fontSize: 28px
+    fontWeight: '700'
+    lineHeight: 34px
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: Hanken Grotesk
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 26px
+  body-md:
+    fontFamily: Hanken Grotesk
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  label-sm:
+    fontFamily: JetBrains Mono
+    fontSize: 11px
+    fontWeight: '500'
+    lineHeight: 14px
+    letterSpacing: 0.02em
+  label-xs:
+    fontFamily: JetBrains Mono
+    fontSize: 9px
+    fontWeight: '400'
+    lineHeight: 12px
+  headline-lg-mobile:
+    fontFamily: Hanken Grotesk
+    fontSize: 22px
+    fontWeight: '700'
+    lineHeight: 28px
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  unit: 4px
+  gutter: 12px
+  margin-mobile: 16px
+  margin-desktop: 32px
+  density-compact: 4px
+  density-comfortable: 12px
+---
+
+## Brand & Style
+This design system is engineered for high-density scientific communication and complex data visualization. The brand personality is academic, precise, and authoritative, prioritizing objective data clarity over decorative flair. It targets researchers, clinicians, and data scientists who require rapid scanning of multi-dimensional datasets.
+
+The visual style is **Corporate / Modern** with a **Minimalist** foundation, utilizing a "data-first" approach. By removing unnecessary UI chrome, the design system ensures that the information itself—be it cluster maps, dot plots, or genomic sequences—becomes the primary interface. The emotional response is one of trust and clarity, similar to a high-end medical journal or a precision laboratory instrument.
+
+## Colors
+The color strategy employs a "neutral stage" with high-impact categorical accents. 
+
+- **Foundation:** A clean, light-grey background (`#F8F9FA`) minimizes eye strain during prolonged analysis.
+- **Primary Accent:** Deep Burgundy (`#4D1111`) is reserved for high-intensity markers and critical data points, providing an immediate focal point.
+- **Categorical Palette:** A broad range of medium-vibrancy greens, purples, oranges, and blues are used for organ and cell cluster differentiation. These are calibrated to remain distinct even when rendered in small, high-density dot patterns.
+- **Functional Grays:** Borders and inactive states use cool-toned grays to maintain a clinical aesthetic.
+
+## Typography
+The typographic system prioritizes legibility in dense environments. 
+
+- **Primary Sans:** **Hanken Grotesk** is used for structural headings and body text. Its sharp, contemporary geometry provides a professional tone that scales well from large titles to small captions.
+- **Monospaced Accents:** **JetBrains Mono** is used for data labels, axes, and technical identifiers. The fixed-width nature ensures that numerical values and cell labels align perfectly in grid-based visualizations.
+- **Hierarchy:** We utilize a compact type scale. On mobile, headlines are reduced significantly to maximize the "above-the-fold" data real estate.
+
+## Layout & Spacing
+This design system utilizes a **Fluid Grid** with a strict 4px baseline rhythm. 
+
+- **Information Density:** Spacing is intentionally tight. Component padding is reduced to the functional minimum (`4px` or `8px`) to allow for complex multi-chart layouts.
+- **Grid System:** A 12-column grid is used for desktop, collapsing to a single or dual-column view on mobile. 
+- **Reflow Rules:** Data visualizations should maintain their aspect ratio as much as possible. On mobile, large horizontal matrices (like dot plots) should implement a horizontal "lock-and-scroll" behavior while keeping row labels sticky.
+
+## Elevation & Depth
+In keeping with the scientific theme, depth is communicated through **Tonal Layers** and **Low-contrast outlines** rather than heavy shadows.
+
+- **Surface Levels:** The base background is the lowest level. Card-based containers use a pure white background with a subtle `1px` border in a light gray.
+- **Interaction:** Hover states on data points are indicated by a slight scale increase and a thin high-contrast outline, rather than a shadow, to avoid obscuring neighboring data.
+- **Overlays:** Tooltips and floating legends use a very subtle ambient shadow (4px blur, 5% opacity) to provide just enough lift to distinguish them from the data layer beneath.
+
+## Shapes
+The shape language is **Soft (0.25rem)**. 
+
+- **Precision:** Squares and sharp edges are avoided to prevent a "boxy" 90s feel, but large radii are avoided to maintain a professional, space-efficient look.
+- **Data Points:** In visualizations, clusters and markers use perfect circles (pill-shaped) to represent data density and intensity without the directional bias of rectangles.
+- **Consistency:** Interactive elements like buttons and input fields follow the `rounded-sm` (4px) standard.
+
+## Components
+
+- **Buttons:** Primary buttons use the deep burgundy background with white text. Secondary buttons use a transparent background with a gray outline. Sizing is compact (32px height) for high-density toolbars.
+- **Data Chips:** Small, low-height indicators used for filtering. They utilize categorical colors at 15% opacity with 100% opacity text for clear identification of active "Organ" or "Cell Type" filters.
+- **Input Fields:** Minimalist styling with a bottom-only border that transitions to primary burgundy on focus.
+- **Cards:** Used as containers for specific visualizations. No shadows; instead, use a simple `1px` border. Headers within cards use `label-sm` in all-caps for a technical, "meta-data" look.
+- **Legend Items:** Vertical or horizontal lists with 8px circular color swatches. Labeling is always in the monospaced font for alignment.
+- **Scrollbars:** Custom thin-profile scrollbars (4px wide) in a light gray to minimize visual noise in scrollable data panels.

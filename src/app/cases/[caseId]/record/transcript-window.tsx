@@ -12,12 +12,19 @@ function formatTimestamp(milliseconds: number | null) {
 }
 
 export function TranscriptWindow({ caseId, query, selectedId, segments }: { caseId: string; query: string; selectedId: string; segments: CourtRecordSegment[] }) {
+  const windowRef = useRef<HTMLDivElement | null>(null);
   const refs = useRef<Record<string, HTMLElement | null>>({});
   useEffect(() => {
-    refs.current[selectedId]?.scrollIntoView({ block: "center", behavior: "smooth" });
+    const container = windowRef.current;
+    const selected = refs.current[selectedId];
+    if (!container || !selected) return;
+    const containerBox = container.getBoundingClientRect();
+    const selectedBox = selected.getBoundingClientRect();
+    const top = container.scrollTop + selectedBox.top - containerBox.top - (container.clientHeight - selectedBox.height) / 2;
+    container.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
   }, [selectedId]);
 
-  return <div className="court-transcript-window">{segments.map((segment) => {
+  return <div className="court-transcript-window" ref={windowRef}>{segments.map((segment) => {
     const selected = segment.id === selectedId;
     return <article ref={(node) => { refs.current[segment.id] = node; }} className={`court-segment${selected ? " selected" : ""}`} data-segment-id={segment.id} key={segment.id}>
       <div className="court-segment-rail"><time>{formatTimestamp(segment.timestamp_start_ms)}</time><span>#{segment.ordinal + 1}</span></div>

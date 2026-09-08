@@ -6,7 +6,7 @@ import { referenceReports } from "@/lib/reference-reports";
 
 describe("reference report downloads", () => {
   it.each(referenceReports)("preserves $title with its recorded digest", (report) => {
-    const bytes = readFileSync(join(process.cwd(), "reference-reports", report.fileName));
+    const bytes = readFileSync(join(process.cwd(), report.relativePath));
     const digest = createHash("sha256").update(bytes).digest("hex");
 
     expect(bytes.byteLength).toBe(report.byteLength);
