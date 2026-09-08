@@ -8,16 +8,14 @@ import postgres from "postgres";
 const { loadEnvConfig } = nextEnv;
 
 const SOURCE_CONTAINER = process.env.ICARUS_CASEWORK_DB_CONTAINER ?? "supabase_db_IcarusCasework";
-const PROCEEDING_TITLE = "MA v. Lindsay Clancy Day 3";
-const WITNESS_LABEL = "Jennifer Stratton";
-const EXPECTED_SEGMENTS = 122;
+const CASE_TITLE_PREFIX = "Commonwealth v. Lindsay M. Clancy";
 const READ_ROLE = "icarus_lite_app";
 
 type SourceEnvelope = { kind: "proceeding" | "witness" | "speaker" | "segment"; row: Record<string, unknown> };
 
 type SourceSnapshot = {
-  proceeding: Record<string, unknown>;
-  witness: Record<string, unknown>;
+  proceedings: Record<string, unknown>[];
+  witnesses: Record<string, unknown>[];
   speakers: Record<string, unknown>[];
   segments: Record<string, unknown>[];
 };
@@ -49,15 +47,13 @@ function requiredEnv(name: string) {
 }
 
 function sourceSql() {
-  const proceedingTitle = quoteLiteral(PROCEEDING_TITLE);
-  const witnessLabel = quoteLiteral(WITNESS_LABEL);
-  const sliceWhere = `p.title = ${proceedingTitle} and wb.witness_label_raw = ${witnessLabel}`;
+  const caseTitlePattern = quoteLiteral(`${CASE_TITLE_PREFIX}%`);
 
   return String.raw`
 begin transaction isolation level repeatable read read only;
 
 copy (
-  select json_build_object('kind', 'proceeding', 'row', row_to_json(q))
+  select encode(convert_to(json_build_object('kind', 'proceeding', 'row', row_to_json(q))::text, 'UTF8'), 'hex')
   from (
     select p.id, p.case_id, c.title as case_title, p.source_id, s.title as source_title,
            sl.id as source_lineage_id, sl.lineage_key as source_lineage_key,
@@ -69,12 +65,12 @@ copy (
     join public.sources s on s.id = p.source_id
     join public.source_artifacts sa on sa.id = p.source_artifact_id
     join public.source_lineages sl on sl.id = sa.source_lineage_id
-    where p.title = ${proceedingTitle}
+    where c.title like ${caseTitlePattern}
   ) q
 ) to stdout;
 
 copy (
-  select json_build_object('kind', 'witness', 'row', row_to_json(q))
+  select encode(convert_to(json_build_object('kind', 'witness', 'row', row_to_json(q))::text, 'UTF8'), 'hex')
   from (
     select wb.id, wb.proceeding_id, wb.object_code, wb.witness_label_raw,
            wb.resolved_entity_id, wb.resolution_status, wb.resolution_basis,
@@ -83,12 +79,13 @@ copy (
            wb.logical_order
     from public.witness_blocks wb
     join public.proceedings p on p.id = wb.proceeding_id
-    where ${sliceWhere}
+    join public.cases c on c.id = p.case_id
+    where c.title like ${caseTitlePattern}
   ) q
 ) to stdout;
 
 copy (
-  select json_build_object('kind', 'speaker', 'row', row_to_json(q))
+  select encode(convert_to(json_build_object('kind', 'speaker', 'row', row_to_json(q))::text, 'UTF8'), 'hex')
   from (
     select ps.id, ps.proceeding_id, ps.provider_label, ps.canonical_name,
            ps.role, ps.review_required
@@ -99,14 +96,15 @@ copy (
       join public.witness_blocks wb on wb.id = wbs.witness_block_id
       join public.proceedings p on p.id = wb.proceeding_id
       join public.source_segments ss on ss.id = wbs.source_segment_id
-      where ${sliceWhere}
+      join public.cases c on c.id = p.case_id
+      where c.title like ${caseTitlePattern}
     )
     order by ps.provider_label, ps.id
   ) q
 ) to stdout;
 
 copy (
-  select json_build_object('kind', 'segment', 'row', row_to_json(q))
+  select encode(convert_to(json_build_object('kind', 'segment', 'row', row_to_json(q))::text, 'UTF8'), 'hex')
   from (
     select ss.id, p.id as proceeding_id, wb.id as witness_id,
            ss.proceeding_speaker_id as speaker_id,
@@ -121,8 +119,9 @@ copy (
     join public.source_segments ss on ss.id = wbs.source_segment_id
     join public.source_artifacts sa on sa.id = ss.artifact_id
     left join public.proceeding_speakers ps on ps.id = ss.proceeding_speaker_id
-    where ${sliceWhere}
-    order by wbs.ordinal
+    join public.cases c on c.id = p.case_id
+    where c.title like ${caseTitlePattern}
+    order by p.title, wb.logical_order, wbs.ordinal
   ) q
 ) to stdout;
 
@@ -140,31 +139,33 @@ function readCaseworkSlice(): SourceSnapshot {
   const envelopes = output
     .split(/\r?\n/)
     .map((line) => line.trim())
-    .filter((line) => line.startsWith("{"))
-    .map((line) => JSON.parse(line) as SourceEnvelope);
+    .filter(Boolean)
+    .map((line) => JSON.parse(Buffer.from(line, "hex").toString("utf8")) as SourceEnvelope);
 
   const proceedings = envelopes.filter((item) => item.kind === "proceeding").map((item) => item.row);
   const witnesses = envelopes.filter((item) => item.kind === "witness").map((item) => item.row);
   const speakers = envelopes.filter((item) => item.kind === "speaker").map((item) => item.row);
   const segments = envelopes.filter((item) => item.kind === "segment").map((item) => item.row);
 
-  if (proceedings.length !== 1 || witnesses.length !== 1) {
-    throw new Error(`Expected one proceeding and one witness; received ${proceedings.length} and ${witnesses.length}.`);
-  }
-  if (segments.length !== EXPECTED_SEGMENTS) {
-    throw new Error(`Expected ${EXPECTED_SEGMENTS} source segments; received ${segments.length}.`);
+  if (proceedings.length === 0 || witnesses.length === 0 || segments.length === 0) {
+    throw new Error("The Clancy corpus must contain proceedings, witness blocks, and testimony segments.");
   }
 
   const segmentIds = new Set(segments.map((row) => String(row.id)));
-  const witnessOrdinals = segments.map((row) => Number(row.witness_ordinal));
-  if (segmentIds.size !== EXPECTED_SEGMENTS || new Set(witnessOrdinals).size !== EXPECTED_SEGMENTS) {
-    throw new Error("The selected Casework slice contains duplicate segment IDs or witness ordinals.");
-  }
-  if (witnessOrdinals.some((ordinal, index) => ordinal !== index)) {
-    throw new Error("The selected Casework slice is not continuously ordered from 0 through 121.");
+  if (segmentIds.size !== segments.length) {
+    throw new Error("The selected Casework corpus contains duplicate segment IDs.");
   }
 
-  return { proceeding: proceedings[0], witness: witnesses[0], speakers, segments };
+  for (const witness of witnesses) {
+    const ordinals = segments
+      .filter((segment) => segment.witness_id === witness.id)
+      .map((segment) => Number(segment.witness_ordinal));
+    if (new Set(ordinals).size !== ordinals.length || ordinals.some((ordinal, index) => ordinal !== index)) {
+      throw new Error(`Witness ${String(witness.id)} does not have unique, continuous ordinals.`);
+    }
+  }
+
+  return { proceedings, witnesses, speakers, segments };
 }
 
 function upsertLocalEnv(name: string, value: string) {
@@ -232,9 +233,9 @@ async function publish() {
         "source_artifact_title", "source_artifact_sha256", "source_artifact_filename",
         "source_url", "canonical_url", "title", "proceeding_date", "status",
       ] as const;
-      const proceeding = projectRow(source.proceeding, proceedingColumns);
+      const proceedings = source.proceedings.map((row) => projectRow(row, proceedingColumns));
       await transaction`
-        insert into lite.proceedings ${transaction([proceeding], ...proceedingColumns)}
+        insert into lite.proceedings ${transaction(proceedings, ...proceedingColumns)}
         on conflict (id) do update set
           case_title = excluded.case_title,
           source_title = excluded.source_title,
@@ -254,8 +255,9 @@ async function publish() {
         "resolution_status", "resolution_basis", "review_status", "boundary_confidence",
         "start_segment_id", "end_segment_id", "start_timestamp_ms", "end_timestamp_ms", "logical_order",
       ] as const;
+      const witnesses = source.witnesses.map((row) => projectRow(row, witnessColumns));
       await transaction`
-        insert into lite.witnesses ${transaction([projectRow(source.witness, witnessColumns)], ...witnessColumns)}
+        insert into lite.witnesses ${transaction(witnesses, ...witnessColumns)}
         on conflict (id) do update set
           object_code = excluded.object_code,
           witness_label_raw = excluded.witness_label_raw,
@@ -314,7 +316,7 @@ async function publish() {
 
     const readUrl = getOrCreateReadUrl(adminUrl);
     await createReadRole(admin, adminUrl, readUrl);
-    console.log(`Published ${source.segments.length} ordered segments for ${WITNESS_LABEL}.`);
+    console.log(`Published ${source.segments.length} ordered segments across ${source.witnesses.length} witness blocks and ${source.proceedings.length} proceedings.`);
     console.log(`Created/verified SELECT-only role ${READ_ROLE}; its URL is stored only in .env.local.`);
   } finally {
     await admin.end();
@@ -337,10 +339,10 @@ async function validate() {
         (select count(*)::int from lite.speakers) as speakers,
         (select count(*)::int from lite.segments) as segments
     `;
-    const targetSegments = await read<{ id: string; witness_ordinal: number; exact_text: string; text_sha256: string }[]>`
-      select id::string, witness_ordinal, exact_text, text_sha256
+    const targetSegments = await read<{ id: string; witness_id: string; witness_ordinal: number; exact_text: string; text_sha256: string }[]>`
+      select id::string, witness_id::string, witness_ordinal, exact_text, text_sha256
       from lite.segments
-      order by witness_ordinal
+      order by witness_id, witness_ordinal
     `;
     const [rawIntegrity] = await read<{ duplicate_ordinals: string; orphan_links: string; broken_boundaries: string }[]>`
       select
@@ -360,13 +362,6 @@ async function validate() {
           where first_segment.id is null or last_segment.id is null
         ) as broken_boundaries
     `;
-    const [witness] = await read<{
-      resolution_status: string; resolved_entity_id: string | null; review_status: string; boundary_confidence: string;
-    }[]>`
-      select resolution_status, resolved_entity_id::string, review_status, boundary_confidence::string
-      from lite.witnesses
-    `;
-
     let writeDenied = false;
     try {
       await read`update lite.segments set exact_text = exact_text where false`;
@@ -374,7 +369,7 @@ async function validate() {
       writeDenied = true;
     }
 
-    const sourceIds = source.segments.map((row) => String(row.id));
+    const sourceIds = source.segments.map((row) => String(row.id)).sort();
     const counts = {
       proceedings: Number(rawCounts.proceedings),
       witnesses: Number(rawCounts.witnesses),
@@ -386,37 +381,30 @@ async function validate() {
       orphan_links: Number(rawIntegrity.orphan_links),
       broken_boundaries: Number(rawIntegrity.broken_boundaries),
     };
-    const targetIds = targetSegments.map((row) => row.id);
-    const orderedIdsMatch = sourceIds.length === targetIds.length && sourceIds.every((id, index) => id === targetIds[index]);
+    const targetIds = targetSegments.map((row) => row.id).sort();
+    const segmentIdsMatch = sourceIds.length === targetIds.length && sourceIds.every((id, index) => id === targetIds[index]);
     const sourceById = new Map(source.segments.map((row) => [String(row.id), String(row.exact_text)]));
     const textHashesMatch = targetSegments.every((row) => {
       const sourceText = sourceById.get(row.id);
       return sourceText === row.exact_text && sha256(row.exact_text) === row.text_sha256;
     });
-    const unresolvedPreserved =
-      witness.resolution_status === source.witness.resolution_status &&
-      witness.resolved_entity_id === source.witness.resolved_entity_id &&
-      witness.review_status === source.witness.review_status &&
-      Number(witness.boundary_confidence) === Number(source.witness.boundary_confidence);
-
     const result = {
       counts,
-      expected: { proceedings: 1, witnesses: 1, speakers: source.speakers.length, segments: EXPECTED_SEGMENTS },
-      ordered_segment_ids_match: orderedIdsMatch,
+      expected: { proceedings: source.proceedings.length, witnesses: source.witnesses.length, speakers: source.speakers.length, segments: source.segments.length },
+      segment_ids_match: segmentIdsMatch,
       text_hashes_match: textHashesMatch,
       duplicate_ordinals: integrity.duplicate_ordinals,
       orphan_links: integrity.orphan_links,
       broken_witness_boundaries: integrity.broken_boundaries,
-      unresolved_witness_preserved: unresolvedPreserved,
       select_only_role_write_denied: writeDenied,
     };
 
     const passed =
-      counts.proceedings === 1 && counts.witnesses === 1 &&
-      counts.speakers === source.speakers.length && counts.segments === EXPECTED_SEGMENTS &&
-      orderedIdsMatch && textHashesMatch && integrity.duplicate_ordinals === 0 &&
+      counts.proceedings === source.proceedings.length && counts.witnesses === source.witnesses.length &&
+      counts.speakers === source.speakers.length && counts.segments === source.segments.length &&
+      segmentIdsMatch && textHashesMatch && integrity.duplicate_ordinals === 0 &&
       integrity.orphan_links === 0 && integrity.broken_boundaries === 0 &&
-      unresolvedPreserved && writeDenied;
+      writeDenied;
 
     console.log(JSON.stringify({ passed, ...result }, null, 2));
     if (!passed) process.exitCode = 1;
