@@ -369,3 +369,50 @@ The existing application architecture already implements the official SSR client
 - Hosted migration parity and a clean dry run are verified.
 - Production authentication routing is operational, but the hosted data plane remains empty.
 - Production acceptance remains open until a real hosted identity, case membership, governed corpus publication, RLS isolation test, and recovery evidence exist.
+
+## 09-09-2026 — Adopt Upstream Ambiguity Management as candidate Icarus doctrine
+
+### Decision
+
+Detect ambiguity as close to intake as practical, resolve it only when evidence and authority support resolution, preserve competing candidates otherwise, and escalate capture or review friction according to downstream consequence. Treat SAME as the identity question—“is this the same thing?”—and BAE as the attribution question—“to whom or what does this belong?”
+
+### Reason
+
+Identity and attribution errors propagate into events, evidence, relationships, projections, embeddings, analytics, and AI summaries. A small clarification while source context is available is cheaper and safer than repairing multiple degraded downstream representations.
+
+### Alternatives Considered
+
+- Defer all ambiguity resolution to downstream reconciliation
+- Normalize aliases automatically to the highest-confidence candidate
+- Require manual resolution for every ambiguous reference regardless of consequence
+
+### Consequences
+
+- Early handling does not mean premature certainty; unresolved candidate identities and their basis remain first-class state.
+- Low-ambiguity, low-consequence intake may proceed without added friction.
+- High-ambiguity, high-consequence intake requires evidence or human confirmation before canonicalization.
+- Semantic search and embeddings may retrieve across candidate identities, but cannot silently merge them or convert similarity into identity, attribution, or truth.
+
+## 09-09-2026 — Require semantic preservation across migrations and retrieval changes
+
+### Decision
+
+Preserve immutable raw transcripts, stable identities for turns/exchanges/assertions, separate entity identity from attribution, retain provenance and distinct clocks, and treat embeddings and chunk variants as replaceable versioned representations. Add an epistemic regression harness alongside any schema or search machinery that touches testimony, entities, claims, provenance, embeddings, or ranking.
+
+### Reason
+
+Technical migration success proves that database operations completed; it does not prove that the record still means the same thing. Search exposes silent corruption when relevant language is returned with the wrong entity, knowledge basis, time relationship, or derivative repetition represented as independent corroboration.
+
+### Alternatives Considered
+
+- Select one fixed token chunk size and treat it as canonical
+- Evaluate retrieval only with vector similarity or latency
+- Add identity, attribution, and provenance evaluation after production search is built
+
+### Consequences
+
+- Multiple searchable representations may coexist over the same stable canonical source IDs.
+- Small units may drive precise retrieval while larger source-linked units provide reading context.
+- Embeddings generate similarity candidates; they do not decide SAME identity, BAE attribution, provenance independence, or truth.
+- Migration promotion must consider known-answer retrieval metrics and epistemic error classes, not merely schema replay and row counts.
+- A regression must block promotion or receive an explicit reviewed acceptance, rejection, remediation, supersession, or cancellation disposition.

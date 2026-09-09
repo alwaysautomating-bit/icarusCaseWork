@@ -230,6 +230,36 @@ Rejected synonyms: Canonical database, Evidence source, Full Casework
 
 Depends on: preserved source identity, governed Casework publication, stable source segment IDs, projection idempotency
 
+### Upstream Ambiguity Management
+
+Definition: The control discipline of detecting identity or meaning ambiguity as close to intake as practical, resolving it when adequate evidence and authority exist, and otherwise preserving explicit competing candidates without allowing a guess to become canonical state. Resolution effort increases with both ambiguity and downstream consequence.
+
+Status: Provisional
+
+Rejected synonyms: Forced deduplication, Best-guess normalization, Silent canonicalization
+
+Depends on: intake design, entity identity, SAME candidates, BAE attribution, evidence provenance, relationships, projections, semantic search, automation
+
+### Searchable Representation
+
+Definition: A replaceable, versioned projection of canonical source material prepared for retrieval at a declared granularity, such as raw turn, question-and-answer exchange, contextual window, source-linked assertion, or witness/topic section. Retrieval may select a precise representation while displaying broader canonical context.
+
+Status: Provisional
+
+Rejected synonyms: Source segment, Evidence, Canonical fact
+
+Depends on: immutable raw source, stable source IDs, chunk-boundary policy, embedding configuration, retrieval evaluation
+
+### Epistemic Regression Harness
+
+Definition: A repeatable evaluation suite that tests whether a schema, publication, identity-resolution, attribution, chunking, embedding, or ranking change preserves or improves retrieval without degrading entity accuracy, knowledge-basis attribution, temporal placement, provenance independence, or source traceability.
+
+Status: Provisional
+
+Rejected synonyms: Migration passed, Vector benchmark, Search smoke test
+
+Depends on: known-answer query set, expected source anchors, SAME and BAE evaluations, provenance and clock assertions, versioned retrieval configurations
+
 ### Material Narrative Sentence
 
 Definition: A publishable assertion whose truth, attribution, or qualification could materially affect a person, interpretation, or case account and therefore requires an exact citation or explicit interpretation label.
