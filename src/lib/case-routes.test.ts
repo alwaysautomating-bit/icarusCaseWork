@@ -1,9 +1,12 @@
 import { describe, expect, it } from "vitest";
-import { caseSetupHref, courtRecordHref, parseStructureObjectType, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
+import { caseAccessHref, caseFilesHref, courtRecordHref, evidenceHref, parseStructureObjectType, questionsHref, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
-  it("builds an explicit Foundation route", () => {
-    expect(caseSetupHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/setup");
+  it("builds explicit supporting-files and access routes", () => {
+    expect(caseFilesHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/files");
+    expect(caseAccessHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/access");
+    expect(questionsHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "question-1")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/questions?question=question-1");
+    expect(evidenceHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "evidence-1")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/evidence?item=evidence-1");
   });
 
   it("preserves the query and canonical segment in a bookmarkable Court Record URL", () => {

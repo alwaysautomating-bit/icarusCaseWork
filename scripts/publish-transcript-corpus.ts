@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
 import { createHash, randomUUID } from "node:crypto";
 import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { SupabaseClient } from "@supabase/supabase-js";
 import { compilePreservedTranscriptManifest, compileUnifiedProceeding, type IntakeManifest } from "../src/lib/proceeding-compiler";
 import { REV_PARSER_NAME, type ProceedingPackageV1 } from "../src/lib/rev-testimony";
+import { createPublicationContext } from "./supabase-publication-context";
 
 type CorpusInput = {
   key: string;
@@ -235,24 +235,10 @@ for (const input of inputs) validatePackage(input);
 const allSegmentIds = inputs.flatMap((input) => input.package.segments.map((segment) => segment.id));
 assert.equal(new Set(allSegmentIds).size, allSegmentIds.length, "Segment IDs must be unique across the corpus.");
 
-const statusText = (process.platform === "win32"
-  ? execFileSync(process.env.ComSpec ?? "cmd.exe", ["/d", "/s", "/c", "pnpm exec supabase status -o json"], { encoding: "utf8" })
-  : execFileSync("pnpm", ["exec", "supabase", "status", "-o", "json"], { encoding: "utf8" }))
-  .replace(/^Stopped services:.*\r?\n/, "");
-const status = JSON.parse(statusText) as { API_URL: string; SERVICE_ROLE_KEY: string; ANON_KEY: string };
-const admin = createClient(status.API_URL, status.SERVICE_ROLE_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
 const corpusIdentity = sha256("icarus-testimony-corpus-publication-v1");
 const email = `corpus-${corpusIdentity.slice(0, 12)}@example.test`;
 const password = `Local-${corpusIdentity.slice(0, 16)}-A1!`;
-let user = (await admin.auth.admin.listUsers({ page: 1, perPage: 1_000 })).data.users.find((item) => item.email === email);
-if (!user) {
-  const created = await admin.auth.admin.createUser({ email, password, email_confirm: true });
-  if (created.error) throw created.error;
-  user = created.data.user;
-}
-const client = createClient(status.API_URL, status.ANON_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
-const signedIn = await client.auth.signInWithPassword({ email, password });
-if (signedIn.error) throw signedIn.error;
+const { admin, client, user, target } = await createPublicationContext({ email, password });
 let caseId = (await client.from("cases").select("id").eq("workspace_key", "testimony-corpus-publication").maybeSingle()).data?.id as string | undefined;
 if (!caseId) {
   caseId = randomUUID();
@@ -344,6 +330,7 @@ const batchTotals = {
 const report = {
   schemaVersion: "testimony-corpus-integrity/1.0",
   generatedAt: new Date().toISOString(),
+  target,
   caseId,
   scope: inputs.map((input) => input.key === "opening-statements" ? "Opening Statements" : `Day ${input.manifest!.trial_day}`),
   batch,

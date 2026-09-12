@@ -1,6 +1,7 @@
 {
   "schemaVersion": "trial-navigation-index-acceptance/1.0",
-  "generatedAt": "2026-08-22T23:32:33.232Z",
+  "generatedAt": "2026-09-09T06:42:19.621Z",
+  "target": "local",
   "caseId": "413d071f-6299-46ae-aa85-46390aca38a6",
   "days": 18,
   "canonicalProceedingLinks": 14,
@@ -8,9 +9,9 @@
   "witnessEntries": 36,
   "topicEntries": 54,
   "immutableVersions": 18,
-  "createdDays": 18,
+  "createdDays": 0,
   "updatedDays": 0,
-  "existingDaysPreserved": 0,
+  "existingDaysPreserved": 18,
   "idempotentReplay": true,
   "navigationOnly": true,
   "boundaries": {

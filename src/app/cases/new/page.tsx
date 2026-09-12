@@ -26,7 +26,7 @@ export default async function NewCasePage() {
         <label>Incident-window start<input name="incidentWindowStart" type="datetime-local" /></label>
         <label>Incident-window end<input name="incidentWindowEnd" type="datetime-local" /></label>
         <div className="unsupported-fields wide"><MonoLabel>DEFERRED SCHEMA</MonoLabel><p>Jurisdiction, case timezone, controlled-vocabulary version, and durable T0 versions are not currently modeled. This form does not invent them.</p></div>
-        <button className="system-button primary">Create case and open Foundation <span aria-hidden="true">→</span></button>
+        <button className="system-button primary">Create case and open Files <span aria-hidden="true">→</span></button>
       </form>
     </section>
   </main>;

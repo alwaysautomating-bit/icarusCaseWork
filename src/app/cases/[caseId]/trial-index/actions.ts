@@ -63,7 +63,6 @@ export async function saveTrialIndexDayAction(_previous: TrialIndexActionState, 
     });
     if (result.error) throw new Error(result.error.message);
     revalidatePath(trialIndexHref(input.caseId));
-    revalidatePath(`/cases/${encodeURIComponent(input.caseId)}/setup`);
     destination = trialIndexHref(input.caseId, { dayNumber: input.dayNumber, notice: "saved" });
   } catch (error) {
     return { status: "error", message: error instanceof Error ? error.message : "The trial day could not be saved." };

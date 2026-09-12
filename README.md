@@ -44,6 +44,15 @@ Start Docker Desktop before the Supabase command. Populate `.env.local` with onl
 
 Open [http://localhost:3000](http://localhost:3000) for Icarus Casework, [local Supabase Studio](http://127.0.0.1:54323/project/default) for the local stack, and [Mailpit](http://127.0.0.1:54324) for local magic-link emails. Use the guided form to preserve a source, extract a cited claim, review it, and promote it to a distinct timeline event.
 
+## Research workspace MVP
+
+- **Files** stores case-scoped screenshots and evidence photos in a local supporting-reference library. These images are explicitly non-canonical: upload performs no OCR, extraction, or factual promotion.
+- **Questions** is a searchable open/resolved research queue. Known points and findings require an attached source; unknowns and research targets may remain unresolved.
+- **Evidence** indexes manually established items, their underlying sources, sourced facts, and linked questions. Creating an item requires an explicit confirmation that reviewed material establishes its existence.
+- **Access** lets the authoritative case owner assign existing authenticated users as viewers, researchers, or reviewers.
+
+The Foundation screen has been retired. Case creation now enters the practical Files workspace, while the preserved Court Record and testimony workflows remain unchanged.
+
 ## Transcript intake
 
 Place new Rev markdown or text captures in `transcripts/inbox`, then run:
@@ -57,6 +66,10 @@ The workflow copies each source byte-for-byte to `transcripts/preserved`, writes
 Thread Collapse is an independent branch over the preserved raw transcript. Run `pnpm testimony:index` when an intentional Day X index rebuild is wanted. It does not read or depend on deterministic first-pass output, and deterministic publication does not read or depend on the Day X indexes.
 
 Witness blocks, examination phases, procedural markers, and thread-collapse day indexes are reviewable navigation aids—not verified facts, credibility findings, or canonical legal classifications. Run `pnpm testimony:verify` before publication. Canonical local Supabase publication remains the explicit `pnpm testimony:publish-corpus` operation.
+
+The same publisher can target the deliberately linked hosted project only when the fail-closed hosted publication variables in [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) are set. Hosted publication reuses an existing owner account, requires an explicit confirmation phrase, and must be rerun to prove duplicate-free reuse before explorers receive case access.
+
+Case owners manage pilot access from the **Access** tab after each explorer signs in once. Viewer access is read-only at the RLS layer; researcher and reviewer roles allow progressively more governed participation. Auth account creation by itself never grants case visibility.
 
 See [the testimony framework](transcripts/README.md) for folder roles, commands, and authority boundaries.
 
@@ -89,12 +102,14 @@ pnpm exec supabase db advisors --local --type all --level warn --fail-on error
 
 See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_09-08-2026.md](DEPLOYMENT_09-08-2026.md) for the controlled cloud deployment gate.
 
+The first hosted Casework release is intentionally limited to Court Record, Trial Index, Files, Questions, Evidence, and owner-only Access. Follow [PILOT_DEPLOYMENT.md](PILOT_DEPLOYMENT.md) for its exact migration, publication, preview, verification, promotion, and rollback sequence.
+
 ## Data constraints
 
 - `.data/` and environment files are excluded from Git.
 - The local vertical slice accepts pasted public or authorized text only.
 - The original text is stored separately from normalized database records and addressed by a SHA-256 checksum plus character offsets.
-- Authentication is intentionally not part of this local proof slice. Do not expose it to the public internet.
+- Local supporting-image bytes remain under `.data/case-media`; only case-scoped metadata is stored in Supabase. A hosted object-storage implementation is still required before deploying image uploads.
 
 ## Project memory
 

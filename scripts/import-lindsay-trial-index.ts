@@ -1,30 +1,19 @@
 import assert from "node:assert/strict";
-import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { createClient } from "@supabase/supabase-js";
+import { createPublicationContext } from "./supabase-publication-context";
 
 type FixtureDay = Record<string, unknown> & { day_number: number; basis: string };
 type Fixture = { schema_version: string; case_workspace_key: string; navigation_only: boolean; source_note: string; days: FixtureDay[] };
-
-function statusJson() {
-  const output = process.platform === "win32"
-    ? execFileSync(process.env.ComSpec ?? "cmd.exe", ["/d", "/s", "/c", "pnpm exec supabase status -o json"], { encoding: "utf8" })
-    : execFileSync("pnpm", ["exec", "supabase", "status", "-o", "json"], { encoding: "utf8" });
-  return JSON.parse(output.replace(/^Stopped services:.*\r?\n/, "")) as { API_URL: string; ANON_KEY: string };
-}
 
 const fixture = JSON.parse(await readFile(path.resolve("fixtures/lindsay-clancy-trial-index.json"), "utf8")) as Fixture;
 assert.equal(fixture.navigation_only, true);
 assert.equal(fixture.days.length, 18);
 assert.deepEqual(fixture.days.map((day) => day.day_number), Array.from({ length: 18 }, (_, index) => index + 1));
 
-const status = statusJson();
 const identity = createHash("sha256").update("icarus-testimony-corpus-publication-v1").digest("hex");
-const client = createClient(status.API_URL, status.ANON_KEY, { auth: { persistSession: false, autoRefreshToken: false } });
-const signedIn = await client.auth.signInWithPassword({ email: `corpus-${identity.slice(0, 12)}@example.test`, password: `Local-${identity.slice(0, 16)}-A1!` });
-if (signedIn.error) throw signedIn.error;
+const { client, target } = await createPublicationContext({ email: `corpus-${identity.slice(0, 12)}@example.test`, password: `Local-${identity.slice(0, 16)}-A1!` });
 const caseResult = await client.from("cases").select("id").eq("workspace_key", fixture.case_workspace_key).single();
 if (caseResult.error) throw caseResult.error;
 const caseId = caseResult.data.id;
@@ -76,6 +65,7 @@ assert.ok(processed.every((item) => item.replay.duplicate));
 const report = {
   schemaVersion: "trial-navigation-index-acceptance/1.0",
   generatedAt: new Date().toISOString(),
+  target,
   caseId,
   days: daysResult.data.length,
   canonicalProceedingLinks: daysResult.data.filter((day) => day.proceeding_id).length,

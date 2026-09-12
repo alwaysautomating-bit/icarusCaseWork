@@ -16,9 +16,7 @@ export async function GET(_request: Request, { params }: { params: Promise<{ cas
   ]);
   if (!currentCase || !report) return new Response("Report not found.", { status: 404 });
 
-  const reportPath = report.id === "lindsey-clancy-mental-health-timeline"
-    ? join(process.cwd(), "reports", "lindsey-clancy-mental-health-timeline.md")
-    : join(process.cwd(), "evidence", "search-warrant-evidence-packet.pdf");
+  const reportPath = join(process.cwd(), "reports", report.fileName);
   const bytes = await readFile(reportPath);
   return new Response(new Uint8Array(bytes), {
     headers: {

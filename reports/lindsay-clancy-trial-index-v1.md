@@ -1,6 +1,6 @@
 # Lindsay Clancy Trial Navigation Index v1
 
-Generated: 2026-08-22T23:32:33.232Z
+Generated: 2026-09-09T06:42:19.621Z
 
 - Indexed trial days: **18**
 - Canonical proceeding links: **14**
@@ -8,8 +8,8 @@ Generated: 2026-08-22T23:32:33.232Z
 - Witness entries: **36**
 - Topic entries: **54**
 - Immutable day versions: **18**
-- Existing days preserved: **0**
-- Days created this run: **18**
+- Existing days preserved: **18**
+- Days created this run: **0**
 - Days explicitly updated this run: **0**
 - Idempotent replay: **PASS**
 - Navigation-only constraint: **PASS**

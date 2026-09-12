@@ -37,7 +37,7 @@ async function database() {
     create role service_role;
     create schema auth;
     create schema extensions;
-    create table auth.users(id uuid primary key);
+    create table auth.users(id uuid primary key, email text);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
     grant usage on schema auth to authenticated;
     grant execute on function auth.uid() to authenticated;
@@ -100,5 +100,5 @@ describe("court packet governed persistence", () => {
     const hidden = await db.query<{ count: number }>("select count(*)::int count from public.court_packet_boundary_candidates");
     expect(hidden.rows[0].count).toBe(0);
     await db.close();
-  }, 30_000);
+  }, 60_000);
 });

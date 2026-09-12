@@ -4,11 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   careTrajectoryHref,
-  caseSetupHref,
+  caseAccessHref,
+  caseFilesHref,
   courtRecordHref,
+  evidenceHref,
   reconcileHref,
   reconstructionHref,
   referenceReportsHref,
+  questionsHref,
   structureHref,
   structureReviewHref,
   trialIndexHref,
@@ -20,21 +23,26 @@ type LifecycleItem = {
   match: (pathname: string) => boolean;
 };
 
-export function CaseLifecycleNav({ caseId, canReview }: { caseId: string; canReview: boolean }) {
+export function CaseLifecycleNav({ caseId, canReview, isOwner, pilotMode }: { caseId: string; canReview: boolean; isOwner: boolean; pilotMode: boolean }) {
   const pathname = usePathname();
   const structurePath = structureHref(caseId);
   const items: LifecycleItem[] = [
-    { href: caseSetupHref(caseId), label: "Foundation", match: (path) => path === caseSetupHref(caseId) },
     { href: trialIndexHref(caseId), label: "Trial Index", match: (path) => path.startsWith(trialIndexHref(caseId)) },
     { href: courtRecordHref(caseId), label: "Court Record", match: (path) => path.startsWith(courtRecordHref(caseId)) },
-    { href: structurePath, label: "Structure", match: (path) => path === structurePath },
-    ...(canReview
-      ? [{ href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: (path: string) => path.startsWith(`${structurePath}/review`) }]
-      : []),
-    { href: reconcileHref(caseId), label: "Reconcile", match: (path) => path.startsWith(reconcileHref(caseId)) },
-    { href: reconstructionHref(caseId), label: "Reconstruct", match: (path) => path.startsWith(reconstructionHref(caseId)) },
-    { href: careTrajectoryHref(caseId), label: "Care Trajectory", match: (path) => path.startsWith(careTrajectoryHref(caseId)) },
-    { href: referenceReportsHref(caseId), label: "Reports", match: (path) => path.startsWith(referenceReportsHref(caseId)) },
+    { href: caseFilesHref(caseId), label: "Files", match: (path) => path.startsWith(caseFilesHref(caseId)) },
+    { href: questionsHref(caseId), label: "Questions", match: (path) => path.startsWith(questionsHref(caseId)) },
+    { href: evidenceHref(caseId), label: "Evidence", match: (path) => path.startsWith(evidenceHref(caseId)) },
+    ...(!pilotMode ? [
+      { href: structurePath, label: "Structure", match: (path: string) => path === structurePath },
+      ...(canReview
+        ? [{ href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: (path: string) => path.startsWith(`${structurePath}/review`) }]
+        : []),
+      { href: reconcileHref(caseId), label: "Reconcile", match: (path: string) => path.startsWith(reconcileHref(caseId)) },
+      { href: reconstructionHref(caseId), label: "Reconstruct", match: (path: string) => path.startsWith(reconstructionHref(caseId)) },
+      { href: careTrajectoryHref(caseId), label: "Care Trajectory", match: (path: string) => path.startsWith(careTrajectoryHref(caseId)) },
+      { href: referenceReportsHref(caseId), label: "Reports", match: (path: string) => path.startsWith(referenceReportsHref(caseId)) },
+    ] : []),
+    ...(isOwner ? [{ href: caseAccessHref(caseId), label: "Access", match: (path: string) => path.startsWith(caseAccessHref(caseId)) }] : []),
   ];
 
   return (
@@ -43,8 +51,8 @@ export function CaseLifecycleNav({ caseId, canReview }: { caseId: string; canRev
         const active = item.match(pathname);
         return <Link href={item.href} aria-current={active ? "page" : undefined} key={item.label}>{item.label}</Link>;
       })}
-      <span aria-disabled="true">Actor Knowledge</span>
-      <span aria-disabled="true">Gaps</span>
+      {!pilotMode && <span aria-disabled="true">Actor Knowledge</span>}
+      {!pilotMode && <span aria-disabled="true">Gaps</span>}
     </nav>
   );
 }

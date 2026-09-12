@@ -37,8 +37,26 @@ export type StructureReviewRouteState = Pick<StructureRouteState,
   "type" | "objectId" | "segmentId" | "proceedingId" | "reviewStatus" | "assertedBy" | "unresolvedOnly" | "temporalOnly" | "query"
 > & { notice?: "reviewed" };
 
-export function caseSetupHref(caseId: string) {
-  return `/cases/${encodeURIComponent(caseId)}/setup`;
+export function caseFilesHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/files`;
+}
+
+export function caseAccessHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/access`;
+}
+
+export function questionsHref(caseId: string, questionId?: string) {
+  const params = new URLSearchParams();
+  if (questionId) params.set("question", questionId);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/questions${suffix ? `?${suffix}` : ""}`;
+}
+
+export function evidenceHref(caseId: string, evidenceId?: string) {
+  const params = new URLSearchParams();
+  if (evidenceId) params.set("item", evidenceId);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/evidence${suffix ? `?${suffix}` : ""}`;
 }
 
 export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {

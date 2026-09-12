@@ -15,6 +15,7 @@ function rowsOrThrow<T>(result: { data: T | null; error: PostgrestError | null }
 
 export type AccessibleCase = {
   id: string;
+  owner_user_id: string;
   title: string;
   workspace_key: string;
   purpose: string;
@@ -36,7 +37,7 @@ export function canReviewStructure(role: CaseMembershipRole) {
 export async function listAccessibleCases(actorId: string): Promise<AccessibleCase[]> {
   const supabase = await createClient();
   const [casesResult, membershipsResult] = await Promise.all([
-    supabase.from("cases").select("id,title,workspace_key,purpose,public_record_cutoff,incident_at,incident_window_start,incident_window_end,created_at").order("created_at", { ascending: false }),
+    supabase.from("cases").select("id,owner_user_id,title,workspace_key,purpose,public_record_cutoff,incident_at,incident_window_start,incident_window_end,created_at").order("created_at", { ascending: false }),
     supabase.from("case_members").select("case_id,role").eq("user_id", actorId),
   ]);
   const memberships = rowsOrThrow(membershipsResult) as Array<{ case_id: string; role: CaseMembershipRole }>;
@@ -53,7 +54,7 @@ export const getAccessibleCase = cache(async (actorId: string, rawCaseId: string
   if (!parsed.success) return null;
   const supabase = await createClient();
   const [caseResult, membershipResult] = await Promise.all([
-    supabase.from("cases").select("id,title,workspace_key,purpose,public_record_cutoff,incident_at,incident_window_start,incident_window_end,created_at").eq("id", parsed.data).maybeSingle(),
+    supabase.from("cases").select("id,owner_user_id,title,workspace_key,purpose,public_record_cutoff,incident_at,incident_window_start,incident_window_end,created_at").eq("id", parsed.data).maybeSingle(),
     supabase.from("case_members").select("role").eq("case_id", parsed.data).eq("user_id", actorId).maybeSingle(),
   ]);
   if (caseResult.error) throw new Error(caseResult.error.message);

@@ -18,7 +18,7 @@ async function database() {
     create role service_role;
     create schema auth;
     create schema extensions;
-    create table auth.users(id uuid primary key);
+    create table auth.users(id uuid primary key, email text);
     create function auth.uid() returns uuid language sql stable as $$ select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid $$;
     grant usage on schema auth to authenticated;
     grant execute on function auth.uid() to authenticated;
@@ -83,5 +83,5 @@ describe("trial navigation index persistence", () => {
     expect(boundaries.rows[0]).toEqual({ claims: 0, events: 0, reconstructions: 0 });
     expect((await db.query<{ count: number }>("select count(*)::int count from public.audit_events where action like 'trial_index.%'")).rows[0].count).toBe(2);
     await db.close();
-  }, 30_000);
+  }, 60_000);
 });

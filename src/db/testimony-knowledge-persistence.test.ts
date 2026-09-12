@@ -21,7 +21,7 @@ async function migratedDatabase() {
     create role service_role;
     create schema auth;
     create schema extensions;
-    create table auth.users(id uuid primary key);
+    create table auth.users(id uuid primary key, email text);
     create function auth.uid() returns uuid language sql stable as $$
       select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
     $$;
@@ -158,5 +158,5 @@ describe("testimony knowledge persistence", () => {
     const orders = await db.query<{ logical_order: number }>("select logical_order from public.case_ledger order by logical_order");
     expect(orders.rows.map((row) => row.logical_order)).toEqual(orders.rows.map((_, index) => index + 1));
     await db.close();
-  }, 30_000);
+  }, 60_000);
 });

@@ -5,7 +5,7 @@ import { sendMagicLink, signInWithProvider } from "./actions";
 export const dynamic = "force-dynamic";
 
 function safeNext(value: string | undefined) {
-  return value?.startsWith("/") && !value.startsWith("//") ? value : "/research-room";
+  return value?.startsWith("/") && !value.startsWith("//") ? value : "/casework";
 }
 
 export default async function LoginPage({ searchParams }: { searchParams: Promise<{ error?: string; message?: string; next?: string }> }) {

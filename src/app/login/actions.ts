@@ -10,7 +10,7 @@ const emailSchema = z.email().trim();
 const providerSchema = z.enum(["google", "apple"]);
 
 function safeNext(value: FormDataEntryValue | null) {
-  return typeof value === "string" && value.startsWith("/") && !value.startsWith("//") ? value : "/research-room";
+  return typeof value === "string" && value.startsWith("/") && !value.startsWith("//") ? value : "/casework";
 }
 
 export async function sendMagicLink(formData: FormData) {

@@ -5,7 +5,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { requireCaseActor } from "@/lib/authority";
-import { caseSetupHref } from "@/lib/case-routes";
+import { caseFilesHref } from "@/lib/case-routes";
 import { createClient } from "@/lib/supabase/server";
 
 const caseDefinitionSchema = z.object({
@@ -52,7 +52,7 @@ export async function createCaseAction(formData: FormData) {
     incident_window_end: nullableDate(input.incidentWindowEnd),
   });
   if (error) throw new Error(error.message);
-  redirect(caseSetupHref(caseId));
+  redirect(caseFilesHref(caseId));
 }
 
 export async function updateCaseDefinitionAction(caseId: string, formData: FormData) {
@@ -81,5 +81,5 @@ export async function updateCaseDefinitionAction(caseId: string, formData: FormD
   }).eq("id", caseId).select("id").maybeSingle();
   if (error) throw new Error(error.message);
   if (!data) throw new Error("The case was not found or is not accessible.");
-  revalidatePath(caseSetupHref(caseId));
+  revalidatePath(caseFilesHref(caseId));
 }

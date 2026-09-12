@@ -2,7 +2,7 @@
 
 Status: canonical infrastructure and operations guide
 
-Last verified: 2026-08-23
+Last verified: 2026-09-12
 
 Local project ID: `IcarusCasework`
 
@@ -173,9 +173,9 @@ This is not a substitute for eventually proving that the full migration chain re
 
 ## Hosted deployment workflow
 
-No hosted Supabase project is currently selected, linked, or authenticated from this repository. Until an environment is explicitly named, all commands must target `--local`.
+The hosted Supabase project **Icarus Casework Full** is deliberately linked from this workstation. The link is operational metadata only; commands must still use explicit `--local` or `--linked` targeting.
 
-When a staging or production project is provisioned:
+For a newly provisioned staging or production project:
 
 1. Record the environment owner and project reference in the approved secret/deployment system, not in source code.
 2. Authenticate and link deliberately:
@@ -236,6 +236,35 @@ Secrets referenced through `env(...)` in `supabase/config.toml` belong in an ign
 
 Only the Supabase URL and publishable key may use the `NEXT_PUBLIC_` prefix. Service-role and secret keys are server-only and must never be imported by browser code.
 
+### Hosted owner and explorer onboarding
+
+The production pilot uses self-initiated authentication plus owner-controlled case membership. Creating an Auth account does not grant access to any case.
+
+1. The intended case owner signs in once at `https://icarus-case-work.vercel.app/login` with a magic link. This creates the hosted Auth identity.
+2. A designated operator publishes the preserved corpus under that identity. Hosted publication is deliberately fail-closed and requires all six terminal-only variables below:
+
+   ```powershell
+   $env:ICARUS_PUBLISH_TARGET='hosted'
+   $env:ICARUS_PUBLISH_CONFIRM='I_UNDERSTAND_THIS_WRITES_TO_HOSTED_SUPABASE'
+   $env:ICARUS_PUBLISH_SUPABASE_URL='<hosted HTTPS project URL>'
+   $env:ICARUS_PUBLISH_SUPABASE_PUBLISHABLE_KEY='<hosted publishable key>'
+   $env:ICARUS_PUBLISH_SUPABASE_SECRET_KEY='<hosted secret key>'
+   $env:ICARUS_PUBLISH_OWNER_EMAIL='<exact owner email>'
+   pnpm testimony:publish-corpus
+   pnpm testimony:publish-corpus
+   pnpm trial-index:lindsay
+   ```
+
+   The second corpus run must report idempotent reuse. The publisher refuses local URLs in hosted mode, refuses to run without the explicit confirmation phrase, refuses to create an owner silently, and never prints the secret key. Clear the variables when the operation is complete. Do not add the hosted secret key to Vercel; the deployed application does not need it.
+3. Each explorer signs in once through the production login page using the email address they gave the owner. Until membership is granted, the account sees no case data.
+4. The owner opens the Clancy case, selects the **Access** tab, enters the same email, and assigns a role:
+   - `viewer`: read-only exploration enforced by RLS;
+   - `researcher`: case-scoped contribution access;
+   - `reviewer`: contribution access plus governed review actions.
+5. Role changes and removals happen in the same panel. Every membership add, role change, and removal is appended to `audit_events`.
+
+The hosted built-in email provider is limited to two Auth emails per hour. That is enough for a very small smoke test; configure custom SMTP before onboarding a larger pilot. The current application does not send an owner-authored invitation email—the explorer initiates their own magic-link sign-in, after which the owner grants case access.
+
 ## Database and Data API security contract
 
 Every database change must preserve these rules:
@@ -243,6 +272,7 @@ Every database change must preserve these rules:
 - Enable RLS on every table in an exposed schema, including `public`.
 - Use explicit PostgreSQL grants as the object-access layer and RLS policies as the row-access layer. Passing one layer does not replace the other.
 - Scope case data through ownership or membership checks such as `private.can_access_case(case_id)`; `TO authenticated` alone is not authorization.
+- Preserve `viewer` as read-only at the RLS layer. Direct mutations require `private.can_contribute_case(case_id)`; owner-only operations must also call `private.is_case_owner(case_id)`.
 - Use both `USING` and `WITH CHECK` for ownership-sensitive updates.
 - Never authorize from user-editable `user_metadata`. Use database membership or trusted application metadata.
 - Prefer `SECURITY INVOKER` views and functions.
@@ -335,28 +365,35 @@ The current configuration intentionally targets PostgreSQL 17. Do not change the
 
 ## Current verification and open gates
 
-Verified locally on 2026-08-22:
+Verified locally on 2026-09-11:
 
 - Docker-backed Supabase database, API, Auth, Storage, Studio, and Mailpit are operational.
-- All 19 versioned migrations through `20260824081931_court_packet_document_intelligence_v1.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
+- All 23 versioned migrations through `20260909204037_research_questions_evidence_mvp.sql` are applied locally. The complete chain passes automated zero-state replay, and the preserved local corpus remains available.
 - Local database advisors report no security or performance issues.
 - Database lint and advisors report no issues. The legacy `review_extraction_candidate` UUID-array warning is fixed in the Structure Review migration without changing that RPC's contract.
-- ESLint, TypeScript, 122 tests, and the Next.js production build pass.
+- ESLint, TypeScript, 158 tests, and the Next.js production build pass.
 - Candidate-only reconstruction snapshots are case-scoped, immutable, RLS-readable, and saved atomically through `save_reconstruction_version`; the function rejects snapshots that claim canonical event creation, SAME resolution, courtroom-timestamp substitution, or collapsed tensions.
 - Structure review versions are append-only and case-scoped. The public invoker RPC delegates to a fixed-search-path private mutation core that authorizes owner/reviewer membership, locks the target, enforces type-specific patch allowlists and expected versions, captures source lineage server-side, and appends the target change, immutable version, and case-ledger event atomically.
 - Knowledge-mapping claims are select-only to authenticated clients. The separately governed legacy claim-to-event action is preserved through the atomic `review_and_promote_claim` RPC; Structure Review never calls it.
 - Trial-index days are case-scoped and permanently navigation-only. Direct writes to `trial_index_days` and `trial_index_day_versions` are denied; owner/reviewer changes pass through `upsert_trial_index_day`, which validates linked case objects and atomically appends an immutable version and audit event. Normal fixture-import reruns preserve existing index days unless one day is explicitly selected for update.
 - Reconciliation groups are case-scoped and permanently analytical-only. Direct writes to current groups and immutable versions are denied; `save_reconciliation_group` re-authorizes owner/reviewer membership, captures reviewed status and exact source IDs server-side, validates governed edges, enforces expected versions, and atomically appends the group version and case-ledger event. Identical replay creates no duplicate version or ledger entry.
 - Court-packet document intelligence is case-scoped and review-only. `commit_court_packet_parse` atomically preserves the immutable artifact, every page, parser provenance, and deterministic boundary candidates; it rejects analytical payloads and is idempotent on the artifact/configuration identity. Only owner/reviewer calls to `review_court_packet_boundary` can create or amend accepted document boundaries, with immutable review versions and optimistic concurrency.
+- Case owners can manage authenticated users by normalized email without exposing `auth.users` to browser clients. Membership changes are owner-only, audited, and cannot remove or demote the owner.
+- Viewer access is read-only at the database boundary; automated RLS acceptance tests prove the viewer can see the assigned case but cannot update its definition or insert case records.
+- Supporting-media metadata is case-scoped and RLS-protected. Local image bytes remain outside PostgreSQL under `.data/case-media`; every item is marked non-canonical and cannot create testimony, claims, events, or findings automatically.
+- Questions and evidence are separate case-scoped research layers. Known points, findings, and evidence facts require source linkage, while unresolved questions and research targets may remain open without a forced answer.
+- Vercel deployments default to the narrow research pilot: Court Record, Trial Index, Files, Questions, Evidence, and owner-only Access. Advanced case routes redirect to Trial Index; the complete workspace remains available locally.
+- Supporting-image bytes use private Vercel Blob when `BLOB_READ_WRITE_TOKEN` is present. A Vercel deployment without that connection fails closed instead of writing to ephemeral local storage. Credentialed preview upload/read verification remains required before promotion.
+- The hosted project remains at the first 21 migrations through `20260909063227_split_member_mutation_policies.sql`. The supporting-media and research-workspace migrations are local-only until their hosted storage and pilot rollout are deliberately approved. The hosted schema passes database lint; its advisor findings are the reviewed, authenticated `SECURITY DEFINER` RPCs whose fixed-search-path and in-function authorization checks form the governed mutation boundary.
+- The owner access panel and post-login `/casework` redirect are deployed to `https://icarus-case-work.vercel.app`; unauthenticated `/casework` requests redirect to `/login` and the deployment error scan is clean.
 
-Hosted deployment remains blocked until:
+Hosted pilot onboarding still requires:
 
-- Supabase and Vercel projects are explicitly selected and owned.
-- CLI authentication and hosted project linkage are configured.
-- Google, Apple, and magic-link hosted redirect behavior is verified.
+- The intended owner completes the first hosted sign-in.
+- The preserved corpus and Trial Index are published and their idempotent reruns are verified.
+- Magic-link delivery and redirect behavior are verified with the owner and one separate explorer account. Google and Apple remain optional until their provider credentials are provisioned.
 - Hosted RLS, grants, backups, restore, deletion, secret rotation, and incident procedures are tested.
-- Blob storage is provisioned and its case-scoped access model is verified.
-- A reviewed remote migration dry-run is approved.
+- Private Blob upload, authenticated read, failure cleanup, and outsider denial are verified on a preview deployment.
 
 ## Official references
 

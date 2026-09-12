@@ -9,7 +9,7 @@ export async function GET(request: Request) {
   if (tokenHash && type) {
     const supabase = await createClient();
     const { error } = await supabase.auth.verifyOtp({ type, token_hash: tokenHash });
-    if (!error) return NextResponse.redirect(new URL("/research-room", url.origin));
+    if (!error) return NextResponse.redirect(new URL("/casework", url.origin));
   }
   return NextResponse.redirect(new URL("/login?error=The+sign-in+link+is+invalid+or+expired.", url.origin));
 }

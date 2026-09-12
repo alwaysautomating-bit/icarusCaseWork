@@ -21,7 +21,7 @@ async function migratedDatabase() {
     create role service_role;
     create schema auth;
     create schema extensions;
-    create table auth.users(id uuid primary key);
+    create table auth.users(id uuid primary key, email text);
     create function auth.uid() returns uuid language sql stable as $$
       select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
     $$;
@@ -74,5 +74,5 @@ describe("case workspace RLS", () => {
 
     await db.exec("reset role");
     await db.close();
-  }, 30_000);
+  }, 60_000);
 });

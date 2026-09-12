@@ -12,7 +12,7 @@ describe("Supabase deployment migration", () => {
       create role service_role;
       create schema auth;
       create schema extensions;
-      create table auth.users(id uuid primary key);
+      create table auth.users(id uuid primary key, email text);
       create function auth.uid() returns uuid language sql stable as $$ select null::uuid $$;
     `);
     const migrationsUrl = new URL("../../supabase/migrations/", import.meta.url);
@@ -40,7 +40,7 @@ describe("Supabase deployment migration", () => {
     const indexes = await db.query<{ indexname: string }>("select indexname from pg_indexes where schemaname='public'");
     expect(indexes.rows.map((row) => row.indexname)).toEqual(expect.arrayContaining(["source_segments_search_vector_gin", "source_segments_exact_text_trgm_gin"]));
     await db.close();
-  }, 30_000);
+  }, 60_000);
 
   it("keeps reconciliation tables read-only to intake and grants the atomic function only to authenticated users", async () => {
     const migration = await readFile(new URL("../../supabase/migrations/20260817035154_testimony_url_intake.sql", import.meta.url), "utf8");

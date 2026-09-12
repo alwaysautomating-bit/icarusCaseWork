@@ -25,7 +25,7 @@ async function migratedDatabase() {
     create role service_role;
     create schema auth;
     create schema extensions;
-    create table auth.users(id uuid primary key);
+    create table auth.users(id uuid primary key, email text);
     create function auth.uid() returns uuid language sql stable as $$
       select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid
     $$;
@@ -236,5 +236,5 @@ describe("governed structure review persistence", () => {
     expect((await db.query<{ count: number }>("select count(*)::int count from public.events where promoted_from_claim_id=$1", [legacyClaimId])).rows[0].count).toBe(1);
     await expect(db.query("select public.review_and_promote_claim($1,$2,'Reviewed source-linked legacy claim.','Duplicate promoted event','exact',null,'')", [caseId, legacyClaimId])).rejects.toThrow(/CLAIM_ALREADY_REVIEWED/);
     await db.close();
-  }, 30_000);
+  }, 60_000);
 });

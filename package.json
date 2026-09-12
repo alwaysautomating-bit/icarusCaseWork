@@ -34,6 +34,7 @@
     "supabase:reset": "supabase db reset --local",
     "supabase:lint": "supabase db lint --local --level warning --fail-on error",
     "supabase:advisors": "supabase db advisors --local --type all --level warn --fail-on error",
+    "verify:pilot": "pnpm verify",
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build"
   },
   "dependencies": {

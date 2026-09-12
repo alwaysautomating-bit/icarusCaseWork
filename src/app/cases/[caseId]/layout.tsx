@@ -6,6 +6,7 @@ import { CaseSwitcher } from "@/app/cases/_components/case-switcher";
 import { CaseLifecycleNav } from "@/app/cases/[caseId]/_components/case-lifecycle-nav";
 import { requireCaseActor } from "@/lib/authority";
 import { canReviewStructure, getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
+import { getDeploymentSlice } from "@/lib/deployment-slice";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +22,7 @@ export default async function CaseLayout({ children, params }: { children: React
       <div className="account"><span>{actor.email}</span><form action={signOut}><button className="text-button">Sign out</button></form></div>
     </header>
     <div className="case-identity-strip"><div><span>ACTIVE CASE · {currentCase.membershipRole.toUpperCase()}</span><strong>{currentCase.title}</strong></div><code>{currentCase.id}</code></div>
-    <CaseLifecycleNav caseId={currentCase.id} canReview={canReviewStructure(currentCase.membershipRole)} />
+    <CaseLifecycleNav caseId={currentCase.id} canReview={canReviewStructure(currentCase.membershipRole)} isOwner={currentCase.owner_user_id === actor.id} pilotMode={getDeploymentSlice() === "research_pilot"} />
     {children}
   </div>;
 }

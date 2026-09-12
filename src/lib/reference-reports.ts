@@ -26,19 +26,6 @@ export const referenceReports: ReferenceReport[] = [
     description: "A third-party research timeline supplied for orientation and follow-up source checking.",
     boundary: "Not canonical fact. Its narrative, citations, and generated framing remain unverified until traced to source-level evidence.",
   },
-  {
-    id: "search-warrant-evidence-packet",
-    title: "Search Warrant Evidence Packet",
-    classification: "Court-document packet · reference evidence",
-    format: "PDF",
-    contentType: "application/pdf",
-    relativePath: "evidence/search-warrant-evidence-packet.pdf",
-    fileName: "search-warrant-evidence-packet.pdf",
-    byteLength: 6_925_349,
-    sha256: "5f7c76cab4d7204ebde87ab424acd43388f4716451c12e725a6af61d48827d6c",
-    description: "The supplied Lindsay Clancy search-warrant court-document packet, preserved as received.",
-    boundary: "Evidence source, not a finding of fact. Allegations, attributed statements, and investigator assertions are not promoted into the canonical record by inclusion here.",
-  },
 ];
 
 export function referenceReportById(reportId: string) {
