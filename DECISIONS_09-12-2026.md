@@ -416,3 +416,47 @@ Technical migration success proves that database operations completed; it does n
 - Embeddings generate similarity candidates; they do not decide SAME identity, BAE attribution, provenance independence, or truth.
 - Migration promotion must consider known-answer retrieval metrics and epistemic error classes, not merely schema replay and row counts.
 - A regression must block promotion or receive an explicit reviewed acceptance, rejection, remediation, supersession, or cancellation disposition.
+
+## 09-12-2026 — Make the research pilot surface role-aware
+
+### Decision
+
+Show non-owner case members exactly Court Record, Trial Index, Evidence, Questions, and Reports. Show the actual case owner the complete governed Casework navigation. Remove Foundation from the active workspace navigation, keep supporting pictures in the private Files capability, and retain downloadable Reports for later refinement.
+
+### Reason
+
+The pilot needs to expose the useful research workflow without presenting unfinished governance and analysis workspaces to invited users. Owner access must remain available for administration and deeper review work.
+
+### Alternatives Considered
+
+- Give every authenticated member the complete owner navigation
+- Replace the working Casework UI with the January 24 pitch/timeline surface
+- Remove Reports until its later design pass
+
+### Consequences
+
+- Membership alone does not make a user the case owner; owner-only navigation is derived from `cases.owner_user_id`.
+- Hidden tabs are not an authorization boundary. Server actions and RLS continue to enforce role and case access.
+- The current UI acceptance priority is Trial Index, Court Record, Questions, and Evidence.
+
+## 09-12-2026 — Keep local access frictionless without weakening production Auth
+
+### Decision
+
+Use the existing `ICARUS_LOCAL_AUTH_BYPASS` only in local development. It signs in a real local Supabase user with case membership and replaces a stale or different browser session. Production remains protected by hosted Supabase Auth and never accepts the bypass.
+
+### Reason
+
+Local UI work needs a dependable direct path into data-backed pages, while role-aware behavior, RLS, and authenticated attribution still need to execute under a real user identity.
+
+### Alternatives Considered
+
+- Remove route protection globally
+- Mock the user and bypass Supabase/RLS entirely
+- Require a manual magic-link login for every local browser session
+
+### Consequences
+
+- Local direct navigation can enter the five-tab member surface as `local-owner@icarus.test`.
+- A mismatched local cookie is replaced instead of silently defeating the bypass.
+- Local credentials remain ignored environment data and are not committed or deployed.

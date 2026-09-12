@@ -1,6 +1,6 @@
 # Deployment
 
-Status: VERCEL, COCKROACH LITE, AND HOSTED SUPABASE ACTIVE — full production data/auth acceptance remains gated
+Status: PRIVATE RESEARCH PILOT ACTIVE — populated hosted data, private media, and owner access verified; cross-user and recovery acceptance remain gated
 
 Canonical Supabase architecture, operations, migration, security, recovery, and troubleshooting procedures live in `SUPABASE_OPERATIONS.md`. This file records the deployment gate and must not duplicate or override that operational contract.
 
@@ -46,35 +46,41 @@ Never reset a production database. Never include seed data in a production push.
 ## Current Verification
 
 - Vercel production: `https://icarus-case-work.vercel.app`
+- Production deployment `dpl_FoKSyjvShpbsDbY3F9qKeVPn7t23` is Ready at application commit `14dd9ab`; its runtime error scan is clean.
+- The role-aware document-first Casework UI is live. Non-owner navigation is limited to Court Record, Trial Index, Evidence, Questions, and Reports; the actual case owner retains the complete navigation.
 - Cockroach Lite route: `/lite`; 21 proceedings, 18 witness blocks, 70 speakers, and 3,988 segments published and validated twice with identical counts and hashes
 - Hosted Supabase project: `Icarus Casework Full`, active and explicitly linked
-- All 19 hosted migration versions match the repository; linked dry run reports no pending migrations
+- All 24 hosted migration versions through `20260912012500_supporting_media_delete.sql` match the repository; linked status reports no pending migrations or seeds.
 - Vercel holds the hosted Supabase URL and publishable key; no secret/service key is exposed to the client
-- Production `/login` returns `200`; unauthenticated `/casework` returns the expected `307` redirect to `/login`; no new server errors were observed
-- Hosted data inventory remains zero users, cases, proceedings, source segments, and trial-index days
+- Production `/login` returns `200`; unauthenticated protected routes return the expected redirect to `/login`.
+- The hosted Clancy corpus contains 20 proceedings and 35,291 exact source segments. Repeat governed publication produced no duplicate proceeding, segment, or analytical rows.
+- Trial Index contains 18 navigation-only days and 18 immutable versions. Its repeat publication is idempotent.
+- An authenticated hosted owner opened Casework, Trial Index, Court Record, Files, Questions, and Evidence successfully.
+- A private Vercel Blob store is connected to Production and Preview. Authenticated supporting-picture upload, read, and deletion passed the 4 MB server-action MVP smoke test.
+- A pre-pilot backup snapshot is preserved at `C:\Backups\IcarusCasework\20260912-001707`; a restore rehearsal remains open.
+- The detailed publication and acceptance record is maintained in `PILOT_DEPLOYMENT.md`.
 
 - Supabase CLI version pinned: `2.113.0`
 - WSL 2 with Ubuntu is installed and verified on the Microsoft WSL 2 kernel
 - Docker Desktop `4.86.0` and Docker CLI `29.7.2` are installed and the local engine runs successfully
-- All 19 migrations through `20260824081931_court_packet_document_intelligence_v1.sql` apply locally and match hosted migration history
+- All 24 migrations through `20260912012500_supporting_media_delete.sql` apply locally and match hosted migration history
 - RLS, policies, grants, private authorization helpers, and the owner-membership trigger are exercised by an authenticated browser session
 - Local magic-link delivery, OTP confirmation, cookie session refresh, case bootstrap, artifact/claim insertion, and authenticated audit attribution are verified end to end
 - Testimony intake RLS, cross-user denial, atomic commit, forbidden reconciliation fields, duplicate reuse, and read-only support/verification contracts pass against the live local Data API
 - The real Rev MA v. Lindsay Clancy Day 6 page passes the authenticated browser flow with 410 segments, 123 claims, four acquisition targets, and zero support or verification rows
 - Remote advisors report the expected authenticated governed `SECURITY DEFINER` RPCs; each remains protected by its internal case-authorization contract
 - ESLint, TypeScript, the maintained test suites, and the Next.js production build pass
-- Private Vercel Blob adapter is implemented with pinned `@vercel/blob` `2.8.0`; credentialed cloud verification is still pending
+- The private Vercel Blob adapter uses pinned `@vercel/blob` `2.8.0`; credentialed cloud upload/read/delete is verified.
+- Local development can use a real Supabase identity through the development-only Auth bypass. Commit `ee436a2` makes the bypass replace stale or different local sessions; this commit is not part of the verified production deployment and does not change production Auth.
 
 ## Deployment Gate
 
 Full Casework production acceptance is blocked until:
 
-- a production user is created or confirmed and receives explicit case ownership/membership;
-- the Clancy corpus is published through the governed idempotent boundary and verified in the production UI;
-- Google, Apple, and magic-link redirect domains are configured for the hosted environment;
-- Blob storage is provisioned with case-scoped access rules;
-- Google and Apple OAuth are verified with deployed credentials, and authentication/application authorization/RLS are retested against hosted Supabase;
+- a signed-in non-owner member and an unassigned outsider complete the hosted browser/RLS isolation pass;
+- Google, Apple, and magic-link redirect domains are configured for the hosted environment, with Google and Apple verified using deployed credentials;
 - the divergent Drizzle schema reference is reconciled or formally retired;
-- backup, restore, deletion, secret rotation, and incident procedures are rehearsed.
+- the preserved backup is restored into an isolated target and row-count, checksum, Auth, and source-link checks pass;
+- secret rotation and incident procedures are rehearsed.
 
 Allowed terminal dispositions: approved for deployment, rejected for remediation, superseded by Neon with recorded rationale, or cancelled. Provisioning activity alone does not satisfy the gate.

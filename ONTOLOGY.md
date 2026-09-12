@@ -301,3 +301,33 @@ Definition: An immutable checksum-addressed evidence payload held by the local f
 Status: Provisional
 
 Depends on: source artifact checksum and storage adapter
+
+### Supporting Material
+
+Definition: A private, case-scoped picture, screenshot, or reference file supplied by a researcher and organized in a folder to assist inquiry. Upload alone does not make it a canonical source, evidence of a fact, or part of the historical record. Any later evidentiary use requires explicit governed source linkage and review.
+
+Status: Provisional
+
+Rejected synonyms: Evidence, Canonical source, Established fact
+
+Depends on: case membership, private object storage, provenance, explicit evidence promotion
+
+### Research Question
+
+Definition: A durable, case-scoped inquiry with an explicit open or resolved state, context, exact-source links, research entries, and optional links to Research Evidence Items. Activity, confidence, or the presence of related material does not resolve the question; resolution requires explicit text, limitations, actor, and time.
+
+Status: Provisional
+
+Rejected synonyms: Search query, Resolved finding, Task completion
+
+Depends on: research workflow, exact source locators, review attribution, evidence links
+
+### Research Evidence Item
+
+Definition: A manually established case-scoped research item whose existence is supported by at least one reviewed source link. Its existence does not by itself establish significance, interpretation, admissibility, authenticity, or the truth of any related Claim; recorded facts retain their own source links.
+
+Status: Provisional
+
+Rejected synonyms: Proven fact, Canonical event, Supporting Material
+
+Depends on: reviewed source linkage, evidence facts, questions, provenance, human judgment

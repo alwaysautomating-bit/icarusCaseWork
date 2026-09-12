@@ -100,9 +100,9 @@ pnpm exec supabase db lint --local --level warning --fail-on error
 pnpm exec supabase db advisors --local --type all --level warn --fail-on error
 ```
 
-See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_09-08-2026.md](DEPLOYMENT_09-08-2026.md) for the controlled cloud deployment gate.
+See [SUPABASE_OPERATIONS.md](SUPABASE_OPERATIONS.md) for normal operations and [DEPLOYMENT_09-12-2026.md](DEPLOYMENT_09-12-2026.md) for the controlled cloud deployment gate.
 
-The first hosted Casework release is intentionally limited to Court Record, Trial Index, Files, Questions, Evidence, and owner-only Access. Follow [PILOT_DEPLOYMENT.md](PILOT_DEPLOYMENT.md) for its exact migration, publication, preview, verification, promotion, and rollback sequence.
+The first hosted Casework member release is intentionally limited to Court Record, Trial Index, Evidence, Questions, and Reports. The actual case owner retains the complete workspace, including private Files and owner-only Access. Follow [PILOT_DEPLOYMENT.md](PILOT_DEPLOYMENT.md) for its exact migration, publication, preview, verification, promotion, and rollback sequence.
 
 ## Data constraints
 

@@ -24,7 +24,7 @@ If Vercel does not provide `BLOB_READ_WRITE_TOKEN`, uploads fail closed. The app
 
 Audited on 2026-09-12:
 
-- Vercel project `icarus-case-work` is live at `https://icarus-case-work.vercel.app`; the `main` deployment is ready.
+- Vercel project `icarus-case-work` is live at `https://icarus-case-work.vercel.app`; production deployment `dpl_FoKSyjvShpbsDbY3F9qKeVPn7t23` is Ready at document-first UI commit `14dd9ab`, with a clean runtime error scan.
 - Production and Preview have the hosted Supabase URL, publishable key, and the connected private `icarus-casework-private-media` Blob store.
 - Hosted Supabase has all 24 migrations through `20260912012500_supporting_media_delete.sql`; a follow-up dry run reports no pending migrations or seeds.
 - The Clancy corpus is owned by the confirmed hosted account and contains 20 published proceedings and 35,291 exact source segments.
@@ -32,6 +32,10 @@ Audited on 2026-09-12:
 - Trial Index contains 18 navigation-only days, all linked to Court Record proceedings, with 18 immutable versions and a successful idempotent rerun.
 - The owner-authenticated production smoke check passed for Casework, Trial Index, Court Record, Files, Questions, and Evidence. A Preview upload was written to private Blob, read through the authenticated media route, and removed through the case-scoped delete action; the store was empty afterward.
 - The pre-write free-plan logical snapshot and checksum manifest are stored outside Git under `C:\Backups\IcarusCasework\20260912-001707`.
+
+## Local development access
+
+Local UI review can use the existing development-only Auth bypass with `local-owner@icarus.test`. It still creates a real Supabase session and exercises case membership and RLS. Commit `ee436a2` replaces stale or different local browser sessions so direct navigation to a protected case page reliably enters the intended five-tab member surface. This commit is local-only at this checkpoint and does not change production authentication.
 
 ## Release sequence
 
