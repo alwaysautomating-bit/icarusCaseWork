@@ -1,17 +1,16 @@
-# Icarus five-tab research pilot
+# Icarus role-aware research release
 
 This is the controlled release plan for the first hosted Casework slice.
 
-## Included surface
+## Member surface
 
 - **Court Record** — authenticated testimony search, exact transcript text, timestamps, speakers, and source links
 - **Trial Index** — the navigation-only Day 1–18 index
-- **Files** — private supporting pictures and folders; uploads remain non-canonical
-- **Questions** — open/resolved research queue with sourced known points and findings
 - **Evidence** — manually established items, underlying sources, sourced facts, and linked questions
-- **Access** — owner-only pilot membership management required to add testers
+- **Questions** — open/resolved research queue with sourced known points and findings
+- **Reports** — authenticated access to the currently retained reference downloads
 
-Vercel defaults to `research_pilot`. Advanced analytical routes are absent from navigation and direct requests to Structure, Review, Reconcile, Reconstruct, Care Trajectory, or Reports redirect to Trial Index. Local development defaults to the complete workspace. A later reviewed release can set `ICARUS_DEPLOYMENT_SLICE=full`.
+Every case member sees exactly these five tabs. The case owner retains the complete Casework navigation, including Structure, Review, Reconcile, Reconstruct, Care Trajectory, Files, and Access. Files remain private supporting material and are not treated as canonical record evidence. Actor Knowledge and Gaps remain visible only to the owner as disabled future-work labels.
 
 ## Storage behavior
 
@@ -46,7 +45,7 @@ Do not deploy directly from an unexplained dirty working tree. Resolve or delibe
    pnpm exec supabase db advisors --local --type all --level warn --fail-on error
    ```
 
-   `verify:pilot` runs the complete repository verification gate with no test exclusions. Reports remains outside this release even though the retained reference artifact is still integrity-checked.
+   `verify:pilot` runs the complete repository verification gate with no test exclusions. The retained reference report and its authenticated download route remain integrity-checked.
 
 2. Complete the hosted backup and restore-rehearsal gate in `SUPABASE_DATA_RECOVERY_SOP.md`.
 
@@ -83,11 +82,11 @@ Do not deploy directly from an unexplained dirty working tree. Resolve or delibe
    vercel deploy
    ```
 
-7. Verify the preview with the owner and one viewer account:
+7. Verify the preview with the owner and one non-owner member account:
 
    - login and logout;
-   - all five pilot tabs are visible;
-   - advanced case routes redirect to Trial Index;
+   - the owner sees the complete Casework navigation;
+   - the non-owner member sees only Court Record, Trial Index, Evidence, Questions, and Reports;
    - Court Record search returns Clancy testimony and opens exact segments;
    - Trial Index opens the corresponding Court Record proceeding;
    - a test image uploads, renders through the private authenticated route, and remains invisible to an outsider;
@@ -100,7 +99,7 @@ Do not deploy directly from an unexplained dirty working tree. Resolve or delibe
    vercel promote <verified-preview-url>
    ```
 
-9. Scan production runtime errors and re-run the five-tab smoke check. Add testers from the owner-only **Access** tab after each tester signs in once.
+9. Scan production runtime errors and re-run both the owner and five-tab member smoke checks. Add testers from the owner-only **Access** tab after each tester signs in once.
 
 ## Rollback
 

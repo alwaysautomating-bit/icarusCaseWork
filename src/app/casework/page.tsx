@@ -3,7 +3,7 @@ import { MonoLabel, Wordmark } from "@/app/casework-ui";
 import { signOut } from "@/app/login/actions";
 import { requireCaseActor } from "@/lib/authority";
 import { listAccessibleCases } from "@/lib/case-access";
-import { caseFilesHref, courtRecordHref, trialIndexHref } from "@/lib/case-routes";
+import { caseFilesHref, courtRecordHref, referenceReportsHref, trialIndexHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
@@ -26,7 +26,13 @@ export default async function CaseSelectionPage() {
       {cases.length === 0 ? <div className="case-index-empty"><h3>No cases are available.</h3><p>Create a case to establish its scope and begin source intake.</p></div> : <div className="case-card-grid">{cases.map((item) => <article className="case-card" key={item.id}>
         <header><MonoLabel>{item.membershipRole} · {item.workspace_key}</MonoLabel><span>{new Date(item.created_at).toLocaleDateString()}</span></header>
         <h2>{item.title}</h2><p>{item.purpose}</p>
-        <footer><Link href={trialIndexHref(item.id)}>Trial Index →</Link><Link href={courtRecordHref(item.id)}>Court Record →</Link><Link href={caseFilesHref(item.id)}>Files →</Link></footer>
+        <footer>
+          <Link href={trialIndexHref(item.id)}>Trial Index →</Link>
+          <Link href={courtRecordHref(item.id)}>Court Record →</Link>
+          {item.owner_user_id === actor.id
+            ? <Link href={caseFilesHref(item.id)}>Files →</Link>
+            : <Link href={referenceReportsHref(item.id)}>Reports →</Link>}
+        </footer>
       </article>)}</div>}
     </section>
   </main>;
