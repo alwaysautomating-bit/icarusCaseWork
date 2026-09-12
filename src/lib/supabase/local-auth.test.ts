@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getLocalAuthBypassCredentials, isLocalAuthBypassEnabled } from "@/lib/supabase/local-auth";
+import { getLocalAuthBypassCredentials, isLocalAuthBypassEnabled, shouldReplaceLocalAuthSession } from "@/lib/supabase/local-auth";
 
 describe("local auth bypass", () => {
   it("is available only in development when explicitly enabled", () => {
@@ -23,5 +23,13 @@ describe("local auth bypass", () => {
       ICARUS_LOCAL_AUTH_BYPASS: "true",
       ICARUS_LOCAL_AUTH_EMAIL: "researcher@example.test",
     })).toThrow("email or password is missing");
+  });
+
+  it("replaces missing or different development sessions", () => {
+    const credentials = { email: "local-owner@icarus.test", password: "local-only-password" };
+    expect(shouldReplaceLocalAuthSession(credentials, undefined)).toBe(true);
+    expect(shouldReplaceLocalAuthSession(credentials, "another-user@example.test")).toBe(true);
+    expect(shouldReplaceLocalAuthSession(credentials, "LOCAL-OWNER@ICARUS.TEST")).toBe(false);
+    expect(shouldReplaceLocalAuthSession(null, "another-user@example.test")).toBe(false);
   });
 });

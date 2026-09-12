@@ -15,3 +15,8 @@ export function getLocalAuthBypassCredentials(environment: LocalAuthEnvironment 
 
   return { email, password };
 }
+
+export function shouldReplaceLocalAuthSession(credentials: LocalAuthCredentials | null, currentEmail: unknown) {
+  if (!credentials) return false;
+  return typeof currentEmail !== "string" || currentEmail.toLowerCase() !== credentials.email.toLowerCase();
+}

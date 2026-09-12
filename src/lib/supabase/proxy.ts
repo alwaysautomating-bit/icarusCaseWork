@@ -1,7 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { getPublicSupabaseEnv } from "@/lib/supabase/env";
-import { getLocalAuthBypassCredentials } from "@/lib/supabase/local-auth";
+import { getLocalAuthBypassCredentials, shouldReplaceLocalAuthSession } from "@/lib/supabase/local-auth";
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -18,16 +18,14 @@ export async function updateSession(request: NextRequest) {
   });
 
   const { data } = await supabase.auth.getClaims();
-  if (!data?.claims) {
-    const localCredentials = getLocalAuthBypassCredentials();
-    if (localCredentials) {
-      const { error } = await supabase.auth.signInWithPassword(localCredentials);
-      if (error) throw new Error(`Local auth bypass failed: ${error.message}`);
+  const localCredentials = getLocalAuthBypassCredentials();
+  if (shouldReplaceLocalAuthSession(localCredentials, data?.claims?.email)) {
+    const { error } = await supabase.auth.signInWithPassword(localCredentials!);
+    if (error) throw new Error(`Local auth bypass failed: ${error.message}`);
 
-      const authenticatedResponse = NextResponse.redirect(request.nextUrl, 303);
-      response.cookies.getAll().forEach((cookie) => authenticatedResponse.cookies.set(cookie));
-      return authenticatedResponse;
-    }
+    const authenticatedResponse = NextResponse.redirect(request.nextUrl, 303);
+    response.cookies.getAll().forEach((cookie) => authenticatedResponse.cookies.set(cookie));
+    return authenticatedResponse;
   }
   return response;
 }
