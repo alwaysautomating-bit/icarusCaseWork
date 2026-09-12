@@ -59,8 +59,7 @@ function LinkedStructure({ caseId, query, segmentId, workspace }: { caseId: stri
 }
 
 export default async function CourtRecordPage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: SearchParams }) {
-  const actor = await requireCaseActor();
-  const [{ caseId }, queryState] = await Promise.all([params, searchParams]);
+  const [actor, { caseId }, queryState] = await Promise.all([requireCaseActor(), params, searchParams]);
   const query = queryState.q?.trim().slice(0, 500) ?? "";
   const [workspace, results] = await Promise.all([
     getCourtRecordWorkspace(actor.id, caseId, queryState.segment, queryState.proceeding),
@@ -71,7 +70,6 @@ export default async function CourtRecordPage({ params, searchParams }: { params
   const publicTranscriptUrl = revTranscriptPage({ proceedingTitle: workspace.proceeding?.title, canonicalUrl: workspace.artifact?.canonical_url, sourceUrl: workspace.artifact?.source_url });
 
   return <main className="court-record-shell">
-    <section className="court-record-heading"><div><MonoLabel>COURT RECORD · CANONICAL SOURCE RETRIEVAL</MonoLabel><h1>Read the words.<br />Inspect the chain.</h1></div><div className="court-record-summary"><strong>{workspace.totalSegments.toLocaleString()}</strong><span>RLS-visible source segments</span><p>The browser receives only this selected transcript window—not the full corpus.</p></div></section>
     <form className="court-search-form" method="get"><label><span>Search testimony</span><input name="q" defaultValue={query} minLength={2} maxLength={500} placeholder="what did Hall say about the backyard?" autoFocus /></label><button>Search record</button>{queryState.segment ? <input type="hidden" name="segment" value={queryState.segment} /> : null}{queryState.proceeding ? <input type="hidden" name="proceeding" value={queryState.proceeding} /> : null}</form>
     <div className="court-search-syntax"><span>Lexical FTS</span><span>Phrase-aware</span><span>Trigram fragments</span><code>couldnt wake</code><span>No generated answer</span></div>
     {workspace.selectedMissing ? <div className="record-notice" role="status"><strong>Requested segment unavailable.</strong><span>The identifier was invalid, belongs to another case, or is not visible under RLS. The first accessible segment is shown instead.</span></div> : null}

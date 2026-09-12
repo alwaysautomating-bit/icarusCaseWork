@@ -22,8 +22,7 @@ function sourceLink(source: EvidenceSource | undefined) {
 }
 
 export default async function EvidencePage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: Promise<SearchState> }) {
-  const actor = await requireCaseActor();
-  const [{ caseId }, query] = await Promise.all([params, searchParams]);
+  const [actor, { caseId }, query] = await Promise.all([requireCaseActor(), params, searchParams]);
   const [currentCase, workspace] = await Promise.all([getAccessibleCase(actor.id, caseId), getEvidenceWorkspace(caseId)]);
   if (!currentCase) notFound();
 
@@ -43,16 +42,14 @@ export default async function EvidencePage({ params, searchParams }: { params: P
   })() : questionsHref(caseId);
 
   return <main className="research-queue-shell evidence-workspace-shell">
-    <header className="research-page-heading"><div><MonoLabel>ESTABLISHED ITEM INDEX</MonoLabel><h1>Evidence</h1><p>Track what an item is, what the sources establish, and which questions remain open.</p></div><aside><strong>{workspace.evidence.length}</strong><span>EVIDENCE ITEMS</span></aside></header>
-    <p className="evidence-boundary"><strong>Evidence is not interpretation.</strong> Add an item only when a reviewed source establishes that it exists. Facts here require an underlying source; significance remains a research question.</p>
+    <header className="research-workbench-heading"><div><h1>Evidence</h1><span>{workspace.evidence.length} items</span></div>{canContribute ? <Link href={`${evidenceHref(caseId)}?add=1`}>+ Add evidence</Link> : null}</header>
+    <details className="research-boundary-note"><summary>Evidence boundary</summary><p>Add an item only when reviewed material establishes that it exists. Facts require an underlying source; significance remains a research question.</p></details>
     {(query.message || query.error) && <p className={`supporting-files-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
-
-    <form method="get" className="research-search-bar"><label><span>Search evidence</span><input name="q" defaultValue={query.q ?? ""} placeholder="hand swabs, phone, photograph…" /></label><button>Search</button>{canContribute && <Link href={`${evidenceHref(caseId)}?add=1`}>+ Add evidence</Link>}</form>
 
     {showAdd && <form action={createEvidenceAction.bind(null, caseId)} className="research-create-form"><header><div><MonoLabel>ADD EVIDENCE</MonoLabel><h2>Name an established item</h2></div><span>Source it next</span></header><label>Evidence name *<input name="name" required minLength={2} maxLength={300} placeholder="External hand swabs" /></label><label className="wide">What is it? <small>Describe, do not interpret.</small><textarea name="description" rows={3} maxLength={3000} placeholder="A concise identifying description." /></label><label className="wide">Research note <small>Optional</small><textarea name="researchNote" rows={3} maxLength={3000} placeholder="Provenance concerns, limitations, or handling notes." /></label><label className="research-confirm"><input type="checkbox" name="established" value="yes" required /><span>I reviewed material that establishes this item exists.</span></label><SubmitButton pendingLabel="Adding…">Add evidence item</SubmitButton></form>}
 
     <div className="research-split-workspace">
-      <aside className="research-index-list" aria-label="Evidence list"><header><span>EVIDENCE INDEX</span><strong>{filtered.length}</strong></header>{filtered.length === 0 ? <div className="research-index-empty">No matching evidence items.</div> : filtered.map((item) => { const active = selected?.id === item.id; const sourceCount = workspace.sources.filter((source) => source.evidence_id === item.id).length; const questionCount = workspace.links.filter((link) => link.evidence_id === item.id).length; return <Link href={`${evidenceHref(caseId, item.id)}${query.q ? `&q=${encodeURIComponent(query.q)}` : ""}`} aria-current={active ? "page" : undefined} key={item.id}><span>{evidenceCode(item.id)}</span><strong>{item.name}</strong><small>{sourceCount} sources · {questionCount} questions</small></Link>; })}</aside>
+      <aside className="research-index-list" aria-label="Evidence list"><form method="get" className="research-search-bar research-index-search"><label><span>Search evidence</span><input name="q" defaultValue={query.q ?? ""} placeholder="hand swabs, phone, photograph…" /></label><button>Search</button></form><header><span>EVIDENCE INDEX</span><strong>{filtered.length}</strong></header>{filtered.length === 0 ? <div className="research-index-empty">No matching evidence items.</div> : filtered.map((item) => { const active = selected?.id === item.id; const sourceCount = workspace.sources.filter((source) => source.evidence_id === item.id).length; const questionCount = workspace.links.filter((link) => link.evidence_id === item.id).length; return <Link href={`${evidenceHref(caseId, item.id)}${query.q ? `&q=${encodeURIComponent(query.q)}` : ""}`} aria-current={active ? "page" : undefined} key={item.id}><span>{evidenceCode(item.id)}</span><strong>{item.name}</strong><small>{sourceCount} sources · {questionCount} questions</small></Link>; })}</aside>
 
       <section className="research-record-panel">{selected ? <>
         <header className="research-record-title"><div><MonoLabel>{evidenceCode(selected.id)}</MonoLabel><h2>{selected.name}</h2><span className="state-chip pass">established</span></div><time>{new Date(selected.created_at).toLocaleDateString()}</time></header>

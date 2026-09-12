@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
 import { CollapseDocument } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
@@ -28,8 +29,7 @@ function indexHref(caseId: string, dayNumber: number, section?: string) {
 }
 
 export default async function TrialIndexPage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: SearchParams }) {
-  const actor = await requireCaseActor();
-  const [{ caseId }, state, days] = await Promise.all([params, searchParams, getCollapseTrialIndexDays()]);
+  const [actor, { caseId }, state, days] = await Promise.all([requireCaseActor(), params, searchParams, getCollapseTrialIndexDays()]);
   const workspace = await getTrialIndexWorkspace(actor.id, caseId, {});
   if (!workspace || days.length === 0) notFound();
 
@@ -37,21 +37,25 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
   const selectedDay = days.find((day) => day.dayNumber === requestedDay) ?? days[0];
   const selectedSection = selectedDay.sections.find((section) => section.slug === state.section) ?? selectedDay.sections[0];
   if (!selectedSection) notFound();
+  const selectedDayIndex = days.indexOf(selectedDay);
+  const previousDay = selectedDayIndex > 0 ? days[selectedDayIndex - 1] : null;
+  const nextDay = selectedDayIndex < days.length - 1 ? days[selectedDayIndex + 1] : null;
 
   return <main className="collapse-trial-index-shell">
-    <FileTabNav
-      ariaLabel="Trial day files"
-      className="collapse-file-tabs"
-      tabs={days.map((day) => ({ active: day.dayNumber === selectedDay.dayNumber, href: indexHref(caseId, day.dayNumber), label: `Day ${day.dayNumber}` }))}
-    />
+    <nav className="trial-day-context" aria-label="Trial day">
+      {previousDay ? <Link href={indexHref(caseId, previousDay.dayNumber)} aria-label={`Previous trial day, Day ${previousDay.dayNumber}`}>‹</Link> : <span aria-disabled="true">‹</span>}
+      <details>
+        <summary>Day {selectedDay.dayNumber} of {days.length}</summary>
+        <div>{days.map((day) => <Link href={indexHref(caseId, day.dayNumber)} prefetch={false} aria-current={day.dayNumber === selectedDay.dayNumber ? "page" : undefined} key={day.dayNumber}>Day {day.dayNumber}</Link>)}</div>
+      </details>
+      {nextDay ? <Link href={indexHref(caseId, nextDay.dayNumber)} aria-label={`Next trial day, Day ${nextDay.dayNumber}`}>›</Link> : <span aria-disabled="true">›</span>}
+      <strong>Supplied working material</strong>
+    </nav>
 
-    <section className="collapse-purpose-card">
-      <header>
-        <div><MonoLabel>TRIAL INDEX · DAY {selectedDay.dayNumber}</MonoLabel><h1>Purpose</h1></div>
-        <div className="collapse-purpose-meta"><span>SUPPLIED WORKING MATERIAL</span><strong>{selectedDay.sections.length} SECTIONS</strong></div>
-      </header>
+    <details className="trial-purpose-disclosure">
+      <summary>Day {selectedDay.dayNumber} purpose</summary>
       <CollapseDocument content={selectedDay.purpose} />
-    </section>
+    </details>
 
     <section className="collapse-index-file">
       <FileTabNav
@@ -61,7 +65,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
       />
 
       <article className="collapse-section-panel">
-        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION</MonoLabel><h2>{selectedSection.name}</h2></div><span>{selectedDay.sections.indexOf(selectedSection) + 1} / {selectedDay.sections.length}</span></header>
+        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {selectedDay.sections.indexOf(selectedSection) + 1} OF {selectedDay.sections.length}</MonoLabel><h1>{selectedSection.name}</h1></div></header>
         <CollapseDocument content={selectedSection.content} />
       </article>
     </section>

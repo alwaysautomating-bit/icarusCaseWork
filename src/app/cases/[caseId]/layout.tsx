@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fraunces, IBM_Plex_Mono, Public_Sans } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Wordmark } from "@/app/casework-ui";
 import { signOut } from "@/app/login/actions";
@@ -9,12 +10,15 @@ import { getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
 
 export const dynamic = "force-dynamic";
 
+const workbenchSans = Public_Sans({ variable: "--font-workbench-sans", subsets: ["latin"] });
+const workbenchSerif = Fraunces({ variable: "--font-workbench-serif", subsets: ["latin"] });
+const workbenchMono = IBM_Plex_Mono({ variable: "--font-workbench-mono", subsets: ["latin"], weight: ["400", "500", "600"] });
+
 export default async function CaseLayout({ children, params }: { children: React.ReactNode; params: Promise<{ caseId: string }> }) {
-  const actor = await requireCaseActor();
-  const { caseId } = await params;
+  const [actor, { caseId }] = await Promise.all([requireCaseActor(), params]);
   const [currentCase, cases] = await Promise.all([getAccessibleCase(actor.id, caseId), listAccessibleCases(actor.id)]);
   if (!currentCase) notFound();
-  return <div className="case-workspace-shell">
+  return <div className={`case-workspace-shell ${workbenchSans.variable} ${workbenchSerif.variable} ${workbenchMono.variable}`}>
     <header className="case-workspace-masthead">
       <Link href="/" aria-label="Return to case selection"><Wordmark /></Link>
       <CaseSwitcher activeCaseId={currentCase.id} cases={cases.map((item) => ({ id: item.id, title: item.title }))} />
