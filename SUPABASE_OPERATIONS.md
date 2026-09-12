@@ -384,13 +384,12 @@ Verified locally on 2026-09-11:
 - Questions and evidence are separate case-scoped research layers. Known points, findings, and evidence facts require source linkage, while unresolved questions and research targets may remain open without a forced answer.
 - Vercel deployments default to the narrow research pilot: Court Record, Trial Index, Files, Questions, Evidence, and owner-only Access. Advanced case routes redirect to Trial Index; the complete workspace remains available locally.
 - Supporting-image bytes use private Vercel Blob when `BLOB_READ_WRITE_TOKEN` is present. A Vercel deployment without that connection fails closed instead of writing to ephemeral local storage. Credentialed preview upload/read verification remains required before promotion.
-- The hosted project remains at the first 21 migrations through `20260909063227_split_member_mutation_policies.sql`. The supporting-media and research-workspace migrations are local-only until their hosted storage and pilot rollout are deliberately approved. The hosted schema passes database lint; its advisor findings are the reviewed, authenticated `SECURITY DEFINER` RPCs whose fixed-search-path and in-function authorization checks form the governed mutation boundary.
+- The hosted project has all 23 migrations through `20260909204037_research_questions_evidence_mvp.sql`. Its nine pilot tables have RLS, explicit authenticated grants, case-scoped policies, and no anonymous reads. The advisor security baseline is unchanged; the reviewed authenticated `SECURITY DEFINER` RPCs retain fixed search paths and in-function authorization checks as the governed mutation boundary.
+- Hosted publication contains 20 published proceedings and 35,291 exact source segments. A complete rerun reused every package without duplicates or analytical rows. Trial Index contains 18 navigation-only days, all linked to Court Record proceedings, and its rerun preserved the same 18 immutable versions.
 - The owner access panel and post-login `/casework` redirect are deployed to `https://icarus-case-work.vercel.app`; unauthenticated `/casework` requests redirect to `/login` and the deployment error scan is clean.
 
 Hosted pilot onboarding still requires:
 
-- The intended owner completes the first hosted sign-in.
-- The preserved corpus and Trial Index are published and their idempotent reruns are verified.
 - Magic-link delivery and redirect behavior are verified with the owner and one separate explorer account. Google and Apple remain optional until their provider credentials are provisioned.
 - Hosted RLS, grants, backups, restore, deletion, secret rotation, and incident procedures are tested.
 - Private Blob upload, authenticated read, failure cleanup, and outsider denial are verified on a preview deployment.

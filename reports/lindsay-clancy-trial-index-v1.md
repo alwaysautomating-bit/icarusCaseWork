@@ -1,10 +1,11 @@
 # Lindsay Clancy Trial Navigation Index v1
 
-Generated: 2026-09-09T06:42:19.621Z
+Generated: 2026-09-12T05:27:03.811Z
 
 - Indexed trial days: **18**
-- Canonical proceeding links: **14**
-- Editorial-only days awaiting canonical transcripts: **4**
+- Canonical proceeding links: **18**
+- Days without a canonical proceeding link: **0**
+- Days whose supplied summary basis remains editorial reference: **4**
 - Witness entries: **36**
 - Topic entries: **54**
 - Immutable day versions: **18**
@@ -16,4 +17,4 @@ Generated: 2026-09-09T06:42:19.621Z
 
 ## Boundary
 
-This is a table of contents for the trial. Reporting summaries and external references are non-evidentiary navigation aids. Canonical proceeding links open the Court Record; no claims, canonical events, findings, or reconstruction versions are created. The importer preserves existing days unless a specific day is selected with `--update-day`.
+This is a table of contents for the trial. Reporting summaries and external references are non-evidentiary navigation aids even when a day also links to its canonical proceeding. Canonical proceeding links open the Court Record; no claims, canonical events, findings, or reconstruction versions are created. The importer preserves existing days unless a specific day is selected with `--update-day`.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": "testimony-corpus-integrity/1.0",
-  "generatedAt": "2026-09-09T06:42:05.900Z",
-  "target": "local",
-  "caseId": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "generatedAt": "2026-09-12T05:25:34.497Z",
+  "target": "hosted",
+  "caseId": "a9795470-d05f-4d69-a823-743d6f807c01",
   "scope": [
     "Day 2",
     "Day 3",
@@ -28,8 +28,8 @@
   "batch": [
     {
       "key": "day-2",
-      "proceedingId": "b6bdf660-3fab-4b1f-89d5-2e4e16c25cc3",
-      "packageVersionId": "2ce60493-d978-482b-bc05-1bb749f48eeb",
+      "proceedingId": "f52730e7-fdd5-40d5-85ad-d674c0277acd",
+      "packageVersionId": "5f55b4be-e6e8-41fb-a19a-9e44ebfd49fe",
       "duplicate": true,
       "sourceSha256": "765c37d83171d5ee59da92a0af24714c09216e259073918b1497b48cd4139633",
       "sourceUrl": null,
@@ -52,8 +52,8 @@
     },
     {
       "key": "day-3",
-      "proceedingId": "56067e10-b6ce-4ed3-8e0d-eb8e5ca7ce1f",
-      "packageVersionId": "1d0a7c0d-177a-4e49-9a3d-ba73120647b2",
+      "proceedingId": "f6d0129f-b0dc-4d1f-9754-8cdd66610dd6",
+      "packageVersionId": "d2883602-d400-489e-9994-5f92d2ab95a2",
       "duplicate": true,
       "sourceSha256": "6393970b4e8c473364cb115cd212bd7573f5cbadf3890a8abf631f9b993921d7",
       "sourceUrl": null,
@@ -76,8 +76,8 @@
     },
     {
       "key": "day-4",
-      "proceedingId": "636bb81e-c2cf-4e63-ad0c-37c57857f17d",
-      "packageVersionId": "8f78bda0-0625-4541-b537-e9bee50eddc8",
+      "proceedingId": "0a1b1eb3-ecc5-4876-a562-7019f84d5fb2",
+      "packageVersionId": "902a24d8-9cea-4bcf-8d24-2d8655b234b8",
       "duplicate": true,
       "sourceSha256": "e42f3ec7f9c737cdbebac60ff0d69f32a1f1d6bc93a355d6dfc8f5e536b07012",
       "sourceUrl": null,
@@ -100,8 +100,8 @@
     },
     {
       "key": "day-5",
-      "proceedingId": "4abed97b-4c69-434e-91ac-a2db362ba13c",
-      "packageVersionId": "9976e51f-7c3d-421e-a1ca-1e399d601f55",
+      "proceedingId": "1cde0ce6-23c9-4db8-ae48-7201137f75f5",
+      "packageVersionId": "3bab84fd-70c6-4cc4-8031-a646cade3074",
       "duplicate": true,
       "sourceSha256": "c3d0ec9c5b6b81c4d9fc5a417a72c2f79336b09470f04001b6e54e41b8cc5c27",
       "sourceUrl": null,
@@ -124,8 +124,8 @@
     },
     {
       "key": "day-6",
-      "proceedingId": "5dae34b9-24a0-45a6-bcf9-61d56cd1e945",
-      "packageVersionId": "a1fb3c00-bac2-41ba-b535-61701574b0b5",
+      "proceedingId": "a65eb775-66ab-4248-af8b-1f36dcfb1b9f",
+      "packageVersionId": "739d756c-fe7e-4b13-9d14-8997e6a69b72",
       "duplicate": true,
       "sourceSha256": "0f5a57915e66eba806400bac1ffcd54d33092d1268e2755a673e5a3ce1097b79",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-6",
@@ -148,8 +148,8 @@
     },
     {
       "key": "day-7",
-      "proceedingId": "4a43a104-faec-4c8e-922d-0e9ddd5ec30c",
-      "packageVersionId": "cae6d629-ed83-4d1c-95f5-3aed53a76ebf",
+      "proceedingId": "7ee66303-de9d-4280-a33d-dc95843832fb",
+      "packageVersionId": "f81dbf41-1f4e-4a1b-9253-9aac9346ec8e",
       "duplicate": true,
       "sourceSha256": "2c8e1ddbdcf87920bb093d96aad128c69411bfae75dfa3a58004978701f87efd",
       "sourceUrl": null,
@@ -172,8 +172,8 @@
     },
     {
       "key": "day-8",
-      "proceedingId": "88f825f8-e33b-4f74-b04d-d48a9a288faf",
-      "packageVersionId": "ebaafca4-1cef-424a-acb1-d0a8ff74b3ee",
+      "proceedingId": "28964573-ce9e-4499-bc20-a92671796dd2",
+      "packageVersionId": "eec10ef0-6561-4a86-88a5-be8a968d5b13",
       "duplicate": true,
       "sourceSha256": "100e9122089d8795a37e527fb7ef5b383199ed7108ca7b566eb2879eeca9dcba",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-8",
@@ -196,8 +196,8 @@
     },
     {
       "key": "day-9",
-      "proceedingId": "01e756e9-7d6d-48ab-aa00-762701d27a05",
-      "packageVersionId": "b21ff844-6278-4598-ae64-f107b32fe5cf",
+      "proceedingId": "d7e2cf01-de5f-48f1-96e4-cfeaa1049051",
+      "packageVersionId": "6ca62327-b68a-4b05-b3b3-3ea1d4428d7a",
       "duplicate": true,
       "sourceSha256": "30346096b485ef2568dd2682e26330f4bebc312f6af1ead0cfb1fa2f12542926",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-9",
@@ -220,8 +220,8 @@
     },
     {
       "key": "day-10",
-      "proceedingId": "184d4976-da07-4d98-8096-39089194af8e",
-      "packageVersionId": "9c7ac6ea-8e4b-4e94-854f-52d252b49745",
+      "proceedingId": "14c749d0-484f-42aa-8905-4f9b6239dea0",
+      "packageVersionId": "31cb9a34-9858-4d79-a50f-dc9734c03f89",
       "duplicate": true,
       "sourceSha256": "fd94972c56cd53dc8cb812cab41e563f96efadf50bdc1c8080c7991fc617aab3",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-10",
@@ -244,8 +244,8 @@
     },
     {
       "key": "day-11",
-      "proceedingId": "5b08ca98-ecd1-4cac-9502-f70919264e73",
-      "packageVersionId": "04b0eaf3-cafc-4f4f-85cb-1767ab5f53ca",
+      "proceedingId": "eb792bb4-89e0-492a-8e64-f15a62a64e4a",
+      "packageVersionId": "30059661-e3cc-4b89-9201-d52ff3ab974c",
       "duplicate": true,
       "sourceSha256": "c11ae8da4354d086ecbbe28a681df9fb29caa2cb01f349df032a414b5bdf883f",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-11",
@@ -268,8 +268,8 @@
     },
     {
       "key": "day-12",
-      "proceedingId": "478a2256-c01f-4e98-b6e6-6348d97549bf",
-      "packageVersionId": "df07a849-8016-4113-bb40-cebcb250fe78",
+      "proceedingId": "9cc77bc1-6355-442d-9e22-036105d3e831",
+      "packageVersionId": "f2ad7999-69de-48f6-921a-795d2d5cbb9d",
       "duplicate": true,
       "sourceSha256": "12b26c491a4b7dab69a0e5d7860387e020f7ddf73928c42894a4503df77089de",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-12",
@@ -292,8 +292,8 @@
     },
     {
       "key": "day-13",
-      "proceedingId": "362d8bd7-7273-40f6-bd0a-6fe8f88d7bd9",
-      "packageVersionId": "9bb113c7-7070-4c82-b274-efccf6f88518",
+      "proceedingId": "e3fd55ee-0c10-4cae-b1ed-04e84ed7adcb",
+      "packageVersionId": "9469b75e-7da5-44c3-8f1c-0651538e8b78",
       "duplicate": true,
       "sourceSha256": "2bae6361806288fe6f9f6cfafdf38d882a3ae2e236cbb296071bf47455ec189f",
       "sourceUrl": null,
@@ -316,8 +316,8 @@
     },
     {
       "key": "day-14",
-      "proceedingId": "f01d2a1f-5a89-4306-894c-306f15b9c7d3",
-      "packageVersionId": "3a5006fc-c040-4a9f-bc68-0863ccecae8b",
+      "proceedingId": "a10edd2c-576a-49e5-8cb8-6ed7cf310e60",
+      "packageVersionId": "19e42e71-bef3-4aac-a891-a20489b42704",
       "duplicate": true,
       "sourceSha256": "eac3320443440ef1a6c88c077e1572ceeabdc3aeed272b338294512182a11f5d",
       "sourceUrl": null,
@@ -340,8 +340,8 @@
     },
     {
       "key": "day-15",
-      "proceedingId": "5ef701bd-e227-4514-b7ae-a91a58ff3674",
-      "packageVersionId": "3a4be9e5-23b5-466c-a122-9887bef47385",
+      "proceedingId": "2b2efa59-fd5b-4e56-a0d1-4e9ee518c17d",
+      "packageVersionId": "9d99d488-c655-4486-9716-3a303778d700",
       "duplicate": true,
       "sourceSha256": "bcf8b1b0403b2711ead72c7679aa655f587f512617a844390e3eaa7a93d81cdc",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-15",
@@ -364,8 +364,8 @@
     },
     {
       "key": "day-16",
-      "proceedingId": "9e8c5c4c-aabc-4bbc-b08c-d7a96853b48a",
-      "packageVersionId": "ab11557f-c615-4911-81f3-48ee316ae527",
+      "proceedingId": "059020f6-87a1-42e6-a3e4-530cd5babf14",
+      "packageVersionId": "6b4a540b-e849-446a-ab0e-b7489b29b40e",
       "duplicate": true,
       "sourceSha256": "68452dc944508a3b6567bd19125cf49a117f47e2ff5d108ca1452276f0c97b95",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-16",
@@ -388,8 +388,8 @@
     },
     {
       "key": "day-17",
-      "proceedingId": "814139d7-d381-48e4-abae-6749df2f3fc6",
-      "packageVersionId": "c307b7cd-b01d-40ab-a925-90ca30ac2f62",
+      "proceedingId": "ed8d495a-3e3b-4729-ab33-93f101c2f0b6",
+      "packageVersionId": "f5533caf-02f8-434d-9e98-8913ac062b15",
       "duplicate": true,
       "sourceSha256": "10fca698d59a3d5fd465deb12ea6d5ee44c2459cbfb4c48573bec936f943f1da",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-17",
@@ -412,8 +412,8 @@
     },
     {
       "key": "day-18",
-      "proceedingId": "73bdce8d-3581-471c-87d1-b57f68043ee0",
-      "packageVersionId": "8445789f-386c-45f7-a395-4a18e8a5a265",
+      "proceedingId": "59c99eea-a02a-481e-98df-506083ddeee4",
+      "packageVersionId": "626a7751-f499-4c94-8b31-a22773719f30",
       "duplicate": true,
       "sourceSha256": "18f2d738ed22b71a58d9b1f2f501c87126c2a51da6254a7af8288d37b42e3279",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-18",
@@ -436,8 +436,8 @@
     },
     {
       "key": "day-19",
-      "proceedingId": "165fb40a-d5fe-445c-be31-4aa29d17da6e",
-      "packageVersionId": "dbee541e-447b-4817-884b-76cb152fec8c",
+      "proceedingId": "52f88baa-efcc-4410-9e1f-939a7ab7159e",
+      "packageVersionId": "054f9f8d-a793-4dde-8d54-f15d526a2f73",
       "duplicate": true,
       "sourceSha256": "2a330bf2a1e0050f4b6c3479c07e4cbc3f5ac8739e548d9e588b6b6f737297a4",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-19",
@@ -460,8 +460,8 @@
     },
     {
       "key": "day-20",
-      "proceedingId": "72048e9f-6a21-4252-9f90-07f718ef2265",
-      "packageVersionId": "86fe740a-1c0a-442c-a3c0-f80ebee6bda3",
+      "proceedingId": "ef41b9af-c455-462f-85ce-42fc8cc59b50",
+      "packageVersionId": "f4de428f-ea3a-4a07-94f0-1c3977e2a883",
       "duplicate": true,
       "sourceSha256": "e163a3153d8413492af6408c06ab00f260975e960b292e199ca9961e93d49e5c",
       "sourceUrl": "https://www.rev.com/transcripts/ma-v-lindsay-clancy-day-20",
@@ -484,8 +484,8 @@
     },
     {
       "key": "opening-statements",
-      "proceedingId": "97350735-2d1f-4b61-bdc6-10068ee207df",
-      "packageVersionId": "879f10ae-01ce-4e4b-add0-f467d22636a5",
+      "proceedingId": "1214f3f6-ee05-4b9e-8fc8-d3bdb7a94866",
+      "packageVersionId": "7c834a30-e6a0-43aa-8df8-c1d007be99e7",
       "duplicate": true,
       "sourceSha256": "309d3a537aab398b80bb4d516ea1f6b66624ca0c5acc0d0da22973b6f03ac6a8",
       "sourceUrl": null,
@@ -519,19 +519,10 @@
     "stipulations": 6,
     "resolutionItems": 5
   },
-  "day6Acceptance": {
-    "id": "b8f3a686-3658-4c0c-b4a9-3f83c30743f1",
-    "title": "MA v. Lindsay Clancy Day 6",
-    "status": "published",
-    "detected_segments": 2197,
-    "parsed_segments": 2197,
-    "committed_segments": 2197,
-    "last_timestamp_ms": 15402000,
-    "finalTimestamp": "04:16:42"
-  },
+  "day6Acceptance": null,
   "corpusTotalsIncludingDay6": {
     "proceedings": 20,
-    "segments": 35326
+    "segments": 35291
   },
   "integrity": {
     "completeness": true,
@@ -544,7 +535,7 @@
     "caseworkImports": 0,
     "analyticalRows": 0,
     "analyticalCounts": {
-      "claims": 25,
+      "claims": 0,
       "events": 0,
       "claim_support": 0,
       "verification_assessments": 0,

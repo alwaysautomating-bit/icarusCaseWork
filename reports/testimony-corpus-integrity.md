@@ -1,6 +1,6 @@
 # Testimony Compiler corpus integrity report
 
-Generated: 2026-09-09T06:42:05.900Z
+Generated: 2026-09-12T05:25:34.497Z
 
 Scope: Day 2, Day 3, Day 4, Day 5, Day 6, Day 7, Day 8, Day 9, Day 10, Day 11, Day 12, Day 13, Day 14, Day 15, Day 16, Day 17, Day 18, Day 19, Day 20, Opening Statements. Day 6 was published into the main corpus by this batch. No Casework analytical assessment or import was created by this batch.
 
@@ -52,6 +52,6 @@ Scope: Day 2, Day 3, Day 4, Day 5, Day 6, Day 7, Day 8, Day 9, Day 10, Day 11, D
 
 ## Corpus status
 
-Main published corpus: 20 proceedings and 35326 committed segments.
+Main published corpus: 20 proceedings and 35291 committed segments.
 
-Separate historical Day 6 acceptance fixture: {"id":"b8f3a686-3658-4c0c-b4a9-3f83c30743f1","title":"MA v. Lindsay Clancy Day 6","status":"published","detected_segments":2197,"parsed_segments":2197,"committed_segments":2197,"last_timestamp_ms":15402000,"finalTimestamp":"04:16:42"}
+No separate Day 6 acceptance fixture was found.

@@ -69,7 +69,8 @@ const report = {
   caseId,
   days: daysResult.data.length,
   canonicalProceedingLinks: daysResult.data.filter((day) => day.proceeding_id).length,
-  editorialOnlyDays: daysResult.data.filter((day) => day.basis === "editorial_reference").length,
+  unlinkedDays: daysResult.data.filter((day) => !day.proceeding_id).length,
+  editorialReferenceDays: daysResult.data.filter((day) => day.basis === "editorial_reference").length,
   witnessEntries: daysResult.data.reduce((total, day) => total + day.witness_names.length, 0),
   topicEntries: daysResult.data.reduce((total, day) => total + day.topic_labels.length, 0),
   immutableVersions: versionsResult.count ?? 0,
@@ -80,8 +81,9 @@ const report = {
   navigationOnly: daysResult.data.every((day) => day.navigation_only),
   boundaries: { evidenceRowsCreated: 0, claimsCreated: 0, canonicalEventsCreated: 0, reconstructionVersionsCreated: 0 },
 };
-assert.equal(report.canonicalProceedingLinks, 14);
-assert.equal(report.editorialOnlyDays, 4);
+assert.equal(report.canonicalProceedingLinks, fixture.days.filter((day) => proceedingForDay(day.day_number)).length);
+assert.equal(report.canonicalProceedingLinks + report.unlinkedDays, report.days);
+assert.equal(report.editorialReferenceDays, 4);
 await writeFile(path.resolve("reports/lindsay-clancy-trial-index-v1.json"), `${JSON.stringify(report, null, 2)}\n`, "utf8");
-await writeFile(path.resolve("reports/lindsay-clancy-trial-index-v1.md"), `# Lindsay Clancy Trial Navigation Index v1\n\nGenerated: ${report.generatedAt}\n\n- Indexed trial days: **${report.days}**\n- Canonical proceeding links: **${report.canonicalProceedingLinks}**\n- Editorial-only days awaiting canonical transcripts: **${report.editorialOnlyDays}**\n- Witness entries: **${report.witnessEntries}**\n- Topic entries: **${report.topicEntries}**\n- Immutable day versions: **${report.immutableVersions}**\n- Existing days preserved: **${report.existingDaysPreserved}**\n- Days created this run: **${report.createdDays}**\n- Days explicitly updated this run: **${report.updatedDays}**\n- Idempotent replay: **${report.idempotentReplay ? "PASS" : "FAIL"}**\n- Navigation-only constraint: **${report.navigationOnly ? "PASS" : "FAIL"}**\n\n## Boundary\n\nThis is a table of contents for the trial. Reporting summaries and external references are non-evidentiary navigation aids. Canonical proceeding links open the Court Record; no claims, canonical events, findings, or reconstruction versions are created. The importer preserves existing days unless a specific day is selected with \`--update-day\`.\n`, "utf8");
+await writeFile(path.resolve("reports/lindsay-clancy-trial-index-v1.md"), `# Lindsay Clancy Trial Navigation Index v1\n\nGenerated: ${report.generatedAt}\n\n- Indexed trial days: **${report.days}**\n- Canonical proceeding links: **${report.canonicalProceedingLinks}**\n- Days without a canonical proceeding link: **${report.unlinkedDays}**\n- Days whose supplied summary basis remains editorial reference: **${report.editorialReferenceDays}**\n- Witness entries: **${report.witnessEntries}**\n- Topic entries: **${report.topicEntries}**\n- Immutable day versions: **${report.immutableVersions}**\n- Existing days preserved: **${report.existingDaysPreserved}**\n- Days created this run: **${report.createdDays}**\n- Days explicitly updated this run: **${report.updatedDays}**\n- Idempotent replay: **${report.idempotentReplay ? "PASS" : "FAIL"}**\n- Navigation-only constraint: **${report.navigationOnly ? "PASS" : "FAIL"}**\n\n## Boundary\n\nThis is a table of contents for the trial. Reporting summaries and external references are non-evidentiary navigation aids even when a day also links to its canonical proceeding. Canonical proceeding links open the Court Record; no claims, canonical events, findings, or reconstruction versions are created. The importer preserves existing days unless a specific day is selected with \`--update-day\`.\n`, "utf8");
 process.stdout.write(`${JSON.stringify(report)}\n`);

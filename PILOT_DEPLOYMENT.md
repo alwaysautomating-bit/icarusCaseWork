@@ -23,15 +23,15 @@ If Vercel does not provide `BLOB_READ_WRITE_TOKEN`, uploads fail closed. The app
 
 ## Current hosted state
 
-Audited on 2026-09-11:
+Audited on 2026-09-12:
 
 - Vercel project `icarus-case-work` is linked and its latest production deployment is ready.
 - Production and Preview have the hosted Supabase URL, publishable key, and private Blob token.
-- Hosted Supabase contains one Auth user and no cases, proceedings, testimony segments, or Trial Index days.
-- Hosted Supabase is missing exactly these additive migrations:
-  - `20260909080138_supporting_media_library_v1.sql`
-  - `20260909204037_research_questions_evidence_mvp.sql`
-- `supabase db push --linked --dry-run` confirms only those two migrations are pending.
+- Hosted Supabase has all 23 migrations through `20260909204037_research_questions_evidence_mvp.sql`; a follow-up dry run reports no pending migrations or seeds.
+- The Clancy corpus is owned by the confirmed hosted account and contains 20 published proceedings and 35,291 exact source segments.
+- A complete rerun reused all 20 packages, created no duplicates, and created no claims, events, or other analytical findings.
+- Trial Index contains 18 navigation-only days, all linked to Court Record proceedings, with 18 immutable versions and a successful idempotent rerun.
+- The pre-write free-plan logical snapshot and checksum manifest are stored outside Git under `C:\Backups\IcarusCasework\20260912-001707`.
 
 ## Release sequence
 
