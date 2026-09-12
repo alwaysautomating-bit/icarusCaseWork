@@ -159,3 +159,46 @@ export async function moveSupportingImageAction(rawCaseId: string, rawItemId: st
   revalidatePath(caseFilesHref(parsed.data.caseId));
   redirect(resultHref(parsed.data.caseId, "message", "File moved.", folderId ?? "unfiled"));
 }
+
+export async function deleteSupportingImageAction(rawCaseId: string, rawItemId: string) {
+  const parsed = z.object({ caseId: caseIdSchema, itemId: z.uuid() }).safeParse({
+    caseId: rawCaseId,
+    itemId: rawItemId,
+  });
+  if (!parsed.success) {
+    const safeCase = caseIdSchema.safeParse(rawCaseId);
+    redirect(safeCase.success ? resultHref(safeCase.data, "error", "The file selection is invalid.") : "/casework");
+  }
+
+  await requireContributor(parsed.data.caseId);
+  const supabase = await createClient();
+  const { data: item, error: readError } = await supabase.from("supporting_media_items")
+    .select("id,object_key,original_filename")
+    .eq("case_id", parsed.data.caseId)
+    .eq("id", parsed.data.itemId)
+    .maybeSingle();
+  if (readError) redirect(resultHref(parsed.data.caseId, "error", readError.message));
+  if (!item) redirect(resultHref(parsed.data.caseId, "error", "That supporting file is no longer available."));
+
+  const { data: removed, error: deleteError } = await supabase.from("supporting_media_items")
+    .delete()
+    .eq("case_id", parsed.data.caseId)
+    .eq("id", parsed.data.itemId)
+    .select("id")
+    .maybeSingle();
+  if (deleteError) redirect(resultHref(parsed.data.caseId, "error", deleteError.message));
+  if (!removed) redirect(resultHref(parsed.data.caseId, "error", "That supporting file could not be removed."));
+
+  try {
+    await removeSupportingImage(parsed.data.caseId, item.object_key);
+  } catch (error) {
+    console.error("Supporting media metadata was removed, but object cleanup failed.", {
+      caseId: parsed.data.caseId,
+      itemId: parsed.data.itemId,
+      error: error instanceof Error ? error.message : "Unknown storage error",
+    });
+  }
+
+  revalidatePath(caseFilesHref(parsed.data.caseId));
+  redirect(resultHref(parsed.data.caseId, "message", `${item.original_filename} removed from supporting references.`));
+}

@@ -6,7 +6,7 @@ import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { caseFilesHref, questionsHref } from "@/lib/case-routes";
 import { getSupportingMediaLibrary } from "@/lib/supporting-media";
-import { createSupportingFolderAction, moveSupportingImageAction, uploadSupportingImageAction } from "./actions";
+import { createSupportingFolderAction, deleteSupportingImageAction, moveSupportingImageAction, uploadSupportingImageAction } from "./actions";
 import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
 
 export const dynamic = "force-dynamic";
@@ -83,7 +83,7 @@ export default async function SupportingFilesPage({ params, searchParams }: { pa
           {visibleItems.map((item) => <article className="supporting-media-card" key={item.id}>
             <div className="supporting-media-preview"><Image src={`/api/cases/${encodeURIComponent(caseId)}/media/${encodeURIComponent(item.id)}`} alt={item.caption || item.original_filename} fill sizes="(max-width: 700px) 100vw, (max-width: 1100px) 50vw, 33vw" unoptimized /></div>
             <div className="supporting-media-copy"><span>SUPPORTING REFERENCE · NOT CANONICAL</span><h3>{item.caption || item.original_filename}</h3>{item.context_note && <p>{item.context_note}</p>}<dl><div><dt>File</dt><dd>{item.original_filename}</dd></div><div><dt>Added</dt><dd>{new Date(item.created_at).toLocaleDateString()}</dd></div><div><dt>Size</dt><dd>{formatBytes(item.byte_length)}</dd></div></dl><Link className="supporting-ask-link" href={askAboutImageHref(caseId, item)}>Ask about this →</Link></div>
-            {canContribute && <form action={moveSupportingImageAction.bind(null, caseId, item.id)} className="supporting-move-form"><label htmlFor={`folder-${item.id}`}>Move to</label><select id={`folder-${item.id}`} name="folderId" defaultValue={item.folder_id ?? ""}><option value="">Unfiled</option>{library.folders.map((folder) => <option value={folder.id} key={folder.id}>{folder.name}</option>)}</select><SubmitButton pendingLabel="Moving…">Move</SubmitButton></form>}
+            {canContribute && <div className="supporting-media-actions"><form action={moveSupportingImageAction.bind(null, caseId, item.id)} className="supporting-move-form"><label htmlFor={`folder-${item.id}`}>Move to</label><select id={`folder-${item.id}`} name="folderId" defaultValue={item.folder_id ?? ""}><option value="">Unfiled</option>{library.folders.map((folder) => <option value={folder.id} key={folder.id}>{folder.name}</option>)}</select><SubmitButton pendingLabel="Moving…">Move</SubmitButton></form><form action={deleteSupportingImageAction.bind(null, caseId, item.id)} className="supporting-delete-form"><span>Permanent removal</span><SubmitButton pendingLabel="Removing…">Remove picture</SubmitButton></form></div>}
           </article>)}
         </div>}
       </section>
