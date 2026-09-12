@@ -25,12 +25,13 @@ If Vercel does not provide `BLOB_READ_WRITE_TOKEN`, uploads fail closed. The app
 
 Audited on 2026-09-12:
 
-- Vercel project `icarus-case-work` is linked and its latest production deployment is ready.
-- Production and Preview have the hosted Supabase URL, publishable key, and private Blob token.
-- Hosted Supabase has all 23 migrations through `20260909204037_research_questions_evidence_mvp.sql`; a follow-up dry run reports no pending migrations or seeds.
+- Vercel project `icarus-case-work` is live at `https://icarus-case-work.vercel.app`; the `main` deployment is ready.
+- Production and Preview have the hosted Supabase URL, publishable key, and the connected private `icarus-casework-private-media` Blob store.
+- Hosted Supabase has all 24 migrations through `20260912012500_supporting_media_delete.sql`; a follow-up dry run reports no pending migrations or seeds.
 - The Clancy corpus is owned by the confirmed hosted account and contains 20 published proceedings and 35,291 exact source segments.
 - A complete rerun reused all 20 packages, created no duplicates, and created no claims, events, or other analytical findings.
 - Trial Index contains 18 navigation-only days, all linked to Court Record proceedings, with 18 immutable versions and a successful idempotent rerun.
+- The owner-authenticated production smoke check passed for Casework, Trial Index, Court Record, Files, Questions, and Evidence. A Preview upload was written to private Blob, read through the authenticated media route, and removed through the case-scoped delete action; the store was empty afterward.
 - The pre-write free-plan logical snapshot and checksum manifest are stored outside Git under `C:\Backups\IcarusCasework\20260912-001707`.
 
 ## Release sequence
@@ -103,4 +104,4 @@ Do not deploy directly from an unexplained dirty working tree. Resolve or delibe
 
 ## Rollback
 
-Application rollback uses `vercel rollback`. The two database migrations are additive and remain in place; do not reverse production migration history casually. The previous application version does not depend on the added tables, so an application rollback remains compatible.
+Application rollback uses `vercel rollback`. The pilot database migrations are additive and remain in place; do not reverse production migration history casually. The previous application version does not depend on the added tables, so an application rollback remains compatible.
