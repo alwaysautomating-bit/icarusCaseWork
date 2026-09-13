@@ -4,7 +4,7 @@ import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
 import { MonoLabel } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { evidenceHref, questionsHref } from "@/lib/case-routes";
+import { courtPacketIntakeHref, evidenceHref, questionsHref } from "@/lib/case-routes";
 import { getEvidenceWorkspace, type EvidenceSource } from "@/lib/research-workspace";
 import { addEvidenceFactAction, addEvidenceSourceAction, createEvidenceAction, linkEvidenceQuestionAction } from "./actions";
 
@@ -42,7 +42,7 @@ export default async function EvidencePage({ params, searchParams }: { params: P
   })() : questionsHref(caseId);
 
   return <main className="research-queue-shell evidence-workspace-shell">
-    <header className="research-workbench-heading"><div><h1>Evidence</h1><span>{workspace.evidence.length} items</span></div>{canContribute ? <Link href={`${evidenceHref(caseId)}?add=1`}>+ Add evidence</Link> : null}</header>
+    <header className="research-workbench-heading"><div><h1>Evidence</h1><span>{workspace.evidence.length} items</span></div><div className="research-workbench-actions"><Link href={courtPacketIntakeHref(caseId)} className="research-secondary-link">Court packet intake →</Link>{canContribute ? <Link href={`${evidenceHref(caseId)}?add=1`}>+ Add evidence</Link> : null}</div></header>
     <details className="research-boundary-note"><summary>Evidence boundary</summary><p>Add an item only when reviewed material establishes that it exists. Facts require an underlying source; significance remains a research question.</p></details>
     {(query.message || query.error) && <p className={`supporting-files-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
 

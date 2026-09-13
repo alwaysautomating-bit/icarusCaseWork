@@ -61,6 +61,18 @@ export function evidenceHref(caseId: string, evidenceId?: string) {
   return `/cases/${encodeURIComponent(caseId)}/evidence${suffix ? `?${suffix}` : ""}`;
 }
 
+export type CourtPacketIntakeRouteState = { stage?: "upload" | "review" | "confirmed"; candidate?: string; message?: string; error?: string };
+
+export function courtPacketIntakeHref(caseId: string, state: CourtPacketIntakeRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.stage) params.set("stage", state.stage);
+  if (state.candidate) params.set("candidate", state.candidate);
+  if (state.message) params.set("message", state.message);
+  if (state.error) params.set("error", state.error);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/evidence/intake${suffix ? `?${suffix}` : ""}`;
+}
+
 export function accountsHref(caseId: string, state: AccountsRouteState = {}) {
   const params = new URLSearchParams();
   if (state.account?.trim()) params.set("account", state.account.trim());
