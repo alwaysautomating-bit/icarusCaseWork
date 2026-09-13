@@ -25,7 +25,7 @@ export default async function CaseLayout({ children, params }: { children: React
       <div className="account"><span>{actor.email}</span><form action={signOut}><button className="text-button">Sign out</button></form></div>
     </header>
     <div className="case-identity-strip"><div><span>ACTIVE CASE · {currentCase.membershipRole.toUpperCase()}</span><strong>{currentCase.title}</strong></div><code>{currentCase.id}</code></div>
-    <CaseLifecycleNav caseId={currentCase.id} isOwner={currentCase.owner_user_id === actor.id} />
+    <CaseLifecycleNav caseId={currentCase.id} isOwner={currentCase.membershipRole === "owner"} />
     {children}
   </div>;
 }

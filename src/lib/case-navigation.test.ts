@@ -20,6 +20,7 @@ describe("case navigation policy", () => {
       "Court Record",
       "Structure",
       "Review",
+      "Accounts",
       "Reconcile",
       "Reconstruct",
       "Care Trajectory",

@@ -12,6 +12,7 @@ const assertionSchema = z.object({
 
 const snapshotSchema = z.object({
   schema_version: z.literal("testimony-reconstruction/1.0"), case_id: z.uuid(), title: z.string(), description: z.string(),
+  incident_date: z.iso.date().nullable().optional(),
   generated_at: z.string(), snapshot_sha256: z.string(),
   lanes: z.array(z.object({ key: z.string(), label: z.string() })),
   assertions: z.array(assertionSchema),

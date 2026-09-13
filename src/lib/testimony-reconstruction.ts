@@ -6,6 +6,7 @@ const relationSchema = z.enum(["before", "overlaps", "during", "same_episode_can
 export const reconstructionDefinitionSchema = z.object({
   title: z.string().min(1),
   description: z.string().min(1),
+  incidentDate: z.iso.date().nullable().default(null),
   lanes: z.array(z.object({ key: z.string().min(1), label: z.string().min(1) })).min(1),
   nodes: z.array(z.object({
     key: z.string().min(1),
@@ -131,6 +132,7 @@ export function compileTestimonyReconstruction(input: {
     case_id: input.timeline.case_id,
     title: definition.title,
     description: definition.description,
+    incident_date: definition.incidentDate,
     source_run_ids: [input.timeline.run.id],
     source_proceeding_ids: [input.timeline.proceeding_id],
     source_artifact_ids: [input.timeline.run.source_artifact_id],

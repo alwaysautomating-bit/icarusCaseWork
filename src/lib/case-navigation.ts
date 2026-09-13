@@ -1,4 +1,5 @@
 import {
+  accountsHref,
   careTrajectoryHref,
   caseAccessHref,
   caseFilesHref,
@@ -37,6 +38,7 @@ export function getCaseNavigationItems(caseId: string, isOwner: boolean): CaseNa
     { href: courtRecordHref(caseId), label: "Court Record", match: "prefix" },
     { href: structurePath, label: "Structure", match: "exact" },
     { href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: "prefix", activePath: `${structurePath}/review` },
+    { href: accountsHref(caseId), label: "Accounts", match: "prefix" },
     { href: reconcileHref(caseId), label: "Reconcile", match: "prefix" },
     { href: reconstructionHref(caseId), label: "Reconstruct", match: "prefix" },
     { href: careTrajectoryHref(caseId), label: "Care Trajectory", match: "prefix" },

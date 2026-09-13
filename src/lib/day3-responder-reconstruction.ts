@@ -25,6 +25,8 @@ function reviewedUnit(input: {
   witnessKey: WitnessKey;
   key: string;
   contains: string;
+  supportingContains?: string[];
+  followingSegmentCount?: number;
   sourceWording: string;
   temporalWording: string;
   summary: string;
@@ -33,14 +35,23 @@ function reviewedUnit(input: {
   participants: string[];
   unknowns?: string[];
   assertionStatus?: "asserted" | "qualified" | "corrected";
+  informationBasis?: "PERSONALLY_OBSERVED" | "HEARD_FROM_PERSON" | "READ_IN_RECORD" | "REVIEWED_DEVICE_DATA" | "RECALLED" | "EXPERT_INFERENCE" | "PARTY_ARGUMENT" | "UNKNOWN_BASIS";
 }) : ReviewedTimelineUnit {
   const witness = witnesses[input.witnessKey];
   const segment = findOne(input.transcript, input.witnessKey, input.contains);
+  const segmentIndex = input.transcript.segments.findIndex((item) => item.id === segment.id);
+  const sourceSegments = [
+    segment,
+    ...(input.supportingContains ?? []).map((contains) => findOne(input.transcript, input.witnessKey, contains)),
+    ...input.transcript.segments.slice(segmentIndex + 1, segmentIndex + 1 + (input.followingSegmentCount ?? 0)),
+  ].filter((item, index, items) => items.findIndex((candidate) => candidate.id === item.id) === index)
+    .sort((a, b) => a.ordinal - b.ordinal);
+  const sourceSegmentIds = sourceSegments.map((item) => item.id);
   return {
     key: input.key,
     witnessBlockImportedId: witness.importedId,
     unitKind: "qa_thread",
-    sourceSegmentIds: [segment.id],
+    sourceSegmentIds,
     summary: input.summary,
     unknowns: input.unknowns ?? [],
     claim: {
@@ -49,8 +60,8 @@ function reviewedUnit(input: {
       speakerCapacity: "witness",
       normalizedAssertion: input.normalizedAssertion,
       assertionStatus: input.assertionStatus ?? "asserted",
-      informationBasis: "PERSONALLY_OBSERVED",
-      sourceSegmentIds: [segment.id],
+      informationBasis: input.informationBasis ?? "PERSONALLY_OBSERVED",
+      sourceSegmentIds,
       extractionConfidence: 1,
     },
     entityMentions: [],
@@ -60,9 +71,9 @@ function reviewedUnit(input: {
       eventClass: input.eventClass,
       sourceClaimKey: `${input.key}-claim`,
       sourceWording: input.sourceWording,
-      sourceSegmentIds: [segment.id],
+      sourceSegmentIds,
       temporalWording: input.temporalWording,
-      temporalSourceSegmentIds: [segment.id],
+      temporalSourceSegmentIds: sourceSegmentIds,
       participantMentions: input.participants,
       extractionConfidence: 1,
     }],
@@ -76,7 +87,10 @@ export function day3ResponderTimelineFixture(transcript: ParsedRevTranscript): R
     unit({ witnessKey: "hall", key: "hall-police-arrival", contains: "I arrived simultaneously with Officer Josephine.", sourceWording: "I arrived simultaneously with Officer Josephine.", temporalWording: "simultaneously with Officer Josephine", summary: "Hall placed his arrival at the same time as Josephine's.", normalizedAssertion: "Stephen Hall arrived at 47 Summer Street simultaneously with Brian Josephine.", eventClass: "arrival", participants: ["Stephen Hall", "Brian Josephine", "47 Summer Street"] }),
     unit({ witnessKey: "hall", key: "hall-lindsay-injuries", contains: "cuts to both wrists and to the left side of her neck", sourceWording: "She had cuts to both wrists and to the left side of her neck.", temporalWording: "She had cuts to both wrists and to the left side of her neck.", summary: "Hall described Lindsay's visible injuries in the backyard.", normalizedAssertion: "Hall observed cuts to both of Lindsay Clancy's wrists and the left side of her neck.", eventClass: "medical_observation", participants: ["Stephen Hall", "Lindsay Clancy"], unknowns: ["The incident clock time of the observation is not stated."] }),
     unit({ witnessKey: "hall", key: "hall-patrick-enters", contains: "he went inside to say he was going to check on his children", sourceWording: "At one point, he went inside to say he was going to check on his children.", temporalWording: "At one point", summary: "Hall recalled Patrick going inside to check the children.", normalizedAssertion: "Patrick Clancy went inside the house to check on the children.", eventClass: "movement", participants: ["Patrick Clancy", "the children", "47 Summer Street"] }),
+    unit({ witnessKey: "hall", key: "hall-dispatch-relay", contains: "Dispatch said that he couldn't wake them up.", supportingContains: ["Shortly after Patrick Clancy went inside the home, did you receive a call on your radio?"], sourceWording: "Dispatch said that he couldn't wake them up.", temporalWording: "Shortly after Patrick Clancy went inside the home", summary: "Hall described receiving relayed information over his radio after Patrick entered the house.", normalizedAssertion: "Hall heard dispatch relay that Patrick Clancy could not wake the children after Patrick entered the house.", eventClass: "dispatch_relay", participants: ["Stephen Hall", "Dispatch", "Patrick Clancy", "the children"], unknowns: ["The underlying radio transmission and its machine timestamp have not been used in this testimony-only reconstruction."], informationBasis: "HEARD_FROM_PERSON", assertionStatus: "qualified" }),
     unit({ witnessKey: "hall", key: "hall-scream", contains: "I heard a loud scream from inside.", sourceWording: "I heard a loud scream from inside.", temporalWording: "I heard a loud scream from inside.", summary: "Hall heard a scream from inside after Patrick entered.", normalizedAssertion: "Stephen Hall heard a loud scream from inside the house.", eventClass: "auditory_observation", participants: ["Stephen Hall", "unidentified screamer"] }),
+    unit({ witnessKey: "hall", key: "hall-house-entry", contains: "Myself and Officer Josephine ran towards the slider and entered into the house.", supportingContains: ["When you heard that screaming, what did you do?"], sourceWording: "Myself and Officer Josephine ran towards the slider and entered into the house.", temporalWording: "When you heard that screaming", summary: "Hall placed the officers' entry immediately after hearing the scream.", normalizedAssertion: "Hall and Josephine ran through the slider and entered the house after hearing the scream.", eventClass: "scene_entry", participants: ["Stephen Hall", "Brian Josephine", "47 Summer Street"] }),
+    unit({ witnessKey: "hall", key: "hall-patrick-basement-statement", contains: "Do you recall him saying, \"I can't wake them up. I can't get them Up?\"", supportingContains: ["Once you got to the bottom of the stairs"], followingSegmentCount: 1, sourceWording: "I can't wake them up. I can't get them Up?", temporalWording: "Once you got to the bottom of the stairs", summary: "After entering the basement, Hall affirmed that he recalled Patrick directly saying he could not wake the children.", normalizedAssertion: "Hall recalled hearing Patrick Clancy directly say that he could not wake or get the children up.", eventClass: "reported_statement", participants: ["Stephen Hall", "Patrick Clancy", "the children"], unknowns: ["Hall first said he could not recall the words before affirming counsel's quoted formulation."], informationBasis: "HEARD_FROM_PERSON", assertionStatus: "qualified" }),
     unit({ witnessKey: "hall", key: "hall-return-left", contains: "We ran back down into the basement to check to see if we could find other children.", sourceWording: "We ran back down into the basement to check to see if we could find other children.", temporalWording: "back down into the basement", summary: "Hall returned to the basement to look for the other children.", normalizedAssertion: "Hall and Josephine returned to the basement to look for other children.", eventClass: "search", participants: ["Stephen Hall", "Brian Josephine", "the children"] }),
 
     unit({ witnessKey: "josephine", key: "josephine-travel-duration", contains: "anywhere from three to four minutes", sourceWording: "I would say anywhere from three to four minutes.", temporalWording: "anywhere from three to four minutes", summary: "Josephine estimated a three-to-four-minute response.", normalizedAssertion: "Brian Josephine estimated that his response to 47 Summer Street took three to four minutes.", eventClass: "emergency_response_travel", participants: ["Brian Josephine", "47 Summer Street"], assertionStatus: "qualified" }),
@@ -108,6 +122,7 @@ export function day3ResponderTimelineFixture(transcript: ParsedRevTranscript): R
 export const day3ResponderReconstructionDefinition: ReconstructionDefinition = {
   title: "First-responder testimony reconstruction",
   description: "A candidate incident sequence assembled from six Day 3 witness accounts. Grouping and order are proposed analytical structure, not canonical fact.",
+  incidentDate: "2023-01-24",
   lanes: [
     { key: "dispatch-arrival", label: "Dispatch & arrival" },
     { key: "backyard", label: "Backyard response" },
@@ -119,8 +134,10 @@ export const day3ResponderReconstructionDefinition: ReconstructionDefinition = {
     { key: "response-travel", title: "Responder travel estimates", summary: "Witnesses supplied several approximate response durations that should not be forced into one exact arrival clock.", laneKey: "dispatch-arrival", temporalLabel: "After dispatch; duration estimates differ", assertionRefs: ["hall-travel-duration", "josephine-travel-duration", "nudd-travel-duration", "dwyer-travel-duration"] },
     { key: "police-fire-arrival", title: "Police arrive before fire", summary: "Hall places his arrival with Josephine; Hussey places police just ahead of fire.", laneKey: "dispatch-arrival", temporalLabel: "Early scene interval", assertionRefs: ["hall-police-arrival", "hussey-fire-arrival"] },
     { key: "lindsay-assessment", title: "Lindsay assessed in backyard", summary: "Hall and Josephine separately describe Lindsay's visible injuries, with unresolved differences in laterality and extent.", laneKey: "backyard", temporalLabel: "After police arrival", assertionRefs: ["hall-lindsay-injuries", "josephine-lindsay-injuries"] },
-    { key: "patrick-enters-scream", title: "Patrick enters; screams heard", summary: "Hall places Patrick entering before the scream; Hall and Josephine independently describe hearing screams.", laneKey: "backyard", temporalLabel: "Sequence-only", assertionRefs: ["hall-patrick-enters", "hall-scream", "josephine-screams"] },
-    { key: "dawson-right-basement", title: "Dawson encounter in right basement", summary: "Hussey's outside-window observation and Josephine's attributed statement sit within the same proposed basement episode.", laneKey: "right-basement", temporalLabel: "After scream", assertionRefs: ["hussey-unwrapping", "josephine-patrick-statement"] },
+    { key: "patrick-enters", title: "Patrick enters the house", summary: "Hall places Patrick entering the house before the radio relay and scream.", laneKey: "backyard", temporalLabel: "After backyard response begins", assertionRefs: ["hall-patrick-enters"] },
+    { key: "dispatch-relay", title: "Hall hears a dispatch relay", summary: "Hall describes an indirect information path from Patrick through dispatch to his police radio.", laneKey: "dispatch-arrival", temporalLabel: "Shortly after Patrick enters", assertionRefs: ["hall-dispatch-relay"] },
+    { key: "scream-entry", title: "Screams heard; officers enter", summary: "Hall and Josephine describe hearing screams, and Hall places their entry through the slider immediately afterward.", laneKey: "backyard", temporalLabel: "After the dispatch relay", assertionRefs: ["hall-scream", "josephine-screams", "hall-house-entry"] },
+    { key: "dawson-right-basement", title: "Dawson encounter in right basement", summary: "Hall's direct-hearing account, Hussey's outside-window observation, and Josephine's attributed statement sit within the proposed right-basement episode without being collapsed into one moment.", laneKey: "right-basement", temporalLabel: "After officers enter", assertionRefs: ["hall-patrick-basement-statement", "hussey-unwrapping", "josephine-patrick-statement"] },
     { key: "dawson-to-ambulance", title: "Dawson removed to Ambulance 1", summary: "Josephine describes carrying Dawson; Nudd identifies the carrier differently. The grouping remains proposed and the identity tension remains open.", laneKey: "right-basement", temporalLabel: "Ambulance backing / just parked", assertionRefs: ["josephine-dawson-removal", "nudd-carrier-identity"] },
     { key: "left-basement-discovery", title: "Other children located in left basement", summary: "Hall returns to search; Dwyer describes observing Cora and Callan with Patrick nearby.", laneKey: "left-basement", temporalLabel: "After Dawson removal begins", assertionRefs: ["hall-return-left", "dwyer-left-basement-discovery"] },
     { key: "parallel-resuscitation", title: "Parallel pediatric resuscitation", summary: "Dawson CPR was underway as care expanded to Cora and Callan; Hussey describes the split of personnel.", laneKey: "medical", temporalLabel: "Overlapping interval", assertionRefs: ["nudd-dawson-cpr", "nette-arrives-during-cpr", "dwyer-cora-cpr", "hussey-parallel-care"] },
@@ -130,8 +147,10 @@ export const day3ResponderReconstructionDefinition: ReconstructionDefinition = {
   edges: [
     { from: "response-travel", to: "police-fire-arrival", relation: "before", basisAssertionRefs: ["hall-travel-duration", "hall-police-arrival"], rationale: "Travel precedes the witnesses' stated arrivals.", confidenceBasis: "cross-witness sequence" },
     { from: "police-fire-arrival", to: "lindsay-assessment", relation: "before", basisAssertionRefs: ["hussey-fire-arrival", "hall-lindsay-injuries"], rationale: "The backyard assessment follows initial arrival.", confidenceBasis: "witness sequence" },
-    { from: "lindsay-assessment", to: "patrick-enters-scream", relation: "overlaps", basisAssertionRefs: ["hall-patrick-enters", "josephine-screams"], rationale: "Outside treatment continued while Patrick entered and the scream was heard.", confidenceBasis: "parallel witness lanes" },
-    { from: "patrick-enters-scream", to: "dawson-right-basement", relation: "before", basisAssertionRefs: ["hall-scream", "hussey-unwrapping"], rationale: "Hussey explicitly places his observation after the scream.", confidenceBasis: "explicit relative wording" },
+    { from: "lindsay-assessment", to: "patrick-enters", relation: "overlaps", basisAssertionRefs: ["hall-lindsay-injuries", "hall-patrick-enters"], rationale: "The outside response was underway when Patrick went inside.", confidenceBasis: "same-witness sequence" },
+    { from: "patrick-enters", to: "dispatch-relay", relation: "before", basisAssertionRefs: ["hall-patrick-enters", "hall-dispatch-relay"], rationale: "Hall expressly placed the radio call shortly after Patrick entered.", confidenceBasis: "explicit relative wording" },
+    { from: "dispatch-relay", to: "scream-entry", relation: "before", basisAssertionRefs: ["hall-dispatch-relay", "hall-scream", "hall-house-entry"], rationale: "Hall described the radio relay before the scream and the officers' entry.", confidenceBasis: "same-witness sequence" },
+    { from: "scream-entry", to: "dawson-right-basement", relation: "before", basisAssertionRefs: ["hall-house-entry", "hall-patrick-basement-statement", "hussey-unwrapping"], rationale: "The officers entered before Hall's direct basement account; Hussey places his observation after the scream.", confidenceBasis: "explicit relative wording" },
     { from: "dawson-right-basement", to: "dawson-to-ambulance", relation: "before", basisAssertionRefs: ["josephine-patrick-statement", "josephine-dawson-removal"], rationale: "The right-basement encounter precedes removal to the ambulance.", confidenceBasis: "same-witness sequence" },
     { from: "dawson-to-ambulance", to: "left-basement-discovery", relation: "overlaps", basisAssertionRefs: ["josephine-dawson-removal", "hall-return-left"], rationale: "The accounts place the return/search immediately around Dawson's transfer to the ambulance.", confidenceBasis: "cross-witness synchronization anchor" },
     { from: "left-basement-discovery", to: "parallel-resuscitation", relation: "before", basisAssertionRefs: ["dwyer-left-basement-discovery", "dwyer-cora-cpr"], rationale: "Discovery precedes CPR on the left-side children.", confidenceBasis: "same-witness sequence" },
@@ -140,6 +159,7 @@ export const day3ResponderReconstructionDefinition: ReconstructionDefinition = {
   ],
   tensions: [
     { key: "response-duration", title: "Response duration estimates differ", field: "response_duration", assertionRefs: ["hall-travel-duration", "josephine-travel-duration", "nudd-travel-duration", "dwyer-travel-duration"], note: "The estimates are witness recollections from different origins and cannot be converted into one exact arrival time without an external dispatch clock." },
+    { key: "hall-wording-source", title: "Hall describes two information paths", field: "information_path", assertionRefs: ["hall-dispatch-relay", "hall-patrick-basement-statement"], note: "Hall attributed similar plural wording first to dispatch over the radio and later to Patrick directly in the basement. The underlying radio record is needed to test the wording and synchronization point." },
     { key: "lindsay-injury-description", title: "Lindsay injury laterality differs", field: "observed_injuries", assertionRefs: ["hall-lindsay-injuries", "josephine-lindsay-injuries"], note: "Hall described both wrists and the left neck; Josephine described the right wrist and right neck with an express qualification." },
     { key: "dawson-carrier", title: "Carrier identification differs", field: "actor_identity", assertionRefs: ["josephine-dawson-removal", "nudd-carrier-identity"], note: "Josephine described carrying Dawson; Nudd identified Officer Homestead. The system must preserve both attributed observations pending review." },
     { key: "right-basement-state", title: "Right-basement observations require ordering review", field: "observed_state", assertionRefs: ["hussey-unwrapping", "josephine-patrick-statement"], note: "Hussey observed unwrapping through the window, while Josephine described Patrick moving toward officers. Treating them as one instant would erase a potentially important sequence distinction." },
@@ -148,7 +168,7 @@ export const day3ResponderReconstructionDefinition: ReconstructionDefinition = {
 
 export function buildDay3ResponderReconstruction(transcript: ParsedRevTranscript, identity: { caseId: string; proceedingId: string; sourceArtifactId: string }, generatedAt?: string) {
   const reviewedUnits = day3ResponderTimelineFixture(transcript);
-  const timeline = compileTestimonyTimelineCandidates({ ...identity, transcript, reviewedUnits });
+  const timeline = compileTestimonyTimelineCandidates({ ...identity, transcript, reviewedUnits, identityNamespace: "day3-first-responder-accounts/2.0" });
   const eventRefs = reviewedUnits.flatMap((unit) => unit.events.map((event) => event.key));
   if (eventRefs.length !== timeline.event_candidates.length) throw new Error("Day 3 event-reference mapping is incomplete.");
   const eventCandidateIdByRef = new Map(eventRefs.map((ref, index) => [ref, String(timeline.event_candidates[index].id)]));

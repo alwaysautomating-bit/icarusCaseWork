@@ -138,6 +138,7 @@ export type CompileKnowledgeMapInput = {
   compilerVersion?: string;
   contractVersion?: string;
   activityType?: string;
+  identityNamespace?: string;
 };
 
 function stableUuid(namespace: string, value: string) {
@@ -229,7 +230,8 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
   const compilerName = input.compilerName ?? KNOWLEDGE_MAPPER_NAME;
   const compilerVersion = input.compilerVersion ?? KNOWLEDGE_MAPPER_VERSION;
   const contractVersion = input.contractVersion ?? KNOWLEDGE_CONTRACT_VERSION;
-  const configuration = JSON.stringify({ contract: contractVersion, candidates });
+  const identityNamespace = input.identityNamespace?.trim() || null;
+  const configuration = JSON.stringify({ contract: contractVersion, candidates, ...(identityNamespace ? { identityNamespace } : {}) });
   const configurationSha256 = createHash("sha256").update(configuration).digest("hex");
   const runId = stableUuid("knowledge-run", `${input.proceedingId}:${configurationSha256}`);
   const extractionMethod = input.extractionMethod ?? "hybrid";
@@ -272,7 +274,7 @@ export function compileTestimonyKnowledgeMap(input: CompileKnowledgeMapInput) {
     assertSubset("Testimony unit", sourceSegmentIds, new Set(block.source_segment_ids));
     const sorted = sourceSegmentIds.map((id) => segmentById.get(id)!).sort((left, right) => left.ordinal - right.ordinal);
     const phase = phaseForSegment(structure, candidate.witnessBlockImportedId, sorted[0].ordinal);
-    const unitId = stableUuid("testimony-unit", `${input.transcript.sourceSha256}:${candidate.key}:${sourceSegmentIds.join(":")}`);
+    const unitId = stableUuid("testimony-unit", `${input.transcript.sourceSha256}:${identityNamespace ? `${identityNamespace}:` : ""}${candidate.key}:${sourceSegmentIds.join(":")}`);
     const knowledgeItemId = stableUuid("knowledge-item", unitId);
     testimonyUnits.push({
       id: unitId, object_code: objectCode("TST", unitId), witness_block_id: block.id, unit_kind: candidate.unitKind,

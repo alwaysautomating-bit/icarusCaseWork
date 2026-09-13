@@ -6,6 +6,8 @@ type CourtRecordRouteState = {
 
 type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved"; view?: "navigation" | "intelligence" };
 
+type AccountsRouteState = { account?: string; versionId?: string; view?: "account" | "compare" | "digital" };
+
 export type ReconcileRouteState = {
   groupId?: string;
   newGroup?: boolean;
@@ -57,6 +59,15 @@ export function evidenceHref(caseId: string, evidenceId?: string) {
   if (evidenceId) params.set("item", evidenceId);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/evidence${suffix ? `?${suffix}` : ""}`;
+}
+
+export function accountsHref(caseId: string, state: AccountsRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.account?.trim()) params.set("account", state.account.trim());
+  if (state.versionId) params.set("version", state.versionId);
+  if (state.view && state.view !== "account") params.set("view", state.view);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/accounts${suffix ? `?${suffix}` : ""}`;
 }
 
 export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {
@@ -137,6 +148,14 @@ export function careTrajectoryHref(caseId: string) {
 
 export function referenceReportsHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/reports`;
+}
+
+export function childrenFoundReportHref(caseId: string) {
+  return `${referenceReportsHref(caseId)}/children-found`;
+}
+
+export function lindsayFoundReportHref(caseId: string) {
+  return `${referenceReportsHref(caseId)}/lindsay-found`;
 }
 
 export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {

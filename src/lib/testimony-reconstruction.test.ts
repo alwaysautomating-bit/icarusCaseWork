@@ -27,12 +27,13 @@ describe("testimony reconstruction", () => {
 
   it("compiles six witness lanes without canonicalizing events or resolving tensions", () => {
     const result = buildDay3ResponderReconstruction(day3Transcript(), { caseId, proceedingId, sourceArtifactId }, "2026-08-22T12:00:00.000Z");
-    expect(result.reviewedUnits).toHaveLength(25);
-    expect(result.timeline.event_candidates).toHaveLength(25);
-    expect(result.reconstruction.assertions).toHaveLength(25);
-    expect(result.reconstruction.nodes).toHaveLength(10);
-    expect(result.reconstruction.tensions).toHaveLength(4);
+    expect(result.reviewedUnits).toHaveLength(28);
+    expect(result.timeline.event_candidates).toHaveLength(28);
+    expect(result.reconstruction.assertions).toHaveLength(28);
+    expect(result.reconstruction.nodes).toHaveLength(12);
+    expect(result.reconstruction.tensions).toHaveLength(5);
     expect(result.reconstruction.lanes).toHaveLength(5);
+    expect(result.reconstruction.incident_date).toBe("2023-01-24");
     expect(result.reconstruction.boundaries).toEqual({
       canonical_events_created: 0,
       same_resolutions_created: 0,

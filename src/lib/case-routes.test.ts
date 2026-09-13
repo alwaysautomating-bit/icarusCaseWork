@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { caseAccessHref, caseFilesHref, courtRecordHref, evidenceHref, parseStructureObjectType, questionsHref, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
+import { accountsHref, caseAccessHref, caseFilesHref, childrenFoundReportHref, courtRecordHref, evidenceHref, lindsayFoundReportHref, parseStructureObjectType, questionsHref, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
   it("builds explicit supporting-files and access routes", () => {
@@ -7,6 +7,8 @@ describe("case-scoped routes", () => {
     expect(caseAccessHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/access");
     expect(questionsHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "question-1")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/questions?question=question-1");
     expect(evidenceHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "evidence-1")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/evidence?item=evidence-1");
+    expect(childrenFoundReportHref("case 1")).toBe("/cases/case%201/reports/children-found");
+    expect(lindsayFoundReportHref("case 1")).toBe("/cases/case%201/reports/lindsay-found");
   });
 
   it("preserves the query and canonical segment in a bookmarkable Court Record URL", () => {
@@ -18,6 +20,12 @@ describe("case-scoped routes", () => {
 
   it("does not emit empty URL state", () => {
     expect(courtRecordHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { query: "  " })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/record");
+  });
+
+  it("builds bookmarkable witness and digital timeline views", () => {
+    expect(accountsHref("case 1", { account: "officer-stephen-hall", versionId: "version-3", view: "compare" }))
+      .toBe("/cases/case%201/accounts?account=officer-stephen-hall&version=version-3&view=compare");
+    expect(accountsHref("case 1", { view: "account" })).toBe("/cases/case%201/accounts");
   });
 
   it("builds a bookmarkable structural object and lineage URL", () => {

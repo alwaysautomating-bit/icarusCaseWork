@@ -175,6 +175,7 @@ export function compileTestimonyTimelineCandidates(input: {
   sourceArtifactId: string;
   transcript: Pick<ParsedRevTranscript, "sourceSha256" | "segments">;
   reviewedUnits: ReviewedTimelineUnit[];
+  identityNamespace?: string;
 }) {
   const units = z.array(reviewedTimelineUnitSchema).parse(input.reviewedUnits);
   const segmentText = new Map(input.transcript.segments.map((segment) => [segment.id, segment.text]));
@@ -258,6 +259,7 @@ export function compileTestimonyTimelineCandidates(input: {
     compilerVersion: TIMELINE_COMPILER_VERSION,
     contractVersion: TIMELINE_CONTRACT_VERSION,
     activityType: "timeline_candidate_extraction",
+    identityNamespace: input.identityNamespace,
   });
 
   return {
