@@ -33,7 +33,7 @@ function safeDisplayHref(raw: string | undefined) {
 }
 
 function EntryList({ title, entries, sources, empty }: { title: string; entries: QuestionEntry[]; sources: QuestionSource[]; empty: string }) {
-  return <section className="research-state-block"><header><h3>{title}</h3><strong>{entries.length}</strong></header>{entries.length === 0 ? <p className="research-state-empty">{empty}</p> : <div>{entries.map((entry) => <article key={entry.id}><span aria-hidden="true">{entry.entry_kind === "unknown" ? "?" : entry.entry_kind === "target" ? "□" : "✓"}</span><div><p>{entry.statement}</p>{sourceLink(sources.find((source) => source.id === entry.source_link_id))}</div></article>)}</div>}</section>;
+  return <section className="research-state-block"><header><h3>{title}</h3><strong>{entries.length}</strong></header>{entries.length === 0 ? <p className="research-state-empty">{empty}</p> : <div>{entries.map((entry) => <article key={entry.id}><span aria-hidden="true" className={entry.entry_kind === "unknown" ? "research-glyph-unknown" : entry.entry_kind === "known" ? "research-glyph-known" : undefined}>{entry.entry_kind === "unknown" ? "?" : entry.entry_kind === "target" ? "□" : "✓"}</span><div><p>{entry.statement}</p>{sourceLink(sources.find((source) => source.id === entry.source_link_id))}</div></article>)}</div>}</section>;
 }
 
 export default async function QuestionsPage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: Promise<SearchState> }) {
