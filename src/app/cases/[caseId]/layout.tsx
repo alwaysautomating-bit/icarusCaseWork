@@ -11,7 +11,7 @@ import { getAccessibleCase, listAccessibleCases } from "@/lib/case-access";
 export const dynamic = "force-dynamic";
 
 const workbenchSans = Public_Sans({ variable: "--font-workbench-sans", subsets: ["latin"] });
-const workbenchSerif = Fraunces({ variable: "--font-workbench-serif", subsets: ["latin"] });
+const workbenchSerif = Fraunces({ variable: "--font-workbench-serif", subsets: ["latin"], axes: ["opsz"] });
 const workbenchMono = IBM_Plex_Mono({ variable: "--font-workbench-mono", subsets: ["latin"], weight: ["400", "500", "600"] });
 
 export default async function CaseLayout({ children, params }: { children: React.ReactNode; params: Promise<{ caseId: string }> }) {
