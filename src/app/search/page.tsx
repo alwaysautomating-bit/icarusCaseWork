@@ -69,7 +69,7 @@ export default async function TestimonySearchPage({ searchParams }: { searchPara
   return <main className="search-shell">
     <header className="masthead">
       <Wordmark />
-      <nav aria-label="Workspace modes"><Link href="/">Case workspace</Link><Link href="/compiler">Testimony Compiler</Link></nav>
+      <nav aria-label="Workspace modes"><Link href="/casework">Case workspace</Link></nav>
       <div className="account"><span>{actor.email}</span><form action={signOut}><button className="text-button">Sign out</button></form></div>
     </header>
 

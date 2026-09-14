@@ -14,7 +14,7 @@ export default async function CaseSelectionPage() {
   return <main className="case-index-shell">
     <header className="masthead">
       <Wordmark />
-      <nav aria-label="Application"><Link href="/cases/new">Establish case</Link><Link href="/search">Global testimony search</Link><Link href="/compiler">Compiler sandbox</Link></nav>
+      <nav aria-label="Application"><Link href="/cases/new">Establish case</Link><Link href="/search">Global testimony search</Link></nav>
       <div className="account"><span>{actor.email}</span><form action={signOut}><button className="text-button">Sign out</button></form></div>
     </header>
     <section className="case-index-hero">

@@ -2,7 +2,7 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 import { updateSession } from "@/lib/supabase/proxy";
 
-const PUBLIC_PATHS = new Set(["/", "/join", "/success"]);
+const PUBLIC_PATHS = new Set(["/"]);
 
 export function isPublicResearchPath(pathname: string) {
   return PUBLIC_PATHS.has(pathname);
