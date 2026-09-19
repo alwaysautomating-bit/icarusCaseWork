@@ -6,7 +6,7 @@ import { buildWitnessAccountTimelines } from "@/lib/account-timeline";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { getCaseReconstructionWorkspace } from "@/lib/case-reconstruction";
-import { accountsHref, timelineHref } from "@/lib/case-routes";
+import { accountsHref, digitalTimelineHref, firstRespondersTimelineHref, timelineHref } from "@/lib/case-routes";
 import {
   getCoreTimelineWorkspace,
   matchesTimelineFilter,
@@ -257,6 +257,8 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
     <aside className="core-timeline-nav" aria-label="Timeline navigation">
       <MonoLabel>CORE</MonoLabel>
       <nav>{workspace.timelines.map((timeline) => <Link key={timeline.id} href={timelineHref(caseId, { timeline: timeline.slug })} aria-current={timeline.id === selected.id ? "page" : undefined} scroll={false}><strong>{timeline.title}</strong><small>{timeline.subtitle}</small></Link>)}</nav>
+      <MonoLabel>RECONSTRUCTIONS</MonoLabel>
+      <nav className="core-account-nav"><Link href={firstRespondersTimelineHref(caseId)}><strong>First responders</strong><small>45 events · ordered by witness anchors</small></Link><Link href={digitalTimelineHref(caseId)}><strong>Digital · Jan 24 device report</strong><small>152 entries · iPhone and Apple Watch</small></Link></nav>
       <MonoLabel>ACCOUNT TIMELINES</MonoLabel>
       <nav className="core-account-nav">{accounts.length ? accounts.map((account) => <Link href={accountsHref(caseId, { account: account.key, versionId: latestVersion?.id })} key={account.key}><strong>{account.witness}</strong><small>{account.items.length} sourced step{account.items.length === 1 ? "" : "s"}</small></Link>) : <Link href={accountsHref(caseId)}><strong>Open Accounts</strong><small>No published account timeline yet</small></Link>}</nav>
     </aside>

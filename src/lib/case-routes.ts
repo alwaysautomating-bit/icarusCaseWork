@@ -109,6 +109,19 @@ export function timelineHref(caseId: string, state: TimelineRouteState = {}) {
   return `/cases/${encodeURIComponent(caseId)}/timeline${suffix ? `?${suffix}` : ""}`;
 }
 
+export function firstRespondersTimelineHref(caseId: string, state: { patient?: string; conflicts?: boolean } = {}) {
+  const params = new URLSearchParams();
+  if (state.patient?.trim()) params.set("patient", state.patient.trim());
+  if (state.conflicts) params.set("conflicts", "1");
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/timeline/first-responders${suffix ? `?${suffix}` : ""}`;
+}
+
+export function digitalTimelineHref(caseId: string, category?: string) {
+  const suffix = category ? `?category=${encodeURIComponent(category)}` : "";
+  return `/cases/${encodeURIComponent(caseId)}/timeline/digital${suffix}`;
+}
+
 export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {
   const params = new URLSearchParams();
   const query = state.query?.trim();

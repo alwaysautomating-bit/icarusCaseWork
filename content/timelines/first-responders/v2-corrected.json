@@ -1,0 +1,1010 @@
+{
+  "schema_version": "2.0",
+  "title": "First Responder Chronology — 47 Summer Street",
+  "status": "working_master_corrected",
+  "methodology": {
+    "clock_anchor": {
+      "event": "Duxbury police dispatch",
+      "time": "approximately 18:11",
+      "precision": "approximate"
+    },
+    "rules": [
+      "Do not convert witness travel estimates into exact arrival times.",
+      "Preserve conflicting witness assertions.",
+      "Shared vehicle crews receive one arrival event until their actions diverge.",
+      "The scream/child alert is the central synchronization event prompting discovery/response to the children.",
+      "Josephine's ambulance-backing statement constrains Dawson's extraction after the scream; it does not place Dawson before the scream.",
+      "Occurrence time and proceeding/testimony time remain distinct."
+    ]
+  },
+  "events": [
+    {
+      "id": "FR001",
+      "order": 1,
+      "phase": "dispatch",
+      "title": "Police dispatched to 47 Summer Street",
+      "type": "dispatch",
+      "occurred_at": "~18:11",
+      "precision": "approximate",
+      "actors": [
+        "Josephine",
+        "Hall",
+        "Cahill"
+      ],
+      "confidence": "clock_anchor"
+    },
+    {
+      "id": "FR002",
+      "order": 2,
+      "phase": "dispatch",
+      "title": "Initial Duxbury Fire response dispatched",
+      "type": "dispatch",
+      "actors": [
+        "Hussey",
+        "Heath",
+        "Dougherty",
+        "Nudd",
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "units": [
+        "Command",
+        "Ambulance 1",
+        "Engine 2"
+      ],
+      "raw_temporal_expression": "approximately / just after 6:00 PM",
+      "confidence": "corroborated",
+      "caveat": "Fire clock language is not reconciled to the ~18:11 police dispatch anchor."
+    },
+    {
+      "id": "FR003",
+      "order": 3,
+      "phase": "initial_response",
+      "title": "Josephine and Hall arrive among early police",
+      "type": "arrival",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "confidence": "conflict",
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "travel_estimate": "3–4 minutes"
+        },
+        {
+          "witness": "Hall",
+          "travel_estimate": "7–10 minutes"
+        },
+        {
+          "witness": "Hall",
+          "claim": "arrived simultaneously with Josephine"
+        }
+      ]
+    },
+    {
+      "id": "FR004",
+      "order": 4,
+      "phase": "initial_response",
+      "title": "Police reach backyard; Lindsay located",
+      "type": "scene_contact",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR003"
+        ]
+      }
+    },
+    {
+      "id": "FR005",
+      "order": 5,
+      "phase": "initial_response",
+      "title": "Ambulance 1 arrives",
+      "type": "arrival",
+      "actors": [
+        "Heath",
+        "Dougherty",
+        "Nudd"
+      ],
+      "unit": "Ambulance 1",
+      "confidence": "corroborated",
+      "observations": [
+        "Police cruisers already present",
+        "Driveway obstructed",
+        "Engine 2 not yet present / approaching"
+      ]
+    },
+    {
+      "id": "FR006",
+      "order": 6,
+      "phase": "initial_response",
+      "title": "Hussey arrives with initial fire response",
+      "type": "arrival",
+      "actors": [
+        "Hussey"
+      ],
+      "confidence": "supported",
+      "caveat": "Exact order relative to Ambulance 1 is not established."
+    },
+    {
+      "id": "FR007",
+      "order": 7,
+      "phase": "parallel_before_scream",
+      "title": "Heath and Dougherty exit with equipment and head toward Lindsay",
+      "type": "movement",
+      "actors": [
+        "Heath",
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ]
+      }
+    },
+    {
+      "id": "FR008",
+      "order": 8,
+      "phase": "parallel_before_scream",
+      "title": "Nudd begins Ambulance 1 positioning sequence",
+      "type": "vehicle_positioning",
+      "actors": [
+        "Nudd"
+      ],
+      "unit": "Ambulance 1",
+      "sequence": [
+        "Nudd takes driver position",
+        "Obstructing cruiser moved",
+        "Ambulance 1 backs into driveway"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ]
+      },
+      "note": "This positioning sequence remains in progress through the later Dawson extraction/handoff."
+    },
+    {
+      "id": "FR009",
+      "order": 9,
+      "phase": "parallel_before_scream",
+      "title": "Dougherty/Heath provide initial care to Lindsay",
+      "type": "medical_care",
+      "actors": [
+        "Dougherty",
+        "Heath"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "sequence": [
+        "assessment",
+        "oral airway",
+        "non-rebreather oxygen"
+      ],
+      "constraints": {
+        "after": [
+          "FR007"
+        ],
+        "before": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR010",
+      "order": 10,
+      "phase": "initial_response",
+      "title": "Cahill arrives",
+      "type": "arrival",
+      "actors": [
+        "Cahill"
+      ],
+      "raw_temporal_expression": "a couple minutes",
+      "observations": [
+        "cruiser present",
+        "Ambulance 1 present",
+        "fire captain present",
+        "Lindsay already receiving care"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ],
+        "before": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR011",
+      "order": 11,
+      "phase": "initial_response",
+      "title": "Engine 2 arrives",
+      "type": "arrival",
+      "actors": [
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "unit": "Engine 2",
+      "confidence": "corroborated",
+      "assertions": [
+        {
+          "witness": "Stratton",
+          "travel_estimate": "4–5 minutes",
+          "claim": "Ambulance 1 arrived just before"
+        },
+        {
+          "witness": "Patrick Dwyer",
+          "travel_estimate": "a few minutes",
+          "claim": "other firefighters were already there"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ],
+        "before": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR012",
+      "order": 12,
+      "phase": "child_discovery",
+      "title": "SCREAM / CHILD ALERT",
+      "type": "synchronization_event",
+      "confidence": "corroborated_candidate_shared_event",
+      "significance": "Prompts the discovery/response to the children.",
+      "assertions": [
+        {
+          "witness": "Dougherty",
+          "effect": "remains with Lindsay; Heath leaves Lindsay area"
+        },
+        {
+          "witness": "Hussey",
+          "effect": "investigates basement/window"
+        },
+        {
+          "witness": "Cahill",
+          "effect": "enters house/basement"
+        },
+        {
+          "witness": "Stratton/Dwyer",
+          "effect": "crew is directed inside toward children"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR009",
+          "FR010",
+          "FR011"
+        ]
+      }
+    },
+    {
+      "id": "FR013",
+      "order": 13,
+      "phase": "child_discovery",
+      "title": "Hussey investigates basement/window and observes Dawson",
+      "type": "observation",
+      "actors": [
+        "Hussey"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "note": "Adult male later identified as Patrick Clancy."
+    },
+    {
+      "id": "FR014",
+      "order": 14,
+      "phase": "child_discovery",
+      "title": "Cahill enters house and basement",
+      "type": "movement",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR015",
+      "order": 15,
+      "phase": "child_discovery",
+      "title": "Patrick points Cahill left",
+      "type": "observation",
+      "actors": [
+        "Cahill"
+      ],
+      "description": "Cahill sees Patrick moving left-to-right while screaming; Patrick points him left.",
+      "constraints": {
+        "after": [
+          "FR014"
+        ]
+      }
+    },
+    {
+      "id": "FR016",
+      "order": 16,
+      "phase": "child_discovery",
+      "title": "Cahill encounters Cora and Callan",
+      "type": "discovery",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "constraints": {
+        "after": [
+          "FR015"
+        ]
+      }
+    },
+    {
+      "id": "FR017",
+      "order": 17,
+      "phase": "child_discovery",
+      "title": "Engine 2 enters basement and turns left",
+      "type": "movement",
+      "actors": [
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR018",
+      "order": 18,
+      "phase": "dawson_extraction",
+      "title": "Josephine carries Dawson toward Ambulance 1",
+      "type": "patient_transfer",
+      "actors": [
+        "Josephine"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "raw_temporal_expression": "The ambulance was backing up and had pretty much just parked",
+      "constraints": {
+        "after": [
+          "FR012",
+          "FR013"
+        ]
+      },
+      "overlaps_with": [
+        "FR008"
+      ],
+      "significance": "Synchronizes Dawson extraction with Ambulance 1 final positioning."
+    },
+    {
+      "id": "FR019",
+      "order": 19,
+      "phase": "dawson_extraction",
+      "title": "Nudd pulls stretcher from Ambulance 1",
+      "type": "equipment",
+      "actors": [
+        "Nudd"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "raw_temporal_expression": "stretcher almost out",
+      "overlaps_with": [
+        "FR018"
+      ]
+    },
+    {
+      "id": "FR020",
+      "order": 20,
+      "phase": "dawson_extraction",
+      "title": "Dawson placed on stretcher",
+      "type": "patient_transfer",
+      "patients": [
+        "Dawson"
+      ],
+      "confidence": "event_supported_attribution_conflict",
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "claim": "Josephine carried Dawson and put him on the stretcher."
+        },
+        {
+          "witness": "Nudd",
+          "claim": "Nudd identified the officer carrying the child as Sergeant Homestead."
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR018",
+          "FR019"
+        ]
+      }
+    },
+    {
+      "id": "FR021",
+      "order": 21,
+      "phase": "dawson_extraction",
+      "title": "Homestead and fire personnel continue Dawson care",
+      "type": "medical_care",
+      "actors": [
+        "Homestead"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "source_assertion": "Josephine",
+      "constraints": {
+        "after": [
+          "FR020"
+        ]
+      }
+    },
+    {
+      "id": "FR022",
+      "order": 22,
+      "phase": "dawson_extraction",
+      "title": "Dawson moved into Ambulance 1; resuscitation continues",
+      "type": "patient_transfer_and_care",
+      "patients": [
+        "Dawson"
+      ],
+      "unit": "Ambulance 1",
+      "constraints": {
+        "after": [
+          "FR020",
+          "FR021"
+        ]
+      }
+    },
+    {
+      "id": "FR023",
+      "order": 23,
+      "phase": "parallel_post_scream",
+      "title": "Dougherty remains with Lindsay and bandages injuries",
+      "type": "medical_care",
+      "actors": [
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      }
+    },
+    {
+      "id": "FR024",
+      "order": 24,
+      "phase": "parallel_post_scream",
+      "title": "Heath leaves Lindsay area for backboard",
+      "type": "movement",
+      "actors": [
+        "Heath"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "note": "Dougherty says Heath does not return to him with it."
+    },
+    {
+      "id": "FR025",
+      "order": 25,
+      "phase": "cora_callan",
+      "title": "Cahill checks Cora",
+      "type": "patient_assessment",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Cora"
+      ],
+      "finding": "no pulse",
+      "constraints": {
+        "after": [
+          "FR016"
+        ]
+      }
+    },
+    {
+      "id": "FR026",
+      "order": 26,
+      "phase": "cora_callan",
+      "title": "Cahill checks Callan",
+      "type": "patient_assessment",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Callan"
+      ],
+      "finding": "no pulse",
+      "constraints": {
+        "after": [
+          "FR025"
+        ]
+      }
+    },
+    {
+      "id": "FR027",
+      "order": 27,
+      "phase": "cora_callan",
+      "title": "Dwyer takes Cora; Stratton takes Callan",
+      "type": "crew_split",
+      "actors": [
+        "Patrick Dwyer",
+        "Stratton"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "corroborated",
+      "constraints": {
+        "after": [
+          "FR017"
+        ]
+      }
+    },
+    {
+      "id": "FR028",
+      "order": 28,
+      "phase": "escalation",
+      "title": "Additional ambulances requested for Cora and Callan",
+      "type": "resource_request",
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "attribution_unresolved",
+      "assertions": [
+        {
+          "witness": "Stratton",
+          "claim": "radioed for two additional ambulances"
+        },
+        {
+          "witness": "Hussey",
+          "claim": "called two more ambulances"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR016",
+          "FR017"
+        ]
+      }
+    },
+    {
+      "id": "FR029",
+      "order": 29,
+      "phase": "escalation",
+      "title": "Recall / mutual-aid escalation",
+      "type": "resource_request",
+      "actors": [
+        "Hussey"
+      ],
+      "note": "Narrative reason/order supported; precise CAD/radio placement still needed."
+    },
+    {
+      "id": "FR030",
+      "order": 30,
+      "phase": "cora_callan",
+      "title": "Cahill moves ottoman/futon component to create treatment space",
+      "type": "scene_alteration",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR026"
+        ]
+      }
+    },
+    {
+      "id": "FR031",
+      "order": 31,
+      "phase": "cora_callan",
+      "title": "Cahill retrieves equipment and returns",
+      "type": "equipment",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR030"
+        ]
+      },
+      "caveat": "Requester/equipment unspecified."
+    },
+    {
+      "id": "FR032",
+      "order": 32,
+      "phase": "recalled_response",
+      "title": "Nette arrives",
+      "type": "arrival",
+      "actors": [
+        "Nette"
+      ],
+      "observations": [
+        "Ambulance 1 in driveway",
+        "Dawson already inside",
+        "Homestead and Heath doing CPR"
+      ],
+      "constraints": {
+        "after": [
+          "FR022",
+          "FR029"
+        ]
+      }
+    },
+    {
+      "id": "FR033",
+      "order": 33,
+      "phase": "recalled_response",
+      "title": "Nette joins Dawson resuscitation",
+      "type": "medical_care",
+      "actors": [
+        "Nette",
+        "Heath",
+        "Homestead"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "actions": [
+        "CPR",
+        "IV/IO attempts",
+        "intubation",
+        "medications"
+      ],
+      "constraints": {
+        "after": [
+          "FR032"
+        ]
+      }
+    },
+    {
+      "id": "FR034",
+      "order": 34,
+      "phase": "lindsay_transport",
+      "title": "Hall retrieves backboard for Lindsay",
+      "type": "equipment",
+      "actors": [
+        "Hall",
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR024"
+        ]
+      }
+    },
+    {
+      "id": "FR035",
+      "order": 35,
+      "phase": "lindsay_transport",
+      "title": "Lindsay placed on longboard/backboard",
+      "type": "patient_packaging",
+      "actors": [
+        "Dougherty",
+        "Hall"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR034"
+        ]
+      }
+    },
+    {
+      "id": "FR036",
+      "order": 36,
+      "phase": "lindsay_transport",
+      "title": "Pembroke arrives / assumes Lindsay care",
+      "type": "arrival_and_handoff",
+      "actors": [
+        "Costanzo",
+        "Dan Smith",
+        "Jim Shea"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "observation": "Lindsay already packaged on longboard.",
+      "constraints": {
+        "after": [
+          "FR035"
+        ]
+      }
+    },
+    {
+      "id": "FR037",
+      "order": 37,
+      "phase": "lindsay_transport",
+      "title": "Pembroke total on-scene interval",
+      "type": "duration",
+      "patients": [
+        "Lindsay"
+      ],
+      "duration_minutes": 7,
+      "precision": "approximate_witness_estimate",
+      "raw_temporal_expression": "I think it was seven minutes ... total on scene",
+      "start_event": "FR036",
+      "end_event": "FR038"
+    },
+    {
+      "id": "FR038",
+      "order": 38,
+      "phase": "lindsay_transport",
+      "title": "Pembroke departs with Lindsay",
+      "type": "transport",
+      "patients": [
+        "Lindsay"
+      ],
+      "destination": "South Shore Hospital",
+      "constraints": {
+        "after": [
+          "FR036"
+        ]
+      }
+    },
+    {
+      "id": "FR039",
+      "order": 39,
+      "phase": "dawson_transport",
+      "title": "Dougherty returns to Ambulance 1 after Pembroke leaves",
+      "type": "movement",
+      "actors": [
+        "Dougherty"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "constraints": {
+        "after": [
+          "FR038"
+        ]
+      }
+    },
+    {
+      "id": "FR040",
+      "order": 40,
+      "phase": "dawson_transport",
+      "title": "Ambulance 1 transports Dawson",
+      "type": "transport",
+      "actors": [
+        "Dougherty",
+        "Nette"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth",
+      "constraints": {
+        "after": [
+          "FR039"
+        ]
+      }
+    },
+    {
+      "id": "FR041",
+      "order": 41,
+      "phase": "cora_transport",
+      "title": "Cora removed via bulkhead and transported by Marshfield",
+      "type": "transport",
+      "actors": [
+        "Patrick Dwyer"
+      ],
+      "patients": [
+        "Cora"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth"
+    },
+    {
+      "id": "FR042",
+      "order": 42,
+      "phase": "callan_transport",
+      "title": "Stratton carries Callan to Kingston ambulance; transport begins",
+      "type": "transport",
+      "actors": [
+        "Stratton"
+      ],
+      "patients": [
+        "Callan"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth"
+    },
+    {
+      "id": "FR043",
+      "order": 43,
+      "phase": "hospital",
+      "title": "Dawson care transferred at BI Plymouth",
+      "type": "hospital_handoff",
+      "patients": [
+        "Dawson"
+      ],
+      "actors": [
+        "Nette"
+      ]
+    },
+    {
+      "id": "FR044",
+      "order": 44,
+      "phase": "hospital",
+      "title": "Marshfield arrives at BI Plymouth with Cora after Dawson handoff",
+      "type": "hospital_arrival",
+      "patients": [
+        "Cora"
+      ],
+      "actors": [
+        "Nette",
+        "Patrick Dwyer"
+      ],
+      "constraints": {
+        "after": [
+          "FR043"
+        ]
+      }
+    },
+    {
+      "id": "FR045",
+      "order": 45,
+      "phase": "scene_control",
+      "title": "Cahill transitions to scene-control role",
+      "type": "scene_control",
+      "actors": [
+        "Cahill"
+      ],
+      "evidence_reference": "Crime Scene Entry/Exit Log, Exhibit 109"
+    }
+  ],
+  "critical_constraints": [
+    {
+      "before": "FR003",
+      "after": "FR005",
+      "basis": "Police cruisers already present when Ambulance 1 arrives."
+    },
+    {
+      "before": "FR005",
+      "after": "FR011",
+      "basis": "Ambulance 1 arrives before Engine 2."
+    },
+    {
+      "before": "FR009",
+      "after": "FR012",
+      "basis": "Lindsay airway/oxygen precedes scream in Dougherty's sequence."
+    },
+    {
+      "before": "FR012",
+      "after": "FR018",
+      "basis": "Scream/child alert prompts child discovery/response; Dawson extraction follows."
+    },
+    {
+      "overlap": [
+        "FR008",
+        "FR018"
+      ],
+      "basis": "Josephine says Ambulance 1 was backing and had pretty much just parked as he rushed Dawson to the stretcher."
+    },
+    {
+      "overlap": [
+        "FR018",
+        "FR019"
+      ],
+      "basis": "Josephine's Dawson arrival and Nudd's stretcher extraction describe the same handoff window."
+    },
+    {
+      "before": "FR020",
+      "after": "FR022",
+      "basis": "Dawson is placed on stretcher before entering Ambulance 1."
+    },
+    {
+      "before": "FR022",
+      "after": "FR032",
+      "basis": "Dawson already inside when Nette arrives."
+    },
+    {
+      "before": "FR035",
+      "after": "FR036",
+      "basis": "Lindsay already packaged when Pembroke assumes care."
+    },
+    {
+      "duration": {
+        "start": "FR036",
+        "end": "FR038",
+        "minutes": 7,
+        "precision": "approximate"
+      },
+      "basis": "Costanzo estimates approximately seven minutes total on scene."
+    },
+    {
+      "before": "FR038",
+      "after": "FR039",
+      "basis": "Dougherty returns to Ambulance 1 after Pembroke leaves."
+    },
+    {
+      "before": "FR043",
+      "after": "FR044",
+      "basis": "Nette observes Marshfield/Cora arrival after Dawson handoff."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "U001",
+      "issue": "Dawson carrier attribution",
+      "status": "conflict",
+      "assertions": [
+        "Josephine says he carried Dawson and put him on the stretcher.",
+        "Nudd identifies the carrier as Sergeant Homestead."
+      ],
+      "handling": "Preserve both assertions; do not alter the shared transfer event."
+    },
+    {
+      "id": "U002",
+      "issue": "Exact identity of scream/vocalization across accounts",
+      "status": "candidate_shared_sync",
+      "handling": "Use scream/child alert as the central synchronization event because it prompts discovery/response, while retaining each witness's wording separately."
+    },
+    {
+      "id": "U003",
+      "issue": "Homestead arrival time",
+      "status": "unplaced"
+    },
+    {
+      "id": "U004",
+      "issue": "Hall/Josephine arrival relationship",
+      "status": "conflict"
+    },
+    {
+      "id": "U005",
+      "issue": "Two-additional-ambulance request attribution",
+      "status": "unresolved"
+    },
+    {
+      "id": "U006",
+      "issue": "Exact CAD/radio placement of recall and mutual-aid requests",
+      "status": "needs_records"
+    }
+  ]
+}
