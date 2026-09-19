@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3",
+  "schema_version": "1.4",
   "title": "Patrick Clancy — accounts of January 24 compared",
   "status": "working_draft",
   "intro": "Patrick Clancy's own accounts of the evening, set beside each other and beside what the first responders describe. A difference is a point to test, not a finding: the sources differ in kind, and several of the records that would settle them are not in the folder yet.",
@@ -76,9 +76,9 @@
       },
       "assessment": {
         "status": "differs",
-        "note": "His account, as the opening and the Day 2 summary give it, is a departure at about 5:15. An email sent from his work computer at 17:24 would put him at home later than that, and a three-minute drive to a 17:32:32 CVS entry points to about 17:29. The email and the video fit together; the 5:15 departure is the outlier. His 'about 17:15' for Lindsay's call to ThreeV is also five minutes after the receipt's 17:10:00 order."
+        "note": "His account, as the opening and the Day 2 summary give it, is a departure at about 5:15. An email sent from his work computer at 17:24 puts him at home later than that, and the researcher assesses it as very likely sent by Patrick himself. A three-minute drive to a 17:32:32 CVS entry points to about 17:29. The email and the video fit together; the 5:15 departure is the outlier. His 'about 17:15' for Lindsay's call to ThreeV is also five minutes after the receipt's 17:10:00 order."
       },
-      "researcher_note": "Researcher observation: an email was sent from his work computer at 17:24 in the digital evidence. That places him leaving later than 5:15 and fits the CVS arrival time. The Day 20 research queue also lists the '17:24 work-computer email'. The email and its header data are not in the folder, so the clock basis (local time or UTC) and who was using the computer are unconfirmed."
+      "researcher_note": "Researcher assessment: an email was sent from his work computer at 17:24 in the digital evidence. He worked for Microsoft, whose sign-in to a company computer is rigorous by design, so the researcher assesses with relatively high confidence that he sent it. That places him leaving later than 5:15 and fits the CVS arrival time. The Day 20 research queue also lists the '17:24 work-computer email'. The email and its header data are not in the folder, so the clock basis (local time or UTC) is unconfirmed."
     },
     {
       "id": "E2",
@@ -598,13 +598,13 @@
     {
       "id": "W0",
       "title": "About 17:24 to 17:54 — the last sign of him at home to entering ThreeV",
-      "window": "His account puts the departure at about 5:15. An email sent from his work computer at 17:24 (researcher-reported) and his three-minute drive both point to about 17:25–17:29. The first hard anchors after that are the CVS video (17:32:32 in, 17:37:08 out) and the ThreeV video (17:54:14 in, 17:55:01 paid).",
+      "window": "His account puts the departure at about 5:15. An email sent from his work computer at 17:24, which the researcher assesses as very likely his given the company's sign-in controls, and his three-minute drive both point to about 17:25–17:29. The first hard anchors after that are the CVS video (17:32:32 in, 17:37:08 out) and the ThreeV video (17:54:14 in, 17:55:01 paid).",
       "claimed": [
         "Left the house to collect the food from ThreeV and stop at CVS; the drive to CVS took three minutes",
         "Went to the pediatric section, found the shelves 'pretty empty,' and called Lindsay",
         "Bought Pedia-Lax"
       ],
-      "attested": "Two timed video stops (CVS and ThreeV) and the ThreeV card payment. Nothing timed covers the drive from the house to CVS, or from CVS to ThreeV.",
+      "attested": "The 17:24 work-computer email (researcher-assessed as his), two timed video stops (CVS and ThreeV), and the ThreeV card payment. Nothing timed covers the drive from the house to CVS, or from CVS to ThreeV.",
       "gap": "The house-to-CVS leg is consistent on the email and his own figure. The stretch between leaving CVS at 17:37:08 and entering ThreeV at 17:54:14 is unobserved and about 9 minutes longer than the route estimate. On a 5:15 departure there would be about 14 more minutes as well, which the email argues against."
     },
     {
@@ -863,12 +863,12 @@
       "issue": "A 5:15 departure, against the 17:24 email",
       "accounts": [
         "Patrick's account, as the opening (47:21) and the Day 2 summary give it: he left at about 5:15.",
-        "Digital evidence (researcher-reported; listed in the Day 20 research queue): an email sent from his work computer at 17:24.",
+        "Digital evidence (researcher-reported; listed in the Day 20 research queue): an email sent from his work computer at 17:24. Researcher assessment: very likely sent by Patrick, because he worked for Microsoft and sign-in to a company computer is rigorous by design.",
         "Patrick (trial 32:15): the drive to CVS took three minutes. Video: CVS entry at 17:32:32.",
         "Day 20 summary: Heilbrun's analysis used a 5:15 departure and a 6:00 return."
       ],
-      "why": "If he sent the email, he was at his computer at 17:24 and the 5:15 departure is off by about ten minutes. That fits his three-minute drive and the CVS video, and it shortens the prosecution's 5:15-to-6:09 window. An expert who relied on 5:15 would also have relied on a premise the timestamps do not support.",
-      "resolve": "The email's header data (time zone, client, device), the work computer's activity and login records around 17:15 to 17:30, and whether anything shows who was using it. Device evidence in this trial has not identified the user (Day 13)."
+      "why": "The email puts him at his computer at 17:24, about nine minutes after the 5:15 departure the prosecution uses. That agrees with his three-minute drive and the CVS video, and it shortens the 5:15-to-6:09 window. An expert who relied on 5:15 relied on a premise the timestamps do not support.",
+      "resolve": "The email's header data (time zone, client, device, network) and the work computer's sign-in, MFA, and lock/unlock records around 17:15 to 17:30, which would show who signed in and when the session began. Whether the session was already open before 17:24 is the main open point."
     },
     {
       "id": "P022",
@@ -894,7 +894,7 @@
     "Patrick's phone extraction and location data, the truck's telematics, and carrier call detail records",
     "The exhibit photographs of the bedroom door and doorknob, and of the driveway",
     "The part of his testimony on leaving home (before 32:06) and on ThreeV (32:35 to 41:42)",
-    "The 17:24 work-computer email with its header data, and the work computer's activity and login logs"
+    "The 17:24 work-computer email with its header data, and the computer's sign-in, MFA, lock/unlock, and activity logs"
   ],
   "errand": {
     "intro": "What the documents say the errand should have taken, against the timed video stops. The estimates are the affidavit's Apple Maps figures. Patrick's own three-minute figure and the 17:24 work-computer email are included. The ThreeV exit and home-arrival times are not documented, so the last leg cannot be tested.",
@@ -902,10 +902,10 @@
       {
         "leg": "House to CVS",
         "estimate": "About 3 min",
-        "actual": "Patrick: 'three minutes.' Video: enters 17:32:32. Work-computer email at 17:24 (researcher-reported)",
-        "difference": "None if he left about 17:25–17:29. About 14 min more if he left at 17:15",
-        "basis": "Departure: 17:15 (his account, per the opening and Day 2 summary) or after the 17:24 email; a three-minute drive to a 17:32:32 entry implies about 17:29",
-        "caveat": "The email sets an earliest departure only if he was the one using the computer."
+        "actual": "Patrick: 'three minutes.' Video: enters 17:32:32. Work-computer email at 17:24 (researcher-assessed as his)",
+        "difference": "None: he left about 17:25–17:29. A 17:15 departure would add about 14 min",
+        "basis": "Departure after the 17:24 email; a three-minute drive to a 17:32:32 entry implies about 17:29. The 17:15 figure is his account, per the opening and Day 2 summary",
+        "caveat": "The email is a sign-in-protected work account, assessed as Patrick's; the sign-in records are not in the folder."
       },
       {
         "leg": "Inside CVS",
@@ -940,9 +940,9 @@
         "caveat": "Leaving at once, 9–12 minutes puts him home at about 18:04–18:07, before a call to Lindsay at about 18:09."
       }
     ],
-    "summary": "With the 17:24 email and his three-minute drive, the house-to-CVS leg is consistent: he left about 17:25–17:29. The unexplained time is then the CVS-to-ThreeV leg, about 9 minutes longer than the 8-minute estimate, timed at both ends. A 5:15 departure would leave about 14 more minutes unexplained, but the email, if he sent it, contradicts 5:15. That puts his time out of the house at roughly 35 to 40 minutes (about 17:27 to 18:04–18:07), not the 54 minutes from 5:15 to 6:09.",
+    "summary": "The 17:24 email, which the researcher assesses as very likely sent by Patrick himself, and his own three-minute drive agree with the CVS video: he left about 17:25–17:29. The house-to-CVS leg is therefore consistent. The unexplained time is the CVS-to-ThreeV leg, about 9 minutes longer than the 8-minute estimate, timed at both ends. The 5:15 departure the opening and Day 2 summary use is contradicted by the email, which puts his time out of the house at roughly 35 to 40 minutes (about 17:27 to 18:04–18:07), not the 54 minutes from 5:15 to 6:09.",
     "cautions": [
-      "An email timestamp shows that the computer and account sent it at 17:24. It does not by itself show who was at the keyboard, and the clock basis (local time or UTC) needs confirming. Device evidence in this trial has carried that limit (Day 13: the examiner could not say who was using the computer).",
+      "The 17:24 email is treated as Patrick's on the researcher's assessment: a Microsoft work computer's sign-in controls make it very likely he was the one who sent it. That is an inference. The folder holds no sign-in record, and a session that was already open could be used by someone else, so the header data (send time, device, client, network) and the sign-in, MFA, and lock/unlock records should confirm it. The clock basis (local time or UTC) also needs confirming. Device evidence elsewhere in this trial (Day 13) concerned a different computer and did not identify its user.",
       "Apple Maps estimates are best-case route figures; the night was cold and it had recently snowed.",
       "The 5:15 departure comes from the opening and the Day 2 summary, not from a timestamp, and it is not in the testimony excerpts supplied.",
       "Nothing here says what he did in the unexplained time, or that anything improper happened in it. It marks where the record has no observation."

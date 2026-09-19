@@ -15,6 +15,7 @@ import {
   structureReviewHref,
   timelineHref,
   trialIndexHref,
+  witnessHref,
 } from "@/lib/case-routes";
 
 export type CaseNavigationItem = {
@@ -27,7 +28,8 @@ export type CaseNavigationItem = {
 export function getCaseNavigationItems(caseId: string, isOwner: boolean): CaseNavigationItem[] {
   const sharedResearchItems: CaseNavigationItem[] = [
     { href: caseFoundationHref(caseId), label: "Foundation", match: "exact" },
-    { href: courtRecordHref(caseId), label: "Court Record", match: "prefix" },
+    { href: courtRecordHref(caseId), label: "Testimony Database", match: "prefix" },
+    { href: witnessHref(caseId), label: "Witness", match: "prefix" },
     { href: timelineHref(caseId), label: "Timelines", match: "prefix" },
     { href: trialIndexHref(caseId), label: "Trial Index", match: "prefix" },
     { href: evidenceHref(caseId), label: "Evidence", match: "prefix" },
@@ -41,7 +43,8 @@ export function getCaseNavigationItems(caseId: string, isOwner: boolean): CaseNa
   return [
     { href: caseFoundationHref(caseId), label: "Foundation", match: "exact" },
     { href: trialIndexHref(caseId), label: "Trial Index", match: "prefix" },
-    { href: courtRecordHref(caseId), label: "Court Record", match: "prefix" },
+    { href: courtRecordHref(caseId), label: "Testimony Database", match: "prefix" },
+    { href: witnessHref(caseId), label: "Witness", match: "prefix" },
     { href: timelineHref(caseId), label: "Timelines", match: "prefix" },
     { href: structurePath, label: "Structure", match: "exact" },
     { href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: "prefix", activePath: `${structurePath}/review` },

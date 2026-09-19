@@ -2,6 +2,7 @@ type CourtRecordRouteState = {
   query?: string;
   segmentId?: string;
   proceedingId?: string;
+  view?: "text";
 };
 
 type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved"; view?: "navigation" | "intelligence"; section?: string };
@@ -149,8 +150,24 @@ export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {
   if (query) params.set("q", query);
   if (state.segmentId) params.set("segment", state.segmentId);
   if (state.proceedingId) params.set("proceeding", state.proceedingId);
+  if (state.view === "text") params.set("view", "text");
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/record${suffix ? `?${suffix}` : ""}`;
+}
+
+export function witnessHref(caseId: string, state: { day?: number; block?: string; witness?: string; query?: string; find?: string } = {}) {
+  const params = new URLSearchParams();
+  if (state.day) params.set("day", String(state.day));
+  if (state.block) params.set("block", state.block);
+  if (state.witness?.trim()) params.set("witness", state.witness.trim());
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.find?.trim()) params.set("find", state.find.trim());
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/witness${suffix ? `?${suffix}` : ""}`;
+}
+
+export function witnessDownloadHref(caseId: string, day: number, block: string, format: "txt" | "json" | "source" | "first-pass") {
+  return `/cases/${encodeURIComponent(caseId)}/witness/download?day=${day}&block=${encodeURIComponent(block)}&format=${format}`;
 }
 
 export function structureHref(caseId: string, state: StructureRouteState = {}) {

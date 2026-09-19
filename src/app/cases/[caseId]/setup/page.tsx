@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { courtRecordHref, timelineHref, trialIndexHref } from "@/lib/case-routes";
+import { courtRecordHref, timelineHref, trialIndexHref, witnessHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
@@ -119,7 +119,8 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
 
     <nav className="foundation-next" aria-label="Continue">
       <Link href={trialIndexHref(currentCase.id)}><strong>Trial Index</strong><span>Every day, witness and topic →</span></Link>
-      <Link href={courtRecordHref(currentCase.id)}><strong>Court Record</strong><span>Search the testimony →</span></Link>
+      <Link href={courtRecordHref(currentCase.id)}><strong>Testimony Database</strong><span>Search the record →</span></Link>
+      <Link href={witnessHref(currentCase.id)}><strong>Witness</strong><span>Read one witness at a time →</span></Link>
       <Link href={timelineHref(currentCase.id)}><strong>Timelines</strong><span>Sequence the events →</span></Link>
     </nav>
   </main>;

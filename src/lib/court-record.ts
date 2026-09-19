@@ -72,7 +72,7 @@ export type CourtRecordWorkspace = {
 
 const segmentColumns = "id,case_id,artifact_id,proceeding_id,proceeding_speaker_id,speaker_entity_id,ordinal,timestamp_start_ms,timestamp_end_ms,deep_link,transcript_provider,exact_text,locator_type,locator";
 
-export async function getCourtRecordWorkspace(actorId: string, caseId: string, requestedSegmentId?: string, requestedProceedingId?: string): Promise<CourtRecordWorkspace | null> {
+export async function getCourtRecordWorkspace(actorId: string, caseId: string, requestedSegmentId?: string, requestedProceedingId?: string, windowRadius = 12): Promise<CourtRecordWorkspace | null> {
   const currentCase = await getAccessibleCase(actorId, caseId);
   if (!currentCase) return null;
   const supabase = await createClient();
@@ -115,7 +115,7 @@ export async function getCourtRecordWorkspace(actorId: string, caseId: string, r
     };
   }
 
-  let windowQuery = supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).eq("artifact_id", rawSelected.artifact_id).gte("ordinal", Math.max(0, rawSelected.ordinal - 12)).lte("ordinal", rawSelected.ordinal + 12).order("ordinal").limit(25);
+  let windowQuery = supabase.from("source_segments").select(segmentColumns).eq("case_id", caseId).eq("artifact_id", rawSelected.artifact_id).gte("ordinal", Math.max(0, rawSelected.ordinal - windowRadius)).lte("ordinal", rawSelected.ordinal + windowRadius).order("ordinal").limit(windowRadius * 2 + 1);
   if (rawSelected.proceeding_id) windowQuery = windowQuery.eq("proceeding_id", rawSelected.proceeding_id);
   const windowResult = await windowQuery;
   const rawSegments = rowsOrThrow(windowResult) as RawSegment[];

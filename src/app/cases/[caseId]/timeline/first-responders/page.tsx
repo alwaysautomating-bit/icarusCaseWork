@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
+import { CiteList, WitnessLink } from "@/app/cases/[caseId]/timeline/_components/cite-links";
 import { ResponderEventCard } from "@/app/cases/[caseId]/timeline/first-responders/_components/responder-event-card";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
@@ -13,8 +14,8 @@ type SearchState = { patient?: string; conflicts?: string };
 
 const PATIENT_ORDER = ["Dawson", "Cora", "Callan", "Lindsay"];
 
-function Cites({ items }: { items: string[] }) {
-  return items.length ? <small className="responder-cites">{items.join(" · ")}</small> : null;
+function Cites({ caseId, items }: { caseId: string; items: string[] }) {
+  return items.length ? <small className="responder-cites"><CiteList caseId={caseId} items={items} /></small> : null;
 }
 
 export default async function FirstRespondersTimelinePage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: Promise<SearchState> }) {
@@ -75,10 +76,10 @@ export default async function FirstRespondersTimelinePage({ params, searchParams
       <div className="responder-alignment-table" role="table" aria-label="Witness alignment around T₀">
         <div className="head" role="row"><span role="columnheader">Witness</span><span role="columnheader">Before T₀</span><span role="columnheader" className="at">T₀</span><span role="columnheader">After T₀</span></div>
         {anchor.witness_alignment.map((row) => <div role="row" key={row.witness}>
-          <div role="cell" className="who"><strong>{row.witness}</strong><span>{row.role}</span></div>
-          <div role="cell" data-label="Before T₀"><p>{row.before.text}</p><Cites items={row.before.sources} /></div>
-          <div role="cell" data-label="T₀" className="at"><p>{row.at.text}</p><Cites items={row.at.sources} /></div>
-          <div role="cell" data-label="After T₀"><p>{row.after.text}</p><Cites items={row.after.sources} /></div>
+          <div role="cell" className="who"><strong><WitnessLink caseId={caseId} name={row.witness} /></strong><span>{row.role}</span></div>
+          <div role="cell" data-label="Before T₀"><p>{row.before.text}</p><Cites caseId={caseId} items={row.before.sources} /></div>
+          <div role="cell" data-label="T₀" className="at"><p>{row.at.text}</p><Cites caseId={caseId} items={row.at.sources} /></div>
+          <div role="cell" data-label="After T₀"><p>{row.after.text}</p><Cites caseId={caseId} items={row.after.sources} /></div>
         </div>)}
       </div>
     </section>
@@ -95,7 +96,7 @@ export default async function FirstRespondersTimelinePage({ params, searchParams
       {groups.map((group, index) => <section className={`responder-phase band-${group.band}`} key={`${group.band}-${group.phase}-${index}`} aria-label={`${BAND_LABELS[group.band]}: ${phaseLabel(group.phase)}`}>
         {index === 0 || groups[index - 1]!.band !== group.band ? <h2 className="responder-band">{BAND_LABELS[group.band]}</h2> : null}
         <h3 className="responder-phase-title">{phaseLabel(group.phase)}</h3>
-        {group.events.map((event) => <ResponderEventCard event={event} titles={titles} key={event.id} />)}
+        {group.events.map((event) => <ResponderEventCard caseId={caseId} event={event} titles={titles} key={event.id} />)}
       </section>)}
     </div>
 
@@ -114,7 +115,7 @@ export default async function FirstRespondersTimelinePage({ params, searchParams
       <header><MonoLabel>PATRICK CLANCY · AROUND T₀</MonoLabel><h2 id="responder-patrick-title">Where the responders place him</h2><p>{timeline.patrick_positions.intro}</p></header>
       <ol>{timeline.patrick_positions.entries.map((entry, index) => <li key={index} className={entry.relation}>
         <span className="responder-badge">{entry.relation === "before" ? "Before T₀" : entry.relation === "at" ? "At T₀" : "After T₀"}</span>
-        <div><strong>{entry.witness}</strong><p>{entry.text}</p><Cites items={entry.sources} /></div>
+        <div><strong>{entry.witness}</strong><p>{entry.text}</p><Cites caseId={caseId} items={entry.sources} /></div>
       </li>)}</ol>
       <div className="responder-not-attested" role="note"><MonoLabel>NOT ATTESTED IN THESE TRANSCRIPTS</MonoLabel><ul>{timeline.patrick_positions.not_attested.map((item) => <li key={item}>{item}</li>)}</ul></div>
     </section>

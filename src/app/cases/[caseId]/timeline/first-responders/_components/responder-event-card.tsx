@@ -1,3 +1,4 @@
+import { CiteList, SearchTestimonyLink } from "@/app/cases/[caseId]/timeline/_components/cite-links";
 import { confidenceInfo, typeLabel, type ResponderEvent } from "@/lib/responder-timeline";
 
 const ASSERTION_LABELS: Record<string, string> = { claim: "Says", effect: "Effect", travel_estimate: "Travel estimate", source: "Transcript" };
@@ -19,7 +20,7 @@ const LIST_FIELDS: Array<[keyof ResponderEvent, string]> = [
   ["actions", "Actions"],
 ];
 
-export function ResponderEventCard({ event, titles }: { event: ResponderEvent; titles: Map<string, string> }) {
+export function ResponderEventCard({ caseId, event, titles }: { caseId: string; event: ResponderEvent; titles: Map<string, string> }) {
   const confidence = confidenceInfo(event.confidence);
   const placement = [
     ...(event.constraints?.after ?? []).map((id) => ({ relation: "After", id })),
@@ -57,7 +58,7 @@ export function ResponderEventCard({ event, titles }: { event: ResponderEvent; t
           {Object.entries(assertion).filter(([key]) => key !== "witness").map(([key, value]) => <span key={key}><em>{ASSERTION_LABELS[key] ?? key.replaceAll("_", " ")}:</em> {String(value)}</span>)}
         </li>)}
       </ul> : null}
-      {event.sources?.length ? <p className="responder-sources"><strong>Transcript</strong> {event.sources.join(" · ")}</p> : null}
+      {event.sources?.length ? <p className="responder-sources"><strong>Transcript</strong> <CiteList caseId={caseId} items={event.sources} /> · <SearchTestimonyLink caseId={caseId} query={event.title} /></p> : null}
       {placement.length ? <details className="responder-placement"><summary>Placement · {placement.length} constraint{placement.length === 1 ? "" : "s"}</summary>
         <ul>{placement.map(({ relation, id }) => <li key={`${relation}-${id}`}>{relation} <a href={`#${id.toLowerCase()}`}>{id}</a> {titles.get(id) ? `· ${titles.get(id)}` : ""}</li>)}</ul>
       </details> : null}

@@ -7,7 +7,8 @@ describe("case navigation policy", () => {
   it("shows members the shared research tabs", () => {
     expect(getCaseNavigationItems(caseId, false).map((item) => item.label)).toEqual([
       "Foundation",
-      "Court Record",
+      "Testimony Database",
+      "Witness",
       "Timelines",
       "Trial Index",
       "Evidence",
@@ -20,7 +21,8 @@ describe("case navigation policy", () => {
     expect(getCaseNavigationItems(caseId, true).map((item) => item.label)).toEqual([
       "Foundation",
       "Trial Index",
-      "Court Record",
+      "Testimony Database",
+      "Witness",
       "Timelines",
       "Structure",
       "Review",

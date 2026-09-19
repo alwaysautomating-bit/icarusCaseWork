@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
+import { CiteList } from "@/app/cases/[caseId]/timeline/_components/cite-links";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { firstRespondersTimelineHref, patrickAccountsHref, patrickDiscoveryHref, timelineHref } from "@/lib/case-routes";
@@ -76,7 +77,7 @@ export default async function PatrickAccountsPage({ params, searchParams }: { pa
             const source = sourceByKey.get(key);
             return <div role="cell" className={`patrick-cell ${key}${cell ? "" : " empty"}`} data-label={source?.label} key={key}>
               <h3>{source?.label}</h3>
-              {cell ? <><p>{cell.text}</p>{cell.cites.length ? <small className="responder-cites">{cell.cites.join(" · ")}</small> : null}</> : <p className="none">Not addressed.</p>}
+              {cell ? <><p>{cell.text}</p>{cell.cites.length ? <small className="responder-cites"><CiteList caseId={caseId} items={cell.cites} /></small> : null}</> : <p className="none">Not addressed.</p>}
             </div>;
           })}
         </div>

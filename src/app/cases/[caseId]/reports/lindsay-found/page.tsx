@@ -44,7 +44,7 @@ export default async function LindsayFoundReportPage({ params }: { params: Promi
     </section>
 
     <section className="lindsay-report-register" aria-labelledby="lindsay-register-title">
-      <header><div><MonoLabel>AT A GLANCE</MonoLabel><h2 id="lindsay-register-title">The documented course</h2></div><p>The uploaded Rose Stoffers excerpt aligns with the indexed Day 5 transcript; links below open the canonical Court Record segments.</p></header>
+      <header><div><MonoLabel>AT A GLANCE</MonoLabel><h2 id="lindsay-register-title">The documented course</h2></div><p>The uploaded Rose Stoffers excerpt aligns with the indexed Day 5 transcript; links below open the canonical testimony database segments.</p></header>
       <dl><div><dt>Found</dt><dd>Face-up in the backyard below the bedroom window</dd></div><div><dt>Initial state</dt><dd>Breathing; responsiveness varied across successive observations</dd></div><div><dt>Field care</dt><dd>Airway support, oxygen, bandaging, backboard, and cervical collar</dd></div><div><dt>Hospital trail</dt><dd>South Shore emergency department, then medflight to Brigham and Women’s</dd></div></dl>
     </section>
 

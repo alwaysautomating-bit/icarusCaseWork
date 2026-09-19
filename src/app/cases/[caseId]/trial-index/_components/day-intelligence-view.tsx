@@ -49,7 +49,7 @@ export function DayIntelligenceView({ bundle, dayNumber, caseId }: { bundle: Day
 
   const { card, agentPack } = bundle;
   return <div className="day-intelligence-view">
-    <div className="day-intelligence-boundary"><strong>GENERATED ANALYSIS · REFERENCE ONLY</strong><span>This view organizes testimony; it is not canonical fact and does not replace the Court Record.</span></div>
+    <div className="day-intelligence-boundary"><strong>GENERATED ANALYSIS · REFERENCE ONLY</strong><span>This view organizes testimony; it is not canonical fact and does not replace the testimony database.</span></div>
     <section className="day-intelligence-overview">
       <header><div><MonoLabel>ARTIFACT {card.artifact_set_id} · VERSION {card.version}</MonoLabel><h3>{card.subtitle}</h3></div><div className="day-intelligence-status"><span className="state-chip warn">{label(card.review_status)}</span><span className={`state-chip ${card.source_linkage_status === "complete" ? "pass" : "warn"}`}>{label(card.source_linkage_status)}</span></div></header>
       <p className="lede">{card.one_liner}</p>

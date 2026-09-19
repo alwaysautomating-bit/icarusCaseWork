@@ -71,7 +71,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
                 <span className="foundation-day-toggle" aria-hidden="true" />
               </summary>
               {day.note ? <p className="foundation-day-note">{day.note}</p> : null}
-              <DayWitnessTable day={day} />
+              <DayWitnessTable caseId={caseId} day={day} />
             </details>
           </section>)}
         </div>
@@ -143,7 +143,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
           <CollapseDocument content={selectedDay.purpose} />
           {sectionContent("key-insights") ? <CollapseDocument content={sectionContent("key-insights")!} /> : null}
         </> : null}
-        {activeUserTab.slug === "witnesses" ? (dayIndexEntry ? <DayWitnessTable day={dayIndexEntry} /> : <p className="foundation-empty">No witness index has been entered for this day yet.</p>) : null}
+        {activeUserTab.slug === "witnesses" ? (dayIndexEntry ? <DayWitnessTable caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No witness index has been entered for this day yet.</p>) : null}
         {activeUserTab.slug === "evidence" ? (sectionContent("evidence") ? <CollapseDocument content={sectionContent("evidence")!} /> : <p className="foundation-empty">No evidence summary has been entered for this day yet.</p>) : null}
         {activeUserTab.slug === "creators" ? (dayIndexEntry ? <DayCreatorGuide day={dayIndexEntry} /> : <p className="foundation-empty">No creator guide is available for this day yet.</p>) : null}
         {activeUserTab.slug === "questions" ? (sectionContent("open-questions") ? <CollapseDocument content={sectionContent("open-questions")!} /> : <p className="foundation-empty">No open questions have been recorded for this day.</p>) : null}
