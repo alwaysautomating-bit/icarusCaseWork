@@ -11,12 +11,12 @@ function display(value: unknown) {
 }
 
 export function ReviewHistory({ versions }: { versions: StructureReviewVersion[] }) {
-  return <section className="structure-review-history"><header><span>IMMUTABLE REVIEW HISTORY</span><strong>{versions.length}</strong></header>
+  return <details className="structure-review-history"><summary>Previous decisions <strong>{versions.length}</strong></summary>
     {versions.length === 0 ? <p>No human review version has been recorded for this candidate.</p> : versions.map((version) => {
       const changes = changedFields(version);
       return <article key={version.id}><header><strong>v{version.version} · {version.action}</strong><time dateTime={version.reviewedAt}>{new Date(version.reviewedAt).toLocaleString()}</time></header><p>{version.note || "No optional note recorded."}</p><code>{version.reviewedByUserId}</code>
         {changes.length ? <dl>{changes.map((field) => <div key={field}><dt>{field.replaceAll("_", " ")}</dt><dd><del>{display(version.beforeState[field])}</del><ins>{display(version.afterState[field])}</ins></dd></div>)}</dl> : <small>No candidate field changed; status and audit state were versioned.</small>}
       </article>;
     })}
-  </section>;
+  </details>;
 }

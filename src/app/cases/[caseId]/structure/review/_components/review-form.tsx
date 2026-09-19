@@ -1,11 +1,18 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { reviewStructureObjectAction, type ReviewActionState } from "@/app/cases/[caseId]/structure/review/actions";
 import type { StructureReviewRouteState } from "@/lib/case-routes";
 import type { ReviewQueueItem } from "@/lib/structure-review";
 
 const initialReviewState: ReviewActionState = { kind: "idle", message: "" };
+type Decision = "accept" | "amend" | "defer" | "reject";
+const choices: { value: Decision; title: string; description: string }[] = [
+  { value: "accept", title: "Accept", description: "The extracted fields are supported as written." },
+  { value: "amend", title: "Amend", description: "Correct one or more extracted fields." },
+  { value: "defer", title: "Defer", description: "Set this aside for another review pass." },
+  { value: "reject", title: "Reject", description: "The candidate should not be kept." },
+];
 
 function rendered(value: unknown, fallback = "") {
   if (value === null || value === undefined) return fallback;
@@ -36,9 +43,10 @@ function AmendmentFields({ item }: { item: ReviewQueueItem }) {
 
 export function ReviewForm({ caseId, item, routeState, permission, sourceCount }: { caseId: string; item: ReviewQueueItem; routeState: StructureReviewRouteState; permission: "review" | "read_only"; sourceCount: number }) {
   const [state, formAction, pending] = useActionState(reviewStructureObjectAction, initialReviewState);
-  if (permission === "read_only") return <section className="structure-review-decision read-only"><strong>READ-ONLY MEMBERSHIP</strong><p>You may inspect this queue and its complete source lineage. Only case owners and reviewers can record a decision.</p></section>;
-  if (!item.reviewable) return <section className="structure-review-decision read-only"><strong>HISTORICAL STATE</strong><p>This object is inspectable but no longer eligible for candidate review.</p></section>;
-  if (sourceCount === 0) return <section className="structure-review-decision blocked"><strong>SOURCE LINEAGE REQUIRED</strong><p>This object cannot be reviewed until at least one authoritative supporting segment is attached.</p></section>;
+  const [decision, setDecision] = useState<Decision | null>(null);
+  if (permission === "read_only") return <section className="structure-review-decision read-only"><h2>3 / Record a decision</h2><p>You can inspect this candidate, but only a case owner or reviewer can record a decision.</p></section>;
+  if (!item.reviewable) return <section className="structure-review-decision read-only"><h2>3 / Previous decision</h2><p>This candidate is in a historical state. Use the queue state filter to return to pending or deferred work.</p></section>;
+  if (sourceCount === 0) return <section className="structure-review-decision blocked"><h2>3 / Decision unavailable</h2><p>This candidate needs at least one supporting source segment before it can be reviewed.</p></section>;
 
   return <form action={formAction} className="structure-review-decision">
     <input type="hidden" name="caseId" value={caseId} />
@@ -46,17 +54,13 @@ export function ReviewForm({ caseId, item, routeState, permission, sourceCount }
     <input type="hidden" name="targetId" value={item.id} />
     <input type="hidden" name="expectedVersion" value={item.reviewVersion} />
     <input type="hidden" name="routeState" value={JSON.stringify(routeState)} />
-    <header><span>HUMAN DECISION · EXPECTED VERSION {item.reviewVersion}</span><strong>{sourceCount} source{sourceCount === 1 ? "" : "s"}</strong></header>
-    <details className="structure-amendment-fields"><summary>Amend allowlisted candidate fields</summary><div><AmendmentFields item={item} /></div></details>
-    <label><span>Decision rationale</span><textarea name="note" maxLength={4000} rows={4} placeholder="Required for amend, reject, or defer; optional for accept." /></label>
-    <label className="structure-source-confirm"><input type="checkbox" name="sourcesReviewed" value="yes" /><span>I compared every supporting source segment shown in the source pane.</span></label>
+    <header><div><span>3 / MAKE THE CALL</span><h2>Record a decision</h2><p>Choose one outcome after comparing all {sourceCount} supporting source{sourceCount === 1 ? "" : "s"}.</p></div></header>
+    <fieldset className="structure-review-choice-list"><legend>What should happen to this candidate?</legend>{choices.map((choice) => <label className={decision === choice.value ? "selected" : ""} key={choice.value}><input type="radio" name="action" value={choice.value} checked={decision === choice.value} onChange={() => setDecision(choice.value)} required /><span><strong>{choice.title}</strong><small>{choice.description}</small></span></label>)}</fieldset>
+    {decision === "amend" ? <div className="structure-amendment-fields"><h3>Correct the extracted fields</h3><p>Change only what needs correcting. Fields marked JSON must contain a valid array or object.</p><div><AmendmentFields item={item} /></div></div> : null}
+    <label className="structure-review-note"><span>Reason for this decision {decision === "accept" ? "(optional)" : "(required for amend, defer, or reject)"}</span><textarea name="note" maxLength={4000} rows={4} required={decision !== null && decision !== "accept"} placeholder={decision === "accept" ? "Add context if useful." : "Explain what you found in the sources and why you chose this outcome."} /></label>
+    <label className="structure-source-confirm"><input type="checkbox" name="sourcesReviewed" value="yes" required /><span>I compared every supporting source for this candidate.</span></label>
     {state.message ? <p className={`review-action-message ${state.kind}`} role="alert">{state.message}</p> : null}
-    <div className="structure-review-actions">
-      <button name="action" value="accept" disabled={pending}>Accept</button>
-      <button name="action" value="amend" disabled={pending}>Amend</button>
-      <button name="action" value="defer" disabled={pending}>Defer</button>
-      <button name="action" value="reject" disabled={pending}>Reject</button>
-    </div>
-    <small>Acceptance records reviewed candidate state. It does not make an event canonical, resolve an identity, or establish evidentiary weight.</small>
+    <div className="structure-review-submit"><button type="submit" disabled={!decision || pending}>{pending ? "Saving decision…" : decision ? `Record ${decision} decision` : "Choose an outcome to continue"}</button><small>After saving, the next candidate in this view opens automatically.</small></div>
+    <p className="structure-review-scope">Accepting a candidate records a review decision. It does not establish evidentiary weight or make an event canonical.</p>
   </form>;
 }
