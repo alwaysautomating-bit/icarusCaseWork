@@ -4,9 +4,11 @@ import { getCaseNavigationItems, isCaseNavigationItemActive } from "@/lib/case-n
 const caseId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 
 describe("case navigation policy", () => {
-  it("shows members only the five research tabs", () => {
+  it("shows members the shared research tabs", () => {
     expect(getCaseNavigationItems(caseId, false).map((item) => item.label)).toEqual([
+      "Foundation",
       "Court Record",
+      "Timelines",
       "Trial Index",
       "Evidence",
       "Questions",
@@ -16,8 +18,10 @@ describe("case navigation policy", () => {
 
   it("preserves the complete Casework workspace for the owner", () => {
     expect(getCaseNavigationItems(caseId, true).map((item) => item.label)).toEqual([
+      "Foundation",
       "Trial Index",
       "Court Record",
+      "Timelines",
       "Structure",
       "Review",
       "Accounts",

@@ -27,6 +27,12 @@ export type AccessibleCase = {
   membershipRole: CaseMembershipRole;
 };
 
+const hiddenWorkspaceKeys = new Set(["day6-acceptance"]);
+
+export function isVisibleWorkspaceCase(item: Pick<AccessibleCase, "workspace_key">) {
+  return !hiddenWorkspaceKeys.has(item.workspace_key);
+}
+
 export const caseMembershipRoles = ["owner", "reviewer", "researcher", "viewer"] as const;
 export type CaseMembershipRole = (typeof caseMembershipRoles)[number];
 
@@ -46,7 +52,8 @@ export async function listAccessibleCases(actorId: string): Promise<AccessibleCa
     .flatMap((item) => {
       const membershipRole = roleByCase.get(item.id);
       return membershipRole ? [{ ...item, membershipRole }] : [];
-    });
+    })
+    .filter(isVisibleWorkspaceCase);
 }
 
 export const getAccessibleCase = cache(async (actorId: string, rawCaseId: string): Promise<AccessibleCase | null> => {

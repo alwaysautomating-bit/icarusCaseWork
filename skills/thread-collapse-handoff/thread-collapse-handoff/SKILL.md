@@ -14,6 +14,12 @@ Assume the reader has never seen the original thread. Reconstruct the thread's m
 - `standard`: use the existing workflow and output contract.
 - `legal_evidentiary`: use for testimony, court records, filings, expert reports, evidence packets, and legal case analysis. Apply every rule below in addition to the standard workflow.
 
+## Chronology routing
+
+When event order, real-world time, information flow, state transitions, corrections, or supersession is load-bearing, use [collapse-chronology](../../collapse-chronology/SKILL.md) first. Incorporate its reader-facing result into the handoff only after its structured chronology preserves Icarus ontology, PROV lineage, three-clock separation, lamppost identity, partial order, and review state.
+
+Do not use a general handoff summary as a substitute for chronology reconstruction.
+
 ## Legal / Evidentiary Mode
 
 This mode produces an analytical artifact about the record. It does not replace the record or establish canonical facts.

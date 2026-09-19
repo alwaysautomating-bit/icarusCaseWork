@@ -27,6 +27,7 @@ describe("Supabase deployment migration", () => {
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["knowledge_extraction_runs", "case_ledger", "witness_blocks", "testimony_units", "knowledge_items", "knowledge_item_versions", "claim_source_segments", "entity_mentions", "event_candidates", "temporal_bands", "temporal_assertions", "knowledge_relationships", "knowledge_flags", "provenance_activities", "provenance_relations"]));
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["saved_timeline_views", "saved_reconstruction_versions", "structure_review_versions", "trial_index_days", "trial_index_day_versions", "reconciliation_groups", "reconciliation_group_versions"]));
     expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["court_packet_parse_runs", "court_packet_pages", "court_packet_boundary_candidates", "court_packet_documents", "court_packet_boundary_review_versions"]));
+    expect(tables.rows.map((row) => row.table_name)).toEqual(expect.arrayContaining(["core_timelines", "core_timeline_event_memberships", "timeline_placement_notes"]));
     const functions = await db.query<{ routine_name: string }>("select routine_name from information_schema.routines where routine_schema='public'");
     expect(functions.rows.map((row) => row.routine_name)).toContain("commit_testimony_url_intake");
     expect(functions.rows.map((row) => row.routine_name)).toEqual(expect.arrayContaining(["commit_testimony_compiler_run", "review_extraction_candidate", "publish_proceeding_package", "import_proceeding_package_to_casework"]));
@@ -162,5 +163,16 @@ describe("Supabase deployment migration", () => {
     expect(migration).toContain("revoke all on function public.commit_court_packet_parse(jsonb) from public,anon,authenticated");
     expect(migration).toContain("grant execute on function public.review_court_packet_boundary(uuid,text,jsonb,text,integer) to authenticated");
     expect(migration).not.toMatch(/insert\s+into\s+public\.(claims|events|contradictions|verification_assessments)/i);
+  });
+
+  it("stores Core Timelines as case-scoped projections rather than duplicate events", async () => {
+    const migration = await readFile(new URL("../../supabase/migrations/20260914093127_core_timelines.sql", import.meta.url), "utf8");
+    expect(migration).toContain("create table public.core_timelines");
+    expect(migration).toContain("create table public.core_timeline_event_memberships");
+    expect(migration).toContain("create table public.timeline_placement_notes");
+    expect(migration).toContain("private.can_contribute_case(case_id)");
+    expect(migration).toContain("event_candidate_id uuid");
+    expect(migration).toContain("event_id uuid");
+    expect(migration).not.toMatch(/create table public\.(knowns|timeline_events)/i);
   });
 });

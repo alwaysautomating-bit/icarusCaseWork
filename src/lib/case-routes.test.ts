@@ -1,8 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { accountsHref, caseAccessHref, caseFilesHref, childrenFoundReportHref, courtRecordHref, evidenceHref, lindsayFoundReportHref, parseStructureObjectType, questionsHref, reconcileHref, structureHref, structureReviewHref, trialIndexHref } from "@/lib/case-routes";
+import { accountsHref, caseAccessHref, caseFilesHref, caseFoundationHref, childrenFoundReportHref, courtRecordHref, evidenceHref, lindsayFoundReportHref, parseStructureObjectType, questionsHref, reconcileHref, structureHref, structureReviewHref, timelineHref, trialIndexHref } from "@/lib/case-routes";
 
 describe("case-scoped routes", () => {
   it("builds explicit supporting-files and access routes", () => {
+    expect(caseFoundationHref("case 1")).toBe("/cases/case%201/setup");
     expect(caseFilesHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/files");
     expect(caseAccessHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/access");
     expect(questionsHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", "question-1")).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/questions?question=question-1");
@@ -26,6 +27,12 @@ describe("case-scoped routes", () => {
     expect(accountsHref("case 1", { account: "officer-stephen-hall", versionId: "version-3", view: "compare" }))
       .toBe("/cases/case%201/accounts?account=officer-stephen-hall&version=version-3&view=compare");
     expect(accountsHref("case 1", { view: "account" })).toBe("/cases/case%201/accounts");
+  });
+
+  it("builds bookmarkable Core Timeline state", () => {
+    expect(timelineHref("case 1", { timeline: "lindsay-health", query: "diazepam", filter: "needs-placement", overlays: ["medical", "clinician"], add: true }))
+      .toBe("/cases/case%201/timeline?timeline=lindsay-health&q=diazepam&filter=needs-placement&overlay=medical&overlay=clinician&add=1");
+    expect(timelineHref("case 1", { filter: "all" })).toBe("/cases/case%201/timeline");
   });
 
   it("builds a bookmarkable structural object and lineage URL", () => {
@@ -53,6 +60,7 @@ describe("case-scoped routes", () => {
     expect(courtRecordHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { proceedingId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/record?proceeding=bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb");
     expect(trialIndexHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { dayNumber: 14, query: "Apple Watch", notice: "saved" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/trial-index?day=14&q=Apple+Watch&notice=saved");
     expect(trialIndexHref("aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", { dayNumber: 20, view: "intelligence" })).toBe("/cases/aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa/trial-index?day=20&view=intelligence");
+    expect(trialIndexHref("case 1", { dayNumber: 3, section: "evidence" })).toBe("/cases/case%201/trial-index?day=3&section=evidence");
   });
 
   it("builds Reconcile graph and saved-group URLs", () => {

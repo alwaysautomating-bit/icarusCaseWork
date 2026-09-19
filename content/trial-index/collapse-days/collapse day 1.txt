@@ -1,0 +1,50 @@
+collapse day 1
+
+### Thread Purpose
+
+Separate the parties’ opening positions from the first testimony and preserve the questions those positions said the evidence would answer.
+
+The central dispute was defined as legal responsibility in the setting of serious mental illness; Patrick Clancy then began supplying first-person family and treatment context.
+
+### Key Insights
+
+- The proceeding contains Commonwealth and defense opening advocacy followed by Patrick Clancy’s initial testimony about the family, Lindsay’s deterioration, treatment, and the morning of January 24.
+- Opening statements are party positions, not evidence. Patrick’s testimony begins a separate evidentiary lane that later witnesses, records, and experts may support, qualify, or dispute.
+
+### Evidence
+
+Claim: Day 1 introduced the competing criminal-responsibility theories and began Patrick Clancy’s family and treatment chronology.
+
+Supporting Evidence: The Commonwealth and defense presented their opening positions before Patrick testified about the family, Lindsay’s deterioration, treatment, and the morning of January 24.
+
+Source: Opening statements and Patrick Clancy testimony, Day 1.
+
+Confidence: Review required; opening advocacy must remain separate from testimony.
+
+---
+
+Claim: Patrick supplied the first testimonial account of Lindsay’s late-2022 and January-2023 decline.
+
+Supporting Evidence: His testimony addressed anxiety, insomnia, medication changes, intrusive thoughts, escalating treatment, McLean Hospital, and her apparent condition on January 24.
+
+Source: Patrick Clancy testimony, Day 1.
+
+Confidence: High as to the subjects of Patrick’s testimony; independent clinical support remains separately sourced.
+
+---
+
+Claim: Day 1 established the last-known-normal issue later used by both sides.
+
+Supporting Evidence: Patrick described January 24 as appearing to be one of Lindsay’s better days, a fact the parties interpreted differently in relation to planning and psychiatric decline.
+
+Source: Patrick Clancy testimony, Day 1.
+
+Confidence: High as to Patrick’s account; limited as a broader psychiatric-state inference.
+
+### Risks
+
+- Opening language can later be repeated as though it were established fact. Every proposition originating in an opening must remain labeled advocacy until independently supported.
+
+### Open Questions
+
+- Which factual promises from each opening were later supported, qualified, contradicted, or left unproved by the trial record?

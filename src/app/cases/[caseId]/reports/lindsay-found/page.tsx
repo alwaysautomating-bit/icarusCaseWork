@@ -49,7 +49,7 @@ export default async function LindsayFoundReportPage({ params }: { params: Promi
     </section>
 
     <article className="children-report-subject lindsay">
-      <header><span>01 · ADULT-SPECIFIC LANE</span><h2>Lindsay Clancy</h2><p>Found alive and breathing, with impaired responsiveness and wrist and neck injuries; stabilized, transported, and later documented at South Shore Hospital.</p></header>
+      <header><h2>01 · Lindsay Clancy</h2><p>Found alive and breathing, with impaired responsiveness and wrist and neck injuries; stabilized, transported, and later documented at South Shore Hospital.</p></header>
       <div className="children-finding-list">
         {report.findings.map((finding, findingIndex) => {
           const findingSources = finding.sourceKeys.flatMap((key) => {

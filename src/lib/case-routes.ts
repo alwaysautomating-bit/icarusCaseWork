@@ -4,9 +4,18 @@ type CourtRecordRouteState = {
   proceedingId?: string;
 };
 
-type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved"; view?: "navigation" | "intelligence" };
+type TrialIndexRouteState = { dayNumber?: number; query?: string; notice?: "saved"; view?: "navigation" | "intelligence"; section?: string };
 
 type AccountsRouteState = { account?: string; versionId?: string; view?: "account" | "compare" | "digital" };
+
+export type TimelineRouteState = {
+  timeline?: string;
+  query?: string;
+  filter?: "all" | "knowns" | "needs-placement";
+  overlays?: string[];
+  add?: boolean;
+  editNoteId?: string;
+};
 
 export type ReconcileRouteState = {
   groupId?: string;
@@ -38,6 +47,10 @@ export type StructureRouteState = {
 export type StructureReviewRouteState = Pick<StructureRouteState,
   "type" | "objectId" | "segmentId" | "proceedingId" | "reviewStatus" | "assertedBy" | "unresolvedOnly" | "temporalOnly" | "query"
 > & { notice?: "reviewed" };
+
+export function caseFoundationHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/setup`;
+}
 
 export function caseFilesHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/files`;
@@ -80,6 +93,20 @@ export function accountsHref(caseId: string, state: AccountsRouteState = {}) {
   if (state.view && state.view !== "account") params.set("view", state.view);
   const suffix = params.toString();
   return `/cases/${encodeURIComponent(caseId)}/accounts${suffix ? `?${suffix}` : ""}`;
+}
+
+export function timelineHref(caseId: string, state: TimelineRouteState = {}) {
+  const params = new URLSearchParams();
+  if (state.timeline?.trim()) params.set("timeline", state.timeline.trim());
+  if (state.query?.trim()) params.set("q", state.query.trim());
+  if (state.filter && state.filter !== "all") params.set("filter", state.filter);
+  for (const overlay of state.overlays ?? []) {
+    if (overlay.trim()) params.append("overlay", overlay.trim());
+  }
+  if (state.add) params.set("add", "1");
+  if (state.editNoteId) params.set("edit", state.editNoteId);
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/timeline${suffix ? `?${suffix}` : ""}`;
 }
 
 export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {
@@ -128,6 +155,7 @@ export function structureReviewHref(caseId: string, state: StructureReviewRouteS
 export function trialIndexHref(caseId: string, state: TrialIndexRouteState = {}) {
   const params = new URLSearchParams();
   if (state.dayNumber && state.dayNumber > 0) params.set("day", String(state.dayNumber));
+  if (state.section?.trim()) params.set("section", state.section.trim());
   if (state.query?.trim()) params.set("q", state.query.trim());
   if (state.notice) params.set("notice", state.notice);
   if (state.view === "intelligence") params.set("view", state.view);

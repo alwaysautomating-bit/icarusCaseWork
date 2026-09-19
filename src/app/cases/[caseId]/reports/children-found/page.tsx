@@ -64,7 +64,7 @@ export default async function ChildrenFoundReportPage({ params }: { params: Prom
 
     <section className="children-report-subjects" aria-label="Child-specific findings">
       {report.subjects.map((subject, subjectIndex) => <article className={`children-report-subject ${subject.key}`} key={subject.key}>
-        <header><span>{String(subjectIndex + 1).padStart(2, "0")} · CHILD-SPECIFIC LANE</span><h2>{subject.name}</h2><p>{subject.summary}</p></header>
+        <header><h2>{String(subjectIndex + 1).padStart(2, "0")} · {subject.name}</h2><p>{subject.summary}</p></header>
         <div className="children-finding-list">
           {subject.findings.map((finding, findingIndex) => {
             const findingSources = finding.sourceKeys.flatMap((key) => {
