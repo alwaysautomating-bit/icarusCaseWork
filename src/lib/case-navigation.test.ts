@@ -29,6 +29,7 @@ describe("case navigation policy", () => {
       "Reconstruct",
       "Care Trajectory",
       "Files",
+      "Documents",
       "Evidence",
       "Questions",
       "Reports",

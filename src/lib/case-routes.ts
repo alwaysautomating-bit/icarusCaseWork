@@ -122,6 +122,15 @@ export function digitalTimelineHref(caseId: string, category?: string) {
   return `/cases/${encodeURIComponent(caseId)}/timeline/digital${suffix}`;
 }
 
+export function documentsHref(caseId: string, state: { doc?: string; message?: string; error?: string } = {}) {
+  const params = new URLSearchParams();
+  if (state.doc?.trim()) params.set("doc", state.doc.trim());
+  if (state.message) params.set("message", state.message.slice(0, 240));
+  if (state.error) params.set("error", state.error.slice(0, 240));
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/documents${suffix ? `?${suffix}` : ""}`;
+}
+
 export function courtRecordHref(caseId: string, state: CourtRecordRouteState = {}) {
   const params = new URLSearchParams();
   const query = state.query?.trim();
