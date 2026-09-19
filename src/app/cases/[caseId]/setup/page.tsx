@@ -3,337 +3,56 @@ import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { trialIndexHref } from "@/lib/case-routes";
+import { courtRecordHref, timelineHref, trialIndexHref } from "@/lib/case-routes";
 
 export const dynamic = "force-dynamic";
 
-type FoundationEntry = {
-  witness: string;
-  role: string;
-  testimony: string;
-  contribution: string;
-};
+type Position = { point: string; cite: string };
 
-type FoundationDay = {
-  day: number;
-  summary: string;
-  entries: FoundationEntry[];
-};
-
-const foundationDays: FoundationDay[] = [
-  {
-    day: 1,
-    summary: "Opening statements set out the competing theories. Patrick Clancy began the family and mental-health timeline.",
-    entries: [
-      {
-        witness: "Patrick Clancy",
-        role: "Lindsay’s husband and the children’s father",
-        testimony: "Her anxiety, insomnia, medication changes, suicidal thoughts, escalating treatment, McLean admission, and apparently improved condition on January 24.",
-        contribution: "Established the mental-health timeline and last-known normal period used to frame planning versus psychiatric decline.",
-      },
-    ],
-  },
-  {
-    day: 2,
-    summary: "Patrick Clancy continued with the errand and discovery timeline; CVS and restaurant staff described related calls and purchases.",
-    entries: [
-      {
-        witness: "Patrick Clancy",
-        role: "Continued testimony",
-        testimony: "The errand, his return, finding Lindsay outside and the children in the basement, and her reported male command voice.",
-        contribution: "Established the errand window, discovery scene, and alleged command-voice statement.",
-      },
-      {
-        witness: "Angela Krause",
-        role: "CVS pharmacy manager",
-        testimony: "Patrick’s CVS stop and Lindsay’s related telephone interaction.",
-        contribution: "Corroborated the errand timing and described Lindsay as sounding coherent.",
-      },
-      {
-        witness: "Saria Sweeney",
-        role: "ThreeV Restaurant hostess",
-        testimony: "The takeout order and pre-incident telephone interaction.",
-        contribution: "Corroborated the restaurant timeline and described Lindsay as clear and coherent.",
-      },
-    ],
-  },
-  {
-    day: 3,
-    summary: "First responders described the residence, Lindsay’s injuries, the children’s condition, and emergency treatment.",
-    entries: [
-      {
-        witness: "Officer Stephen Hall",
-        role: "Duxbury Police; first responder",
-        testimony: "Lindsay in the yard, her injuries, Patrick’s distress, and the scene at 47 Summer Street.",
-        contribution: "Introduced window and blood photographs relevant to the apparent fall and self-harm attempt.",
-      },
-      {
-        witness: "Officer Brian Josephine",
-        role: "Duxbury Police; first responder",
-        testimony: "The initial response and observations of Lindsay and the residence.",
-        contribution: "Documented Lindsay’s condition, the window area, and the first emergency-response minutes.",
-      },
-      {
-        witness: "PJ Hussey",
-        role: "Eyewitness at the discovery scene",
-        testimony: "Seeing Patrick remove an item from Dawson’s head and neck area.",
-        contribution: "Connected the discovery scene to the ligature evidence and Patrick’s rescue attempt.",
-      },
-      {
-        witness: "Jennifer Stratton and other firefighters/paramedics",
-        role: "Emergency medical responders",
-        testimony: "CPR, ambulance care, the children’s condition, and the mark around Callan’s neck.",
-        contribution: "Provided CPR records and observations of exercise bands and neck injuries.",
-      },
-      {
-        witness: "Patrick Dwyer",
-        role: "Duxbury Fire firefighter/paramedic",
-        testimony: "His dispatch to 47 Summer Street and emergency response with Jennifer Stratton.",
-        contribution: "Described first-response timing and actions at the residence.",
-      },
-    ],
-  },
-  {
-    day: 4,
-    summary: "Investigators described the residence and collected items; clinicians addressed Dawson’s and Callan’s emergency care.",
-    entries: [
-      {
-        witness: "Detective Mark Anthony Maffeo",
-        role: "Investigating detective",
-        testimony: "The residence search and documentation of physical evidence.",
-        contribution: "Presented blood and window photographs plus items collected from the bedroom and nightstand.",
-      },
-      {
-        witness: "Dr. Mark Tenerowicz",
-        role: "Emergency physician who treated Dawson",
-        testimony: "Dawson’s cardiac arrest and hospital resuscitation efforts.",
-        contribution: "Established that Dawson was declared dead at 7:28 p.m. after unsuccessful resuscitation.",
-      },
-      {
-        witness: "Dr. Benjamin Kaufman",
-        role: "Emergency physician who treated Callan",
-        testimony: "Callan’s condition and emergency treatment.",
-        contribution: "Explained his restored heartbeat, absent apparent brain function, and inability to breathe independently.",
-      },
-      {
-        witness: "Richard Lippard",
-        role: "Duxbury Police patrol officer",
-        testimony: "His assignment to watch Lindsay at South Shore Hospital after the incident.",
-        contribution: "Described her condition and police presence before her transfer to Brigham and Women’s Hospital.",
-      },
-      {
-        witness: "Melissa Arcadipane",
-        role: "South Shore Hospital specimen-processing supervisor",
-        testimony: "How hospital blood and urine specimens were received, checked, and processed.",
-        contribution: "Explained the laboratory handling steps for specimens collected during Lindsay’s treatment.",
-      },
-    ],
-  },
-  {
-    day: 5,
-    summary: "Hospital witnesses covered the children’s emergency and intensive care, Lindsay’s injuries and ICU treatment, and her psychiatric consultations. Officers described scene documentation and evidence collection.",
-    entries: [
-      {
-        witness: "Dr. Michael Snyder",
-        role: "Emergency physician at Beth Israel Deaconess",
-        testimony: "Cora’s condition on arrival and attempted resuscitation.",
-        contribution: "Described the emergency treatment and pronouncement of death.",
-      },
-      {
-        witness: "Dr. Andrew Capraro",
-        role: "Emergency physician at Boston Children’s",
-        testimony: "Callan’s arrival, neck findings, and emergency treatment.",
-        contribution: "Provided clinical observations from Callan’s initial hospital care.",
-      },
-      {
-        witness: "Dr. David Casavant",
-        role: "Intensive care physician at Boston Children’s",
-        testimony: "Callan’s neurological condition and subsequent testing in intensive care.",
-        contribution: "Explained the clinical assessment and determination of death by neurologic criteria.",
-      },
-      {
-        witness: "Dr. Kelly McDonough",
-        role: "Emergency physician at South Shore Hospital",
-        testimony: "Lindsay’s condition after the fall, including suspected spinal injury and treatment in the emergency department.",
-        contribution: "Documented her initial injuries, airway care, and transfer for further treatment.",
-      },
-      {
-        witness: "Sgt. Rose Stoffers",
-        role: "Massachusetts State Police Crime Scene Services",
-        testimony: "Hospital documentation and processing related to Lindsay’s injuries.",
-        contribution: "Described photographs and evidence handling at South Shore Hospital.",
-      },
-      {
-        witness: "Rachelle Amedee",
-        role: "Brigham and Women’s Hospital ICU nurse",
-        testimony: "Lindsay’s sedation, treatment, and communication while hospitalized.",
-        contribution: "Provided bedside observations from her ICU care.",
-      },
-      {
-        witness: "Meghan Collins",
-        role: "Brigham and Women’s Hospital ICU nurse",
-        testimony: "Lindsay’s ICU course and communication as sedation was reduced.",
-        contribution: "Described bedside care and observed changes in her alertness.",
-      },
-      {
-        witness: "Dr. Sejal Shah",
-        role: "Consultation-liaison psychiatrist",
-        testimony: "Psychiatric evaluation during Lindsay’s hospitalization, including delirium and decision-making capacity.",
-        contribution: "Discussed the assessment surrounding a change in health-care proxy.",
-      },
-      {
-        witness: "Dr. Jhilam Biswas",
-        role: "Consultation-liaison psychiatrist",
-        testimony: "Psychiatric consultation while Lindsay was intubated and communicating with difficulty.",
-        contribution: "Described the limits and findings of that hospital assessment.",
-      },
-      {
-        witness: "Sgt. Robert Flynn",
-        role: "Duxbury Police",
-        testimony: "Police presence and observations at the residence.",
-        contribution: "Helped establish scene security and the early investigative sequence.",
-      },
-      {
-        witness: "Det. Mark Farioli",
-        role: "Massachusetts State Police",
-        testimony: "Collection of Lindsay’s blood and urine specimens at the hospital.",
-        contribution: "Established how specimens entered the toxicology evidence chain.",
-      },
-      {
-        witness: "Trooper John Santos",
-        role: "Massachusetts State Police",
-        testimony: "Search of the residence and collection of written and medication-related materials.",
-        contribution: "Identified items recovered during the search.",
-      },
-      {
-        witness: "Trooper Cory Melo",
-        role: "Massachusetts State Police",
-        testimony: "Search-warrant execution and review of collected materials.",
-        contribution: "Described investigative handling of journals and other items.",
-      },
-    ],
-  },
-  {
-    day: 6,
-    summary: "Trauma care, residence searches, scene processing, toxicology, and bloodstain work were addressed. The court also heard stipulations, which are separate from witness testimony.",
-    entries: [
-      {
-        witness: "Dr. Christina Carpio",
-        role: "Trauma surgeon at South Shore Hospital",
-        testimony: "Lindsay’s post-fall trauma care, spinal injury, wounds, and hypothermia.",
-        contribution: "Provided medical observations from her initial hospital treatment.",
-      },
-      {
-        witness: "Lt. Joseph Rabbitt",
-        role: "Massachusetts State Police investigator",
-        testimony: "Searches of the residence and recovery of physical evidence.",
-        contribution: "Described where items were found and how the search was documented.",
-      },
-      {
-        witness: "Maureen Hartnett",
-        role: "Massachusetts State Police forensic scientist",
-        testimony: "Processing of property and red-brown stains from the exterior scene.",
-        contribution: "Explained collection and testing of potential blood evidence.",
-      },
-      {
-        witness: "Jonathan O’Loughlin",
-        role: "Massachusetts State Police Crime Scene Services",
-        testimony: "Photography and documentation of the residence and collected items.",
-        contribution: "Provided the scene record used to locate and assess physical evidence.",
-      },
-      {
-        witness: "Hillary Griffiths",
-        role: "Massachusetts State Police toxicology scientist",
-        testimony: "Testing methods and results for Lindsay’s blood and urine specimens.",
-        contribution: "Introduced the laboratory basis for medication findings.",
-      },
-      {
-        witness: "Lisa Yelle",
-        role: "Former Massachusetts State Police toxicology scientist",
-        testimony: "Toxicology specimen testing and review.",
-        contribution: "Explained laboratory handling and interpretation of test results.",
-      },
-      {
-        witness: "Alicia Zimmermann",
-        role: "Massachusetts State Police toxicology scientist",
-        testimony: "Toxicology testing associated with the children.",
-        contribution: "Addressed laboratory results and the related stipulations.",
-      },
-      {
-        witness: "Sherri Crook",
-        role: "Massachusetts State Police crime-scene supervisor",
-        testimony: "Bloodstain patterns at the residence.",
-        contribution: "Explained her bloodstain observations and analysis.",
-      },
-    ],
-  },
-  {
-    day: 7,
-    summary: "Medical and laboratory witnesses addressed Lindsay’s injuries, toxicology, and DNA evidence. Former nanny Elaine Rossi described her observations of the family.",
-    entries: [
-      {
-        witness: "Eitan Negri",
-        role: "Physician assistant at Brigham and Women’s Hospital",
-        testimony: "Lindsay’s wounds, chest tube, and hospital treatment.",
-        contribution: "Provided treatment observations after her transfer.",
-      },
-      {
-        witness: "Nicholas Roberts",
-        role: "Former Massachusetts State Police toxicology scientist",
-        testimony: "Toxicology testing methods and results.",
-        contribution: "Explained laboratory findings for medication-related specimens.",
-      },
-      {
-        witness: "Justin Brower",
-        role: "Forensic toxicologist at NMS Labs",
-        testimony: "Additional toxicology analysis and interpretation.",
-        contribution: "Addressed drug-testing results and their limits.",
-      },
-      {
-        witness: "Katarina Stashyn",
-        role: "Former Massachusetts State Police DNA analyst",
-        testimony: "DNA testing of stains and exercise bands.",
-        contribution: "Explained comparisons from exterior stains and mixed DNA samples.",
-      },
-      {
-        witness: "Elaine Rossi",
-        role: "Former nanny for the Clancy family",
-        testimony: "Her firsthand observations of Lindsay, the children, and the family routine.",
-        contribution: "Supplied personal context about parenting, sleep, and postpartum struggles.",
-      },
-    ],
-  },
-  {
-    day: 8,
-    summary: "Friends and family described Lindsay’s behavior and medication-related conversations. An investigator addressed surveillance and other follow-up evidence tied to the January 24 timeline.",
-    entries: [
-      {
-        witness: "Amy Bevins",
-        role: "Lindsay’s childhood friend",
-        testimony: "Their conversations and texts about medication changes and troubling thoughts.",
-        contribution: "Provided contemporaneous messages and personal observations.",
-      },
-      {
-        witness: "Christopher Clancy",
-        role: "Patrick Clancy’s father",
-        testimony: "His observations of Lindsay’s parenting, sleep, and behavior.",
-        contribution: "Added family context from visits and interactions.",
-      },
-      {
-        witness: "Kyle Carney",
-        role: "Family friend",
-        testimony: "His interactions with the Clancy family and observations of Lindsay.",
-        contribution: "Provided another firsthand account of family circumstances.",
-      },
-      {
-        witness: "Andrew Chiachio",
-        role: "Massachusetts State Police investigator",
-        testimony: "Follow-up investigation, including ThreeV restaurant surveillance and digital evidence.",
-        contribution: "Connected recorded and collected evidence to the January 24 errand timeline.",
-      },
-    ],
-  },
+const commonwealthPosition: Position[] = [
+  { point: "Lindsay strangled each child with exercise bands in the basement while Patrick was out on a takeout and CVS errand — Dawson first, then Cora, then Callan.", cite: "41:47 · 48:02" },
+  { point: "The killings were timed: she knew the errand’s route and length, and she overcame an interruption when Patrick called from CVS (a 14-second call).", cite: "47:21 · 58:15" },
+  { point: "She was not psychotic that day. She acted “intentionally, rationally, and swiftly,” and interacted normally at the doctor’s office, on the phone, and with the children.", cite: "53:42 · 54:18" },
+  { point: "Her history shows control, not collapse: scheduled days, withheld information from her husband and doctors, symptoms reported that did not match her daily activities.", cite: "54:56 · 56:21" },
+  { point: "She manipulated her treatment — changed providers, changed medications after days, disengaged after four months when the plan did not suit her.", cite: "57:37 · 58:15" },
+  { point: "Her account of a commanding male voice should be weighed for its source, timing and substance; the versions differ on when it spoke.", cite: "52:16 · 53:06" },
+  { point: "Mental illness is not disputed, but it is not the end of the inquiry: she knew what she was doing and could control her conduct, so she is criminally responsible.", cite: "57:06 · 58:55 · 59:26" },
 ];
+
+const defensePosition: Position[] = [
+  { point: "Lindsay was psychotic when she went to the basement. She had no motive and loved her children.", cite: "1:32:25" },
+  { point: "The illness was real and documented: months of insomnia, an adverse reaction to Zoloft, a possible bipolar disorder treated as depression, and a rapid run of medication changes across many providers.", cite: "1:09:36 · 1:19:00 · 1:23:39" },
+  { point: "She sought help repeatedly rather than shopping for drugs — referred by her mother-in-law, a crisis-hotline call, the Aspire crisis team, Mass General, a Rhode Island program, and a McLean admission.", cite: "1:22:31 · 1:25:51 · 1:29:25" },
+  { point: "Appearing functional was not evidence of health: friends, teachers and neighbors saw a mother who “put on a pretty good face.”", cite: "1:19:55 · 1:22:31" },
+  { point: "The suicide attempt was genuine, not staged: the neck and wrist injuries, and a Jefferson fracture and shattered spine from the fall, left her paralyzed.", cite: "1:10:00 · 1:14:13" },
+  { point: "The command-voice account did not originate with defense counsel or Dr. Zeisel; she reported it to a hospital chaplain when she woke, before she met either of them.", cite: "1:15:48 · 1:17:51" },
+  { point: "The case is, in the defense’s words, a referendum on postpartum illness and how the medical system treated it.", cite: "1:03:04" },
+];
+
+const divergences: { question: string; commonwealth: string; defense: string }[] = [
+  { question: "Her mental state on January 24", commonwealth: "Organized, deliberate and rational; not psychotic.", defense: "Psychotic, acting on command hallucinations and thoughts of harming the children." },
+  { question: "Why she sought treatment", commonwealth: "To get quick fixes; she manipulated providers and disengaged.", defense: "Because she knew she was in trouble; she asked for the medication to stop and was told to stay the course." },
+  { question: "The suicide attempt", commonwealth: "An attempt that failed, made after the killings to escape the consequences.", defense: "A sincere attempt; the defense expects the prosecution to call it faked or minor." },
+  { question: "The voice", commonwealth: "Inconsistent in timing across her accounts; consider the source.", defense: "Reported first to a chaplain, unprompted; consistent with psychosis." },
+  { question: "Motive", commonwealth: "Control and escape from a life she no longer liked.", defense: "None; she loved the children." },
+];
+
+const commonGround = [
+  "Cora, Dawson and Callan Clancy died as a result of January 24, 2023 events at 47 Summer Street, Duxbury; Callan died January 27 at Boston Children’s Hospital.",
+  "Lindsay had significant mental-health problems before January 24 — the Commonwealth says there is “no dispute” about that (57:06).",
+  "Lindsay went out of the second-floor bedroom window and was found in the backyard; she is paralyzed.",
+  "Patrick called 911 at about 6:11 p.m. and first responders reached the property within minutes.",
+];
+
+const researchThreads = [
+  { title: "Patrick Clancy’s versions of the discovery", body: "The Commonwealth’s opening puts him in the basement, on the phone with 911, finding each child with a band still on. Compare that with each of his later accounts, and with where first responders say they saw him." },
+  { title: "Patrick’s unaccounted-for intervals", body: "Track what each source says he was doing between the return home (about 6:00 p.m.) and the arrival of first responders, and between the 911 call and the children being reached." },
+  { title: "The CPR claim", body: "Researcher note, to verify against testimony: Patrick has said he performed CPR, and no responder testimony reviewed so far attests to it. The first-responder timeline is where this gets tested." },
+];
+
+function PositionList({ items }: { items: Position[] }) {
+  return <ol className="foundation-position-list">{items.map((item) => <li key={item.cite}><p>{item.point}</p><small>Opening · {item.cite}</small></li>)}</ol>;
+}
 
 function caseCaption(title: string) {
   return title.split(" — ")[0] || title;
@@ -346,34 +65,62 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
 
   return <main className="case-foundation-shell">
     <header className="case-foundation-hero">
-      <MonoLabel>FOUNDATION · CASE OVERVIEW</MonoLabel>
+      <MonoLabel>FOUNDATION · CASE ORIENTATION</MonoLabel>
       <h1>{caseCaption(currentCase.title)}</h1>
-      <p>Commonwealth v. Lindsay M. Clancy concerns the January 24, 2023 deaths of her three children in Duxbury. The trial centers on criminal responsibility, with the Commonwealth alleging planning and the defense citing severe postpartum mental illness, insomnia, and medication changes. This page indexes who testified each day and the evidence or information each witness contributed.</p>
+      <p>On January 24, 2023, in Duxbury, Massachusetts, Cora (5), Dawson (3) and Callan (8 months) Clancy were strangled with exercise bands. Their mother, Lindsay Clancy, is charged with three counts of murder. Neither opening argues that someone else was responsible; the dispute is whether she was criminally responsible given severe postpartum mental illness.</p>
     </header>
 
-    <section className="foundation-day-index" aria-label="Testimony by trial day">
-      <div className="foundation-day-list">
-        {foundationDays.map((day) => <section className="foundation-day" aria-labelledby={`foundation-day-${day.day}`} key={day.day}>
-          <header>
-            <span>DAY</span>
-            <strong id={`foundation-day-${day.day}`}>{String(day.day).padStart(2, "0")}</strong>
-            <Link href={trialIndexHref(currentCase.id, { dayNumber: day.day, section: "evidence" })} aria-label={`See Day ${day.day} evidence in the Trial Index`}>See more <span aria-hidden="true">→</span></Link>
-          </header>
-          <p className="foundation-day-summary">{day.summary}</p>
-          <div className="foundation-witness-table" role="table" aria-label={`Day ${day.day} testimony index`}>
-            <div className="foundation-witness-head" role="row">
-              <span role="columnheader">Witness</span>
-              <span role="columnheader">Spoke about</span>
-              <span role="columnheader">Evidence or information contributed</span>
-            </div>
-            {day.entries.map((entry) => <article className="foundation-witness-row" role="row" key={entry.witness}>
-              <div role="cell" data-label="Witness"><h3>{entry.witness}</h3><span>{entry.role}</span></div>
-              <p role="cell" data-label="Spoke about">{entry.testimony}</p>
-              <p role="cell" data-label="Evidence or information contributed">{entry.contribution}</p>
-            </article>)}
-          </div>
-        </section>)}
+    <section className="foundation-boundary" aria-label="Evidence boundary">
+      <MonoLabel>ATTRIBUTION BOUNDARY</MonoLabel>
+      <p>Everything below summarizes what each side <em>said it would show</em> in opening statements. The court instructed the jury that openings are “roadmaps,” not evidence. Testimony and exhibits are indexed separately in the Trial Index.</p>
+    </section>
+
+    <section className="foundation-charges" aria-labelledby="foundation-charges-title">
+      <h2 id="foundation-charges-title">The charges and the question</h2>
+      <dl>
+        <div><dt>Court</dt><dd>Plymouth Superior Court · Hon. William Sullivan</dd></div>
+        <div><dt>Docket</dt><dd>2383CR00198 · offenses 001–003</dd></div>
+        <div><dt>Charge</dt><dd>Murder ×3 (Cora, Dawson, Callan)</dd></div>
+        <div><dt>Commonwealth’s theories</dt><dd>Deliberate premeditation and/or extreme atrocity or cruelty</dd></div>
+        <div><dt>Prosecution</dt><dd>ADA Jennifer Sprague · ADA Shannon Buckingham</dd></div>
+        <div><dt>Defense</dt><dd>Kevin Reddington</dd></div>
+      </dl>
+      <div className="foundation-question"><MonoLabel>THE CENTRAL QUESTION</MonoLabel><p>The Commonwealth must prove Lindsay was criminally responsible. A person is not criminally responsible if, because of a mental disease or defect, she lacked substantial capacity to appreciate the criminality or wrongfulness of her conduct, or to conform her conduct to the law. The defendant carries no burden to prove this.</p></div>
+    </section>
+
+    <section className="foundation-positions" aria-label="What each side argues">
+      <article className="commonwealth">
+        <header><MonoLabel>THE COMMONWEALTH ARGUES</MonoLabel><h2>Deliberate, controlled, responsible</h2></header>
+        <PositionList items={commonwealthPosition} />
+      </article>
+      <article className="defense">
+        <header><MonoLabel>THE DEFENSE ARGUES</MonoLabel><h2>Psychotic, undertreated, not responsible</h2></header>
+        <PositionList items={defensePosition} />
+      </article>
+    </section>
+
+    <section className="foundation-divergence" aria-labelledby="foundation-divergence-title">
+      <header><MonoLabel>WHERE THE OPENINGS DIVERGE</MonoLabel><h2 id="foundation-divergence-title">The same facts, two readings</h2></header>
+      <div className="foundation-divergence-table" role="table" aria-label="Where the Commonwealth and defense openings diverge">
+        <div role="row" className="head"><span role="columnheader">Question</span><span role="columnheader">Commonwealth</span><span role="columnheader">Defense</span></div>
+        {divergences.map((row) => <div role="row" key={row.question}><strong role="cell">{row.question}</strong><p role="cell" data-label="Commonwealth">{row.commonwealth}</p><p role="cell" data-label="Defense">{row.defense}</p></div>)}
       </div>
     </section>
+
+    <section className="foundation-ground" aria-labelledby="foundation-ground-title">
+      <header><MonoLabel>NOT IN DISPUTE</MonoLabel><h2 id="foundation-ground-title">Where the openings agree</h2></header>
+      <ul>{commonGround.map((item) => <li key={item}>{item}</li>)}</ul>
+    </section>
+
+    <section className="foundation-threads" aria-labelledby="foundation-threads-title">
+      <header><MonoLabel>RESEARCH THREADS</MonoLabel><h2 id="foundation-threads-title">Open lines to test against the record</h2></header>
+      <div>{researchThreads.map((thread) => <article key={thread.title}><h3>{thread.title}</h3><p>{thread.body}</p></article>)}</div>
+    </section>
+
+    <nav className="foundation-next" aria-label="Continue">
+      <Link href={trialIndexHref(currentCase.id)}><strong>Trial Index</strong><span>Every day, witness and topic →</span></Link>
+      <Link href={courtRecordHref(currentCase.id)}><strong>Court Record</strong><span>Search the testimony →</span></Link>
+      <Link href={timelineHref(currentCase.id)}><strong>Timelines</strong><span>Sequence the events →</span></Link>
+    </nav>
   </main>;
 }
