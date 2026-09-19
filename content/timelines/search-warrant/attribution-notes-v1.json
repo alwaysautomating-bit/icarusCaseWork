@@ -1,0 +1,27 @@
+{
+  "source_note": "From the reconstruction written for clancy-search-warrant-attribution-timeline.json. The affidavit is a probable-cause narrative composed from interviews, records, investigator observations, and hearsay. An event's appearance here does not make every embedded proposition independently verified.",
+  "state_transition": "attempted-suicide response → children reported unresponsive → Patrick's actor accusation → responders confirm injured children → later medical and scene evidence corroborates mechanism and circumstances → arrest warrant formalizes attribution",
+  "reading_guide": "Later medical and scene corroboration establishes that the children were strangled and that Lindsay was injured. It does not independently corroborate who did it. Read the police-knowledge lane for what each item could and could not identify.",
+  "chain": [
+    "Patrick was the 911 caller and the initial narrator of the household sequence.",
+    "Patrick identified Lindsay as the actor in the basement before the affidavit describes Josephine seeing a child.",
+    "Patrick later supplied the claim that all three children had bands tied around their necks.",
+    "Patrick later supplied the claim that Lindsay previously disclosed suicidal and child-harm thoughts.",
+    "Surveillance corroborated that Patrick was at CVS and ThreeV at specific times.",
+    "The residence search produced a knife, notebooks, and digital devices interpreted as potentially relevant to Lindsay's state of mind.",
+    "Medical and autopsy findings corroborated strangulation, while remaining actor-neutral."
+  ],
+  "conclusion": "The identification of Lindsay as the alleged perpetrator depends materially on Patrick's statements plus a circumstantial inference: Patrick was documented away from the residence during part of the evening, Lindsay was found injured outside, the children were found inside, and the scene held apparent self-harm and state-of-mind evidence. The extract shows no independent eyewitness to the assaults, no statement from Lindsay, no completed digital analysis, and no forensic trace results establishing actor identity before the arrest warrant issued.",
+  "gaps": [
+    "The affidavit does not give Patrick's exact home-arrival time.",
+    "It does not document how dispatch or police 'positively identified' the injured wife as Lindsay beyond the context of Patrick's call.",
+    "It does not reproduce the 911 call, CAD record, or dispatch audio.",
+    "Josephine's affidavit summary contains the accusation; Hall's summary contains a different contemporaneous utterance ('oh my God, oh my God').",
+    "The responder summaries describe bands beside children, while Patrick's later account says bands were tied around all three necks.",
+    "The origin of the physician's information that a band had been tied around Dawson's neck is not identified.",
+    "The Jan. 25 arrest-warrant affidavit is referenced but not reproduced in this extract.",
+    "The trace-evidence collection occurred after the arrest warrant issued; its results could not have supported the earlier attribution.",
+    "The phrase about Lindsay 'researching ways to kill' needs a separate provenance trace: the extract does not identify the device record, search term, user attribution, or original source.",
+    "Nothing in this extract establishes an interview, confession, or account from Lindsay before the arrest warrant issued."
+  ]
+}

@@ -1,6 +1,6 @@
 import { confidenceInfo, typeLabel, type ResponderEvent } from "@/lib/responder-timeline";
 
-const ASSERTION_LABELS: Record<string, string> = { claim: "Says", effect: "Effect", travel_estimate: "Travel estimate" };
+const ASSERTION_LABELS: Record<string, string> = { claim: "Says", effect: "Effect", travel_estimate: "Travel estimate", source: "Transcript" };
 
 const TEXT_FIELDS: Array<[keyof ResponderEvent, string]> = [
   ["significance", "Why it matters"],
@@ -57,6 +57,7 @@ export function ResponderEventCard({ event, titles }: { event: ResponderEvent; t
           {Object.entries(assertion).filter(([key]) => key !== "witness").map(([key, value]) => <span key={key}><em>{ASSERTION_LABELS[key] ?? key.replaceAll("_", " ")}:</em> {String(value)}</span>)}
         </li>)}
       </ul> : null}
+      {event.sources?.length ? <p className="responder-sources"><strong>Transcript</strong> {event.sources.join(" · ")}</p> : null}
       {placement.length ? <details className="responder-placement"><summary>Placement · {placement.length} constraint{placement.length === 1 ? "" : "s"}</summary>
         <ul>{placement.map(({ relation, id }) => <li key={`${relation}-${id}`}>{relation} <a href={`#${id.toLowerCase()}`}>{id}</a> {titles.get(id) ? `· ${titles.get(id)}` : ""}</li>)}</ul>
       </details> : null}

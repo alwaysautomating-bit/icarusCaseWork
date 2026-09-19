@@ -1,0 +1,2099 @@
+{
+  "schema_version": "3.0",
+  "title": "First Responder Chronology — 47 Summer Street",
+  "status": "working_master_anchored",
+  "methodology": {
+    "clock_anchor": {
+      "event": "Duxbury police dispatch",
+      "time": "approximately 18:11",
+      "precision": "approximate"
+    },
+    "rules": [
+      "Do not convert witness travel estimates into exact arrival times.",
+      "Preserve conflicting witness assertions.",
+      "Shared vehicle crews receive one arrival event until their actions diverge.",
+      "The scream/child alert is the central synchronization event prompting discovery/response to the children.",
+      "Josephine's ambulance-backing statement constrains Dawson's extraction after the scream; it does not place Dawson before the scream.",
+      "Occurrence time and proceeding/testimony time remain distinct.",
+      "T₀ is the scream/child alert. It is a synchronization node, not a clock time: each witness is aligned by what they were doing immediately before and after it.",
+      "An assertion is placed before, at, or after T₀ only when the witness ties it to the scream or to an event that is itself tied to it. Everything else stays unplaced.",
+      "Sources cite the witness's transcript position, not the time of the event.",
+      "Where two witnesses use the same first name, the record keeps them apart: in Stratton's testimony “Patrick” is firefighter Patrick Dwyer."
+    ]
+  },
+  "events": [
+    {
+      "id": "FR001",
+      "order": 1,
+      "phase": "dispatch",
+      "title": "Police dispatched to 47 Summer Street",
+      "type": "dispatch",
+      "occurred_at": "~18:11",
+      "precision": "approximate",
+      "actors": [
+        "Josephine",
+        "Hall",
+        "Cahill"
+      ],
+      "confidence": "clock_anchor",
+      "anchor_relation": "before"
+    },
+    {
+      "id": "FR002",
+      "order": 2,
+      "phase": "dispatch",
+      "title": "Initial Duxbury Fire response dispatched",
+      "type": "dispatch",
+      "actors": [
+        "Hussey",
+        "Heath",
+        "Dougherty",
+        "Nudd",
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "units": [
+        "Command",
+        "Ambulance 1",
+        "Engine 2"
+      ],
+      "raw_temporal_expression": "approximately / just after 6:00 PM",
+      "confidence": "corroborated",
+      "caveat": "Fire clock language is not reconciled to the ~18:11 police dispatch anchor.",
+      "anchor_relation": "before"
+    },
+    {
+      "id": "FR003",
+      "order": 3,
+      "phase": "initial_response",
+      "title": "Josephine and Hall arrive among early police",
+      "type": "arrival",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "confidence": "conflict",
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "travel_estimate": "3–4 minutes"
+        },
+        {
+          "witness": "Hall",
+          "travel_estimate": "7–10 minutes"
+        },
+        {
+          "witness": "Hall",
+          "claim": "arrived simultaneously with Josephine"
+        }
+      ],
+      "anchor_relation": "before"
+    },
+    {
+      "id": "FR004",
+      "order": 4,
+      "phase": "initial_response",
+      "title": "Police reach backyard; Lindsay located",
+      "type": "scene_contact",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR003"
+        ]
+      },
+      "anchor_relation": "before"
+    },
+    {
+      "id": "FR046",
+      "order": 5,
+      "phase": "parallel_before_scream",
+      "title": "Patrick Clancy standing over Lindsay with a phone at his side; turns toward Josephine's flashlight",
+      "type": "observation",
+      "anchor_relation": "before",
+      "actors": [
+        "Josephine"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR004"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "note": "Josephine saw him with a cell phone down by his side, probably in his left hand, for “a split second.” Hall independently places Patrick in the backyard, calling to the officers from the left side.",
+      "sources": [
+        "Josephine 32:31",
+        "Josephine 33:35",
+        "Josephine 34:05",
+        "Hall 07:57",
+        "Hall 08:08"
+      ]
+    },
+    {
+      "id": "FR047",
+      "order": 6,
+      "phase": "parallel_before_scream",
+      "title": "Patrick passes Josephine near the bulkhead, heading toward the deck without speaking",
+      "type": "movement",
+      "anchor_relation": "before",
+      "actors": [
+        "Josephine"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR046"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "note": "Josephine: “walking past me pretty fast in an abrupt manner.” He did not know at the time where Patrick was going.",
+      "sources": [
+        "Josephine 34:12",
+        "Josephine 34:26",
+        "Josephine 34:40"
+      ]
+    },
+    {
+      "id": "FR050",
+      "order": 7,
+      "phase": "parallel_before_scream",
+      "title": "Josephine tries to talk with Lindsay for 30–60 seconds; fire personnel arrive and he turns medical care over",
+      "type": "medical_care",
+      "anchor_relation": "before",
+      "actors": [
+        "Josephine"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR047"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "raw_temporal_expression": "probably 30 seconds to a minute",
+      "sources": [
+        "Josephine 34:46",
+        "Josephine 36:28"
+      ]
+    },
+    {
+      "id": "FR005",
+      "order": 8,
+      "phase": "initial_response",
+      "title": "Ambulance 1 arrives",
+      "type": "arrival",
+      "actors": [
+        "Heath",
+        "Dougherty",
+        "Nudd"
+      ],
+      "unit": "Ambulance 1",
+      "confidence": "corroborated",
+      "observations": [
+        "Police cruisers already present",
+        "Driveway obstructed",
+        "Engine 2 not yet present / approaching"
+      ],
+      "anchor_relation": "before",
+      "sources": [
+        "Nudd 01:04:00",
+        "Stratton 01:37:44"
+      ]
+    },
+    {
+      "id": "FR006",
+      "order": 9,
+      "phase": "initial_response",
+      "title": "Hussey arrives with initial fire response",
+      "type": "arrival",
+      "actors": [
+        "Hussey"
+      ],
+      "confidence": "supported",
+      "caveat": "Exact order relative to Ambulance 1 is not established.",
+      "anchor_relation": "before"
+    },
+    {
+      "id": "FR051",
+      "order": 10,
+      "phase": "initial_response",
+      "title": "Hall directs arriving fire personnel to the side gate",
+      "type": "direction",
+      "anchor_relation": "before",
+      "actors": [
+        "Hall"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR005"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "note": "Hall heard the sirens and went to the gate. Dougherty independently recalls Hall directing them to the side gate on arrival.",
+      "sources": [
+        "Hall 11:20",
+        "Hall 11:35",
+        "Dougherty 01:58:34"
+      ]
+    },
+    {
+      "id": "FR007",
+      "order": 11,
+      "phase": "parallel_before_scream",
+      "title": "Heath and Dougherty exit with equipment and head toward Lindsay",
+      "type": "movement",
+      "actors": [
+        "Heath",
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ]
+      },
+      "anchor_relation": "before",
+      "sources": [
+        "Nudd 01:05:23",
+        "Dougherty 01:58:17"
+      ]
+    },
+    {
+      "id": "FR008",
+      "order": 12,
+      "phase": "parallel_before_scream",
+      "title": "Nudd begins Ambulance 1 positioning sequence",
+      "type": "vehicle_positioning",
+      "actors": [
+        "Nudd"
+      ],
+      "unit": "Ambulance 1",
+      "sequence": [
+        "Nudd takes driver position",
+        "Obstructing cruiser moved",
+        "Ambulance 1 backs into driveway"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ]
+      },
+      "note": "This positioning sequence remains in progress through the later Dawson extraction/handoff.",
+      "anchor_relation": "before",
+      "sources": [
+        "Nudd 01:04:45",
+        "Nudd 01:05:33"
+      ]
+    },
+    {
+      "id": "FR009",
+      "order": 13,
+      "phase": "parallel_before_scream",
+      "title": "Dougherty/Heath provide initial care to Lindsay",
+      "type": "medical_care",
+      "actors": [
+        "Dougherty",
+        "Heath"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "sequence": [
+        "assessment",
+        "oral airway",
+        "non-rebreather oxygen"
+      ],
+      "constraints": {
+        "after": [
+          "FR007"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "before",
+      "sources": [
+        "Dougherty 02:00:45",
+        "Dougherty 02:01:04"
+      ]
+    },
+    {
+      "id": "FR010",
+      "order": 14,
+      "phase": "initial_response",
+      "title": "Cahill arrives",
+      "type": "arrival",
+      "actors": [
+        "Cahill"
+      ],
+      "raw_temporal_expression": "a couple minutes",
+      "observations": [
+        "cruiser present",
+        "Ambulance 1 present",
+        "fire captain present",
+        "Lindsay already receiving care"
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "before",
+      "sources": [
+        "Cahill 02:09:25"
+      ]
+    },
+    {
+      "id": "FR011",
+      "order": 15,
+      "phase": "initial_response",
+      "title": "Engine 2 arrives",
+      "type": "arrival",
+      "actors": [
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "unit": "Engine 2",
+      "confidence": "corroborated",
+      "assertions": [
+        {
+          "witness": "Stratton",
+          "travel_estimate": "4–5 minutes",
+          "claim": "Ambulance 1 arrived just before"
+        },
+        {
+          "witness": "Patrick Dwyer",
+          "travel_estimate": "a few minutes",
+          "claim": "other firefighters were already there"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR005"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "before",
+      "sources": [
+        "Stratton 01:37:44",
+        "Dwyer 01:24:15"
+      ]
+    },
+    {
+      "id": "FR048",
+      "order": 16,
+      "phase": "parallel_before_scream",
+      "title": "Patrick tells Hall he is going inside to check on his children; heads for the back slider",
+      "type": "movement",
+      "anchor_relation": "before",
+      "actors": [
+        "Hall"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR051"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "note": "Hall places this while he was at the gate directing fire personnel. Kept separate from Josephine's sighting of Patrick passing him near the bulkhead (FR047); the two may describe the same movement from different positions.",
+      "sources": [
+        "Hall 11:39",
+        "Hall 11:43",
+        "Hall 11:51"
+      ]
+    },
+    {
+      "id": "FR049",
+      "order": 17,
+      "phase": "parallel_before_scream",
+      "title": "Radio: dispatch says Patrick “couldn't wake them up”",
+      "type": "radio_traffic",
+      "anchor_relation": "before",
+      "actors": [
+        "Hall"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR048"
+        ],
+        "before": [
+          "FR012"
+        ]
+      },
+      "note": "Hall says this came shortly after Patrick went inside. He did not know at first what it referred to. He gives no clock time. Josephine is unsure whether radio traffic mentioned the basement (Josephine 37:07).",
+      "sources": [
+        "Hall 11:59",
+        "Hall 12:11",
+        "Hall 12:20"
+      ]
+    },
+    {
+      "id": "FR012",
+      "order": 18,
+      "phase": "child_discovery",
+      "title": "T₀ · SCREAM / CHILD ALERT",
+      "type": "synchronization_event",
+      "confidence": "corroborated_candidate_shared_event",
+      "significance": "Prompts the discovery/response to the children.",
+      "assertions": [
+        {
+          "witness": "Dougherty",
+          "effect": "Heard it right after oxygen was placed on Lindsay; looked at Hussey and Heath. Hussey and Heath left; Dougherty stayed.",
+          "source": "Dougherty 02:01:13"
+        },
+        {
+          "witness": "Hussey",
+          "effect": "Heard a scream that seemed to come from the basement; looked through the basement window well.",
+          "source": "Hussey 53:11"
+        },
+        {
+          "witness": "Josephine",
+          "effect": "Standing by the window with Hall, heard loud screams; headed back toward the deck.",
+          "source": "Josephine 36:54"
+        },
+        {
+          "witness": "Hall",
+          "effect": "Heard a loud scream from inside the house, “just a sound”; ran with Josephine to the slider.",
+          "source": "Hall 12:24"
+        },
+        {
+          "witness": "Cahill",
+          "effect": "Heard loud screaming; went inside and down to the basement.",
+          "source": "Cahill 02:09:46"
+        },
+        {
+          "witness": "Stratton",
+          "effect": "Heard “a voice yelling for us to get inside of the house, that there was a kid hanging in the basement.” She describes a voice, not a scream.",
+          "source": "Stratton 01:38:12"
+        },
+        {
+          "witness": "Dwyer",
+          "effect": "Walking toward the backyard, was directed to the basement.",
+          "source": "Dwyer 01:24:31"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR009",
+          "FR010",
+          "FR011",
+          "FR049"
+        ]
+      },
+      "anchor_relation": "at",
+      "sources": [
+        "Dougherty 02:01:13",
+        "Hussey 53:11",
+        "Josephine 36:54",
+        "Hall 12:24",
+        "Cahill 02:09:46",
+        "Stratton 01:38:12",
+        "Dwyer 01:24:31"
+      ]
+    },
+    {
+      "id": "FR013",
+      "order": 19,
+      "phase": "child_discovery",
+      "title": "Hussey looks through the basement window well; sees Patrick unwrapping something from Dawson's head and neck",
+      "type": "observation",
+      "actors": [
+        "Hussey"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "note": "Hussey: after the scream, an older male, later identified as Patrick Clancy, picked the child up and in a circular motion took something off the head, around the head and neck. The head was blue.",
+      "anchor_relation": "after",
+      "sources": [
+        "Hussey 53:21",
+        "Hussey 54:13",
+        "Hussey 54:30",
+        "Hussey 54:54"
+      ]
+    },
+    {
+      "id": "FR052",
+      "order": 20,
+      "phase": "child_discovery",
+      "title": "Josephine and Hall enter through the deck slider into the kitchen",
+      "type": "movement",
+      "anchor_relation": "after",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "confidence": "conflict",
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "claim": "In the kitchen it was “the exact screaming that I heard from the window.”",
+          "source": "Josephine 37:35"
+        },
+        {
+          "witness": "Hall",
+          "claim": "In the kitchen the screaming was done; Patrick could be heard talking from the basement.",
+          "source": "Hall 12:57"
+        }
+      ],
+      "sources": [
+        "Josephine 37:22",
+        "Hall 12:42",
+        "Hall 12:51"
+      ]
+    },
+    {
+      "id": "FR053",
+      "order": 21,
+      "phase": "child_discovery",
+      "title": "Josephine and Hall go down the basement stairs and turn right toward Patrick's voice",
+      "type": "movement",
+      "anchor_relation": "after",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR052"
+        ]
+      },
+      "sources": [
+        "Josephine 37:44",
+        "Josephine 37:48",
+        "Hall 13:16",
+        "Hall 13:45"
+      ]
+    },
+    {
+      "id": "FR054",
+      "order": 22,
+      "phase": "child_discovery",
+      "title": "Patrick comes out of the back room toward Josephine and Hall, speaking",
+      "type": "encounter",
+      "anchor_relation": "after",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR053"
+        ]
+      },
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "claim": "“She killed the fucking kids.”",
+          "source": "Josephine 38:56"
+        },
+        {
+          "witness": "Hall",
+          "claim": "“I can't wake them up. I can't get them up.” He seemed very upset.",
+          "source": "Hall 14:16"
+        }
+      ],
+      "note": "The two witnesses report different words. Both are preserved; neither is treated as a paraphrase of the other. Hall later says Patrick said “them” rather than a singular child, which sent him to look for other children (Hall 18:53).",
+      "sources": [
+        "Josephine 38:07",
+        "Josephine 38:56",
+        "Hall 14:16",
+        "Hall 14:29",
+        "Hall 18:53"
+      ]
+    },
+    {
+      "id": "FR055",
+      "order": 23,
+      "phase": "child_discovery",
+      "title": "Josephine and Hall see Dawson on the floor of the back room",
+      "type": "observation",
+      "anchor_relation": "after",
+      "actors": [
+        "Josephine",
+        "Hall"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR054"
+        ]
+      },
+      "assertions": [
+        {
+          "witness": "Hall",
+          "claim": "A yellow exercise band lay in the position marked on Exhibit 93; Dawson was on his back, discolored bluish purple.",
+          "source": "Hall 17:34"
+        },
+        {
+          "witness": "Josephine",
+          "claim": "Face white/gray, lips blue, eyes bloodshot; red marks on the right side of the neck when he tilted the head.",
+          "source": "Josephine 40:04"
+        }
+      ],
+      "sources": [
+        "Josephine 39:15",
+        "Hall 16:50",
+        "Hall 17:43"
+      ]
+    },
+    {
+      "id": "FR014",
+      "order": 24,
+      "phase": "child_discovery",
+      "title": "Cahill enters house and basement",
+      "type": "movement",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Cahill 02:09:49",
+        "Cahill 02:09:57"
+      ]
+    },
+    {
+      "id": "FR015",
+      "order": 25,
+      "phase": "child_discovery",
+      "title": "Patrick points Cahill left",
+      "type": "observation",
+      "actors": [
+        "Cahill"
+      ],
+      "description": "Cahill sees Patrick moving left-to-right while screaming; Patrick points him left.",
+      "constraints": {
+        "after": [
+          "FR014"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Cahill 02:10:10",
+        "Cahill 02:10:23"
+      ]
+    },
+    {
+      "id": "FR016",
+      "order": 26,
+      "phase": "child_discovery",
+      "title": "Cahill encounters Cora and Callan",
+      "type": "discovery",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "constraints": {
+        "after": [
+          "FR015"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Cahill 02:10:30",
+        "Cahill 02:10:50"
+      ]
+    },
+    {
+      "id": "FR017",
+      "order": 27,
+      "phase": "child_discovery",
+      "title": "Engine 2 enters basement and turns left",
+      "type": "movement",
+      "actors": [
+        "Stratton",
+        "Patrick Dwyer"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Stratton 01:38:22",
+        "Stratton 01:38:41",
+        "Dwyer 01:25:46",
+        "Dwyer 01:25:57"
+      ]
+    },
+    {
+      "id": "FR058",
+      "order": 28,
+      "phase": "cora_callan",
+      "title": "Patrick Clancy seated on a couch next to Cora and Callan when Engine 2 enters the left room",
+      "type": "observation",
+      "anchor_relation": "after",
+      "actors": [
+        "Dwyer"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR017"
+        ]
+      },
+      "note": "Dwyer: “We saw two children on the ground and the father sitting on the couch next to them.” He later says he is not sure exactly which piece of furniture. No other responder describes Patrick's position in the left room at this moment. How this fits with Cahill's sighting of Patrick crossing left to right (FR015) and Josephine and Hall's encounter in the right back room (FR054) is not established.",
+      "sources": [
+        "Dwyer 01:25:57",
+        "Dwyer 01:26:24",
+        "Dwyer 01:26:33"
+      ]
+    },
+    {
+      "id": "FR018",
+      "order": 29,
+      "phase": "dawson_extraction",
+      "title": "Josephine carries Dawson toward Ambulance 1",
+      "type": "patient_transfer",
+      "actors": [
+        "Josephine"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "raw_temporal_expression": "The ambulance was backing up and had pretty much just parked",
+      "constraints": {
+        "after": [
+          "FR012",
+          "FR013",
+          "FR055"
+        ]
+      },
+      "overlaps_with": [
+        "FR008"
+      ],
+      "significance": "Synchronizes Dawson extraction with Ambulance 1 final positioning.",
+      "anchor_relation": "after",
+      "sources": [
+        "Josephine 41:22",
+        "Josephine 42:07",
+        "Nudd 01:05:48",
+        "Hall 18:24"
+      ]
+    },
+    {
+      "id": "FR019",
+      "order": 30,
+      "phase": "dawson_extraction",
+      "title": "Nudd pulls stretcher from Ambulance 1",
+      "type": "equipment",
+      "actors": [
+        "Nudd"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "raw_temporal_expression": "stretcher almost out",
+      "overlaps_with": [
+        "FR018"
+      ],
+      "anchor_relation": "after",
+      "sources": [
+        "Nudd 01:05:33",
+        "Nudd 01:05:52"
+      ]
+    },
+    {
+      "id": "FR020",
+      "order": 31,
+      "phase": "dawson_extraction",
+      "title": "Dawson placed on stretcher",
+      "type": "patient_transfer",
+      "patients": [
+        "Dawson"
+      ],
+      "confidence": "event_supported_attribution_conflict",
+      "assertions": [
+        {
+          "witness": "Josephine",
+          "claim": "Josephine carried Dawson and put him on the stretcher."
+        },
+        {
+          "witness": "Nudd",
+          "claim": "Nudd identified the officer carrying the child as Sergeant Homestead."
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR018",
+          "FR019"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR021",
+      "order": 32,
+      "phase": "dawson_extraction",
+      "title": "Homestead and fire personnel continue Dawson care",
+      "type": "medical_care",
+      "actors": [
+        "Homestead"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "source_assertion": "Josephine",
+      "constraints": {
+        "after": [
+          "FR020"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR022",
+      "order": 33,
+      "phase": "dawson_extraction",
+      "title": "Dawson moved into Ambulance 1; resuscitation continues",
+      "type": "patient_transfer_and_care",
+      "patients": [
+        "Dawson"
+      ],
+      "unit": "Ambulance 1",
+      "constraints": {
+        "after": [
+          "FR020",
+          "FR021"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR059",
+      "order": 34,
+      "phase": "cora_callan",
+      "title": "Nudd carries the cardiac monitor from Ambulance 1 into the basement",
+      "type": "equipment",
+      "anchor_relation": "after",
+      "actors": [
+        "Nudd"
+      ],
+      "confidence": "single_witness",
+      "constraints": {
+        "after": [
+          "FR022"
+        ]
+      },
+      "note": "Nudd says responders told him they needed the monitor downstairs.",
+      "sources": [
+        "Nudd 01:09:16",
+        "Nudd 01:09:55",
+        "Nudd 01:10:18"
+      ]
+    },
+    {
+      "id": "FR023",
+      "order": 35,
+      "phase": "parallel_post_scream",
+      "title": "Dougherty remains with Lindsay and bandages injuries",
+      "type": "medical_care",
+      "actors": [
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Dougherty 02:02:06",
+        "Dougherty 02:02:13"
+      ]
+    },
+    {
+      "id": "FR024",
+      "order": 36,
+      "phase": "parallel_post_scream",
+      "title": "Heath leaves Lindsay area for backboard",
+      "type": "movement",
+      "actors": [
+        "Heath"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR012"
+        ]
+      },
+      "note": "Dougherty says Heath does not return to him with it.",
+      "anchor_relation": "after",
+      "sources": [
+        "Dougherty 02:01:59"
+      ]
+    },
+    {
+      "id": "FR025",
+      "order": 37,
+      "phase": "cora_callan",
+      "title": "Cahill checks Cora",
+      "type": "patient_assessment",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Cora"
+      ],
+      "finding": "no pulse",
+      "constraints": {
+        "after": [
+          "FR016"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR026",
+      "order": 38,
+      "phase": "cora_callan",
+      "title": "Cahill checks Callan",
+      "type": "patient_assessment",
+      "actors": [
+        "Cahill"
+      ],
+      "patients": [
+        "Callan"
+      ],
+      "finding": "no pulse",
+      "constraints": {
+        "after": [
+          "FR025"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR027",
+      "order": 39,
+      "phase": "cora_callan",
+      "title": "Dwyer takes Cora; Stratton takes Callan",
+      "type": "crew_split",
+      "actors": [
+        "Patrick Dwyer",
+        "Stratton"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "corroborated",
+      "constraints": {
+        "after": [
+          "FR017"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Stratton 01:38:50",
+        "Dwyer 01:26:44"
+      ]
+    },
+    {
+      "id": "FR056",
+      "order": 40,
+      "phase": "cora_callan",
+      "title": "Hall and Josephine go back down and turn left; responders are already working on the two children",
+      "type": "movement",
+      "anchor_relation": "after",
+      "actors": [
+        "Hall",
+        "Josephine"
+      ],
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR018",
+          "FR027"
+        ]
+      },
+      "note": "Hall: went back down to look for other children because Patrick had said “them.” Josephine: heard something about kids and multiple, and went back in by the front door.",
+      "sources": [
+        "Hall 18:45",
+        "Hall 19:07",
+        "Hall 21:00",
+        "Josephine 42:31",
+        "Josephine 42:49",
+        "Josephine 43:15"
+      ]
+    },
+    {
+      "id": "FR028",
+      "order": 41,
+      "phase": "escalation",
+      "title": "Additional ambulances requested for Cora and Callan",
+      "type": "resource_request",
+      "patients": [
+        "Cora",
+        "Callan"
+      ],
+      "confidence": "attribution_unresolved",
+      "assertions": [
+        {
+          "witness": "Stratton",
+          "claim": "radioed for two additional ambulances"
+        },
+        {
+          "witness": "Hussey",
+          "claim": "called two more ambulances"
+        }
+      ],
+      "constraints": {
+        "after": [
+          "FR016",
+          "FR017"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Stratton 01:38:50",
+        "Hussey 56:16"
+      ]
+    },
+    {
+      "id": "FR029",
+      "order": 42,
+      "phase": "escalation",
+      "title": "Recall / mutual-aid escalation",
+      "type": "resource_request",
+      "actors": [
+        "Hussey"
+      ],
+      "note": "Narrative reason/order supported; precise CAD/radio placement still needed.",
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR030",
+      "order": 43,
+      "phase": "cora_callan",
+      "title": "Cahill moves ottoman/futon component to create treatment space",
+      "type": "scene_alteration",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR026"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Cahill 02:11:25"
+      ]
+    },
+    {
+      "id": "FR031",
+      "order": 44,
+      "phase": "cora_callan",
+      "title": "Cahill retrieves equipment and returns",
+      "type": "equipment",
+      "actors": [
+        "Cahill"
+      ],
+      "constraints": {
+        "after": [
+          "FR030"
+        ]
+      },
+      "caveat": "Requester/equipment unspecified.",
+      "anchor_relation": "after",
+      "sources": [
+        "Cahill 02:12:00"
+      ]
+    },
+    {
+      "id": "FR057",
+      "order": 45,
+      "phase": "cora_callan",
+      "title": "Josephine takes over chest compressions on Cora; Cahill gives rescue breaths with a bag-valve mask",
+      "type": "medical_care",
+      "anchor_relation": "after",
+      "actors": [
+        "Josephine",
+        "Cahill"
+      ],
+      "patients": [
+        "Cora"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR031",
+          "FR056"
+        ]
+      },
+      "note": "Josephine says Cahill came down after he radioed for another officer; Cahill says he had already been in the room and returned with equipment.",
+      "sources": [
+        "Josephine 43:15",
+        "Josephine 45:29",
+        "Cahill 02:12:21",
+        "Cahill 02:12:31"
+      ]
+    },
+    {
+      "id": "FR060",
+      "order": 46,
+      "phase": "lindsay_transport",
+      "title": "Hall returns outside to Lindsay when responders ask for an officer with her",
+      "type": "movement",
+      "anchor_relation": "after",
+      "actors": [
+        "Hall"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "confidence": "supported",
+      "constraints": {
+        "after": [
+          "FR056"
+        ],
+        "before": [
+          "FR034"
+        ]
+      },
+      "note": "Hall: replaced her oxygen mask as she kept pulling it off, and helped with the stretcher. He does not mention fetching the backboard, which Dougherty attributes to him (FR034).",
+      "sources": [
+        "Hall 22:59",
+        "Hall 26:04",
+        "Hall 26:26",
+        "Dougherty 02:02:30"
+      ]
+    },
+    {
+      "id": "FR032",
+      "order": 47,
+      "phase": "recalled_response",
+      "title": "Nette arrives",
+      "type": "arrival",
+      "actors": [
+        "Nette"
+      ],
+      "observations": [
+        "Ambulance 1 in driveway",
+        "Dawson already inside",
+        "Homestead and Heath doing CPR"
+      ],
+      "constraints": {
+        "after": [
+          "FR022",
+          "FR029"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Nette 01:14:29",
+        "Nudd 01:07:40"
+      ]
+    },
+    {
+      "id": "FR033",
+      "order": 48,
+      "phase": "recalled_response",
+      "title": "Nette joins Dawson resuscitation",
+      "type": "medical_care",
+      "actors": [
+        "Nette",
+        "Heath",
+        "Homestead"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "actions": [
+        "CPR",
+        "IV/IO attempts",
+        "intubation",
+        "medications"
+      ],
+      "constraints": {
+        "after": [
+          "FR032"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Nette 01:15:33",
+        "Nette 01:16:03"
+      ]
+    },
+    {
+      "id": "FR034",
+      "order": 49,
+      "phase": "lindsay_transport",
+      "title": "Hall retrieves backboard for Lindsay",
+      "type": "equipment",
+      "actors": [
+        "Hall",
+        "Dougherty"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR060"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Dougherty 02:02:30",
+        "Dougherty 02:02:47"
+      ]
+    },
+    {
+      "id": "FR035",
+      "order": 50,
+      "phase": "lindsay_transport",
+      "title": "Lindsay placed on longboard/backboard",
+      "type": "patient_packaging",
+      "actors": [
+        "Dougherty",
+        "Hall"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "constraints": {
+        "after": [
+          "FR034"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Dougherty 02:02:55",
+        "Costanzo 01:46:37"
+      ]
+    },
+    {
+      "id": "FR036",
+      "order": 51,
+      "phase": "lindsay_transport",
+      "title": "Pembroke arrives / assumes Lindsay care",
+      "type": "arrival_and_handoff",
+      "actors": [
+        "Costanzo",
+        "Dan Smith",
+        "Jim Shea"
+      ],
+      "patients": [
+        "Lindsay"
+      ],
+      "observation": "Lindsay already packaged on longboard.",
+      "constraints": {
+        "after": [
+          "FR035"
+        ]
+      },
+      "anchor_relation": "after",
+      "sources": [
+        "Dougherty 02:03:38",
+        "Costanzo 01:46:17"
+      ]
+    },
+    {
+      "id": "FR037",
+      "order": 52,
+      "phase": "lindsay_transport",
+      "title": "Pembroke total on-scene interval",
+      "type": "duration",
+      "patients": [
+        "Lindsay"
+      ],
+      "duration_minutes": 7,
+      "precision": "approximate_witness_estimate",
+      "raw_temporal_expression": "I think it was seven minutes ... total on scene",
+      "start_event": "FR036",
+      "end_event": "FR038",
+      "anchor_relation": "after",
+      "sources": [
+        "Costanzo 01:54:00"
+      ]
+    },
+    {
+      "id": "FR038",
+      "order": 53,
+      "phase": "lindsay_transport",
+      "title": "Pembroke departs with Lindsay",
+      "type": "transport",
+      "patients": [
+        "Lindsay"
+      ],
+      "destination": "South Shore Hospital",
+      "constraints": {
+        "after": [
+          "FR036"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR039",
+      "order": 54,
+      "phase": "dawson_transport",
+      "title": "Dougherty returns to Ambulance 1 after Pembroke leaves",
+      "type": "movement",
+      "actors": [
+        "Dougherty"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "constraints": {
+        "after": [
+          "FR038"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR040",
+      "order": 55,
+      "phase": "dawson_transport",
+      "title": "Ambulance 1 transports Dawson",
+      "type": "transport",
+      "actors": [
+        "Dougherty",
+        "Nette"
+      ],
+      "patients": [
+        "Dawson"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth",
+      "constraints": {
+        "after": [
+          "FR039"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR041",
+      "order": 56,
+      "phase": "cora_transport",
+      "title": "Cora removed via bulkhead and transported by Marshfield",
+      "type": "transport",
+      "actors": [
+        "Patrick Dwyer"
+      ],
+      "patients": [
+        "Cora"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth",
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR042",
+      "order": 57,
+      "phase": "callan_transport",
+      "title": "Stratton carries Callan to Kingston ambulance; transport begins",
+      "type": "transport",
+      "actors": [
+        "Stratton"
+      ],
+      "patients": [
+        "Callan"
+      ],
+      "destination": "Beth Israel Deaconess Plymouth",
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR043",
+      "order": 58,
+      "phase": "hospital",
+      "title": "Dawson care transferred at BI Plymouth",
+      "type": "hospital_handoff",
+      "patients": [
+        "Dawson"
+      ],
+      "actors": [
+        "Nette"
+      ],
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR044",
+      "order": 59,
+      "phase": "hospital",
+      "title": "Marshfield arrives at BI Plymouth with Cora after Dawson handoff",
+      "type": "hospital_arrival",
+      "patients": [
+        "Cora"
+      ],
+      "actors": [
+        "Nette",
+        "Patrick Dwyer"
+      ],
+      "constraints": {
+        "after": [
+          "FR043"
+        ]
+      },
+      "anchor_relation": "after"
+    },
+    {
+      "id": "FR045",
+      "order": 60,
+      "phase": "scene_control",
+      "title": "Cahill transitions to scene-control role",
+      "type": "scene_control",
+      "actors": [
+        "Cahill"
+      ],
+      "evidence_reference": "Crime Scene Entry/Exit Log, Exhibit 109",
+      "anchor_relation": "after"
+    }
+  ],
+  "critical_constraints": [
+    {
+      "before": "FR003",
+      "after": "FR005",
+      "basis": "Police cruisers already present when Ambulance 1 arrives."
+    },
+    {
+      "before": "FR005",
+      "after": "FR011",
+      "basis": "Ambulance 1 arrives before Engine 2."
+    },
+    {
+      "before": "FR009",
+      "after": "FR012",
+      "basis": "Lindsay airway/oxygen precedes scream in Dougherty's sequence."
+    },
+    {
+      "before": "FR012",
+      "after": "FR018",
+      "basis": "Scream/child alert prompts child discovery/response; Dawson extraction follows."
+    },
+    {
+      "overlap": [
+        "FR008",
+        "FR018"
+      ],
+      "basis": "Josephine says Ambulance 1 was backing and had pretty much just parked as he rushed Dawson to the stretcher."
+    },
+    {
+      "overlap": [
+        "FR018",
+        "FR019"
+      ],
+      "basis": "Josephine's Dawson arrival and Nudd's stretcher extraction describe the same handoff window."
+    },
+    {
+      "before": "FR020",
+      "after": "FR022",
+      "basis": "Dawson is placed on stretcher before entering Ambulance 1."
+    },
+    {
+      "before": "FR022",
+      "after": "FR032",
+      "basis": "Dawson already inside when Nette arrives."
+    },
+    {
+      "before": "FR035",
+      "after": "FR036",
+      "basis": "Lindsay already packaged when Pembroke assumes care."
+    },
+    {
+      "duration": {
+        "start": "FR036",
+        "end": "FR038",
+        "minutes": 7,
+        "precision": "approximate"
+      },
+      "basis": "Costanzo estimates approximately seven minutes total on scene."
+    },
+    {
+      "before": "FR038",
+      "after": "FR039",
+      "basis": "Dougherty returns to Ambulance 1 after Pembroke leaves."
+    },
+    {
+      "before": "FR043",
+      "after": "FR044",
+      "basis": "Nette observes Marshfield/Cora arrival after Dawson handoff."
+    }
+  ],
+  "unresolved": [
+    {
+      "id": "U001",
+      "issue": "Dawson carrier attribution",
+      "status": "conflict",
+      "assertions": [
+        "Josephine says he carried Dawson and put him on the stretcher.",
+        "Nudd identifies the carrier as Sergeant Homestead."
+      ],
+      "handling": "Preserve both assertions; do not alter the shared transfer event."
+    },
+    {
+      "id": "U002",
+      "issue": "Exact identity of scream/vocalization across accounts",
+      "status": "candidate_shared_sync",
+      "handling": "Use scream/child alert as the central synchronization event because it prompts discovery/response, while retaining each witness's wording separately."
+    },
+    {
+      "id": "U003",
+      "issue": "Homestead arrival time",
+      "status": "unplaced"
+    },
+    {
+      "id": "U004",
+      "issue": "Hall/Josephine arrival relationship",
+      "status": "conflict"
+    },
+    {
+      "id": "U005",
+      "issue": "Two-additional-ambulance request attribution",
+      "status": "unresolved"
+    },
+    {
+      "id": "U006",
+      "issue": "Exact CAD/radio placement of recall and mutual-aid requests",
+      "status": "needs_records"
+    },
+    {
+      "id": "U007",
+      "issue": "Patrick's reported knowledge before entering the basement",
+      "status": "needs_records",
+      "assertions": [
+        "Reported: Lindsay told Patrick “In the basement.” This is reported speech."
+      ],
+      "handling": "Verify against Patrick's sworn testimony and the 911 audio before using it as a knowledge-state anchor."
+    },
+    {
+      "id": "U008",
+      "issue": "Order of the three basement lanes",
+      "status": "unplaced",
+      "assertions": [
+        "Hussey's window view, Josephine and Hall's entry to the right room, Cahill's descent, and Engine 2's entry to the left room all follow T₀, but no witness ties them to one another."
+      ],
+      "handling": "Left as parallel lanes. The lane view shows what each witness's own chain establishes."
+    }
+  ],
+  "anchor": {
+    "id": "T0",
+    "label": "Scream / child alert",
+    "event_id": "FR012",
+    "definition": "The loud scream (Stratton: a voice yelling that a child was in the basement) that most responders describe just before they went, or were sent, into the house to the children.",
+    "rationale": "The witnesses do not need to agree on a clock time. Each independently describes their own position immediately before and after the same occurrence, so their accounts can be sequenced against each other without inventing timestamps.",
+    "witness_alignment": [
+      {
+        "witness": "Josephine",
+        "role": "Duxbury police officer",
+        "before": {
+          "text": "Outside. Sees Patrick standing over Lindsay with a phone at his side; Patrick passes him toward the deck without speaking. Talks with Lindsay 30–60 seconds until fire personnel arrive and take over.",
+          "sources": [
+            "Josephine 33:35",
+            "Josephine 34:26",
+            "Josephine 36:28"
+          ]
+        },
+        "at": {
+          "text": "Standing by the window with Hall; hears loud screams. Unsure whether dispatch said anything about the basement.",
+          "sources": [
+            "Josephine 36:54",
+            "Josephine 37:07"
+          ]
+        },
+        "after": {
+          "text": "Deck, slider, kitchen, basement; follows the screaming to the right. Patrick comes out of the back room. Finds Dawson, carries him up and out the front door to Ambulance 1, then returns and works on Cora.",
+          "sources": [
+            "Josephine 37:22",
+            "Josephine 38:56",
+            "Josephine 41:22",
+            "Josephine 43:15"
+          ]
+        }
+      },
+      {
+        "witness": "Hall",
+        "role": "Duxbury police officer",
+        "before": {
+          "text": "Outside. Directs arriving fire to the side gate. Patrick says he is going inside to check on his children. Radio: dispatch says Patrick “couldn't wake them up.”",
+          "sources": [
+            "Hall 11:20",
+            "Hall 11:43",
+            "Hall 12:11"
+          ]
+        },
+        "at": {
+          "text": "Hears a loud scream from inside the house, “just a sound.”",
+          "sources": [
+            "Hall 12:24",
+            "Hall 12:37"
+          ]
+        },
+        "after": {
+          "text": "Runs with Josephine to the slider and kitchen; says the screaming had stopped. Basement, right; Patrick: “I can't wake them up.” Finds Dawson, calls for paramedics, goes back down and left to the other two children, later returns outside to Lindsay.",
+          "sources": [
+            "Hall 12:42",
+            "Hall 12:57",
+            "Hall 14:16",
+            "Hall 18:24",
+            "Hall 22:59"
+          ]
+        }
+      },
+      {
+        "witness": "Hussey",
+        "role": "Duxbury fire captain, shift commander",
+        "before": {
+          "text": "Outside, left of the window well, supervising while paramedics treat Lindsay.",
+          "sources": [
+            "Hussey 52:07",
+            "Hussey 52:40"
+          ]
+        },
+        "at": {
+          "text": "Hears a scream that seems to come from the basement.",
+          "sources": [
+            "Hussey 53:11",
+            "Hussey 53:17"
+          ]
+        },
+        "after": {
+          "text": "Looks through the basement window well and sees Patrick lifting a child and unwrapping something from around the head and neck. Puts in an all-call recall and requests a mutual-aid ambulance; later requests two more.",
+          "sources": [
+            "Hussey 53:21",
+            "Hussey 54:13",
+            "Hussey 55:06",
+            "Hussey 56:16"
+          ]
+        }
+      },
+      {
+        "witness": "Dougherty",
+        "role": "Duxbury firefighter-paramedic",
+        "before": {
+          "text": "Treating Lindsay: places an oral airway, then a non-rebreather oxygen mask.",
+          "sources": [
+            "Dougherty 02:00:45",
+            "Dougherty 02:01:04"
+          ]
+        },
+        "at": {
+          "text": "“From there, that's when we heard the scream.” He, Hussey and Heath look at each other.",
+          "sources": [
+            "Dougherty 02:01:13",
+            "Dougherty 02:01:45"
+          ]
+        },
+        "after": {
+          "text": "Hussey leaves; Heath goes for a backboard and does not return with it. Dougherty stays with Lindsay and bandages her wrists (bandaging came after the scream). Hall later brings the board.",
+          "sources": [
+            "Dougherty 02:01:59",
+            "Dougherty 02:02:13",
+            "Dougherty 02:02:26",
+            "Dougherty 02:02:47"
+          ]
+        }
+      },
+      {
+        "witness": "Heath",
+        "role": "Duxbury firefighter-paramedic (no testimony of his own; per Dougherty and Nette)",
+        "before": {
+          "text": "Treating Lindsay with Dougherty.",
+          "sources": [
+            "Dougherty 02:01:45"
+          ]
+        },
+        "at": {
+          "text": "Looks at Dougherty and Hussey.",
+          "sources": [
+            "Dougherty 02:01:45"
+          ]
+        },
+        "after": {
+          "text": "Leaves Lindsay to get a backboard. Nette later finds Heath in Ambulance 1 doing CPR on Dawson with Sergeant Homestead. Heath's own path in between is not stated.",
+          "sources": [
+            "Dougherty 02:01:59",
+            "Nette 01:15:11"
+          ]
+        }
+      },
+      {
+        "witness": "Cahill",
+        "role": "Duxbury police officer",
+        "before": {
+          "text": "Arrives to a cruiser in the driveway, an ambulance and a fire captain; goes to the backyard where Lindsay is already being cared for.",
+          "sources": [
+            "Cahill 02:09:25",
+            "Cahill 02:09:38"
+          ]
+        },
+        "at": {
+          "text": "Hears loud screaming.",
+          "sources": [
+            "Cahill 02:09:46"
+          ]
+        },
+        "after": {
+          "text": "Goes inside and down the stairs. Sees Patrick crossing from Cahill's left to right, screaming; Patrick points left. Finds Cora and Callan, checks pulses, steps back when fire arrives, later moves the futon, fetches equipment and gives rescue breaths on Cora.",
+          "sources": [
+            "Cahill 02:09:49",
+            "Cahill 02:10:10",
+            "Cahill 02:10:23",
+            "Cahill 02:12:21"
+          ]
+        }
+      },
+      {
+        "witness": "Stratton",
+        "role": "Duxbury firefighter-paramedic, driving Engine 2",
+        "before": {
+          "text": "Engine 2 arrives just after Ambulance 1. In the backyard, sees Dougherty kneeling by a person in the dark; “that was all we saw for a few seconds.”",
+          "sources": [
+            "Stratton 01:37:44",
+            "Stratton 01:37:57"
+          ]
+        },
+        "at": {
+          "text": "Hears a voice yelling for them to get inside, that there is a kid hanging in the basement. She does not describe a scream.",
+          "sources": [
+            "Stratton 01:38:12"
+          ]
+        },
+        "after": {
+          "text": "Slider, kitchen, basement, left. Sees Callan and Cora face up. Radios for two additional ambulances and goes to Callan; Dwyer goes to Cora.",
+          "sources": [
+            "Stratton 01:38:22",
+            "Stratton 01:38:41",
+            "Stratton 01:38:50"
+          ]
+        }
+      },
+      {
+        "witness": "Dwyer",
+        "role": "Duxbury firefighter-paramedic, Engine 2",
+        "before": {
+          "text": "Arrives with Stratton in the dark; other firefighters are already there. Walking toward the backyard on the left side.",
+          "sources": [
+            "Dwyer 01:24:15",
+            "Dwyer 01:25:04"
+          ]
+        },
+        "at": {
+          "text": "Redirected to the basement while walking toward the backyard.",
+          "sources": [
+            "Dwyer 01:24:31",
+            "Dwyer 01:24:37"
+          ]
+        },
+        "after": {
+          "text": "Through the backyard and slider, down and left: two children on the ground and “the father sitting on the couch next to them.” Starts CPR on Cora.",
+          "sources": [
+            "Dwyer 01:25:08",
+            "Dwyer 01:25:57",
+            "Dwyer 01:26:44"
+          ]
+        }
+      }
+    ]
+  },
+  "patrick_positions": {
+    "intro": "Every position responders place Patrick Clancy in, relative to T₀. Each is one witness's observation from one vantage point.",
+    "entries": [
+      {
+        "relation": "before",
+        "witness": "Josephine",
+        "text": "Standing over Lindsay with a phone at his side, then passes Josephine near the bulkhead toward the deck without speaking.",
+        "sources": [
+          "Josephine 33:35",
+          "Josephine 34:26"
+        ],
+        "event_ids": [
+          "FR046",
+          "FR047"
+        ]
+      },
+      {
+        "relation": "before",
+        "witness": "Hall",
+        "text": "Says he is going inside to check on his children and heads for the back slider. Shortly after, the radio says he “couldn't wake them up.”",
+        "sources": [
+          "Hall 11:43",
+          "Hall 12:11"
+        ],
+        "event_ids": [
+          "FR048",
+          "FR049"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Hussey",
+        "text": "Seen through the basement window lifting a child and unwrapping something from around the head and neck.",
+        "sources": [
+          "Hussey 54:13",
+          "Hussey 54:30"
+        ],
+        "event_ids": [
+          "FR013"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Josephine",
+        "text": "In the back room on the right; comes toward the officers and says “She killed the fucking kids.”",
+        "sources": [
+          "Josephine 38:07",
+          "Josephine 38:56"
+        ],
+        "event_ids": [
+          "FR054"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Hall",
+        "text": "Talking from the basement, then comes from the back room saying “I can't wake them up. I can't get them up.”",
+        "sources": [
+          "Hall 13:11",
+          "Hall 14:16",
+          "Hall 14:29"
+        ],
+        "event_ids": [
+          "FR054"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Cahill",
+        "text": "On the stairs, sees Patrick moving from Cahill's left to right, screaming; Patrick points left toward Cora and Callan.",
+        "sources": [
+          "Cahill 02:10:10",
+          "Cahill 02:10:23"
+        ],
+        "event_ids": [
+          "FR015"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Dwyer",
+        "text": "Seated on a couch next to the two children on the floor of the left room when Engine 2 arrives.",
+        "sources": [
+          "Dwyer 01:25:57"
+        ],
+        "event_ids": [
+          "FR058"
+        ]
+      },
+      {
+        "relation": "after",
+        "witness": "Josephine",
+        "text": "Later, in the kitchen: frantic, in shock, still screaming; an ambulance is requested for him.",
+        "sources": [
+          "Josephine 46:03",
+          "Josephine 46:17"
+        ],
+        "event_ids": []
+      },
+      {
+        "relation": "after",
+        "witness": "Nette",
+        "text": "At the hospital emergency department, visibly upset, after the children had been pronounced.",
+        "sources": [
+          "Nette 01:20:20",
+          "Nette 01:20:47"
+        ],
+        "event_ids": []
+      }
+    ],
+    "not_attested": [
+      "No responder transcript in this set describes Patrick performing CPR on any child. His own accounts of what he did are not in this folder yet, so this is the responders' side only.",
+      "Only Dwyer describes Patrick seated next to the children in the left room. Only Hussey describes him unwrapping something from a child. Each is a single witness.",
+      "No responder transcript reports Patrick telling them, before he went inside, that the children were in the basement or were hurt. Josephine says he passed without speaking; Hall says he said he was going to check on his children; dispatch relayed the basement and 'couldn't wake them up' from the open 911 line. Lindsay had told him the children were in the basement (his trial testimony)."
+    ]
+  },
+  "lanes": [
+    {
+      "key": "lindsay",
+      "label": "Lindsay care",
+      "summary": "Care for Lindsay in the backyard runs on both sides of T₀ and gives the strongest before/after chain.",
+      "steps": [
+        "FR005",
+        "FR007",
+        "FR009",
+        "FR012",
+        "FR024",
+        "FR023",
+        "FR060",
+        "FR034",
+        "FR035",
+        "FR036",
+        "FR038"
+      ]
+    },
+    {
+      "key": "dawson",
+      "label": "Dawson",
+      "summary": "From the scream to Ambulance 1. Josephine's “ambulance was backing up and had pretty much just parked” ties his exit to Nudd's stretcher.",
+      "steps": [
+        "FR012",
+        "FR013",
+        "FR052",
+        "FR053",
+        "FR054",
+        "FR055",
+        "FR018",
+        "FR019",
+        "FR020",
+        "FR022",
+        "FR032",
+        "FR040"
+      ]
+    },
+    {
+      "key": "cora-callan",
+      "label": "Cora and Callan",
+      "summary": "Cahill reaches the left room first; Engine 2 follows; Hall and Josephine return after Dawson is out.",
+      "steps": [
+        "FR012",
+        "FR014",
+        "FR015",
+        "FR016",
+        "FR017",
+        "FR058",
+        "FR027",
+        "FR028",
+        "FR056",
+        "FR030",
+        "FR031",
+        "FR057",
+        "FR059"
+      ]
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "D001",
+      "issue": "Did the screaming continue in the kitchen?",
+      "assertions": [
+        "Josephine: in the kitchen it was “the exact screaming that I heard from the window” (37:35).",
+        "Hall: in the kitchen “the screaming was done” and Patrick could be heard talking (12:57)."
+      ],
+      "handling": "Both preserved on FR052. The witnesses entered together."
+    },
+    {
+      "id": "D002",
+      "issue": "What was the alert: a scream or a voice?",
+      "assertions": [
+        "Josephine, Hall, Hussey, Dougherty, Cahill: a scream.",
+        "Stratton: a voice yelling for them to get inside because “a kid [was] hanging in the basement” (01:38:12).",
+        "Dwyer: says only that they were directed to the basement (01:24:31)."
+      ],
+      "handling": "Kept on one anchor node because each account prompts the same response. The speaker of Stratton's words is not identified."
+    },
+    {
+      "id": "D003",
+      "issue": "Where was Patrick Clancy in the basement, and when?",
+      "assertions": [
+        "Hussey, Josephine, Hall: in or coming from the right back room where Dawson lay.",
+        "Cahill: crossing from his left to right on the stairs, then pointing left.",
+        "Dwyer: seated on a couch beside Cora and Callan in the left room."
+      ],
+      "handling": "Recorded as separate observations. Their order relative to each other is not established by the transcripts."
+    },
+    {
+      "id": "D004",
+      "issue": "Two people named Patrick",
+      "assertions": [
+        "Stratton: “Patrick ran to Cora and I went to Callan” (01:38:50). This is firefighter Patrick Dwyer, not Patrick Clancy."
+      ],
+      "handling": "Noted in the method rules so the two are never merged."
+    },
+    {
+      "id": "D005",
+      "issue": "Who fetched the backboard for Lindsay?",
+      "assertions": [
+        "Dougherty: Heath left for the board and did not return with it; Hall came to the backyard, was told where it was, brought it, and helped load her (02:01:59–02:02:55).",
+        "Hall: describes returning outside because an officer was needed with Lindsay and replacing her oxygen mask; he does not mention fetching the board (22:59–26:26)."
+      ],
+      "handling": "Not necessarily a contradiction. FR034 stays attributed to Dougherty; Hall's account is on FR060."
+    },
+    {
+      "id": "D006",
+      "issue": "The window well: what Josephine and Hall were standing near",
+      "assertions": [
+        "Josephine: he and Hall were standing by the window when they heard the screams (36:54).",
+        "Hall: he had gone to the gate to direct fire personnel and Patrick had gone inside before the scream (11:20–12:24)."
+      ],
+      "handling": "Compatible if the officers were near the window and the gate at different moments. Left unplaced."
+    }
+  ]
+}

@@ -122,6 +122,18 @@ export function digitalTimelineHref(caseId: string, category?: string) {
   return `/cases/${encodeURIComponent(caseId)}/timeline/digital${suffix}`;
 }
 
+export function patrickAccountsHref(caseId: string, state: { differences?: boolean } = {}) {
+  return `/cases/${encodeURIComponent(caseId)}/timeline/patrick${state.differences ? "?view=differences" : ""}`;
+}
+
+export function patrickDiscoveryHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/timeline/discovery`;
+}
+
+export function searchWarrantTimelineHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/timeline/search-warrant`;
+}
+
 export function documentsHref(caseId: string, state: { doc?: string; message?: string; error?: string } = {}) {
   const params = new URLSearchParams();
   if (state.doc?.trim()) params.set("doc", state.doc.trim());

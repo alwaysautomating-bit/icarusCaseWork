@@ -1,0 +1,280 @@
+{
+  "artifact_type": "partial_order_reconstruction",
+  "title": "Search-warrant evening and actor-attribution reconstruction",
+  "case": "Commonwealth v. Lindsay M. Clancy",
+  "source": {
+    "file": "679857984-Lindsay-Clancy-Sw-Court-Docs-Pt-2(1).pdf",
+    "document_type": "search_warrant_affidavit",
+    "packet_pages": "7-20",
+    "scope_note": "Probable-cause narrative; underlying interviews, CAD, 911 audio, medical records, arrest-warrant affidavit, and forensic results remain separate sources."
+  },
+  "lanes": [
+    "occurrence",
+    "patrick_account",
+    "police_knowledge"
+  ],
+  "events": [
+    {
+      "id": "sw-001",
+      "time": "2023-01-24T17:10:00",
+      "time_precision": "approximate",
+      "lane": "occurrence",
+      "label": "ThreeV order recorded",
+      "assertion": "Receipt reportedly showed the order placed at approximately 17:10.",
+      "source_pages": [14],
+      "status": "reported_record"
+    },
+    {
+      "id": "sw-002",
+      "time": "2023-01-24T17:15:00",
+      "time_precision": "approximate",
+      "lane": "patrick_account",
+      "label": "Patrick says Lindsay called ThreeV",
+      "assertion": "Patrick said Lindsay called ThreeV at approximately 17:15 and he left to collect food and stop at CVS.",
+      "source_pages": [13],
+      "status": "reported_statement"
+    },
+    {
+      "id": "sw-003",
+      "time": "2023-01-24T17:32:32",
+      "time_precision": "exact_to_second",
+      "lane": "occurrence",
+      "label": "Patrick enters CVS",
+      "source_pages": [15],
+      "status": "surveillance_summary"
+    },
+    {
+      "id": "sw-004",
+      "time": "2023-01-24T17:36:12",
+      "time_precision": "exact_to_second",
+      "lane": "occurrence",
+      "label": "Patrick reaches CVS register",
+      "source_pages": [15],
+      "status": "surveillance_summary"
+    },
+    {
+      "id": "sw-005",
+      "time": "2023-01-24T17:37:08",
+      "time_precision": "exact_to_second",
+      "lane": "occurrence",
+      "label": "Patrick exits CVS",
+      "source_pages": [15],
+      "status": "surveillance_summary"
+    },
+    {
+      "id": "sw-006",
+      "time": "2023-01-24T17:54:14",
+      "time_precision": "exact_to_second",
+      "lane": "occurrence",
+      "label": "Patrick enters ThreeV",
+      "source_pages": [14],
+      "status": "surveillance_summary"
+    },
+    {
+      "id": "sw-007",
+      "time": "2023-01-24T17:55:01",
+      "time_precision": "exact_to_second",
+      "lane": "occurrence",
+      "label": "Patrick pays at ThreeV",
+      "source_pages": [14],
+      "status": "surveillance_and_receipt_summary"
+    },
+    {
+      "id": "sw-008",
+      "time": null,
+      "time_precision": "unknown_after_17_55_01_before_18_11",
+      "lane": "patrick_account",
+      "label": "Patrick describes return and finding Lindsay",
+      "assertion": "Patrick said the house was quiet, the bedroom was locked, he entered and saw blood and an open window, then found Lindsay outside with apparent wrist and neck cuts and called 911.",
+      "source_pages": [13],
+      "status": "reported_statement"
+    },
+    {
+      "id": "sw-009",
+      "time": "2023-01-24T18:11:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Attempted-suicide dispatch",
+      "assertion": "Dispatch reported that a wife identified as Lindsay had cut her wrists and neck and jumped from a second-floor window; Patrick was identified as the 911 caller.",
+      "knowledge_type": "injured_person_identity",
+      "actor_identification_weight": "none",
+      "source_pages": [7, 10, 11],
+      "status": "dispatch_summary"
+    },
+    {
+      "id": "sw-010",
+      "after": ["sw-009"],
+      "lane": "police_knowledge",
+      "label": "Responders find Lindsay and Patrick outside",
+      "assertion": "Responders found Lindsay injured and semi-conscious outside with Patrick nearby.",
+      "knowledge_type": "direct_observation",
+      "actor_identification_weight": "none",
+      "source_pages": [10, 11],
+      "status": "direct_observation_reported"
+    },
+    {
+      "id": "sw-011",
+      "after": ["sw-010"],
+      "lane": "police_knowledge",
+      "label": "Children reported not waking",
+      "assertion": "Dispatch advised officers that Patrick was in the basement and the children would not wake.",
+      "knowledge_type": "emergency_information",
+      "actor_identification_weight": "none",
+      "source_pages": [7, 10, 11],
+      "status": "dispatch_relay"
+    },
+    {
+      "id": "sw-012",
+      "after": ["sw-011"],
+      "lane": "police_knowledge",
+      "label": "Patrick identifies Lindsay as actor",
+      "assertion": "Josephine reported that Patrick emerged from the rear basement room and said, 'she killed the kids.'",
+      "knowledge_type": "actor_accusation",
+      "originating_source": "Patrick Clancy",
+      "reported_by": "Brian Josephine",
+      "actor_identification_weight": "primary_initial_identification",
+      "source_pages": [10],
+      "status": "reported_speech"
+    },
+    {
+      "id": "sw-013",
+      "after": ["sw-012"],
+      "lane": "police_knowledge",
+      "label": "Responders observe children and neck findings",
+      "assertion": "Responders observed the children unresponsive with neck findings and bands on the floor near Dawson and Callan.",
+      "knowledge_type": "crime_and_mechanism_corroboration",
+      "actor_identification_weight": "actor_neutral",
+      "source_pages": [10, 11, 12],
+      "status": "direct_observation_reported"
+    },
+    {
+      "id": "sw-014",
+      "time": "2023-01-24T20:40:00",
+      "time_precision": "approximate",
+      "lane": "patrick_account",
+      "label": "Patrick gives hospital interview",
+      "assertion": "Patrick described his movements, said all three children had workout bands tied around their necks, and said Lindsay previously disclosed suicidal and child-harm thoughts.",
+      "knowledge_type": "retrospective_actor_and_state_of_mind_claims",
+      "actor_identification_weight": "supports_existing_accusation_same_origin",
+      "source_pages": [12, 13, 14],
+      "status": "recorded_interview_summary_not_verbatim"
+    },
+    {
+      "id": "sw-015",
+      "time": "2023-01-24T21:09:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "ThreeV surveillance reviewed",
+      "knowledge_type": "patrick_location_corroboration",
+      "actor_identification_weight": "circumstantial",
+      "source_pages": [14],
+      "status": "investigator_review"
+    },
+    {
+      "id": "sw-016",
+      "time": "2023-01-24T21:40:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "CVS surveillance reviewed",
+      "knowledge_type": "patrick_location_corroboration",
+      "actor_identification_weight": "circumstantial",
+      "source_pages": [15],
+      "status": "investigator_review"
+    },
+    {
+      "id": "sw-017",
+      "time": "2023-01-25T03:00:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Residential search warrant issued",
+      "source_pages": [17],
+      "status": "judicial_action"
+    },
+    {
+      "id": "sw-018",
+      "time": "2023-01-25T04:00:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Residence searched",
+      "assertion": "Investigators reported a blood-covered knife below the open window, notebooks containing medication tracking and suicidal expressions, and a shared tablet.",
+      "knowledge_type": "scene_and_state_of_mind_evidence",
+      "actor_identification_weight": "circumstantial",
+      "source_pages": [17],
+      "status": "investigator_observation_and_interpretation"
+    },
+    {
+      "id": "sw-019",
+      "time": "2023-01-25T03:30:00",
+      "time_precision": "approximate",
+      "lane": "occurrence",
+      "label": "Lindsay becomes unresponsive in hospital",
+      "assertion": "A nurse later reported Lindsay became unresponsive at approximately 03:30 and was stable at approximately 04:30.",
+      "source_pages": [19],
+      "status": "nurse_statement_reported_in_affidavit"
+    },
+    {
+      "id": "sw-020",
+      "time": "2023-01-25T09:00:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Cora and Dawson autopsies",
+      "assertion": "Autopsy observations included ligature/neck findings and petechiae; cause and manner remained pending in this affidavit generation.",
+      "knowledge_type": "crime_and_mechanism_corroboration",
+      "actor_identification_weight": "actor_neutral",
+      "source_pages": [18],
+      "status": "medical_examiner_observation_reported"
+    },
+    {
+      "id": "sw-021",
+      "time": "2023-01-25T15:25:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Trace-evidence warrant issued for Lindsay",
+      "source_pages": [18],
+      "status": "judicial_action"
+    },
+    {
+      "id": "sw-022",
+      "time": "2023-01-25T15:45:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Arrest warrant issued for Lindsay",
+      "assertion": "Arrest warrant issued for eight counts of murder, strangulation, and assault and battery with a dangerous weapon.",
+      "knowledge_type": "formal_actor_attribution",
+      "actor_identification_weight": "formalized_probable_cause",
+      "source_pages": [18],
+      "status": "judicial_action"
+    },
+    {
+      "id": "sw-023",
+      "time": "2023-01-25T18:21:00",
+      "time_precision": "approximate",
+      "lane": "police_knowledge",
+      "label": "Trace-evidence warrant executed while Lindsay unconscious",
+      "assertion": "Police photographed Lindsay's injuries and collected fingernail swabs. A nurse said she was unconscious and unable to hear their conversations.",
+      "knowledge_type": "post_arrest_warrant_evidence_collection",
+      "actor_identification_weight": "not_available_for_15_45_arrest_warrant",
+      "source_pages": [19, 20],
+      "status": "direct_observation_and_nurse_statement"
+    }
+  ],
+  "critical_findings": [
+    "The first explicit actor identification documented in the affidavit is Patrick's accusation relayed by Josephine.",
+    "The accusation precedes Josephine's first described visual observation of a child.",
+    "Medical and responder evidence corroborates the occurrence and apparent strangulation mechanism but is actor-neutral.",
+    "Patrick's later hospital interview adds the tied-band claim and prior child-harm-thought claim; both retain Patrick as their originating source at that stage.",
+    "Store surveillance corroborates Patrick's location at specific times but does not establish the assault time or actor by itself.",
+    "The affidavit contains no account from Lindsay before the arrest warrant issued.",
+    "Trace-evidence collection occurred after issuance of the arrest warrant and therefore could not support the earlier probable-cause decision."
+  ],
+  "unresolved": [
+    "Exact home-arrival time",
+    "Method used to positively identify the injured wife as Lindsay in the initial dispatch narrative",
+    "Underlying 911 call and CAD/dispatch sequence",
+    "Difference between Josephine's recorded accusation and Hall's recorded utterance",
+    "Original position and removal history of each resistance band",
+    "Origin of the physician's information that a band had been tied around Dawson's neck",
+    "Contents of the arrest-warrant affidavit and criminal complaint",
+    "Provenance and user attribution for the affidavit's 'researching ways to kill' assertion"
+  ]
+}

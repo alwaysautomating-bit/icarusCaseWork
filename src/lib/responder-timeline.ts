@@ -21,6 +21,8 @@ const eventSchema = z.object({
   unit: z.string().optional(),
   destination: z.string().optional(),
   confidence: z.string().optional(),
+  anchor_relation: z.enum(["before", "at", "after"]),
+  sources: z.array(z.string()).optional(),
   assertions: z.array(assertionSchema).optional(),
   constraints: z.object({ before: z.array(z.string()).optional(), after: z.array(z.string()).optional() }).optional(),
   overlaps_with: z.array(z.string()).optional(),
@@ -56,6 +58,39 @@ const unresolvedSchema = z.object({
   handling: z.string().optional(),
 });
 
+const alignmentCellSchema = z.object({ text: z.string(), sources: z.array(z.string()) });
+
+const anchorSchema = z.object({
+  id: z.string(),
+  label: z.string(),
+  event_id: z.string(),
+  definition: z.string(),
+  rationale: z.string(),
+  witness_alignment: z.array(z.object({
+    witness: z.string(),
+    role: z.string(),
+    before: alignmentCellSchema,
+    at: alignmentCellSchema,
+    after: alignmentCellSchema,
+  })),
+});
+
+const laneSchema = z.object({ key: z.string(), label: z.string(), summary: z.string(), steps: z.array(z.string()) });
+
+const patrickSchema = z.object({
+  intro: z.string(),
+  entries: z.array(z.object({
+    relation: z.enum(["before", "at", "after"]),
+    witness: z.string(),
+    text: z.string(),
+    sources: z.array(z.string()),
+    event_ids: z.array(z.string()),
+  })),
+  not_attested: z.array(z.string()),
+});
+
+const discrepancySchema = z.object({ id: z.string(), issue: z.string(), assertions: z.array(z.string()), handling: z.string() });
+
 const timelineSchema = z.object({
   schema_version: z.string(),
   title: z.string(),
@@ -64,6 +99,10 @@ const timelineSchema = z.object({
     clock_anchor: z.object({ event: z.string(), time: z.string(), precision: z.string() }),
     rules: z.array(z.string()),
   }),
+  anchor: anchorSchema,
+  lanes: z.array(laneSchema),
+  patrick_positions: patrickSchema,
+  discrepancies: z.array(discrepancySchema),
   events: z.array(eventSchema),
   critical_constraints: z.array(constraintSchema),
   unresolved: z.array(unresolvedSchema),
@@ -73,9 +112,14 @@ export type ResponderTimeline = z.infer<typeof timelineSchema>;
 export type ResponderEvent = z.infer<typeof eventSchema>;
 export type ResponderConstraint = z.infer<typeof constraintSchema>;
 export type ResponderUnresolved = z.infer<typeof unresolvedSchema>;
+export type ResponderAnchor = z.infer<typeof anchorSchema>;
+export type ResponderLane = z.infer<typeof laneSchema>;
+export type AnchorRelation = ResponderEvent["anchor_relation"];
+
+export const BAND_LABELS: Record<AnchorRelation, string> = { before: "Before T₀", at: "T₀ · the scream", after: "After T₀" };
 
 export async function getResponderTimeline(): Promise<ResponderTimeline> {
-  const file = path.join(process.cwd(), "content", "timelines", "first-responders", "v2-corrected.json");
+  const file = path.join(process.cwd(), "content", "timelines", "first-responders", "v3-anchored.json");
   return timelineSchema.parse(JSON.parse(await fs.readFile(file, "utf8")));
 }
 

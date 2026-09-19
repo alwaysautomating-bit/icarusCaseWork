@@ -1,0 +1,951 @@
+{
+  "schema_version": "1.3",
+  "title": "Patrick Clancy — accounts of January 24 compared",
+  "status": "working_draft",
+  "intro": "Patrick Clancy's own accounts of the evening, set beside each other and beside what the first responders describe. A difference is a point to test, not a finding: the sources differ in kind, and several of the records that would settle them are not in the folder yet.",
+  "sources": [
+    {
+      "key": "trial",
+      "label": "Trial testimony",
+      "kind": "Sworn testimony, direct examination",
+      "note": "Transcript positions 41:42 to 1:11:04. Cross-examination is not in the excerpt supplied."
+    },
+    {
+      "key": "newyorker",
+      "label": "New Yorker interview",
+      "kind": "Published interview, Oct. 14, 2024",
+      "note": "Mostly the reporter's narration of conversations with Patrick and of the prosecutor's description of the 911 call. Not always his own words."
+    },
+    {
+      "key": "opening",
+      "label": "Commonwealth opening",
+      "kind": "Advocacy, not evidence",
+      "note": "The prosecutor's outline of what Patrick would say. Positions are opening-statement timestamps."
+    },
+    {
+      "key": "affidavit",
+      "label": "Search-warrant affidavit",
+      "kind": "Police summary, Jan. 25, 2023 (not verbatim)",
+      "note": "Patrick's hospital interview as summarized by investigators, plus investigators' route estimates and their descriptions of store video. Cites are the affidavit's paragraph numbers."
+    },
+    {
+      "key": "responders",
+      "label": "First responders",
+      "kind": "Sworn testimony, 10 transcripts",
+      "note": "What each responder saw. Positions are each witness's own transcript clock."
+    }
+  ],
+  "steps": [
+    {
+      "id": "E1",
+      "title": "Leaving for the errand, and how long it took",
+      "cells": {
+        "trial": {
+          "text": "Asked how long it took to get to CVS: 'Three minutes.' On the drive home from ThreeV: 'Probably the same route. One exit on the highway and then went home,' which he guesses took 'ten to twelve minutes.' The excerpts supplied do not include when he left the house.",
+          "cites": [
+            "Trial 32:15",
+            "Trial 41:46",
+            "Trial 41:58"
+          ]
+        },
+        "newyorker": {
+          "text": "Around five o'clock Lindsay texted asking him to pick up Pedia-Lax and a takeout order ('I didn't cook anything. It's been a long day.'). 'Less than half an hour after leaving' he called her from CVS. He returned 'just after six o'clock.'",
+          "cites": [
+            "New Yorker: “Around five o'clock”",
+            "New Yorker: “Less than half an hour”",
+            "New Yorker: “just after six”"
+          ]
+        },
+        "opening": {
+          "text": "Lindsay texts asking whether he wants takeout from ThreeV, then calls in the order. Patrick leaves around 5:15, stopping at CVS on the way. The prosecutor says Lindsay knew it was about five miles to the restaurant and roughly how much time she had.",
+          "cites": [
+            "Opening 47:21",
+            "Opening 48:02"
+          ]
+        },
+        "affidavit": {
+          "text": "Patrick said Lindsay called ThreeV at about 17:15 and he went to pick up the food, also stopping at the CVS in Kingston for laxative for Cora. He said he was home all day except for the ThreeV and CVS trips. Trooper Chiachio's Apple Maps estimates: about 3 minutes from the house to CVS, 8 from CVS to ThreeV, 9 from ThreeV to the house. The ThreeV receipt shows the order placed at 17:10:00.",
+          "cites": [
+            "Affidavit ¶23",
+            "Affidavit ¶26",
+            "Affidavit ¶28",
+            "Affidavit ¶31"
+          ]
+        },
+        "responders": null
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "His account, as the opening and the Day 2 summary give it, is a departure at about 5:15. An email sent from his work computer at 17:24 would put him at home later than that, and a three-minute drive to a 17:32:32 CVS entry points to about 17:29. The email and the video fit together; the 5:15 departure is the outlier. His 'about 17:15' for Lindsay's call to ThreeV is also five minutes after the receipt's 17:10:00 order."
+      },
+      "researcher_note": "Researcher observation: an email was sent from his work computer at 17:24 in the digital evidence. That places him leaving later than 5:15 and fits the CVS arrival time. The Day 20 research queue also lists the '17:24 work-computer email'. The email and its header data are not in the folder, so the clock basis (local time or UTC) and who was using the computer are unconfirmed."
+    },
+    {
+      "id": "E2",
+      "title": "The CVS call and the purchase",
+      "cells": {
+        "trial": {
+          "text": "Went to the pediatric section and, while looking for the medication, called Lindsay 'because what we were looking for wasn't there. The shelves were pretty empty. It was still during COVID.' He agreed the call was at about 5:33; she did not answer at first and called back about a minute later, at 5:34. The call was 'very brief': 'I think there's a generic brand,' and 'Is this one okay?' She said, 'Yeah, that's fine.' She was quiet and sounded busy; he thought she might be giving the kids baths. She understood him and remembered why he was there. Asked whether he in fact bought Pedia-Lax at CVS: 'Yes.'",
+          "cites": [
+            "Trial 33:19",
+            "Trial 33:23",
+            "Trial 33:36",
+            "Trial 33:44",
+            "Trial 33:52",
+            "Trial 34:00",
+            "Trial 34:11",
+            "Trial 34:39",
+            "Trial 34:51"
+          ]
+        },
+        "newyorker": {
+          "text": "'Less than half an hour after leaving, Pat called Lindsay from CVS to confirm which brand of medicine to buy.' She did not pick up at first but called back a minute later, 'sounding like herself.' The conversation lasted fourteen seconds; he noticed only that she seemed 'to be in the middle of something.'",
+          "cites": [
+            "New Yorker: “called Lindsay from CVS”"
+          ]
+        },
+        "opening": {
+          "text": "Earlier, Lindsay called CVS to ask about kids' Pedia-Lax or MiraLAX and confirmed the Kingston store had it. At CVS, Patrick calls; she misses it, calls right back, and they talk for 14 seconds. 'Nothing that she does or says in that phone call is of concern to Patrick.'",
+          "cites": [
+            "Opening 46:47",
+            "Opening 48:39"
+          ]
+        },
+        "affidavit": {
+          "text": "CVS video: he enters at 17:32:32, walks to aisle 20 (children's medication), spends 'only a few minutes' there, and appears to use his phone as he leaves the aisle. At the register at 17:36:12 he is no longer using it; he leaves at 17:37:08 and turns right. The manager said a female called the store asking whether it had children's laxative before he came in. Patrick said he bought laxative for Cora.",
+          "cites": [
+            "Affidavit ¶23",
+            "Affidavit ¶35"
+          ]
+        },
+        "responders": null
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "In his own testimony the shelves lacked what they were looking for, he asked about a generic, and he then says he bought Pedia-Lax. Lindsay had already called the store and been told it had the product (opening 46:47; affidavit ¶35). He puts the call at 5:33, one minute after he entered at 17:32:32 and while he was still in the pediatric section, whereas the affidavit describes phone use as he left the aisle after 'a few minutes.' The receipt line items and the call log are not in the folder."
+      },
+      "researcher_note": "Researcher observation: the CVS receipt shows Pedia-Lax was purchased, which is what he says at 34:51. To confirm against the receipt, which is not in the folder."
+    },
+    {
+      "id": "E3",
+      "title": "The store video: who is on camera",
+      "cells": {
+        "trial": {
+          "text": "Shown the CVS video at trial and asked, 'Is that you entering the store?': 'Yeah.' Shown the section on the right, asked if it was the pediatric medication section: 'Yeah.' Later says that on getting home he 'started taking my boots off.'",
+          "cites": [
+            "Trial 32:51",
+            "Trial 33:03",
+            "Trial 47:13"
+          ]
+        },
+        "newyorker": null,
+        "opening": null,
+        "affidavit": {
+          "text": "ThreeV video (date and time confirmed accurate by the manager): he enters through the front door at 17:54:14, glances at the takeout table, waits behind a couple, looks at his phone, and pays the hostess at 17:55:01 with an American Express card. CVS video (also confirmed accurate): enters 17:32:32, leaves 17:37:08. At the end of his hospital interview he consented to have his face, clothing, and hands photographed by Trooper Faiella. The affidavit does not say who identified him on the video.",
+          "cites": [
+            "Affidavit ¶27",
+            "Affidavit ¶31",
+            "Affidavit ¶34",
+            "Affidavit ¶35"
+          ]
+        },
+        "responders": null
+      },
+      "assessment": {
+        "status": "needs_records",
+        "note": "Patrick himself identified the person entering CVS as himself when shown the video at trial. The researcher's frame-by-frame impression, below, differs. The affidavit does not describe how anyone else identified him. The video files, the receipts, and Trooper Faiella's photographs of his clothing that night are not in the folder; the photographs are the direct comparison for what he wore."
+      },
+      "researcher_note": "Researcher observation from the footage: the person in the CVS clip does not look like Patrick Clancy. Between the two clips: a full-zip jacket in one and a quarter-zip in the other; boots in one and sneakers in the other (confirm which clip shows which). At CVS he holds a wallet and keys in his hand; at ThreeV the wallet is in his jacket front pocket. Not verified here, because the footage is not in the folder."
+    },
+    {
+      "id": "S01",
+      "title": "Arriving home",
+      "cells": {
+        "trial": {
+          "text": "Parked the Silverado in the driveway. Named Lindsay's car as a Kia SUV and agreed both vehicles were then in the driveway. Came in through the side door left of the garage and began taking off his boots. Put the CVS and ThreeV bags on the kitchen island. The house was 'really quiet,' which was unusual.",
+          "cites": [
+            "Trial 42:18",
+            "Trial 42:27",
+            "Trial 42:35",
+            "Trial 47:00",
+            "Trial 47:13",
+            "Trial 47:22",
+            "Trial 49:10"
+          ]
+        },
+        "newyorker": {
+          "text": "The house was quiet when he returned, 'just after six o'clock.' He set the takeout and the CVS bag on the kitchen counter.",
+          "cites": [
+            "New Yorker: “The house was quiet”"
+          ]
+        },
+        "opening": {
+          "text": "Comes home around 6:00 p.m. through the mudroom door into the kitchen and puts the bags down. 'Eerily quiet.'",
+          "cites": [
+            "Opening 49:34"
+          ]
+        },
+        "responders": null,
+        "affidavit": {
+          "text": "He arrived back home at 47 Summer Street and 'noticed the whole house was quiet.' No arrival time is given.",
+          "cites": [
+            "Affidavit ¶24"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "He agrees both cars were in the driveway when he parked (42:35). Minutes later he says he called Lindsay 'to see if she was home' because he could not see her car, explaining that it was dark and her car is black (49:36). The door is the same in every account: Josephine identifies the door left of the garage as the mudroom door."
+      },
+      "researcher_note": "Researcher question: if he knew both vehicles were in the driveway when he arrived, what does he mean, several minutes later, by calling Lindsay 'to see if she was home' because he could not see her car?"
+    },
+    {
+      "id": "S02",
+      "title": "Calling out and the basement door",
+      "cells": {
+        "trial": {
+          "text": "Called out to everyone; no answer. 'I don't know the order': he opened the basement door (it was shut) and yelled down, with no response; the light was on ('Lindsay always left the light on'). He also called Lindsay's phone at about 6:09 p.m.; she did not answer. He looked for her car and could not see it because it was dark and hers is black.",
+          "cites": [
+            "Trial 49:21",
+            "Trial 49:29",
+            "Trial 49:36",
+            "Trial 50:02",
+            "Trial 50:43"
+          ]
+        },
+        "newyorker": {
+          "text": "Went upstairs, thinking Lindsay might be giving the kids a bath. No mention of calling out or of the basement door.",
+          "cites": [
+            "New Yorker: “went upstairs, thinking”"
+          ]
+        },
+        "opening": {
+          "text": "Calls to the kids, then to the defendant, then dials her phone. No answer. Then goes upstairs. No mention of the basement door.",
+          "cites": [
+            "Opening 49:34",
+            "Opening 50:16"
+          ]
+        },
+        "responders": null
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Only the trial account has him opening the basement door and calling down before going upstairs. It matters later because Lindsay tells him the children are in the basement."
+      }
+    },
+    {
+      "id": "S03",
+      "title": "Upstairs search and the master bedroom",
+      "cells": {
+        "trial": {
+          "text": "Checked the bathroom ('maybe they were taking baths'), the kids' bedrooms, then his own bedroom. The door was locked: 'that's when I knew something was wrong.' He took a key taped to the back of a door in Cora's room and unlocked the knob. Blood 'everywhere,' the window open with wind blowing in. He went 'one or two steps' in and turned around. He described blood 'sprayed almost with a hose,' a huge puddle in the middle of the room, and blood on the doorknob. Later agreed Exhibit 42 shows no blood on the walls or the bedding.",
+          "cites": [
+            "Trial 51:12",
+            "Trial 51:39",
+            "Trial 51:46",
+            "Trial 53:42",
+            "Trial 53:53",
+            "Trial 56:09"
+          ]
+        },
+        "newyorker": {
+          "text": "The master bedroom door was locked 'but he forced his way in.' The room was cold and the window open. Blood on the floor and a bloody knife on the nightstand beside a tumbler labelled 'Because Kids.'",
+          "cites": [
+            "New Yorker: “forced his way in”"
+          ]
+        },
+        "opening": {
+          "text": "Finds the master bedroom door locked, opens it, enters, and sees blood and the open window.",
+          "cites": [
+            "Opening 50:16"
+          ]
+        },
+        "responders": null,
+        "affidavit": {
+          "text": "He went upstairs to his bedroom and the door was locked. 'After he got into his bedroom,' he saw blood and the window open. The summary does not say how he got in.",
+          "cites": [
+            "Affidavit ¶24"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "'Forced his way in' (New Yorker) against unlocking with a taped key (trial). The New Yorker line is the reporter's wording. The trial account also holds two descriptions of the same room: blood sprayed over 'pretty much every surface,' and, on Exhibit 42, none on the walls or bedding."
+      },
+      "researcher_note": "Researcher observation: evidence photographs of the bedroom door show a child-safety cover on the doorknob. Patrick testified he unlocked the door with a key taped to the back of a door in Cora's room. To confirm against the door photographs; the exhibit numbers and photographs are not in the folder."
+    },
+    {
+      "id": "S04",
+      "title": "Finding Lindsay outside",
+      "cells": {
+        "trial": {
+          "text": "Ran downstairs and out the back slider; looked below the window and saw Lindsay face up, head toward the house. Deep cuts on both wrists, a red line across her neck, not actively bleeding (he says he later learned he said so on the 911 call). He said, 'What happened?' She said, 'I tried to kill myself.' He asked, 'Where are the kids?' She said, 'They're in the basement.' She did not say they were injured or in danger.",
+          "cites": [
+            "Trial 58:28",
+            "Trial 58:51",
+            "Trial 1:00:41",
+            "Trial 1:00:54",
+            "Trial 1:01:46",
+            "Trial 1:02:00",
+            "Trial 1:02:09"
+          ]
+        },
+        "newyorker": {
+          "text": "Ran downstairs and found Lindsay outside, barely conscious. 'What did you do?' he said, shining his phone's flashlight into her eyes. She replied, 'I tried to kill myself.' He asked where the kids were and she said, 'In the basement.'",
+          "cites": [
+            "New Yorker: “What did you do?”"
+          ]
+        },
+        "opening": {
+          "text": "Goes to the backyard and finds the defendant on the ground outside the window, moaning and mumbling. He asked where the kids were and she said the basement.",
+          "cites": [
+            "Opening 50:16",
+            "Opening 50:49"
+          ]
+        },
+        "responders": {
+          "text": "Josephine sees Patrick standing over Lindsay with a phone down at his side, and turning to his flashlight. Hall: Patrick was calling to the officers from the left side of the yard.",
+          "cites": [
+            "Josephine 33:35",
+            "Hall 07:57",
+            "Hall 08:08"
+          ]
+        },
+        "affidavit": {
+          "text": "He 'located Lindsay Clancy on the ground outside'; it appeared she had slit her wrists and possibly her neck. He then called 911.",
+          "cites": [
+            "Affidavit ¶24"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Lindsay's two replies match in all three accounts. Patrick's own first words differ: 'What happened?' (trial) against 'What did you do?' (New Yorker narration). The 911 audio would settle it."
+      }
+    },
+    {
+      "id": "S05",
+      "title": "The 911 call",
+      "cells": {
+        "trial": {
+          "text": "It took 'a few minutes' because his phone kept switching between wifi and the emergency call; he almost started calling out for the neighbors before it went through. He stayed on the line. He estimates responders arrived in four or five minutes. He does not know the exact time.",
+          "cites": [
+            "Trial 1:02:14",
+            "Trial 1:02:22",
+            "Trial 1:04:23"
+          ]
+        },
+        "newyorker": {
+          "text": "He stayed by her side as he dialed 911, terrified she would die. He was 'unaware that he was still on the line' when he went inside. The prosecutor narrated the recording at the arraignment.",
+          "cites": [
+            "New Yorker: “dialed 911”"
+          ]
+        },
+        "opening": {
+          "text": "At 6:11 p.m. he calls 911. He is still on the phone with 911 when the responders arrive.",
+          "cites": [
+            "Opening 50:16"
+          ]
+        },
+        "responders": {
+          "text": "Duxbury police were dispatched at about 6:11 (Josephine, Hall, Cahill). Travel time: Josephine 3–4 minutes, Hall 7–10, Cahill 'a couple minutes.'",
+          "cites": [
+            "Josephine 30:04",
+            "Hall 06:22",
+            "Cahill 02:09:15"
+          ]
+        },
+        "affidavit": {
+          "text": "He 'then called 911.' The summary mentions no trouble connecting. The reconstruction of the affidavit places the dispatch at about 18:11.",
+          "cites": [
+            "Affidavit ¶24",
+            "Reconstruction (affidavit pp. 7, 10–11)"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "needs_records",
+        "note": "None of these sources says whether ~6:11 is when the call was placed, connected, or dispatched. The 911 audio and CAD log are not in the folder."
+      },
+      "researcher_note": "Researcher observation: he describes trouble connecting to 911 because his phone was switching between wifi and the emergency call, yet he placed a call to Lindsay successfully at about 6:09. To check against carrier call records and the phone extraction, neither of which is in the folder."
+    },
+    {
+      "id": "S06",
+      "title": "Going into the basement",
+      "cells": {
+        "trial": {
+          "text": "When 'emergency personnel' arrived he 'immediately got up and ran to the basement,' still on the 911 line without realizing it. At the bottom of the stairs he 'immediately went left.'",
+          "cites": [
+            "Trial 1:04:58",
+            "Trial 1:05:06",
+            "Trial 1:05:54"
+          ]
+        },
+        "newyorker": {
+          "text": "When paramedics arrived, minutes later, he rushed inside to retrieve the children. Later, in his own words: 'I really beat myself up for a long time that I didn't go to the basement first. I would have gotten to them ten minutes earlier.'",
+          "cites": [
+            "New Yorker: “when paramedics arrived”",
+            "New Yorker: “ten minutes earlier”"
+          ]
+        },
+        "opening": {
+          "text": "While the responders are with the defendant, Patrick tells them 'I need to find my kids,' and goes into the house, first to the basement.",
+          "cites": [
+            "Opening 50:16",
+            "Opening 50:49"
+          ]
+        },
+        "responders": {
+          "text": "Josephine: Patrick stood over Lindsay with a phone at his side, turned to his flashlight, then crossed paths with him near the bulkhead, 'walking past me pretty fast in an abrupt manner.' Asked whether he said anything as he passed: 'No, he did not.' Hall: Patrick said he was going inside 'to check on his children' as fire personnel arrived; shortly after, the radio said he 'couldn't wake them up.' No responder reports him saying where the children were or that they were hurt.",
+          "cites": [
+            "Josephine 33:35",
+            "Josephine 34:12",
+            "Josephine 34:26",
+            "Josephine 34:40",
+            "Hall 11:43",
+            "Hall 12:11"
+          ]
+        },
+        "affidavit": {
+          "text": "He said the police then arrived and he went to the basement. Dispatch then advised officers that Patrick was in the basement and the children would not wake; the reconstruction identifies that as a relay from the still-connected emergency call.",
+          "cites": [
+            "Affidavit ¶25",
+            "Reconstruction (affidavit pp. 7, 10–11, 13)"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Patrick ties the move to 'emergency personnel' arriving. Josephine, the first officer there, has him heading for the deck before fire arrived; Hall has him going in as fire arrived. 'Ten minutes earlier' (New Yorker) and 'four or five minutes' for responders (trial) are different intervals. He says Lindsay had told him the children were in the basement before the responders came (trial 1:02:00). The responders learned the location and the danger from the dispatch relay, not from him."
+      },
+      "researcher_note": "Researcher observation: he says he knew where the children were, but told none of the first responders on his way to the basement. Josephine's account of passing him is very clear. To weigh against Hall, who has him saying he was going to check on his children, and the Commonwealth's opening, which has him saying 'I need to find my kids'; neither has him giving the location."
+    },
+    {
+      "id": "S07",
+      "title": "Cora and Callan in the left room",
+      "cells": {
+        "trial": {
+          "text": "Saw Cora face down with an exercise band around her neck; ran over and tried to take it off: 'I think I untied it' (like the first tie of a shoelace without the bow). She was unresponsive. Callan was next to her with a band, in the same position; he removed that too. Cora was 'left of the couch,' Callan to her left.",
+          "cites": [
+            "Trial 1:05:59",
+            "Trial 1:06:17",
+            "Trial 1:06:25",
+            "Trial 1:06:32",
+            "Trial 1:07:04",
+            "Trial 1:07:21",
+            "Trial 1:07:32"
+          ]
+        },
+        "newyorker": {
+          "text": "The children still had exercise bands tied around their necks. He removed the bands and begged each child to breathe. He 'attempted to resuscitate Cora, who was lying on her side.'",
+          "cites": [
+            "New Yorker: “removed the bands”"
+          ]
+        },
+        "opening": {
+          "text": "Finds each child with an exercise band still wrapped around the neck, and screams that she killed the kids.",
+          "cites": [
+            "Opening 50:49"
+          ]
+        },
+        "responders": {
+          "text": "Cahill finds Cora and Callan on the floor of the left room and finds no pulse on either. Stratton: 'Callan and Cora face up on the ground.' Dwyer: two children on the ground and 'the father sitting on the couch next to them.' Exhibits show bands and pajamas beside Callan.",
+          "cites": [
+            "Cahill 02:10:30",
+            "Cahill 02:10:50",
+            "Stratton 01:38:41",
+            "Dwyer 01:25:57",
+            "Stratton 01:40:04"
+          ]
+        },
+        "affidavit": {
+          "text": "He found Cora and Callan 'in the main living room.' All three children had 'workout bands' tied around their necks. The responders' summaries in the affidavit describe bands next to Dawson's head and on the floor beside Callan.",
+          "cites": [
+            "Affidavit ¶25",
+            "Reconstruction (affidavit pp. 10–12)"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Cora's position: face down (trial), on her side (New Yorker), face up when Engine 2 arrived (Stratton). Patrick's attempts to help could account for a change, but no source says who moved her. The affidavit sets his 'tied around all three necks' beside responder summaries that describe bands beside the children."
+      }
+    },
+    {
+      "id": "S08",
+      "title": "Dawson in the right back room",
+      "cells": {
+        "trial": {
+          "text": "After Callan, he went looking for Dawson: the bathroom, the other side of the couch, then 'the other side of the basement.' Dawson was in Patrick's office, just left of the door, with a band around his neck. 'I knew he was gone.' He removed the band.",
+          "cites": [
+            "Trial 1:07:59",
+            "Trial 1:08:03",
+            "Trial 1:08:19",
+            "Trial 1:08:26",
+            "Trial 1:08:36"
+          ]
+        },
+        "newyorker": {
+          "text": "No separate account of Dawson. The article says only that he removed the bands from the children.",
+          "cites": [
+            "New Yorker: “removed the bands”"
+          ]
+        },
+        "opening": {
+          "text": "No separate account of Dawson at the discovery.",
+          "cites": []
+        },
+        "responders": {
+          "text": "Hussey, through the basement window just after the scream, sees Patrick lift a child and unwrap something in a circular motion around the head and neck; the head is blue. Josephine and Hall find Patrick in the back room on the right, with Dawson on his back; Hall sees a yellow band on the floor at that position. Josephine calls the room a bathroom (Exhibits 92–93); Patrick calls it his office; Hussey looked into a basement office.",
+          "cites": [
+            "Hussey 54:13",
+            "Josephine 38:07",
+            "Josephine 39:30",
+            "Hall 16:50",
+            "Hall 17:43"
+          ]
+        },
+        "affidavit": {
+          "text": "He found Dawson in his office.",
+          "cites": [
+            "Affidavit ¶25"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Order: Patrick puts Dawson last, after Cora and Callan. Hussey's sighting, just after the scream and before the police reached the basement, has Patrick already at Dawson and removing the band. Cahill then sees Patrick cross from left to right on the stairs. The room is called an office, a bathroom, and a back room by different witnesses."
+      }
+    },
+    {
+      "id": "S09",
+      "title": "CPR",
+      "cells": {
+        "trial": {
+          "text": "After removing Dawson's band: 'I think I was back and forth. I think I went to try to help Cora.' Asked whether he tried to give her CPR: 'Yeah.'",
+          "cites": [
+            "Trial 1:09:39",
+            "Trial 1:09:44",
+            "Trial 1:09:45"
+          ]
+        },
+        "newyorker": {
+          "text": "He 'attempted to resuscitate Cora.' 'What do you do when you have three kids like that? How do you pick?'",
+          "cites": [
+            "New Yorker: “attempted to resuscitate Cora”"
+          ]
+        },
+        "opening": {
+          "text": "No mention of CPR by Patrick.",
+          "cites": []
+        },
+        "responders": {
+          "text": "No responder transcript in this folder describes Patrick performing CPR on any child. Hussey describes him unwrapping a band from Dawson. Dwyer describes him seated on a couch beside two children when Engine 2 arrived. Cahill checked Cora's pulse first and found none; Josephine, Cahill, Dwyer, and Stratton describe their own compressions and breaths.",
+          "cites": [
+            "Hussey 54:13",
+            "Dwyer 01:25:57",
+            "Cahill 02:10:33",
+            "Josephine 43:15",
+            "Stratton 01:40:23"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "not_attested",
+        "note": "The claim rests on Patrick's own account, given in the trial and in the New Yorker. Nothing in the responder testimony supports or contradicts it directly; the closest observation, Dwyer's, places him seated. This covers these 10 transcripts only."
+      }
+    },
+    {
+      "id": "S10",
+      "title": "When responders take over",
+      "cells": {
+        "trial": {
+          "text": "First responders came down and took over the children's care. 'They sent me upstairs.'",
+          "cites": [
+            "Trial 1:09:47",
+            "Trial 1:09:57"
+          ]
+        },
+        "newyorker": {
+          "text": "When the paramedics reached the basement, he could be heard on the 911 recording crying, 'She killed the kids!' (The prosecutor narrated the recording at the arraignment.)",
+          "cites": [
+            "New Yorker: “She killed the kids!”"
+          ]
+        },
+        "opening": {
+          "text": "Still on the phone with 911, he finds each child with a band around the neck, screams for help, and says 'She killed the kids.'",
+          "cites": [
+            "Opening 50:49"
+          ]
+        },
+        "responders": {
+          "text": "Josephine: as Patrick came out of the back room toward him and Hall, he screamed 'She killed the fucking kids.' Hall: 'I can't wake them up. I can't get them up.' Cahill: Patrick screaming, crossing left to right, then pointing left. Later Josephine sees Patrick in the kitchen, frantic, in shock, and an ambulance is requested for him.",
+          "cites": [
+            "Josephine 38:56",
+            "Hall 14:16",
+            "Cahill 02:10:10",
+            "Josephine 46:17"
+          ]
+        }
+      },
+      "assessment": {
+        "status": "differs",
+        "note": "Who heard 'She killed the kids' and when: police in the right room (Josephine) against paramedics in the basement (New Yorker, via the recording as narrated). Both can be true if he said it more than once. The recording is not in the folder."
+      }
+    }
+  ],
+  "unaccounted": [
+    {
+      "id": "W0",
+      "title": "About 17:24 to 17:54 — the last sign of him at home to entering ThreeV",
+      "window": "His account puts the departure at about 5:15. An email sent from his work computer at 17:24 (researcher-reported) and his three-minute drive both point to about 17:25–17:29. The first hard anchors after that are the CVS video (17:32:32 in, 17:37:08 out) and the ThreeV video (17:54:14 in, 17:55:01 paid).",
+      "claimed": [
+        "Left the house to collect the food from ThreeV and stop at CVS; the drive to CVS took three minutes",
+        "Went to the pediatric section, found the shelves 'pretty empty,' and called Lindsay",
+        "Bought Pedia-Lax"
+      ],
+      "attested": "Two timed video stops (CVS and ThreeV) and the ThreeV card payment. Nothing timed covers the drive from the house to CVS, or from CVS to ThreeV.",
+      "gap": "The house-to-CVS leg is consistent on the email and his own figure. The stretch between leaving CVS at 17:37:08 and entering ThreeV at 17:54:14 is unobserved and about 9 minutes longer than the route estimate. On a 5:15 departure there would be about 14 more minutes as well, which the email argues against."
+    },
+    {
+      "id": "W1",
+      "title": "About 6:09 to about 6:11 — the call to Lindsay to the 911 dispatch",
+      "window": "His trial account puts a call to Lindsay at about 6:09 p.m. Multiple witnesses put the police dispatch at about 6:11.",
+      "claimed": [
+        "Checked the upstairs bathroom and the kids' bedrooms",
+        "Found the master bedroom door locked and retrieved a key from the back of a door in Cora's room",
+        "Went one or two steps into the bedroom and turned around",
+        "Ran downstairs and out the back slider and found Lindsay",
+        "Spoke with her ('What happened?' / 'Where are the kids?')",
+        "Placed a 911 call that took 'a few minutes' to connect"
+      ],
+      "attested": "Only the end state: Josephine and Hall find Patrick outside with Lindsay shortly after the dispatch.",
+      "gap": "All of those steps, plus a connection delay he describes as a few minutes, have to fit between about 6:09 and the responders' arrival. Whether they do depends on when the call connected and when police were dispatched. That needs the 911 audio and CAD log."
+    },
+    {
+      "id": "W2",
+      "title": "Patrick goes inside (before T₀) to responders entering the basement (after T₀)",
+      "window": "Hall puts Patrick going inside while fire personnel were arriving, then the radio 'couldn't wake them up,' then the scream. Josephine, Hall, Cahill, and Engine 2 enter the basement after the scream.",
+      "claimed": [
+        "Ran to the basement and went left",
+        "Removed the band from Cora, then from Callan",
+        "Searched the bathroom and the far side of the couch, then found Dawson in the office and removed his band",
+        "Was 'back and forth' and tried to help Cora, including CPR"
+      ],
+      "attested": "Hussey sees him at Dawson removing something from the head and neck, just after the scream. Josephine and Hall meet him in the back room. Cahill sees him cross left to right. Dwyer sees him seated beside the two children.",
+      "gap": "No responder saw him with Cora or Callan before the fire crews arrived, and none saw CPR. The removal of the bands from Cora and Callan, and any CPR, happened while no responder was in the room. Dwyer's sighting of him seated and Hussey's sighting of him at Dawson are the two observations closest to his stated activity."
+    },
+    {
+      "id": "W3",
+      "title": "Basement, once responders arrive",
+      "window": "Patrick says responders took over and sent him upstairs.",
+      "claimed": [
+        "Was sent upstairs when responders took over the children"
+      ],
+      "attested": "Josephine later finds him in the kitchen, frantic and in shock. Nette sees him at the hospital.",
+      "gap": "No responder describes who sent him upstairs, or when."
+    }
+  ],
+  "discrepancies": [
+    {
+      "id": "P001",
+      "issue": "CPR on Cora is claimed but not attested",
+      "accounts": [
+        "Patrick (trial): 'I think I went to try to help Cora'; he tried to give her CPR.",
+        "Patrick (New Yorker): he attempted to resuscitate Cora.",
+        "Responders: no transcript describes Patrick performing CPR; Cahill checked Cora's pulse and found none."
+      ],
+      "why": "It is one of Patrick's central claims about what he did before help arrived.",
+      "resolve": "The 911 audio (breathing, compressions, or counting), any statements he gave police, and medical-examiner and hospital findings on any signs of earlier resuscitation efforts."
+    },
+    {
+      "id": "P002",
+      "issue": "Seated on a couch beside the children, or 'back and forth' doing CPR",
+      "accounts": [
+        "Dwyer: two children on the ground and 'the father sitting on the couch next to them' when Engine 2 arrived.",
+        "Patrick (trial): 'back and forth,' tried to help Cora, and was sent upstairs when responders took over."
+      ],
+      "why": "Dwyer is the only responder who places Patrick in the left room at that moment.",
+      "resolve": "Cahill's and Josephine's accounts of the same minutes, and any photographs or video taken before the children were moved."
+    },
+    {
+      "id": "P003",
+      "issue": "Order in which the children were found",
+      "accounts": [
+        "Patrick (trial): Cora and Callan first, Dawson last, in the office.",
+        "Hussey: just after the scream, Patrick is at a child, unwrapping something from the head and neck.",
+        "Josephine and Hall: Patrick is in the back room with Dawson when they arrive; Cahill sees Patrick cross left to right."
+      ],
+      "why": "If Dawson was last, the responders' sightings need to fit that order.",
+      "resolve": "Where Cora and Callan were when Cahill first checked them, and the relative timing of Hussey's and Cahill's entries."
+    },
+    {
+      "id": "P004",
+      "issue": "Cora's position",
+      "accounts": [
+        "Patrick (trial): face down.",
+        "Patrick (New Yorker narration): lying on her side.",
+        "Stratton: 'Callan and Cora face up on the ground.'"
+      ],
+      "why": "The children's positions when found, and whether anyone moved them, bear on what was done before help arrived.",
+      "resolve": "Scene photographs of the left room and the responders' reports."
+    },
+    {
+      "id": "P005",
+      "issue": "His first words to Lindsay",
+      "accounts": [
+        "Patrick (trial): 'What happened?'",
+        "New Yorker narration: 'What did you do?'"
+      ],
+      "why": "The wording carries different assumptions about what he knew.",
+      "resolve": "The 911 audio, if the exchange was picked up."
+    },
+    {
+      "id": "P006",
+      "issue": "Master bedroom door: forced or unlocked with a key",
+      "accounts": [
+        "Patrick (trial): took a key from the back of a door in Cora's room and unlocked the knob.",
+        "New Yorker narration: 'forced his way in.'"
+      ],
+      "why": "It affects how long he was upstairs.",
+      "resolve": "Patrick's own account in a police statement, and the scene photographs of the door and doorknob."
+    },
+    {
+      "id": "P007",
+      "issue": "Blood in the master bedroom",
+      "accounts": [
+        "Patrick (trial): sprayed 'pretty much every surface,' a huge puddle in the middle, on the doorknob.",
+        "Patrick (trial, on Exhibit 42): no blood on the walls or bedding."
+      ],
+      "why": "Two descriptions in one testimony. It may reflect what he remembers against what a photograph shows.",
+      "resolve": "Exhibits 42–46."
+    },
+    {
+      "id": "P008",
+      "issue": "Whether the sequence fits between about 6:09 and the dispatch",
+      "accounts": [
+        "Patrick (trial): a call to Lindsay at about 6:09, then the full search and the 911 call that took a few minutes.",
+        "Josephine, Hall, Cahill: police dispatched at about 6:11."
+      ],
+      "why": "The listed actions and the stated delay are many for a two-minute window, but the sources do not say when the call connected.",
+      "resolve": "911 audio and CAD timestamps for call connect, dispatch, and unit arrivals."
+    },
+    {
+      "id": "P009",
+      "issue": "How long the delay before reaching the children was",
+      "accounts": [
+        "Patrick (trial): responders arrived in four or five minutes; he ran to the basement when they came.",
+        "Patrick (New Yorker): 'I would have gotten to them ten minutes earlier' if he had gone to the basement first."
+      ],
+      "why": "Two different intervals, from two settings.",
+      "resolve": "The 911 audio's start and end times."
+    },
+    {
+      "id": "P010",
+      "issue": "What the right-hand back room is",
+      "accounts": [
+        "Patrick (trial): his office.",
+        "Hussey: looked through the window into a basement office.",
+        "Josephine: Exhibits 92–93 are the bathroom.",
+        "Hall: a workout room, then a back room."
+      ],
+      "why": "Left and right also depend on which way the model is oriented, so the descriptions may not conflict.",
+      "resolve": "The basement floor plan and Exhibits 89–94."
+    },
+    {
+      "id": "P011",
+      "issue": "Who heard 'She killed the kids'",
+      "accounts": [
+        "Josephine: said to him and Hall as Patrick came out of the back room.",
+        "New Yorker (via the prosecutor's narration of the recording): heard when the paramedics reached the basement."
+      ],
+      "why": "He may have said it more than once. Josephine and Hall report different words.",
+      "resolve": "The 911 audio."
+    },
+    {
+      "id": "P012",
+      "issue": "The CVS-to-ThreeV leg took longer than the route estimate",
+      "accounts": [
+        "Affidavit ¶28: Apple Maps estimates of about 3, 8, and 9 minutes for the three legs.",
+        "Video: CVS out at 17:37:08; ThreeV in at 17:54:14, which is 17 min 06 s against an 8-minute estimate. No exterior camera covers the side of CVS where he turned right.",
+        "Patrick (trial 41:58): ten to twelve minutes home from ThreeV; the ThreeV exit time is not documented."
+      ],
+      "why": "This is the one leg timed at both ends. On the 17:24 email and his own three-minute figure the house-to-CVS leg is consistent, so about 9 minutes of the errand are unexplained here.",
+      "resolve": "Patrick's phone location data, the truck's telematics, carrier records, and any exterior footage from nearby businesses."
+    },
+    {
+      "id": "P013",
+      "issue": "'The shelves were pretty empty,' against buying Pedia-Lax",
+      "accounts": [
+        "Patrick (trial 33:23): he called Lindsay 'because what we were looking for wasn't there. The shelves were pretty empty. It was still during COVID.'",
+        "Patrick (trial 33:59–34:00): 'I think there's a generic brand. … Is this one okay?' Lindsay: 'Yeah, that's fine.'",
+        "Patrick (trial 34:51): he in fact bought Pedia-Lax at CVS. Researcher: the receipt shows Pedia-Lax.",
+        "Opening 46:47 and affidavit ¶35: Lindsay had already called the store and confirmed it had the product."
+      ],
+      "why": "He gives the empty shelves as the reason for the call, asks about a generic, and then says he bought the brand product. Lindsay had already been told the store had it.",
+      "resolve": "The CVS receipt line items, the store's stock that evening, and the call log."
+    },
+    {
+      "id": "P014",
+      "issue": "What he wore and carried in the two clips",
+      "accounts": [
+        "Patrick (trial 32:51): shown the CVS video, agrees it shows him entering the store.",
+        "Researcher: the CVS person does not look like Patrick; full-zip against quarter-zip jacket; boots against sneakers; wallet and keys in hand at CVS, wallet in a jacket front pocket at ThreeV.",
+        "Affidavit: the video 'shows Patrick Clancy' at both stores; times confirmed by store managers.",
+        "Patrick (trial 47:13): took his boots off when he got home."
+      ],
+      "why": "He has identified the CVS video as himself, and the researcher's comparison of the two clips differs. If the clips show different clothing, it needs explaining; the affidavit gives no basis for its own identification.",
+      "resolve": "Both video files, Trooper Faiella's photographs of Patrick's clothing that night, the CVS and ThreeV payment records, and the store staff who dealt with him (CVS manager Angela Krause; ThreeV hostess Saria Sweeney)."
+    },
+    {
+      "id": "P015",
+      "issue": "The bedroom door: a key, and a child cover on the knob",
+      "accounts": [
+        "Patrick (trial): took a key taped to the back of a door in Cora's room and unlocked the knob; blood was on the doorknob.",
+        "Researcher: evidence photographs show a child-safety cover on the knob."
+      ],
+      "why": "It bears on how he got in and how long that took.",
+      "resolve": "The exhibit photographs of the bedroom door and knob, and Patrick's description in a police statement."
+    },
+    {
+      "id": "P016",
+      "issue": "911 connection trouble, against a successful call at about 6:09",
+      "accounts": [
+        "Patrick (trial): his phone switched between wifi and 911 and it took 'a few minutes' to connect.",
+        "Patrick (trial): he called Lindsay at about 6:09.",
+        "Police dispatched at about 6:11."
+      ],
+      "why": "A call to Lindsay went through at about 6:09 and the dispatch is dated about two minutes later. A connection delay of a few minutes is difficult to fit between them, though the two calls may have been placed from different places on different networks.",
+      "resolve": "Carrier call detail records and the phone extraction, plus the 911 audio and CAD log."
+    },
+    {
+      "id": "P017",
+      "issue": "Both cars in the driveway, or 'couldn't see her car'",
+      "accounts": [
+        "Patrick (trial 42:18–42:35): parked the Silverado; Lindsay's car is a Kia SUV; both vehicles were in the driveway.",
+        "Patrick (trial 49:29–49:36): called Lindsay 'to see if she was home' because he could not see her car; it was dark and her car is black."
+      ],
+      "why": "The two statements are a few minutes apart in the same testimony.",
+      "resolve": "Cross-examination on this point, and the photographs of the driveway from that night."
+    },
+    {
+      "id": "P018",
+      "issue": "Lindsay's phone was upstairs when he called it",
+      "accounts": [
+        "Patrick (trial): he called Lindsay at about 6:09 and she did not answer.",
+        "Patrick (trial 56:52): he was aware her phone was found on the bed in the bedroom."
+      ],
+      "why": "Nothing says whether he heard it ring, or whether he was upstairs when he called.",
+      "resolve": "The call log's exact time against his movements; Lindsay's phone extraction."
+    },
+    {
+      "id": "P019",
+      "issue": "When the ThreeV order was placed",
+      "accounts": [
+        "Patrick (affidavit ¶23): Lindsay called ThreeV at about 17:15.",
+        "ThreeV receipt (affidavit ¶31): order placed at 17:10:00."
+      ],
+      "why": "A five-minute difference that also feeds the departure time.",
+      "resolve": "Lindsay's phone call log and ThreeV's order record."
+    },
+    {
+      "id": "P020",
+      "issue": "When the CVS call was made, against the video",
+      "accounts": [
+        "Patrick (trial 33:19–33:52): called from the pediatric section at about 5:33; Lindsay called back at 5:34.",
+        "Video (affidavit ¶35): enters 17:32:32; a few minutes in aisle 20; appears to use his phone as he leaves the aisle; at the register 17:36:12."
+      ],
+      "why": "A call at 5:33 is one minute after he entered; the affidavit describes the phone use later, as he left the aisle.",
+      "resolve": "The call log for both calls, and the video between 17:32:32 and 17:36:12."
+    },
+    {
+      "id": "P021",
+      "issue": "A 5:15 departure, against the 17:24 email",
+      "accounts": [
+        "Patrick's account, as the opening (47:21) and the Day 2 summary give it: he left at about 5:15.",
+        "Digital evidence (researcher-reported; listed in the Day 20 research queue): an email sent from his work computer at 17:24.",
+        "Patrick (trial 32:15): the drive to CVS took three minutes. Video: CVS entry at 17:32:32.",
+        "Day 20 summary: Heilbrun's analysis used a 5:15 departure and a 6:00 return."
+      ],
+      "why": "If he sent the email, he was at his computer at 17:24 and the 5:15 departure is off by about ten minutes. That fits his three-minute drive and the CVS video, and it shortens the prosecution's 5:15-to-6:09 window. An expert who relied on 5:15 would also have relied on a premise the timestamps do not support.",
+      "resolve": "The email's header data (time zone, client, device), the work computer's activity and login records around 17:15 to 17:30, and whether anything shows who was using it. Device evidence in this trial has not identified the user (Day 13)."
+    },
+    {
+      "id": "P022",
+      "issue": "He knew where the children were, and did not tell the responders",
+      "accounts": [
+        "Patrick (trial 1:02:00, 1:02:09): Lindsay told him 'They're in the basement'; she did not say they were injured or in danger.",
+        "Patrick (trial 1:04:58): when emergency personnel arrived he ran to the basement.",
+        "Josephine (33:35–34:40): saw him with a phone at his side; crossed paths near the bulkhead; he walked past 'pretty fast in an abrupt manner' toward the deck. Asked if he said anything: 'No, he did not.'",
+        "Hall (11:43): Patrick said he was going inside 'to check on his children.' Opening (50:16): he tells the responders 'I need to find my kids.'",
+        "Affidavit and Hall (12:11): dispatch, not Patrick, relayed to officers that he was in the basement and the children would not wake."
+      ],
+      "why": "The location was known to him before the responders came, and he had already called down the basement stairs with no answer (trial 50:02). No responder transcript has him giving the location or the danger to the officers he passed. The responders learned it from the open 911 line.",
+      "resolve": "The 911 audio, to hear what he told the dispatcher and when; Hall's and Josephine's accounts of anything said at the gate; and the CAD relay times."
+    }
+  ],
+  "not_in_folder": [
+    "The 911 audio and CAD log (Patrick's account, the openings, and the New Yorker all rely on them)",
+    "Any statements Patrick gave police on January 24 or afterward (the New Yorker notes he 'later told the police' things)",
+    "Cross-examination of Patrick and the rest of his testimony (the excerpt supplied is direct examination only)",
+    "Sergeant Homestead's and Heath's own accounts",
+    "The CVS and ThreeV video files, and both receipts with line items and payment method",
+    "Trooper Faiella's photographs of Patrick's face, clothing, and hands from the night of January 24",
+    "Patrick's phone extraction and location data, the truck's telematics, and carrier call detail records",
+    "The exhibit photographs of the bedroom door and doorknob, and of the driveway",
+    "The part of his testimony on leaving home (before 32:06) and on ThreeV (32:35 to 41:42)",
+    "The 17:24 work-computer email with its header data, and the work computer's activity and login logs"
+  ],
+  "errand": {
+    "intro": "What the documents say the errand should have taken, against the timed video stops. The estimates are the affidavit's Apple Maps figures. Patrick's own three-minute figure and the 17:24 work-computer email are included. The ThreeV exit and home-arrival times are not documented, so the last leg cannot be tested.",
+    "rows": [
+      {
+        "leg": "House to CVS",
+        "estimate": "About 3 min",
+        "actual": "Patrick: 'three minutes.' Video: enters 17:32:32. Work-computer email at 17:24 (researcher-reported)",
+        "difference": "None if he left about 17:25–17:29. About 14 min more if he left at 17:15",
+        "basis": "Departure: 17:15 (his account, per the opening and Day 2 summary) or after the 17:24 email; a three-minute drive to a 17:32:32 entry implies about 17:29",
+        "caveat": "The email sets an earliest departure only if he was the one using the computer."
+      },
+      {
+        "leg": "Inside CVS",
+        "estimate": "—",
+        "actual": "4 min 36 s",
+        "difference": "—",
+        "basis": "Enters 17:32:32; register 17:36:12; leaves 17:37:08, turns right",
+        "caveat": "No exterior camera covers that side of the building."
+      },
+      {
+        "leg": "CVS to ThreeV",
+        "estimate": "About 8 min",
+        "actual": "17 min 06 s",
+        "difference": "About 9 min more",
+        "basis": "Leaves CVS 17:37:08 → enters ThreeV 17:54:14",
+        "caveat": "Both ends are timed video. The estimate is an Apple Maps route figure."
+      },
+      {
+        "leg": "Inside ThreeV",
+        "estimate": "—",
+        "actual": "47 s",
+        "difference": "—",
+        "basis": "Enters 17:54:14; pays 17:55:01",
+        "caveat": "Order was placed at 17:10:00, so the food was presumably ready."
+      },
+      {
+        "leg": "ThreeV to house",
+        "estimate": "About 9 min",
+        "actual": "'Ten to twelve minutes' (his estimate)",
+        "difference": "Not testable",
+        "basis": "Pays 17:55:01; ThreeV exit and home arrival are not documented",
+        "caveat": "Leaving at once, 9–12 minutes puts him home at about 18:04–18:07, before a call to Lindsay at about 18:09."
+      }
+    ],
+    "summary": "With the 17:24 email and his three-minute drive, the house-to-CVS leg is consistent: he left about 17:25–17:29. The unexplained time is then the CVS-to-ThreeV leg, about 9 minutes longer than the 8-minute estimate, timed at both ends. A 5:15 departure would leave about 14 more minutes unexplained, but the email, if he sent it, contradicts 5:15. That puts his time out of the house at roughly 35 to 40 minutes (about 17:27 to 18:04–18:07), not the 54 minutes from 5:15 to 6:09.",
+    "cautions": [
+      "An email timestamp shows that the computer and account sent it at 17:24. It does not by itself show who was at the keyboard, and the clock basis (local time or UTC) needs confirming. Device evidence in this trial has carried that limit (Day 13: the examiner could not say who was using the computer).",
+      "Apple Maps estimates are best-case route figures; the night was cold and it had recently snowed.",
+      "The 5:15 departure comes from the opening and the Day 2 summary, not from a timestamp, and it is not in the testimony excerpts supplied.",
+      "Nothing here says what he did in the unexplained time, or that anything improper happened in it. It marks where the record has no observation."
+    ]
+  }
+}

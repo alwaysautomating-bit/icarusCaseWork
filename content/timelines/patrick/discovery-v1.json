@@ -1,0 +1,513 @@
+{
+  "schema_version": "1.0",
+  "title": "Patrick Clancy — discovering the children, step by step",
+  "intro": "His trial account of what he did from the moment help arrived, each step in his own words, set against what the responders independently saw. The scream (T₀) is placed where the responders' accounts put it, not where Patrick puts it, because his testimony never mentions it.",
+  "reading_note": "Everything Patrick describes doing to the children happened before any responder saw them, except Dawson, whom Hussey saw at the window. The earlier condition of the scene is described only by Patrick.",
+  "steps": [
+    {
+      "id": "D0",
+      "title": "Waiting with Lindsay for responders",
+      "relation": "before",
+      "coverage": "partial",
+      "quote": {
+        "text": "Four or five minutes. … She's in and out of consciousness. … [Talking to the 911 operators and getting advice:] Yeah.",
+        "cites": [
+          "Trial 1:04:23",
+          "Trial 1:04:33",
+          "Trial 1:04:51"
+        ]
+      },
+      "summary": "He estimates responders took four or five minutes to arrive. He stayed with Lindsay, talking to her and to the 911 operators.",
+      "observed_by": [
+        {
+          "witness": "Josephine",
+          "text": "Saw Patrick standing over Lindsay with a phone at his side, apparently trying to communicate with her.",
+          "cites": [
+            "Josephine 33:35"
+          ]
+        },
+        {
+          "witness": "Hall",
+          "text": "Met Patrick in the backyard; upset, not knowing what was going on.",
+          "cites": [
+            "Hall 08:08",
+            "Hall 08:14"
+          ]
+        }
+      ],
+      "scene_effect": null
+    },
+    {
+      "id": "D1",
+      "title": "Responders arrive; he goes to the basement",
+      "relation": "before",
+      "coverage": "partial",
+      "quote": {
+        "text": "I immediately got up and ran to the basement.",
+        "cites": [
+          "Trial 1:04:58"
+        ]
+      },
+      "summary": "He ties the move to the arrival of 'emergency personnel.' Lindsay had already told him the children were in the basement (trial 1:02:00). No responder reports him saying so.",
+      "observed_by": [
+        {
+          "witness": "Josephine",
+          "text": "Patrick passed him near the bulkhead, 'pretty fast in an abrupt manner,' toward the deck, before fire personnel arrived. Asked if Patrick said anything as he passed: 'No, he did not.'",
+          "cites": [
+            "Josephine 34:12",
+            "Josephine 34:26",
+            "Josephine 34:40",
+            "Josephine 36:28"
+          ]
+        },
+        {
+          "witness": "Hall",
+          "text": "Patrick said he was going inside 'to check on his children' and went toward the back slider, while Hall was at the gate directing fire personnel. He gave no location.",
+          "cites": [
+            "Hall 11:43",
+            "Hall 11:51"
+          ]
+        },
+        {
+          "witness": "Dispatch relay",
+          "text": "Dispatch, from the still-open 911 line, told officers that Patrick was in the basement and the children would not wake. That is how the responders learned the location.",
+          "cites": [
+            "Hall 12:06",
+            "Hall 12:11",
+            "Reconstruction (affidavit pp. 7, 10–11)"
+          ]
+        }
+      ],
+      "scene_effect": null
+    },
+    {
+      "id": "D2",
+      "title": "Still on the 911 line",
+      "relation": "before",
+      "coverage": "recorded",
+      "quote": {
+        "text": "Yeah, I didn't realize it at the time, but I did.",
+        "cites": [
+          "Trial 1:05:06"
+        ]
+      },
+      "summary": "The open call would have picked up the basement. The audio is not in the folder.",
+      "observed_by": [],
+      "scene_effect": null
+    },
+    {
+      "id": "D3",
+      "title": "Down the stairs, turns left",
+      "relation": "before",
+      "coverage": "none",
+      "quote": {
+        "text": "Immediately went left.",
+        "cites": [
+          "Trial 1:05:54"
+        ]
+      },
+      "summary": "No responder was in the basement yet.",
+      "observed_by": [],
+      "scene_effect": null
+    },
+    {
+      "id": "D4",
+      "title": "Cora: a band on her neck, face down",
+      "relation": "before",
+      "coverage": "none",
+      "quote": {
+        "text": "I saw Cora. … She had a band around her neck. … She's face down.",
+        "cites": [
+          "Trial 1:05:59",
+          "Trial 1:06:03",
+          "Trial 1:06:17"
+        ]
+      },
+      "summary": "Her condition and position as first found are described only by Patrick.",
+      "observed_by": [],
+      "scene_effect": "Baseline for Cora, from Patrick alone."
+    },
+    {
+      "id": "D5",
+      "title": "He removes Cora's band",
+      "relation": "before",
+      "coverage": "none",
+      "quote": {
+        "text": "I immediately ran over and tried to take the band off. … I think I untied it. … I'm not sure I fully remember.",
+        "cites": [
+          "Trial 1:06:25",
+          "Trial 1:06:32",
+          "Trial 1:06:42"
+        ]
+      },
+      "summary": "Asked if he had described it as tying a shoe without the bow, he agreed: 'that sounds right' (the question refers to an earlier description that is not in the folder). She was unresponsive.",
+      "observed_by": [],
+      "scene_effect": "The band is taken off and set aside; her body is handled. Responders later find her face up (Stratton 01:38:41), with bands on the floor beside the children rather than on their necks."
+    },
+    {
+      "id": "D6",
+      "title": "Callan, next to her: band removed",
+      "relation": "before",
+      "coverage": "none",
+      "quote": {
+        "text": "I saw Callan. … He was next to her. … He had a band around his neck. … [Removed it:] Yeah. … [Position:] Same as Cora.",
+        "cites": [
+          "Trial 1:07:04",
+          "Trial 1:07:07",
+          "Trial 1:07:12",
+          "Trial 1:07:17",
+          "Trial 1:07:21"
+        ]
+      },
+      "summary": "Cora was 'the left of the couch' and Callan 'to her left,' between the bureau, chair, and couch.",
+      "observed_by": [],
+      "scene_effect": "A second band removed and set aside. Stratton later finds Callan face up (01:38:41)."
+    },
+    {
+      "id": "D7",
+      "title": "Looks for Dawson",
+      "relation": "before",
+      "coverage": "partial",
+      "quote": {
+        "text": "I tried to find Dawson. … I looked in the bathroom and on the other side of the couch, and then I went to the other side of the basement and he was in my office.",
+        "cites": [
+          "Trial 1:07:59",
+          "Trial 1:08:03"
+        ]
+      },
+      "summary": "He searches the left side, then crosses to the other side of the basement.",
+      "observed_by": [
+        {
+          "witness": "Hall",
+          "text": "Shortly after Patrick went inside, the radio said he 'couldn't wake them up.' Hall did not know what it referred to.",
+          "cites": [
+            "Hall 12:06",
+            "Hall 12:11",
+            "Hall 12:20"
+          ]
+        }
+      ],
+      "scene_effect": null
+    },
+    {
+      "id": "T0",
+      "title": "T₀ — the scream",
+      "relation": "at",
+      "coverage": "witnessed",
+      "anchor": true,
+      "quote": null,
+      "summary": "Not in his testimony. The responders place it after the radio relay ('couldn't wake them up') and before Hussey sees him at Dawson. No one saw how it began. The placement between D7 and D8 is an inference from those two observations.",
+      "observed_by": [
+        {
+          "witness": "Hall",
+          "text": "A loud scream from inside the house, 'just a sound.'",
+          "cites": [
+            "Hall 12:24",
+            "Hall 12:37"
+          ]
+        },
+        {
+          "witness": "Hussey",
+          "text": "A scream that seemed to come from the basement; then he looked through the basement window.",
+          "cites": [
+            "Hussey 53:11",
+            "Hussey 53:21"
+          ]
+        },
+        {
+          "witness": "Josephine",
+          "text": "Loud screams; the same screaming from the kitchen and toward the right side of the basement.",
+          "cites": [
+            "Josephine 36:54",
+            "Josephine 37:35",
+            "Josephine 37:48"
+          ]
+        }
+      ],
+      "scene_effect": null
+    },
+    {
+      "id": "D8",
+      "title": "Dawson in the office; band removed",
+      "relation": "after",
+      "coverage": "partial",
+      "quote": {
+        "text": "I knew he was gone. … [Band around his neck:] Yeah. … [Removed it:] Yeah. … Just to the left of the door when we went in.",
+        "cites": [
+          "Trial 1:08:19",
+          "Trial 1:08:23",
+          "Trial 1:08:26",
+          "Trial 1:08:36"
+        ]
+      },
+      "summary": "He says 'we went in,' though he describes going in alone. Who 'we' refers to is not clear.",
+      "observed_by": [
+        {
+          "witness": "Hussey",
+          "text": "After the scream, through the basement window: Patrick picked the child up and, in a circular motion, took something off around the head and neck. The head was blue.",
+          "cites": [
+            "Hussey 54:13",
+            "Hussey 54:30",
+            "Hussey 54:54"
+          ]
+        },
+        {
+          "witness": "Josephine",
+          "text": "Patrick was in the back room; Dawson on his back near a gym bag, head tilted right. Exhibit 94 shows a yellow exercise band, which Josephine had earlier called blue.",
+          "cites": [
+            "Josephine 38:07",
+            "Josephine 39:30",
+            "Josephine 40:04",
+            "Josephine 40:46",
+            "Josephine 41:01"
+          ]
+        },
+        {
+          "witness": "Hall",
+          "text": "Dawson on his back, feet toward a door and head toward the wall; a yellow band lay in the marked position (Exhibit 93).",
+          "cites": [
+            "Hall 16:50",
+            "Hall 16:58",
+            "Hall 17:34"
+          ]
+        }
+      ],
+      "scene_effect": "Hussey saw Dawson lifted from where he lay. Patrick's 'just to the left of the door' and Hussey's 'head toward the window' are different descriptions of the starting position."
+    },
+    {
+      "id": "D9",
+      "title": "'Back and forth'; tries to help Cora, including CPR",
+      "relation": "after",
+      "coverage": "partial",
+      "quote": {
+        "text": "I think I was back and forth. I think I went to try to help Cora. … [CPR?] Yeah.",
+        "cites": [
+          "Trial 1:09:39",
+          "Trial 1:09:44",
+          "Trial 1:09:45"
+        ]
+      },
+      "summary": "The CPR is not described by any responder.",
+      "observed_by": [
+        {
+          "witness": "Cahill",
+          "text": "On the stairs, Patrick crossed from Cahill's left to right, screaming, then pointed left. In the left room Cahill checked Cora's pulse and found none.",
+          "cites": [
+            "Cahill 02:10:10",
+            "Cahill 02:10:23",
+            "Cahill 02:10:33"
+          ]
+        },
+        {
+          "witness": "Dwyer",
+          "text": "When Engine 2 entered, two children on the ground and 'the father sitting on the couch next to them.'",
+          "cites": [
+            "Dwyer 01:25:57"
+          ]
+        }
+      ],
+      "scene_effect": "The children are found face up (Stratton), not in the positions Patrick describes."
+    },
+    {
+      "id": "D10",
+      "title": "Responders take over; he is sent upstairs",
+      "relation": "after",
+      "coverage": "partial",
+      "quote": {
+        "text": "They sent me upstairs.",
+        "cites": [
+          "Trial 1:09:57"
+        ]
+      },
+      "summary": "No responder describes who sent him up or when.",
+      "observed_by": [
+        {
+          "witness": "Josephine",
+          "text": "After Cora was removed, found Patrick in the kitchen: frantic, in shock, still screaming.",
+          "cites": [
+            "Josephine 46:03",
+            "Josephine 46:17"
+          ]
+        }
+      ],
+      "scene_effect": null
+    }
+  ],
+  "scream": {
+    "question": "What prompted the scream?",
+    "points": [
+      {
+        "kind": "responder",
+        "source": "Hall",
+        "text": "Shortly after Patrick went inside, dispatch said he 'couldn't wake them up.' Then Hall heard a loud scream from inside the house, 'just a sound.'",
+        "cites": [
+          "Hall 12:06",
+          "Hall 12:24",
+          "Hall 12:37"
+        ]
+      },
+      {
+        "kind": "responder",
+        "source": "Dougherty",
+        "text": "The scream came right after he placed oxygen on Lindsay.",
+        "cites": [
+          "Dougherty 02:01:13"
+        ]
+      },
+      {
+        "kind": "responder",
+        "source": "Hussey",
+        "text": "After the scream he saw Patrick at a child, unwrapping something from the head and neck.",
+        "cites": [
+          "Hussey 53:11",
+          "Hussey 54:13"
+        ]
+      },
+      {
+        "kind": "responder",
+        "source": "Josephine",
+        "text": "Heard loud screams from the window; in the kitchen it was 'the exact screaming'; Patrick came out of the back room afterward.",
+        "cites": [
+          "Josephine 36:54",
+          "Josephine 37:35",
+          "Josephine 38:56"
+        ]
+      },
+      {
+        "kind": "responder",
+        "source": "Stratton",
+        "text": "Describes a voice yelling for them to get inside because a child was hanging in the basement, not a scream.",
+        "cites": [
+          "Stratton 01:38:12"
+        ]
+      },
+      {
+        "kind": "testimony",
+        "source": "Patrick, trial",
+        "text": "Does not mention a scream or what prompted it. His account moves from finding Dawson, the last child in his order, to 'back and forth.'",
+        "cites": [
+          "Trial 1:08:19",
+          "Trial 1:09:39"
+        ]
+      },
+      {
+        "kind": "recording",
+        "source": "The 911 recording, as narrated by the prosecutor (New Yorker)",
+        "text": "Patrick shouts down to the basement, 'Guys?', and 'can then be heard screaming in agony and shock.' The audio is not in the folder.",
+        "cites": [
+          "New Yorker: “Guys?”"
+        ]
+      }
+    ],
+    "reading": "The sources are consistent with the scream coming when Patrick found Dawson, the last child in his own order: Hall puts a radio relay that he 'couldn't wake them up' just before it, and Hussey sees him at Dawson just after. No witness states that, and no one saw the scream begin. The transcripts do not establish what prompted it.",
+    "caution": "The 911 audio would show the order of events, the words, and where the scream falls against the responders' arrival. It is the missing record."
+  },
+  "unobserved": {
+    "title": "The unobserved interval",
+    "start": "Patrick goes inside (before T₀, per Hall and Josephine)",
+    "end": "The first independent sighting of each child",
+    "first_seen": [
+      {
+        "child": "Cora",
+        "by": "Cahill",
+        "text": "Checked her pulse after Patrick pointed left; Patrick was already there by his own account.",
+        "cites": [
+          "Cahill 02:10:30",
+          "Cahill 02:10:33"
+        ]
+      },
+      {
+        "child": "Callan",
+        "by": "Cahill",
+        "text": "Bumped into him while stepping back from Cora and checked his pulse.",
+        "cites": [
+          "Cahill 02:11:09",
+          "Cahill 02:11:14"
+        ]
+      },
+      {
+        "child": "Dawson",
+        "by": "Hussey",
+        "text": "Through the window, after the scream, with Patrick already at him.",
+        "cites": [
+          "Hussey 54:13"
+        ]
+      }
+    ],
+    "changed": [
+      "Bands removed from all three necks, by Patrick's account, before any responder was in the room.",
+      "Cora and Callan face down by Patrick's account; face up when Engine 2 arrived.",
+      "Dawson lifted and a band unwrapped while Hussey watched.",
+      "Attempted CPR on Cora, by Patrick's account alone.",
+      "Patrick's own movements among the rooms, of which the responders saw only parts."
+    ],
+    "cannot_account_for": [
+      "The state of the basement before Patrick entered its rooms.",
+      "The original positions of the children and of the bands, and whether the bands were knotted.",
+      "When, and by whom, each child was moved.",
+      "How the scream relates in time to each of those actions."
+    ]
+  },
+  "scene_state": [
+    {
+      "subject": "Cora",
+      "patrick": "Face down, a band around her neck, 'left of the couch.' He untied the band. Unresponsive. He tried CPR.",
+      "responders": "Cahill: no pulse. Stratton: face up on the ground. Dwyer: pale, bluish, blood vessels around the eyes; blood in her mouth once he refreshed his memory. Josephine: dried blood around the mouth and a relatively large area of blood on the floor that soaked through his pants; he moved her off it.",
+      "cites": [
+        "Cahill 02:10:33",
+        "Stratton 01:38:41",
+        "Dwyer 01:29:41",
+        "Dwyer 01:31:52",
+        "Josephine 43:37",
+        "Josephine 44:00"
+      ],
+      "not_mentioned": "Any blood on or beside her, and the blood on the floor."
+    },
+    {
+      "subject": "Callan",
+      "patrick": "Next to Cora, to her left, face down, a band around his neck, removed.",
+      "responders": "Cahill: no pulse. Stratton: face up; pajamas, a stethoscope and blue exercise bands beside him in the exhibit; 'deep strangulation marks around the entire circumference of his neck.'",
+      "cites": [
+        "Cahill 02:11:14",
+        "Stratton 01:38:41",
+        "Stratton 01:40:04",
+        "Stratton 01:42:49"
+      ],
+      "not_mentioned": "Anything about his clothing."
+    },
+    {
+      "subject": "Dawson",
+      "patrick": "In the office, just to the left of the door; a band around his neck, removed.",
+      "responders": "Hussey: picked up by Patrick, a band taken off around the head and neck. Josephine: on his back near a gym bag, blue lips, bloodshot eyes, red marks on the right side of the neck. Hall: on his back, feet toward a door, head toward the wall, a yellow band in the marked position.",
+      "cites": [
+        "Hussey 54:13",
+        "Josephine 39:30",
+        "Josephine 40:04",
+        "Hall 16:58",
+        "Hall 17:34"
+      ],
+      "not_mentioned": "That he lifted Dawson before the officers arrived."
+    },
+    {
+      "subject": "The bands",
+      "patrick": "Removed from all three necks; Cora's untied.",
+      "responders": "A yellow band in Exhibit 94, which Josephine had earlier called blue; a yellow band in the marked position (Hall, Exhibit 93); blue bands beside Callan (Stratton, exhibit); exercise bands tied to a closet door in the gym room (Hall, Exhibit 90).",
+      "cites": [
+        "Josephine 40:46",
+        "Josephine 41:01",
+        "Hall 17:34",
+        "Stratton 01:40:04",
+        "Hall 16:05"
+      ],
+      "not_mentioned": "The bands tied to the closet door."
+    }
+  ],
+  "open_questions": [
+    "What does the 911 audio record between Patrick's entry to the basement and the scream, and when does the scream fall against the responders' arrival?",
+    "What prompted the scream, and was it at the moment he found Dawson?",
+    "Who is 'we' in 'just to the left of the door when we went in'?",
+    "How did Cora and Callan come to be face up when Engine 2 arrived, if they were face down when Patrick found them?",
+    "Was the blood on the floor near Cora present when he reached her, and does he account for it?",
+    "Were the exercise bands tied to the closet door in the gym room part of what he saw?"
+  ]
+}
