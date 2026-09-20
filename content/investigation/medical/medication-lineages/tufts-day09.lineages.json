@@ -1,0 +1,1979 @@
+{
+  "source": "tufts-day09",
+  "sources": [
+    "tufts-day09"
+  ],
+  "lineages": [
+    {
+      "medication_key": "amitriptyline",
+      "names_raw": [
+        "amitriptyline"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_127",
+          "date": "2023-01-09",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2870,
+            2870
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_136",
+          "date": "2023-01-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "10 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2918,
+            2923,
+            2924
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_140",
+          "date": "2023-01-23",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2941,
+            2942,
+            2944
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_144",
+          "date": "2023-01-23",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "increase",
+          "action_from": "10 mg",
+          "action_to": "20 mg",
+          "dose": "20 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2979
+          ],
+          "note": "Increase justified as help with sleep."
+        }
+      ]
+    },
+    {
+      "medication_key": "bupropion",
+      "names_raw": [
+        "Wellbutrin"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_002",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-09-12",
+          "time_raw": "while in nursing school",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_past_use",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "counsel_proposition_affirmed",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            1719,
+            1720
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_128",
+          "date": "2023-01-09",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2870,
+            2870
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "buspirone",
+      "names_raw": [
+        "BuSpar"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_050",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "5 mg",
+          "dose_raw": null,
+          "frequency": "twice a day",
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2459,
+            2466,
+            2486
+          ],
+          "note": "Witness first said 'we discussed starting'; later questions and answers treat it as prescribed (2466-2467, 2486-2487)."
+        },
+        {
+          "id": "meda_tufts-d09_055",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_not_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2510,
+            2513
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "clonazepam",
+      "names_raw": [
+        "Klonopin"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_077",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "provider at South Shore Perinatal Clinic (per patient)",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "diazepam",
+      "names_raw": [
+        "Valium",
+        "diazepam"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_093",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2723,
+            2738
+          ],
+          "note": "Dose not stated. Reported as helping sleep ('it finally works')."
+        },
+        {
+          "id": "meda_tufts-d09_104",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "third_party_reported",
+          "action": "taper",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "third_party_report",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2770,
+            2770
+          ],
+          "note": "Plan existed before this visit; source of the plan not stated."
+        },
+        {
+          "id": "meda_tufts-d09_126",
+          "date": "2023-01-09",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2874
+          ],
+          "note": "No dose or quantity stated in this testimony."
+        },
+        {
+          "id": "meda_tufts-d09_135",
+          "date": "2023-01-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "taper",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2909,
+            2912,
+            2915
+          ],
+          "note": "Patient agreed (2916). No taper schedule stated."
+        },
+        {
+          "id": "meda_tufts-d09_141",
+          "date": "2023-01-23",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "2 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2946
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_143",
+          "date": "2023-01-23",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "continue",
+          "action_from": null,
+          "action_to": null,
+          "dose": "2 mg",
+          "dose_raw": "the same dose",
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2979,
+            2946
+          ],
+          "note": "Taper slowed because of increased anxiety; 2 mg comes from the patient's report at 2946."
+        }
+      ]
+    },
+    {
+      "medication_key": "diphenhydramine",
+      "names_raw": [
+        "Benadryl"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_047",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2439,
+            2445
+          ],
+          "note": "How often and how much not recalled (2445)."
+        },
+        {
+          "id": "meda_tufts-d09_048",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "recommended",
+          "report": null,
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "negated",
+          "temporality": "current",
+          "segments": [
+            2440,
+            2441
+          ],
+          "note": "Hedged answer: 'I don't think so.'"
+        },
+        {
+          "id": "meda_tufts-d09_067",
+          "date": "2022-11-22",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2583,
+            2584
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_073",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "fluoxetine",
+      "names_raw": [
+        "Prozac"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_001",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-09-12",
+          "time_raw": "in nursing school",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_past_use",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "record_read_by_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            1718,
+            1721
+          ],
+          "note": "Intake paperwork completed 2022-09-12; dose and dates not stated."
+        },
+        {
+          "id": "meda_tufts-d09_065",
+          "date": "2022-11-22",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_intent",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2579
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_074",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "10 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "provider at South Shore Perinatal Clinic (per patient)",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_075",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_stopping",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621,
+            2640
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "hydroxyzine",
+      "names_raw": [
+        "hydroxyzine"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_052",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "25 mg",
+          "dose_raw": null,
+          "frequency": "daily as needed for anxiety",
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2478,
+            2479
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "ketamine",
+      "names_raw": [
+        "ketamine"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_129",
+          "date": "2023-01-11",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "counsel_proposition_affirmed",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2883,
+            2884
+          ],
+          "note": "Patient-initiated inquiry by email."
+        },
+        {
+          "id": "meda_tufts-d09_130",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2023-01-11",
+          "time_raw": "response to the 2023-01-11 email; date not stated",
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2892,
+            2892
+          ],
+          "note": "Witness told the patient insurance usually requires four prior antidepressants (2886)."
+        }
+      ]
+    },
+    {
+      "medication_key": "l-methylfolate",
+      "names_raw": [
+        "L-methylfolate"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_034",
+          "date": "2022-10-20",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2369
+          ],
+          "note": "Transcript reads 'L-methylfolate or seam'; the second supplement is unclear."
+        }
+      ]
+    },
+    {
+      "medication_key": "lamotrigine",
+      "names_raw": [
+        "Lamotrigine",
+        "Lamictal"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_089",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2691,
+            2695
+          ],
+          "note": "Not prescribed on this date."
+        },
+        {
+          "id": "meda_tufts-d09_102",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "25 mg",
+          "dose_raw": null,
+          "frequency": "daily",
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2757,
+            2758,
+            2759
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "lorazepam",
+      "names_raw": [
+        "Ativan"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_043",
+          "date": "2022-10-21",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "0.5 mg",
+          "dose_raw": null,
+          "frequency": "as needed",
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2403,
+            2413,
+            2421,
+            2423
+          ],
+          "note": "Intended for one week; pill count not known to the witness."
+        },
+        {
+          "id": "meda_tufts-d09_046",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2436,
+            2437
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_051",
+          "date": "2022-10-26",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "continue",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": "as needed",
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2472,
+            2473
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_056",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2514,
+            2515
+          ],
+          "note": "Witness confirmed the Ativan only; Benadryl and hydroxyzine were not discussed much (2517)."
+        },
+        {
+          "id": "meda_tufts-d09_062",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "taper",
+          "action_from": "1 mg",
+          "action_to": "0.75 mg",
+          "dose": null,
+          "dose_raw": "one milligram pill",
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2549,
+            2557,
+            2558
+          ],
+          "note": "Witness: 'We discussed tapering'. No replacement medication was decided (2561)."
+        },
+        {
+          "id": "meda_tufts-d09_066",
+          "date": "2022-11-22",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2583,
+            2584,
+            2586,
+            2589
+          ],
+          "note": "Dose on this date not documented per witness."
+        },
+        {
+          "id": "meda_tufts-d09_070",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_stopping",
+          "action": "taper",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "uncertain",
+          "temporality": "current",
+          "segments": [
+            2617
+          ],
+          "note": "Unclear from the answer how far the taper went."
+        },
+        {
+          "id": "meda_tufts-d09_072",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_112",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_prescribed",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "1 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2785,
+            2788
+          ],
+          "note": "Taken at night per the patient (2804)."
+        },
+        {
+          "id": "meda_tufts-d09_116",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "continue",
+          "action_from": null,
+          "action_to": null,
+          "dose": "1 mg",
+          "dose_raw": null,
+          "frequency": "per night",
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2835,
+            2836
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_125",
+          "date": "2023-01-09",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "switch",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2874,
+            2874
+          ],
+          "note": "Reason: rebound anxiety on Ativan; diazepam has a longer half-life and is easier to stop gradually."
+        }
+      ]
+    },
+    {
+      "medication_key": "melatonin",
+      "names_raw": [
+        "melatonin"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_113",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_prescribed",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "5 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2788,
+            2808
+          ],
+          "note": "Witness states melatonin is over the counter."
+        },
+        {
+          "id": "meda_tufts-d09_117",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "continue",
+          "action_from": null,
+          "action_to": null,
+          "dose": "5 mg",
+          "dose_raw": null,
+          "frequency": "per night",
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2835,
+            2836
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "mirtazapine",
+      "names_raw": [
+        "Remeron"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_059",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2541
+          ],
+          "note": "Alternatives to Ativan raised by the witness (2539); intended as safer options without dependency risk (2543-2545)."
+        },
+        {
+          "id": "meda_tufts-d09_076",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "provider at South Shore Perinatal Clinic (per patient)",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_079",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_not_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2621
+          ],
+          "note": "Contradicted by the witness's later answer at 2651."
+        },
+        {
+          "id": "meda_tufts-d09_081",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "uncertain",
+          "temporality": "current",
+          "segments": [
+            2651
+          ],
+          "note": "Hedged ('I think ... maybe')."
+        },
+        {
+          "id": "meda_tufts-d09_082",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_stopping",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2652,
+            2653
+          ],
+          "note": "Planning to stop; not reported as already stopped."
+        }
+      ]
+    },
+    {
+      "medication_key": "omega-3",
+      "names_raw": [
+        "fish oils"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_033",
+          "date": "2022-10-20",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2369,
+            2371
+          ],
+          "note": "Supplement offered because the patient was reluctant about prescription medication."
+        }
+      ]
+    },
+    {
+      "medication_key": "pregabalin",
+      "names_raw": [
+        "pregabalin"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_061",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2541
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "quetiapine",
+      "names_raw": [
+        "Seroquel",
+        "quetiapine"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_080",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_not_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "provider at South Shore Perinatal Clinic (per patient)",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2621,
+            2651
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_088",
+          "date": "2022-12-01",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_intent",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2691
+          ],
+          "note": "Not decided."
+        },
+        {
+          "id": "meda_tufts-d09_094",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "200 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "South Shore Perinatal Program",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2738,
+            2767,
+            2768
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_095",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "third_party_reported",
+          "action": "increase",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "third_party_report",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2738
+          ],
+          "note": "Plan by another provider as relayed by the patient; no target dose stated."
+        },
+        {
+          "id": "meda_tufts-d09_103",
+          "date": "2022-12-16",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "continue",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2767,
+            2768
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_108",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2023-01-06",
+          "time_raw": "at McLean, before 2023-01-06",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_stopping",
+          "action": "taper",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2782,
+            2783,
+            2784
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "sertraline",
+      "names_raw": [
+        "Zoloft",
+        "sertraline"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_015",
+          "date": "2022-09-15",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "recommended",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            1966,
+            1970
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_016",
+          "date": "2022-09-15",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": "25 mg",
+          "dose_raw": "25 milligrams for one week and then increasing to 50 milligrams",
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            1986,
+            1988,
+            1989
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_017",
+          "date": null,
+          "precision": "relative",
+          "anchor": "2022-09-15",
+          "time_raw": "after one week",
+          "track": "clinician_act",
+          "act": "prescribed",
+          "report": null,
+          "action": "increase",
+          "action_from": "25 mg",
+          "action_to": "50 mg",
+          "dose": null,
+          "dose_raw": "50 milligrams after one week, per the prescription instructions",
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            1988
+          ],
+          "note": "Scheduled step written into the prescription, not an event that occurred."
+        },
+        {
+          "id": "meda_tufts-d09_003",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-09-15",
+          "time_raw": "during the postpartum period after her second baby",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_past_use",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2068,
+            2070
+          ],
+          "note": "Witness did not detail the side effects (2070, 2077)."
+        },
+        {
+          "id": "meda_tufts-d09_019",
+          "date": "2022-09-28",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_not_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2135,
+            2136
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_022",
+          "date": "2022-09-28",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "hold",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2203
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_024",
+          "date": "2022-10-03",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_intent",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2232,
+            2238
+          ],
+          "note": "The medication is not named in the question; context is sertraline (2135-2137). Patient also wanted to try therapy first."
+        },
+        {
+          "id": "meda_tufts-d09_029",
+          "date": null,
+          "precision": "relative",
+          "anchor": "2022-10-20",
+          "time_raw": "for one week",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": "start",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": "per the original prescription (25 mg for one week, then 50 mg)",
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2285,
+            2287,
+            2290
+          ],
+          "note": "The patient's own report did not state a dose; the 25 mg is the prescription counsel described."
+        },
+        {
+          "id": "meda_tufts-d09_030",
+          "date": null,
+          "precision": "relative",
+          "anchor": "2022-10-20",
+          "time_raw": "the previous night",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": "increase",
+          "action_from": "25 mg",
+          "action_to": "50 mg",
+          "dose": "50 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2288,
+            2304,
+            2306
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_032",
+          "date": "2022-10-20",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "instructed",
+          "report": null,
+          "action": "discontinue",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2364,
+            2365
+          ],
+          "note": null
+        }
+      ]
+    },
+    {
+      "medication_key": "trazodone",
+      "names_raw": [
+        "trazodone",
+        "Trazodone"
+      ],
+      "events": [
+        {
+          "id": "meda_tufts-d09_060",
+          "date": "2022-11-02",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "discussed",
+          "report": null,
+          "action": "discuss",
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "segments": [
+            2541
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_071",
+          "date": null,
+          "precision": "unknown",
+          "anchor": "2022-12-01",
+          "time_raw": "before 2022-12-01; dates not stated",
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": "50 to 150 milligrams",
+          "frequency": null,
+          "prescriber": "provider at South Shore Perinatal Clinic (per patient)",
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "historical",
+          "segments": [
+            2621,
+            2624
+          ],
+          "note": "Witness did not prescribe these (2623)."
+        },
+        {
+          "id": "meda_tufts-d09_111",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_prescribed",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": "100 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2785,
+            2788
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_115",
+          "date": "2023-01-06",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "clinician_act",
+          "act": "advised",
+          "report": null,
+          "action": "increase",
+          "action_from": "100 mg",
+          "action_to": "150 mg",
+          "dose": "150 mg",
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": "Dr. Jennifer Tufts",
+          "quantity": null,
+          "basis": "firsthand_provider",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2832,
+            2832
+          ],
+          "note": null
+        },
+        {
+          "id": "meda_tufts-d09_121",
+          "date": "2023-01-09",
+          "precision": "exact",
+          "anchor": null,
+          "time_raw": null,
+          "track": "reported",
+          "act": null,
+          "report": "patient_reported_taking",
+          "action": null,
+          "action_from": null,
+          "action_to": null,
+          "dose": null,
+          "dose_raw": null,
+          "frequency": null,
+          "prescriber": null,
+          "quantity": null,
+          "basis": "patient_statement_to_witness",
+          "status": "asserted",
+          "temporality": "current",
+          "segments": [
+            2856
+          ],
+          "note": "Dose not restated; refers to the 2023-01-06 increase."
+        }
+      ]
+    }
+  ]
+}

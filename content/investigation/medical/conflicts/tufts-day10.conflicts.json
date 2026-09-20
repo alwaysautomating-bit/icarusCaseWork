@@ -1,0 +1,148 @@
+{
+  "source": "tufts-day10",
+  "sources": [
+    "tufts-day10"
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "medc_001",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_058",
+      "later": null,
+      "medication_key": "amitriptyline",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_058 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_002",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_043",
+      "later": null,
+      "medication_key": "brexanolone",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_003",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_002",
+      "later": null,
+      "medication_key": "bupropion",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_004",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_066",
+      "later": null,
+      "medication_key": "cannabis",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_005",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_038",
+      "later": null,
+      "medication_key": "diazepam",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_006",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_024",
+      "later": null,
+      "medication_key": "diphenhydramine",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_007",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_001",
+      "later": null,
+      "medication_key": "fluoxetine",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_008",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_022",
+      "later": null,
+      "medication_key": "hydroxyzine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_022 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_009",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_062",
+      "later": null,
+      "medication_key": "ketamine",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_010",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_041",
+      "later": null,
+      "medication_key": "lamotrigine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_041 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_011",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_041",
+      "later": null,
+      "medication_key": "lamotrigine",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_012",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d10_031",
+      "later": "meda_tufts-d10_032",
+      "medication_key": "lorazepam",
+      "relationship": "taper_status_unresolved",
+      "reason": "A taper to a lower dose was discussed (meda_tufts-d10_031); later reports (meda_tufts-d10_032 dose not stated, meda_tufts-d10_033 dose not stated, meda_tufts-d10_054 dose not stated) do not show it carried out."
+    },
+    {
+      "conflict_id": "medc_013",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_057",
+      "later": null,
+      "medication_key": "trazodone",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_057 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_014",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_052",
+      "later": null,
+      "medication_key": "trazodone",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    }
+  ]
+}

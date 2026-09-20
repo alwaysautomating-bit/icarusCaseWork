@@ -1,0 +1,1196 @@
+{
+  "source": "tufts-day10",
+  "sources": [
+    "tufts-day10"
+  ],
+  "days": [
+    {
+      "date": "2022-09-12 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_004",
+          "type": "symptom",
+          "summary": "anxiety (September 2013 to September 2014), postpartum anxiety (May 2020)",
+          "status": "asserted",
+          "temporality": "historical",
+          "basis": "record_read_by_witness",
+          "precision": "unknown",
+          "time_raw": "past psychiatric history on the intake form",
+          "segments": [
+            2048
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_001",
+          "type": "medication",
+          "summary": "patient_reported_past_use: Prozac 50 mg",
+          "status": "asserted",
+          "temporality": "historical",
+          "basis": "record_read_by_witness",
+          "precision": "unknown",
+          "time_raw": "past medication listed on the intake form",
+          "segments": [
+            2050,
+            2053,
+            2054,
+            2059,
+            2060
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_002",
+          "type": "medication",
+          "summary": "patient_reported_past_use: Wellbutrin 100 mg",
+          "status": "asserted",
+          "temporality": "historical",
+          "basis": "record_read_by_witness",
+          "precision": "unknown",
+          "time_raw": "past medication listed on the intake form",
+          "segments": [
+            2050,
+            2055,
+            2056,
+            2061,
+            2062
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-09-15",
+      "items": [
+        {
+          "id": "meda_tufts-d10_005",
+          "type": "symptom",
+          "summary": "postpartum anxiety",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            696,
+            698
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_006",
+          "type": "observation",
+          "summary": "Dr. Jennifer Tufts: ordered: I did not use it on Lindsay.",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "approximate",
+          "time_raw": "intake",
+          "segments": [
+            716,
+            720
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_009",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Sertraline (Zoloft) 25 mg [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            876,
+            877,
+            1012
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_010",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: discussed: Zoloft [discuss]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            934,
+            935
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_011",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: discussed: Zoloft",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            936,
+            937
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-09-15 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_012",
+          "type": "medication",
+          "summary": "patient_reported_taking: Zoloft [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "relative",
+          "time_raw": "about a month after receiving the prescription",
+          "segments": [
+            1018,
+            2025,
+            2026
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_003",
+          "type": "medication",
+          "summary": "patient_reported_past_use: Zoloft",
+          "status": "asserted",
+          "temporality": "historical",
+          "basis": "patient_statement_to_witness",
+          "precision": "unknown",
+          "time_raw": "after her second child, Dawson",
+          "segments": [
+            1131,
+            1132,
+            1134,
+            1167,
+            1169
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-09-28",
+      "items": [
+        {
+          "id": "meda_tufts-d10_013",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: recommended: Zoloft",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1043,
+            1044
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-20 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_014",
+          "type": "medication",
+          "summary": "patient_reported_taking: Zoloft [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "relative",
+          "time_raw": "a week ago, per the interval history",
+          "segments": [
+            1583,
+            1584
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_015",
+          "type": "medication",
+          "summary": "patient_reported_taking: Zoloft [increase]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "relative",
+          "time_raw": "last night, per the interval history",
+          "segments": [
+            1585,
+            1586
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-20",
+      "items": [
+        {
+          "id": "meda_tufts-d10_016",
+          "type": "symptom",
+          "summary": "insomnia, doesn't want to eat, diarrhea, food unappealing, more depressed, crying all day yesterday, mental fog, terrified to start something new, racing thoughts overnight, paranoid of getting suicidal thoughts (worse on increased dose)",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            2072,
+            2072,
+            1590
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-21",
+      "items": [
+        {
+          "id": "meda_tufts-d10_018",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Ativan 0.5 mg [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1296,
+            1298,
+            1436
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-26",
+      "items": [
+        {
+          "id": "meda_tufts-d10_021",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: buspirone [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1299,
+            1302,
+            1371,
+            2110
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_024",
+          "type": "medication",
+          "summary": "patient_reported_taking: Benadryl",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1321,
+            1322,
+            1326,
+            1328,
+            1332
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_022",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: hydroxyzine [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1363,
+            1366,
+            2110
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_025",
+          "type": "observation",
+          "summary": "observation: she was taking the medications as she was required",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1385,
+            1386
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_023",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: advised: Ativan [continue]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            2110,
+            2111,
+            2112
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-26 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_019",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: advised: Ativan 1 mg [increase from 0.5 mg to 1 mg]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "relative",
+          "time_raw": "when I next saw her",
+          "segments": [
+            1438,
+            1442
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_020",
+          "type": "medication",
+          "summary": "patient_reported_taking: Ativan 1 mg [increase to 1 mg]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "relative",
+          "time_raw": "after the increase was advised",
+          "segments": [
+            1439,
+            1440
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-10-28 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_017",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: instructed: Zoloft (50 milligrams) [discontinue]",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "unknown",
+          "time_raw": "counsel's question says 'the 28th of October'",
+          "segments": [
+            1053,
+            1054,
+            1068,
+            1072
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-11",
+      "items": [
+        {
+          "id": "meda_tufts-d10_066",
+          "type": "medication",
+          "summary": "patient_reported_taking: marijuana edible",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "approximate",
+          "time_raw": "In the middle of November",
+          "segments": [
+            2291,
+            2264,
+            2265
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_067",
+          "type": "symptom",
+          "summary": "increased anxiety, palpitations",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "approximate",
+          "time_raw": "In the middle of November",
+          "segments": [
+            2291
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-11-02",
+      "items": [
+        {
+          "id": "meda_tufts-d10_027",
+          "type": "medication",
+          "summary": "patient_reported_intent: BuSpar",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1447,
+            1448,
+            1454
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_030",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: discussed: Remeron [discuss]",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1479,
+            1480,
+            1490
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_028",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: recommended: Remeron",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1481,
+            1482
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_029",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Remeron",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1483,
+            1484
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_031",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: instructed: Ativan [taper]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            2121,
+            2130,
+            1510,
+            1512
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_032",
+          "type": "medication",
+          "summary": "patient_reported_taking: Ativan",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            2121,
+            2124
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-11-22",
+      "items": [
+        {
+          "id": "meda_tufts-d10_034",
+          "type": "encounter",
+          "summary": "outside perinatal clinic care reported by patient with South Shore Perinatal Clinic (Julie Paul; Nurse Gelada named)",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1495,
+            1498,
+            1504,
+            1508
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_033",
+          "type": "medication",
+          "summary": "patient_reported_taking: Ativan",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1509,
+            1518,
+            1520
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-12-16 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_008",
+          "type": "encounter",
+          "summary": "husband present for one visit with Dr. Jennifer Tufts, telemedicine",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "unknown",
+          "time_raw": "witness later thinks the 2022-12-16 visit",
+          "segments": [
+            660,
+            1564,
+            1645
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_035",
+          "type": "encounter",
+          "summary": "emergency department visit; discharged, not admitted; no medication started with Mass General (per witness)",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "unknown",
+          "time_raw": "after 2022-11-22 per the witness; date not stated",
+          "segments": [
+            1522,
+            1524,
+            1526,
+            1532,
+            1534,
+            1538
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_047",
+          "type": "observation",
+          "summary": "Dr. Jennifer Tufts: observed: thoughts of harming the children",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "unknown",
+          "time_raw": "around that time, per counsel",
+          "segments": [
+            1632,
+            1633,
+            1635
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2022-12-16",
+      "items": [
+        {
+          "id": "meda_tufts-d10_045",
+          "type": "symptom",
+          "summary": "hopelessness, 'feeling suicidal' described by the patient as feeling hopeless",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "approximate",
+          "time_raw": "date inferred from context",
+          "segments": [
+            1616
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_046",
+          "type": "symptom",
+          "summary": "intention of hurting herself, plan for hurting herself",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "approximate",
+          "time_raw": "date inferred from context",
+          "segments": [
+            1616
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_040",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Seroquel",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "approximate",
+          "time_raw": "discussed around the 2022-12-16 visit",
+          "segments": [
+            1625,
+            1626,
+            2182
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_048",
+          "type": "symptom",
+          "summary": "depressed mood, flat affect",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1646,
+            1647,
+            1652,
+            1653
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_044",
+          "type": "referral",
+          "summary": "Dr. Jennifer Tufts: referred: partial hospitalization program",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1675
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_043",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: discussed: brexanolone (Zulresso) [discuss]",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "basis": "record_read_by_witness",
+          "precision": "approximate",
+          "time_raw": "around the 2022-12-16 plan",
+          "segments": [
+            1688,
+            1689,
+            1693
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_041",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Lamictal 25 mg [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1694,
+            1695
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_042",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: advised: Seroquel [continue]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1696,
+            1697
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_039",
+          "type": "medication",
+          "summary": "patient_reported_taking: Seroquel 200 mg",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "patient_statement_to_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1697,
+            1699
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_038",
+          "type": "medication",
+          "summary": "patient_reported_stopping: Valium",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1702,
+            1703
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_037",
+          "type": "observation",
+          "summary": "observation: his opinion was that it was related to when she started the Seroquel",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "third_party_report",
+          "precision": "approximate",
+          "time_raw": "the witness thinks this was the visit the husband attended",
+          "segments": [
+            1713,
+            1721,
+            1728
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-06 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_049",
+          "type": "encounter",
+          "summary": "psychiatric hospitalization, self-admitted with McLean Hospital",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "unknown",
+          "time_raw": "before 2023-01-06; dates not stated",
+          "segments": [
+            1743,
+            1744,
+            1747,
+            1748,
+            1786
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_050",
+          "type": "diagnosis",
+          "summary": "McLean Hospital clinicians: diagnosis: major depression",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "third_party_report",
+          "precision": "unknown",
+          "time_raw": "at the McLean hospitalization",
+          "segments": [
+            1750
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_051",
+          "type": "medication",
+          "summary": "third_party_reported: Seroquel [discontinue]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "unknown",
+          "time_raw": "at the McLean hospitalization",
+          "segments": [
+            1752
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-06",
+      "items": [
+        {
+          "id": "meda_tufts-d10_052",
+          "type": "medication",
+          "summary": "patient_reported_taking: Trazodone",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1789,
+            1790,
+            1791,
+            1792
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_053",
+          "type": "symptom",
+          "summary": "very numb",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1793,
+            1794
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_054",
+          "type": "medication",
+          "summary": "patient_reported_taking: Ativan",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1797,
+            1798
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_055",
+          "type": "medication",
+          "summary": "patient_reported_intent: Valium",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1797
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-09",
+      "items": [
+        {
+          "id": "meda_tufts-d10_056",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: diazepam 5 mg [start]",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1803,
+            1806,
+            1807,
+            1808
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-12",
+      "items": [
+        {
+          "id": "meda_tufts-d10_057",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: Trazodone 150 mg [increase to 150 mg]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1810,
+            1811,
+            1812
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-16",
+      "items": [
+        {
+          "id": "meda_tufts-d10_058",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: prescribed: amitriptyline 10 mg [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1813,
+            1814,
+            2221,
+            2225,
+            2226
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_061",
+          "type": "medication",
+          "summary": "patient_reported_taking: diazepam 5 mg [taper]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1833,
+            1834
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_062",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: discussed: ketamine (esketamine) [discuss]",
+          "status": "asserted",
+          "temporality": "hypothetical",
+          "basis": "record_read_by_witness",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1841,
+            1842
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_059",
+          "type": "medication",
+          "summary": "dispensed: amitriptyline 10 mg [start]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            2223,
+            2224
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-23 (relative)",
+      "items": [
+        {
+          "id": "meda_tufts-d10_007",
+          "type": "encounter",
+          "summary": "psychiatric visits with Dr. Jennifer Tufts, telemedicine",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "range",
+          "time_raw": "September 2022 to January 2023",
+          "segments": [
+            665,
+            666,
+            667,
+            668
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_026",
+          "type": "instruction",
+          "summary": "Dr. Jennifer Tufts: advised: keep a diary of her medications",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "range",
+          "time_raw": "throughout treatment",
+          "segments": [
+            1391,
+            1392,
+            1394
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_036",
+          "type": "observation",
+          "summary": "Dr. Jennifer Tufts: ordered: access to those records",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "range",
+          "time_raw": "throughout treatment",
+          "segments": [
+            1542,
+            1550,
+            1554,
+            2251
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_060",
+          "type": "observation",
+          "summary": "observation: there are eight pills missing from this bottle",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "unknown",
+          "time_raw": "count as described by counsel; date of count not stated",
+          "segments": [
+            2227,
+            2228,
+            2232,
+            2234
+          ]
+        }
+      ]
+    },
+    {
+      "date": "2023-01-23",
+      "items": [
+        {
+          "id": "meda_tufts-d10_064",
+          "type": "observation",
+          "summary": "Dr. Jennifer Tufts: recommended: a hospital evaluation",
+          "status": "negated",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1857,
+            1860,
+            2216
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_065",
+          "type": "symptom",
+          "summary": "numb, no emotion, duration reported as 17 days straight",
+          "status": "uncertain",
+          "temporality": "current",
+          "basis": "counsel_proposition_affirmed",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1869,
+            1870
+          ]
+        },
+        {
+          "id": "meda_tufts-d10_063",
+          "type": "medication",
+          "summary": "Dr. Jennifer Tufts: advised: amitriptyline 20 mg [increase from 10 mg to 20 mg]",
+          "status": "asserted",
+          "temporality": "current",
+          "basis": "firsthand_provider",
+          "precision": "exact",
+          "time_raw": null,
+          "segments": [
+            1876,
+            1878,
+            2229,
+            2230
+          ]
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "medr_tufts-d10_001",
+      "type": "REPORTED_RESPONSE_TO",
+      "from": "meda_tufts-d10_016",
+      "to": "meda_tufts-d10_015",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 2072,
+          "span": "Worse on increased dose"
+        }
+      ]
+    },
+    {
+      "id": "medr_tufts-d10_002",
+      "type": "DISCONTINUES",
+      "from": "meda_tufts-d10_017",
+      "to": "meda_tufts-d10_009",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 1054,
+          "span": "Stop the medication."
+        }
+      ]
+    },
+    {
+      "id": "medr_tufts-d10_003",
+      "type": "CHANGES",
+      "from": "meda_tufts-d10_019",
+      "to": "meda_tufts-d10_018",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 1438,
+          "span": "you could increase it and see if one milligram is more helpful"
+        }
+      ]
+    },
+    {
+      "id": "medr_tufts-d10_004",
+      "type": "CHANGES",
+      "from": "meda_tufts-d10_020",
+      "to": "meda_tufts-d10_018",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 1439,
+          "span": "Did she increase it?"
+        }
+      ]
+    },
+    {
+      "id": "medr_tufts-d10_005",
+      "type": "CHANGES",
+      "from": "meda_tufts-d10_063",
+      "to": "meda_tufts-d10_058",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 2229,
+          "span": "she could raise it to 20 milligrams"
+        }
+      ]
+    },
+    {
+      "id": "medr_tufts-d10_006",
+      "type": "REPORTED_RESPONSE_TO",
+      "from": "meda_tufts-d10_067",
+      "to": "meda_tufts-d10_066",
+      "basis": "explicit_language",
+      "status": "proposed",
+      "evidence": [
+        {
+          "seg": 2291,
+          "span": "which caused her to have increased anxiety and palpitations"
+        }
+      ]
+    }
+  ]
+}

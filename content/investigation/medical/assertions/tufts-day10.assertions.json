@@ -1,0 +1,2347 @@
+{
+ "contract": "icarus-medical-assertion/1.0",
+ "subject": "Lindsay Clancy",
+ "transcript_id": "Lindsay-Clancy_Trial-Day-10",
+ "source_file": "Lindsay-Clancy_Trial-Day-10_Rev-Transcript.txt",
+ "witness_block_id": "none (first pass has no block for this testimony; continuation of witness_004 from Day 9)",
+ "witness": "Dr. Jennifer Tufts",
+ "trial_day": 10,
+ "proceeding_date": null,
+ "segment_range": [
+  367,
+  2363
+ ],
+ "extractor": {
+  "method": "model_extraction_v1",
+  "rules": "skills/clinical-history-extractor/references/rules.md",
+  "reviewed": false
+ },
+ "source_notes": [
+  "The first-pass compiler produced no witness block for this testimony: Day 10's only block (witness_001, Julie Paul) starts at segment 2370, after Dr. Tufts's cross-examination, redirect and recross.",
+  "Segments 2-366 are a truncated duplicate of the opening of segments 367 onward (timestamps restart at 00:00 at segment 367). Only segments 367-2363 are cited.",
+  "Timestamps jump from 01:54:33 (segment 1608) to 02:38:04 (segment 1609) inside an unfinished answer; the testimony between them is not in the source capture.",
+  "Segment 1608 and segment 366 end in empty answers, consistent with the capture being cut at those points."
+ ],
+ "assertions": [
+  {
+   "id": "meda_tufts-d10_001",
+   "type": "medication",
+   "raw": "Prozac, 50 milligrams",
+   "med": {
+    "name": "Prozac",
+    "dose": {
+     "value": 50,
+     "unit": "mg"
+    }
+   },
+   "report": "patient_reported_past_use",
+   "temporality": "historical",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-09-12",
+    "raw": "past medication listed on the intake form"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2050,
+     "span": "Prozac, 50 milligrams"
+    },
+    {
+     "seg": 2053,
+     "span": "whether or not Prozac was effective"
+    },
+    {
+     "seg": 2054,
+     "span": "Yes."
+    },
+    {
+     "seg": 2059,
+     "span": "any side effects experienced for Prozac"
+    },
+    {
+     "seg": 2060,
+     "span": "No."
+    }
+   ],
+   "note": "Effective: yes. No side effects checked."
+  },
+  {
+   "id": "meda_tufts-d10_002",
+   "type": "medication",
+   "raw": "Wellbutrin, 100 milligrams",
+   "med": {
+    "name": "Wellbutrin",
+    "dose": {
+     "value": 100,
+     "unit": "mg"
+    }
+   },
+   "report": "patient_reported_past_use",
+   "temporality": "historical",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-09-12",
+    "raw": "past medication listed on the intake form"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2050,
+     "span": "Wellbutrin, 100 milligrams"
+    },
+    {
+     "seg": 2055,
+     "span": "whether or not Wellbutrin was effective"
+    },
+    {
+     "seg": 2056,
+     "span": "Yes."
+    },
+    {
+     "seg": 2061,
+     "span": "any side effects experienced for Wellbutrin"
+    },
+    {
+     "seg": 2062,
+     "span": "No."
+    }
+   ],
+   "note": "Effective: yes. No side effects checked."
+  },
+  {
+   "id": "meda_tufts-d10_003",
+   "type": "medication",
+   "raw": "take Zoloft, SSRI, after having Dawson",
+   "med": {
+    "name": "Zoloft"
+   },
+   "report": "patient_reported_past_use",
+   "temporality": "historical",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-09-15",
+    "raw": "after her second child, Dawson"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1131,
+     "span": "take Zoloft, SSRI, after having Dawson"
+    },
+    {
+     "seg": 1132,
+     "span": "I think she took it for about a week."
+    },
+    {
+     "seg": 1134,
+     "span": "She did."
+    },
+    {
+     "seg": 1167,
+     "span": "I wrote that she had side effects."
+    },
+    {
+     "seg": 1169,
+     "span": "I'm not sure."
+    }
+   ],
+   "note": "Witness documented that side effects occurred but does not remember which."
+  },
+  {
+   "id": "meda_tufts-d10_004",
+   "type": "symptom",
+   "raw": "anxiety, September 2013 to September 2014, postpartum anxiety, May 2020",
+   "symptom": {
+    "terms": [
+     "anxiety (September 2013 to September 2014)",
+     "postpartum anxiety (May 2020)"
+    ]
+   },
+   "temporality": "historical",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-09-12",
+    "raw": "past psychiatric history on the intake form"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2048,
+     "span": "anxiety, September 2013 to September 2014, postpartum anxiety, May 2020"
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_005",
+   "type": "symptom",
+   "raw": "Postpartum anxiety.",
+   "symptom": {
+    "terms": [
+     "postpartum anxiety"
+    ]
+   },
+   "time": {
+    "date": "2022-09-15",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 696,
+     "span": "Postpartum anxiety."
+    },
+    {
+     "seg": 698,
+     "span": "those were her words when asked"
+    }
+   ],
+   "note": "Chief complaint in the patient's words."
+  },
+  {
+   "id": "meda_tufts-d10_006",
+   "type": "observation",
+   "raw": "I did not use it on Lindsay.",
+   "act": "ordered",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-09-15",
+    "precision": "approximate",
+    "raw": "intake"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 716,
+     "span": "I did not use it on Lindsay."
+    },
+    {
+     "seg": 720,
+     "span": "We used the PHQ-9"
+    }
+   ],
+   "note": "Edinburgh scale not administered; PHQ-9 used (Aster's practice per 1960)."
+  },
+  {
+   "id": "meda_tufts-d10_007",
+   "type": "encounter",
+   "raw": "14 appointments that you had with Lindsay during that period from September till January",
+   "encounter": {
+    "kind": "psychiatric visits",
+    "modality": "telemedicine",
+    "provider": "Dr. Jennifer Tufts"
+   },
+   "time": {
+    "date": null,
+    "precision": "range",
+    "anchor": "2023-01-23",
+    "raw": "September 2022 to January 2023"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 665,
+     "span": "14 appointments that you had with Lindsay during that period from September till January"
+    },
+    {
+     "seg": 666,
+     "span": "Yes."
+    },
+    {
+     "seg": 667,
+     "span": "Every single one of them were via telemedicine, weren't they?"
+    },
+    {
+     "seg": 668,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_008",
+   "type": "encounter",
+   "raw": "He attended one of the appointments",
+   "encounter": {
+    "kind": "husband present for one visit",
+    "modality": "telemedicine",
+    "provider": "Dr. Jennifer Tufts"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-12-16",
+    "raw": "witness later thinks the 2022-12-16 visit"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 660,
+     "span": "He attended one of the appointments and I spoke with him on that date."
+    },
+    {
+     "seg": 1564,
+     "span": "I think it was the December 16th visit."
+    },
+    {
+     "seg": 1645,
+     "span": "It's not noted, but I remember some of what we talked about."
+    }
+   ],
+   "note": "Not in the records; date is the witness's recollection ('I think')."
+  },
+  {
+   "id": "meda_tufts-d10_009",
+   "type": "medication",
+   "raw": "Sertraline, Zoloft, 30 count",
+   "med": {
+    "name": "Sertraline (Zoloft)",
+    "dose": {
+     "value": 25,
+     "unit": "mg"
+    },
+    "quantity": "30 count",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-09-15",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 876,
+     "span": "you prescribed Sertraline, Zoloft, 30 count on September 15th, 25 milligrams"
+    },
+    {
+     "seg": 877,
+     "span": "Yes."
+    },
+    {
+     "seg": 1012,
+     "span": "The instructions were to increase it to 50 after one week."
+    }
+   ],
+   "note": "From a prescription chart shown by defense counsel."
+  },
+  {
+   "id": "meda_tufts-d10_010",
+   "type": "medication",
+   "raw": "You went over the side effects of Zoloft, sertraline",
+   "med": {
+    "name": "Zoloft"
+   },
+   "act": "discussed",
+   "action": {
+    "type": "discuss"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-09-15",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 934,
+     "span": "You went over the side effects of Zoloft, sertraline"
+    },
+    {
+     "seg": 935,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_011",
+   "type": "medication",
+   "raw": "suicidal thoughts and actions and ideation",
+   "med": {
+    "name": "Zoloft"
+   },
+   "act": "discussed",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-09-15",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 936,
+     "span": "one of the known side effects is suicidal thoughts and actions and ideation"
+    },
+    {
+     "seg": 937,
+     "span": "I don't think I mentioned that because it wasn't relevant"
+    }
+   ],
+   "note": "Witness does not think she mentioned the suicidality warning; she says it applies to children and younger adults (937, 941). Hedged answer."
+  },
+  {
+   "id": "meda_tufts-d10_012",
+   "type": "medication",
+   "raw": "about a month",
+   "med": {
+    "name": "Zoloft"
+   },
+   "report": "patient_reported_taking",
+   "action": {
+    "type": "start"
+   },
+   "time": {
+    "date": null,
+    "precision": "relative",
+    "anchor": "2022-09-15",
+    "raw": "about a month after receiving the prescription"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1018,
+     "span": "She waited about a month, but then yes, she did."
+    },
+    {
+     "seg": 2025,
+     "span": "waited about a month after receiving the prescription before taking the medication"
+    },
+    {
+     "seg": 2026,
+     "span": "Yes."
+    }
+   ],
+   "note": "Witness was not aware of the date she decided to start (1032)."
+  },
+  {
+   "id": "meda_tufts-d10_013",
+   "type": "medication",
+   "raw": "recommend that she increase or take this Zoloft",
+   "med": {
+    "name": "Zoloft"
+   },
+   "act": "recommended",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-09-28",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1043,
+     "span": "recommend that she increase or take this Zoloft"
+    },
+    {
+     "seg": 1044,
+     "span": "At that visit, I don't think that I did."
+    }
+   ],
+   "note": "Hedged answer."
+  },
+  {
+   "id": "meda_tufts-d10_014",
+   "type": "medication",
+   "raw": "It says a week ago",
+   "med": {
+    "name": "Zoloft"
+   },
+   "report": "patient_reported_taking",
+   "action": {
+    "type": "start"
+   },
+   "time": {
+    "date": null,
+    "precision": "relative",
+    "anchor": "2022-10-20",
+    "raw": "a week ago, per the interval history"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1583,
+     "span": "It says a week ago"
+    },
+    {
+     "seg": 1584,
+     "span": "That's when the patient started it, yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_015",
+   "type": "medication",
+   "raw": "it says last night",
+   "med": {
+    "name": "Zoloft"
+   },
+   "report": "patient_reported_taking",
+   "action": {
+    "type": "increase"
+   },
+   "time": {
+    "date": null,
+    "precision": "relative",
+    "anchor": "2022-10-20",
+    "raw": "last night, per the interval history"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1585,
+     "span": "it says last night"
+    },
+    {
+     "seg": 1586,
+     "span": "Yes."
+    }
+   ],
+   "note": "The dose is not stated in this passage."
+  },
+  {
+   "id": "meda_tufts-d10_016",
+   "type": "symptom",
+   "raw": "Worse on increased dose",
+   "symptom": {
+    "terms": [
+     "insomnia",
+     "doesn't want to eat",
+     "diarrhea",
+     "food unappealing",
+     "more depressed",
+     "crying all day yesterday",
+     "mental fog",
+     "terrified to start something new",
+     "racing thoughts overnight",
+     "paranoid of getting suicidal thoughts"
+    ],
+    "trajectory": "worse on increased dose"
+   },
+   "time": {
+    "date": "2022-10-20",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2072,
+     "span": "Couldn't sleep. Insomnia. Worse on increased dose."
+    },
+    {
+     "seg": 2072,
+     "span": "Crying all day yesterday. Not normal. Mental fog."
+    },
+    {
+     "seg": 1590,
+     "span": "Overnight, racing thoughts, paranoid of getting suicidal thoughts."
+    }
+   ],
+   "note": "Read from the 2022-10-20 interval history note. Witness: 'paranoid of getting suicidal thoughts' was the patient's phrasing (2076)."
+  },
+  {
+   "id": "meda_tufts-d10_017",
+   "type": "medication",
+   "raw": "Stop the medication.",
+   "med": {
+    "name": "Zoloft",
+    "dose_raw": "50 milligrams"
+   },
+   "act": "instructed",
+   "action": {
+    "type": "discontinue"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "status": "uncertain",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-10-28",
+    "raw": "counsel's question says 'the 28th of October'"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1053,
+     "span": "on the 28th of October"
+    },
+    {
+     "seg": 1054,
+     "span": "I told her to stop it. Stop the medication."
+    },
+    {
+     "seg": 1068,
+     "span": "At 50 milligrams, it is perfectly fine to stop it immediately."
+    },
+    {
+     "seg": 1072,
+     "span": "I met with her the 21st and then the 26th."
+    }
+   ],
+   "note": "The date is counsel's; the witness does not correct it but says she met the patient on the 20th, 21st and 26th. Direct examination puts the instruction on 2022-10-20 (Day 9, seg 2365)."
+  },
+  {
+   "id": "meda_tufts-d10_018",
+   "type": "medication",
+   "raw": "So she was prescribed Ativan 0.5 milligrams.",
+   "med": {
+    "name": "Ativan",
+    "dose": {
+     "value": 0.5,
+     "unit": "mg"
+    },
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-10-21",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1296,
+     "span": "I prescribed that on the 21st."
+    },
+    {
+     "seg": 1298,
+     "span": "I prescribed the Ativan on the 21st."
+    },
+    {
+     "seg": 1436,
+     "span": "So she was prescribed Ativan 0.5 milligrams."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_019",
+   "type": "medication",
+   "raw": "you could increase it and see if one milligram is more helpful",
+   "med": {
+    "name": "Ativan",
+    "dose": {
+     "value": 1,
+     "unit": "mg"
+    },
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "advised",
+   "action": {
+    "type": "increase",
+    "from": {
+     "value": 0.5,
+     "unit": "mg"
+    },
+    "to": {
+     "value": 1,
+     "unit": "mg"
+    }
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": null,
+    "precision": "relative",
+    "anchor": "2022-10-26",
+    "raw": "when I next saw her"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1438,
+     "span": "when I next saw her, she said it was a little bit helpful. So I said you could increase it and see if one milligram is more helpful."
+    },
+    {
+     "seg": 1442,
+     "span": "I saw her on the 26th"
+    }
+   ],
+   "note": "'Next saw her' after the 2022-10-21 prescription is the 2022-10-26 visit per seg 1442."
+  },
+  {
+   "id": "meda_tufts-d10_020",
+   "type": "medication",
+   "raw": "Did she increase it?",
+   "med": {
+    "name": "Ativan",
+    "dose": {
+     "value": 1,
+     "unit": "mg"
+    }
+   },
+   "report": "patient_reported_taking",
+   "action": {
+    "type": "increase",
+    "to": {
+     "value": 1,
+     "unit": "mg"
+    }
+   },
+   "time": {
+    "date": null,
+    "precision": "relative",
+    "anchor": "2022-10-26",
+    "raw": "after the increase was advised"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1439,
+     "span": "Did she increase it?"
+    },
+    {
+     "seg": 1440,
+     "span": "Yes."
+    }
+   ],
+   "note": "Source of the witness's knowledge that she increased it is not stated."
+  },
+  {
+   "id": "meda_tufts-d10_021",
+   "type": "medication",
+   "raw": "Buspirone.",
+   "med": {
+    "name": "buspirone",
+    "frequency": "every day",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-10-26",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1299,
+     "span": "Did you prescribe anything on the October 26th appointment?"
+    },
+    {
+     "seg": 1302,
+     "span": "Buspirone."
+    },
+    {
+     "seg": 1371,
+     "span": "started her on Buspar"
+    },
+    {
+     "seg": 2110,
+     "span": "the BuSpar was to be an everyday medicine"
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_022",
+   "type": "medication",
+   "raw": "hydroxyzine",
+   "med": {
+    "name": "hydroxyzine",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-10-26",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1363,
+     "span": "Did you also add a drug called hydroxyzine?"
+    },
+    {
+     "seg": 1366,
+     "span": "So that was the same visit as an alternative to the Benadryl."
+    },
+    {
+     "seg": 2110,
+     "span": "the hydroxyzine, we had started that to see if she could use that as an alternative to the Ativan"
+    }
+   ],
+   "note": "Dose given on Day 9 (25 mg daily as needed). Witness: pharmacy-only medication (1384)."
+  },
+  {
+   "id": "meda_tufts-d10_023",
+   "type": "medication",
+   "raw": "The Ativan was to take as needed for severe anxiety",
+   "med": {
+    "name": "Ativan",
+    "frequency": "as needed for severe anxiety"
+   },
+   "act": "advised",
+   "action": {
+    "type": "continue"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-10-26",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 2110,
+     "span": "The Ativan was to take as needed for severe anxiety"
+    },
+    {
+     "seg": 2111,
+     "span": "Was there ever an instruction for her to take all three at the same time?"
+    },
+    {
+     "seg": 2112,
+     "span": "No."
+    }
+   ],
+   "note": "No instruction to take Ativan, BuSpar and hydroxyzine together."
+  },
+  {
+   "id": "meda_tufts-d10_024",
+   "type": "medication",
+   "raw": "taking Benadryl",
+   "med": {
+    "name": "Benadryl",
+    "route": "over the counter"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2022-10-26",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1321,
+     "span": "reporting to you that she was taking Benadryl"
+    },
+    {
+     "seg": 1322,
+     "span": "It was being used as needed, yes."
+    },
+    {
+     "seg": 1326,
+     "span": "She reported that, yes."
+    },
+    {
+     "seg": 1328,
+     "span": "It's only available as one dose over the counter."
+    },
+    {
+     "seg": 1332,
+     "span": "I think she was just taking one of them."
+    }
+   ],
+   "note": "Amount and frequency not documented."
+  },
+  {
+   "id": "meda_tufts-d10_025",
+   "type": "observation",
+   "raw": "she was taking the medications as she was required",
+   "time": {
+    "date": "2022-10-26",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1385,
+     "span": "she was taking the medications as she was required"
+    },
+    {
+     "seg": 1386,
+     "span": "That's what I was told."
+    }
+   ],
+   "note": "Witness's basis is what the patient told her."
+  },
+  {
+   "id": "meda_tufts-d10_026",
+   "type": "instruction",
+   "raw": "keep a diary of her medications",
+   "act": "advised",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": null,
+    "precision": "range",
+    "anchor": "2023-01-23",
+    "raw": "throughout treatment"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1391,
+     "span": "keep a diary of her medications"
+    },
+    {
+     "seg": 1392,
+     "span": "I didn't instruct her to do that."
+    },
+    {
+     "seg": 1394,
+     "span": "I didn't tell her to do that."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_027",
+   "type": "medication",
+   "raw": "hesitant to try the BuSpar",
+   "med": {
+    "name": "BuSpar"
+   },
+   "report": "patient_reported_intent",
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1447,
+     "span": "hesitant to use the medications, the BuSpar and the hydroxyzine"
+    },
+    {
+     "seg": 1448,
+     "span": "She said she was hesitant to try the BuSpar."
+    },
+    {
+     "seg": 1454,
+     "span": "She told me she was afraid to take the buspirone."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_028",
+   "type": "medication",
+   "raw": "recommend that she take Remeron",
+   "med": {
+    "name": "Remeron"
+   },
+   "act": "recommended",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1481,
+     "span": "recommend that she take Remeron"
+    },
+    {
+     "seg": 1482,
+     "span": "No."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_029",
+   "type": "medication",
+   "raw": "ever prescribe Remeron",
+   "med": {
+    "name": "Remeron"
+   },
+   "act": "prescribed",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1483,
+     "span": "ever prescribe Remeron"
+    },
+    {
+     "seg": 1484,
+     "span": "No."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_030",
+   "type": "medication",
+   "raw": "talking to her about Remeron",
+   "med": {
+    "name": "Remeron"
+   },
+   "act": "discussed",
+   "action": {
+    "type": "discuss"
+   },
+   "temporality": "hypothetical",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1479,
+     "span": "talking to her about Remeron"
+    },
+    {
+     "seg": 1480,
+     "span": "Yes."
+    },
+    {
+     "seg": 1490,
+     "span": "It was a very reasonable option, but we didn't decide to start it."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_031",
+   "type": "medication",
+   "raw": "To reduce the dose by 0.25 milligrams every two weeks until she was off it.",
+   "med": {
+    "name": "Ativan",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "instructed",
+   "action": {
+    "type": "taper"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 2121,
+     "span": "on the November 2nd date"
+    },
+    {
+     "seg": 2130,
+     "span": "To reduce the dose by 0.25 milligrams every two weeks until she was off it."
+    },
+    {
+     "seg": 1510,
+     "span": "I gave her a prescribed taper prior to that appointment."
+    },
+    {
+     "seg": 1512,
+     "span": "I told her that she should reduce her dose by 0.25 milligrams every two weeks until the medication was stopped."
+    }
+   ],
+   "note": "Plan arose from the patient's concern that Ativan was not a long-term solution (2124-2126)."
+  },
+  {
+   "id": "meda_tufts-d10_032",
+   "type": "medication",
+   "raw": "Ativan helps. Sleeping great on it.",
+   "med": {
+    "name": "Ativan"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2022-11-02",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2121,
+     "span": "Ativan helps. Sleeping great on it."
+    },
+    {
+     "seg": 2124,
+     "span": "Taking the Ativan."
+    }
+   ],
+   "note": "Interval history read aloud. Contrast the 2022-10-26 report that it was not helpful for sleep (Day 9, seg 2437)."
+  },
+  {
+   "id": "meda_tufts-d10_033",
+   "type": "medication",
+   "raw": "She said she was taking Ativan.",
+   "med": {
+    "name": "Ativan"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2022-11-22",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1509,
+     "span": "she was using Ativan and Benadryl"
+    },
+    {
+     "seg": 1518,
+     "span": "She said she was taking Ativan. So no, she didn't completely stop it."
+    },
+    {
+     "seg": 1520,
+     "span": "I'm not sure how much she had reduced the dose 'cause I wasn't prescribing it again."
+    }
+   ],
+   "note": "Extent of any reduction unknown to the witness."
+  },
+  {
+   "id": "meda_tufts-d10_034",
+   "type": "encounter",
+   "raw": "South Shore Perinatal Clinic",
+   "encounter": {
+    "kind": "outside perinatal clinic care reported by patient",
+    "provider": "South Shore Perinatal Clinic (Julie Paul; Nurse Gelada named)"
+   },
+   "time": {
+    "date": "2022-11-22",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1495,
+     "span": "she had been to see South Shore Perinatal Clinic"
+    },
+    {
+     "seg": 1498,
+     "span": "they were exclusively focused on treating perinatal conditions"
+    },
+    {
+     "seg": 1504,
+     "span": "I think she said something about Julie."
+    },
+    {
+     "seg": 1508,
+     "span": "I heard her name a little bit later, but yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_035",
+   "type": "encounter",
+   "raw": "I think she went to Mass General.",
+   "encounter": {
+    "kind": "emergency department visit; discharged, not admitted; no medication started",
+    "provider": "Mass General (per witness)"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-12-16",
+    "raw": "after 2022-11-22 per the witness; date not stated"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1522,
+     "span": "I know she went to the ER, but I think it was after that."
+    },
+    {
+     "seg": 1524,
+     "span": "I think she went to Mass General."
+    },
+    {
+     "seg": 1526,
+     "span": "Because of depression."
+    },
+    {
+     "seg": 1532,
+     "span": "They ultimately discharged her."
+    },
+    {
+     "seg": 1534,
+     "span": "admit her."
+    },
+    {
+     "seg": 1538,
+     "span": "Not from the ER."
+    }
+   ],
+   "note": "Witness: 'I'm not sure what they told her' (1528)."
+  },
+  {
+   "id": "meda_tufts-d10_036",
+   "type": "observation",
+   "raw": "access to those records",
+   "act": "ordered",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": null,
+    "precision": "range",
+    "anchor": "2023-01-23",
+    "raw": "throughout treatment"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1542,
+     "span": "I did not have access to those records."
+    },
+    {
+     "seg": 1550,
+     "span": "Yes, she could have."
+    },
+    {
+     "seg": 1554,
+     "span": "I did not feel like it was necessary because she provided all the relevant information about her treatment there."
+    },
+    {
+     "seg": 2251,
+     "span": "No, I did not ask her to sign a release."
+    }
+   ],
+   "note": "South Shore Perinatal records were not obtained; no release was requested."
+  },
+  {
+   "id": "meda_tufts-d10_037",
+   "type": "observation",
+   "raw": "his opinion was that it was related to when she started the Seroquel",
+   "time": {
+    "date": "2022-12-16",
+    "precision": "approximate",
+    "raw": "the witness thinks this was the visit the husband attended"
+   },
+   "basis": "third_party_report",
+   "status": "uncertain",
+   "evidence": [
+    {
+     "seg": 1713,
+     "span": "He said she wasn't doing well."
+    },
+    {
+     "seg": 1721,
+     "span": "He felt that it might have been, his opinion was that it was related to when she started the Seroquel."
+    },
+    {
+     "seg": 1728,
+     "span": "It's very possible."
+    }
+   ],
+   "note": "Husband's statement to the witness. Not documented in the note (1645). Whether he said 'zombie' is uncertain (1726, 1728)."
+  },
+  {
+   "id": "meda_tufts-d10_038",
+   "type": "medication",
+   "raw": "had stopped with the Valium",
+   "med": {
+    "name": "Valium"
+   },
+   "report": "patient_reported_stopping",
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1702,
+     "span": "had stopped with the Valium"
+    },
+    {
+     "seg": 1703,
+     "span": "Yes."
+    }
+   ],
+   "note": "Conflicts with the Day 9 answer that on 2022-12-16 she was taking a mixture of Valium and quetiapine (Day 9, seg 2738)."
+  },
+  {
+   "id": "meda_tufts-d10_039",
+   "type": "medication",
+   "raw": "she had told me it was 200",
+   "med": {
+    "name": "Seroquel",
+    "dose": {
+     "value": 200,
+     "unit": "mg"
+    },
+    "prescriber": "another provider (not the witness)"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1697,
+     "span": "she had told me it was 200"
+    },
+    {
+     "seg": 1699,
+     "span": "I did not write that prescription, so that's what her provider had prescribed her."
+    }
+   ],
+   "note": "Witness could have asked for the bottle or a pharmacy record (1700-1701)."
+  },
+  {
+   "id": "meda_tufts-d10_040",
+   "type": "medication",
+   "raw": "I was not prescribing it for her.",
+   "med": {
+    "name": "Seroquel"
+   },
+   "act": "prescribed",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "approximate",
+    "raw": "discussed around the 2022-12-16 visit"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1625,
+     "span": "Did you discuss prescribing Seroquel to her or was she getting Seroquel?"
+    },
+    {
+     "seg": 1626,
+     "span": "We talked about it. I was not prescribing it for her."
+    },
+    {
+     "seg": 2182,
+     "span": "the patient was asking about it and her husband was also asking me about it"
+    }
+   ],
+   "note": "Witness explained the drug to the patient and husband when asked (2184-2186)."
+  },
+  {
+   "id": "meda_tufts-d10_041",
+   "type": "medication",
+   "raw": "start Lamictal, 25 milligrams daily",
+   "med": {
+    "name": "Lamictal",
+    "dose": {
+     "value": 25,
+     "unit": "mg"
+    },
+    "frequency": "daily",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1694,
+     "span": "start Lamictal, 25 milligrams daily"
+    },
+    {
+     "seg": 1695,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_042",
+   "type": "medication",
+   "raw": "Continue Seroquel",
+   "med": {
+    "name": "Seroquel"
+   },
+   "act": "advised",
+   "action": {
+    "type": "continue"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1696,
+     "span": "Continue Seroquel"
+    },
+    {
+     "seg": 1697,
+     "span": "she had told me it was 200"
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_043",
+   "type": "medication",
+   "raw": "brexanolone infusion",
+   "med": {
+    "name": "brexanolone (Zulresso)"
+   },
+   "act": "discussed",
+   "action": {
+    "type": "discuss"
+   },
+   "temporality": "hypothetical",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "approximate",
+    "raw": "around the 2022-12-16 plan"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1688,
+     "span": "considering a brexanoline or brexanolone infusion"
+    },
+    {
+     "seg": 1689,
+     "span": "That's the Zulresso."
+    },
+    {
+     "seg": 1693,
+     "span": "No."
+    }
+   ],
+   "note": "Did not go anywhere per the witness's answer at 1693."
+  },
+  {
+   "id": "meda_tufts-d10_044",
+   "type": "referral",
+   "raw": "partial hospitalization program",
+   "act": "referred",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1675,
+     "span": "I told her to go to the partial hospitalization program and if she was having more suicidal thoughts again or felt like she was at risk of hurting herself or anybody else, that she should go immediately to the emergency room."
+    }
+   ],
+   "note": "Visit lasted about 30 minutes (1677)."
+  },
+  {
+   "id": "meda_tufts-d10_045",
+   "type": "symptom",
+   "raw": "It means I'm feeling hopeless.",
+   "symptom": {
+    "terms": [
+     "hopelessness",
+     "'feeling suicidal' described by the patient as feeling hopeless"
+    ]
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "approximate",
+    "raw": "date inferred from context"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1616,
+     "span": "It means I'm feeling hopeless."
+    }
+   ],
+   "note": "Transcript gap immediately before segment 1609 (timestamps jump from 01:54:33 to 02:38:04); the date comes from the surrounding questions (1629)."
+  },
+  {
+   "id": "meda_tufts-d10_046",
+   "type": "symptom",
+   "raw": "Do you have intention of hurting yourself?",
+   "symptom": {
+    "terms": [
+     "intention of hurting herself",
+     "plan for hurting herself"
+    ]
+   },
+   "status": "negated",
+   "time": {
+    "date": "2022-12-16",
+    "precision": "approximate",
+    "raw": "date inferred from context"
+   },
+   "basis": "patient_statement_to_witness",
+   "evidence": [
+    {
+     "seg": 1616,
+     "span": "Do you have intention of hurting yourself? Do you have a plan for hurting yourself?\" And she denied those."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_047",
+   "type": "observation",
+   "raw": "thoughts of harming the children",
+   "act": "observed",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2022-12-16",
+    "raw": "around that time, per counsel"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1632,
+     "span": "she confessed to her husband that she was having now thoughts of harming the children"
+    },
+    {
+     "seg": 1633,
+     "span": "No."
+    },
+    {
+     "seg": 1635,
+     "span": "If I heard that, I would've been very concerned."
+    }
+   ],
+   "note": "Records only that the witness did not know of it; it does not establish that it occurred."
+  },
+  {
+   "id": "meda_tufts-d10_048",
+   "type": "symptom",
+   "raw": "your objective findings, you note that her mood was depressed",
+   "symptom": {
+    "terms": [
+     "depressed mood",
+     "flat affect"
+    ]
+   },
+   "time": {
+    "date": "2022-12-16",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1646,
+     "span": "you note that her mood was depressed"
+    },
+    {
+     "seg": 1647,
+     "span": "Yes."
+    },
+    {
+     "seg": 1652,
+     "span": "Her affect was flat, right?"
+    },
+    {
+     "seg": 1653,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_049",
+   "type": "encounter",
+   "raw": "McLean locked wards for four and a half days",
+   "encounter": {
+    "kind": "psychiatric hospitalization, self-admitted",
+    "provider": "McLean Hospital",
+    "duration": "four and a half days"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2023-01-06",
+    "raw": "before 2023-01-06; dates not stated"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1743,
+     "span": "she was in McLean locked wards for four and a half days"
+    },
+    {
+     "seg": 1744,
+     "span": "Yes."
+    },
+    {
+     "seg": 1747,
+     "span": "she admitted herself to the locked wards at McLean"
+    },
+    {
+     "seg": 1748,
+     "span": "Yes."
+    },
+    {
+     "seg": 1786,
+     "span": "Well, I said MGH."
+    }
+   ],
+   "note": "The witness's 2023-01-06 note records the discharge as from 'MGH' (1786-1788); her testimony says McLean."
+  },
+  {
+   "id": "meda_tufts-d10_050",
+   "type": "diagnosis",
+   "raw": "I believe they diagnosed her with major depression.",
+   "diagnosis": {
+    "term": "major depression"
+   },
+   "status": "uncertain",
+   "actor": {
+    "name": "McLean Hospital clinicians",
+    "role": "third_party"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2023-01-06",
+    "raw": "at the McLean hospitalization"
+   },
+   "basis": "third_party_report",
+   "evidence": [
+    {
+     "seg": 1750,
+     "span": "I believe they diagnosed her with major depression."
+    }
+   ],
+   "note": "Witness received a two-page discharge summary (1759-1760)."
+  },
+  {
+   "id": "meda_tufts-d10_051",
+   "type": "medication",
+   "raw": "They took her off of the Seroquel.",
+   "med": {
+    "name": "Seroquel"
+   },
+   "report": "third_party_reported",
+   "action": {
+    "type": "discontinue"
+   },
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2023-01-06",
+    "raw": "at the McLean hospitalization"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1752,
+     "span": "They took her off of the Seroquel."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_052",
+   "type": "medication",
+   "raw": "currently on Trazodone",
+   "med": {
+    "name": "Trazodone"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2023-01-06",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1789,
+     "span": "she was currently on Trazodone"
+    },
+    {
+     "seg": 1790,
+     "span": "Yes."
+    },
+    {
+     "seg": 1791,
+     "span": "the goal was to come off Seroquel"
+    },
+    {
+     "seg": 1792,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_053",
+   "type": "symptom",
+   "raw": "still being very numb",
+   "symptom": {
+    "terms": [
+     "very numb"
+    ]
+   },
+   "time": {
+    "date": "2023-01-06",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1793,
+     "span": "still being very numb"
+    },
+    {
+     "seg": 1794,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_054",
+   "type": "medication",
+   "raw": "taking Ativan and Trazodone",
+   "med": {
+    "name": "Ativan"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2023-01-06",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1797,
+     "span": "taking Ativan and Trazodone. Slept five hours broken."
+    },
+    {
+     "seg": 1798,
+     "span": "it means she was having trouble sleeping"
+    }
+   ],
+   "note": "Interval history read aloud by counsel; dose not stated in this passage."
+  },
+  {
+   "id": "meda_tufts-d10_055",
+   "type": "medication",
+   "raw": "switching to Valium",
+   "med": {
+    "name": "Valium"
+   },
+   "report": "patient_reported_intent",
+   "time": {
+    "date": "2023-01-06",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1797,
+     "span": "Wondering about increasing Trazodone and switching to Valium."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_056",
+   "type": "medication",
+   "raw": "14 count, five milligram",
+   "med": {
+    "name": "diazepam",
+    "dose": {
+     "value": 5,
+     "unit": "mg"
+    },
+    "quantity": "14 count",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "status": "uncertain",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-09",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1803,
+     "span": "did you prescribe medication to her on that date"
+    },
+    {
+     "seg": 1806,
+     "span": "Yes."
+    },
+    {
+     "seg": 1807,
+     "span": "14 count, five milligram"
+    },
+    {
+     "seg": 1808,
+     "span": "That sounds right."
+    }
+   ],
+   "note": "Witness affirmed with 'That sounds right.'"
+  },
+  {
+   "id": "meda_tufts-d10_057",
+   "type": "medication",
+   "raw": "Trazodone 150 milligrams, 30 count",
+   "med": {
+    "name": "Trazodone",
+    "dose": {
+     "value": 150,
+     "unit": "mg"
+    },
+    "quantity": "30 count",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "increase",
+    "to": {
+     "value": 150,
+     "unit": "mg"
+    }
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-12",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1810,
+     "span": "I don't have a record from January 12th."
+    },
+    {
+     "seg": 1811,
+     "span": "you prescribed Trazodone 150 milligrams, 30 count"
+    },
+    {
+     "seg": 1812,
+     "span": "Yes."
+    }
+   ],
+   "note": "No note from this date; a prescription chart is the likely source."
+  },
+  {
+   "id": "meda_tufts-d10_058",
+   "type": "medication",
+   "raw": "amitriptyline",
+   "med": {
+    "name": "amitriptyline",
+    "dose": {
+     "value": 10,
+     "unit": "mg"
+    },
+    "quantity": "30 pills",
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "prescribed",
+   "action": {
+    "type": "start"
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-16",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1813,
+     "span": "do you recall prescribing amitriptyline?"
+    },
+    {
+     "seg": 1814,
+     "span": "Yes."
+    },
+    {
+     "seg": 2221,
+     "span": "That initial prescription was for 10 milligrams, correct?"
+    },
+    {
+     "seg": 2225,
+     "span": "there were 30 pills in this prescription"
+    },
+    {
+     "seg": 2226,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_059",
+   "type": "medication",
+   "raw": "the prescription was filled on that same day, January 16th, 2023",
+   "med": {
+    "name": "amitriptyline",
+    "dose": {
+     "value": 10,
+     "unit": "mg"
+    },
+    "quantity": "30 pills"
+   },
+   "act": "dispensed",
+   "action": {
+    "type": "start"
+   },
+   "time": {
+    "date": "2023-01-16",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 2223,
+     "span": "the prescription was filled on that same day, January 16th, 2023"
+    },
+    {
+     "seg": 2224,
+     "span": "Yes."
+    }
+   ],
+   "note": "Exhibit 155 bottle label, shown by the prosecutor."
+  },
+  {
+   "id": "meda_tufts-d10_060",
+   "type": "observation",
+   "raw": "there are eight pills missing from this bottle",
+   "status": "uncertain",
+   "time": {
+    "date": null,
+    "precision": "unknown",
+    "anchor": "2023-01-23",
+    "raw": "count as described by counsel; date of count not stated"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 2227,
+     "span": "there are eight pills missing from this bottle"
+    },
+    {
+     "seg": 2228,
+     "span": "Mm-hmm."
+    },
+    {
+     "seg": 2232,
+     "span": "That's what I would think based on what you just said."
+    },
+    {
+     "seg": 2234,
+     "span": "Well, if she didn't take 20 milligrams, then that's correct."
+    }
+   ],
+   "note": "Counsel's description of Exhibit 155; the witness has not seen the count herself and answers conditionally."
+  },
+  {
+   "id": "meda_tufts-d10_061",
+   "type": "medication",
+   "raw": "five milligrams last two nights",
+   "med": {
+    "name": "diazepam",
+    "dose": {
+     "value": 5,
+     "unit": "mg"
+    },
+    "frequency": "last two nights"
+   },
+   "report": "patient_reported_taking",
+   "action": {
+    "type": "taper"
+   },
+   "time": {
+    "date": "2023-01-16",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1833,
+     "span": "Diazepam taper on January 16th, five milligrams last two nights."
+    },
+    {
+     "seg": 1834,
+     "span": "Not at that point."
+    }
+   ],
+   "note": "Interval history read aloud by counsel."
+  },
+  {
+   "id": "meda_tufts-d10_062",
+   "type": "medication",
+   "raw": "explore ketamine treatment",
+   "med": {
+    "name": "ketamine (esketamine)"
+   },
+   "act": "discussed",
+   "action": {
+    "type": "discuss"
+   },
+   "temporality": "hypothetical",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-16",
+    "precision": "exact"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 1841,
+     "span": "you guys were also going to explore ketamine treatment"
+    },
+    {
+     "seg": 1842,
+     "span": "Yes."
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_063",
+   "type": "medication",
+   "raw": "she could raise it to 20 milligrams",
+   "med": {
+    "name": "amitriptyline",
+    "dose": {
+     "value": 20,
+     "unit": "mg"
+    },
+    "prescriber": "Dr. Jennifer Tufts"
+   },
+   "act": "advised",
+   "action": {
+    "type": "increase",
+    "from": {
+     "value": 10,
+     "unit": "mg"
+    },
+    "to": {
+     "value": 20,
+     "unit": "mg"
+    }
+   },
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-23",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1876,
+     "span": "it made sense to slowly titrate the amitriptyline"
+    },
+    {
+     "seg": 1878,
+     "span": "Yes."
+    },
+    {
+     "seg": 2229,
+     "span": "on the 23rd is when you said she could raise it to 20 milligrams"
+    },
+    {
+     "seg": 2230,
+     "span": "Yes."
+    }
+   ],
+   "note": "Framed as permission to raise the dose, not a directive."
+  },
+  {
+   "id": "meda_tufts-d10_064",
+   "type": "observation",
+   "raw": "a hospital evaluation",
+   "act": "recommended",
+   "status": "negated",
+   "actor": {
+    "name": "Dr. Jennifer Tufts",
+    "role": "provider"
+   },
+   "time": {
+    "date": "2023-01-23",
+    "precision": "exact"
+   },
+   "basis": "firsthand_provider",
+   "evidence": [
+    {
+     "seg": 1857,
+     "span": "You didn't recommend a hospital evaluation, did you?"
+    },
+    {
+     "seg": 1860,
+     "span": "No."
+    },
+    {
+     "seg": 2216,
+     "span": "she was completely denying any suicidal ideation or homicidal ideation"
+    }
+   ]
+  },
+  {
+   "id": "meda_tufts-d10_065",
+   "type": "symptom",
+   "raw": "17 days straight",
+   "symptom": {
+    "terms": [
+     "numb, no emotion",
+     "duration reported as 17 days straight"
+    ]
+   },
+   "status": "uncertain",
+   "time": {
+    "date": "2023-01-23",
+    "precision": "exact"
+   },
+   "basis": "counsel_proposition_affirmed",
+   "evidence": [
+    {
+     "seg": 1869,
+     "span": "Had been feeling numb and no emotion for 17 days straight"
+    },
+    {
+     "seg": 1870,
+     "span": "I'm not sure about 17 days straight, but that's how she was feeling."
+    }
+   ],
+   "note": "The witness does not confirm the duration."
+  },
+  {
+   "id": "meda_tufts-d10_066",
+   "type": "medication",
+   "raw": "a marijuana edible",
+   "med": {
+    "name": "marijuana edible"
+   },
+   "report": "patient_reported_taking",
+   "time": {
+    "date": "2022-11",
+    "precision": "approximate",
+    "raw": "In the middle of November"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2291,
+     "span": "In the middle of November, she tried taking a marijuana edible to help her sleep"
+    },
+    {
+     "seg": 2264,
+     "span": "Did she tell you that she was using marijuana?"
+    },
+    {
+     "seg": 2265,
+     "span": "No."
+    }
+   ],
+   "note": "From the Women & Infants record (Exhibit 220). The patient did not tell this witness (2263-2267); counsel says it was one gummy (2292)."
+  },
+  {
+   "id": "meda_tufts-d10_067",
+   "type": "symptom",
+   "raw": "increased anxiety and palpitations",
+   "symptom": {
+    "terms": [
+     "increased anxiety",
+     "palpitations"
+    ]
+   },
+   "time": {
+    "date": "2022-11",
+    "precision": "approximate",
+    "raw": "In the middle of November"
+   },
+   "basis": "record_read_by_witness",
+   "evidence": [
+    {
+     "seg": 2291,
+     "span": "which caused her to have increased anxiety and palpitations"
+    }
+   ]
+  }
+ ],
+ "relationships": [
+  {
+   "id": "medr_tufts-d10_001",
+   "type": "REPORTED_RESPONSE_TO",
+   "from": "meda_tufts-d10_016",
+   "to": "meda_tufts-d10_015",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 2072,
+     "span": "Worse on increased dose"
+    }
+   ]
+  },
+  {
+   "id": "medr_tufts-d10_002",
+   "type": "DISCONTINUES",
+   "from": "meda_tufts-d10_017",
+   "to": "meda_tufts-d10_009",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 1054,
+     "span": "Stop the medication."
+    }
+   ]
+  },
+  {
+   "id": "medr_tufts-d10_003",
+   "type": "CHANGES",
+   "from": "meda_tufts-d10_019",
+   "to": "meda_tufts-d10_018",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 1438,
+     "span": "you could increase it and see if one milligram is more helpful"
+    }
+   ]
+  },
+  {
+   "id": "medr_tufts-d10_004",
+   "type": "CHANGES",
+   "from": "meda_tufts-d10_020",
+   "to": "meda_tufts-d10_018",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 1439,
+     "span": "Did she increase it?"
+    }
+   ]
+  },
+  {
+   "id": "medr_tufts-d10_005",
+   "type": "CHANGES",
+   "from": "meda_tufts-d10_063",
+   "to": "meda_tufts-d10_058",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 2229,
+     "span": "she could raise it to 20 milligrams"
+    }
+   ]
+  },
+  {
+   "id": "medr_tufts-d10_006",
+   "type": "REPORTED_RESPONSE_TO",
+   "from": "meda_tufts-d10_067",
+   "to": "meda_tufts-d10_066",
+   "basis": "explicit_language",
+   "status": "proposed",
+   "evidence": [
+    {
+     "seg": 2291,
+     "span": "which caused her to have increased anxiety and palpitations"
+    }
+   ]
+  }
+ ]
+}

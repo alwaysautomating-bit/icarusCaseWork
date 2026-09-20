@@ -1,0 +1,19 @@
+{
+  "csv": "corroborating docs/Lindsey Clancy Mental Health/Medication-Documentedtimeline.csv",
+  "expectations": [
+    { "label": "Sertraline prescribed 25 mg on 2022-09-15", "medication_key": "sertraline", "act": "prescribed", "dose": "25 mg", "date": "2022-09-15" },
+    { "label": "Sertraline stop instructed 2022-10-20", "medication_key": "sertraline", "act": "instructed", "action": "discontinue", "date": "2022-10-20" },
+    { "label": "Patient reported worse symptoms after increasing sertraline to 50 mg", "medication_key": "sertraline", "report": "patient_reported_taking", "action": "increase", "dose": "50 mg" },
+    { "label": "Lorazepam 0.5 mg as needed prescribed 2022-10-21", "medication_key": "lorazepam", "act": "prescribed", "dose": "0.5 mg", "date": "2022-10-21" },
+    { "label": "Lorazepam taper 1 mg to 0.75 mg advised 2022-11-02", "medication_key": "lorazepam", "act": "advised", "action": "taper", "dose": "0.75 mg", "date": "2022-11-02" },
+    { "label": "Diphenhydramine use reported with lorazepam", "medication_key": "diphenhydramine", "report": "patient_reported_taking" },
+    { "label": "Quetiapine 200 mg reported taken 2022-12-16", "medication_key": "quetiapine", "report": "patient_reported_taking", "dose": "200 mg", "date": "2022-12-16" },
+    { "label": "Quetiapine tapered off at McLean per patient", "medication_key": "quetiapine", "report": "patient_reported_stopping", "action": "taper" },
+    { "label": "Lamotrigine 25 mg daily prescribed 2022-12-16", "medication_key": "lamotrigine", "act": "prescribed", "dose": "25 mg", "date": "2022-12-16" },
+    { "label": "Trazodone increase to 150 mg advised 2023-01-06", "medication_key": "trazodone", "act": "advised", "action": "increase", "dose": "150 mg", "date": "2023-01-06" },
+    { "label": "Ativan replaced by diazepam 2023-01-09", "medication_key": "diazepam", "act": "advised", "action": "start", "date": "2023-01-09" },
+    { "label": "Amitriptyline 10 mg prescribed 2023-01-16", "medication_key": "amitriptyline", "act": "prescribed", "dose": "10 mg", "date": "2023-01-16" },
+    { "label": "Amitriptyline increase to 20 mg 2023-01-23", "medication_key": "amitriptyline", "act": "advised", "action": "increase", "dose": "20 mg", "date": "2023-01-23" },
+    { "label": "Mirtazapine discussed 2022-11-02 (not prescribed by witness)", "medication_key": "mirtazapine", "act": "discussed", "date": "2022-11-02" }
+  ]
+}

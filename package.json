@@ -13,6 +13,8 @@
     "test:integration": "pnpm testimony:day6",
     "transcript:intake": "node scripts/transcript-intake.mjs",
     "testimony:process": "node scripts/transcript-intake.mjs",
+    "medical:build": "node scripts/build-medical-projections.mjs",
+    "medical:schemas": "node scripts/build-medical-projections.mjs --write-schemas",
     "testimony:index": "tsx scripts/build-trial-index.ts",
     "testimony:verify": "tsx scripts/verify-testimony-workflow.ts",
     "testimony:day6": "tsx scripts/reprocess-day6.ts",

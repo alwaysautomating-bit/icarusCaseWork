@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^medr_[a-z0-9-]+_\\d{3}$"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "CHANGES",
+        "DISCONTINUES",
+        "REPLACES",
+        "REPORTED_RESPONSE_TO",
+        "FOLLOWS_UP"
+      ]
+    },
+    "from": {
+      "type": "string"
+    },
+    "to": {
+      "type": "string"
+    },
+    "basis": {
+      "type": "string",
+      "enum": [
+        "explicit_language",
+        "code_inferred",
+        "reviewer"
+      ]
+    },
+    "status": {
+      "default": "proposed",
+      "type": "string",
+      "enum": [
+        "proposed",
+        "confirmed",
+        "rejected"
+      ]
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "seg": {
+            "type": "integer",
+            "minimum": -9007199254740991,
+            "maximum": 9007199254740991
+          },
+          "span": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "seg",
+          "span"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "reason": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "type",
+    "from",
+    "to",
+    "basis",
+    "status"
+  ],
+  "additionalProperties": false
+}

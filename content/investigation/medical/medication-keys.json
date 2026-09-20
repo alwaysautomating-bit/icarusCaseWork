@@ -1,0 +1,84 @@
+{
+  "sertraline": [
+    "zoloft",
+    "sertraline"
+  ],
+  "lorazepam": [
+    "ativan",
+    "lorazepam"
+  ],
+  "diphenhydramine": [
+    "benadryl",
+    "diphenhydramine"
+  ],
+  "hydroxyzine": [
+    "hydroxyzine"
+  ],
+  "buspirone": [
+    "buspar",
+    "buspirone"
+  ],
+  "fluoxetine": [
+    "prozac",
+    "fluoxetine"
+  ],
+  "bupropion": [
+    "wellbutrin",
+    "bupropion"
+  ],
+  "trazodone": [
+    "trazodone"
+  ],
+  "mirtazapine": [
+    "remeron",
+    "mirtazapine"
+  ],
+  "clonazepam": [
+    "klonopin",
+    "clonazepam"
+  ],
+  "quetiapine": [
+    "seroquel",
+    "quetiapine"
+  ],
+  "diazepam": [
+    "valium",
+    "diazepam"
+  ],
+  "lamotrigine": [
+    "lamictal",
+    "lamotrigine"
+  ],
+  "amitriptyline": [
+    "amitriptyline"
+  ],
+  "melatonin": [
+    "melatonin"
+  ],
+  "pregabalin": [
+    "pregabalin",
+    "lyrica"
+  ],
+  "ketamine": [
+    "ketamine"
+  ],
+  "omega-3": [
+    "fish oil",
+    "fish oils"
+  ],
+  "l-methylfolate": [
+    "l-methylfolate",
+    "methylfolate"
+  ],
+  "cannabis": [
+    "marijuana",
+    "cannabis",
+    "gummy",
+    "gummies"
+  ],
+  "brexanolone": [
+    "brexanolone",
+    "brexanoline",
+    "zulresso"
+  ]
+}

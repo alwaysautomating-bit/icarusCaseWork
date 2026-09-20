@@ -1,0 +1,12 @@
+{
+  "csv": "corroborating docs/Lindsey Clancy Mental Health/Medication-Documentedtimeline.csv",
+  "expectations": [
+    { "label": "Sertraline prescribed 25 mg on 2022-09-15", "medication_key": "sertraline", "act": "prescribed", "dose": "25 mg", "date": "2022-09-15" },
+    { "label": "Ativan increase to 1 mg advised (bridges the 0.5 mg prescription and the 1 mg taper start)", "medication_key": "lorazepam", "act": "advised", "action": "increase", "dose": "1 mg" },
+    { "label": "Ativan taper instructed 2022-11-02", "medication_key": "lorazepam", "act": "instructed", "action": "taper", "date": "2022-11-02" },
+    { "label": "Mirtazapine not prescribed by the witness", "medication_key": "mirtazapine", "act": "prescribed" },
+    { "label": "Diazepam 5 mg x14 prescribed 2023-01-09", "medication_key": "diazepam", "act": "prescribed", "dose": "5 mg", "date": "2023-01-09" },
+    { "label": "Trazodone 150 mg prescribed 2023-01-12", "medication_key": "trazodone", "act": "prescribed", "dose": "150 mg", "date": "2023-01-12" },
+    { "label": "Amitriptyline 10 mg dispensed 2023-01-16", "medication_key": "amitriptyline", "act": "dispensed", "dose": "10 mg", "date": "2023-01-16" }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "source": "tufts-combined",
+  "sources": [
+    "tufts-day09",
+    "tufts-day10"
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "medc_001",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_043",
+      "later": null,
+      "medication_key": "brexanolone",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_002",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_066",
+      "later": null,
+      "medication_key": "cannabis",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_003",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d09_077",
+      "later": null,
+      "medication_key": "clonazepam",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_004",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d10_061",
+      "later": "meda_tufts-d09_141",
+      "medication_key": "diazepam",
+      "relationship": "possible_dose_transition",
+      "reason": "Later source records 2 mg after 5 mg, but no explicit dose-change event was located between the assertions."
+    },
+    {
+      "conflict_id": "medc_005",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d09_135",
+      "later": "meda_tufts-d09_141",
+      "medication_key": "diazepam",
+      "relationship": "taper_status_unresolved",
+      "reason": "A taper to a lower dose was discussed (meda_tufts-d09_135); later reports (meda_tufts-d09_141 2 mg) do not show it carried out."
+    },
+    {
+      "conflict_id": "medc_006",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d09_093",
+      "later": "meda_tufts-d10_038",
+      "medication_key": "diazepam",
+      "relationship": "same_date_contradictory_reports",
+      "reason": "Both a report of taking (meda_tufts-d09_093) and a report of not taking or stopping (meda_tufts-d10_038) are recorded for 2022-12-16."
+    },
+    {
+      "conflict_id": "medc_007",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d09_001",
+      "later": null,
+      "medication_key": "fluoxetine",
+      "relationship": "no_firsthand_provider_event",
+      "reason": "Every event for this medication is a patient statement, a record read aloud, or another provider's action relayed to the witness."
+    },
+    {
+      "conflict_id": "medc_008",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_022",
+      "later": null,
+      "medication_key": "hydroxyzine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_022 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_009",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d09_052",
+      "later": null,
+      "medication_key": "hydroxyzine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d09_052 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_010",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_041",
+      "later": null,
+      "medication_key": "lamotrigine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_041 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_011",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d09_102",
+      "later": null,
+      "medication_key": "lamotrigine",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d09_102 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    },
+    {
+      "conflict_id": "medc_012",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d09_062",
+      "later": "meda_tufts-d09_112",
+      "medication_key": "lorazepam",
+      "relationship": "possible_dose_transition",
+      "reason": "Later source records 1 mg after 0.75 mg, but no explicit dose-change event was located between the assertions."
+    },
+    {
+      "conflict_id": "medc_013",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d09_062",
+      "later": "meda_tufts-d10_033",
+      "medication_key": "lorazepam",
+      "relationship": "taper_status_unresolved",
+      "reason": "A taper to 0.75 mg was discussed (meda_tufts-d09_062); later reports (meda_tufts-d10_033 dose not stated, meda_tufts-d09_066 dose not stated, meda_tufts-d10_054 dose not stated, meda_tufts-d09_112 1 mg) do not show it carried out."
+    },
+    {
+      "conflict_id": "medc_014",
+      "reconciliation": "unresolved",
+      "severity": "review",
+      "earlier": "meda_tufts-d09_081",
+      "later": "meda_tufts-d09_079",
+      "medication_key": "mirtazapine",
+      "relationship": "same_date_contradictory_reports",
+      "reason": "Both a report of taking (meda_tufts-d09_081) and a report of not taking or stopping (meda_tufts-d09_079) are recorded for 2022-12-01."
+    },
+    {
+      "conflict_id": "medc_015",
+      "reconciliation": "unresolved",
+      "severity": "info",
+      "earlier": "meda_tufts-d10_057",
+      "later": null,
+      "medication_key": "trazodone",
+      "relationship": "prescribed_without_reported_uptake",
+      "reason": "meda_tufts-d10_057 is a prescription with no later report in this testimony of whether it was started, taken, or stopped."
+    }
+  ]
+}
