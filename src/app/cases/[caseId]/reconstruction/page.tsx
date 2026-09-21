@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader, StatStrip } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getCaseReconstructionWorkspace, type ReconstructionSnapshot, type SavedReconstructionVersion } from "@/lib/case-reconstruction";
 import { courtRecordHref, reconstructionHref } from "@/lib/case-routes";
@@ -36,7 +36,7 @@ export default async function ReconstructionPage({ params, searchParams }: { par
   const selected = (requested.length ? requested : workspace.versions[0] ? [workspace.versions[0].id] : []).map((id) => workspace.versions.find((version) => version.id === id)).filter((version): version is SavedReconstructionVersion => Boolean(version));
   const activeSnapshots: ReconstructionSnapshot[] = selected.map((version) => version.snapshot);
   return <main className="reconstruction-shell">
-    <section className="reconstruction-heading"><div><MonoLabel>RECONSTRUCTION · TESTIMONY ASSERTIONS</MonoLabel><h1>Sequence without<br />false certainty.</h1><p>Compare immutable reconstruction proposals. Nodes group witness assertions; edges propose order or overlap; tensions remain unresolved. No view shown here is a canonical event timeline.</p></div><dl><div><dt>Saved versions</dt><dd>{workspace.versions.length}</dd></div><div><dt>Visible witnesses</dt><dd>{new Set(activeSnapshots.flatMap((snapshot) => snapshot.assertions.map((item) => item.witness))).size}</dd></div><div><dt>Open tensions</dt><dd>{activeSnapshots.reduce((count, snapshot) => count + snapshot.tensions.length, 0)}</dd></div></dl></section>
+    <PageHeader eyebrow="RECONSTRUCTION · TESTIMONY ASSERTIONS" title="Sequence without false certainty." lede="Compare immutable reconstruction proposals. Nodes group witness assertions; edges propose order or overlap; tensions remain unresolved. No view shown here is a canonical event timeline." aside={<StatStrip items={[{ label: "Saved versions", value: workspace.versions.length }, { label: "Visible witnesses", value: new Set(activeSnapshots.flatMap((snapshot) => snapshot.assertions.map((item) => item.witness))).size }, { label: "Open tensions", value: activeSnapshots.reduce((count, snapshot) => count + snapshot.tensions.length, 0) }]} />} />
     {workspace.versions.length === 0 ? <section className="reconstruction-empty"><strong>NO SAVED RECONSTRUCTION</strong><p>Compile a reviewed candidate reconstruction before using this workspace. Source-only testimony is never turned into a timeline automatically.</p></section> : <>
       <section className="reconstruction-version-picker"><header><div><MonoLabel>VERSION COMPARISON</MonoLabel><h2>Pin up to four snapshots</h2></div><strong>{selected.length} / 4</strong></header><div>{workspace.versions.map((version) => {
         const isSelected = selected.some((item) => item.id === version.id);

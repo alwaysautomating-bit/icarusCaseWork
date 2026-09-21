@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { PageHeader } from "@/app/casework-ui";
 import { ReviewState } from "@/app/cases/[caseId]/structure/_components/review-state";
 import { ReviewForm } from "@/app/cases/[caseId]/structure/review/_components/review-form";
 import { ReviewHistory } from "@/app/cases/[caseId]/structure/review/_components/review-history";
@@ -33,7 +33,7 @@ export default async function StructureReviewPage({ params, searchParams }: { pa
   const advancedFiltersActive = Boolean(routeState.assertedBy || routeState.unresolvedOnly || routeState.temporalOnly);
 
   return <main className="structure-review-shell">
-    <section className="structure-review-heading"><div><MonoLabel>CASE STRUCTURE / REVIEW</MonoLabel><h1>Review extracted candidates</h1><p>Check what the system extracted against the supporting record, then decide what should happen to each candidate.</p></div><div className="structure-review-overview"><strong>{workspace.objects.length}</strong><span>candidates in this view</span><p>{workspace.reviewPermission === "review" ? "You can record review decisions for this case." : "You can inspect candidates and sources. A case owner or reviewer must record decisions."}</p><Link href={structureHref(caseId, { objectId: selected?.id })}>Back to Structure →</Link></div></section>
+    <PageHeader eyebrow="CASE STRUCTURE / REVIEW" title="Review extracted candidates" lede="Check what the system extracted against the supporting record, then decide what should happen to each candidate." aside={<div className="structure-review-overview"><strong>{workspace.objects.length}</strong><span>candidates in this view</span><p>{workspace.reviewPermission === "review" ? "You can record review decisions for this case." : "You can inspect candidates and sources. A case owner or reviewer must record decisions."}</p></div>} actions={<Link className="ds-btn" href={structureHref(caseId, { objectId: selected?.id })}>Back to Structure →</Link>} />
     <section className="structure-review-guide" aria-label="How to review a candidate"><div><b>1</b><span><strong>Choose a candidate</strong><small>Start with a pending item in the queue.</small></span></div><div><b>2</b><span><strong>Compare every source</strong><small>Check the extracted fields against each excerpt.</small></span></div><div><b>3</b><span><strong>Record a decision</strong><small>Accept, correct, set aside, or reject it.</small></span></div></section>
     {notice ? <div className="structure-review-notice" role="status"><strong>Decision saved.</strong><span>The next candidate is ready if one remains in this view.</span></div> : null}
     {workspace.selectedMissing ? <div className="record-notice" role="status"><strong>Requested candidate unavailable.</strong><span>It may be outside this case or the current filters. Choose an item from the queue or clear the filters.</span></div> : null}

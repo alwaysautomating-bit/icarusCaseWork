@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { evidenceHref, questionsHref } from "@/lib/case-routes";
@@ -54,7 +54,12 @@ export default async function QuestionsPage({ params, searchParams }: { params: 
   const openQuestionCount = workspace.questions.filter((item) => item.status === "open").length;
 
   return <main className="research-queue-shell">
-    <header className="research-workbench-heading"><div><h1>Questions</h1><span>{openQuestionCount} open</span></div>{canContribute ? <Link href={`${questionsHref(caseId)}?ask=1`}>+ Ask question</Link> : null}</header>
+    <PageHeader
+      eyebrow={`QUESTIONS · ${openQuestionCount} OPEN`}
+      title="Questions"
+      lede="What the record does not yet answer, what is known so far, and what each answer rests on."
+      actions={canContribute ? <Link href={`${questionsHref(caseId)}?ask=1`} className="ds-btn primary">+ Ask question</Link> : undefined}
+    />
     {(query.message || query.error) && <p className={`supporting-files-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
     {showAsk && <form action={createQuestionAction.bind(null, caseId)} className="research-create-form"><header><div><MonoLabel>ASK A QUESTION</MonoLabel><h2>What are you trying to find out?</h2></div><span>Fast capture · refine later</span></header><label className="wide">Question *<textarea name="question" rows={2} minLength={5} maxLength={500} required placeholder="Were the samples submitted for testing?" /></label><label className="wide">Why are you asking? <small>Optional</small><textarea name="context" rows={3} maxLength={2000} defaultValue={query.promptLabel ? `Prompted by ${query.promptLabel}.` : ""} placeholder="What made this question matter?" /></label><input type="hidden" name="promptType" value={query.promptType ?? ""} /><input type="hidden" name="promptId" value={query.promptId ?? ""} /><input type="hidden" name="promptLabel" value={query.promptLabel ?? ""} /><input type="hidden" name="promptHref" value={promptHref ?? ""} />{query.promptLabel && <p className="research-prompt-banner"><strong>Prompted by</strong>{promptHref ? <Link href={promptHref}>{query.promptLabel} →</Link> : <span>{query.promptLabel}</span>}</p>}<SubmitButton pendingLabel="Creating…">Create question</SubmitButton></form>}
     <div className="research-split-workspace">

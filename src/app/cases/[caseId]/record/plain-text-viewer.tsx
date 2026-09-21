@@ -8,7 +8,7 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-export function PlainTextViewer({ title, filename, lines, plainText, note, initialFind, iconActions = false }: { title: string; filename: string; lines: PlainTextLine[]; plainText: string; note?: string; initialFind?: string; iconActions?: boolean }) {
+export function PlainTextViewer({ title, filename, lines, plainText, note, initialFind, iconActions = false, findPlaceholder = "Type a word or phrase" }: { title: string; filename: string; lines: PlainTextLine[]; plainText: string; note?: string; initialFind?: string; iconActions?: boolean; findPlaceholder?: string }) {
   const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
   const [term, setTerm] = useState(initialFind ?? "");
   const [current, setCurrent] = useState(0);
@@ -79,7 +79,7 @@ export function PlainTextViewer({ title, filename, lines, plainText, note, initi
         <input
           type="search"
           value={term}
-          placeholder="Type a word or phrase"
+          placeholder={findPlaceholder}
           onChange={(event) => { setTerm(event.target.value); setCurrent(0); }}
           onKeyDown={(event) => { if (event.key === "Enter") { event.preventDefault(); step(event.shiftKey ? -1 : 1); } }}
         />

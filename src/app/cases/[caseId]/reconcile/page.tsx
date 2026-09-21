@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader, StatStrip } from "@/app/casework-ui";
 import { ReconciliationEditor } from "@/app/cases/[caseId]/reconcile/_components/reconciliation-editor";
 import { requireCaseActor } from "@/lib/authority";
 import { reconcileHref, type ReconcileRouteState } from "@/lib/case-routes";
@@ -31,7 +31,7 @@ export default async function ReconcilePage({ params, searchParams }: { params: 
   const notice = first(raw.notice);
 
   return <main className="reconcile-shell">
-    <section className="reconcile-heading"><div><MonoLabel>RECONCILE · REVIEWED SOURCE GRAPH</MonoLabel><h1>Relate the record.<br />Preserve the disagreement.</h1><p>Cluster reviewed objects and classify support, conflict, qualification, sequence, or occurrence relationships without rewriting source evidence or creating canonical facts.</p></div><dl><div><dt>Reviewed nodes</dt><dd>{workspace.nodes.length}</dd></div><div><dt>Saved groups</dt><dd>{workspace.groups.length}</dd></div><div><dt>Graph relations</dt><dd>{workspace.derivedEdges.length}</dd></div><div><dt>Allowed classes</dt><dd>{reconciliationRelations.length}</dd></div></dl></section>
+    <PageHeader eyebrow="RECONCILE · REVIEWED SOURCE GRAPH" title="Relate the record. Preserve the disagreement." lede="Cluster reviewed objects and classify support, conflict, qualification, sequence, or occurrence relationships without rewriting source evidence or creating canonical facts." aside={<StatStrip items={[{ label: "Reviewed nodes", value: workspace.nodes.length }, { label: "Saved groups", value: workspace.groups.length }, { label: "Graph relations", value: workspace.derivedEdges.length }, { label: "Allowed classes", value: reconciliationRelations.length }]} />} />
     <div className="reconcile-boundary"><strong>GOVERNED ANALYTICAL LAYER</strong><span>No save creates a canonical event, SAME identity resolution, entity merge, finding, or source mutation. Disagreement may remain unresolved.</span></div>
     {notice === "saved" ? <div className="record-notice" role="status"><strong>Reconciliation version saved.</strong><span>The immutable snapshot and case-ledger entry committed atomically.</span></div> : null}
     {notice === "unchanged" ? <div className="record-notice" role="status"><strong>No new version was needed.</strong><span>The submitted graph matched the current immutable snapshot, so no duplicate ledger entry was created.</span></div> : null}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader } from "@/app/casework-ui";
 import { CollapseDocument } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
 import { DayWitnessTable } from "@/app/cases/[caseId]/trial-index/_components/day-witness-table";
 import { DayCreatorGuide } from "@/app/cases/[caseId]/trial-index/_components/day-creator-guide";
@@ -54,19 +54,21 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
   if (!/^\d+$/.test(state.day ?? "")) {
     const detailDayNumbers = new Set(days.map((day) => day.dayNumber));
     return <main className="case-foundation-shell trial-index-landing">
-      <nav className="trial-day-context" aria-label="Trial day">
-        <details>
-          <summary>Jump to day</summary>
-          <div>{days.map((day) => <Link href={indexHref(caseId, day.dayNumber)} prefetch={false} key={day.dayNumber}>Day {day.dayNumber}</Link>)}</div>
-        </details>
-      </nav>
-      <header className="case-foundation-hero">
-        <MonoLabel>TRIAL INDEX · TESTIMONY BY DAY</MonoLabel>
-        <h1>Who testified, and what they added.</h1>
-        <p>Each trial day, the witnesses who testified, what they spoke about, and the evidence or information they contributed. Open a day for its working detail. Days 9–13 follow the dated trial-index fixture and the transcript-derived day files; where the reporting table differed, the day carries a source note.</p>
-      </header>
+      <PageHeader
+        eyebrow="TRIAL INDEX · TESTIMONY BY DAY"
+        title="Who testified, and what they added."
+        lede="Each trial day, the witnesses who testified, what they spoke about, and the evidence or information they contributed. Open a day for its working detail. Days 9–13 follow the dated trial-index fixture and the transcript-derived day files; where the reporting table differed, the day carries a source note."
+      />
       <section className="foundation-day-index" aria-label="Testimony by trial day">
-        <ExpandCollapseAll />
+        <div className="ds-toolbar">
+          <nav className="trial-day-context" aria-label="Trial day">
+            <details>
+              <summary>Jump to day</summary>
+              <div>{days.map((day) => <Link href={indexHref(caseId, day.dayNumber)} prefetch={false} key={day.dayNumber}>Day {day.dayNumber}</Link>)}</div>
+            </details>
+          </nav>
+          <ExpandCollapseAll />
+        </div>
         <div className="foundation-day-list">
           {foundationDays.map((day) => <section className="foundation-day" aria-labelledby={`foundation-day-${day.day}`} key={day.day}>
             <header>

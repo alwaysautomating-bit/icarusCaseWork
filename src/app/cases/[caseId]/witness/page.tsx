@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
 import { FilesCard } from "@/app/cases/[caseId]/_components/files-card";
 import { PlainTextViewer } from "@/app/cases/[caseId]/record/plain-text-viewer";
 import { requireCaseActor } from "@/lib/authority";
@@ -36,13 +35,11 @@ export default async function WitnessTestimonyPage({ params, searchParams }: { p
   const plainText = testimony ? witnessPlainText(testimony.block, testimony.turns) : "";
 
   return <main className="witness-shell">
-    <div className="witness-toolbar" role="note"><strong>Witness testimony</strong><span>Read-only · read from the preserved transcript files · separate from the testimony database</span></div>
     <div className="witness-grid">
       <aside className="witness-list" aria-label="Witnesses by trial day">
-        <form method="get" className="court-search-panel-form">
-          <MonoLabel>FIND A WITNESS</MonoLabel>
-          <input name="q" defaultValue={filterText} placeholder="Josephine, Tufts, Dr. Olson…" aria-label="Witness name" />
-          <button>Filter witnesses</button>
+        <form method="get" className="witness-search" role="search">
+          <input name="q" defaultValue={filterText} placeholder="FIND WITNESS" aria-label="Find witness" autoComplete="off" />
+          <button type="submit" aria-label="Find witness">→</button>
         </form>
         <p className="witness-count">{listed.length} witness block{listed.length === 1 ? "" : "s"}{filterText ? ` matching “${filterText}”` : ` across ${days.length} days`}</p>
         {days.map((day) => <section key={day}>
@@ -59,7 +56,7 @@ export default async function WitnessTestimonyPage({ params, searchParams }: { p
       <section className="witness-center" aria-label="Witness testimony">
         {selectedRef && testimony ? <>
           <header>
-            <MonoLabel>TRIAL DAY {selectedRef.day} · {selectedRef.startDisplay} TO {selectedRef.endDisplay}</MonoLabel>
+            <span className="witness-meta">TRIAL DAY {selectedRef.day} · {selectedRef.startDisplay} — {selectedRef.endDisplay}</span>
             <h1>{selectedRef.witness}</h1>
           </header>
           <PlainTextViewer
@@ -68,6 +65,7 @@ export default async function WitnessTestimonyPage({ params, searchParams }: { p
             plainText={plainText}
             note=""
             iconActions
+            findPlaceholder="FIND IN TESTIMONY"
             initialFind={query.find?.trim().slice(0, 80)}
             lines={testimony.turns.map((turn) => ({ id: `${turn.segment_index}`, time: turn.timestamp_display, speaker: turn.speaker, text: turn.text }))}
           />

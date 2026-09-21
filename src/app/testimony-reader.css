@@ -1,4 +1,4 @@
-.reader-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px; padding: 12px 20px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: var(--surface-alt); }
+.reader-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 10px; padding: 12px 20px; border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline); background: var(--surface-alt); }
 .reader-toolbar label { font: 600 14px/1 var(--font-mono); letter-spacing: .09em; text-transform: uppercase; }
 .reader-toolbar input, .reader-toolbar select { width: 100%; margin-top: 6px; }
 .qa-context { display: grid; gap: 7px; margin-top: 12px; }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { Chip, EmptyState, MonoLabel, PageHeader } from "@/app/casework-ui";
 import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
 import { requireCaseActor } from "@/lib/authority";
 import { canReviewStructure, getAccessibleCase } from "@/lib/case-access";
@@ -32,22 +32,23 @@ export default async function DocumentsPage({ params, searchParams }: { params: 
   const result = selected?.summary?.result ?? {};
 
   return <main className="documents-shell">
-    <header className="documents-head">
-      <MonoLabel>DOCUMENTS · UPLOAD AND SUMMARIZE</MonoLabel>
-      <h1>Add a document, get a summary.</h1>
-      <p>Upload a search warrant or another document. Icarus keeps the original file, reads it, and writes a plain-language summary you can check against the source. Nothing here is added to the case record.</p>
-    </header>
+    <PageHeader
+      eyebrow="CASE FILES · DOCUMENT INTAKE"
+      title="Add a document, get a summary."
+      lede="Upload a search warrant or another document. Icarus keeps the original file, reads it, and writes a plain-language summary you can check against the source. Nothing here is added to the case record."
+    />
 
-    {(query.message || query.error) ? <p className={`core-timeline-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p> : null}
+    {(query.message || query.error) ? <p className={`ds-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p> : null}
 
-    {canUpload ? <section className="documents-upload" aria-labelledby="documents-upload-title">
-      <h2 id="documents-upload-title">Add a document</h2>
+    {canUpload ? <section className="documents-upload ds-dropzone" aria-labelledby="documents-upload-title">
+      <span className="ds-eyebrow">ADD A DOCUMENT</span>
+      <h3 id="documents-upload-title">Choose a file to summarize</h3>
+      <p>Accepted: {ACCEPTED_EXTENSIONS.join(", ")} · up to 30 MB. The file is read by LlamaParse to produce the summary, and the original is kept unchanged.</p>
       <form action={uploadDocumentAction.bind(null, caseId)}>
         <label className="documents-file"><span>File</span><input name="document" type="file" required accept={ACCEPTED_EXTENSIONS.join(",")} /></label>
         <label><span>Type</span><select name="type" defaultValue="search-warrant">{documentTypes.map((type) => <option value={type} key={type}>{DOCUMENT_TYPE_LABELS[type]}</option>)}</select></label>
         <SubmitButton pendingLabel="Reading and summarizing… this can take a minute">Upload and summarize</SubmitButton>
       </form>
-      <small>Accepted: {ACCEPTED_EXTENSIONS.join(", ")} · up to 30 MB. The file is read by LlamaParse to produce the summary.</small>
     </section> : null}
 
     <div className="documents-body">
@@ -57,9 +58,9 @@ export default async function DocumentsPage({ params, searchParams }: { params: 
           <Link href={documentsHref(caseId, { doc: doc.id })} aria-current={selected?.meta.id === doc.id ? "page" : undefined}>
             <strong>{doc.name}</strong>
             <span>{DOCUMENT_TYPE_LABELS[doc.type]} · {formatDate(doc.uploadedAt)}</span>
-            <em className={doc.status}>{doc.status === "summarized" ? "Summarized" : "Summary failed"}</em>
+            <Chip tone={doc.status === "summarized" ? "verified" : "discrepancy"}>{doc.status === "summarized" ? "Summarized" : "Summary failed"}</Chip>
           </Link>
-        </li>)}</ul> : <p className="foundation-empty">No documents yet.</p>}
+        </li>)}</ul> : <EmptyState>No documents yet.</EmptyState>}
       </aside>
 
       <section className="documents-summary" aria-live="polite">
@@ -73,8 +74,8 @@ export default async function DocumentsPage({ params, searchParams }: { params: 
               {selected.summary ? <a href={`/cases/${encodeURIComponent(caseId)}/documents/${selected.meta.id}/parsed`}>Download extracted text</a> : null}
             </div>
           </header>
-          {selected.meta.status === "failed" ? <div className="documents-failed" role="alert"><strong>The summary could not be created.</strong><p>{selected.meta.error}</p><p>The original file was kept. Upload it again to retry.</p></div> : <>
-            <p className="documents-boundary"><strong>Machine-generated summary.</strong> It is built from text read out of the file and can miss or misread details, especially in scans. Check anything you rely on against the original.</p>
+          {selected.meta.status === "failed" ? <div className="ds-error" role="alert"><strong>Summary unavailable</strong><p>The summary could not be created. {selected.meta.error}</p><p>The original file was kept. Upload it again to retry.</p></div> : <>
+            <div className="ds-callout"><strong>Machine-generated summary</strong><p>It is built from text read out of the file and can miss or misread details, especially in scans. Check anything you rely on against the original.</p></div>
             <dl className="documents-fields">
               {fields.map((field) => {
                 const value = result[field.key];
@@ -87,7 +88,7 @@ export default async function DocumentsPage({ params, searchParams }: { params: 
               })}
             </dl>
           </>}
-        </> : <div className="documents-empty"><strong>Select a document to read its summary.</strong><p>{documents.length ? "Choose one from the list." : canUpload ? "Upload a search warrant to get started." : "Documents added by the case owner will appear here."}</p></div>}
+        </> : <div className="ds-empty"><strong>Select a document to read its summary.</strong><p>{documents.length ? "Choose one from the list." : canUpload ? "Upload a search warrant to get started." : "Documents added by the case owner will appear here."}</p></div>}
       </section>
     </div>
   </main>;

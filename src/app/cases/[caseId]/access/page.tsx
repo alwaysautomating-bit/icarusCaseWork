@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader, Callout } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { listCaseMembers } from "@/lib/case-members";
@@ -22,10 +22,7 @@ export default async function CaseAccessPage({
   const members = isOwner ? await listCaseMembers(caseId) : [];
 
   return <main className="case-access-shell">
-    <header className="case-access-heading">
-      <div><MonoLabel>CASE ACCESS</MonoLabel><h1>People with access</h1><p>Add explorers after they have signed in once. Their role applies only to this case.</p></div>
-      <aside><strong>OWNER CONTROL</strong><p>Viewer is read-only. Researcher can contribute. Reviewer can contribute and perform governed review actions.</p></aside>
-    </header>
+    <PageHeader eyebrow="CASE ACCESS" title="People with access" lede="Add explorers after they have signed in once. Their role applies only to this case." aside={<Callout label="OWNER CONTROL">Viewer is read-only. Researcher can contribute. Reviewer can contribute and perform governed review actions.</Callout>} />
     <section className="case-access-panel standalone">
       {query.error && <p className="action-message error" role="alert">{query.error}</p>}
       {query.message && <p className="action-message success" role="status">{query.message}</p>}

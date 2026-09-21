@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Callout, PageHeader, Stepper, type StepState } from "@/app/casework-ui";
 import { CandidateReviewForm } from "@/app/cases/[caseId]/evidence/intake/_components/candidate-review-form";
 import { UploadForm } from "@/app/cases/[caseId]/evidence/intake/_components/upload-form";
 import { requireCaseActor } from "@/lib/authority";
@@ -51,28 +52,29 @@ export default async function CourtPacketIntakePage({ params, searchParams }: { 
   const recentFiles = mediaLibrary.items.slice(0, 3);
   const topFolders = mediaLibrary.folders.slice(0, 3);
 
-  return <main className="intake-shell">
+  const uploadState: StepState = stage === "upload" ? "active" : workspace.run ? "done" : "upcoming";
+  const reviewState: StepState = stage === "review" ? "active" : workspace.run && openCandidates.length === 0 ? "done" : "upcoming";
+  const confirmedState: StepState = stage === "confirmed" ? "active" : "upcoming";
+  const packetMeta = workspace.run ? [`${pageCount} pages`, `Parsed ${new Date(workspace.run.createdAt).toLocaleDateString()}`, formatBytes(workspace.artifactByteLength)].filter(Boolean).join(" · ") : "No packet has been uploaded for this case yet.";
+
+  return <main className="intake-page">
+    <PageHeader
+      eyebrow="CASE FILES · COURT PACKET INTAKE"
+      title={workspace.run ? workspace.artifactTitle ?? "Court packet" : "Add a court packet to the case."}
+      lede={packetMeta}
+    />
+    <div className="intake-shell">
     <div className="intake-main-col">
-      <div className="breadcrumb">Evidence · Court packet</div>
-      {!workspace.run ? <>
-        <div className="pkt-head"><h1>Court packet intake</h1></div>
-        <p className="pkt-meta"><span>No packet has been uploaded for this case yet.</span></p>
-      </> : <>
-        <div className="pkt-head">
-          <h1>{workspace.artifactTitle ?? "Court packet"}</h1>
-        </div>
-        <div className="pkt-meta"><span>{pageCount} pages</span><span>Parsed {new Date(workspace.run.createdAt).toLocaleDateString()}</span>{formatBytes(workspace.artifactByteLength) ? <span>{formatBytes(workspace.artifactByteLength)}</span> : null}</div>
-        <div className="immutable-note">The original file is preserved unchanged. Page divisions below are proposed groupings, not edits to the source document.</div>
-      </>}
+      {workspace.run ? <Callout label="ORIGINAL PRESERVED">The original file is preserved unchanged. Page divisions below are proposed groupings, not edits to the source document.</Callout> : null}
 
-      <nav className="stepper" aria-label="Court packet intake stage">
-        <Link href={courtPacketIntakeHref(caseId, { stage: "upload" })} className={`step-btn ${workspace.run ? "done" : ""} ${stage === "upload" ? "active" : ""}`}><span className="n">01</span>Upload</Link>
-        <span className={`step-btn ${workspace.run ? "done" : "disabled"}`}><span className="n">02</span>Parsing</span>
-        <Link href={courtPacketIntakeHref(caseId, { stage: "review" })} className={`step-btn ${workspace.run ? "" : "disabled"} ${stage === "review" ? "active" : ""}`} aria-disabled={!workspace.run}><span className="n">03</span>Review {workspace.run ? `(${openCandidates.length})` : ""}</Link>
-        <Link href={courtPacketIntakeHref(caseId, { stage: "confirmed" })} className={`step-btn ${workspace.run ? "" : "disabled"} ${stage === "confirmed" ? "active" : ""}`} aria-disabled={!workspace.run}><span className="n">04</span>Confirmed {workspace.documents.length ? `(${workspace.documents.length})` : ""}</Link>
-      </nav>
+      <Stepper label="Court packet intake stage" steps={[
+        { num: "01", label: "Upload", state: uploadState, href: courtPacketIntakeHref(caseId, { stage: "upload" }) },
+        { num: "02", label: "Parsing", state: workspace.run ? "done" : "upcoming" },
+        { num: "03", label: `Review${workspace.run ? ` (${openCandidates.length})` : ""}`, state: reviewState, href: workspace.run ? courtPacketIntakeHref(caseId, { stage: "review" }) : undefined },
+        { num: "04", label: `Confirmed${workspace.documents.length ? ` (${workspace.documents.length})` : ""}`, state: confirmedState, href: workspace.run ? courtPacketIntakeHref(caseId, { stage: "confirmed" }) : undefined },
+      ]} />
 
-      {(query.message || query.error) && <p className={`intake-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
+      {(query.message || query.error) && <p className={`ds-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
 
       {stage === "upload" && <div className="stage active">
         {!canReview ? <p className="intake-readonly">Your current case membership is read-only for court packet intake.</p> : <UploadForm caseId={caseId} caseTitle={currentCase.title} />}
@@ -138,5 +140,6 @@ export default async function CourtPacketIntakePage({ params, searchParams }: { 
         <div className="body"><div className="file-row"><Link href={evidenceHref(caseId)}>Open Evidence →</Link></div></div>
       </div>
     </aside>
+    </div>
   </main>;
 }

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader, Callout } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { getCaseChildrenFoundReport } from "@/lib/case-children-found-report";
@@ -26,10 +26,7 @@ export default async function ReferenceReportsPage({ params }: { params: Promise
   if (!currentCase) notFound();
 
   return <main className="reference-reports-shell">
-    <section className="reference-reports-heading">
-      <div><MonoLabel>CASE LIBRARY · DOWNLOADABLE MATERIALS</MonoLabel><h1>Reference reports,<br />kept outside the facts.</h1><p>These supplied materials are available for research and source checking. Downloading or listing them here does not accept their contents into the canonical case record.</p></div>
-      <aside><MonoLabel>GOVERNANCE BOUNDARY</MonoLabel><strong>REFERENCE ONLY</strong><p>Verify every claim against source-level evidence before citation. Icarus does not treat either download as an adjudicated fact, a reviewed event, or canonical testimony.</p></aside>
-    </section>
+    <PageHeader eyebrow="CASE LIBRARY · DOWNLOADABLE MATERIALS" title="Reference reports, kept outside the facts." lede="These supplied materials are available for research and source checking. Downloading or listing them here does not accept their contents into the canonical case record." aside={<Callout label="GOVERNANCE BOUNDARY · REFERENCE ONLY" tone="risk">Verify every claim against source-level evidence before citation. Icarus does not treat either download as an adjudicated fact, a reviewed event, or canonical testimony.</Callout>} />
 
     {(childrenFoundReport.available || lindsayFoundReport.available) && <section className="case-analysis-register" aria-labelledby="case-analysis-title">
       <header><div><MonoLabel>SOURCE-LINKED ANALYSIS</MonoLabel><h2 id="case-analysis-title">Case reports</h2></div><strong>{Number(childrenFoundReport.available) + Number(lindsayFoundReport.available)}</strong></header>

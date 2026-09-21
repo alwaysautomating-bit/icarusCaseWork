@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MonoLabel } from "@/app/casework-ui";
+import { MonoLabel, PageHeader, Callout } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
 import { caseFilesHref, questionsHref } from "@/lib/case-routes";
@@ -45,10 +45,7 @@ export default async function SupportingFilesPage({ params, searchParams }: { pa
   const canContribute = currentCase.membershipRole !== "viewer";
 
   return <main className="supporting-files-shell">
-    <section className="supporting-files-heading">
-      <div><MonoLabel>SUPPORTING REFERENCE LIBRARY</MonoLabel><h1>Pictures and screenshots</h1><p>Organize visual context for the case without treating it as established fact.</p></div>
-      <aside><strong>NOT CANONICAL</strong><p>Nothing uploaded here becomes testimony, a historical event, or a factual finding. There is no OCR, extraction, or automatic promotion.</p></aside>
-    </section>
+    <PageHeader eyebrow="SUPPORTING REFERENCE LIBRARY" title="Pictures and screenshots" lede="Organize visual context for the case without treating it as established fact." aside={<Callout label="NOT CANONICAL" tone="risk">Nothing uploaded here becomes testimony, a historical event, or a factual finding. There is no OCR, extraction, or automatic promotion.</Callout>} />
 
     {(query.message || query.error) && <p className={`supporting-files-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
 

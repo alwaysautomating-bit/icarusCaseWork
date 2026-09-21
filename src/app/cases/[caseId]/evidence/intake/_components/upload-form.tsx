@@ -16,7 +16,7 @@ function UploadStatus({ fileName }: { fileName: string }) {
 export function UploadForm({ caseId, caseTitle }: { caseId: string; caseTitle: string }) {
   const action = uploadCourtPacketAction.bind(null, caseId);
   return <form action={action} className="dropzone">
-    <div className="glyph">⌷</div>
+    <div className="glyph">DRAG &amp; DROP</div>
     <h3>Choose a court packet</h3>
     <p>PDF only. The full packet is kept intact — internal documents are detected automatically.</p>
     <input type="file" name="packet" accept="application/pdf" required />

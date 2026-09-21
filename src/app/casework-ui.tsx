@@ -1,4 +1,5 @@
-import type { ReactNode } from "react";
+import Link from "next/link";
+import { Fragment, type ReactNode } from "react";
 
 export function Wordmark() {
   return <div className="wordmark" aria-label="Icarus Casework"><span className="wordmark-mark" aria-hidden="true"><i /></span><span>ICARUS</span><b>CASEWORK</b></div>;
@@ -41,4 +42,57 @@ export function EvidenceCard({ tag, title, relation, meta }: { tag: string; titl
 
 export function EventRow({ reference, date, title, meta, selected = false }: { reference: string; date: string; title: string; meta: string; selected?: boolean }) {
   return <article className={`event-row${selected ? " selected" : ""}`}><b>{reference}</b><time>{date}</time><div><strong>{title}</strong><small>{meta}</small></div><span className="record-chip">REVIEWED</span></article>;
+}
+
+/* ── Design-system primitives ───────────────────────────────────────────────────
+   Shared building blocks from the Icarus Casework design system. Styles live in design-system.css. */
+
+export function PageHeader({ eyebrow, title, lede, actions, aside, compact = false, children }: { eyebrow: ReactNode; title: ReactNode; lede?: ReactNode; actions?: ReactNode; aside?: ReactNode; compact?: boolean; children?: ReactNode }) {
+  return <header className={`ds-page-head${compact ? " ds-page-head--compact" : ""}`}>
+    <div className="ds-page-head__main">
+      <span className="ds-eyebrow">{eyebrow}</span>
+      <h1>{title}</h1>
+      {lede ? <p>{lede}</p> : null}
+      {children}
+    </div>
+    {actions || aside ? <div className="ds-page-head__side">{aside}{actions ? <div className="ds-page-head__actions">{actions}</div> : null}</div> : null}
+  </header>;
+}
+
+export function SectionHead({ title, eyebrow, as: Heading = "h2" }: { title: ReactNode; eyebrow?: ReactNode; as?: "h2" | "h3" }) {
+  return <div className="ds-section-head"><Heading>{title}</Heading>{eyebrow ? <span>{eyebrow}</span> : null}</div>;
+}
+
+export type ChipTone = "verified" | "candidate" | "review" | "discrepancy" | "device" | "ok" | "neutral";
+
+export function Chip({ tone = "neutral", children }: { tone?: ChipTone; children: ReactNode }) {
+  return <span className={`ds-chip${tone === "neutral" ? "" : ` ${tone}`}`}>{children}</span>;
+}
+
+export function StatStrip({ items }: { items: Array<{ label: string; value: ReactNode }> }) {
+  return <dl className="ds-stats">{items.map((item) => <div key={item.label}><dt>{item.label}</dt><dd>{item.value}</dd></div>)}</dl>;
+}
+
+export function Callout({ label, tone = "default", children }: { label?: ReactNode; tone?: "default" | "risk" | "chain" | "device"; children: ReactNode }) {
+  return <div className={`ds-callout${tone === "default" ? "" : ` ${tone}`}`}>{label ? <strong>{label}</strong> : null}<p>{children}</p></div>;
+}
+
+export function EmptyState({ title, children }: { title?: ReactNode; children?: ReactNode }) {
+  return <div className="ds-empty">{title ? <strong>{title}</strong> : null}{children}</div>;
+}
+
+export type StepState = "upcoming" | "active" | "done";
+
+/** Upload → Parsing → Review → Confirmed. Steps with an href are links; the rest are inert markers. */
+export function Stepper({ label, steps }: { label: string; steps: Array<{ num: string; label: ReactNode; state: StepState; href?: string }> }) {
+  return <nav className="ds-stepper" aria-label={label}>
+    {steps.map((step, index) => {
+      const className = `ds-step${step.state === "active" ? " active" : ""}${step.state === "done" ? " done" : ""}${step.href ? "" : " disabled"}`;
+      const inner = <><span className="n">{step.num}</span>{step.label}</>;
+      return <Fragment key={step.num}>
+        {step.href ? <Link className={className} href={step.href} aria-current={step.state === "active" ? "step" : undefined}>{inner}</Link> : <span className={className} aria-current={step.state === "active" ? "step" : undefined}>{inner}</span>}
+        {index < steps.length - 1 ? <span className={`ds-step-line${steps[index + 1].state !== "upcoming" ? " done" : ""}`} aria-hidden="true" /> : null}
+      </Fragment>;
+    })}
+  </nav>;
 }
