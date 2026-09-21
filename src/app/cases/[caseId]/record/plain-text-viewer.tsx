@@ -8,7 +8,7 @@ function escapeRegExp(value: string) {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-export function PlainTextViewer({ title, filename, lines, plainText, note, initialFind }: { title: string; filename: string; lines: PlainTextLine[]; plainText: string; note?: string; initialFind?: string }) {
+export function PlainTextViewer({ title, filename, lines, plainText, note, initialFind, iconActions = false }: { title: string; filename: string; lines: PlainTextLine[]; plainText: string; note?: string; initialFind?: string; iconActions?: boolean }) {
   const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
   const [term, setTerm] = useState(initialFind ?? "");
   const [current, setCurrent] = useState(0);
@@ -59,10 +59,19 @@ export function PlainTextViewer({ title, filename, lines, plainText, note, initi
 
   return <div className="court-plain-text">
     <div className="court-plain-text-bar">
-      <span>{note ?? `${lines.length} segments · timestamps as recorded`}</span>
+      {note === "" ? <span /> : <span>{note ?? `${lines.length} segments · timestamps as recorded`}</span>}
       <div>
-        <button type="button" onClick={copy}>{copyState === "copied" ? "Copied" : copyState === "failed" ? "Copy failed" : "Copy text"}</button>
-        <button type="button" onClick={download}>Download .txt</button>
+        {iconActions ? <>
+          <button type="button" className="icon-action" onClick={copy} aria-label={copyState === "copied" ? "Copied" : copyState === "failed" ? "Copy failed" : "Copy text"} title={copyState === "copied" ? "Copied" : "Copy text"}>
+            {copyState === "copied" ? <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" /></svg> : <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2" /><path d="M5 15V6a2 2 0 0 1 2-2h9" /></svg>}
+          </button>
+          <button type="button" className="icon-action" onClick={download} aria-label="Download .txt" title="Download .txt">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7.5 10.5L12 15l4.5-4.5M5 19.5h14" /></svg>
+          </button>
+        </> : <>
+          <button type="button" onClick={copy}>{copyState === "copied" ? "Copied" : copyState === "failed" ? "Copy failed" : "Copy text"}</button>
+          <button type="button" onClick={download}>Download .txt</button>
+        </>}
       </div>
     </div>
     <div className="court-plain-text-find" role="search">

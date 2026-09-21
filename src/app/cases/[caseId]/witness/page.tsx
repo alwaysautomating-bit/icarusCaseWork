@@ -34,7 +34,6 @@ export default async function WitnessTestimonyPage({ params, searchParams }: { p
   const days = [...new Set(listed.map((block) => block.day))];
   const sameDay = selectedRef ? all.filter((block) => block.day === selectedRef!.day) : [];
   const plainText = testimony ? witnessPlainText(testimony.block, testimony.turns) : "";
-  const speakerCount = testimony ? new Set(testimony.turns.map((turn) => turn.speaker)).size : 0;
 
   return <main className="witness-shell">
     <div className="witness-toolbar" role="note"><strong>Witness testimony</strong><span>Read-only · read from the preserved transcript files · separate from the testimony database</span></div>
@@ -62,14 +61,13 @@ export default async function WitnessTestimonyPage({ params, searchParams }: { p
           <header>
             <MonoLabel>TRIAL DAY {selectedRef.day} · {selectedRef.startDisplay} TO {selectedRef.endDisplay}</MonoLabel>
             <h1>{selectedRef.witness}</h1>
-            <p className="witness-facts"><span>{testimony.turns.length} segments</span><span>{speakerCount} speakers</span><span>{selectedRef.oath ? "Oath detected" : "No oath detected"}</span><span>{selectedRef.excusal ? "Excusal detected" : "No excusal detected"}</span><span>Boundary confidence {selectedRef.confidence.toFixed(2)}</span></p>
-            <p className="witness-caution">Witness boundaries are deterministic candidates from the intake compiler. They can include procedure before testimony begins or after it ends, and they need review. Timestamps are transcript positions, not event times.</p>
           </header>
           <PlainTextViewer
             title={`${selectedRef.witness}, trial day ${selectedRef.day}`}
             filename={`${witnessSlug(selectedRef)}.txt`}
             plainText={plainText}
-            note={`${testimony.turns.length} segments · timestamps as recorded`}
+            note=""
+            iconActions
             initialFind={query.find?.trim().slice(0, 80)}
             lines={testimony.turns.map((turn) => ({ id: `${turn.segment_index}`, time: turn.timestamp_display, speaker: turn.speaker, text: turn.text }))}
           />

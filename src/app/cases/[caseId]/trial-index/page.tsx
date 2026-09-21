@@ -5,6 +5,8 @@ import { CollapseDocument } from "@/app/cases/[caseId]/trial-index/_components/c
 import { DayWitnessTable } from "@/app/cases/[caseId]/trial-index/_components/day-witness-table";
 import { DayCreatorGuide } from "@/app/cases/[caseId]/trial-index/_components/day-creator-guide";
 import { ExpandCollapseAll } from "@/app/cases/[caseId]/trial-index/_components/expand-collapse-all";
+import { ResearchActions } from "@/app/cases/[caseId]/trial-index/_components/research-actions";
+import { SectionCards } from "@/app/cases/[caseId]/trial-index/_components/section-cards";
 import { FileTabNav } from "@/app/cases/[caseId]/trial-index/_components/file-tab-nav";
 import { requireCaseActor } from "@/lib/authority";
 import { getCollapseTrialIndexDays } from "@/lib/collapse-trial-index";
@@ -16,21 +18,24 @@ export const dynamic = "force-dynamic";
 type SearchParams = Promise<{ day?: string; section?: string; view?: string }>;
 
 const SHORT_SECTION_NAMES: Record<string, string> = {
-  "Key Insights": "Insights",
+  "Key Insights": "Key Insights",
   "Projects Discussed": "Projects",
   "Context Required For Future Work": "Context",
   "Open Questions": "Questions",
-  "Next Actions": "Actions",
+  "Next Actions": "Research",
   "Memory Candidates": "Memory",
   "Features / Skills / Scripts / Code / Screens": "Assets",
   "Handoff Brief": "Handoff",
 };
 
 const USER_TABS = [
-  { slug: "overview", label: "Overview" },
-  { slug: "witnesses", label: "Witnesses" },
+  { slug: "key-insights", label: "Key Insights" },
+  { slug: "decisions", label: "Decisions" },
   { slug: "evidence", label: "Evidence" },
-  { slug: "questions", label: "Open questions" },
+  { slug: "projects-discussed", label: "Builders" },
+  { slug: "witnesses", label: "Witnesses" },
+  { slug: "open-questions", label: "Open Questions" },
+  { slug: "next-actions", label: "Research" },
   { slug: "creators", label: "Creators" },
 ] as const;
 
@@ -48,7 +53,13 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
 
   if (!/^\d+$/.test(state.day ?? "")) {
     const detailDayNumbers = new Set(days.map((day) => day.dayNumber));
-    return <main className="case-foundation-shell">
+    return <main className="case-foundation-shell trial-index-landing">
+      <nav className="trial-day-context" aria-label="Trial day">
+        <details>
+          <summary>Jump to day</summary>
+          <div>{days.map((day) => <Link href={indexHref(caseId, day.dayNumber)} prefetch={false} key={day.dayNumber}>Day {day.dayNumber}</Link>)}</div>
+        </details>
+      </nav>
       <header className="case-foundation-hero">
         <MonoLabel>TRIAL INDEX · TESTIMONY BY DAY</MonoLabel>
         <h1>Who testified, and what they added.</h1>
@@ -88,7 +99,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
   const selectedSection = selectedDay.sections.find((section) => section.slug === state.section) ?? selectedDay.sections[0];
   if (!selectedSection) notFound();
   const sectionContent = (slug: string) => selectedDay.sections.find((section) => section.slug === slug)?.content;
-  const activeUserTab = USER_TABS.find((tab) => tab.slug === (state.section === "open-questions" ? "questions" : state.section)) ?? USER_TABS[0];
+  const activeUserTab = USER_TABS.find((tab) => tab.slug === state.section) ?? USER_TABS[0];
   const dayIndexEntry = foundationDays.find((day) => day.day === selectedDay.dayNumber);
   const selectedDayIndex = days.indexOf(selectedDay);
   const previousDay = selectedDayIndex > 0 ? days[selectedDayIndex - 1] : null;
@@ -111,12 +122,12 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
       <Link href={indexHref(caseId, selectedDay.dayNumber, viewAsUser ? activeUserTab.slug : undefined, true)} aria-current={viewAsUser ? "page" : undefined} prefetch={false}>User</Link>
     </nav> : null}
 
-    {isAdmin ? <>
     <details className="trial-purpose-disclosure">
       <summary>Day {selectedDay.dayNumber} purpose</summary>
       <CollapseDocument content={selectedDay.purpose} />
     </details>
 
+    {isAdmin ? <>
     <section className="collapse-index-file">
       <FileTabNav
         ariaLabel={`Day ${selectedDay.dayNumber} sections`}
@@ -125,8 +136,8 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
       />
 
       <article className="collapse-section-panel">
-        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {selectedDay.sections.indexOf(selectedSection) + 1} OF {selectedDay.sections.length}</MonoLabel><h1>{selectedSection.name}</h1></div></header>
-        <CollapseDocument content={selectedSection.content} />
+        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {selectedDay.sections.indexOf(selectedSection) + 1} OF {selectedDay.sections.length}</MonoLabel><h1>{selectedSection.slug === "next-actions" ? "Research" : selectedSection.name}</h1></div></header>
+        {selectedSection.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={selectedSection.content} /> : <SectionCards dayNumber={selectedDay.dayNumber} slug={selectedSection.slug} content={selectedSection.content} />}
       </article>
     </section>
     </> : <>
@@ -139,14 +150,9 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
 
       <article className="collapse-section-panel">
         <header><div><MonoLabel>DAY {selectedDay.dayNumber}{dayIndexEntry?.date ? ` · ${dayIndexEntry.date.toUpperCase()}` : ""}</MonoLabel><h1>{activeUserTab.label}</h1></div></header>
-        {activeUserTab.slug === "overview" ? <>
-          <CollapseDocument content={selectedDay.purpose} />
-          {sectionContent("key-insights") ? <CollapseDocument content={sectionContent("key-insights")!} /> : null}
-        </> : null}
         {activeUserTab.slug === "witnesses" ? (dayIndexEntry ? <DayWitnessTable caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No witness index has been entered for this day yet.</p>) : null}
-        {activeUserTab.slug === "evidence" ? (sectionContent("evidence") ? <CollapseDocument content={sectionContent("evidence")!} /> : <p className="foundation-empty">No evidence summary has been entered for this day yet.</p>) : null}
         {activeUserTab.slug === "creators" ? (dayIndexEntry ? <DayCreatorGuide day={dayIndexEntry} /> : <p className="foundation-empty">No creator guide is available for this day yet.</p>) : null}
-        {activeUserTab.slug === "questions" ? (sectionContent("open-questions") ? <CollapseDocument content={sectionContent("open-questions")!} /> : <p className="foundation-empty">No open questions have been recorded for this day.</p>) : null}
+        {!["witnesses", "creators"].includes(activeUserTab.slug) ? (sectionContent(activeUserTab.slug) ? (activeUserTab.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={sectionContent(activeUserTab.slug)!} /> : <SectionCards dayNumber={selectedDay.dayNumber} slug={activeUserTab.slug} content={sectionContent(activeUserTab.slug)!} />) : <p className="foundation-empty">Nothing has been recorded under {activeUserTab.label} for this day yet.</p>) : null}
       </article>
     </section>
     </>}

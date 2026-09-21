@@ -65,7 +65,9 @@ export function parseCollapseTrialIndexDay(filename: string, raw: string): Colla
 
   for (const line of lines) {
     const heading = recognizedHeading(line);
-    if (heading) {
+    // Inside Projects Discussed, a bare "Risks:" style line is a project field, not a new section.
+    const isProjectField = current?.name === "Projects Discussed" && !/^#{1,6}\s/.test(line);
+    if (heading && !isProjectField) {
       current = { name: heading, lines: [] };
       parsedSections.push(current);
       continue;

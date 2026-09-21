@@ -1,11 +1,14 @@
 import { Fragment, type ReactNode } from "react";
 
-function inlineMarkup(value: string) {
-  const tokens = value.split(/(\*\*[^*]+\*\*|`[^`]+`)/g);
+export function inlineMarkup(value: string) {
+  const tokens = value.split(/(\*\*[^*]+\*\*|\*[^*\s][^*]*\*|`[^`]+`)/g);
 
   return tokens.map((token, index) => {
     if (token.startsWith("**") && token.endsWith("**")) {
       return <strong key={index}>{token.slice(2, -2)}</strong>;
+    }
+    if (token.length > 2 && token.startsWith("*") && token.endsWith("*")) {
+      return <em key={index}>{token.slice(1, -1)}</em>;
     }
     if (token.startsWith("`") && token.endsWith("`")) {
       return <code key={index}>{token.slice(1, -1)}</code>;
