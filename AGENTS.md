@@ -20,11 +20,7 @@ These rules are binding for architecture, implementation, and deployment work:
 
 ## Authentication
 
-Use this default sign-in order:
-
-1. Google
-2. Apple
-3. Magic links
+Magic links (passwordless email) only, for now. Google and Apple sign-in require a live, publicly reachable production site to satisfy their OAuth consent-screen requirements, which this project doesn't have yet — revisit adding them once that's in place.
 
 Do not use Clerk.
 

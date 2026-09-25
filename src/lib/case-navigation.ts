@@ -2,6 +2,7 @@ import {
   accountsHref,
   careTrajectoryHref,
   caseAccessHref,
+  caseContributionsHref,
   caseFoundationHref,
   caseFilesHref,
   courtRecordHref,
@@ -64,6 +65,7 @@ export function getCaseSettingsItems(caseId: string): CaseNavigationItem[] {
     { href: reconcileHref(caseId), label: "Reconcile", match: "prefix" },
     { href: reconstructionHref(caseId), label: "Reconstruct", match: "prefix" },
     { href: caseAccessHref(caseId), label: "Access", match: "prefix" },
+    { href: caseContributionsHref(caseId), label: "Contributions", match: "prefix" },
   ];
 }
 

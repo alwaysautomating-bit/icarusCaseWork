@@ -4,7 +4,7 @@
 .ct-inspector{position:sticky;top:var(--ct-top,104px);z-index:25;display:grid;grid-template-columns:minmax(0,1.5fr) minmax(280px,.9fr) minmax(220px,.6fr);gap:0;max-height:calc(100vh - var(--ct-top,104px) - 16px);max-height:min(46vh,calc(100vh - var(--ct-top,104px) - 16px));overflow:auto;background:var(--surface-paper,#FAF7F1);border-bottom:2px solid var(--ink,#1E1712);box-shadow:0 10px 24px -18px rgba(30,23,18,.55)}
 .ct-inspector>*{padding:18px 22px;border-right:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
 .ct-inspector>*:last-child{border-right:0}
-.ct-inspector-main h2{margin:8px 0 8px;font-size:clamp(22px,2.3vw,32px);line-height:1.08}
+.ct-inspector-main h2{margin:8px 0 8px;font-size:clamp(22px,2.3vw,24px);line-height:1.08}
 .ct-inspector-main p{margin:0;color:var(--ink-muted,#5A5248);font-size:14.5px;line-height:1.6}
 .ct-flag{margin-top:10px!important;padding:8px 10px;border-left:3px solid var(--risk,#6B1F2A);background:rgba(107,31,42,.06);color:var(--ink,#1E1712)!important;font-size:13px!important}
 .ct-inspector dl{margin:0;display:grid;gap:12px;align-content:start}
@@ -77,7 +77,7 @@
 .ct-leadup,.ct-ownership,.ct-support{padding:34px 4vw;border-bottom:1px solid var(--ink,#1E1712)}
 .ct-leadup{background:var(--surface-paper,#FAF7F1)}
 .ct-leadup>header,.ct-ownership>header,.ct-support>header{max-width:820px;margin-bottom:18px}
-.ct-leadup h2,.ct-ownership h2,.ct-support h2{margin:8px 0;font-size:clamp(26px,3vw,40px);line-height:1.05}
+.ct-leadup h2,.ct-ownership h2,.ct-support h2{margin:8px 0;font-size:clamp(24px,3vw,24px);line-height:1.05}
 .ct-leadup p,.ct-ownership p,.ct-support p{margin:0;color:var(--ink-muted,#5A5248);line-height:1.65}
 .ct-leadup ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
 .ct-leadup li{border-bottom:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
@@ -117,22 +117,22 @@
 .ct-marker.sup-researcher_observation{--ct-c:#5B4B8A}
 
 .ct-inspector.is-overview{grid-template-columns:minmax(0,1.6fr) minmax(360px,1fr)}
-.ct-inspector.is-overview .ct-inspector-main h2{font-size:clamp(20px,1.9vw,28px);letter-spacing:-.03em}
+.ct-inspector.is-overview .ct-inspector-main h2{font-size:clamp(20px,1.9vw,24px);letter-spacing:-.03em}
 .ct-inspector.is-overview .ct-inspector-main p{font-size:13.5px;max-width:640px}
 .ct-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;align-content:stretch;padding:0!important}
 .ct-stats>div{padding:14px 16px;border-right:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
 .ct-stats>div:last-child{border-right:0}
-.ct-stats dd{margin:4px 0 0!important;font-size:36px!important;font-weight:700;letter-spacing:-.04em;line-height:1}
+.ct-stats dd{margin:4px 0 0!important;font-size:24px!important;font-weight:700;letter-spacing:-.04em;line-height:1}
 .ct-inspector-actions>button.ghost{background:transparent;color:var(--ink,#1E1712);border:1px solid var(--ink,#1E1712)}
 .ct-controls [role=group] button:disabled{opacity:.4;cursor:not-allowed}
 @media(max-width:700px){.ct-inspector.is-overview{grid-template-columns:1fr}.ct-stats{grid-template-columns:repeat(2,1fr)}}
 
 .ct-sequence{padding:34px 4vw;border-bottom:1px solid var(--ink,#1E1712);background:var(--surface-paper,#FAF7F1)}
 .ct-sequence>header{max-width:820px;margin-bottom:16px}
-.ct-sequence h2{margin:8px 0;font-size:clamp(26px,3vw,40px);line-height:1.05}
+.ct-sequence h2{margin:8px 0;font-size:clamp(24px,3vw,24px);line-height:1.05}
 .ct-sequence>header p{margin:0;color:var(--ink-muted,#5A5248);line-height:1.65}
 .ct-sequence-callout{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;margin:0 0 18px;padding:14px 18px;background:var(--console-bg,#1E1712);color:var(--console-text,#F4EEE1)}
-.ct-sequence-callout b{font-size:38px;letter-spacing:-.04em;line-height:1;color:var(--console-accent,#D0AD72)}
+.ct-sequence-callout b{font-size:24px;letter-spacing:-.04em;line-height:1;color:var(--console-accent,#D0AD72)}
 .ct-sequence-callout span{font-size:14px;line-height:1.5}
 .ct-sequence-callout button{padding:9px 12px;border:1px solid var(--console-accent,#D0AD72);background:transparent;color:var(--console-accent,#D0AD72);font-family:var(--font-mono,monospace);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;cursor:pointer}
 .ct-sequence ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink,#1E1712)}

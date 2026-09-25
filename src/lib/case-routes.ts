@@ -61,6 +61,14 @@ export function caseAccessHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/access`;
 }
 
+export function caseContributionsHref(caseId: string) {
+  return `/cases/${encodeURIComponent(caseId)}/evidence/contributions`;
+}
+
+export function publicContributeHref(caseId: string) {
+  return `/contribute/${encodeURIComponent(caseId)}`;
+}
+
 export function questionsHref(caseId: string, questionId?: string) {
   const params = new URLSearchParams();
   if (questionId) params.set("question", questionId);

@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { sendMagicLink, signInWithProvider } from "./actions";
+import { sendMagicLink } from "./actions";
 
 export const dynamic = "force-dynamic";
 
@@ -23,9 +23,6 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         <p className="lede">Sign in to access case material. Every consequential change is attributed to your authenticated account.</p>
         {error && <p className="auth-notice error" role="alert">{error}</p>}
         {message && <p className="auth-notice success" role="status">{message}</p>}
-        <form action={signInWithProvider}><input type="hidden" name="provider" value="google" /><input type="hidden" name="next" value={next} /><button className="auth-provider">Continue with Google</button></form>
-        <form action={signInWithProvider}><input type="hidden" name="provider" value="apple" /><input type="hidden" name="next" value={next} /><button className="auth-provider secondary">Continue with Apple</button></form>
-        <div className="auth-divider"><span>or use a magic link</span></div>
         <form action={sendMagicLink} className="magic-link-form">
           <input type="hidden" name="next" value={next} />
           <label>Email address<input name="email" type="email" autoComplete="email" required placeholder="researcher@example.com" /></label>

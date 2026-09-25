@@ -25,6 +25,15 @@
   .case-workspace-shell .court-record-shell .court-source-inspector{grid-column:auto;height:auto;max-height:none;border-top:0}
 }
 
+@media(max-width:520px){
+  .case-workspace-shell .court-record-shell .court-transcript-panel>header{align-items:flex-start;flex-direction:column;gap:8px;padding:18px 20px 12px}
+  .case-workspace-shell .court-record-shell .court-transcript-panel>header>div{width:100%}
+  .case-workspace-shell .court-record-shell .court-transcript-panel>header h2{white-space:normal;overflow:visible;text-overflow:clip}
+  .case-workspace-shell .court-record-shell .court-window-count{align-self:flex-start;padding-top:0}
+  .case-workspace-shell .court-record-shell .court-view-select{min-width:132px}
+  .case-workspace-shell .court-record-shell .court-transcript-window{padding:0 16px 20px}
+}
+
 /* The workspace runs to the bottom of the window (the header is one 48px line plus the tab row). */
 @media(min-width:901px){
   .case-workspace-shell .court-record-shell .court-record-grid{height:calc(100vh - 85px);min-height:620px}
@@ -47,6 +56,7 @@
 /* Search column and inspector: specimen sizes */
 .case-workspace-shell .court-record-shell .court-search-results button[type=submit],
 .case-workspace-shell .court-record-shell .court-search-results form button{padding:11px 0;border-radius:3px;font:600 11px/normal var(--font-display);letter-spacing:.06em}
+.case-workspace-shell .court-record-shell .court-view-select{background-size:10px 6px}
 .case-workspace-shell .court-record-shell .court-source-inspector h2{margin:4px 0 20px;font:600 15px/normal var(--font-serif)}
 .case-workspace-shell .court-record-shell .court-source-inspector blockquote{font:italic 500 13px/1.6 var(--font-serif)}
 .case-workspace-shell .court-record-shell .court-source-inspector .v-serif{font:600 12px/normal var(--font-serif)}
@@ -111,4 +121,12 @@
   .case-workspace-shell main.trial-index-landing .foundation-day-body{padding:12px 40px 12px 12px}
   .case-workspace-shell main.trial-index-landing .foundation-witness-head{display:none}
   .case-workspace-shell main.trial-index-landing .foundation-witness-row{grid-template-columns:minmax(0,1fr);gap:4px}
+}
+
+@media(max-width:480px){
+  .case-workspace-shell main.trial-index-landing .ds-toolbar{align-items:stretch;flex-wrap:wrap;gap:8px}
+  .case-workspace-shell main.trial-index-landing .ds-toolbar .trial-day-context{flex:1 1 100%}
+  .case-workspace-shell main.trial-index-landing .ds-toolbar .trial-day-context summary{justify-content:center;width:100%}
+  .case-workspace-shell main.trial-index-landing .expand-collapse-all{width:100%}
+  .case-workspace-shell main.trial-index-landing .expand-collapse-all button{flex:1;justify-content:center}
 }

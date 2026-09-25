@@ -176,7 +176,7 @@ body{
 .ds-doc{max-width:900px}
 .ds-doc-headline{padding:28px 28px 32px;border:1px solid var(--hairline);background:var(--paper)}
 .ds-doc-headline .ds-eyebrow{color:var(--brass);font-weight:700;letter-spacing:.1em}
-.ds-doc-headline h1{margin:14px 0 16px;font:700 clamp(28px,4vw,42px)/1.06 var(--font-serif);letter-spacing:-.01em;text-transform:uppercase}
+.ds-doc-headline h1{margin:14px 0 16px;font:700 clamp(24px,4vw,24px)/1.06 var(--font-serif);letter-spacing:-.01em;text-transform:uppercase}
 .ds-doc-headline p{margin:0;max-width:64ch;font:italic 500 16px/1.55 var(--font-serif);color:var(--ink-muted)}
 .ds-doc-theory{padding:24px 28px;border:1px solid var(--ink);background:#fff}
 .ds-doc-theory p{margin:6px 0 0;font:italic 16px/1.6 var(--font-serif);color:var(--ink-graphite)}
@@ -253,7 +253,7 @@ body{
 .case-workspace-shell .children-report-head{display:block;margin:18px var(--ds-gutter) 0;padding:0;overflow:hidden;border:1px solid var(--hairline);border-radius:0;background:var(--paper);color:var(--ink)}
 .case-workspace-shell .children-report-head>div{padding:28px 28px 22px}
 .case-workspace-shell .children-report-head .mono-label{color:var(--brass);font-weight:700;letter-spacing:.1em}
-.case-workspace-shell .children-report-head h1{margin:14px 0 16px;font:700 clamp(28px,4vw,42px)/1.06 var(--font-serif);letter-spacing:-.01em;text-transform:uppercase}
+.case-workspace-shell .children-report-head h1{margin:14px 0 16px;font:700 clamp(24px,4vw,24px)/1.06 var(--font-serif);letter-spacing:-.01em;text-transform:uppercase}
 .case-workspace-shell .children-report-head p{max-width:64ch;color:var(--ink-muted);font:italic 500 16px/1.55 var(--font-serif)}
 .case-workspace-shell .children-report-head dl{display:flex;flex-wrap:wrap;gap:6px 26px;margin:0;padding:12px 28px;border:0;border-top:1px solid var(--hairline);background:var(--ivory)}
 .case-workspace-shell .children-report-head dl>div{display:flex;flex-direction:column-reverse;gap:3px;min-height:0;padding:0;border:0}
@@ -307,7 +307,7 @@ body{
 .case-workspace-shell .research-queue-shell>:not(.ds-page-head){margin-inline:var(--ds-gutter)}
 .case-workspace-shell .research-queue-shell>.ds-page-head+*{margin-top:22px}
 .case-workspace-shell :is(.research-split-workspace,.research-search-bar,.research-create-form,.research-state-block,.research-linked-section,.research-editor-grid details,.research-resolve-form){border-radius:0;border-color:var(--hairline)}
-.case-workspace-shell :is(.research-record-title h2,.research-record-empty h2){font:600 clamp(20px,2.2vw,26px)/1.25 var(--font-serif);letter-spacing:-.005em}
+.case-workspace-shell :is(.research-record-title h2,.research-record-empty h2){font:600 clamp(20px,2.2vw,24px)/1.25 var(--font-serif);letter-spacing:-.005em}
 .case-workspace-shell :is(.research-state-block h3,.research-linked-section h3,.research-create-form h2){font:600 15px/1.3 var(--font-serif);letter-spacing:0}
 .case-workspace-shell .research-index-list>header strong,.case-workspace-shell .research-linked-section>header>strong{font:500 17px var(--font-serif)}
 
@@ -320,14 +320,14 @@ body{
 :is(.case-index-shell,.new-case-shell,.auth-shell,.search-shell){background:var(--paper)}
 .case-index-shell .case-index-list{padding:32px var(--ds-gutter) 72px}
 .case-index-list>header{border-bottom:1px solid var(--hairline)}
-.case-index-list>header h2{font:600 clamp(24px,3.4vw,34px)/1.15 var(--font-serif);letter-spacing:-.01em}
+.case-index-list>header h2{font:600 clamp(24px,3.4vw,24px)/1.15 var(--font-serif);letter-spacing:-.01em}
 .case-index-list>header>strong{font:500 24px/1 var(--font-serif)}
 .case-card-grid{gap:0;border:1px solid var(--hairline);border-bottom:0}
 .case-card{min-height:200px;border-color:var(--hairline);background:#fff}
 .case-card:hover{background:var(--ivory)}
 .case-card h2{margin:24px 0 12px;font:500 20px/1.25 var(--font-serif);letter-spacing:0}
 .case-card-arrow{color:var(--brass)}
-:is(.new-case-copy h1,.auth-card h1,.search-hero h1){font:600 clamp(26px,3.6vw,38px)/1.15 var(--font-serif);letter-spacing:-.01em;margin:12px 0 14px}
+:is(.new-case-copy h1,.auth-card h1,.search-hero h1){font:600 clamp(24px,3.6vw,24px)/1.15 var(--font-serif);letter-spacing:-.01em;margin:12px 0 14px}
 .new-case-copy{padding:40px var(--ds-gutter)}
 .new-case-copy>p,.search-hero p,.auth-card .lede{max-width:60ch;font-size:13.5px;line-height:1.65;color:var(--ink-muted)}
 .search-hero{padding:32px var(--ds-gutter) 24px;background:var(--paper);border-bottom:1px solid var(--hairline-soft-2)}
@@ -342,7 +342,7 @@ body{
 
 /* ── Panel-level headings inside workspaces ─────────────────────────────────── */
 .case-workspace-shell :where(h1,h2,h3,h4){font-family:var(--font-serif)}
-.case-workspace-shell :is(.timeline-workspace-heading h2,.structure-object-lede h1){margin:8px 0 10px;font:600 clamp(20px,2.4vw,26px)/1.2 var(--font-serif);letter-spacing:-.005em}
+.case-workspace-shell :is(.timeline-workspace-heading h2,.structure-object-lede h1){margin:8px 0 10px;font:600 clamp(20px,2.4vw,24px)/1.2 var(--font-serif);letter-spacing:-.005em}
 .case-workspace-shell .timeline-workspace-heading p{font-size:13.5px;line-height:1.65;color:var(--ink-muted)}
 .case-workspace-shell .timeline-workspace-heading>div{padding:22px var(--ds-gutter)}
 
@@ -458,6 +458,7 @@ body{
 .case-workspace-shell .case-workspace-masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;height:48px;min-height:0;padding:0 var(--ds-gutter)}
 .case-workspace-shell .case-workspace-masthead .account{display:flex;align-items:center;gap:18px}
 .case-workspace-shell .case-lifecycle-nav{top:48px}
+@media(max-width:620px){.case-workspace-shell .case-workspace-masthead{gap:10px}.case-workspace-shell .case-workspace-masthead .account{gap:0}.case-workspace-shell .case-settings-menu{display:none}}
 .case-menu{position:relative}
 .case-menu>summary{display:inline-flex;align-items:center;gap:10px;list-style:none;cursor:pointer}
 .case-menu>summary::-webkit-details-marker{display:none}
@@ -479,6 +480,6 @@ body{
 .case-workspace-shell .responder-crumbs a{color:var(--ink-muted);font:600 11px/1.4 var(--font-mono);letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
 .case-workspace-shell .responder-crumbs a:hover{color:var(--ink);text-decoration:underline}
 .case-workspace-shell .responder-head{padding-top:18px}
-.case-workspace-shell .responder-head h1{font-size:clamp(30px,2.8vw,40px);line-height:1.12}
+.case-workspace-shell .responder-head h1{font-size:clamp(24px,2.8vw,24px);line-height:1.12}
 .case-workspace-shell .responder-toolbar{min-height:0}
 .case-workspace-shell .responder-toolbar a{min-height:36px}

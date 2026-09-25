@@ -70,13 +70,7 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
       <p>On January 24, 2023, in Duxbury, Massachusetts, Cora (5), Dawson (3) and Callan (8 months) Clancy were strangled with exercise bands. Their mother, Lindsay Clancy, is charged with three counts of murder. Neither opening argues that someone else was responsible; the dispute is whether she was criminally responsible given severe postpartum mental illness.</p>
     </header>
 
-    <section className="foundation-boundary" aria-label="Evidence boundary">
-      <MonoLabel>ATTRIBUTION BOUNDARY</MonoLabel>
-      <p>Everything below summarizes what each side <em>said it would show</em> in opening statements. The court instructed the jury that openings are “roadmaps,” not evidence. Testimony and exhibits are indexed separately in the Trial Index.</p>
-    </section>
-
-    <section className="foundation-charges" aria-labelledby="foundation-charges-title">
-      <h2 id="foundation-charges-title">The charges and the question</h2>
+    <section className="foundation-charges" aria-label="The charges and the question">
       <dl>
         <div><dt>Court</dt><dd>Plymouth Superior Court · Hon. William Sullivan</dd></div>
         <div><dt>Docket</dt><dd>2383CR00198 · offenses 001–003</dd></div>

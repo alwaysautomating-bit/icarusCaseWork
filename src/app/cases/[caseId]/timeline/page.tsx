@@ -2,11 +2,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MonoLabel } from "@/app/casework-ui";
 import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
-import { buildWitnessAccountTimelines } from "@/lib/account-timeline";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { getCaseReconstructionWorkspace } from "@/lib/case-reconstruction";
-import { accountsHref, digitalTimelineHref, firstRespondersTimelineHref, patrickAccountsHref, patrickDiscoveryHref, searchWarrantTimelineHref, temporalContextTimelineHref, timelineHref } from "@/lib/case-routes";
+import { caseFilesHref, digitalTimelineHref, firstRespondersTimelineHref, patrickAccountsHref, timelineHref } from "@/lib/case-routes";
 import {
   getCoreTimelineWorkspace,
   matchesTimelineFilter,
@@ -16,6 +14,8 @@ import {
   type CoreTimelineItem,
   type TimelineFilter,
 } from "@/lib/core-timeline";
+import { getResponderTimeline } from "@/lib/responder-timeline";
+import { getSupportingMediaLibrary } from "@/lib/supporting-media";
 import {
   addTimelineEventAction,
   addTimelineNoteAction,
@@ -212,10 +212,11 @@ function TimelineStream({ items, selected, context, activeOverlays, sharedByItem
 
 export default async function CoreTimelinePage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: Promise<SearchState> }) {
   const [actor, { caseId }, query] = await Promise.all([requireCaseActor(), params, searchParams]);
-  const [currentCase, workspace, reconstruction] = await Promise.all([
-    getAccessibleCase(actor.id, caseId), getCoreTimelineWorkspace(caseId), getCaseReconstructionWorkspace(actor.id, caseId),
+  const [currentCase, workspace, responderTimeline, mediaLibrary] = await Promise.all([
+    getAccessibleCase(actor.id, caseId), getCoreTimelineWorkspace(caseId), getResponderTimeline(), getSupportingMediaLibrary(caseId),
   ]);
   if (!currentCase) notFound();
+  const coreTimelines = workspace.timelines.filter((timeline) => timeline.slug === "january-24");
 
   const canContribute = currentCase.membershipRole !== "viewer";
   const selected = workspace.timelines.find((timeline) => timeline.slug === query.timeline) ?? workspace.timelines[0] ?? null;
@@ -247,8 +248,6 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
     }
   }
 
-  const latestVersion = reconstruction?.versions[0] ?? null;
-  const accounts = latestVersion ? buildWitnessAccountTimelines(latestVersion.snapshot) : [];
   const overlayCounts = new Map(context.overlays.map((overlay) => [overlay.key, allItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).includes(overlay.key)).length]));
   const coreCount = allItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).length === 0).length;
   const activeOverlayLabels = context.overlays.filter((overlay) => activeOverlays.has(overlay.key)).map((overlay) => overlay.label);
@@ -256,11 +255,9 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
   return <main className="core-timeline-shell"><div className="core-timeline-panels">
     <aside className="core-timeline-nav" aria-label="Timeline navigation">
       <MonoLabel>CORE</MonoLabel>
-      <nav>{workspace.timelines.map((timeline) => <Link key={timeline.id} href={timelineHref(caseId, { timeline: timeline.slug })} aria-current={timeline.id === selected.id ? "page" : undefined} scroll={false}><strong>{timeline.title}</strong><small>{timeline.subtitle}</small></Link>)}</nav>
+      <nav>{coreTimelines.map((timeline) => <Link key={timeline.id} href={timelineHref(caseId, { timeline: timeline.slug })} aria-current={timeline.id === selected.id ? "page" : undefined} scroll={false}><strong>{timeline.title}</strong><small>{timeline.subtitle}</small></Link>)}</nav>
       <MonoLabel>RECONSTRUCTIONS</MonoLabel>
-      <nav className="core-account-nav"><Link href={firstRespondersTimelineHref(caseId)}><strong>First responders</strong><small>60 events · anchored on the scream (T₀)</small></Link><Link href={patrickDiscoveryHref(caseId)}><strong>Patrick Clancy · discovering the children</strong><small>Step by step, against T₀</small></Link><Link href={patrickAccountsHref(caseId)}><strong>Patrick Clancy · accounts compared</strong><small>Trial, New Yorker, openings, responders</small></Link><Link href={searchWarrantTimelineHref(caseId)}><strong>Search warrant · how Lindsay was identified</strong><small>Occurrence, Patrick&apos;s account, police knowledge</small></Link><Link href={digitalTimelineHref(caseId)}><strong>Digital · Jan 24 device report</strong><small>152 entries · iPhone and Apple Watch</small></Link><Link href={temporalContextTimelineHref(caseId)}><strong>Temporal context · Hall &amp; Josephine</strong><small>Testimony compiled to candidates, anchors, conflicts</small></Link></nav>
-      <MonoLabel>ACCOUNT TIMELINES</MonoLabel>
-      <nav className="core-account-nav">{accounts.length ? accounts.map((account) => <Link href={accountsHref(caseId, { account: account.key, versionId: latestVersion?.id })} key={account.key}><strong>{account.witness}</strong><small>{account.items.length} sourced step{account.items.length === 1 ? "" : "s"}</small></Link>) : <Link href={accountsHref(caseId)}><strong>Open Accounts</strong><small>No published account timeline yet</small></Link>}</nav>
+      <nav className="core-account-nav"><Link href={firstRespondersTimelineHref(caseId)}><strong>First responders</strong><small>60 events · anchored on the scream (T₀)</small></Link><Link href={patrickAccountsHref(caseId)}><strong>Patrick Clancy · accounts compared</strong><small>Trial, New Yorker, openings, responders</small></Link><Link href={digitalTimelineHref(caseId)}><strong>Digital · Jan 24 device report</strong><small>152 entries · iPhone and Apple Watch</small></Link></nav>
     </aside>
 
     <section className="core-timeline-main-column">
@@ -295,5 +292,22 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
 
       <details className="core-timeline-boundary"><summary>Projection boundary</summary><p>{context.boundary}</p><p>Overlay entries remain attributed working material. Activating an overlay changes this view only; it does not promote an assertion or duplicate an event.</p></details>
     </section>
+
+    <aside className="core-timeline-side">
+      <div className="side-card">
+        <div className="head">First responder accounts<span className="count">{responderTimeline.anchor.witness_alignment.length}</span></div>
+        <div className="body">
+          {responderTimeline.anchor.witness_alignment.map((row) => <div className="file-row" key={row.witness}><span>{row.witness}</span><span className="meta">{row.role}</span></div>)}
+          <div className="file-row"><Link href={firstRespondersTimelineHref(caseId)}>Open first responders →</Link></div>
+        </div>
+      </div>
+      <div className="side-card">
+        <div className="head">Evidence files<span className="count">{mediaLibrary.items.length}</span></div>
+        <div className="body">
+          {mediaLibrary.items.length === 0 ? <div className="file-row"><span>No files uploaded yet</span></div> : mediaLibrary.items.slice(0, 8).map((item) => <div className="file-row" key={item.id}><span>{item.caption || item.original_filename}</span></div>)}
+          <div className="file-row"><Link href={caseFilesHref(caseId)}>Open Case Files →</Link></div>
+        </div>
+      </div>
+    </aside>
   </div></main>;
 }
