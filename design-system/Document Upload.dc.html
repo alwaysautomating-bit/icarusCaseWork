@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #8B6914; text-decoration: none; }
+    a:hover { color: #6B500F; }
+  </style>
+</helmet>
+<div style="background:#F9F8F6;min-height:100vh;font-family:'Inter',sans-serif;color:#0A0A0A;">
+  <div style="max-width:840px;margin:0 auto;padding:40px 32px 96px;">
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(10,10,10,.5);margin-bottom:14px;">CASE FILES · DOCUMENT INTAKE</div>
+    <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,3.4vw,34px);line-height:1.15;letter-spacing:-0.01em;margin:0 0 24px;">Add a document to the case.</h1>
+
+    <div style="display:flex;align-items:center;margin-bottom:32px;">
+      <sc-for list="{{ steps }}" as="s" hint-placeholder-count="4">
+        <div style="display:flex;align-items:center;flex:1;">
+          <button onClick="{{ s.select }}" style="{{ s.buttonStyle }}background:none;border:none;cursor:pointer;text-align:left;padding:0;display:flex;flex-direction:column;gap:6px;">
+            <span style="{{ s.numStyle }}">{{ s.num }}</span>
+            <span style="{{ s.labelStyle }}">{{ s.label }}</span>
+          </button>
+          <sc-if value="{{ s.hasConnector }}" hint-placeholder-val="{{ false }}">
+            <div style="{{ s.connectorStyle }}"></div>
+          </sc-if>
+        </div>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ isUpload }}" hint-placeholder-val="{{ true }}">
+      <div style="border:1.5px dashed rgba(10,10,10,.25);border-radius:4px;padding:48px 24px;text-align:center;margin-bottom:24px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.4);margin-bottom:10px;">DRAG &amp; DROP</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:16px;margin-bottom:8px;">Drop files here, or browse</div>
+        <div style="font-size:12.5px;color:rgba(10,10,10,.55);margin-bottom:18px;">PDF, DOCX, images, and audio/video transcripts · up to 500MB each</div>
+        <button onClick="{{ goParsing }}" style="background:#0A0A0A;color:#F9F8F6;border:none;border-radius:3px;padding:10px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;">Browse files</button>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:rgba(10,10,10,.5);margin-bottom:10px;">SELECTED</div>
+      <sc-for list="{{ uploadFiles }}" as="f" hint-placeholder-count="2">
+        <div style="display:flex;justify-content:space-between;align-items:center;padding:12px 14px;border:1px solid rgba(10,10,10,.14);border-radius:3px;margin-bottom:8px;">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:13.5px;">{{ f.name }}</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(10,10,10,.45);margin-top:2px;">{{ f.meta }}</div>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:rgba(10,10,10,.4);">×</span>
+        </div>
+      </sc-for>
+    </sc-if>
+
+    <sc-if value="{{ isParsing }}" hint-placeholder-val="{{ false }}">
+      <div style="margin-bottom:24px;">
+        <sc-for list="{{ parsingFiles }}" as="f" hint-placeholder-count="2">
+          <div style="padding:16px 0;border-top:{{ f.borderStyle }};">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;">
+              <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:13.5px;">{{ f.name }}</div>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:#8B6914;">{{ f.stage }}</span>
+            </div>
+            <div style="height:5px;background:rgba(10,10,10,.08);border-radius:3px;overflow:hidden;">
+              <div style="{{ f.barStyle }}"></div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      <div style="font-size:12.5px;color:rgba(10,10,10,.55);line-height:1.6;">Extracting text, identifying speakers and dates, and matching named entities against the case index. This usually takes under a minute per document.</div>
+    </sc-if>
+
+    <sc-if value="{{ isReview }}" hint-placeholder-val="{{ false }}">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:rgba(10,10,10,.5);margin-bottom:10px;">CONFIRM EXTRACTED FIELDS</div>
+      <div style="border:1px solid rgba(10,10,10,.14);border-radius:3px;overflow:hidden;margin-bottom:20px;">
+        <sc-for list="{{ reviewFields }}" as="r" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 16px;border-top:{{ r.borderStyle }};">
+            <div style="width:150px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.05em;color:rgba(10,10,10,.5);text-transform:uppercase;">{{ r.label }}</div>
+            <div style="flex:1;font-size:13px;color:#0A0A0A;">{{ r.value }}</div>
+            <span style="{{ r.tagStyle }}">{{ r.tag }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button onClick="{{ goConfirmed }}" style="background:#0A0A0A;color:#F9F8F6;border:none;border-radius:3px;padding:11px 20px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;">Confirm &amp; add to case</button>
+        <button style="background:none;border:1px solid rgba(10,10,10,.22);border-radius:3px;padding:11px 18px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;color:#0A0A0A;">Edit fields</button>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isConfirmed }}" hint-placeholder-val="{{ false }}">
+      <div style="border:1px solid rgba(10,10,10,.14);border-radius:3px;padding:28px 26px;text-align:center;">
+        <div style="width:36px;height:36px;border-radius:50%;background:#0A0A0A;color:#C9A227;display:flex;align-items:center;justify-content:center;font-size:18px;margin:0 auto 16px;">✓</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;margin-bottom:8px;">Added to the case index.</div>
+        <div style="font-size:12.5px;color:rgba(10,10,10,.6);line-height:1.6;max-width:44ch;margin:0 auto 20px;">Cellebrite_Extraction_Report.pdf is now searchable across Trial Index, Evidence, and Questions. It was matched to 3 existing entities and 1 open question.</div>
+        <a href="#" style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.05em;font-weight:600;color:#8B6914;">Open in Evidence →</a>
+      </div>
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const STEPS = [
+  { id: 'upload', num: '01', label: 'Upload' },
+  { id: 'parsing', num: '02', label: 'Parsing' },
+  { id: 'review', num: '03', label: 'Review' },
+  { id: 'confirmed', num: '04', label: 'Confirmed' }
+];
+
+const UPLOAD_FILES = [
+  { name: 'Cellebrite_Extraction_Report.pdf', meta: '3.8 MB · PDF' },
+  { name: 'Scene_Photo_Index.xlsx', meta: '210 KB · Spreadsheet' }
+];
+
+const PARSING_FILES = [
+  { name: 'Cellebrite_Extraction_Report.pdf', stage: 'EXTRACTING TEXT', progress: 72 },
+  { name: 'Scene_Photo_Index.xlsx', stage: 'MATCHING ENTITIES', progress: 40 }
+];
+
+const REVIEW_FIELDS = [
+  { label: 'Document type', value: 'Forensic extraction report', tag: 'VERIFIED' },
+  { label: 'Date', value: 'February 3, 2023', tag: 'VERIFIED' },
+  { label: 'Related witnesses', value: 'Kevin Reddington, Dr. Jennifer Tufts', tag: 'CANDIDATE' },
+  { label: 'Related exhibit', value: 'Exhibit 41', tag: 'NEEDS REVIEW' }
+];
+
+function tagStyle(tag) {
+  const base = "font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.05em;border-radius:2px;padding:3px 8px;white-space:nowrap;";
+  if (tag === 'VERIFIED') return base + 'border:1px solid #8B6914;color:#8B6914;';
+  if (tag === 'CANDIDATE') return base + 'border:1px dashed rgba(10,10,10,.3);color:rgba(10,10,10,.55);';
+  return base + 'background:#0A0A0A;color:#F9F8F6;';
+}
+
+class Component extends DCLogic {
+  state = { step: 'upload' };
+  setStep(id) { this.setState({ step: id }); }
+
+  renderVals() {
+    const order = STEPS.map(s => s.id);
+    const currentIdx = order.indexOf(this.state.step);
+
+    const steps = STEPS.map((s, i) => {
+      const isActive = s.id === this.state.step;
+      const isDone = i < currentIdx;
+      return {
+        ...s,
+        select: () => this.setStep(s.id),
+        numStyle: `font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:${isActive ? '#8B6914' : (isDone ? '#0A0A0A' : 'rgba(10,10,10,.4)')};`,
+        labelStyle: `font-family:'Playfair Display',serif;font-weight:600;font-size:14px;color:${isActive ? '#0A0A0A' : (isDone ? 'rgba(10,10,10,.7)' : 'rgba(10,10,10,.4)')};`,
+        buttonStyle: `border-bottom:2px solid ${isActive ? '#C9A227' : 'transparent'};padding-bottom:10px;`,
+        hasConnector: i < STEPS.length - 1,
+        connectorStyle: `flex:1;height:1px;background:${i < currentIdx ? '#0A0A0A' : 'rgba(10,10,10,.15)'};margin:0 14px;`
+      };
+    });
+
+    return {
+      steps,
+      isUpload: this.state.step === 'upload',
+      isParsing: this.state.step === 'parsing',
+      isReview: this.state.step === 'review',
+      isConfirmed: this.state.step === 'confirmed',
+      goParsing: () => this.setStep('parsing'),
+      goConfirmed: () => this.setStep('confirmed'),
+      uploadFiles: UPLOAD_FILES,
+      parsingFiles: PARSING_FILES.map((f, i) => ({ ...f, borderStyle: i === 0 ? 'none' : '1px solid rgba(10,10,10,.08)', barStyle: `width:${f.progress}%;height:100%;background:#8B6914;` })),
+      reviewFields: REVIEW_FIELDS.map((r, i) => ({ ...r, borderStyle: i === 0 ? 'none' : '1px solid rgba(10,10,10,.1)', tagStyle: tagStyle(r.tag) }))
+    };
+  }
+}
+</script>
+</body>
+</html>

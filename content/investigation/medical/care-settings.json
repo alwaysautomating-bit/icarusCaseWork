@@ -1,0 +1,10 @@
+{
+  "settings": [
+    { "key": "aster-psychiatry", "label": "Aster psychiatry", "person": "Dr. Tufts", "match": ["Tufts"] },
+    { "key": "aster-therapy", "label": "Aster therapy", "person": "J. McAllister, LMHC", "match": ["McAllister"] },
+    { "key": "south-shore", "label": "South Shore Perinatal", "person": "Julie Paul, Nurse Gelada", "match": ["South Shore"] },
+    { "key": "ed", "label": "Emergency department", "person": "Mass General", "match": ["Mass General", "MGH"] },
+    { "key": "mclean", "label": "McLean inpatient", "person": "locked ward", "match": ["McLean"] },
+    { "key": "women-infants", "label": "Women & Infants", "person": "Rhode Island program", "match": ["Women and Infants", "Women & Infants"] }
+  ]
+}

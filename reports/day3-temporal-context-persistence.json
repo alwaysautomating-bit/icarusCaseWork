@@ -1,0 +1,63 @@
+{
+  "schemaVersion": "testimony-temporal-context-persistence/1.0",
+  "generatedAt": "2026-09-20T23:14:21.254Z",
+  "caseId": "413d071f-6299-46ae-aa85-46390aca38a6",
+  "proceedingId": "56067e10-b6ce-4ed3-8e0d-eb8e5ca7ce1f",
+  "migration": "20260920120000_temporal_context_v1.sql",
+  "rpc": "public.commit_temporal_context",
+  "commits": {
+    "hallAlone": {
+      "run_id": "bedca36c-17c5-57b1-a59f-e0a2e71a6c52",
+      "duplicate": true,
+      "canonical_events_created": 0,
+      "same_resolutions_created": 0
+    },
+    "hallThenJosephine": {
+      "run_id": "6b9649f7-e9dc-5a1c-a166-0438ed315921",
+      "duplicate": true,
+      "canonical_events_created": 0,
+      "same_resolutions_created": 0
+    },
+    "replayDuplicate": true,
+    "replayHallAloneDuplicate": true
+  },
+  "persisted": {
+    "anchors": 13,
+    "constraints": 32,
+    "possibleLinks": 32,
+    "conflictFlags": 2,
+    "temporalAssertions": 40,
+    "projectionRows": 40,
+    "ledgerEntriesForContextRuns": 245,
+    "provenanceRelationsForContextRuns": 164,
+    "linkTypes": {
+      "possible_shared_anchor": 22,
+      "possible_same_event": 9,
+      "possible_additional_detail": 1
+    }
+  },
+  "boundaries": {
+    "canonicalEventsCreated": 0,
+    "entitiesCreated": 0,
+    "unresolvedEntityMentionsResolved": 0
+  },
+  "rls": {
+    "outsiderVisibleRows": [
+      {
+        "table": "temporal_anchor_candidates",
+        "visible": 0
+      },
+      {
+        "table": "temporal_constraints",
+        "visible": 0
+      },
+      {
+        "table": "temporal_context_projection",
+        "visible": 0
+      }
+    ],
+    "outsiderCommitDenied": true,
+    "directWriteDenied": true
+  },
+  "local": "Applied to the local Supabase stack only; no hosted project was linked or changed."
+}

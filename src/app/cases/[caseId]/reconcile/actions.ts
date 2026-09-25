@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { requireCaseActor } from "@/lib/authority";
-import { canReviewStructure, getAccessibleCase } from "@/lib/case-access";
+import { getAccessibleCase } from "@/lib/case-access";
 import { reconcileHref } from "@/lib/case-routes";
 import { reconciliationEdgeSchema, reconciliationMemberInputSchema, reconciliationStatuses } from "@/lib/reconciliation-model";
 import { createClient } from "@/lib/supabase/server";
@@ -58,7 +58,7 @@ export async function saveReconciliationGroupAction(_previous: ReconciliationAct
   if (parsed.data.edges.some((edge) => !memberKeys.has(`${edge.from_type}:${edge.from_id}`) || !memberKeys.has(`${edge.to_type}:${edge.to_id}`))) return { kind: "validation", message: "Every relationship endpoint must be a member of this group." };
 
   const currentCase = await getAccessibleCase(actor.id, parsed.data.caseId);
-  if (!currentCase || !canReviewStructure(currentCase.membershipRole)) return { kind: "permission", message: "Your current case membership is read-only for reconciliation." };
+  if (!currentCase || currentCase.membershipRole !== "owner") return { kind: "permission", message: "Reconciliation is limited to the case owner." };
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("save_reconciliation_group", {
     p_case_id: parsed.data.caseId,

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #B08D57; text-decoration: none; }
+    a:hover { color: #8B5A2E; }
+  </style>
+</helmet>
+<div style="background:#FAF7F1;min-height:100vh;font-family:'Inter',sans-serif;color:#1E1712;">
+  <div style="max-width:900px;margin:0 auto;padding:32px 32px 96px;">
+
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(176,141,87,.4);padding-bottom:10px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8175;">ICARUS CASEWORK / COPY ARTIFACTS</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8175;">GENERATED CASE DOCUMENTS · REV 01</span>
+    </div>
+
+    <p style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.06em;color:#5A5248;margin:0 0 40px;max-width:60ch;">Reference sheet for the long-form documents Icarus generates from a case — briefs, plans, outreach drafts, and working notes. Same palette and type as the app; distinct editorial layout for reading, not scanning.</p>
+
+    <div style="{{ sectionHead }}">01 — CASE BRIEF HEADLINE</div>
+    <div style="border:1px solid rgba(176,141,87,.4);padding:28px 28px 32px;margin-bottom:40px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#B08D57;font-weight:700;">THE BRIEF</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#8A8175;">EXPORT PDF ↓</span>
+      </div>
+      <h1 style="font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(28px,4vw,42px);line-height:1.06;letter-spacing:-.01em;margin:0 0 16px;text-transform:uppercase;">A window covered, a timeline contested.</h1>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:16px;line-height:1.55;color:#5A5248;margin:0;max-width:64ch;">Patrick's account places the errand before discovery. Independent timestamps place it after. The gap between the two is where this case will be won or lost.</p>
+    </div>
+
+    <div style="{{ sectionHead }}">02 — VALUE-PROPOSITION PANEL</div>
+    <div style="border:1px solid #1E1712;background:#FFFFFF;padding:24px 28px;margin-bottom:40px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#5A5248;margin-bottom:12px;">THEORY OF THE CASE</div>
+      <div style="display:flex;gap:6px;">
+        <span style="font-family:'Playfair Display',serif;font-style:italic;font-size:44px;line-height:.8;color:#1E1712;">L</span>
+        <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:16px;line-height:1.6;color:#2C241C;margin:6px 0 0;">indsay's coherence during the CVS and ThreeV calls is the fulcrum. If she is lucid enough to negotiate a stool-softener brand, the defense's account of her state an hour later has to explain what changed — not assume it.</p>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}">03 — KEY FINDINGS (NUMBERED)</div>
+    <sc-for list="{{ bigThree }}" as="b" hint-placeholder-count="3">
+      <div style="margin-bottom:28px;">
+        <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:26px;color:rgba(30,23,18,.28);margin-bottom:2px;">{{ b.num }}</div>
+        <div style="font-weight:700;font-size:15px;letter-spacing:.01em;text-transform:uppercase;padding-bottom:8px;border-bottom:1px solid rgba(176,141,87,.35);margin-bottom:10px;">{{ b.title }}</div>
+        <p style="font-size:13.5px;line-height:1.6;color:#2C241C;margin:0 0 12px;max-width:66ch;">{{ b.body }}</p>
+        <div style="background:#1E1712;padding:14px 16px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(233,225,210,.5);margin-bottom:6px;">WHY IT MATTERS</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:13.5px;line-height:1.55;color:#F0E9DB;">{{ b.why }}</div>
+        </div>
+      </div>
+    </sc-for>
+
+    <div style="{{ sectionHead }}">04 — INVESTIGATION PLAN (NUMBERED LIST)</div>
+    <div style="margin-bottom:40px;">
+      <sc-for list="{{ planItems }}" as="p" hint-placeholder-count="3">
+        <div style="display:flex;gap:16px;padding:12px 0;border-top:{{ p.borderStyle }};">
+          <div style="width:26px;flex-shrink:0;font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:rgba(30,23,18,.32);">{{ p.num }}</div>
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:14px;line-height:1.6;color:#2C241C;margin:0;"><b style="font-style:normal;">{{ p.label }}:</b> {{ p.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="{{ sectionHead }}">05 — OUTREACH DRAFT (EXPERT / WITNESS)</div>
+    <div style="border:1px solid rgba(176,141,87,.4);background:#FFFFFF;padding:22px 24px;margin-bottom:40px;">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:16px;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#B08D57;"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;">EXPERT WITNESS OUTREACH</span>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#5A5248;margin-bottom:6px;">SUBJECT LINE</div>
+      <div style="border-left:2px solid #B08D57;padding-left:12px;margin-bottom:16px;font-family:'Playfair Display',serif;font-style:italic;font-size:14px;">Independent review of the January 24 device timeline — Commonwealth v. Clancy</div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#5A5248;margin-bottom:6px;">THE ASK</div>
+      <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:13.5px;line-height:1.65;color:#2C241C;margin:0;max-width:62ch;">We'd like an independent forensic read on the device-extraction gap before trial — specifically whether the Cellebrite output can be attributed to a single handset without the missing serial. Happy to send the exhibit set ahead of a call.</p>
+    </div>
+
+    <div style="{{ sectionHead }}">06 — ANALYST NOTES (DARK CALLOUT)</div>
+    <div style="background:#1E1712;padding:22px 24px;margin-bottom:40px;">
+      <div style="display:flex;align-items:center;gap:9px;margin-bottom:16px;">
+        <span style="width:8px;height:8px;border-radius:50%;background:#B08D57;"></span>
+        <span style="font-family:'JetBrains Mono',monospace;font-weight:700;font-size:12px;letter-spacing:.08em;color:#F4EEE1;">ANALYST NOTES</span>
+      </div>
+      <sc-for list="{{ analystNotes }}" as="n" hint-placeholder-count="2">
+        <div style="{{ n.wrapStyle }}">
+          <div style="display:flex;gap:9px;font-weight:700;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:#F4EEE1;margin-bottom:6px;"><span style="color:#B08D57;">•</span>{{ n.title }}</div>
+          <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:13px;line-height:1.55;color:rgba(240,233,219,.75);padding-left:19px;">{{ n.body }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="{{ sectionHead }}">07 — CASE ASSET PANEL (LONG-FORM DRAFT)</div>
+    <div style="border:1px solid #1E1712;margin-bottom:40px;">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;padding:16px 22px;border-bottom:1px solid rgba(176,141,87,.35);">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.08em;color:#5A5248;">AFFIDAVIT SUMMARY · DRAFT</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#B08D57;cursor:pointer;">COPY</span>
+      </div>
+      <div style="padding:22px 24px 26px;">
+        <p style="font-size:13.5px;line-height:1.7;color:#2C241C;margin:0 0 14px;">Investigators describe Lindsay as having used devices and journals for mental-state documentation and medication tracking, then infer she may have used the tablet as well — a step the affidavit does not independently support.</p>
+        <div style="border-left:2px solid rgba(176,141,87,.5);padding-left:14px;margin:0 0 14px;">
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:13.5px;line-height:1.65;color:#5A5248;margin:0;">"The tablet is acknowledged as accessible to both Lindsay and Patrick" — a fact the affidavit states, then sets aside.</p>
+        </div>
+        <p style="font-size:13.5px;line-height:1.7;color:#2C241C;margin:0;">This gap — asserted access without asserted use — is the seam the defense will press first.</p>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}">08 — CASE LOG ENTRIES</div>
+    <div style="display:flex;flex-direction:column;gap:2px;">
+      <sc-for list="{{ logEntries }}" as="e" hint-placeholder-count="2">
+        <div style="border:1px solid rgba(176,141,87,.32);border-left:2px solid #B08D57;background:#FFFFFF;padding:14px 18px 16px;">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px;">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;color:#8A8175;">ENTRY {{ e.num }} · {{ e.date }}</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:#8A8175;">[ – ]</span>
+          </div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:13.5px;font-weight:700;color:#1E1712;margin-bottom:6px;"># {{ e.heading }}</div>
+          <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:13.5px;line-height:1.6;color:#2C241C;margin:0;">{{ e.body }}</p>
+        </div>
+      </sc-for>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const BIG_THREE = [
+  { num: '01', title: 'Independent clocks over narrative order', body: 'CVS entry/exit, ThreeV entry, and the CAD dispatch log all carry their own timestamps. None of them should be reconciled to match a witness account — the account gets reconciled to them.', why: 'Because when testimony sets the clock, contradictions in testimony become invisible. Let the devices testify first.' },
+  { num: '02', title: 'Provenance chains, not flat facts', body: 'Every claim in the Carney interview traces back through Patrick before it reaches investigators. That chain has to travel with the claim, not get flattened into "Carney said."', why: 'A fact that arrived secondhand and a fact observed directly should never read the same on the page.' },
+  { num: '03', title: 'Absence is a finding, not a gap', body: "Toy scarcity in the scene photos and the trash-bagged window aren't explained by the record yet — they're logged as open, not resolved by assumption.", why: 'Treat "not photographed" and "we have not located a photograph" as two different facts.' }
+];
+
+const PLAN_ITEMS = [
+  { num: '01', label: 'The claim ledger', body: 'build a per-witness table of exact claim, timestamp, source type, and corroboration for every contested statement before trial resumes.' },
+  { num: '02', label: 'The device bridge', body: 'reconstruct scene placard → property ID → serial/IMEI → extraction → exhibit for the recovered tablet before its contents are cited again.' },
+  { num: '03', label: 'The photo audit', body: 'catalogue which rooms and items were photographed, when, and by whom, so gaps in documentation stop reading as gaps in the home.' }
+];
+
+const ANALYST_NOTES = [
+  { title: 'Keep device activity attributed to the device, not the person.', body: 'iPhone and Apple Watch logs should read as device records until a human user is independently established — testimony has repeatedly collapsed the two.' },
+  { title: 'Flag every chronology inconsistency at first appearance.', body: 'The Patrick interview summary orders ThreeV before CVS twice. Note it once, link it everywhere it recurs.' }
+];
+
+const LOG_ENTRIES = [
+  { num: 1, date: '9/18/2026', heading: 'Device Provenance Chain', body: 'The physical handset recovered at the scene has not yet been cleanly bridged through placard → property ID → serial/IMEI → forensic acquisition → exhibit. Multiple-device hypothesis stays open until reconciled.' },
+  { num: 2, date: '9/19/2026', heading: 'January 24 Timeline', body: 'Reconstruct the entire day on independent clocks before overlaying any witness account. Priority window: return-home → 6:09 call → 6:11 dispatch.' }
+];
+
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      sectionHead: "font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8175;border-bottom:1px solid rgba(176,141,87,.4);padding-bottom:8px;margin-bottom:18px;",
+      bigThree: BIG_THREE,
+      planItems: PLAN_ITEMS.map((p, i) => ({ ...p, borderStyle: i === 0 ? 'none' : '1px solid rgba(176,141,87,.25)' })),
+      analystNotes: ANALYST_NOTES.map((n, i) => ({ ...n, wrapStyle: i === 0 ? 'margin-bottom:18px;' : '' })),
+      logEntries: LOG_ENTRIES
+    };
+  }
+}
+</script>
+</body>
+</html>

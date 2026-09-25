@@ -1,0 +1,4881 @@
+{
+  "schemaVersion": "temporal-context-view/1.0",
+  "contract": "testimony-knowledge/1.0+timeline-candidate/1.0+temporal-context/1.0",
+  "compilerVersion": "1.0.0",
+  "title": "Day 3 first responders — temporal context (Hall, then Josephine)",
+  "generatedAt": "2026-09-20T23:01:34.823Z",
+  "source": {
+    "title": "MA v. Lindsay Clancy Day 3",
+    "sha256": "6393970b4e8c473364cb115cd212bd7573f5cbadf3890a8abf631f9b993921d7",
+    "segments": 1873
+  },
+  "boundary": "Every event, time, and link here is a reviewable candidate. Nothing is canonical, no witnesses are merged, and testimony timestamps are locators, never event times.",
+  "accounts": [
+    {
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall"
+    },
+    {
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine"
+    }
+  ],
+  "report": {
+    "schemaVersion": "testimony-temporal-context-acceptance/1.0",
+    "compiler": {
+      "name": "icarus-testimony-temporal-context-compiler",
+      "version": "1.0.0",
+      "contract": "testimony-knowledge/1.0+timeline-candidate/1.0+temporal-context/1.0"
+    },
+    "accounts": [
+      {
+        "accountKey": "day3-hall",
+        "witness": "Officer Stephen Hall"
+      },
+      {
+        "accountKey": "day3-josephine",
+        "witness": "Officer Brian Josephine"
+      }
+    ],
+    "testimonyUnitsReviewed": 23,
+    "knowledgeItemsCreated": 23,
+    "claimsCreated": 23,
+    "eventCandidatesCreated": 40,
+    "temporalAssertionsCreated": 40,
+    "assertionForms": {
+      "exactTimes": 0,
+      "exactDates": 0,
+      "approximateTimes": 2,
+      "intervals": 0,
+      "durations": 4,
+      "relativeOnly": 5,
+      "sequenceOnly": 25,
+      "lowerBounds": 0,
+      "upperBounds": 0,
+      "unknownTime": 4
+    },
+    "qualifiedAssertions": 7,
+    "adoptedFromQuestionAssertions": 2,
+    "stateObservations": 6,
+    "knowledgeStateChanges": 5,
+    "temporalConstraints": 32,
+    "candidateAnchorsIdentified": 13,
+    "possibleSharedAnchors": 11,
+    "possibleSameEventLinks": 9,
+    "temporalConflicts": 2,
+    "additionalAccountsOfExistingCandidates": 9,
+    "additionalDetailsAttached": 1,
+    "eventsWithSequencePositionButNoClock": 34,
+    "unresolvedEntityMentions": 15,
+    "sourceIrregularities": {
+      "inCitedRanges": 0,
+      "wholeProceedingPreserved": 3
+    },
+    "canonicalEventsCreated": 0,
+    "automaticSameResolutions": 0
+  },
+  "proof": {
+    "hallRunUnchangedAfterSecondWitness": true,
+    "hallCandidatesUnchanged": true,
+    "hallConstraintsUnchanged": true,
+    "rerunIdempotent": true,
+    "newEventCandidatesFromSecondWitness": 20,
+    "newTemporalAssertionsFromSecondWitness": 20,
+    "possibleSharedAnchorsAfterSecondWitness": 11,
+    "possibleSameEventLinksAfterSecondWitness": 9,
+    "conflictsPreserved": [
+      "duration_ranges_disjoint",
+      "state_disagreement"
+    ]
+  },
+  "candidates": [
+    {
+      "id": "f21977db-f6d3-514c-a38e-07ac549cce09",
+      "code": "EVT-CA02EFD625",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "dispatch",
+      "kind": "event",
+      "eventClass": "dispatch_received",
+      "description": "Stephen Hall received a dispatch to 47 Summer Street.",
+      "sourceWording": "did you receive a dispatch to go to 47 Summer Street in Duxbury?",
+      "sourceSegmentIds": [
+        "776a9ab8-9cb3-570a-a9fb-8e7d634cde52",
+        "d4b7cb70-d6af-593d-a04c-193c77de02b1"
+      ],
+      "claimId": "ca06564a-64c1-5cd8-aa0c-1e26ed9e7257",
+      "knowledgeItemId": "db769908-1812-54c2-ac27-6cfe71f83bf6",
+      "anchorFamily": "dispatch",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "768030ca-349f-5b11-a99d-27e4958b3112",
+      "code": "EVT-16F055C5E1",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "travel",
+      "kind": "event",
+      "eventClass": "emergency_response_travel",
+      "description": "Stephen Hall traveled from Lincoln Street Fields to 47 Summer Street.",
+      "sourceWording": "how long did it take you to get from there to 47 Summer Street?",
+      "sourceSegmentIds": [
+        "dc4a0f18-275c-5112-a86e-0600a13109a7",
+        "6b0019cc-055d-5307-a017-5dc7be566b74",
+        "faa71ed3-69ef-5426-af54-35ddba837592"
+      ],
+      "claimId": "a95896c7-4d99-5c31-a66f-ecdc6b1d0a16",
+      "knowledgeItemId": "8a54cc67-7020-5957-a30a-42d8ad92e8ea",
+      "anchorFamily": "response-travel",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+      "code": "EVT-1B579568CC",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "arrival",
+      "kind": "event",
+      "eventClass": "arrival",
+      "description": "Stephen Hall arrived at 47 Summer Street with Brian Josephine.",
+      "sourceWording": "I arrived simultaneously with Officer Josephine.",
+      "sourceSegmentIds": [
+        "64835323-008b-5077-a631-6c8424c7c1ad"
+      ],
+      "claimId": "3645e722-ae77-5db7-a1fb-83e373a7ade5",
+      "knowledgeItemId": "42a0b114-40f3-5bf0-aff1-d14fd44c613e",
+      "anchorFamily": "police-arrival",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "d427d707-be35-57ec-a115-ed53b6b56320",
+      "code": "EVT-A13F3BED59",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "gate-open",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Stephen Hall observed an open gate on the left side of the house on arrival.",
+      "sourceWording": "There was a gate open on the left side of the house.",
+      "sourceSegmentIds": [
+        "a5a92993-ac7f-57c3-a7a5-b3887523bede"
+      ],
+      "claimId": "3645e722-ae77-5db7-a1fb-83e373a7ade5",
+      "knowledgeItemId": "42a0b114-40f3-5bf0-aff1-d14fd44c613e",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "0ae77a03-0b8d-57d6-adf8-4ddf79a39724",
+      "code": "EVT-D95E0E581B",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "lindsay-observed",
+      "kind": "event",
+      "eventClass": "medical_observation",
+      "description": "Stephen Hall observed Lindsay Clancy on the ground with cuts.",
+      "sourceWording": "She had cuts to both wrists and to the left side of her neck.",
+      "sourceSegmentIds": [
+        "d683f323-7d41-5dd0-ad4f-d6936c703a99"
+      ],
+      "claimId": "49723cb7-54d8-53ea-ad03-4fe474319752",
+      "knowledgeItemId": "16871596-9423-54ab-a678-24fb7324d14c",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "e9c00085-fbd2-5bf7-adb2-cc463fbf57f5",
+      "code": "EVT-6E2366AD4D",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "male-encountered",
+      "kind": "event",
+      "eventClass": "encounter",
+      "description": "Stephen Hall encountered a male in the backyard.",
+      "sourceWording": "did you encounter a male in the backyard?",
+      "sourceSegmentIds": [
+        "92510ecb-2755-5bca-a628-738a11c365cb",
+        "af9ac988-1b33-5287-ab5b-de3bd4736b82"
+      ],
+      "claimId": "bf7e82b7-f2f9-533c-af6b-444c65514d01",
+      "knowledgeItemId": "de1aafd3-ad35-530c-ad68-69c9a6425b15",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "80a83e75-2912-51e0-ac7e-dbf706d12b26",
+      "code": "EVT-99EA936BD3",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "learns-patrick",
+      "kind": "knowledge_state",
+      "eventClass": "knowledge_change",
+      "description": "Stephen Hall came to know that the man's name was Patrick Clancy.",
+      "sourceWording": "did you later learn his name was Patrick Clancy?",
+      "sourceSegmentIds": [
+        "ddd2095b-6d87-5f2a-a016-04861fa2c670",
+        "e7ab5d4a-b718-5f84-a414-b1cd8cb33cc1"
+      ],
+      "claimId": "bf7e82b7-f2f9-533c-af6b-444c65514d01",
+      "knowledgeItemId": "de1aafd3-ad35-530c-ad68-69c9a6425b15",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": {
+        "holder": "Stephen Hall",
+        "proposition": "The man in the backyard was Patrick Clancy."
+      }
+    },
+    {
+      "id": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+      "code": "EVT-47FB9C3022",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "fire-arrival",
+      "kind": "event",
+      "eventClass": "arrival",
+      "description": "Firefighters began arriving at 47 Summer Street.",
+      "sourceWording": "They started to arrive and I went to gate to direct them where to go.",
+      "sourceSegmentIds": [
+        "9faf9eb7-de77-5553-a896-b1f89304c5e5",
+        "36dd5add-edf0-5eb8-a463-1bedac596593"
+      ],
+      "claimId": "d75ae9c2-17b0-5112-a4b8-42ffe873dfd5",
+      "knowledgeItemId": "79857c1f-185d-512c-a424-c243685ac16c",
+      "anchorFamily": "fire-arrival",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "4e70291e-b20c-55ab-a8af-2dccfdc11175",
+      "code": "EVT-699A597C52",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "patrick-enters",
+      "kind": "event",
+      "eventClass": "movement",
+      "description": "Patrick Clancy went inside the house.",
+      "sourceWording": "At one point, he went inside to say he was going to check on his children.",
+      "sourceSegmentIds": [
+        "76011220-a115-5880-a539-bc23fd9e3ff5",
+        "3db8e563-dcd6-5296-a49d-baf501ff7be1"
+      ],
+      "claimId": "c14d666a-af7a-598c-a7e6-8cfa166f5f9f",
+      "knowledgeItemId": "e83b414a-7980-5f17-ae23-0814bb2bc787",
+      "anchorFamily": "patrick-enters-house",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+      "code": "EVT-956B981C56",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "radio-relay",
+      "kind": "event",
+      "eventClass": "dispatch_relay",
+      "description": "Dispatch relayed over the radio that Patrick could not wake them up.",
+      "sourceWording": "Dispatch said that he couldn't wake them up.",
+      "sourceSegmentIds": [
+        "65928b36-81d5-59fb-afcf-a46d28e5347e"
+      ],
+      "claimId": "26df5f51-bb88-5c82-a809-7cb61af54fdd",
+      "knowledgeItemId": "31169e9c-7f29-5c11-a3b4-b6a249486789",
+      "anchorFamily": "dispatch-relay",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "52c9bd54-f9d7-50e9-aee5-b5f8dca47ebc",
+      "code": "EVT-158B118BB6",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "knows-cannot-wake",
+      "kind": "knowledge_state",
+      "eventClass": "knowledge_change",
+      "description": "Stephen Hall received the information that Patrick could not wake them.",
+      "sourceWording": "Not really, no.",
+      "sourceSegmentIds": [
+        "65928b36-81d5-59fb-afcf-a46d28e5347e",
+        "89348a2f-be9d-52ba-a417-bf810ee936d2",
+        "380c0f16-14bd-511d-a715-0c6d3472eda5"
+      ],
+      "claimId": "26df5f51-bb88-5c82-a809-7cb61af54fdd",
+      "knowledgeItemId": "31169e9c-7f29-5c11-a3b4-b6a249486789",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": {
+        "holder": "Stephen Hall",
+        "proposition": "Patrick Clancy could not wake 'them'."
+      }
+    },
+    {
+      "id": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+      "code": "EVT-622DF754E4",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "scream",
+      "kind": "event",
+      "eventClass": "auditory_observation",
+      "description": "Stephen Hall heard a loud scream from inside the house.",
+      "sourceWording": "I heard a loud scream from inside.",
+      "sourceSegmentIds": [
+        "b4d5d106-d269-5e15-a144-f492744cc2f0",
+        "0b766e32-4b73-5646-a568-0abcb3263c72"
+      ],
+      "claimId": "59876688-8390-59cc-a827-ea7ba0c57965",
+      "knowledgeItemId": "88c0f6c9-3a5a-5a31-a4d5-bb711667c13c",
+      "anchorFamily": "scream",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+      "code": "EVT-4779FF6CD0",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "kitchen-entry",
+      "kind": "event",
+      "eventClass": "scene_entry",
+      "description": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen.",
+      "sourceWording": "Myself and Officer Josephine ran towards the slider and entered into the house.",
+      "sourceSegmentIds": [
+        "da456598-b523-5f62-a3eb-81bc75eabc2f",
+        "8a1ccee5-03e0-57f8-a392-b32c6d34ece6",
+        "532efd71-2a6e-52b7-a248-e686a314f161",
+        "5e04b351-ea44-53e1-aa4d-9a44fca10dfe"
+      ],
+      "claimId": "59876688-8390-59cc-a827-ea7ba0c57965",
+      "knowledgeItemId": "88c0f6c9-3a5a-5a31-a4d5-bb711667c13c",
+      "anchorFamily": "kitchen-entry",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "98236418-c5f7-5bc6-a8c9-adbc33c77652",
+      "code": "EVT-55676DB3C0",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "kitchen-screaming",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Stephen Hall observed the condition of the screaming when he entered the kitchen.",
+      "sourceWording": "We could hear he was talking, but there was screaming was done.",
+      "sourceSegmentIds": [
+        "f683652f-7ff5-54b4-a4ae-bc78557dbdf5",
+        "7391843d-56a6-58f3-aa10-ecb8dcae898f"
+      ],
+      "claimId": "59876688-8390-59cc-a827-ea7ba0c57965",
+      "knowledgeItemId": "88c0f6c9-3a5a-5a31-a4d5-bb711667c13c",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": {
+        "key": "screaming-at-kitchen-entry",
+        "value": "ended"
+      },
+      "knowledge": null
+    },
+    {
+      "id": "817d473d-32fc-5069-a10e-53ce18749dfa",
+      "code": "EVT-78BB01EA07",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "patrick-statement",
+      "kind": "event",
+      "eventClass": "reported_statement",
+      "description": "Hall heard Patrick Clancy say he could not wake or get up the children.",
+      "sourceWording": "Do you recall him saying, \"I can't wake them up. I can't get them Up?\"",
+      "sourceSegmentIds": [
+        "fb6e1eaf-c204-5d1e-a401-7e4660c6e594",
+        "49149cde-ecd7-5d3f-a907-9b957400aa3f"
+      ],
+      "claimId": "b15f3d29-2f95-5ca2-a3d6-eec86836790f",
+      "knowledgeItemId": "8eba3635-c59d-5dc7-a730-98a836894609",
+      "anchorFamily": "patrick-statement-right-basement",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "9622a4aa-499e-541d-a1ac-6fde961ea5f6",
+      "code": "EVT-8C61726490",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "finds-dawson",
+      "kind": "event",
+      "eventClass": "victim_discovery",
+      "description": "Stephen Hall saw a child's body in the basement back room.",
+      "sourceWording": "there was a body of a young child.",
+      "sourceSegmentIds": [
+        "c4adbf74-3fa0-5da7-a792-0db93a8f30be",
+        "c724648e-4e69-58f0-ad8c-7c1bae1e2078"
+      ],
+      "claimId": "056ba88d-b0d4-5ab6-add8-6aa244e20867",
+      "knowledgeItemId": "d8e2a439-83de-55a4-a8d7-a14229bee84c",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+      "code": "EVT-1AFBE6B0D6",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "child-to-ambulance",
+      "kind": "event",
+      "eventClass": "patient_removal",
+      "description": "Officer Josephine picked up the child and they ran him outside to the ambulance.",
+      "sourceWording": "Officer Josephine picked up the child and we ran him outside through the front door to the ambulance.",
+      "sourceSegmentIds": [
+        "fd863cdc-587e-5823-ac01-0635756d78cf"
+      ],
+      "claimId": "056ba88d-b0d4-5ab6-add8-6aa244e20867",
+      "knowledgeItemId": "d8e2a439-83de-55a4-a8d7-a14229bee84c",
+      "anchorFamily": "dawson-to-ambulance",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+      "code": "EVT-EED36800FA",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "return-basement",
+      "kind": "event",
+      "eventClass": "search",
+      "description": "Stephen Hall and Brian Josephine returned to the basement to look for other children.",
+      "sourceWording": "We ran back down into the basement to check to see if we could find other children.",
+      "sourceSegmentIds": [
+        "8d22c261-cb10-5a5d-a51c-5b81f7d64250",
+        "d6ec7db0-3ffc-5e38-a6de-4005415045c9"
+      ],
+      "claimId": "05ff5360-bd4f-5737-aa4c-aa2b78ce6170",
+      "knowledgeItemId": "f901e1f9-55a1-544e-a2a2-591b9960145f",
+      "anchorFamily": "left-basement-return",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "ea86787e-4415-55f9-a62f-e115d06334b7",
+      "code": "EVT-779F431AFD",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "suspects-others",
+      "kind": "knowledge_state",
+      "eventClass": "knowledge_change",
+      "description": "Stephen Hall thought there were other children because of Patrick's plural wording.",
+      "sourceWording": "When Patrick Clancy said, \"Well, I can't wake them up,\" instead of just the singular.",
+      "sourceSegmentIds": [
+        "c894e43b-eb63-5939-a91b-8383ab3e0672",
+        "724636dd-fab6-506b-af7c-9d27879a4709"
+      ],
+      "claimId": "05ff5360-bd4f-5737-aa4c-aa2b78ce6170",
+      "knowledgeItemId": "f901e1f9-55a1-544e-a2a2-591b9960145f",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": {
+        "holder": "Stephen Hall",
+        "proposition": "There may be other children in the house."
+      }
+    },
+    {
+      "id": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+      "code": "EVT-317A252CB7",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "key": "ems-working",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Stephen Hall observed EMTs and paramedics working on two children in the left basement.",
+      "sourceWording": "EMTs and paramedics were working on them.",
+      "sourceSegmentIds": [
+        "f00b4472-1766-516b-a2fb-94e55d83ea45",
+        "1891990e-721d-5970-adcc-2d03b58b3f2f"
+      ],
+      "claimId": "05ff5360-bd4f-5737-aa4c-aa2b78ce6170",
+      "knowledgeItemId": "f901e1f9-55a1-544e-a2a2-591b9960145f",
+      "anchorFamily": "ems-care-left-basement",
+      "anchorRole": "prior_state_origin",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+      "code": "EVT-415A020531",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "dispatch",
+      "kind": "event",
+      "eventClass": "dispatch_received",
+      "description": "Brian Josephine received a dispatch to 47 Summer Street.",
+      "sourceWording": "did you receive a dispatch at approximately 6:11 PM to go to 47 Summer Street in Duxbury?",
+      "sourceSegmentIds": [
+        "df2bba94-64b6-546c-a5f3-ff8b180887d5",
+        "6eb0dcc8-b494-55b6-a74c-97b29bcfa73d"
+      ],
+      "claimId": "6c7c0487-5a7e-5148-a6a6-3ebb4196c917",
+      "knowledgeItemId": "6d1493fb-e9e8-5755-a974-d47891d42c0e",
+      "anchorFamily": "dispatch",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "5951d941-1aa8-52a8-aab0-55ca58d2cb3c",
+      "code": "EVT-E6CE81E6E8",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "travel",
+      "kind": "event",
+      "eventClass": "emergency_response_travel",
+      "description": "Brian Josephine traveled to 47 Summer Street.",
+      "sourceWording": "I would say anywhere from three to four minutes.",
+      "sourceSegmentIds": [
+        "77f62355-ca21-57eb-a5fb-fcebc55f38e7",
+        "fe737119-35b4-5c80-a9c4-af5bbdd46fdb"
+      ],
+      "claimId": "7ff3db27-91f4-506f-a65c-9c8f7fe67298",
+      "knowledgeItemId": "075ae407-1ee9-5ca9-a1c6-d17cafae4f0a",
+      "anchorFamily": "response-travel",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+      "code": "EVT-3AC45AB4B6",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "arrival",
+      "kind": "event",
+      "eventClass": "arrival",
+      "description": "Brian Josephine arrived and parked on the street at 47 Summer Street.",
+      "sourceWording": "Parked in the street.",
+      "sourceSegmentIds": [
+        "cb438889-ea42-5b65-ab39-f7fc33393a0c",
+        "b3ea253e-939d-5046-a2a0-b49ccb859e1d"
+      ],
+      "claimId": "73268202-49f4-5713-a824-9df1ea5d1d6c",
+      "knowledgeItemId": "395e8c1c-69c7-50f8-a445-c44224d17c3a",
+      "anchorFamily": "police-arrival",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "487093ea-df6d-5809-a2bc-78bd7aa30ab2",
+      "code": "EVT-D138504B9B",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "sees-parties",
+      "kind": "event",
+      "eventClass": "visual_observation",
+      "description": "Brian Josephine observed two people in the backyard, one on the ground and one standing over them.",
+      "sourceWording": "I observed two parties, one lying in the ground and one standing over it.",
+      "sourceSegmentIds": [
+        "35fff430-1195-58ee-a560-dd60d3147abd",
+        "1a9a2524-4f52-58d2-a40b-d890af47add1"
+      ],
+      "claimId": "048e9861-7e9c-5cd3-a004-cf5538f24887",
+      "knowledgeItemId": "01f15d44-1cbe-5d71-a874-7f952ed1d82c",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "ec0c745b-6c3a-58c7-aaec-82b776324003",
+      "code": "EVT-682A4DE302",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "learns-identities",
+      "kind": "knowledge_state",
+      "eventClass": "knowledge_change",
+      "description": "Brian Josephine came to know the two people were Patrick and Lindsay Clancy.",
+      "sourceWording": "did you later learn that was Patrick Clancy?",
+      "sourceSegmentIds": [
+        "bf5cea5e-fe26-525a-a2b4-833150840ea3",
+        "d0633aeb-e9ec-5d9d-a412-4315f8907e32",
+        "95e2639c-323e-56f6-a6ca-150c9160f2f9",
+        "ff0920ef-7c4b-5888-a583-e43c9b908870"
+      ],
+      "claimId": "048e9861-7e9c-5cd3-a004-cf5538f24887",
+      "knowledgeItemId": "01f15d44-1cbe-5d71-a874-7f952ed1d82c",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": {
+        "holder": "Brian Josephine",
+        "proposition": "The standing person was Patrick Clancy and the person on the ground was Lindsay Clancy."
+      }
+    },
+    {
+      "id": "9d18ee2d-10f1-5fc3-a2ab-692f27e28cd8",
+      "code": "EVT-0B25D2B5B2",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "crosses-patrick",
+      "kind": "event",
+      "eventClass": "encounter",
+      "description": "Brian Josephine and Patrick Clancy crossed paths near the bulkhead.",
+      "sourceWording": "and then that's when me and him crossed paths.",
+      "sourceSegmentIds": [
+        "522853e6-440e-5ee7-a71f-8696242c11b3"
+      ],
+      "claimId": "0c141266-3cb4-5904-a61a-b829419ae542",
+      "knowledgeItemId": "59e077e5-1d31-5e71-af65-eb30f60c63de",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "fc93bf92-826d-58bd-a6bd-f01e7990806a",
+      "code": "EVT-3380904AEF",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "speaks-lindsay",
+      "kind": "event",
+      "eventClass": "medical_contact",
+      "description": "Brian Josephine went to the woman on the ground and attempted to speak with her.",
+      "sourceWording": "I attempted to.",
+      "sourceSegmentIds": [
+        "0c31476b-abe1-5f54-a6fe-22f2f102eed0",
+        "d51800e8-8766-56e0-a79d-f8de558d6959",
+        "0446b773-9a2e-53f9-acbd-befe6d649e9e"
+      ],
+      "claimId": "0c141266-3cb4-5904-a61a-b829419ae542",
+      "knowledgeItemId": "59e077e5-1d31-5e71-af65-eb30f60c63de",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+      "code": "EVT-AAB3083258",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "fire-arrival",
+      "kind": "event",
+      "eventClass": "arrival",
+      "description": "Duxbury Fire personnel arrived at the backyard.",
+      "sourceWording": "I observed Duxbury Fire personnel show up.",
+      "sourceSegmentIds": [
+        "a9f07912-e4e1-5130-a974-af26984320d3"
+      ],
+      "claimId": "023df5d5-2f8c-553f-a4aa-6bcb37821086",
+      "knowledgeItemId": "f0d28cd0-6e92-577c-ab4b-dfa9e6389a54",
+      "anchorFamily": "fire-arrival",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+      "code": "EVT-C72DA02413",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "scream",
+      "kind": "event",
+      "eventClass": "auditory_observation",
+      "description": "Brian Josephine and Stephen Hall heard loud screams while standing by the window.",
+      "sourceWording": "we just started hearing loud screams.",
+      "sourceSegmentIds": [
+        "0af06213-a8b8-572d-a5c0-6b2fa44a6a2e",
+        "6368e6e9-87ba-5ee9-aa89-aa5f084d284a"
+      ],
+      "claimId": "326e5b53-a7d4-53d9-a3cd-956e6d314df7",
+      "knowledgeItemId": "52131a63-d359-57d7-a1cc-a9abddefd208",
+      "anchorFamily": "scream",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "84a67e35-b2a1-5930-a05a-ccab2290df74",
+      "code": "EVT-57CF55F65D",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "dispatch-basement",
+      "kind": "event",
+      "eventClass": "dispatch_relay",
+      "description": "Josephine was unsure whether dispatch said something about the basement over the air.",
+      "sourceWording": "I'm not sure if dispatch or something came over the air and said something about the basement",
+      "sourceSegmentIds": [
+        "3be2266f-4c39-5832-adc3-c572b366c29e"
+      ],
+      "claimId": "326e5b53-a7d4-53d9-a3cd-956e6d314df7",
+      "knowledgeItemId": "52131a63-d359-57d7-a1cc-a9abddefd208",
+      "anchorFamily": "dispatch-relay",
+      "anchorRole": "detail",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "b0079903-63ff-5442-aa97-9253b96db492",
+      "code": "EVT-6F5FD05867",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "kitchen-entry",
+      "kind": "event",
+      "eventClass": "scene_entry",
+      "description": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors.",
+      "sourceWording": "We went up the deck and through the sliding glass doors into the kitchen.",
+      "sourceSegmentIds": [
+        "cecbff89-282f-5383-aa74-44e617644382"
+      ],
+      "claimId": "68e73847-3f38-5bed-aa1e-342505335ef4",
+      "knowledgeItemId": "1b9b7475-39d0-58e8-ae47-a4c741cf858d",
+      "anchorFamily": "kitchen-entry",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "9268b75a-b8d9-556f-ae76-c3da84e75ffd",
+      "code": "EVT-475BEF09A9",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "kitchen-screaming",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Brian Josephine observed the condition of the screaming as he entered the kitchen.",
+      "sourceWording": "it was the exact screaming that I heard from the window.",
+      "sourceSegmentIds": [
+        "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6",
+        "48478ab7-d5ed-5152-afc2-87cf5c28e37f"
+      ],
+      "claimId": "68e73847-3f38-5bed-aa1e-342505335ef4",
+      "knowledgeItemId": "1b9b7475-39d0-58e8-ae47-a4c741cf858d",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": {
+        "key": "screaming-at-kitchen-entry",
+        "value": "continuing"
+      },
+      "knowledge": null
+    },
+    {
+      "id": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+      "code": "EVT-59BE981142",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "patrick-statement",
+      "kind": "event",
+      "eventClass": "reported_statement",
+      "description": "Brian Josephine heard Patrick Clancy scream that she had killed the children.",
+      "sourceWording": "She killed the fucking kids",
+      "sourceSegmentIds": [
+        "6aef0285-3ff2-5173-a9cd-3da9360110a5"
+      ],
+      "claimId": "423d5329-523a-52a3-ab07-b99ea6575044",
+      "knowledgeItemId": "00ffa71c-ba18-5728-af44-841c4d20016b",
+      "anchorFamily": "patrick-statement-right-basement",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "38346880-6fda-5eb1-a4eb-00187757799e",
+      "code": "EVT-9B16053F29",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "finds-dawson",
+      "kind": "event",
+      "eventClass": "victim_discovery",
+      "description": "Brian Josephine saw a child laying motionless on the floor.",
+      "sourceWording": "we observed what appeared to be a child laying motionless on the floor.",
+      "sourceSegmentIds": [
+        "fd444089-77cb-5f11-a492-ce6d52e68efc",
+        "81849fe9-82de-5a86-a6fb-886ce479cd88"
+      ],
+      "claimId": "423d5329-523a-52a3-ab07-b99ea6575044",
+      "knowledgeItemId": "00ffa71c-ba18-5728-af44-841c4d20016b",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "04f05fee-a407-5a2c-aed9-d2f8ba92232c",
+      "code": "EVT-CC84AEF3FA",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "learns-dawson",
+      "kind": "knowledge_state",
+      "eventClass": "knowledge_change",
+      "description": "Brian Josephine came to know the child was Dawson Clancy.",
+      "sourceWording": "did you later learn his name was Dawson Clancy?",
+      "sourceSegmentIds": [
+        "e52d8169-1c2e-5ba1-a41f-2365bd48b785",
+        "bfbbf777-e7fd-5b1f-a4b4-dd3c5a93b8ba"
+      ],
+      "claimId": "423d5329-523a-52a3-ab07-b99ea6575044",
+      "knowledgeItemId": "00ffa71c-ba18-5728-af44-841c4d20016b",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": {
+        "holder": "Brian Josephine",
+        "proposition": "The child was Dawson Clancy."
+      }
+    },
+    {
+      "id": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+      "code": "EVT-EC21D0CC66",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "dawson-to-ambulance",
+      "kind": "event",
+      "eventClass": "patient_removal",
+      "description": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher.",
+      "sourceWording": "I rushed over with Dawson and I put him on the stretcher",
+      "sourceSegmentIds": [
+        "d4d505c7-e395-5fe1-a1db-358d683e9001",
+        "4904b499-e452-5650-aea9-f9e9736e3029"
+      ],
+      "claimId": "1b6ee773-b32b-5973-a1d2-768ca79fb0b6",
+      "knowledgeItemId": "34fbc40b-5eb8-528a-a745-ef72c8ad8fd8",
+      "anchorFamily": "dawson-to-ambulance",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "3eec4a31-1743-559e-a8c4-bbd928e9c734",
+      "code": "EVT-EF8A927C17",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "ambulance-state",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Brian Josephine observed the ambulance backing up and having just parked.",
+      "sourceWording": "The ambulance was backing up and had pretty much just parked",
+      "sourceSegmentIds": [
+        "4904b499-e452-5650-aea9-f9e9736e3029"
+      ],
+      "claimId": "1b6ee773-b32b-5973-a1d2-768ca79fb0b6",
+      "knowledgeItemId": "34fbc40b-5eb8-528a-a745-ef72c8ad8fd8",
+      "anchorFamily": "ambulance-arrival",
+      "anchorRole": "prior_state_origin",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+      "code": "EVT-6EB78B665E",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "return-basement",
+      "kind": "event",
+      "eventClass": "search",
+      "description": "Brian Josephine went back into the house and down to the left side of the basement.",
+      "sourceWording": "I went back in that front door, back down to the basement, and this time I went to the left-hand side.",
+      "sourceSegmentIds": [
+        "24d19c5a-4d34-5a8b-acac-74fc573849d8",
+        "a6e73260-9981-5c77-a4a2-5dadeb753872",
+        "60c69f63-7e83-5402-adb0-5ac0062bb68d"
+      ],
+      "claimId": "e4e3484b-e7b2-5dc4-a6c7-a1dfa01d1284",
+      "knowledgeItemId": "133aecd4-a51f-56b5-abf6-dc919eb83c97",
+      "anchorFamily": "left-basement-return",
+      "anchorRole": "occurrence",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+      "code": "EVT-3A81861830",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "ems-already",
+      "kind": "state_observation",
+      "eventClass": "state_observation",
+      "description": "Brian Josephine observed two fire personnel already at work in the left basement.",
+      "sourceWording": "two fire personnel were already on scene.",
+      "sourceSegmentIds": [
+        "e3e2ef1b-e7c9-5b1c-af7d-d6d1065fcb71"
+      ],
+      "claimId": "e4e3484b-e7b2-5dc4-a6c7-a1dfa01d1284",
+      "knowledgeItemId": "133aecd4-a51f-56b5-abf6-dc919eb83c97",
+      "anchorFamily": "ems-care-left-basement",
+      "anchorRole": "prior_state_origin",
+      "stateClaim": null,
+      "knowledge": null
+    },
+    {
+      "id": "c614bc5d-99bf-5e7c-ab36-2dfffdac9bac",
+      "code": "EVT-1FE928D5B5",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "key": "baby-first",
+      "kind": "event",
+      "eventClass": "patient_removal",
+      "description": "Josephine recalled the baby was brought out before Cora.",
+      "sourceWording": "I think the baby was brought out first",
+      "sourceSegmentIds": [
+        "dbf836a9-bf9c-505a-a0f9-49233cda3df2",
+        "8f23f35f-b3b5-541f-aa04-0535d98d50da"
+      ],
+      "claimId": "e4e3484b-e7b2-5dc4-a6c7-a1dfa01d1284",
+      "knowledgeItemId": "133aecd4-a51f-56b5-abf6-dc919eb83c97",
+      "anchorFamily": null,
+      "anchorRole": null,
+      "stateClaim": null,
+      "knowledge": null
+    }
+  ],
+  "assertions": [
+    {
+      "id": "8c11e679-5e4f-5fcd-ad7a-83606cef51fb",
+      "code": "TMP-18A2AE4976",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "f21977db-f6d3-514c-a38e-07ac549cce09",
+      "eventCandidateCode": "EVT-CA02EFD625",
+      "form": "APPROXIMATE_TIME",
+      "precision": "approximate",
+      "qualification": "estimated",
+      "qualifierText": "approximately",
+      "adoptedFromQuestion": true,
+      "wording": "approximately 6:11 PM",
+      "sourceSegmentIds": [
+        "776a9ab8-9cb3-570a-a9fb-8e7d634cde52"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": true
+    },
+    {
+      "id": "f7e49bf2-a2e1-5ab2-af74-48773f3e4e4e",
+      "code": "TMP-F87C8407E9",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "768030ca-349f-5b11-a99d-27e4958b3112",
+      "eventCandidateCode": "EVT-16F055C5E1",
+      "form": "DURATION",
+      "precision": "bounded_interval",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "Seven to 10 minutes.",
+      "sourceSegmentIds": [
+        "faa71ed3-69ef-5426-af54-35ddba837592"
+      ],
+      "durationSeconds": {
+        "min": 420,
+        "max": 600,
+        "vague": false
+      },
+      "hasClockValue": false
+    },
+    {
+      "id": "d3f6246a-f848-5048-ad20-f01460aba1fc",
+      "code": "TMP-A292E8AC76",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+      "eventCandidateCode": "EVT-1B579568CC",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "simultaneously with Officer Josephine",
+      "sourceSegmentIds": [
+        "64835323-008b-5077-a631-6c8424c7c1ad"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "2feba504-4a49-594f-ad7c-74af99fef85f",
+      "code": "TMP-8EE920B34F",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "d427d707-be35-57ec-a115-ed53b6b56320",
+      "eventCandidateCode": "EVT-A13F3BED59",
+      "form": "RELATIVE",
+      "precision": "relative_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "When I arrived",
+      "sourceSegmentIds": [
+        "a5a92993-ac7f-57c3-a7a5-b3887523bede"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "1dc04c8e-c3ae-51f9-aab0-0dd8d9c2c769",
+      "code": "TMP-E2B67CBD37",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "0ae77a03-0b8d-57d6-adf8-4ddf79a39724",
+      "eventCandidateCode": "EVT-D95E0E581B",
+      "form": "UNKNOWN",
+      "precision": "unknown",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "She had cuts to both wrists and to the left side of her neck.",
+      "sourceSegmentIds": [
+        "d683f323-7d41-5dd0-ad4f-d6936c703a99"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "e58aa4dd-76ca-50f3-a841-2a19fa663a29",
+      "code": "TMP-CDAA742E63",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "e9c00085-fbd2-5bf7-adb2-cc463fbf57f5",
+      "eventCandidateCode": "EVT-6E2366AD4D",
+      "form": "UNKNOWN",
+      "precision": "unknown",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "did you encounter a male in the backyard",
+      "sourceSegmentIds": [
+        "92510ecb-2755-5bca-a628-738a11c365cb"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "efbbe0dd-01f8-51b1-a78a-93027dbd4479",
+      "code": "TMP-5A140851C2",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "80a83e75-2912-51e0-ac7e-dbf706d12b26",
+      "eventCandidateCode": "EVT-99EA936BD3",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "did you later learn his name was Patrick Clancy?",
+      "sourceSegmentIds": [
+        "ddd2095b-6d87-5f2a-a016-04861fa2c670"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "21b94140-f301-5f0b-a7ac-2fd4ee4b4ca8",
+      "code": "TMP-7D1CCC1228",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+      "eventCandidateCode": "EVT-47FB9C3022",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "While you and Officer Josephine are there",
+      "sourceSegmentIds": [
+        "9faf9eb7-de77-5553-a896-b1f89304c5e5"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "a4d49591-38cf-5eed-a3d3-7a85dacb4a32",
+      "code": "TMP-D55947DC7A",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "4e70291e-b20c-55ab-a8af-2dccfdc11175",
+      "eventCandidateCode": "EVT-699A597C52",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "At one point",
+      "sourceSegmentIds": [
+        "76011220-a115-5880-a539-bc23fd9e3ff5"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "1cd801b2-f22d-58e7-a8e5-8d50ce28c646",
+      "code": "TMP-2C847F2A39",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+      "eventCandidateCode": "EVT-956B981C56",
+      "form": "RELATIVE",
+      "precision": "relative_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "Shortly after Patrick Clancy went inside the home",
+      "sourceSegmentIds": [
+        "5fa7ae22-a22c-5bee-ad5e-a86a88e35afa"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "d6911a5e-1557-52e6-a014-620b7b5a69dd",
+      "code": "TMP-ED49E80C23",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "52c9bd54-f9d7-50e9-aee5-b5f8dca47ebc",
+      "eventCandidateCode": "EVT-158B118BB6",
+      "form": "UNKNOWN",
+      "precision": "unknown",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "Dispatch said that he couldn't wake them up.",
+      "sourceSegmentIds": [
+        "65928b36-81d5-59fb-afcf-a46d28e5347e"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "a9843e63-70ec-5261-a705-83660bb2cd42",
+      "code": "TMP-74FE8A3A4B",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+      "eventCandidateCode": "EVT-622DF754E4",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "Did something then catch your attention?",
+      "sourceSegmentIds": [
+        "b4d5d106-d269-5e15-a144-f492744cc2f0"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "1c3d2a18-8122-5d95-a128-ceef6c7f7171",
+      "code": "TMP-D571632AD5",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+      "eventCandidateCode": "EVT-4779FF6CD0",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "When you heard that screaming",
+      "sourceSegmentIds": [
+        "da456598-b523-5f62-a3eb-81bc75eabc2f"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "3678f0f6-3568-5ca7-a65e-85f6807b2412",
+      "code": "TMP-7ECADBDF35",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "98236418-c5f7-5bc6-a8c9-adbc33c77652",
+      "eventCandidateCode": "EVT-55676DB3C0",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "when you entered into the kitchen",
+      "sourceSegmentIds": [
+        "f683652f-7ff5-54b4-a4ae-bc78557dbdf5"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "e097b39b-d27f-553b-a95a-e687f38ac197",
+      "code": "TMP-E29C2DFC11",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "817d473d-32fc-5069-a10e-53ce18749dfa",
+      "eventCandidateCode": "EVT-78BB01EA07",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "Once you got to the bottom of the stairs",
+      "sourceSegmentIds": [
+        "d5bf529b-9a98-5d87-a3f3-978366bbc5e6"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "4583a7c8-570c-5aed-a0ba-0871f1fd4531",
+      "code": "TMP-1AA01093A1",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "9622a4aa-499e-541d-a1ac-6fde961ea5f6",
+      "eventCandidateCode": "EVT-8C61726490",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "what did you see when you got to that back room?",
+      "sourceSegmentIds": [
+        "c4adbf74-3fa0-5da7-a792-0db93a8f30be"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "2c0e1b75-06de-5ce0-a748-14f6d31c7af0",
+      "code": "TMP-2228F4A3B1",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+      "eventCandidateCode": "EVT-1AFBE6B0D6",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "What happened next?",
+      "sourceSegmentIds": [
+        "6d195118-7ef2-590a-aac3-36cf23a26f84"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "66cda21c-9db5-5e3a-a66f-a9b415b85550",
+      "code": "TMP-0F9366A0F7",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+      "eventCandidateCode": "EVT-EED36800FA",
+      "form": "RELATIVE",
+      "precision": "relative_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "after that after giving Dawson to EMTs",
+      "sourceSegmentIds": [
+        "8d22c261-cb10-5a5d-a51c-5b81f7d64250"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "788cefb2-059c-58eb-a160-16641024c703",
+      "code": "TMP-16932293EA",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "ea86787e-4415-55f9-a62f-e115d06334b7",
+      "eventCandidateCode": "EVT-779F431AFD",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "When Patrick Clancy said",
+      "sourceSegmentIds": [
+        "724636dd-fab6-506b-af7c-9d27879a4709"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "66b16e47-c284-5fe6-a08b-4c293c75a675",
+      "code": "TMP-F9C85D9E06",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "eventCandidateId": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+      "eventCandidateCode": "EVT-317A252CB7",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "EMTs and paramedics were working on them",
+      "sourceSegmentIds": [
+        "f00b4472-1766-516b-a2fb-94e55d83ea45",
+        "1891990e-721d-5970-adcc-2d03b58b3f2f"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "6b4576eb-5911-5157-a2ee-b7dd83df0874",
+      "code": "TMP-E3EDD6E3B5",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+      "eventCandidateCode": "EVT-415A020531",
+      "form": "APPROXIMATE_TIME",
+      "precision": "approximate",
+      "qualification": "estimated",
+      "qualifierText": "approximately",
+      "adoptedFromQuestion": true,
+      "wording": "approximately 6:11 PM",
+      "sourceSegmentIds": [
+        "df2bba94-64b6-546c-a5f3-ff8b180887d5"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": true
+    },
+    {
+      "id": "e7b9705c-d7a7-56ae-a053-829d48e4cf02",
+      "code": "TMP-D1813DF39C",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "5951d941-1aa8-52a8-aab0-55ca58d2cb3c",
+      "eventCandidateCode": "EVT-E6CE81E6E8",
+      "form": "DURATION",
+      "precision": "bounded_interval",
+      "qualification": "witness_qualified",
+      "qualifierText": "I would say",
+      "adoptedFromQuestion": false,
+      "wording": "I would say anywhere from three to four minutes.",
+      "sourceSegmentIds": [
+        "fe737119-35b4-5c80-a9c4-af5bbdd46fdb"
+      ],
+      "durationSeconds": {
+        "min": 180,
+        "max": 240,
+        "vague": false
+      },
+      "hasClockValue": false
+    },
+    {
+      "id": "78764c85-64ab-5992-a2b6-dd9bb7bc147b",
+      "code": "TMP-DBFF4FE337",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+      "eventCandidateCode": "EVT-3AC45AB4B6",
+      "form": "DURATION",
+      "precision": "unknown",
+      "qualification": "estimated",
+      "qualifierText": "probably",
+      "adoptedFromQuestion": false,
+      "wording": "It took probably 15 seconds for me to identify the house",
+      "sourceSegmentIds": [
+        "b3ea253e-939d-5046-a2a0-b49ccb859e1d"
+      ],
+      "durationSeconds": {
+        "min": 15,
+        "max": 15,
+        "vague": true
+      },
+      "hasClockValue": false
+    },
+    {
+      "id": "392f304f-fca4-570c-aef3-e48775b93241",
+      "code": "TMP-86950F932E",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "487093ea-df6d-5809-a2bc-78bd7aa30ab2",
+      "eventCandidateCode": "EVT-D138504B9B",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "when you came around there, what did you see?",
+      "sourceSegmentIds": [
+        "35fff430-1195-58ee-a560-dd60d3147abd"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "be78b04e-b9cd-5b50-a83d-3f7026620f73",
+      "code": "TMP-7CE3926E61",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "ec0c745b-6c3a-58c7-aaec-82b776324003",
+      "eventCandidateCode": "EVT-682A4DE302",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "did you later learn that was Patrick Clancy?",
+      "sourceSegmentIds": [
+        "bf5cea5e-fe26-525a-a2b4-833150840ea3"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "97575e89-c404-578c-ac6e-0974fbccf52c",
+      "code": "TMP-F056A660D3",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "9d18ee2d-10f1-5fc3-a2ab-692f27e28cd8",
+      "eventCandidateCode": "EVT-0B25D2B5B2",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "and then that's when me and him crossed paths",
+      "sourceSegmentIds": [
+        "522853e6-440e-5ee7-a71f-8696242c11b3"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "5b606d8e-70e9-5d6c-a9f1-2619ac9173cb",
+      "code": "TMP-C4510DBA44",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "fc93bf92-826d-58bd-a6bd-f01e7990806a",
+      "eventCandidateCode": "EVT-3380904AEF",
+      "form": "RELATIVE",
+      "precision": "relative_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "after you crossed paths with Patrick, where did you go?",
+      "sourceSegmentIds": [
+        "0c31476b-abe1-5f54-a6fe-22f2f102eed0"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "e69ab297-ffc1-57fc-a332-e0a3e2589464",
+      "code": "TMP-B0841F622E",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+      "eventCandidateCode": "EVT-AAB3083258",
+      "form": "DURATION",
+      "precision": "sequence_only",
+      "qualification": "estimated",
+      "qualifierText": "probably",
+      "adoptedFromQuestion": false,
+      "wording": "I tried to talk to Ms. Clancy for probably 30 seconds to a minute. And at that point",
+      "sourceSegmentIds": [
+        "a9f07912-e4e1-5130-a974-af26984320d3"
+      ],
+      "durationSeconds": {
+        "min": 30,
+        "max": 30,
+        "vague": true
+      },
+      "hasClockValue": false
+    },
+    {
+      "id": "724aac7d-7dec-573f-a0f1-289f4fe270cc",
+      "code": "TMP-AF5B8D8810",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+      "eventCandidateCode": "EVT-C72DA02413",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "at some point in time, do you hear something?",
+      "sourceSegmentIds": [
+        "81af8657-1c96-58eb-ac76-20f3047e8b3e"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "45609b39-7294-5d01-a6f3-058d342d4c1f",
+      "code": "TMP-A74CE2DE2F",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "84a67e35-b2a1-5930-a05a-ccab2290df74",
+      "eventCandidateCode": "EVT-57CF55F65D",
+      "form": "UNKNOWN",
+      "precision": "unknown",
+      "qualification": "witness_qualified",
+      "qualifierText": "I'm not sure",
+      "adoptedFromQuestion": false,
+      "wording": "I'm not sure if dispatch or something came over the air",
+      "sourceSegmentIds": [
+        "3be2266f-4c39-5832-adc3-c572b366c29e"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "426fb43c-5723-539f-a1ae-a11de252c5ec",
+      "code": "TMP-666074D2F3",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "b0079903-63ff-5442-aa97-9253b96db492",
+      "eventCandidateCode": "EVT-6F5FD05867",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "what did you do when you heard those loud screams?",
+      "sourceSegmentIds": [
+        "9c971f97-b61b-56ea-a100-9c469204dbc6"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "e592faa8-a5be-5e66-ac73-fef85b3c3c5d",
+      "code": "TMP-2C6FA26E32",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "9268b75a-b8d9-556f-ae76-c3da84e75ffd",
+      "eventCandidateCode": "EVT-475BEF09A9",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "as you entered the kitchen",
+      "sourceSegmentIds": [
+        "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "9bf1f032-8f98-50f2-a908-ec2a4154bc1a",
+      "code": "TMP-7E093C9CB1",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+      "eventCandidateCode": "EVT-59BE981142",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "at that point he looked up and he screamed",
+      "sourceSegmentIds": [
+        "6aef0285-3ff2-5173-a9cd-3da9360110a5"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "f73cece9-ee65-5372-ac2d-945806d6250b",
+      "code": "TMP-5320AD8234",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "38346880-6fda-5eb1-a4eb-00187757799e",
+      "eventCandidateCode": "EVT-9B16053F29",
+      "form": "RELATIVE",
+      "precision": "relative_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "And after he said that, where did you go?",
+      "sourceSegmentIds": [
+        "fd444089-77cb-5f11-a492-ce6d52e68efc"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "fa84ef27-478a-58f5-a36e-e2e7c7a4a81f",
+      "code": "TMP-0DA82A3491",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "04f05fee-a407-5a2c-aed9-d2f8ba92232c",
+      "eventCandidateCode": "EVT-CC84AEF3FA",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "did you later learn his name was Dawson Clancy?",
+      "sourceSegmentIds": [
+        "e52d8169-1c2e-5ba1-a41f-2365bd48b785"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "b42b3de9-55ce-59a8-a281-1134795d0bf2",
+      "code": "TMP-B776653DF2",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+      "eventCandidateCode": "EVT-EC21D0CC66",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "And once you saw him there with these injuries, what did you do?",
+      "sourceSegmentIds": [
+        "e11698ca-40e8-5d85-a981-798811babca8"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "6b23f1f0-260a-58a1-a0a5-44330eb31f0d",
+      "code": "TMP-8425328C23",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "3eec4a31-1743-559e-a8c4-bbd928e9c734",
+      "eventCandidateCode": "EVT-EF8A927C17",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "The ambulance was backing up and had pretty much just parked",
+      "sourceSegmentIds": [
+        "4904b499-e452-5650-aea9-f9e9736e3029"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "a588649a-4917-56a8-a12c-66ee90f742d6",
+      "code": "TMP-5F9D47AA2A",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+      "eventCandidateCode": "EVT-6EB78B665E",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "What did you do next?",
+      "sourceSegmentIds": [
+        "24d19c5a-4d34-5a8b-acac-74fc573849d8"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "e097b4cc-0451-5773-aa68-ae75c33ff3db",
+      "code": "TMP-CD23FF6B7E",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+      "eventCandidateCode": "EVT-3A81861830",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "asserted",
+      "qualifierText": null,
+      "adoptedFromQuestion": false,
+      "wording": "two fire personnel were already on scene",
+      "sourceSegmentIds": [
+        "e3e2ef1b-e7c9-5b1c-af7d-d6d1065fcb71"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    },
+    {
+      "id": "0ba9e758-b4e4-5ec0-ab5c-8e2fff735a32",
+      "code": "TMP-3621A70202",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "eventCandidateId": "c614bc5d-99bf-5e7c-ab36-2dfffdac9bac",
+      "eventCandidateCode": "EVT-1FE928D5B5",
+      "form": "SEQUENCE_ONLY",
+      "precision": "sequence_only",
+      "qualification": "witness_qualified",
+      "qualifierText": "I think",
+      "adoptedFromQuestion": false,
+      "wording": "I think the baby was brought out first",
+      "sourceSegmentIds": [
+        "8f23f35f-b3b5-541f-aa04-0535d98d50da"
+      ],
+      "durationSeconds": null,
+      "hasClockValue": false
+    }
+  ],
+  "constraints": [
+    {
+      "id": "06dbb1bc-f007-57dc-ac4a-097635ead034",
+      "code": "TCN-538ED3D450",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "f21977db-f6d3-514c-a38e-07ac549cce09",
+        "code": "EVT-CA02EFD625",
+        "label": "Stephen Hall received a dispatch to 47 Summer Street."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+        "code": "EVT-1B579568CC",
+        "label": "Stephen Hall arrived at 47 Summer Street with Brian Josephine."
+      },
+      "derivation": "sequence_wording",
+      "wording": "what did you see when you arrived there?",
+      "cue": "when you arrived",
+      "sourceSegmentIds": [
+        "6206a9ed-f783-5b07-aafc-a3db6550a167"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "82ea6d60-f919-5972-ad95-671651e83527",
+      "code": "TCN-9BF1F78D04",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+        "code": "EVT-1B579568CC",
+        "label": "Stephen Hall arrived at 47 Summer Street with Brian Josephine."
+      },
+      "relation": "AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "d427d707-be35-57ec-a115-ed53b6b56320",
+        "code": "EVT-A13F3BED59",
+        "label": "Stephen Hall observed an open gate on the left side of the house on arrival."
+      },
+      "derivation": "simultaneity_wording",
+      "wording": "When I arrived",
+      "cue": "When I arrived",
+      "sourceSegmentIds": [
+        "a5a92993-ac7f-57c3-a7a5-b3887523bede"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3313a918-a1fe-537d-a45a-134e89b0b73c",
+      "code": "TCN-2C7AE3FB50",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "e9c00085-fbd2-5bf7-adb2-cc463fbf57f5",
+        "code": "EVT-6E2366AD4D",
+        "label": "Stephen Hall encountered a male in the backyard."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "80a83e75-2912-51e0-ac7e-dbf706d12b26",
+        "code": "EVT-99EA936BD3",
+        "label": "Stephen Hall came to know that the man's name was Patrick Clancy."
+      },
+      "derivation": "sequence_wording",
+      "wording": "did you later learn his name was Patrick Clancy?",
+      "cue": "later",
+      "sourceSegmentIds": [
+        "ddd2095b-6d87-5f2a-a016-04861fa2c670"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6aa4f9fd-fd1b-5d70-a794-192a50b21bf9",
+      "code": "TCN-0115A93BDD",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "4e70291e-b20c-55ab-a8af-2dccfdc11175",
+        "code": "EVT-699A597C52",
+        "label": "Patrick Clancy went inside the house."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+        "code": "EVT-956B981C56",
+        "label": "Dispatch relayed over the radio that Patrick could not wake them up."
+      },
+      "derivation": "sequence_wording",
+      "wording": "Shortly after Patrick Clancy went inside the home",
+      "cue": "Shortly after",
+      "sourceSegmentIds": [
+        "5fa7ae22-a22c-5bee-ad5e-a86a88e35afa"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d52c1909-2dbc-5ea8-ab09-468654f99ec9",
+      "code": "TCN-ECDCC16BEC",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+        "code": "EVT-47FB9C3022",
+        "label": "Firefighters began arriving at 47 Summer Street."
+      },
+      "relation": "OVERLAPS",
+      "to": {
+        "type": "event_candidate",
+        "id": "4e70291e-b20c-55ab-a8af-2dccfdc11175",
+        "code": "EVT-699A597C52",
+        "label": "Patrick Clancy went inside the house."
+      },
+      "derivation": "sequence_wording",
+      "wording": "While you were doing this",
+      "cue": "While",
+      "sourceSegmentIds": [
+        "134e2e9e-ddb4-59ff-ab3c-c6b97ed1d505"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1cd024de-e31e-51f6-a84c-58c7cd7b40f7",
+      "code": "TCN-8040F92B21",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+        "code": "EVT-956B981C56",
+        "label": "Dispatch relayed over the radio that Patrick could not wake them up."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "52c9bd54-f9d7-50e9-aee5-b5f8dca47ebc",
+        "code": "EVT-158B118BB6",
+        "label": "Stephen Hall received the information that Patrick could not wake them."
+      },
+      "derivation": "knowledge_flow",
+      "wording": "Dispatch said that he couldn't wake them up.",
+      "cue": "said",
+      "sourceSegmentIds": [
+        "65928b36-81d5-59fb-afcf-a46d28e5347e"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a953f468-d869-527f-ac2f-af5cd5cdd30a",
+      "code": "TCN-DEE3E881D2",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+        "code": "EVT-956B981C56",
+        "label": "Dispatch relayed over the radio that Patrick could not wake them up."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+        "code": "EVT-622DF754E4",
+        "label": "Stephen Hall heard a loud scream from inside the house."
+      },
+      "derivation": "sequence_wording",
+      "wording": "Did something then catch your attention?",
+      "cue": "then",
+      "sourceSegmentIds": [
+        "b4d5d106-d269-5e15-a144-f492744cc2f0"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "61e2de76-06bf-5927-a435-a5fb30863e2a",
+      "code": "TCN-FE3982E362",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+        "code": "EVT-622DF754E4",
+        "label": "Stephen Hall heard a loud scream from inside the house."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+        "code": "EVT-4779FF6CD0",
+        "label": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+      },
+      "derivation": "sequence_wording",
+      "wording": "When you heard that screaming",
+      "cue": "When you heard",
+      "sourceSegmentIds": [
+        "da456598-b523-5f62-a3eb-81bc75eabc2f"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "aaa9628d-dfdb-50c4-a182-2a31d15113fc",
+      "code": "TCN-A52AA3795A",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+        "code": "EVT-4779FF6CD0",
+        "label": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+      },
+      "relation": "AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "98236418-c5f7-5bc6-a8c9-adbc33c77652",
+        "code": "EVT-55676DB3C0",
+        "label": "Stephen Hall observed the condition of the screaming when he entered the kitchen."
+      },
+      "derivation": "simultaneity_wording",
+      "wording": "when you entered into the kitchen",
+      "cue": "when you entered",
+      "sourceSegmentIds": [
+        "f683652f-7ff5-54b4-a4ae-bc78557dbdf5"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "296ecdde-b75d-51c0-a9b3-53fd9e857316",
+      "code": "TCN-0D7FC9DFB7",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+        "code": "EVT-4779FF6CD0",
+        "label": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "817d473d-32fc-5069-a10e-53ce18749dfa",
+        "code": "EVT-78BB01EA07",
+        "label": "Hall heard Patrick Clancy say he could not wake or get up the children."
+      },
+      "derivation": "sequence_wording",
+      "wording": "Once you got to the bottom of the stairs",
+      "cue": "Once",
+      "sourceSegmentIds": [
+        "d5bf529b-9a98-5d87-a3f3-978366bbc5e6"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "52f09846-5919-53f0-a800-1a84d1b13695",
+      "code": "TCN-48D3660EB7",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "9622a4aa-499e-541d-a1ac-6fde961ea5f6",
+        "code": "EVT-8C61726490",
+        "label": "Stephen Hall saw a child's body in the basement back room."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+        "code": "EVT-1AFBE6B0D6",
+        "label": "Officer Josephine picked up the child and they ran him outside to the ambulance."
+      },
+      "derivation": "sequence_wording",
+      "wording": "What happened next?",
+      "cue": "next",
+      "sourceSegmentIds": [
+        "6d195118-7ef2-590a-aac3-36cf23a26f84"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2dff51ea-9bb5-5907-ac3f-a9cb0112c237",
+      "code": "TCN-85BC4AD029",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+        "code": "EVT-1AFBE6B0D6",
+        "label": "Officer Josephine picked up the child and they ran him outside to the ambulance."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+        "code": "EVT-EED36800FA",
+        "label": "Stephen Hall and Brian Josephine returned to the basement to look for other children."
+      },
+      "derivation": "sequence_wording",
+      "wording": "after that after giving Dawson to EMTs",
+      "cue": "after",
+      "sourceSegmentIds": [
+        "8d22c261-cb10-5a5d-a51c-5b81f7d64250"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7c8d2102-aa6e-5f9d-a5f2-9284ba161241",
+      "code": "TCN-10020D73BF",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "817d473d-32fc-5069-a10e-53ce18749dfa",
+        "code": "EVT-78BB01EA07",
+        "label": "Hall heard Patrick Clancy say he could not wake or get up the children."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "ea86787e-4415-55f9-a62f-e115d06334b7",
+        "code": "EVT-779F431AFD",
+        "label": "Stephen Hall thought there were other children because of Patrick's plural wording."
+      },
+      "derivation": "knowledge_flow",
+      "wording": "When Patrick Clancy said",
+      "cue": "When",
+      "sourceSegmentIds": [
+        "724636dd-fab6-506b-af7c-9d27879a4709"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "16c96a31-a064-5e75-a8f6-b272f1af4963",
+      "code": "TCN-B93886D236",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "event_candidate",
+        "id": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+        "code": "EVT-EED36800FA",
+        "label": "Stephen Hall and Brian Josephine returned to the basement to look for other children."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+        "code": "EVT-317A252CB7",
+        "label": "Stephen Hall observed EMTs and paramedics working on two children in the left basement."
+      },
+      "derivation": "sequence_wording",
+      "wording": "when you went into that room",
+      "cue": "when",
+      "sourceSegmentIds": [
+        "f00b4472-1766-516b-a2fb-94e55d83ea45"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4e9b382a-813d-56c2-a6de-997930d85284",
+      "code": "TCN-6403581482",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "from": {
+        "type": "anchor_candidate",
+        "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+        "code": "ANC-692FE8C3EE",
+        "label": "EMS care underway in the left basement"
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+        "code": "EVT-317A252CB7",
+        "label": "Stephen Hall observed EMTs and paramedics working on two children in the left basement."
+      },
+      "derivation": "state_observation",
+      "wording": "EMTs and paramedics were working on them",
+      "cue": "were working on",
+      "sourceSegmentIds": [
+        "f00b4472-1766-516b-a2fb-94e55d83ea45",
+        "1891990e-721d-5970-adcc-2d03b58b3f2f"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d9d510d4-07dc-5a36-a7ad-f68c37a34134",
+      "code": "TCN-6C712B1FCA",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+        "code": "EVT-415A020531",
+        "label": "Brian Josephine received a dispatch to 47 Summer Street."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+        "code": "EVT-3AC45AB4B6",
+        "label": "Brian Josephine arrived and parked on the street at 47 Summer Street."
+      },
+      "derivation": "sequence_wording",
+      "wording": "And when you arrived at 47 Summer Street",
+      "cue": "when you arrived",
+      "sourceSegmentIds": [
+        "cb438889-ea42-5b65-ab39-f7fc33393a0c"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "bb1ab27c-e9fc-5167-ae02-6ceb8d40b5f0",
+      "code": "TCN-F7AE4E0D27",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+        "code": "EVT-3AC45AB4B6",
+        "label": "Brian Josephine arrived and parked on the street at 47 Summer Street."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "487093ea-df6d-5809-a2bc-78bd7aa30ab2",
+        "code": "EVT-D138504B9B",
+        "label": "Brian Josephine observed two people in the backyard, one on the ground and one standing over them."
+      },
+      "derivation": "sequence_wording",
+      "wording": "when you came around there",
+      "cue": "when you came",
+      "sourceSegmentIds": [
+        "35fff430-1195-58ee-a560-dd60d3147abd"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "2640b17b-8a71-5ee9-ae7e-94ebd1937583",
+      "code": "TCN-F96CC2A08E",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "487093ea-df6d-5809-a2bc-78bd7aa30ab2",
+        "code": "EVT-D138504B9B",
+        "label": "Brian Josephine observed two people in the backyard, one on the ground and one standing over them."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "ec0c745b-6c3a-58c7-aaec-82b776324003",
+        "code": "EVT-682A4DE302",
+        "label": "Brian Josephine came to know the two people were Patrick and Lindsay Clancy."
+      },
+      "derivation": "sequence_wording",
+      "wording": "did you later learn that was Patrick Clancy?",
+      "cue": "later",
+      "sourceSegmentIds": [
+        "bf5cea5e-fe26-525a-a2b4-833150840ea3"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e3b6cbd1-43c2-5d45-a57a-a18c303d9429",
+      "code": "TCN-18C52D3284",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "487093ea-df6d-5809-a2bc-78bd7aa30ab2",
+        "code": "EVT-D138504B9B",
+        "label": "Brian Josephine observed two people in the backyard, one on the ground and one standing over them."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "9d18ee2d-10f1-5fc3-a2ab-692f27e28cd8",
+        "code": "EVT-0B25D2B5B2",
+        "label": "Brian Josephine and Patrick Clancy crossed paths near the bulkhead."
+      },
+      "derivation": "sequence_wording",
+      "wording": "and then that's when me and him crossed paths",
+      "cue": "then",
+      "sourceSegmentIds": [
+        "522853e6-440e-5ee7-a71f-8696242c11b3"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8cfa4d57-0bb0-547c-afdd-7d9106b4841b",
+      "code": "TCN-4CBB419697",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "9d18ee2d-10f1-5fc3-a2ab-692f27e28cd8",
+        "code": "EVT-0B25D2B5B2",
+        "label": "Brian Josephine and Patrick Clancy crossed paths near the bulkhead."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "fc93bf92-826d-58bd-a6bd-f01e7990806a",
+        "code": "EVT-3380904AEF",
+        "label": "Brian Josephine went to the woman on the ground and attempted to speak with her."
+      },
+      "derivation": "sequence_wording",
+      "wording": "after you crossed paths with Patrick",
+      "cue": "after",
+      "sourceSegmentIds": [
+        "0c31476b-abe1-5f54-a6fe-22f2f102eed0"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6c07c5c9-8311-57a8-a3ad-e893812ff291",
+      "code": "TCN-85757A78E6",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "fc93bf92-826d-58bd-a6bd-f01e7990806a",
+        "code": "EVT-3380904AEF",
+        "label": "Brian Josephine went to the woman on the ground and attempted to speak with her."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+        "code": "EVT-AAB3083258",
+        "label": "Duxbury Fire personnel arrived at the backyard."
+      },
+      "derivation": "sequence_wording",
+      "wording": "And at that point, coming from that opposite side of the house",
+      "cue": "at that point",
+      "sourceSegmentIds": [
+        "a9f07912-e4e1-5130-a974-af26984320d3"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b61f96cd-1291-5c9a-aca0-5785a92a19df",
+      "code": "TCN-DA850C2285",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+        "code": "EVT-C72DA02413",
+        "label": "Brian Josephine and Stephen Hall heard loud screams while standing by the window."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "b0079903-63ff-5442-aa97-9253b96db492",
+        "code": "EVT-6F5FD05867",
+        "label": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+      },
+      "derivation": "sequence_wording",
+      "wording": "when you heard those loud screams",
+      "cue": "when you heard",
+      "sourceSegmentIds": [
+        "9c971f97-b61b-56ea-a100-9c469204dbc6"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "f8931796-263e-57cc-a988-0f34c276c61d",
+      "code": "TCN-83260927C5",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "b0079903-63ff-5442-aa97-9253b96db492",
+        "code": "EVT-6F5FD05867",
+        "label": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+      },
+      "relation": "AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "9268b75a-b8d9-556f-ae76-c3da84e75ffd",
+        "code": "EVT-475BEF09A9",
+        "label": "Brian Josephine observed the condition of the screaming as he entered the kitchen."
+      },
+      "derivation": "simultaneity_wording",
+      "wording": "as you entered the kitchen",
+      "cue": "as you entered",
+      "sourceSegmentIds": [
+        "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "548a0740-00f6-5d9d-ab62-5dd3fe065ddc",
+      "code": "TCN-C03857E003",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "b0079903-63ff-5442-aa97-9253b96db492",
+        "code": "EVT-6F5FD05867",
+        "label": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+        "code": "EVT-59BE981142",
+        "label": "Brian Josephine heard Patrick Clancy scream that she had killed the children."
+      },
+      "derivation": "sequence_wording",
+      "wording": "after you went down the stairs",
+      "cue": "after",
+      "sourceSegmentIds": [
+        "86c7e5e2-1c02-5760-ab33-e23269df8af0"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "897b28bc-ea53-5284-aa61-bc476c85c7fa",
+      "code": "TCN-7144DFECD7",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+        "code": "EVT-59BE981142",
+        "label": "Brian Josephine heard Patrick Clancy scream that she had killed the children."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "38346880-6fda-5eb1-a4eb-00187757799e",
+        "code": "EVT-9B16053F29",
+        "label": "Brian Josephine saw a child laying motionless on the floor."
+      },
+      "derivation": "sequence_wording",
+      "wording": "And after he said that",
+      "cue": "after",
+      "sourceSegmentIds": [
+        "fd444089-77cb-5f11-a492-ce6d52e68efc"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "8a8c3a4d-a88d-5c51-a285-6855bc3e52f6",
+      "code": "TCN-C28197D701",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "38346880-6fda-5eb1-a4eb-00187757799e",
+        "code": "EVT-9B16053F29",
+        "label": "Brian Josephine saw a child laying motionless on the floor."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "04f05fee-a407-5a2c-aed9-d2f8ba92232c",
+        "code": "EVT-CC84AEF3FA",
+        "label": "Brian Josephine came to know the child was Dawson Clancy."
+      },
+      "derivation": "sequence_wording",
+      "wording": "did you later learn his name was Dawson Clancy?",
+      "cue": "later",
+      "sourceSegmentIds": [
+        "e52d8169-1c2e-5ba1-a41f-2365bd48b785"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e29136ca-0989-5b4d-a0fd-93729a9f6d40",
+      "code": "TCN-D857DF6ED5",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "38346880-6fda-5eb1-a4eb-00187757799e",
+        "code": "EVT-9B16053F29",
+        "label": "Brian Josephine saw a child laying motionless on the floor."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+        "code": "EVT-EC21D0CC66",
+        "label": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher."
+      },
+      "derivation": "sequence_wording",
+      "wording": "And once you saw him there with these injuries",
+      "cue": "once",
+      "sourceSegmentIds": [
+        "e11698ca-40e8-5d85-a981-798811babca8"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "301b4e9d-b155-57a7-a019-312397898f88",
+      "code": "TCN-D604FD8286",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+        "code": "EVT-EC21D0CC66",
+        "label": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+        "code": "EVT-6EB78B665E",
+        "label": "Brian Josephine went back into the house and down to the left side of the basement."
+      },
+      "derivation": "sequence_wording",
+      "wording": "What did you do next?",
+      "cue": "next",
+      "sourceSegmentIds": [
+        "24d19c5a-4d34-5a8b-acac-74fc573849d8"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "1405f9c0-1d9b-5f2d-a2bb-50648f746462",
+      "code": "TCN-F80A8E7C66",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+        "code": "EVT-6EB78B665E",
+        "label": "Brian Josephine went back into the house and down to the left side of the basement."
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+        "code": "EVT-3A81861830",
+        "label": "Brian Josephine observed two fire personnel already at work in the left basement."
+      },
+      "derivation": "sequence_wording",
+      "wording": "So when I got down to the basement",
+      "cue": "when",
+      "sourceSegmentIds": [
+        "e3e2ef1b-e7c9-5b1c-af7d-d6d1065fcb71"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a5833c18-9acb-558e-a646-94b77b08b6b9",
+      "code": "TCN-9FEC6D1FC6",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "event_candidate",
+        "id": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+        "code": "EVT-3A81861830",
+        "label": "Brian Josephine observed two fire personnel already at work in the left basement."
+      },
+      "relation": "BEFORE",
+      "to": {
+        "type": "event_candidate",
+        "id": "c614bc5d-99bf-5e7c-ab36-2dfffdac9bac",
+        "code": "EVT-1FE928D5B5",
+        "label": "Josephine recalled the baby was brought out before Cora."
+      },
+      "derivation": "sequence_wording",
+      "wording": "And, eventually, was Cora put on a stretcher and brought out?",
+      "cue": "eventually",
+      "sourceSegmentIds": [
+        "dbf836a9-bf9c-505a-a0f9-49233cda3df2"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ba4e61f7-d6a0-5a2d-a068-74101dfc851b",
+      "code": "TCN-47AC228D04",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "anchor_candidate",
+        "id": "524d20f5-cda0-5810-a63e-566510dab42b",
+        "code": "ANC-103573A3FF",
+        "label": "Ambulance arrives in the driveway"
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "3eec4a31-1743-559e-a8c4-bbd928e9c734",
+        "code": "EVT-EF8A927C17",
+        "label": "Brian Josephine observed the ambulance backing up and having just parked."
+      },
+      "derivation": "state_observation",
+      "wording": "The ambulance was backing up and had pretty much just parked",
+      "cue": "had pretty much just parked",
+      "sourceSegmentIds": [
+        "4904b499-e452-5650-aea9-f9e9736e3029"
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d733aed7-e33c-50b9-a31d-4014163172b7",
+      "code": "TCN-6B77D3ECB1",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "from": {
+        "type": "anchor_candidate",
+        "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+        "code": "ANC-692FE8C3EE",
+        "label": "EMS care underway in the left basement"
+      },
+      "relation": "BEFORE_OR_AT",
+      "to": {
+        "type": "event_candidate",
+        "id": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+        "code": "EVT-3A81861830",
+        "label": "Brian Josephine observed two fire personnel already at work in the left basement."
+      },
+      "derivation": "state_observation",
+      "wording": "two fire personnel were already on scene",
+      "cue": "were already",
+      "sourceSegmentIds": [
+        "e3e2ef1b-e7c9-5b1c-af7d-d6d1065fcb71"
+      ],
+      "reviewStatus": "pending"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "524d20f5-cda0-5810-a63e-566510dab42b",
+      "code": "ANC-103573A3FF",
+      "family": "ambulance-arrival",
+      "label": "Ambulance arrives in the driveway",
+      "anchorClass": "STATE",
+      "members": [
+        {
+          "eventCandidateId": "3eec4a31-1743-559e-a8c4-bbd928e9c734",
+          "eventCandidateCode": "EVT-EF8A927C17",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "prior_state_origin",
+          "description": "Brian Josephine observed the ambulance backing up and having just parked."
+        }
+      ],
+      "accounts": [
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "11d7fb84-6987-5ba5-a846-e4bada992b89",
+      "code": "ANC-E86D10FD6D",
+      "family": "dawson-to-ambulance",
+      "label": "First child carried to the ambulance",
+      "anchorClass": "TRANSITION",
+      "members": [
+        {
+          "eventCandidateId": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+          "eventCandidateCode": "EVT-1AFBE6B0D6",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Officer Josephine picked up the child and they ran him outside to the ambulance."
+        },
+        {
+          "eventCandidateId": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+          "eventCandidateCode": "EVT-EC21D0CC66",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c615832e-842d-5e3e-ac7a-85d3eb020795",
+      "code": "ANC-1FCBF0C2C2",
+      "family": "dispatch",
+      "label": "Dispatch to 47 Summer Street",
+      "anchorClass": "CLOCK",
+      "members": [
+        {
+          "eventCandidateId": "f21977db-f6d3-514c-a38e-07ac549cce09",
+          "eventCandidateCode": "EVT-CA02EFD625",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall received a dispatch to 47 Summer Street."
+        },
+        {
+          "eventCandidateId": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+          "eventCandidateCode": "EVT-415A020531",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine received a dispatch to 47 Summer Street."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b7e7906e-ecfa-5282-a47b-40d17f32a799",
+      "code": "ANC-82F708AECD",
+      "family": "dispatch-relay",
+      "label": "Dispatch relays that Patrick cannot wake them",
+      "anchorClass": "INFORMATION",
+      "members": [
+        {
+          "eventCandidateId": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+          "eventCandidateCode": "EVT-956B981C56",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Dispatch relayed over the radio that Patrick could not wake them up."
+        },
+        {
+          "eventCandidateId": "84a67e35-b2a1-5930-a05a-ccab2290df74",
+          "eventCandidateCode": "EVT-57CF55F65D",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "detail",
+          "description": "Josephine was unsure whether dispatch said something about the basement over the air."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+      "code": "ANC-692FE8C3EE",
+      "family": "ems-care-left-basement",
+      "label": "EMS care underway in the left basement",
+      "anchorClass": "STATE",
+      "members": [
+        {
+          "eventCandidateId": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+          "eventCandidateCode": "EVT-317A252CB7",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "prior_state_origin",
+          "description": "Stephen Hall observed EMTs and paramedics working on two children in the left basement."
+        },
+        {
+          "eventCandidateId": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+          "eventCandidateCode": "EVT-3A81861830",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "prior_state_origin",
+          "description": "Brian Josephine observed two fire personnel already at work in the left basement."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3e307886-18c4-535f-aa72-e15b1a81a368",
+      "code": "ANC-EA874EB9DE",
+      "family": "fire-arrival",
+      "label": "Fire personnel arrive",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "members": [
+        {
+          "eventCandidateId": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+          "eventCandidateCode": "EVT-47FB9C3022",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Firefighters began arriving at 47 Summer Street."
+        },
+        {
+          "eventCandidateId": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+          "eventCandidateCode": "EVT-AAB3083258",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Duxbury Fire personnel arrived at the backyard."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dd47bbd5-0cf4-5c4b-acb7-c5f15704a7a5",
+      "code": "ANC-AB1953CFDF",
+      "family": "kitchen-entry",
+      "label": "Officers enter the kitchen",
+      "anchorClass": "TRANSITION",
+      "members": [
+        {
+          "eventCandidateId": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+          "eventCandidateCode": "EVT-4779FF6CD0",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+        },
+        {
+          "eventCandidateId": "b0079903-63ff-5442-aa97-9253b96db492",
+          "eventCandidateCode": "EVT-6F5FD05867",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "25393839-f86e-57c5-ac8f-e5db7cc19ff2",
+      "code": "ANC-89646CF6B5",
+      "family": "left-basement-return",
+      "label": "Officers return to the basement",
+      "anchorClass": "TRANSITION",
+      "members": [
+        {
+          "eventCandidateId": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+          "eventCandidateCode": "EVT-EED36800FA",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall and Brian Josephine returned to the basement to look for other children."
+        },
+        {
+          "eventCandidateId": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+          "eventCandidateCode": "EVT-6EB78B665E",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine went back into the house and down to the left side of the basement."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "4ffc942a-1a94-5901-adf4-cbc4ce0ff636",
+      "code": "ANC-843671B5A7",
+      "family": "patrick-enters-house",
+      "label": "Patrick goes inside",
+      "anchorClass": "TRANSITION",
+      "members": [
+        {
+          "eventCandidateId": "4e70291e-b20c-55ab-a8af-2dccfdc11175",
+          "eventCandidateCode": "EVT-699A597C52",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Patrick Clancy went inside the house."
+        }
+      ],
+      "accounts": [
+        "day3-hall"
+      ],
+      "sharedAcrossAccounts": false,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "3f5c20ac-5e4c-52ac-ae56-08ccf4660fce",
+      "code": "ANC-80BC545299",
+      "family": "patrick-statement-right-basement",
+      "label": "Patrick's statement in the right basement",
+      "anchorClass": "SHARED_OBSERVATION",
+      "members": [
+        {
+          "eventCandidateId": "817d473d-32fc-5069-a10e-53ce18749dfa",
+          "eventCandidateCode": "EVT-78BB01EA07",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Hall heard Patrick Clancy say he could not wake or get up the children."
+        },
+        {
+          "eventCandidateId": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+          "eventCandidateCode": "EVT-59BE981142",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine heard Patrick Clancy scream that she had killed the children."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7aa7a91b-3388-53d9-a2fa-b0c46850cdba",
+      "code": "ANC-3AA9CFEFEF",
+      "family": "police-arrival",
+      "label": "First police arrival",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "members": [
+        {
+          "eventCandidateId": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+          "eventCandidateCode": "EVT-1B579568CC",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall arrived at 47 Summer Street with Brian Josephine."
+        },
+        {
+          "eventCandidateId": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+          "eventCandidateCode": "EVT-3AC45AB4B6",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine arrived and parked on the street at 47 Summer Street."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5506cc88-7537-59cd-a91d-ef1dc06974ae",
+      "code": "ANC-EC76685EC9",
+      "family": "response-travel",
+      "label": "Police response travel duration",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "members": [
+        {
+          "eventCandidateId": "768030ca-349f-5b11-a99d-27e4958b3112",
+          "eventCandidateCode": "EVT-16F055C5E1",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall traveled from Lincoln Street Fields to 47 Summer Street."
+        },
+        {
+          "eventCandidateId": "5951d941-1aa8-52a8-aab0-55ca58d2cb3c",
+          "eventCandidateCode": "EVT-E6CE81E6E8",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine traveled to 47 Summer Street."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "185db3e9-b24c-5a2e-a342-19d4f5346d91",
+      "code": "ANC-41951833CE",
+      "family": "scream",
+      "label": "Loud scream heard from inside",
+      "anchorClass": "SHARED_OBSERVATION",
+      "members": [
+        {
+          "eventCandidateId": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+          "eventCandidateCode": "EVT-622DF754E4",
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "role": "occurrence",
+          "description": "Stephen Hall heard a loud scream from inside the house."
+        },
+        {
+          "eventCandidateId": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+          "eventCandidateCode": "EVT-C72DA02413",
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "role": "occurrence",
+          "description": "Brian Josephine and Stephen Hall heard loud screams while standing by the window."
+        }
+      ],
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending"
+    }
+  ],
+  "links": [
+    {
+      "id": "7d0a93ec-d06b-537c-abba-89d202c0b323",
+      "code": "REL-A4477FB70A",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+        "code": "EVT-1AFBE6B0D6",
+        "label": "Officer Josephine picked up the child and they ran him outside to the ambulance."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "11d7fb84-6987-5ba5-a846-e4bada992b89",
+        "code": "ANC-E86D10FD6D",
+        "label": "First child carried to the ambulance"
+      },
+      "reason": "Officer Stephen Hall places “First child carried to the ambulance” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "cba82f62-3a17-56e7-ad7d-c7584958ae65",
+      "code": "REL-EF06E4E5DB",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+        "code": "EVT-EC21D0CC66",
+        "label": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "11d7fb84-6987-5ba5-a846-e4bada992b89",
+        "code": "ANC-E86D10FD6D",
+        "label": "First child carried to the ambulance"
+      },
+      "reason": "Officer Brian Josephine places “First child carried to the ambulance” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d4407c09-6542-5fa5-acc4-e700553bc742",
+      "code": "REL-74B19AC69C",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "00bcbebc-4fe9-5583-aaa0-b2f26b043037",
+        "code": "EVT-EC21D0CC66",
+        "label": "Brian Josephine carried Dawson to the ambulance and put him on the stretcher."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "59b027bc-7204-5a55-ad9c-6083dc0ad339",
+        "code": "EVT-1AFBE6B0D6",
+        "label": "Officer Josephine picked up the child and they ran him outside to the ambulance."
+      },
+      "reason": "Both accounts describe “First child carried to the ambulance”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "132824bc-07f3-52c5-ae89-1e8f57e59857",
+      "code": "REL-42981792A7",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "f21977db-f6d3-514c-a38e-07ac549cce09",
+        "code": "EVT-CA02EFD625",
+        "label": "Stephen Hall received a dispatch to 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "c615832e-842d-5e3e-ac7a-85d3eb020795",
+        "code": "ANC-1FCBF0C2C2",
+        "label": "Dispatch to 47 Summer Street"
+      },
+      "reason": "Officer Stephen Hall places “Dispatch to 47 Summer Street” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "5331f5c8-da18-55d0-abd3-276687387081",
+      "code": "REL-35D25B21E0",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+        "code": "EVT-415A020531",
+        "label": "Brian Josephine received a dispatch to 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "c615832e-842d-5e3e-ac7a-85d3eb020795",
+        "code": "ANC-1FCBF0C2C2",
+        "label": "Dispatch to 47 Summer Street"
+      },
+      "reason": "Officer Brian Josephine places “Dispatch to 47 Summer Street” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "859bde4c-2aaf-5066-a0a3-e8821444f0d5",
+      "code": "REL-6C87DA0880",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "27a2f586-f7c6-5d93-a45d-c3e41f54098b",
+        "code": "EVT-415A020531",
+        "label": "Brian Josephine received a dispatch to 47 Summer Street."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "f21977db-f6d3-514c-a38e-07ac549cce09",
+        "code": "EVT-CA02EFD625",
+        "label": "Stephen Hall received a dispatch to 47 Summer Street."
+      },
+      "reason": "Both accounts describe “Dispatch to 47 Summer Street”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "857a1a1e-1447-5e2c-af7d-46044d320721",
+      "code": "REL-7133061874",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+        "code": "EVT-956B981C56",
+        "label": "Dispatch relayed over the radio that Patrick could not wake them up."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "b7e7906e-ecfa-5282-a47b-40d17f32a799",
+        "code": "ANC-82F708AECD",
+        "label": "Dispatch relays that Patrick cannot wake them"
+      },
+      "reason": "Officer Stephen Hall places “Dispatch relays that Patrick cannot wake them” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0ab4c418-a733-576e-ab66-7650c2736dee",
+      "code": "REL-4FB27E13E3",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "84a67e35-b2a1-5930-a05a-ccab2290df74",
+        "code": "EVT-57CF55F65D",
+        "label": "Josephine was unsure whether dispatch said something about the basement over the air."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "b7e7906e-ecfa-5282-a47b-40d17f32a799",
+        "code": "ANC-82F708AECD",
+        "label": "Dispatch relays that Patrick cannot wake them"
+      },
+      "reason": "Officer Brian Josephine places “Dispatch relays that Patrick cannot wake them” (detail) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "72dc1ab7-5211-5f26-a356-05eee42e8d52",
+      "code": "REL-7A0B309557",
+      "linkType": "possible_additional_detail",
+      "from": {
+        "type": "event_candidate",
+        "id": "84a67e35-b2a1-5930-a05a-ccab2290df74",
+        "code": "EVT-57CF55F65D",
+        "label": "Josephine was unsure whether dispatch said something about the basement over the air."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "9f1d06fb-e3ea-577e-abd2-39c3e0e4a3d3",
+        "code": "EVT-956B981C56",
+        "label": "Dispatch relayed over the radio that Patrick could not wake them up."
+      },
+      "reason": "Officer Brian Josephine adds detail about “Dispatch relays that Patrick cannot wake them” described by Officer Stephen Hall.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "c29d5cf8-efd0-5708-a70f-714b375dfb45",
+      "code": "REL-11B2664CD8",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "eaa42de4-423a-5471-a0bd-c13a77b8bda0",
+        "code": "EVT-317A252CB7",
+        "label": "Stephen Hall observed EMTs and paramedics working on two children in the left basement."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+        "code": "ANC-692FE8C3EE",
+        "label": "EMS care underway in the left basement"
+      },
+      "reason": "Officer Stephen Hall places “EMS care underway in the left basement” (prior state origin) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "554e1b24-303d-51a2-a564-578804b36281",
+      "code": "REL-B9D15DEAB4",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "eb5c97a0-e985-55a0-adc8-c6da230e42d6",
+        "code": "EVT-3A81861830",
+        "label": "Brian Josephine observed two fire personnel already at work in the left basement."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+        "code": "ANC-692FE8C3EE",
+        "label": "EMS care underway in the left basement"
+      },
+      "reason": "Officer Brian Josephine places “EMS care underway in the left basement” (prior state origin) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "fa8fe8f9-bf43-5efb-aee1-2ce4042683cb",
+      "code": "REL-27E87ECC79",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+        "code": "EVT-47FB9C3022",
+        "label": "Firefighters began arriving at 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "3e307886-18c4-535f-aa72-e15b1a81a368",
+        "code": "ANC-EA874EB9DE",
+        "label": "Fire personnel arrive"
+      },
+      "reason": "Officer Stephen Hall places “Fire personnel arrive” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "6c8d4812-ca9f-5695-a800-d17c569db78e",
+      "code": "REL-3F84FA1D59",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+        "code": "EVT-AAB3083258",
+        "label": "Duxbury Fire personnel arrived at the backyard."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "3e307886-18c4-535f-aa72-e15b1a81a368",
+        "code": "ANC-EA874EB9DE",
+        "label": "Fire personnel arrive"
+      },
+      "reason": "Officer Brian Josephine places “Fire personnel arrive” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9aeefc61-8520-5c44-a224-8e9ae8c953a6",
+      "code": "REL-34FC726C6B",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "cfa94261-13d2-586e-a4f3-7024a3aea6fe",
+        "code": "EVT-AAB3083258",
+        "label": "Duxbury Fire personnel arrived at the backyard."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "95db0cec-4712-58bb-a93d-60e6858fe05d",
+        "code": "EVT-47FB9C3022",
+        "label": "Firefighters began arriving at 47 Summer Street."
+      },
+      "reason": "Both accounts describe “Fire personnel arrive”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b47d1c51-378b-50fb-aea5-915e1ebcacf2",
+      "code": "REL-A06B30D4D0",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+        "code": "EVT-4779FF6CD0",
+        "label": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "dd47bbd5-0cf4-5c4b-acb7-c5f15704a7a5",
+        "code": "ANC-AB1953CFDF",
+        "label": "Officers enter the kitchen"
+      },
+      "reason": "Officer Stephen Hall places “Officers enter the kitchen” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "7567f858-8774-538a-a50b-b2fa5a996128",
+      "code": "REL-C37ECBC1E1",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "b0079903-63ff-5442-aa97-9253b96db492",
+        "code": "EVT-6F5FD05867",
+        "label": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "dd47bbd5-0cf4-5c4b-acb7-c5f15704a7a5",
+        "code": "ANC-AB1953CFDF",
+        "label": "Officers enter the kitchen"
+      },
+      "reason": "Officer Brian Josephine places “Officers enter the kitchen” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "0a1a921b-5199-5a0f-a811-1490befd1221",
+      "code": "REL-700FE2DAFD",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "b0079903-63ff-5442-aa97-9253b96db492",
+        "code": "EVT-6F5FD05867",
+        "label": "Brian Josephine and Stephen Hall entered the kitchen through the sliding glass doors."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "5affbbe4-ce2e-5328-ad96-9d313592307b",
+        "code": "EVT-4779FF6CD0",
+        "label": "Stephen Hall and Brian Josephine entered the house through the slider into the kitchen."
+      },
+      "reason": "Both accounts describe “Officers enter the kitchen”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "54d6c630-4a2d-5141-ac97-ea5dec637b05",
+      "code": "REL-AE20794B66",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+        "code": "EVT-EED36800FA",
+        "label": "Stephen Hall and Brian Josephine returned to the basement to look for other children."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "25393839-f86e-57c5-ac8f-e5db7cc19ff2",
+        "code": "ANC-89646CF6B5",
+        "label": "Officers return to the basement"
+      },
+      "reason": "Officer Stephen Hall places “Officers return to the basement” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9264cbcf-fe10-514f-a5a4-370a76de1cc3",
+      "code": "REL-F04F4C7CF3",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+        "code": "EVT-6EB78B665E",
+        "label": "Brian Josephine went back into the house and down to the left side of the basement."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "25393839-f86e-57c5-ac8f-e5db7cc19ff2",
+        "code": "ANC-89646CF6B5",
+        "label": "Officers return to the basement"
+      },
+      "reason": "Officer Brian Josephine places “Officers return to the basement” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "295668d2-c21d-510c-a60c-ac5707289a45",
+      "code": "REL-4DC9A3F29D",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "a1de8c96-71c4-55c6-af0b-887b1de314a4",
+        "code": "EVT-6EB78B665E",
+        "label": "Brian Josephine went back into the house and down to the left side of the basement."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "cae3b1bb-4390-5763-a78e-767dfd45f826",
+        "code": "EVT-EED36800FA",
+        "label": "Stephen Hall and Brian Josephine returned to the basement to look for other children."
+      },
+      "reason": "Both accounts describe “Officers return to the basement”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "12148d58-dfd7-533a-ab61-43e578d0a842",
+      "code": "REL-FA2B7E7867",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "817d473d-32fc-5069-a10e-53ce18749dfa",
+        "code": "EVT-78BB01EA07",
+        "label": "Hall heard Patrick Clancy say he could not wake or get up the children."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "3f5c20ac-5e4c-52ac-ae56-08ccf4660fce",
+        "code": "ANC-80BC545299",
+        "label": "Patrick's statement in the right basement"
+      },
+      "reason": "Officer Stephen Hall places “Patrick's statement in the right basement” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a5057480-b4be-559f-a1ad-2f244822fa07",
+      "code": "REL-DF321DB7DE",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+        "code": "EVT-59BE981142",
+        "label": "Brian Josephine heard Patrick Clancy scream that she had killed the children."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "3f5c20ac-5e4c-52ac-ae56-08ccf4660fce",
+        "code": "ANC-80BC545299",
+        "label": "Patrick's statement in the right basement"
+      },
+      "reason": "Officer Brian Josephine places “Patrick's statement in the right basement” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a3d063b3-7857-5178-a3a4-2b3177dd3be4",
+      "code": "REL-6DD1AD6B7E",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "9e2818b2-3f76-592a-a315-b2b06b6c500f",
+        "code": "EVT-59BE981142",
+        "label": "Brian Josephine heard Patrick Clancy scream that she had killed the children."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "817d473d-32fc-5069-a10e-53ce18749dfa",
+        "code": "EVT-78BB01EA07",
+        "label": "Hall heard Patrick Clancy say he could not wake or get up the children."
+      },
+      "reason": "Both accounts describe “Patrick's statement in the right basement”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "faea9cb3-4411-5a9c-ad9b-aa3da9a1b1f6",
+      "code": "REL-A9436801A5",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+        "code": "EVT-1B579568CC",
+        "label": "Stephen Hall arrived at 47 Summer Street with Brian Josephine."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "7aa7a91b-3388-53d9-a2fa-b0c46850cdba",
+        "code": "ANC-3AA9CFEFEF",
+        "label": "First police arrival"
+      },
+      "reason": "Officer Stephen Hall places “First police arrival” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e12d0369-4bc2-5f56-a4f6-fa2412fcd535",
+      "code": "REL-F2DAE66B29",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+        "code": "EVT-3AC45AB4B6",
+        "label": "Brian Josephine arrived and parked on the street at 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "7aa7a91b-3388-53d9-a2fa-b0c46850cdba",
+        "code": "ANC-3AA9CFEFEF",
+        "label": "First police arrival"
+      },
+      "reason": "Officer Brian Josephine places “First police arrival” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "a9ae9b19-97fa-50a6-acbb-b39ba441005d",
+      "code": "REL-04B48AF2B2",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "a570fded-6f07-5afc-a64d-081ea2da7c6c",
+        "code": "EVT-3AC45AB4B6",
+        "label": "Brian Josephine arrived and parked on the street at 47 Summer Street."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "5e5c7f84-5082-5028-a6b5-c1bb81045131",
+        "code": "EVT-1B579568CC",
+        "label": "Stephen Hall arrived at 47 Summer Street with Brian Josephine."
+      },
+      "reason": "Both accounts describe “First police arrival”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "b8f2a1cf-76be-5658-a3f1-f54896c345c6",
+      "code": "REL-6776587BB0",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "768030ca-349f-5b11-a99d-27e4958b3112",
+        "code": "EVT-16F055C5E1",
+        "label": "Stephen Hall traveled from Lincoln Street Fields to 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "5506cc88-7537-59cd-a91d-ef1dc06974ae",
+        "code": "ANC-EC76685EC9",
+        "label": "Police response travel duration"
+      },
+      "reason": "Officer Stephen Hall places “Police response travel duration” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "9d7dd0eb-dc1c-59a2-ae7d-461ad7bc7e65",
+      "code": "REL-5CFCB21528",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "5951d941-1aa8-52a8-aab0-55ca58d2cb3c",
+        "code": "EVT-E6CE81E6E8",
+        "label": "Brian Josephine traveled to 47 Summer Street."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "5506cc88-7537-59cd-a91d-ef1dc06974ae",
+        "code": "ANC-EC76685EC9",
+        "label": "Police response travel duration"
+      },
+      "reason": "Officer Brian Josephine places “Police response travel duration” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "d156ab08-3cac-5fe0-ac41-d496baf24a68",
+      "code": "REL-0ACDED5D8D",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "5951d941-1aa8-52a8-aab0-55ca58d2cb3c",
+        "code": "EVT-E6CE81E6E8",
+        "label": "Brian Josephine traveled to 47 Summer Street."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "768030ca-349f-5b11-a99d-27e4958b3112",
+        "code": "EVT-16F055C5E1",
+        "label": "Stephen Hall traveled from Lincoln Street Fields to 47 Summer Street."
+      },
+      "reason": "Both accounts describe “Police response travel duration”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "e5933eb6-2cf7-59f2-a1ea-296c20fe2e7c",
+      "code": "REL-263FB2AD91",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+        "code": "EVT-622DF754E4",
+        "label": "Stephen Hall heard a loud scream from inside the house."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "185db3e9-b24c-5a2e-a342-19d4f5346d91",
+        "code": "ANC-41951833CE",
+        "label": "Loud scream heard from inside"
+      },
+      "reason": "Officer Stephen Hall places “Loud scream heard from inside” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "67198d9c-1459-512b-ac3f-3c9d1da799cc",
+      "code": "REL-FF3396D9AF",
+      "linkType": "possible_shared_anchor",
+      "from": {
+        "type": "event_candidate",
+        "id": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+        "code": "EVT-C72DA02413",
+        "label": "Brian Josephine and Stephen Hall heard loud screams while standing by the window."
+      },
+      "to": {
+        "type": "anchor_candidate",
+        "id": "185db3e9-b24c-5a2e-a342-19d4f5346d91",
+        "code": "ANC-41951833CE",
+        "label": "Loud scream heard from inside"
+      },
+      "reason": "Officer Brian Josephine places “Loud scream heard from inside” (occurrence) in a family also described by 1 other account(s).",
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "ca187f91-cf2d-5afb-a019-cd7b831caa82",
+      "code": "REL-3C24C9BBB4",
+      "linkType": "possible_same_event",
+      "from": {
+        "type": "event_candidate",
+        "id": "6c9166e7-9c10-55dc-abcc-5126b6249fbc",
+        "code": "EVT-C72DA02413",
+        "label": "Brian Josephine and Stephen Hall heard loud screams while standing by the window."
+      },
+      "to": {
+        "type": "event_candidate",
+        "id": "a62cad91-686a-5c5a-a35e-bf2b212c8a27",
+        "code": "EVT-622DF754E4",
+        "label": "Stephen Hall heard a loud scream from inside the house."
+      },
+      "reason": "Both accounts describe “Loud scream heard from inside”; identity remains a reviewer decision.",
+      "reviewStatus": "pending"
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "cc663fc6-d61f-5abf-aaf1-af72bf440f41",
+      "code": "FLG-BFFA6C6EE6",
+      "kind": "duration_ranges_disjoint",
+      "summary": "“Seven to 10 minutes.” (Officer Stephen Hall) and “I would say anywhere from three to four minutes.” (Officer Brian Josephine) do not overlap.",
+      "parties": [
+        {
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "ref": "TMP-F87C8407E9",
+          "wording": "Seven to 10 minutes.",
+          "sourceSegmentIds": [
+            "faa71ed3-69ef-5426-af54-35ddba837592"
+          ]
+        },
+        {
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "ref": "TMP-D1813DF39C",
+          "wording": "I would say anywhere from three to four minutes.",
+          "sourceSegmentIds": [
+            "fe737119-35b4-5c80-a9c4-af5bbdd46fdb"
+          ]
+        }
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dd17fbea-d613-5f67-ab09-0079cd54c85e",
+      "code": "FLG-7B17CD8E73",
+      "kind": "state_disagreement",
+      "summary": "Accounts differ on screaming-at-kitchen-entry: Officer Stephen Hall “ended”, Officer Brian Josephine “continuing”.",
+      "parties": [
+        {
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "ref": "EVT-55676DB3C0",
+          "wording": "We could hear he was talking, but there was screaming was done.",
+          "sourceSegmentIds": [
+            "f683652f-7ff5-54b4-a4ae-bc78557dbdf5",
+            "7391843d-56a6-58f3-aa10-ecb8dcae898f"
+          ]
+        },
+        {
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "ref": "EVT-475BEF09A9",
+          "wording": "it was the exact screaming that I heard from the window.",
+          "sourceSegmentIds": [
+            "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6",
+            "48478ab7-d5ed-5152-afc2-87cf5c28e37f"
+          ]
+        }
+      ],
+      "reviewStatus": "pending"
+    }
+  ],
+  "slots": [
+    {
+      "anchorCode": "ANC-E86D10FD6D",
+      "family": "dawson-to-ambulance",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-1AFBE6B0D6",
+      "before": [
+        "EVT-8C61726490"
+      ],
+      "at": [],
+      "after": [
+        "EVT-317A252CB7",
+        "EVT-EED36800FA"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1B579568CC",
+        "EVT-4779FF6CD0",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625"
+      ]
+    },
+    {
+      "anchorCode": "ANC-1FCBF0C2C2",
+      "family": "dispatch",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-CA02EFD625",
+      "before": [],
+      "at": [],
+      "after": [
+        "EVT-1B579568CC"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-317A252CB7",
+        "EVT-4779FF6CD0",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-8C61726490",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-82F708AECD",
+      "family": "dispatch-relay",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-956B981C56",
+      "before": [
+        "EVT-699A597C52"
+      ],
+      "at": [],
+      "after": [
+        "EVT-158B118BB6",
+        "EVT-4779FF6CD0",
+        "EVT-622DF754E4",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-6E2366AD4D",
+        "EVT-8C61726490",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-692FE8C3EE",
+      "family": "ems-care-left-basement",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-317A252CB7",
+      "before": [
+        "ANC-692FE8C3EE",
+        "EVT-1AFBE6B0D6",
+        "EVT-8C61726490",
+        "EVT-EED36800FA"
+      ],
+      "at": [],
+      "after": [],
+      "unplaced": [
+        "EVT-158B118BB6",
+        "EVT-1B579568CC",
+        "EVT-4779FF6CD0",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625"
+      ]
+    },
+    {
+      "anchorCode": "ANC-EA874EB9DE",
+      "family": "fire-arrival",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-47FB9C3022",
+      "before": [],
+      "at": [
+        "EVT-699A597C52"
+      ],
+      "after": [],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-4779FF6CD0",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-8C61726490",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-AB1953CFDF",
+      "family": "kitchen-entry",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-4779FF6CD0",
+      "before": [
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-956B981C56"
+      ],
+      "at": [
+        "EVT-55676DB3C0"
+      ],
+      "after": [
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-47FB9C3022",
+        "EVT-6E2366AD4D",
+        "EVT-8C61726490",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-89646CF6B5",
+      "family": "left-basement-return",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-EED36800FA",
+      "before": [
+        "EVT-1AFBE6B0D6",
+        "EVT-8C61726490"
+      ],
+      "at": [],
+      "after": [
+        "EVT-317A252CB7"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1B579568CC",
+        "EVT-4779FF6CD0",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625"
+      ]
+    },
+    {
+      "anchorCode": "ANC-843671B5A7",
+      "family": "patrick-enters-house",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-699A597C52",
+      "before": [],
+      "at": [
+        "EVT-47FB9C3022"
+      ],
+      "after": [
+        "EVT-158B118BB6",
+        "EVT-4779FF6CD0",
+        "EVT-622DF754E4",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-956B981C56"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-55676DB3C0",
+        "EVT-6E2366AD4D",
+        "EVT-8C61726490",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-80BC545299",
+      "family": "patrick-statement-right-basement",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-78BB01EA07",
+      "before": [
+        "EVT-4779FF6CD0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-956B981C56"
+      ],
+      "at": [],
+      "after": [
+        "EVT-779F431AFD"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-6E2366AD4D",
+        "EVT-8C61726490",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-3AA9CFEFEF",
+      "family": "police-arrival",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-1B579568CC",
+      "before": [
+        "EVT-CA02EFD625"
+      ],
+      "at": [
+        "EVT-A13F3BED59"
+      ],
+      "after": [],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-317A252CB7",
+        "EVT-4779FF6CD0",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-622DF754E4",
+        "EVT-699A597C52",
+        "EVT-6E2366AD4D",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07",
+        "EVT-8C61726490",
+        "EVT-956B981C56",
+        "EVT-99EA936BD3",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-41951833CE",
+      "family": "scream",
+      "accountKey": "day3-hall",
+      "witness": "Officer Stephen Hall",
+      "memberCode": "EVT-622DF754E4",
+      "before": [
+        "EVT-699A597C52",
+        "EVT-956B981C56"
+      ],
+      "at": [],
+      "after": [
+        "EVT-4779FF6CD0",
+        "EVT-779F431AFD",
+        "EVT-78BB01EA07"
+      ],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-158B118BB6",
+        "EVT-1AFBE6B0D6",
+        "EVT-1B579568CC",
+        "EVT-317A252CB7",
+        "EVT-47FB9C3022",
+        "EVT-55676DB3C0",
+        "EVT-6E2366AD4D",
+        "EVT-8C61726490",
+        "EVT-99EA936BD3",
+        "EVT-A13F3BED59",
+        "EVT-CA02EFD625",
+        "EVT-EED36800FA"
+      ]
+    },
+    {
+      "anchorCode": "ANC-103573A3FF",
+      "family": "ambulance-arrival",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-EF8A927C17",
+      "before": [
+        "ANC-103573A3FF"
+      ],
+      "at": [],
+      "after": [],
+      "unplaced": [
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-1FE928D5B5",
+        "EVT-3380904AEF",
+        "EVT-3A81861830",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-59BE981142",
+        "EVT-682A4DE302",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-AAB3083258",
+        "EVT-C72DA02413",
+        "EVT-CC84AEF3FA",
+        "EVT-D138504B9B",
+        "EVT-EC21D0CC66"
+      ]
+    },
+    {
+      "anchorCode": "ANC-E86D10FD6D",
+      "family": "dawson-to-ambulance",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-EC21D0CC66",
+      "before": [
+        "EVT-59BE981142",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413"
+      ],
+      "at": [],
+      "after": [
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-6EB78B665E"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-CC84AEF3FA",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-1FCBF0C2C2",
+      "family": "dispatch",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-415A020531",
+      "before": [],
+      "at": [],
+      "after": [
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-D138504B9B"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-475BEF09A9",
+        "EVT-59BE981142",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-692FE8C3EE",
+      "family": "ems-care-left-basement",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-3A81861830",
+      "before": [
+        "ANC-692FE8C3EE",
+        "EVT-59BE981142",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413",
+        "EVT-EC21D0CC66"
+      ],
+      "at": [],
+      "after": [
+        "EVT-1FE928D5B5"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-CC84AEF3FA",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-EA874EB9DE",
+      "family": "fire-arrival",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-AAB3083258",
+      "before": [
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-D138504B9B"
+      ],
+      "at": [],
+      "after": [],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-475BEF09A9",
+        "EVT-59BE981142",
+        "EVT-682A4DE302",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-AB1953CFDF",
+      "family": "kitchen-entry",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-6F5FD05867",
+      "before": [
+        "EVT-C72DA02413"
+      ],
+      "at": [
+        "EVT-475BEF09A9"
+      ],
+      "after": [
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-59BE981142",
+        "EVT-6EB78B665E",
+        "EVT-9B16053F29",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-89646CF6B5",
+      "family": "left-basement-return",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-6EB78B665E",
+      "before": [
+        "EVT-59BE981142",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413",
+        "EVT-EC21D0CC66"
+      ],
+      "at": [],
+      "after": [
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-CC84AEF3FA",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-80BC545299",
+      "family": "patrick-statement-right-basement",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-59BE981142",
+      "before": [
+        "EVT-6F5FD05867",
+        "EVT-C72DA02413"
+      ],
+      "at": [],
+      "after": [
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-6EB78B665E",
+        "EVT-9B16053F29",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-3AA9CFEFEF",
+      "family": "police-arrival",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-3AC45AB4B6",
+      "before": [
+        "EVT-415A020531"
+      ],
+      "at": [],
+      "after": [
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-D138504B9B"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-475BEF09A9",
+        "EVT-59BE981142",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-C72DA02413",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66",
+        "EVT-EF8A927C17"
+      ]
+    },
+    {
+      "anchorCode": "ANC-41951833CE",
+      "family": "scream",
+      "accountKey": "day3-josephine",
+      "witness": "Officer Brian Josephine",
+      "memberCode": "EVT-C72DA02413",
+      "before": [],
+      "at": [],
+      "after": [
+        "EVT-1FE928D5B5",
+        "EVT-3A81861830",
+        "EVT-59BE981142",
+        "EVT-6EB78B665E",
+        "EVT-6F5FD05867",
+        "EVT-9B16053F29",
+        "EVT-CC84AEF3FA",
+        "EVT-EC21D0CC66"
+      ],
+      "unplaced": [
+        "ANC-103573A3FF",
+        "ANC-692FE8C3EE",
+        "EVT-0B25D2B5B2",
+        "EVT-3380904AEF",
+        "EVT-3AC45AB4B6",
+        "EVT-415A020531",
+        "EVT-475BEF09A9",
+        "EVT-682A4DE302",
+        "EVT-AAB3083258",
+        "EVT-D138504B9B",
+        "EVT-EF8A927C17"
+      ]
+    }
+  ],
+  "sources": {
+    "776a9ab8-9cb3-570a-a9fb-8e7d634cde52": {
+      "ordinal": 55,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:06:13",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=373.59",
+      "text": "Further directing your attention to approximately 6:11 PM. At that time, did you receive a dispatch to go to 47 Summer Street in Duxbury?"
+    },
+    "d4b7cb70-d6af-593d-a04c-193c77de02b1": {
+      "ordinal": 56,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:06:22",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=382.5",
+      "text": "I did."
+    },
+    "dc4a0f18-275c-5112-a86e-0600a13109a7": {
+      "ordinal": 58,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:06:28",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=388.35",
+      "text": "I was at the Lincoln Street Fields in Duxbury."
+    },
+    "6b0019cc-055d-5307-a017-5dc7be566b74": {
+      "ordinal": 59,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:06:30",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=390.78",
+      "text": "And so how long did it take you to get from there to 47 Summer Street?"
+    },
+    "faa71ed3-69ef-5426-af54-35ddba837592": {
+      "ordinal": 60,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:06:34",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=394.71",
+      "text": "Seven to 10 minutes."
+    },
+    "6206a9ed-f783-5b07-aafc-a3db6550a167": {
+      "ordinal": 63,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:06:41",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=401.88",
+      "text": "And what did you see when you arrived there?"
+    },
+    "a5a92993-ac7f-57c3-a7a5-b3887523bede": {
+      "ordinal": 64,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:06:44",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=404.97",
+      "text": "When I arrived, it was just a house. There was a gate open on the left side of the house."
+    },
+    "64835323-008b-5077-a631-6c8424c7c1ad": {
+      "ordinal": 72,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:07:38",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=458.76",
+      "text": "I arrived simultaneously with Officer Josephine."
+    },
+    "92510ecb-2755-5bca-a628-738a11c365cb": {
+      "ordinal": 81,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:08:05",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=485.64",
+      "text": "Okay. And did you encounter a male in the backyard?"
+    },
+    "af9ac988-1b33-5287-ab5b-de3bd4736b82": {
+      "ordinal": 82,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:08:08",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=488.34",
+      "text": "Yes."
+    },
+    "ddd2095b-6d87-5f2a-a016-04861fa2c670": {
+      "ordinal": 83,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:08:09",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=489.06",
+      "text": "And did you later learn his name was Patrick Clancy?"
+    },
+    "e7ab5d4a-b718-5f84-a414-b1cd8cb33cc1": {
+      "ordinal": 84,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:08:11",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=491.28",
+      "text": "I did."
+    },
+    "d683f323-7d41-5dd0-ad4f-d6936c703a99": {
+      "ordinal": 119,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:10:10",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=610.26",
+      "text": "She had cuts to both wrists and to the left side of her neck."
+    },
+    "9faf9eb7-de77-5553-a896-b1f89304c5e5": {
+      "ordinal": 138,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:11:14",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=674.7",
+      "text": "While you and Officer Josephine are there, do other first responders such as firefighters start to arrive?"
+    },
+    "36dd5add-edf0-5eb8-a463-1bedac596593": {
+      "ordinal": 139,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:11:20",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=680.91",
+      "text": "Yes. They started to arrive and I went to gate to direct them where to go."
+    },
+    "134e2e9e-ddb4-59ff-ab3c-c6b97ed1d505": {
+      "ordinal": 144,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:11:39",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=699.42",
+      "text": "While you were doing this, did Patrick Clancy stay with you?"
+    },
+    "76011220-a115-5880-a539-bc23fd9e3ff5": {
+      "ordinal": 145,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:11:43",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=703.47",
+      "text": "At one point, he went inside to say he was going to check on his children."
+    },
+    "3db8e563-dcd6-5296-a49d-baf501ff7be1": {
+      "ordinal": 147,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:11:51",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=711.96",
+      "text": "He went towards the backslider."
+    },
+    "5fa7ae22-a22c-5bee-ad5e-a86a88e35afa": {
+      "ordinal": 148,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:11:59",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=719.82",
+      "text": "Shortly after Patrick Clancy went inside the home, did you receive a call on your radio?"
+    },
+    "65928b36-81d5-59fb-afcf-a46d28e5347e": {
+      "ordinal": 151,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:11",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=731.43",
+      "text": "Dispatch said that he couldn't wake them up."
+    },
+    "89348a2f-be9d-52ba-a417-bf810ee936d2": {
+      "ordinal": 152,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:12:15",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=735.33",
+      "text": "And did you know what they were talking about when you initially heard that?"
+    },
+    "380c0f16-14bd-511d-a715-0c6d3472eda5": {
+      "ordinal": 153,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:20",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=740.01",
+      "text": "Not really, no."
+    },
+    "b4d5d106-d269-5e15-a144-f492744cc2f0": {
+      "ordinal": 154,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:12:22",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=742.29",
+      "text": "Did something then catch your attention?"
+    },
+    "0b766e32-4b73-5646-a568-0abcb3263c72": {
+      "ordinal": 155,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:24",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=744.45",
+      "text": "Yeah, I heard a loud scream from inside."
+    },
+    "da456598-b523-5f62-a3eb-81bc75eabc2f": {
+      "ordinal": 160,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:12:39",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=759.36",
+      "text": "When you heard that screaming, what did you do?"
+    },
+    "8a1ccee5-03e0-57f8-a392-b32c6d34ece6": {
+      "ordinal": 161,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:42",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=762.45",
+      "text": "Myself and Officer Josephine ran towards the slider and entered into the house."
+    },
+    "532efd71-2a6e-52b7-a248-e686a314f161": {
+      "ordinal": 162,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:12:47",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=767.22",
+      "text": "And when you entered into the house, do you remember what room you entered into?"
+    },
+    "5e04b351-ea44-53e1-aa4d-9a44fca10dfe": {
+      "ordinal": 163,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:51",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=771.33",
+      "text": "Into a kitchen."
+    },
+    "f683652f-7ff5-54b4-a4ae-bc78557dbdf5": {
+      "ordinal": 164,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:12:53",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=773.13",
+      "text": "And when you entered into the kitchen, could you still hear that screaming?"
+    },
+    "7391843d-56a6-58f3-aa10-ecb8dcae898f": {
+      "ordinal": 165,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:12:57",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=777.93",
+      "text": "No. We could hear he was talking, but there was screaming was done."
+    },
+    "d5bf529b-9a98-5d87-a3f3-978366bbc5e6": {
+      "ordinal": 178,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:13:38",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=818.76",
+      "text": "Once you got to the bottom of the stairs, is it accurate that you either have to go right or left?"
+    },
+    "fb6e1eaf-c204-5d1e-a401-7e4660c6e594": {
+      "ordinal": 187,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:14:12",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=852.99",
+      "text": "Do you recall him saying, \"I can't wake them up. I can't get them Up?\""
+    },
+    "49149cde-ecd7-5d3f-a907-9b957400aa3f": {
+      "ordinal": 188,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:14:16",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=856.98",
+      "text": "Yes."
+    },
+    "c4adbf74-3fa0-5da7-a792-0db93a8f30be": {
+      "ordinal": 222,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:16:47",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1007.61",
+      "text": "And what did you see when you got to that back room?"
+    },
+    "c724648e-4e69-58f0-ad8c-7c1bae1e2078": {
+      "ordinal": 223,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:16:50",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1010.43",
+      "text": "Just past the door on the left side, there was a body of a young child."
+    },
+    "6d195118-7ef2-590a-aac3-36cf23a26f84": {
+      "ordinal": 244,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:18:21",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1101.21",
+      "text": "What happened next?"
+    },
+    "fd863cdc-587e-5823-ac01-0635756d78cf": {
+      "ordinal": 245,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:18:24",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1104.09",
+      "text": "I called for paramedics to come to the basement. I also called for a supervisor and Officer Josephine picked up the child and we ran him outside through the front door to the ambulance."
+    },
+    "8d22c261-cb10-5a5d-a51c-5b81f7d64250": {
+      "ordinal": 246,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:18:37",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1117.47",
+      "text": "And did you do anything after that after giving Dawson to EMTs?"
+    },
+    "d6ec7db0-3ffc-5e38-a6de-4005415045c9": {
+      "ordinal": 247,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:18:45",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1125.42",
+      "text": "We ran back down into the basement to check to see if we could find other children."
+    },
+    "c894e43b-eb63-5939-a91b-8383ab3e0672": {
+      "ordinal": 248,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:18:50",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1130.46",
+      "text": "And what made you think there were other children to find?"
+    },
+    "724636dd-fab6-506b-af7c-9d27879a4709": {
+      "ordinal": 249,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:18:53",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1133.61",
+      "text": "When Patrick Clancy said, \"Well, I can't wake them up,\" instead of just the singular."
+    },
+    "f00b4472-1766-516b-a2fb-94e55d83ea45": {
+      "ordinal": 266,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:20:56",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1256.19",
+      "text": "Now, when you went into that room, what did you see?"
+    },
+    "1891990e-721d-5970-adcc-2d03b58b3f2f": {
+      "ordinal": 267,
+      "speaker": "Stephen Hall",
+      "timestamp": "00:21:00",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1260.06",
+      "text": "There were two children on the floor, motionless, and EMTs and paramedics were working on them."
+    },
+    "df2bba94-64b6-546c-a5f3-ff8b180887d5": {
+      "ordinal": 360,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:29:59",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1799.28",
+      "text": "And did you receive a dispatch at approximately 6:11 PM to go to 47 Summer Street in Duxbury?"
+    },
+    "6eb0dcc8-b494-55b6-a74c-97b29bcfa73d": {
+      "ordinal": 361,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:30:04",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1804.95",
+      "text": "Yes, we did."
+    },
+    "77f62355-ca21-57eb-a5fb-fcebc55f38e7": {
+      "ordinal": 368,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:30:32",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1832.22",
+      "text": "And approximately how long did it take you to get there?"
+    },
+    "fe737119-35b4-5c80-a9c4-af5bbdd46fdb": {
+      "ordinal": 369,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:30:34",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1834.65",
+      "text": "I would say anywhere from three to four minutes."
+    },
+    "cb438889-ea42-5b65-ab39-f7fc33393a0c": {
+      "ordinal": 372,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:30:41",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1841.61",
+      "text": "Okay. And when you arrived at 47 Summer Street, what did you observe?"
+    },
+    "b3ea253e-939d-5046-a2a0-b49ccb859e1d": {
+      "ordinal": 373,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:30:47",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1847.97",
+      "text": "Dispatch was giving me description of the house. It took probably 15 seconds for me to identify the house. Parked in the street. I saw the number of the house and I made my way. I believe it was a mudroom that I went to."
+    },
+    "35fff430-1195-58ee-a560-dd60d3147abd": {
+      "ordinal": 390,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:32:26",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1946.64",
+      "text": "And when you came around there, what did you see?"
+    },
+    "1a9a2524-4f52-58d2-a40b-d890af47add1": {
+      "ordinal": 391,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:32:31",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1951.11",
+      "text": "I made my way. I observed two parties, one lying in the ground and one standing over it. And I started to make my way towards the other end of the house, which is as towards this fence, as you guys can see in reference to that photo."
+    },
+    "bf5cea5e-fe26-525a-a2b4-833150840ea3": {
+      "ordinal": 394,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:32:55",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1975.56",
+      "text": "And the person that was standing, did you later learn that was Patrick Clancy?"
+    },
+    "d0633aeb-e9ec-5d9d-a412-4315f8907e32": {
+      "ordinal": 395,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:33:00",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1980.78",
+      "text": "Yes, I did."
+    },
+    "95e2639c-323e-56f6-a6ca-150c9160f2f9": {
+      "ordinal": 396,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:33:01",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1981.65",
+      "text": "And the person on the ground, did you later learn that was Lindsay Clancy?"
+    },
+    "ff0920ef-7c4b-5888-a583-e43c9b908870": {
+      "ordinal": 397,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:33:04",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=1984.44",
+      "text": "Yes, I did."
+    },
+    "522853e6-440e-5ee7-a71f-8696242c11b3": {
+      "ordinal": 403,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:33:35",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2015.01",
+      "text": "‍\n\nHe was standing over Lindsay at that point. It appeared that he was trying to communicate with her. I observed him with a cell phone. It was kind of down by his side, so I don't know if they were talking or what, but it was probably a split second, and then he turned to my location, saw me because I was illuminating the yard with my flashlight, and then that's when me and him crossed paths."
+    },
+    "0c31476b-abe1-5f54-a6fe-22f2f102eed0": {
+      "ordinal": 414,
+      "speaker": "Attorney Sprague",
+      "timestamp": "00:34:42",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2082.51",
+      "text": "And after you crossed paths with Patrick, where did you go?"
+    },
+    "d51800e8-8766-56e0-a79d-f8de558d6959": {
+      "ordinal": 415,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:34:46",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2086.29",
+      "text": "I went to the female party."
+    },
+    "0446b773-9a2e-53f9-acbd-befe6d649e9e": {
+      "ordinal": 417,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:34:50",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2090.7",
+      "text": "I attempted to."
+    },
+    "a9f07912-e4e1-5130-a974-af26984320d3": {
+      "ordinal": 441,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:36:28",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2188.89",
+      "text": "Yes. So I would say I tried to talk to Ms. Clancy for probably 30 seconds to a minute. And at that point, coming from that opposite side of the house, I observed Duxbury Fire personnel show up. And our protocol is to kind of turn the medical over to them because they're more highly trained than we are."
+    },
+    "81af8657-1c96-58eb-ac76-20f3047e8b3e": {
+      "ordinal": 442,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:36:49",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2209.23",
+      "text": "Okay. And at some point in time, do you hear something?"
+    },
+    "0af06213-a8b8-572d-a5c0-6b2fa44a6a2e": {
+      "ordinal": 444,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:36:52",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2212.74",
+      "text": "What do you hear?"
+    },
+    "6368e6e9-87ba-5ee9-aa89-aa5f084d284a": {
+      "ordinal": 445,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:36:54",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2214.75",
+      "text": "Myself and Officer Hall were standing by that window and we just started hearing loud screams."
+    },
+    "9c971f97-b61b-56ea-a100-9c469204dbc6": {
+      "ordinal": 446,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:37:02",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2222.58",
+      "text": "And what did you do when you heard those loud screams?"
+    },
+    "3be2266f-4c39-5832-adc3-c572b366c29e": {
+      "ordinal": 447,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:37:07",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2227.17",
+      "text": "We immediately were trying to figure out where they were coming from. I'm not sure if dispatch or something came over the air and said something about the basement, but we both just started making our way back towards the deck part of the house."
+    },
+    "cecbff89-282f-5383-aa74-44e617644382": {
+      "ordinal": 449,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:37:22",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2242.98",
+      "text": "Yes. We went up the deck and through the sliding glass doors into the kitchen."
+    },
+    "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6": {
+      "ordinal": 452,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:37:29",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2249.4",
+      "text": "Okay. And could you hear any sounds coming from the basement as you entered the kitchen?"
+    },
+    "48478ab7-d5ed-5152-afc2-87cf5c28e37f": {
+      "ordinal": 453,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:37:35",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2255.64",
+      "text": "Yes, it was the exact screaming that I heard from the window."
+    },
+    "86c7e5e2-1c02-5760-ab33-e23269df8af0": {
+      "ordinal": 456,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:37:45",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2265.33",
+      "text": "And did you see anything after you went down the stairs?"
+    },
+    "6aef0285-3ff2-5173-a9cd-3da9360110a5": {
+      "ordinal": 465,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:38:56",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2336.49",
+      "text": "Upon his observation of us, myself and Officer Hall, he proceeded to head in our direction, leaving that room. And at that point he looked up and he screamed, \"She killed the fucking kids.\""
+    },
+    "fd444089-77cb-5f11-a492-ce6d52e68efc": {
+      "ordinal": 466,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:39:10",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2350.89",
+      "text": "And after he said that, where did you go?"
+    },
+    "81849fe9-82de-5a86-a6fb-886ce479cd88": {
+      "ordinal": 467,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:39:15",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2355.3",
+      "text": "Once he cleared himself from the doorframe, we were able to look inside the room where we observed what appeared to be a child laying motionless on the floor."
+    },
+    "e52d8169-1c2e-5ba1-a41f-2365bd48b785": {
+      "ordinal": 468,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:39:24",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2364.45",
+      "text": "And did you later learn his name was Dawson Clancy?"
+    },
+    "bfbbf777-e7fd-5b1f-a4b4-dd3c5a93b8ba": {
+      "ordinal": 469,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:39:27",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2367.09",
+      "text": "Yes, I did."
+    },
+    "e11698ca-40e8-5d85-a981-798811babca8": {
+      "ordinal": 494,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:41:13",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2473.71",
+      "text": "And once you saw him there with these injuries, what did you do?"
+    },
+    "d4d505c7-e395-5fe1-a1db-358d683e9001": {
+      "ordinal": 495,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:41:22",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2482.98",
+      "text": "Based on my observations, I knew there wasn't really much I could do. So I picked the child up, went chest to chest. And as I did that, it was kind of like a mucus or a foam that leaked out of his mouth onto me. I grabbed him, went back towards the way. We came down into the basement and I headed up to the stairs where Sergeant Homestead was coming down the stairs and I started yelling to him to get out of the way. Went back up the stairs and then into the kitchen directly adjacent to the stairs is the front foyer hallway, and I went out that, out the main door into the driveway."
+    },
+    "4904b499-e452-5650-aea9-f9e9736e3029": {
+      "ordinal": 497,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:42:07",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2527.23",
+      "text": "Yes. The ambulance was backing up and had pretty much just parked and one of the fire was walking around to the stretcher out back. So I rushed over with Dawson and I put him on the stretcher and that's when Sergeant Homestead and fire personnel started working further on him."
+    },
+    "24d19c5a-4d34-5a8b-acac-74fc573849d8": {
+      "ordinal": 498,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:42:26",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2546.46",
+      "text": "What did you do next?"
+    },
+    "a6e73260-9981-5c77-a4a2-5dadeb753872": {
+      "ordinal": 499,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:42:28",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2548.35",
+      "text": "I went back into the house."
+    },
+    "60c69f63-7e83-5402-adb0-5ac0062bb68d": {
+      "ordinal": 503,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:42:39",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2559.99",
+      "text": "Yes, I went back in that front door, back down to the basement, and this time I went to the left-hand side."
+    },
+    "e3e2ef1b-e7c9-5b1c-af7d-d6d1065fcb71": {
+      "ordinal": 513,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:43:15",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2595.21",
+      "text": "So when I got down to the basement, two fire personnel were already on scene. One was working on the baby and one was working on Cora. Communicated with them. We worked together and I took over doing chest compressions of Cora."
+    },
+    "dbf836a9-bf9c-505a-a0f9-49233cda3df2": {
+      "ordinal": 522,
+      "speaker": "Shanan Buckingham",
+      "timestamp": "00:44:48",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2688.45",
+      "text": "And, eventually, was Cora put on a stretcher and brought out?"
+    },
+    "8f23f35f-b3b5-541f-aa04-0535d98d50da": {
+      "ordinal": 523,
+      "speaker": "Brian Josephine",
+      "timestamp": "00:44:57",
+      "deepLink": "https://www.rev.com/app/transcript/NmE2ZTBkYmU3OWFjZmJmNWUyMWUyYmE2WjlGUkdlYk1tRFlW/o/VEMwMzI1ODM0MTM3?ts=2697.99",
+      "text": "Yes, eventually. I think the baby was brought out first because I think they mentioned at some point they might've found a faint pulse or something like that, so they got him out first and then we were able to get Cora out."
+    }
+  }
+}

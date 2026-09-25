@@ -39,24 +39,30 @@ export function getCaseNavigationItems(caseId: string, isOwner: boolean): CaseNa
 
   if (!isOwner) return sharedResearchItems;
 
-  const structurePath = structureHref(caseId);
   return [
     { href: caseFoundationHref(caseId), label: "Foundation", match: "exact" },
     { href: trialIndexHref(caseId), label: "Trial Index", match: "prefix" },
     { href: courtRecordHref(caseId), label: "Testimony Database", match: "prefix" },
     { href: witnessHref(caseId), label: "Witness", match: "prefix" },
     { href: timelineHref(caseId), label: "Timelines", match: "prefix" },
-    { href: structurePath, label: "Structure", match: "exact" },
-    { href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: "prefix", activePath: `${structurePath}/review` },
-    { href: accountsHref(caseId), label: "Accounts", match: "prefix" },
-    { href: reconcileHref(caseId), label: "Reconcile", match: "prefix" },
-    { href: reconstructionHref(caseId), label: "Reconstruct", match: "prefix" },
     { href: careTrajectoryHref(caseId), label: "Care Trajectory", match: "prefix" },
     { href: caseFilesHref(caseId), label: "Files", match: "prefix" },
     { href: documentsHref(caseId), label: "Documents", match: "prefix" },
     { href: evidenceHref(caseId), label: "Evidence", match: "prefix" },
     { href: questionsHref(caseId), label: "Questions", match: "prefix" },
     { href: referenceReportsHref(caseId), label: "Reports", match: "prefix" },
+  ];
+}
+
+// Owner-only pages live in the settings menu beside sign out, not in the tab bar.
+export function getCaseSettingsItems(caseId: string): CaseNavigationItem[] {
+  const structurePath = structureHref(caseId);
+  return [
+    { href: structurePath, label: "Structure", match: "exact" },
+    { href: structureReviewHref(caseId, { reviewStatus: "pending" }), label: "Review", match: "prefix", activePath: `${structurePath}/review` },
+    { href: accountsHref(caseId), label: "Accounts", match: "prefix" },
+    { href: reconcileHref(caseId), label: "Reconcile", match: "prefix" },
+    { href: reconstructionHref(caseId), label: "Reconstruct", match: "prefix" },
     { href: caseAccessHref(caseId), label: "Access", match: "prefix" },
   ];
 }

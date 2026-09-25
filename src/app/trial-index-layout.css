@@ -1,0 +1,94 @@
+/*
+  Trial Index day-tab composition. Layout only: each tab uses the width the way its job needs, and prose stays readable
+  by limiting text measure, not the workspace. Colours, borders and type reuse the existing tokens.
+*/
+
+/* Workspace width: the old per-component max-widths no longer cap the tabs. */
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel :is(.day-insights,.day-cards,.day-questions,.research-list){max-width:none}
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights :is(p,li){max-width:72ch}
+
+/* ── Master / detail: Evidence (68/32), Research (60/40), Creators (30/70) ───────── */
+.ti-split{display:grid;grid-template-columns:minmax(0,68fr) minmax(0,32fr);gap:24px;align-items:start;padding:22px clamp(16px,3vw,42px) 48px}
+.ti-split.ti-research{grid-template-columns:minmax(0,60fr) minmax(0,40fr)}
+.ti-split.ti-creators{grid-template-columns:minmax(0,30fr) minmax(0,70fr)}
+
+.ti-claim-list{display:grid;gap:0;margin:0;padding:0;list-style:none;border:1px solid var(--hairline-soft-2);border-radius:4px;background:var(--surface-paper)}
+.ti-claim-list li+li{border-top:1px solid var(--hairline-soft-2)}
+.ti-claim-list button{display:grid;gap:6px;width:100%;padding:16px 18px;border:0;border-left:3px solid transparent;background:transparent;color:var(--ink);font:inherit;text-align:left;cursor:pointer}
+.ti-claim-list button:hover{background:var(--surface-alt)}
+.ti-claim-list button[aria-pressed=true]{border-left-color:var(--brass);background:var(--surface-alt)}
+.ti-claim-list button:focus-visible{outline:2px solid var(--brass);outline-offset:-2px}
+.ti-claim-list strong{font:600 17px/1.35 var(--font-workbench-serif),Georgia,serif}
+.ti-claim-support{color:var(--ink-muted);font-size:14px;line-height:1.55}
+.ti-claim-support em{margin-right:6px;color:var(--ink-faint);font:500 10.5px/1.4 var(--font-mono),monospace;font-style:normal;letter-spacing:.1em;text-transform:uppercase}
+.ti-ref{color:var(--signal-deep);font:600 10.5px/1.4 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}
+
+.ti-inspector{position:sticky;top:124px;display:grid;gap:12px;padding:18px 20px;border:1px solid var(--hairline-soft-2);border-radius:4px;background:var(--surface-paper);min-width:0}
+.ti-inspector h3{margin:0;font:600 18px/1.35 var(--font-workbench-serif),Georgia,serif}
+.ti-inspector dl{display:grid;gap:12px;margin:0}
+.ti-inspector dl>div{display:grid;gap:3px}
+.ti-inspector dt{color:var(--ink-faint);font:500 10.5px/1.4 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}
+.ti-inspector dd{margin:0;color:var(--ink-muted);font-size:14.5px;line-height:1.6}
+.ti-inspector-links{display:flex;flex-wrap:wrap;gap:8px 18px;padding-top:10px;border-top:1px solid var(--hairline-soft-2)}
+.ti-inspector-links a,.ti-inspector .research-support a{color:var(--signal-deep);font:600 11px/1.5 var(--font-mono),monospace;letter-spacing:.04em;text-decoration:none;border-bottom:1px solid var(--hairline)}
+.ti-inspector-links a:hover,.ti-inspector .research-support a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.ti-inspector .research-prompt{margin:0}
+.ti-inspector .research-prompt pre{max-height:min(46vh,420px);overflow:auto}
+.ti-inspector .research-support{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+.ti-inspector .research-support h4{margin:0 0 6px;color:var(--ink-faint);font:500 10.5px/1.4 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}
+.ti-inspector .research-support ul{margin:0;padding-left:16px;color:var(--ink-muted);font-size:13.5px;line-height:1.55}
+
+/* Creators: compact guidance beside the source-grounded witness material */
+.ti-creator-guidance{position:sticky;top:124px;display:grid;gap:12px}
+.ti-creators .creator-checklist,.ti-creators .creator-day-note,.ti-creators .creator-day-context{margin:0}
+.ti-creators .creator-topics{display:grid;gap:14px;min-width:0}
+
+/* ── Registers: decisions and open questions ──────────────────────────────────── */
+.ti-register{margin:22px clamp(16px,3vw,42px) 48px;border:1px solid var(--hairline-soft-2);border-radius:4px;background:var(--surface-paper)}
+.ti-register-head,.ti-register-row{display:grid;gap:0 32px;padding:0 20px}
+.ti-register-head{padding-top:10px;padding-bottom:10px;border-bottom:1px solid var(--hairline-soft-2);background:var(--surface-alt)}
+.ti-register-head span{color:var(--ink-faint);font:500 10.5px/1.4 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}
+.ti-register-row{padding-top:16px;padding-bottom:16px;border-top:1px solid var(--hairline-soft-2)}
+.ti-register-row:first-of-type{border-top:0}
+.ti-register-row p,.ti-register-row em,.ti-register-row dd{margin:0;color:var(--ink-muted);font-size:14.5px;line-height:1.6;max-width:72ch}
+.ti-register-row h3{margin:4px 0 0;font:600 17px/1.35 var(--font-workbench-serif),Georgia,serif}
+.ti-register-row dl{display:grid;gap:10px;margin:0}
+.ti-register-row dt{color:var(--ink-faint);font:500 10.5px/1.4 var(--font-mono),monospace;letter-spacing:.1em;text-transform:uppercase}
+
+.ti-decisions .ti-register-head,.ti-decisions .ti-register-row{grid-template-columns:minmax(0,1fr) minmax(0,1.4fr)}
+.ti-decisions.has-context .ti-register-head,.ti-decisions.has-context .ti-register-row{grid-template-columns:minmax(0,7fr) minmax(0,7fr) minmax(0,6fr)}
+.ti-decisions .ti-register-row>div:first-child{display:grid}
+
+.ti-questions .ti-register-head,.ti-questions .ti-register-row{grid-template-columns:44px minmax(0,1.3fr)}
+.ti-questions.has-why .ti-register-head,.ti-questions.has-why .ti-register-row{grid-template-columns:44px minmax(0,1.3fr) minmax(0,1fr)}
+.ti-questions .ti-register-row p{color:var(--ink);font-size:15.5px}
+.ti-questions .ti-register-row em{font-style:italic}
+
+/* ── Key insights: one featured insight, supporting insights alongside ───────── */
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px);align-items:start}
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights>article.featured{grid-column:1/-1;padding-bottom:22px}
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights>article.featured h3{font-size:clamp(22px,2vw,28px);line-height:1.25}
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights>article.featured p{font-size:16.5px;line-height:1.65}
+
+/* ── Builders: full-width project panels, fields paired across ───────────────── */
+.ti-projects{display:grid;gap:14px;padding:22px clamp(16px,3vw,42px) 48px}
+.ti-projects .day-card{max-width:none}
+.ti-projects .day-card-body dl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.ti-projects .day-card-body dl>div{grid-template-columns:minmax(96px,.3fr) minmax(0,1fr)}
+
+/* Witnesses already run full width; keep the register aligned with the other tabs */
+.case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .foundation-witness-table{margin-inline:0}
+
+@media(max-width:1000px){
+  .ti-split,.ti-split.ti-research,.ti-split.ti-creators{grid-template-columns:minmax(0,1fr)}
+  .ti-inspector,.ti-creator-guidance{position:static}
+  .ti-decisions.has-context .ti-register-head,.ti-decisions.has-context .ti-register-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .ti-decisions.has-context .ti-register-row>dl{grid-column:1/-1}
+  .case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights{grid-template-columns:minmax(0,1fr)}
+  .ti-projects .day-card-body dl{grid-template-columns:minmax(0,1fr)}
+}
+@media(max-width:640px){
+  .ti-register-head{display:none}
+  .ti-decisions .ti-register-row,.ti-decisions.has-context .ti-register-row,.ti-questions .ti-register-row,.ti-questions.has-why .ti-register-row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .ti-inspector .research-support{grid-template-columns:minmax(0,1fr)}
+}

@@ -20,6 +20,8 @@
     "testimony:day6": "tsx scripts/reprocess-day6.ts",
     "testimony:knowledge-day6": "tsx scripts/map-day6-knowledge.ts",
     "testimony:timeline-day6": "tsx scripts/map-day6-timeline.ts",
+    "testimony:temporal-context-day3": "tsx scripts/map-day3-temporal-context.ts",
+    "testimony:temporal-context-day3:persist": "tsx scripts/persist-day3-temporal-context.ts",
     "testimony:reconstruction-day3": "tsx scripts/map-day3-reconstruction.ts",
     "reconcile:day3": "tsx scripts/create-day3-reconciliation-acceptance.ts",
     "testimony:publish-corpus": "pnpm testimony:verify && tsx scripts/publish-transcript-corpus.ts",

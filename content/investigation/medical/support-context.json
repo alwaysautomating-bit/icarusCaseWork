@@ -1,0 +1,311 @@
+{
+  "note": "Support and stressor cards. A card with sources cites verbatim transcript spans. A card of kind question_raised was put to the witness in a question and not confirmed by her. A card of kind source_needed has no source loaded yet and asserts nothing.",
+  "cards": [
+    {
+      "id": "sup-leave-request", "date": "2022-09-30", "kind": "record",
+      "title": "Asked to extend maternity leave: not well enough to return to work",
+      "detail": "Patient portal message read into the record: she did not feel mentally well enough to return to work with a baby at home who would not take the bottle.",
+      "sources": [{ "day": 9, "seg": 2222, "span": "I don't feel mentally well enough to return to taking care of patients with a baby at home that still won't take the bottle" }]
+    },
+    {
+      "id": "sup-leave-plan", "date": "2022-10-03", "kind": "testimony",
+      "title": "Leave planned through January 1, decided together with her psychiatrist",
+      "detail": "The January 1 return date was set by Dr. Tufts and the patient together. A return-to-work letter followed on November 22; the witness did not think it was for an immediate return.",
+      "sources": [
+        { "day": 9, "seg": 2226, "span": "we discussed not working at all until January 1st" },
+        { "day": 9, "seg": 2231, "span": "I think it was something that we decided together." },
+        { "day": 9, "seg": 2605, "span": "I don't think it was immediate." }
+      ]
+    },
+    {
+      "id": "sup-mother-stays", "date": "2022-10-20", "kind": "testimony",
+      "title": "Her mother came to stay to help",
+      "detail": "The witness did not know for how long. The patient had arranged it.",
+      "sources": [
+        { "day": 10, "seg": 1600, "span": "Her mom was coming to provide support, yes." },
+        { "day": 10, "seg": 1602, "span": "Yes. I don't know for how long, but yes." }
+      ]
+    },
+    {
+      "id": "sup-husband-once", "date": "2022-12-16", "kind": "testimony",
+      "title": "Her husband joined one visit, and was never contacted again",
+      "detail": "He said she was not doing well and thought it related to when she started the Seroquel. Dr. Tufts never spoke with him again. The date is the witness's best recollection and is not in her notes.",
+      "sources": [
+        { "day": 10, "seg": 1713, "span": "He said she wasn't doing well." },
+        { "day": 10, "seg": 1721, "span": "his opinion was that it was related to when she started the Seroquel" },
+        { "day": 10, "seg": 1639, "span": "I never spoke with him again." }
+      ]
+    },
+    {
+      "id": "sup-mclean-scheduling", "date": "2023-01-06", "kind": "question_raised",
+      "title": "Raised in a question: the hospital told her to book the follow-up, and she did within the hour",
+      "detail": "Put to the witness by defense counsel. She said it is not in her notes, so she did not confirm it.",
+      "sources": [
+        { "day": 10, "seg": 1741, "span": "the hospital told her to set up the appointment and that within an hour she set up the appointment" },
+        { "day": 10, "seg": 1742, "span": "It's not in my notes, no." }
+      ]
+    },
+    {
+      "id": "sup-mclean-admission", "date": "2023-01-06", "kind": "testimony",
+      "title": "McLean: four and a half days on a locked ward, self-admitted",
+      "detail": "Affirmed by the witness when asked. Who took her, and who was with her, is not in this testimony.",
+      "sources": [
+        { "day": 10, "seg": 1743, "span": "she was in McLean locked wards for four and a half days" },
+        { "day": 10, "seg": 1748, "span": "Yes." }
+      ]
+    },
+    {
+      "id": "sup-january-family-outings", "date": "2023-01-16", "kind": "question_raised",
+      "title": "Raised in questions: family outings and who watched the children, Jan 8 to Jan 16",
+      "detail": "The prosecutor put these to the witness: a Museum of Science trip, a resort stay, a brunch while she watched all three children, and a ski day with the older child while she was alone with the boys. The witness knew of none of them, so they are unconfirmed here. The source for each is still needed.",
+      "sources": [
+        { "day": 10, "seg": 2197, "span": "she had gone to the Museum of Science with her family on January 8th" },
+        { "day": 10, "seg": 2199, "span": "she had been to the Cape Codder down in Hyannis with the family" },
+        { "day": 10, "seg": 2201, "span": "she watched all three kids while Pat went to a brunch and was fine" },
+        { "day": 10, "seg": 2203, "span": "her husband took Cora skiing and she was alone with the boys all day and had no issues" }
+      ]
+    },
+    {
+      "id": "obs-bipolar-yardstick", "date": "2022-12-01", "kind": "researcher_observation",
+      "title": "The bipolar screen was measured against the full-mania yardstick",
+      "detail": "Asked why bipolar disorder was ruled out, the witness described mania: seven days of euphoria with very high energy, plus grandiosity, major risk-taking and a truly reduced need for sleep. The public sources below say hypomania, the lower bar seen in bipolar II, needs about four days, is less severe, and can present as irritable rather than euphoric mood. They also say antidepressants are not used alone when bipolar disorder is present. On September 15 the witness describes asking about a period of excessive energy and euphoria and 'leaving it there.' This card does not say the patient had hypomania; that is a clinical question. It records which yardstick the screen used. Neither source addresses postpartum presentations.",
+      "sources": [
+        { "day": 9, "seg": 2683, "span": "seven days of continued euphoria with very high energy levels" },
+        { "day": 9, "seg": 2679, "span": "it was not deemed that she had bipolar disorder" },
+        { "day": 9, "seg": 1870, "span": "I might leave it there and then follow up with some of the other symptoms" }
+      ],
+      "references": [
+        { "label": "NIMH: Bipolar disorder", "url": "https://www.nimh.nih.gov/health/publications/bipolar-disorder", "note": "Mania lasts at least 7 days; hypomania is less severe and interferes less with daily life; antidepressants are not used alone." },
+        { "label": "Cleveland Clinic: Hypomania", "url": "https://my.clevelandclinic.org/health/diseases/21774-hypomania", "note": "Hypomania lasts at least 4 days in a row, is shorter and less severe than mania, can include irritable mood, and usually does not need hospital care." }
+      ]
+    },
+    {
+      "id": "obs-amitriptyline-window", "date": "2023-01-16", "kind": "researcher_observation",
+      "title": "The last antidepressant trial began eight days before January 24",
+      "detail": "Amitriptyline 10 mg, the lowest dose, was started on January 16 and filled the same day. The NHS gives 2 to 4 weeks for first improvement and 4 to 6 for full effect. The FDA label says anyone starting an antidepressant should be closely monitored for clinical worsening and unusual changes in behavior, especially early on and at dose changes, and that monitoring should include daily observation by family or caregivers. It also says patients should be screened for bipolar disorder before an antidepressant is started, and that a causal link between early agitation or insomnia and worsening has not been established. This card does not say the drug caused anything; that needs evidence specific to her and expert review. It records the timing and what the label expects around it.",
+      "sources": [
+        { "day": 9, "seg": 2918, "span": "We did go ahead and decide to try the amitriptyline" },
+        { "day": 10, "seg": 2223, "span": "the prescription was filled on that same day, January 16th, 2023" },
+        { "day": 9, "seg": 2941, "span": "she had started the amitriptyline" }
+      ],
+      "references": [
+        { "label": "NHS: About amitriptyline for depression", "url": "https://www.nhs.uk/medicines/amitriptyline-for-depression/about-amitriptyline-for-depression/", "note": "May start to feel better after 2 to 4 weeks; can take 4 to 6 weeks to work fully." },
+        { "label": "NHS: How and when to take amitriptyline", "url": "https://www.nhs.uk/medicines/amitriptyline-for-depression/how-and-when-to-take-amitriptyline-for-depression/", "note": "Usual adult dose is 50 mg a day; some people start on 10 to 25 mg to reduce side effects, then increase gradually." },
+        { "label": "FDA label: amitriptyline hydrochloride tablets (2016)", "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2016/085968s098lbl.pdf", "note": "Monitor for clinical worsening, suicidality and unusual behavior early and at dose changes, including daily family observation; screen for bipolar disorder first; causal link to early symptoms not established; no increased suicidality signal in adults over 24 in short-term trials." }
+      ]
+    },
+    {
+      "id": "open-journals", "date": null, "kind": "source_needed",
+      "title": "Her journal writings and phone notes",
+      "detail": "Do they show the pattern of raised energy, racing thoughts, reduced sleep and anxiety that hypomania describes? Load the entries with their dates and this becomes a sourced card. Nothing about them is loaded yet.",
+      "sources": []
+    },
+    {
+      "id": "open-finances", "date": null, "kind": "source_needed",
+      "title": "Financial stress",
+      "detail": "Was spending or money a documented driver of her anxiety, and who managed the household finances and stressors around it? No source loaded yet.",
+      "sources": []
+    },
+    {
+      "id": "open-family-help", "date": null, "kind": "source_needed",
+      "title": "Offers of help with the children",
+      "detail": "Were offers of help from family made, accepted or declined, and by whom? No source loaded yet.",
+      "sources": []
+    },
+    {
+      "id": "open-return-to-work", "date": null, "kind": "source_needed",
+      "title": "Pace of her return to work",
+      "detail": "Was a slower return discussed at home, and what part did work timing play in her anxiety and in the infant-sleep routine? Testimony shows the leave plan was hers and her psychiatrist's; the household discussion is not loaded.",
+      "sources": []
+    },
+    {
+      "id": "open-family-footage", "date": null, "kind": "source_needed",
+      "title": "Family footage: who managed the stroller, toddlers and infant",
+      "detail": "Describe the footage and cite the exhibit and timestamp. Nothing about it is loaded yet.",
+      "sources": []
+    }
+  ],
+  "sequenceFrame": { "start": "2023-01-16", "end": "2023-01-24", "label": "Amitriptyline begun to January 24", "source": { "day": 10, "seg": 1856, "span": "It was the day before." } },
+  "sequence": [
+    {
+      "id": "seq-dec16-state", "date": "2022-12-16", "kind": "testimony",
+      "title": "Dec 16: very depressed, hopeless, some suicidal ideation; she had been to the ER and declined inpatient care",
+      "detail": "No intent or plan. The witness started lamotrigine 25 mg at this visit.",
+      "sources": [
+        { "day": 9, "seg": 2723, "span": "feeling very depressed during the day, no motivation" },
+        { "day": 9, "seg": 2723, "span": "Had some SI, suicidal ideation." },
+        { "day": 9, "seg": 2723, "span": "she went to Mass General emergency room, declined inpatient" },
+        { "day": 9, "seg": 2758, "span": "I did need to step in and prescribe that for her" }
+      ]
+    },
+    {
+      "id": "seq-dec16-seroquel", "date": "2022-12-16", "kind": "testimony",
+      "title": "Dec 16: unsure whether the Seroquel was making her worse",
+      "detail": "She noted it was unclear, because the patient already seemed depressed before starting it.",
+      "sources": [
+        { "day": 9, "seg": 2751, "span": "it was unclear if Seroquel was causing the depression as reported" },
+        { "day": 9, "seg": 2754, "span": "I thought it was possible" }
+      ]
+    },
+    {
+      "id": "seq-jan6-deteriorating", "date": "2023-01-06", "kind": "testimony",
+      "title": "Jan 6: numb, and charted as deteriorating",
+      "detail": "The witness says the record offers three choices and that 'deteriorating' meant a little worse than the last visit. She says the patient was neither improving nor really unchanged.",
+      "sources": [
+        { "day": 9, "seg": 2812, "span": "She was feeling numb." },
+        { "day": 9, "seg": 2820, "span": "Her affect was congruent" },
+        { "day": 9, "seg": 2840, "span": "She wasn't improving and she wasn't really unchanged." },
+        { "day": 9, "seg": 2840, "span": "the best word is to say deteriorating" }
+      ]
+    },
+    {
+      "id": "seq-jan6-section12", "date": "2023-01-06", "kind": "testimony",
+      "title": "Jan 6: not judged an imminent danger, so no Section 12",
+      "detail": "That answers the involuntary-evaluation question. The same note charts her as deteriorating, so it does not say she was improving.",
+      "sources": [
+        { "day": 9, "seg": 2842, "span": "No, there wasn't." },
+        { "day": 9, "seg": 2846, "span": "I could issue a Section 12" },
+        { "day": 9, "seg": 2847, "span": "did you feel that was necessary at that time with Ms. Clancy?" }
+      ]
+    },
+    {
+      "id": "seq-jan11-email", "date": "2023-01-11", "kind": "record",
+      "title": "Jan 11: her own email: months of very low mood, 'desperate' for something that would work quickly",
+      "detail": "Patient email read into the record; the witness recalled it.",
+      "sources": [
+        { "day": 9, "seg": 2887, "span": "I'm still feeling a very low mood, no motivation, just very depressed" },
+        { "day": 9, "seg": 2887, "span": "I'm getting desperate for something that would work quickly" }
+      ]
+    },
+    {
+      "id": "seq-jan11-resistant", "date": "2023-01-11", "kind": "testimony",
+      "title": "Around Jan 11: 'a bit treatment resistant', and ketamine considered but not yet",
+      "detail": "The date of her reply is not stated; it follows the January 11 email.",
+      "sources": [
+        { "day": 9, "seg": 2892, "span": "she was starting to be a bit treatment resistant" },
+        { "day": 9, "seg": 2892, "span": "It's a reasonable thought, but I didn't think we were at that point yet." }
+      ]
+    },
+    {
+      "id": "seq-jan16-state", "date": "2023-01-16", "kind": "testimony",
+      "title": "Jan 16: still very low and flat; bonding felt forced; no SI/HI or psychosis",
+      "detail": "Virtual visit. She was getting out of bed, eating and caring for the baby, and the witness charted depressed and flat affect.",
+      "sources": [
+        { "day": 9, "seg": 2900, "span": "Her mood was still very low" },
+        { "day": 9, "seg": 2900, "span": "she subjectively felt like the bonding was forced with the baby" },
+        { "day": 9, "seg": 2932, "span": "Mood was depressed. Affect was depressed and flat." },
+        { "day": 9, "seg": 2908, "span": "No, she did not." }
+      ]
+    },
+    {
+      "id": "seq-jan16-treatment", "date": "2023-01-16", "kind": "testimony",
+      "title": "Jan 16: amitriptyline 10 mg begun at the lowest dose; the daily Valium taper discussed",
+      "detail": "Filled the same day, 30 pills. Counsel's description of the bottle says eight were missing by the time it was shown; the witness could only say that follows if the description is right.",
+      "sources": [
+        { "day": 9, "seg": 2918, "span": "We did go ahead and decide to try the amitriptyline" },
+        { "day": 9, "seg": 2925, "span": "Is that the lowest dose?" },
+        { "day": 9, "seg": 2909, "span": "a discussion about a Valium taper" },
+        { "day": 10, "seg": 2225, "span": "there were 30 pills in this prescription" },
+        { "day": 10, "seg": 2227, "span": "there are eight pills missing from this bottle" }
+      ]
+    },
+    {
+      "id": "seq-jan23-state", "date": "2023-01-23", "kind": "testimony",
+      "title": "Jan 23: still depressed and flat; taper slowed; amitriptyline raised to 20 mg",
+      "detail": "The patient reported she had started the amitriptyline. Counsel's bottle description suggests the 20 mg step was never taken; the witness answers only conditionally.",
+      "sources": [
+        { "day": 9, "seg": 2940, "span": "Mood was depressed. Affect was depressed and flat." },
+        { "day": 9, "seg": 2941, "span": "she had started the amitriptyline" },
+        { "day": 9, "seg": 2979, "span": "we increased the amitriptyline to 20 milligrams, thinking that that would also help with the sleep" },
+        { "day": 10, "seg": 2234, "span": "Well, if she didn't take 20 milligrams, then that's correct." }
+      ]
+    },
+    {
+      "id": "seq-jan23-nohospital", "date": "2023-01-23", "kind": "testimony",
+      "title": "Jan 23: no hospital evaluation and no Section 12; this was the day before",
+      "detail": "The witness's reason is the patient's denial of suicidal and homicidal ideation and the absence of psychosis or mania. The question the sequence raises is whether escalation was also judged on how long she had been ill.",
+      "sources": [
+        { "day": 9, "seg": 2986, "span": "grounds to file a Section 12 on her that day" },
+        { "day": 10, "seg": 2216, "span": "she was completely denying any suicidal ideation or homicidal ideation" },
+        { "day": 10, "seg": 1856, "span": "It was the day before." }
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "id": "own-one-manager", "date": "2022-12-01", "kind": "testimony",
+      "title": "Dr. Tufts advised the patient to have one person managing her medications",
+      "detail": "Given on December 1, when the patient said she kept reaching out to different people and not sticking with the plan. The testimony does not say who the one person was to be or who would arrange it. On December 16 the same psychiatrist started lamotrigine while another program was prescribing the quetiapine.",
+      "sources": [
+        { "day": 9, "seg": 2665, "span": "I advised that she have one person who is managing the medications" },
+        { "day": 9, "seg": 2662, "span": "I keep reaching out to different people and not sticking with the plan" }
+      ]
+    },
+    {
+      "id": "own-records-not-obtained", "date": "2022-12-01", "kind": "testimony",
+      "title": "South Shore records were not requested, and no release was asked for",
+      "detail": "The witness relied on the patient's account of her treatment elsewhere. She says a release could have been signed and the records obtained.",
+      "sources": [
+        { "day": 9, "seg": 2712, "span": "reach out to South Shore to get those records" },
+        { "day": 9, "seg": 2713, "span": "No, I didn't." },
+        { "day": 10, "seg": 1554, "span": "I did not feel like it was necessary because she provided all the relevant information about her treatment there." },
+        { "day": 10, "seg": 2251, "span": "No, I did not ask her to sign a release." }
+      ]
+    },
+    {
+      "id": "own-patient-as-integrator", "date": "2022-12-01", "kind": "testimony",
+      "title": "The patient was the link between her providers",
+      "detail": "The witness judged the patient a reliable historian because she could recall medicines, doses and days, and did not check her account against the other clinics' records.",
+      "sources": [
+        { "day": 10, "seg": 1556, "span": "It felt very accurate when she was able to recall the names of the medicines, doses of the medicines, specific days." },
+        { "day": 9, "seg": 2713, "span": "she was very aware of what the medications were." }
+      ]
+    },
+    {
+      "id": "own-two-prescribers", "date": "2022-12-16", "kind": "testimony",
+      "title": "Two prescribers, with the patient expected to carry the news between them",
+      "detail": "The witness added lamotrigine, supported a diazepam taper that was already in place, and told the patient rather than the other program. She figured the patient would tell them at her next visit.",
+      "sources": [
+        { "day": 9, "seg": 2770, "span": "there was a plan already in place on tapering it that I supported" },
+        { "day": 9, "seg": 2772, "span": "I figured she would tell them when she next saw them" }
+      ]
+    },
+    {
+      "id": "own-mclean-discharge", "date": "2023-01-06", "kind": "testimony",
+      "title": "McLean did not contact the outpatient psychiatrist; she learned of the stay after discharge",
+      "detail": "The witness received a two-page discharge summary, did not get the McLean records, and spoke to no one there.",
+      "sources": [
+        { "day": 10, "seg": 1774, "span": "No, no one called me. I wasn't notified about the hospitalization until she was discharged." },
+        { "day": 10, "seg": 1759, "span": "They faxed you like a two-page discharge summary, right?" },
+        { "day": 10, "seg": 1768, "span": "No, but that's typically not done." }
+      ]
+    },
+    {
+      "id": "own-family-not-contacted", "date": "2023-01-23", "kind": "testimony",
+      "title": "Family were not contacted during treatment",
+      "detail": "The witness says this is not typically done with an adult patient who can speak for herself, and that she never asked for a release.",
+      "sources": [
+        { "day": 10, "seg": 2253, "span": "I could have, but it is not typically something that is done when you have an adult patient who's able to speak for themselves." },
+        { "day": 10, "seg": 1639, "span": "I never spoke with him again." }
+      ]
+    },
+    {
+      "id": "own-final-visit", "date": "2023-01-23", "kind": "testimony",
+      "title": "No higher level of care was recommended at the last visit; the reason was the denials at that visit",
+      "detail": "The witness gives her reason as the patient's denial of suicidal and homicidal ideation and the absence of psychosis or mania. The report's question is whether escalation was judged on the cumulative trajectory as well.",
+      "sources": [
+        { "day": 10, "seg": 1857, "span": "You didn't recommend a hospital evaluation, did you?" },
+        { "day": 10, "seg": 1860, "span": "No." },
+        { "day": 10, "seg": 2216, "span": "she was completely denying any suicidal ideation or homicidal ideation" }
+      ]
+    }
+  ],
+  "questions": [
+    { "id": "q-owner", "text": "Who was the accountable post-McLean clinician or team?", "origin": "Continuity of Care report, section 9" },
+    { "id": "q-records", "text": "Who received and reviewed the complete inpatient record, and who reconciled every medication actually being taken?", "origin": "Continuity of Care report, section 9" },
+    { "id": "q-contact", "text": "Which clinicians communicated directly with one another, on what dates?", "origin": "Continuity of Care report, section 8" },
+    { "id": "q-trajectory", "text": "Who was monitoring longitudinal improvement rather than relying on whether SI/HI was denied in a given visit?", "origin": "Continuity of Care report, section 9" },
+    { "id": "q-php", "text": "Was PHP or IOP merely recommended, or were enrollment, attendance, refusal or waitlist status confirmed?", "origin": "Continuity of Care report, section 9" },
+    { "id": "q-collateral", "text": "Who collected collateral from family, and was there a supervision or child-safety plan during medication changes?", "origin": "Continuity of Care report, section 9" }
+  ]
+}

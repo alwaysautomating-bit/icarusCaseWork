@@ -1,0 +1,311 @@
+{
+  "generatedAt": "2026-09-20T23:01:34.823Z",
+  "report": {
+    "schemaVersion": "testimony-temporal-context-acceptance/1.0",
+    "compiler": {
+      "name": "icarus-testimony-temporal-context-compiler",
+      "version": "1.0.0",
+      "contract": "testimony-knowledge/1.0+timeline-candidate/1.0+temporal-context/1.0"
+    },
+    "accounts": [
+      {
+        "accountKey": "day3-hall",
+        "witness": "Officer Stephen Hall"
+      },
+      {
+        "accountKey": "day3-josephine",
+        "witness": "Officer Brian Josephine"
+      }
+    ],
+    "testimonyUnitsReviewed": 23,
+    "knowledgeItemsCreated": 23,
+    "claimsCreated": 23,
+    "eventCandidatesCreated": 40,
+    "temporalAssertionsCreated": 40,
+    "assertionForms": {
+      "exactTimes": 0,
+      "exactDates": 0,
+      "approximateTimes": 2,
+      "intervals": 0,
+      "durations": 4,
+      "relativeOnly": 5,
+      "sequenceOnly": 25,
+      "lowerBounds": 0,
+      "upperBounds": 0,
+      "unknownTime": 4
+    },
+    "qualifiedAssertions": 7,
+    "adoptedFromQuestionAssertions": 2,
+    "stateObservations": 6,
+    "knowledgeStateChanges": 5,
+    "temporalConstraints": 32,
+    "candidateAnchorsIdentified": 13,
+    "possibleSharedAnchors": 11,
+    "possibleSameEventLinks": 9,
+    "temporalConflicts": 2,
+    "additionalAccountsOfExistingCandidates": 9,
+    "additionalDetailsAttached": 1,
+    "eventsWithSequencePositionButNoClock": 34,
+    "unresolvedEntityMentions": 15,
+    "sourceIrregularities": {
+      "inCitedRanges": 0,
+      "wholeProceedingPreserved": 3
+    },
+    "canonicalEventsCreated": 0,
+    "automaticSameResolutions": 0
+  },
+  "proof": {
+    "hallRunUnchangedAfterSecondWitness": true,
+    "hallCandidatesUnchanged": true,
+    "hallConstraintsUnchanged": true,
+    "rerunIdempotent": true,
+    "newEventCandidatesFromSecondWitness": 20,
+    "newTemporalAssertionsFromSecondWitness": 20,
+    "possibleSharedAnchorsAfterSecondWitness": 11,
+    "possibleSameEventLinksAfterSecondWitness": 9,
+    "conflictsPreserved": [
+      "duration_ranges_disjoint",
+      "state_disagreement"
+    ]
+  },
+  "conflicts": [
+    {
+      "id": "cc663fc6-d61f-5abf-aaf1-af72bf440f41",
+      "code": "FLG-BFFA6C6EE6",
+      "kind": "duration_ranges_disjoint",
+      "summary": "“Seven to 10 minutes.” (Officer Stephen Hall) and “I would say anywhere from three to four minutes.” (Officer Brian Josephine) do not overlap.",
+      "parties": [
+        {
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "ref": "TMP-F87C8407E9",
+          "wording": "Seven to 10 minutes.",
+          "sourceSegmentIds": [
+            "faa71ed3-69ef-5426-af54-35ddba837592"
+          ]
+        },
+        {
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "ref": "TMP-D1813DF39C",
+          "wording": "I would say anywhere from three to four minutes.",
+          "sourceSegmentIds": [
+            "fe737119-35b4-5c80-a9c4-af5bbdd46fdb"
+          ]
+        }
+      ],
+      "reviewStatus": "pending"
+    },
+    {
+      "id": "dd17fbea-d613-5f67-ab09-0079cd54c85e",
+      "code": "FLG-7B17CD8E73",
+      "kind": "state_disagreement",
+      "summary": "Accounts differ on screaming-at-kitchen-entry: Officer Stephen Hall “ended”, Officer Brian Josephine “continuing”.",
+      "parties": [
+        {
+          "accountKey": "day3-hall",
+          "witness": "Officer Stephen Hall",
+          "ref": "EVT-55676DB3C0",
+          "wording": "We could hear he was talking, but there was screaming was done.",
+          "sourceSegmentIds": [
+            "f683652f-7ff5-54b4-a4ae-bc78557dbdf5",
+            "7391843d-56a6-58f3-aa10-ecb8dcae898f"
+          ]
+        },
+        {
+          "accountKey": "day3-josephine",
+          "witness": "Officer Brian Josephine",
+          "ref": "EVT-475BEF09A9",
+          "wording": "it was the exact screaming that I heard from the window.",
+          "sourceSegmentIds": [
+            "86531d9a-7f5d-54ea-a9b2-9783ed17eaf6",
+            "48478ab7-d5ed-5152-afc2-87cf5c28e37f"
+          ]
+        }
+      ],
+      "reviewStatus": "pending"
+    }
+  ],
+  "anchors": [
+    {
+      "id": "524d20f5-cda0-5810-a63e-566510dab42b",
+      "code": "ANC-103573A3FF",
+      "family": "ambulance-arrival",
+      "label": "Ambulance arrives in the driveway",
+      "anchorClass": "STATE",
+      "accounts": [
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": false,
+      "reviewStatus": "pending",
+      "memberCount": 1
+    },
+    {
+      "id": "11d7fb84-6987-5ba5-a846-e4bada992b89",
+      "code": "ANC-E86D10FD6D",
+      "family": "dawson-to-ambulance",
+      "label": "First child carried to the ambulance",
+      "anchorClass": "TRANSITION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "c615832e-842d-5e3e-ac7a-85d3eb020795",
+      "code": "ANC-1FCBF0C2C2",
+      "family": "dispatch",
+      "label": "Dispatch to 47 Summer Street",
+      "anchorClass": "CLOCK",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "b7e7906e-ecfa-5282-a47b-40d17f32a799",
+      "code": "ANC-82F708AECD",
+      "family": "dispatch-relay",
+      "label": "Dispatch relays that Patrick cannot wake them",
+      "anchorClass": "INFORMATION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "0cb1d70f-28f8-55f7-a706-24585118fe9b",
+      "code": "ANC-692FE8C3EE",
+      "family": "ems-care-left-basement",
+      "label": "EMS care underway in the left basement",
+      "anchorClass": "STATE",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "3e307886-18c4-535f-aa72-e15b1a81a368",
+      "code": "ANC-EA874EB9DE",
+      "family": "fire-arrival",
+      "label": "Fire personnel arrive",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "dd47bbd5-0cf4-5c4b-acb7-c5f15704a7a5",
+      "code": "ANC-AB1953CFDF",
+      "family": "kitchen-entry",
+      "label": "Officers enter the kitchen",
+      "anchorClass": "TRANSITION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "25393839-f86e-57c5-ac8f-e5db7cc19ff2",
+      "code": "ANC-89646CF6B5",
+      "family": "left-basement-return",
+      "label": "Officers return to the basement",
+      "anchorClass": "TRANSITION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "4ffc942a-1a94-5901-adf4-cbc4ce0ff636",
+      "code": "ANC-843671B5A7",
+      "family": "patrick-enters-house",
+      "label": "Patrick goes inside",
+      "anchorClass": "TRANSITION",
+      "accounts": [
+        "day3-hall"
+      ],
+      "sharedAcrossAccounts": false,
+      "reviewStatus": "pending",
+      "memberCount": 1
+    },
+    {
+      "id": "3f5c20ac-5e4c-52ac-ae56-08ccf4660fce",
+      "code": "ANC-80BC545299",
+      "family": "patrick-statement-right-basement",
+      "label": "Patrick's statement in the right basement",
+      "anchorClass": "SHARED_OBSERVATION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "7aa7a91b-3388-53d9-a2fa-b0c46850cdba",
+      "code": "ANC-3AA9CFEFEF",
+      "family": "police-arrival",
+      "label": "First police arrival",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "5506cc88-7537-59cd-a91d-ef1dc06974ae",
+      "code": "ANC-EC76685EC9",
+      "family": "response-travel",
+      "label": "Police response travel duration",
+      "anchorClass": "ARRIVAL_DEPARTURE",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    },
+    {
+      "id": "185db3e9-b24c-5a2e-a342-19d4f5346d91",
+      "code": "ANC-41951833CE",
+      "family": "scream",
+      "label": "Loud scream heard from inside",
+      "anchorClass": "SHARED_OBSERVATION",
+      "accounts": [
+        "day3-hall",
+        "day3-josephine"
+      ],
+      "sharedAcrossAccounts": true,
+      "reviewStatus": "pending",
+      "memberCount": 2
+    }
+  ]
+}

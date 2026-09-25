@@ -252,3 +252,13 @@ export function lindsayFoundReportHref(caseId: string) {
 export function parseStructureObjectType(value: string | undefined): StructureObjectType | "all" {
   return structureObjectTypes.includes(value as StructureObjectType) ? value as StructureObjectType : "all";
 }
+
+export type TemporalContextView = "witness" | "anchor" | "event" | "conflicts" | "unknown";
+
+export function temporalContextTimelineHref(caseId: string, state: { view?: TemporalContextView; witness?: string } = {}) {
+  const params = new URLSearchParams();
+  if (state.view && state.view !== "witness") params.set("view", state.view);
+  if (state.witness?.trim()) params.set("witness", state.witness.trim());
+  const suffix = params.toString();
+  return `/cases/${encodeURIComponent(caseId)}/timeline/temporal${suffix ? `?${suffix}` : ""}`;
+}

@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #B08D57; text-decoration: none; }
+    a:hover { color: #8B5A2E; }
+  </style>
+</helmet>
+<div style="background:#FAF7F1;min-height:100vh;font-family:'Inter',sans-serif;color:#1E1712;">
+  <div style="max-width:1180px;margin:0 auto;padding:32px 32px 96px;">
+
+    <div style="display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(176,141,87,.4);padding-bottom:10px;margin-bottom:32px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8175;">ICARUS CASEWORK / DESIGN SYSTEM</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:#8A8175;">COMPONENT SPECIMEN SHEET · REV 01</span>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;">
+      <div style="width:32px;height:32px;border:1px solid rgba(176,141,87,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#B08D57;font-family:'Playfair Display',serif;font-size:14px;">I</div>
+      <span style="font-family:'Playfair Display',serif;font-weight:600;font-size:18px;">Icarus Casework</span>
+    </div>
+
+    <h1 style="font-family:'Playfair Display',serif;font-weight:500;font-size:clamp(26px,3.6vw,38px);line-height:1.15;letter-spacing:-.01em;margin:0 0 12px;max-width:700px;">Every conclusion traces back to a source.</h1>
+    <p style="font-size:13.5px;line-height:1.65;color:#5A5248;max-width:680px;margin:0 0 40px;">This sheet catalogues the components already in use across Trial Index, Court Record, Accounts, Questions, and Incident-to-Warrant, and standardizes the patterns where screens disagreed. Nothing here is a new design — it is the shared vocabulary those screens already speak.</p>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">01 — Foundations: color</span><span style="{{ eyebrowStyle }}">CHARCOAL · CREAM · GOLD-OCHRE · CRIMSON · AEGEAN</span></div>
+
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid rgba(176,141,87,.4);margin-bottom:10px;">
+      <sc-for list="{{ coreSwatches }}" as="s" hint-placeholder-count="4">
+        <div style="{{ s.cellStyle }}padding:14px;">
+          <div style="height:40px;border-radius:2px;background:{{ s.hex }};border:1px solid rgba(30,23,18,.12);"></div>
+          <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:12.5px;margin-top:8px;">{{ s.label }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A8175;">{{ s.hex }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid rgba(176,141,87,.4);margin-bottom:10px;">
+      <sc-for list="{{ signalSwatches }}" as="s" hint-placeholder-count="4">
+        <div style="{{ s.cellStyle }}padding:14px;">
+          <div style="height:40px;border-radius:2px;background:{{ s.hex }};border:1px solid rgba(30,23,18,.12);"></div>
+          <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:12.5px;margin-top:8px;">{{ s.label }}</div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A8175;">{{ s.hex }}</div>
+          <div style="font-size:10.5px;color:#5A5248;margin-top:3px;line-height:1.4;">{{ s.usage }}</div>
+        </div>
+      </sc-for>
+    </div>
+    <div style="font-size:11.5px;line-height:1.6;color:#5A5248;margin-bottom:36px;max-width:70ch;">AEGEAN BLUE is new — the mythology's sky/sea. Reserved for system &amp; device provenance (CAD logs, device extractions), a role the live screens currently improvise with plain ink blocks. Not yet applied; shown here to standardize it before it spreads inconsistently.</div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">02 — Typography</span><span style="{{ eyebrowStyle }}">FRAUNCES · PUBLIC SANS · IBM PLEX MONO</span></div>
+    <div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-bottom:40px;">
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:14px;">FRAUNCES · HEADINGS &amp; NAMES</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:500;font-size:24px;margin-bottom:8px;">From incident to arrest warrant</div>
+        <div style="font-family:'Playfair Display',serif;font-weight:500;font-size:14.5px;">Dr. Jennifer Tufts</div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:14px;">PUBLIC SANS · BODY &amp; UI</div>
+        <div style="font-size:13.5px;line-height:1.65;color:#2C241C;margin-bottom:10px;">Longtime friend describes Lindsay's recent health and treatment. A significant portion of this information is attributed to things Patrick previously told Carney.</div>
+        <div style="font-size:11px;letter-spacing:.03em;color:#5A5248;text-transform:uppercase;">Active case · owner</div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:14px;">IBM PLEX MONO · DATA</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:13px;line-height:1.8;color:#2C241C;">8cc3a133-920a-5e68<br>00:46:20 · #877<br>fd94972c…c617aab3</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">03 — Surfaces &amp; app shell</span><span style="{{ eyebrowStyle }}">RAIL · CASE CAPTION · PRIMARY NAV</span></div>
+    <div style="border:1px solid rgba(176,141,87,.4);margin-bottom:40px;overflow:hidden;">
+      <div style="display:flex;">
+        <div style="width:56px;flex-shrink:0;background:#1E1712;display:flex;flex-direction:column;align-items:center;padding:16px 0;gap:14px;">
+          <div style="width:26px;height:26px;border:1px solid rgba(176,141,87,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#B08D57;font-family:'Playfair Display',serif;font-size:12px;">I</div>
+          <sc-for list="{{ railIcons }}" as="r" hint-placeholder-count="5">
+            <div style="{{ r.style }}">{{ r.label }}</div>
+          </sc-for>
+        </div>
+        <div style="flex:1;min-width:0;">
+          <div style="padding:12px 24px 10px;border-bottom:1px solid rgba(176,141,87,.32);display:flex;justify-content:space-between;align-items:baseline;">
+            <div style="font-family:'Playfair Display',serif;font-size:14px;"><span style="font-size:10.5px;letter-spacing:.08em;color:#5A5248;text-transform:uppercase;margin-right:8px;font-family:'Inter',sans-serif;">Active case · owner</span>Commonwealth v. Lindsay M. Clancy</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;">413d071f-6299…</div>
+          </div>
+          <div style="display:flex;gap:20px;padding:0 24px;border-bottom:1px solid rgba(176,141,87,.32);">
+            <sc-for list="{{ navTabs }}" as="n" hint-placeholder-count="6">
+              <span style="{{ n.style }}">{{ n.label }}</span>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">04 — Controls</span><span style="{{ eyebrowStyle }}">SEARCH · BUTTONS · TABS</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px;">
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:10px;">SEARCH TESTIMONY</div>
+        <input value="Zoloft" style="width:100%;background:#FFFFFF;border:1px solid rgba(176,141,87,.4);border-radius:4px;padding:9px 11px;font-family:'Inter',sans-serif;font-size:13px;color:#1E1712;margin-bottom:8px;box-sizing:border-box;">
+        <button style="width:100%;background:#4A1421;color:#F0E6E6;border:none;border-radius:4px;padding:10px 0;font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;font-family:'Inter',sans-serif;">Search record</button>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:12px;">TAB ROW</div>
+        <div style="display:flex;gap:22px;border-bottom:1px solid rgba(176,141,87,.4);">
+          <span style="padding:8px 0;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:#1E1712;border-bottom:2px solid #1E1712;font-weight:500;">Individual account</span>
+          <span style="padding:8px 0;font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;color:#5A5248;border-bottom:2px solid transparent;">Reconstruction from accounts</span>
+        </div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;margin-top:14px;">Underline-active, no fill — matches primary nav.</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">05 — Signals &amp; status</span><span style="{{ eyebrowStyle }}">RESOLUTION STATES · SOURCE-DISTANCE TAGS · FLAGS</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:12px;">
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:12px;">QUESTION RESOLUTION STATE</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <sc-for list="{{ resolutionStates }}" as="st" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.04em;text-transform:uppercase;color:{{ st.color }};">
+              <span style="{{ st.dotStyle }}"></span>{{ st.label }}
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:12px;">SOURCE-DISTANCE TAG</div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <sc-for list="{{ distanceTags }}" as="dt" hint-placeholder-count="4">
+            <div style="display:flex;align-items:center;gap:8px;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:{{ dt.color }};">
+              <span style="{{ dt.dotStyle }}"></span>{{ dt.label }}
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="margin-bottom:40px;">
+      <span style="border:1px solid #6B1F2A;color:#6B1F2A;border-radius:0;padding:3px 8px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;">Discrepancy</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;margin-left:10px;">Flag chip · crimson outline, used wherever two accounts conflict</span>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">06 — Provenance &amp; metadata</span><span style="{{ eyebrowStyle }}">KV ROWS · SOURCE LINKS · IDENTIFIERS</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:40px;">
+      <div style="background:#1E1712;padding:20px 22px;">
+        <sc-for list="{{ kvRows }}" as="kv" hint-placeholder-count="4">
+          <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:{{ kv.borderStyle }};font-size:12px;">
+            <span style="color:rgba(233,225,210,.45);letter-spacing:.03em;text-transform:uppercase;font-size:10px;">{{ kv.k }}</span>
+            <span style="{{ kv.valStyle }}">{{ kv.v }}</span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:20px 22px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:10px;">SOURCE / OPEN LINK PATTERN</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:14px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;">Day 8 · Hall testimony §112</span>
+          <a href="#" style="font-size:11px;letter-spacing:.03em;color:#1E1712;border-bottom:1px solid #1E1712;font-weight:500;">Open source →</a>
+        </div>
+        <div style="font-size:12.5px;color:#5A5248;line-height:1.5;">Every claim gets a mono locator on the left and a same-weight "Open source" link on the right — never buried in a menu.</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">07 — Transcript segments</span><span style="{{ eyebrowStyle }}">SELECTED · UNSELECTED · WINDOW GAP</span></div>
+    <div style="border:1px solid rgba(176,141,87,.4);padding:8px 20px;margin-bottom:40px;">
+      <div style="display:flex;gap:16px;padding:14px 0;background:rgba(176,141,87,.1);border-left:2px solid #B08D57;margin:0 -20px;padding-left:18px;padding-right:20px;">
+        <div style="width:64px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;line-height:1.5;">00:46:20<br>#877</div>
+        <div>
+          <div style="font-family:'Playfair Display',serif;font-size:13.5px;font-weight:500;margin-bottom:4px;">Kevin Reddington</div>
+          <div style="font-size:13.5px;line-height:1.6;color:#2C241C;max-width:56ch;">Would you agree with me that on September 15th, you prescribed Sertraline, Zoloft, 30 count, 25 milligrams, right?</div>
+          <div style="margin-top:8px;display:flex;justify-content:space-between;"><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#8A8175;">8cc3a133-920a-5e68</span><a href="#" style="font-size:10.5px;color:#B08D57;border-bottom:1px solid rgba(176,141,87,.4);">Open segment →</a></div>
+        </div>
+      </div>
+      <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;padding:12px 0;">···9 more segments in window···</div>
+      <div style="display:flex;gap:16px;padding:14px 0;border-top:1px solid rgba(176,141,87,.14);">
+        <div style="width:64px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;line-height:1.5;">00:47:22<br>#888</div>
+        <div><div style="font-family:'Playfair Display',serif;font-size:13.5px;font-weight:500;">Dr. Jennifer Tufts</div><div style="font-size:13.5px;color:#2C241C;">Yes.</div></div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">08 — Evidence &amp; digital records</span><span style="{{ eyebrowStyle }}">INSPECTOR PASSAGE · DIGITAL ENTRY · STAT CARD</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:40px;">
+      <div style="background:#1E1712;padding:20px;">
+        <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(233,225,210,.4);margin-bottom:8px;">PASSAGE</div>
+        <div style="font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.6;color:#F0E9DB;font-style:italic;">"Now this is a little chart that shows the prescriptions Lindsay was on…"</div>
+      </div>
+      <div style="background:#1E1712;border:1px solid rgba(176,141,87,.35);padding:14px 16px;">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:#B08D57;margin-bottom:7px;display:flex;align-items:center;gap:7px;"><span style="width:7px;height:7px;border:1px solid #B08D57;flex-shrink:0;"></span>CAD SYSTEM LOG</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.6;color:#E9E1D2;margin-bottom:8px;">Unit 4 (Hall) status change to "ON SCENE" recorded at 14:02:17.</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(233,225,210,.45);display:flex;justify-content:space-between;">CAD log · Exhibit 4<a href="#" style="color:#B08D57;">Open →</a></div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);background:#F3EEE4;padding:12px 14px;">
+        <div style="font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:#5A5248;margin-bottom:4px;">CVS ENTRY</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:15px;color:#1E1712;">17:32:32</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">09 — Timeline primitives</span><span style="{{ eyebrowStyle }}">EVENT DOT · SPINE · CALLOUTS · LEGEND</span></div>
+    <div style="display:flex;gap:20px;margin-bottom:16px;font-size:11px;color:#5A5248;">
+      <div style="display:flex;align-items:center;gap:7px;"><span style="width:9px;height:9px;border-radius:50%;background:#1E1712;"></span>Witness account / response</div>
+      <div style="display:flex;align-items:center;gap:7px;"><span style="width:9px;height:9px;border-radius:50%;background:#B08D57;"></span>Investigative / legal action</div>
+    </div>
+    <div style="border:1px solid rgba(176,141,87,.4);padding:24px 24px 4px;position:relative;margin-bottom:40px;">
+      <div style="position:absolute;left:98px;top:24px;bottom:24px;width:1px;background:rgba(176,141,87,.32);"></div>
+      <sc-for list="{{ timelineSpecimens }}" as="e" hint-placeholder-count="2">
+        <div style="display:flex;gap:16px;padding-bottom:22px;position:relative;">
+          <div style="width:78px;flex-shrink:0;text-align:right;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A5248;padding-top:1px;">{{ e.time }}</div>
+          <div style="width:9px;height:9px;border-radius:50%;background:{{ e.dotColor }};margin-top:3px;flex-shrink:0;z-index:1;"></div>
+          <div style="flex:1;min-width:0;">
+            <div style="font-family:'Playfair Display',serif;font-weight:500;font-size:15px;line-height:1.35;margin-bottom:6px;">{{ e.title }}</div>
+            <div style="font-size:12.8px;line-height:1.6;color:#5A5248;max-width:52ch;">{{ e.body }}</div>
+            <sc-if value="{{ e.hasCallout }}" hint-placeholder-val="{{ false }}">
+              <div style="margin-top:10px;padding:11px 14px;border-left:2px solid {{ e.calloutColor }};background:{{ e.calloutBg }};">
+                <div style="font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:{{ e.calloutColor }};font-weight:500;margin-bottom:4px;">{{ e.calloutLabel }}</div>
+                <div style="font-size:12.5px;line-height:1.55;color:#2C241C;">{{ e.calloutBody }}</div>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">10 — Cards &amp; callouts</span><span style="{{ eyebrowStyle }}">RESEARCH CLERK · SIDE CARD · CLUSTER / LOOSE ENTRIES</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;">
+      <div style="background:#4A1421;color:#EFE2E2;border-radius:6px;padding:18px 20px;">
+        <div style="font-family:'Playfair Display',serif;font-size:14px;margin-bottom:10px;color:#F4EEE1;">Research clerk</div>
+        <div style="font-size:12.5px;line-height:1.5;color:rgba(244,238,225,.7);font-style:italic;margin-bottom:12px;">"Which red flags reference the same underlying device or timestamp evidence?"</div>
+        <input placeholder="Query the record…" style="width:100%;background:rgba(244,238,225,.08);border:1px solid rgba(176,141,87,.4);border-radius:4px;padding:8px 10px;color:#F4EEE1;font-family:'Inter',sans-serif;font-size:12.5px;box-sizing:border-box;">
+      </div>
+      <div style="background:#F3EEE4;border:1px solid rgba(176,141,87,.4);border-radius:6px;overflow:hidden;">
+        <div style="background:#1E1712;color:#FAF7F1;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;display:flex;justify-content:space-between;">Case files<span style="color:#B08D57;font-family:'JetBrains Mono',monospace;text-transform:none;letter-spacing:0;">34 folders</span></div>
+        <div style="padding:2px 4px 4px;">
+          <sc-for list="{{ fileRows }}" as="f" hint-placeholder-count="3">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:9px 16px;font-size:12px;border-top:{{ f.borderStyle }};">
+              <span>{{ f.name }}</span><span style="color:#8A8175;font-family:'JetBrains Mono',monospace;font-size:10.5px;">{{ f.meta }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="border:1px solid #1E1712;padding:12px 14px 10px;margin-bottom:40px;">
+      <div style="font-size:9.5px;letter-spacing:.07em;text-transform:uppercase;color:#1E1712;font-weight:500;margin-bottom:8px;">Shared event — described in two accounts (grouping requires an explicit shared reference, not just time proximity)</div>
+      <div style="display:flex;gap:10px;">
+        <div style="width:24px;height:24px;border:1px solid #1E1712;display:flex;align-items:center;justify-content:center;font-size:9.5px;font-family:'JetBrains Mono',monospace;flex-shrink:0;color:#1E1712;">HA</div>
+        <div style="font-size:13px;color:#2C241C;">Radioed dispatch to confirm arrival on scene.</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">11 — Indexes &amp; lists</span><span style="{{ eyebrowStyle }}">FLAG LIST ITEM · RESPONDER LIST ITEM · OVERVIEW STRIP</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:16px;">
+      <div style="border:1px solid rgba(176,141,87,.4);padding:16px;">
+        <div style="background:#F3EEE4;border-left:2px solid #1E1712;padding:11px 10px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:#B08D57;margin-bottom:3px;">Flag 03</div>
+          <div style="font-family:'Playfair Display',serif;font-size:13.5px;line-height:1.35;margin-bottom:7px;">January 24 timeline / feasibility</div>
+          <div style="display:inline-flex;align-items:center;gap:6px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#6E5227;"><span style="width:7px;height:7px;border-radius:50%;background:#B08D57;"></span>Unresolved</div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:16px;">
+        <div style="background:#F3EEE4;border-left:2px solid #1E1712;padding:11px 12px;">
+          <div style="font-family:'Playfair Display',serif;font-size:14.5px;">Detective Hussey</div>
+          <div style="font-size:11px;color:#5A5248;margin-top:2px;">Detective — Duxbury PD</div>
+          <span style="display:inline-block;margin-top:5px;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:#6B1F2A;border:1px solid #6B1F2A;padding:2px 6px;">Discrepancy</span>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;gap:22px;flex-wrap:wrap;padding:14px 18px;border:1px solid rgba(176,141,87,.4);background:#F3EEE4;margin-bottom:40px;">
+      <sc-for list="{{ overviewStats }}" as="o" hint-placeholder-count="4">
+        <div style="font-family:'Playfair Display',serif;font-size:17px;">{{ o.value }}<span style="display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.04em;text-transform:uppercase;color:#5A5248;margin-top:2px;">{{ o.label }}</span></div>
+      </sc-for>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">12 — Empty, loading &amp; error states</span><span style="{{ eyebrowStyle }}">NO DATA · FETCHING · ERROR</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;margin-bottom:40px;">
+      <div style="border:1px dashed rgba(176,141,87,.4);padding:24px 18px;text-align:center;">
+        <div style="font-size:12.5px;color:#8A8175;">No witnesses recorded for this day.</div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:24px 18px;text-align:center;">
+        <div style="width:16px;height:16px;border:2px solid rgba(176,141,87,.35);border-top-color:#B08D57;border-radius:50%;margin:0 auto 10px;"></div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:#8A8175;">Loading transcript window…</div>
+      </div>
+      <div style="border:1px solid #6B1F2A;background:rgba(107,31,42,.05);padding:16px 18px;">
+        <div style="font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#6B1F2A;font-weight:500;margin-bottom:5px;">Source unavailable</div>
+        <div style="font-size:12.5px;color:#2C241C;line-height:1.5;">This exhibit's original file could not be located. The claim is kept, marked unverifiable.</div>
+      </div>
+    </div>
+
+    <div style="{{ sectionHead }}"><span style="font-family:'Playfair Display',serif;font-weight:600;font-size:15px;">13 — Density variants</span><span style="{{ eyebrowStyle }}">ROOMY (DEFAULT) · COMPACT</span></div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+      <div style="border:1px solid rgba(176,141,87,.4);padding:18px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:12px;">ROOMY · ACCOUNT ITEM</div>
+        <div style="display:flex;gap:18px;padding:16px 0;">
+          <div style="width:70px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:12px;color:#5A5248;">14:02</div>
+          <div style="font-size:14px;line-height:1.6;color:#2C241C;">Radioed dispatch to confirm arrival on scene.</div>
+        </div>
+      </div>
+      <div style="border:1px solid rgba(176,141,87,.4);padding:18px;">
+        <div style="{{ eyebrowStyle }}margin-bottom:12px;">COMPACT · SAME ROW</div>
+        <div style="display:flex;gap:12px;padding:7px 0;">
+          <div style="width:56px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:11px;color:#5A5248;">14:02</div>
+          <div style="font-size:12px;line-height:1.4;color:#2C241C;">Radioed dispatch to confirm arrival on scene.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const CORE_SWATCHES = [
+  { label: 'CHARCOAL / INK', hex: '#1E1712' },
+  { label: 'CREAM / PAPER', hex: '#FAF7F1' },
+  { label: 'IVORY (RAISED)', hex: '#F3EEE4' },
+  { label: 'WHITE', hex: '#FFFFFF' }
+];
+const SIGNAL_SWATCHES = [
+  { label: 'GOLD-OCHRE / BRASS', hex: '#B08D57', usage: 'Chrome, accents, links, verified-adjacent marks.' },
+  { label: 'AMBER (DEEPER)', hex: '#8B5A2E', usage: 'Stronger emphasis where brass reads too light.' },
+  { label: 'CRIMSON', hex: '#6B1F2A', usage: 'Discrepancies, contradictions, unresolved risk.' },
+  { label: 'AEGEAN BLUE', hex: '#3B5566', usage: 'Reserved — system & device provenance.' }
+];
+
+const RAIL_ICON_LABELS = ['TI', 'CR', 'EV', 'QN', 'AC'];
+const NAV_TAB_LABELS = ['Foundation', 'Trial Index', 'Court Record', 'Evidence', 'Questions', 'Gaps'];
+
+const RESOLUTION_STATES = [
+  { label: 'Resolved', color: '#2F3D2C', dotted: false },
+  { label: 'Partially resolved', color: '#7D8367', dotted: false },
+  { label: 'Contradicted', color: '#6B1F2A', dotted: false },
+  { label: 'Record insufficient', color: '#8A8175', dotted: true },
+  { label: 'Unresolved', color: '#6E5227', dotted: false, hollow: true }
+];
+const DISTANCE_TAGS = [
+  { label: 'Personally observed', color: '#1E1712' },
+  { label: 'Heard directly', color: '#6E5227' },
+  { label: 'Relayed', color: '#8A8175' },
+  { label: 'From record', color: '#5A5248', outline: true }
+];
+
+const KV_ROWS = [
+  { k: 'Speaker', v: 'Kevin Reddington', serif: true },
+  { k: 'Timestamp', v: '00:46:20', mono: true },
+  { k: 'Ordinal', v: '877', mono: true },
+  { k: 'Source family', v: 'Trial transcript', serif: true }
+];
+
+const FILE_ROWS = [
+  { name: 'warrant-materials/', meta: '—' },
+  { name: 'location-data/', meta: '—' },
+  { name: 'witness-interviews/', meta: '—' }
+];
+
+const OVERVIEW_STATS = [
+  { value: '8', label: 'flags tracked' },
+  { value: '1', label: 'resolved' },
+  { value: '2', label: 'partial' },
+  { value: '5', label: 'unresolved' }
+];
+
+const TIMELINE_SPECIMENS = [
+  { time: '~20:40', title: 'Patrick interviewed — recorded', body: 'Santos and Rabbitt interview Patrick at BID Plymouth. The written account says it is a summary, not verbatim.', dotColor: '#1E1712', hasCallout: true, calloutColor: '#6B1F2A', calloutBg: 'rgba(107,31,42,.05)', calloutLabel: 'Chronology issue', calloutBody: 'The summary describes ThreeV before CVS, and later repeats that ordering.' },
+  { time: '~22:50', title: 'Kyle Carney interviewed — recorded', body: "A significant portion of this information is attributed to things Patrick previously told Carney.", dotColor: '#1E1712', hasCallout: true, calloutColor: '#7D8367', calloutBg: 'rgba(125,131,103,.06)', calloutLabel: 'Provenance chain', calloutBody: 'Patrick → Carney → investigators.' }
+];
+
+function chipVals(list) {
+  return list.map(s => ({ ...s, dotStyle: s.hollow ? `width:7px;height:7px;border:1px solid ${s.color};background:none;flex-shrink:0;` : (s.dotted ? `width:7px;height:7px;border-radius:50%;border:1px dotted ${s.color};flex-shrink:0;` : `width:7px;height:7px;border-radius:50%;background:${s.color};flex-shrink:0;`) }));
+}
+function distanceVals(list) {
+  return list.map(s => ({ ...s, dotStyle: s.outline ? `width:7px;height:7px;border:1px solid ${s.color};flex-shrink:0;` : `width:7px;height:7px;background:${s.color};flex-shrink:0;` }));
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const withCell = list => list.map((s, i) => ({ ...s, cellStyle: i > 0 ? 'border-left:1px solid rgba(176,141,87,.4);' : '' }));
+    const railIcons = RAIL_ICON_LABELS.map((label, i) => ({ label, style: `width:28px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#FAF7F1;font-size:10.5px;letter-spacing:.04em;` + (i === 1 ? 'opacity:1;background:#4A1421;' : 'opacity:.55;') }));
+    const navTabs = NAV_TAB_LABELS.map((label, i) => ({ label, style: `font-size:12.5px;letter-spacing:.03em;color:${i === 2 ? '#1E1712' : '#5A5248'};padding:12px 0 10px;border-bottom:2px solid ${i === 2 ? '#B08D57' : 'transparent'};` + (i === 2 ? 'font-weight:500;' : '') }));
+
+    return {
+      sectionHead: 'display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid rgba(176,141,87,.4);padding-bottom:8px;margin:0 0 18px;',
+      eyebrowStyle: "font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;color:#8A8175;text-transform:uppercase;",
+      coreSwatches: withCell(CORE_SWATCHES),
+      signalSwatches: withCell(SIGNAL_SWATCHES),
+      railIcons,
+      navTabs,
+      resolutionStates: chipVals(RESOLUTION_STATES),
+      distanceTags: distanceVals(DISTANCE_TAGS),
+      kvRows: KV_ROWS.map((kv, i) => ({ ...kv, borderStyle: i === 0 ? 'none' : '1px solid rgba(176,141,87,.18)', valStyle: kv.serif ? "font-family:'Playfair Display',serif;font-size:12.5px;color:#F0E9DB;text-align:right;" : "font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#F0E9DB;text-align:right;" })),
+      fileRows: FILE_ROWS.map((f, i) => ({ ...f, borderStyle: i === 0 ? 'none' : '1px solid rgba(176,141,87,.16)' })),
+      overviewStats: OVERVIEW_STATS,
+      timelineSpecimens: TIMELINE_SPECIMENS
+    };
+  }
+}
+</script>
+</body>
+</html>

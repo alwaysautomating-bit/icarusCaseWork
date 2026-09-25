@@ -4,6 +4,8 @@ import "./globals.css";
 import "./testimony-reader.css";
 import "./case-workspace.css";
 import "./design-system.css";
+import "./specimen-parity.css";
+import "./trial-index-layout.css";
 
 // Icarus Casework design system (see design-system/ICARUS_CASEWORK_DESIGN_SYSTEM.md):
 // the straighter component pairing. Playfair Display for headings and names, Inter for body and UI,

@@ -1,4 +1,6 @@
 import { CollapseDocument, inlineMarkup } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
+import { EvidenceWorkspace } from "@/app/cases/[caseId]/trial-index/_components/evidence-workspace";
+import { courtRecordHref, witnessHref } from "@/lib/case-routes";
 
 type Field = { label: string; text: string };
 type Card = { title: string; fields: Field[]; bullets: string[] };
@@ -65,14 +67,39 @@ function projectCards(content: string): Card[] {
   return cards;
 }
 
-function CardStack({ cards, kind, plain = false }: { cards: Card[]; kind: string; plain?: boolean }) {
-  return <div className="day-cards">
-    {cards.map((card, index) => <article className="day-card" key={index}>
-      {plain ? null : <header><span>{kind} {index + 1}</span></header>}
+// Decisions: the decision and its reasoning take the main area; any other field the day supplies moves to a context column.
+const isReasoning = (field: Field) => /reason|rationale|because/i.test(field.label);
+
+function DecisionRegister({ cards }: { cards: Card[] }) {
+  const split = (card: Card) => {
+    const reasoning = card.fields.filter(isReasoning);
+    return { reasoning, context: card.fields.filter((field) => !isReasoning(field)) };
+  };
+  const hasContext = cards.some((card) => split(card).context.length > 0);
+  return <div className={`ti-register ti-decisions${hasContext ? " has-context" : ""}`} role="table" aria-label="Decision register">
+    <div className="ti-register-head" role="row"><span role="columnheader">Decision</span><span role="columnheader">Reasoning</span>{hasContext ? <span role="columnheader">Context</span> : null}</div>
+    {cards.map((card, index) => {
+      const { reasoning, context } = split(card);
+      return <article className="ti-register-row" role="row" key={index}>
+        <div role="cell"><span className="ti-ref">{String(index + 1).padStart(2, "0")}</span><h3>{inlineMarkup(card.title)}</h3></div>
+        <div role="cell">{reasoning.map((field, i) => <p key={i}>{inlineMarkup(field.text)}</p>)}</div>
+        {hasContext ? <dl role="cell">{context.map((field, i) => <div key={i}><dt>{field.label}</dt><dd>{inlineMarkup(field.text)}</dd></div>)}</dl> : null}
+      </article>;
+    })}
+  </div>;
+}
+
+// Builders: existing project fields, paired horizontally in a fixed reading order. Nothing is added.
+const PROJECT_ORDER = ["purpose", "current status", "key decisions", "dependencies", "risks", "next actions"];
+
+function ProjectPanels({ cards }: { cards: Card[] }) {
+  const rank = (field: Field) => { const at = PROJECT_ORDER.indexOf(field.label.toLowerCase()); return at === -1 ? PROJECT_ORDER.length : at; };
+  return <div className="ti-projects">
+    {cards.map((card, index) => <article className="day-card ti-project" key={index}>
+      <header><span>Project {index + 1}</span></header>
       <div className="day-card-body">
         <h3>{inlineMarkup(card.title)}</h3>
-        {card.bullets.length ? <ul>{card.bullets.map((bullet, i) => <li key={i}>{inlineMarkup(bullet)}</li>)}</ul> : null}
-        {card.fields.length ? <dl>{card.fields.map((field, i) => <div key={i}><dt>{field.label}</dt><dd>{inlineMarkup(field.text)}</dd></div>)}</dl> : null}
+        <dl>{[...card.fields].sort((a, b) => rank(a) - rank(b)).map((field, i) => <div key={i}><dt>{field.label}</dt><dd>{inlineMarkup(field.text)}</dd></div>)}</dl>
       </div>
     </article>)}
   </div>;
@@ -87,7 +114,7 @@ function InsightList({ content, dayNumber }: { content: string; dayNumber: numbe
       const body = split?.[2] ?? "";
       const summary = body || item.sub.slice(0, 2).join(" ");
       const more = body ? item.sub : item.sub.slice(2);
-      return <article key={index}>
+      return <article key={index} className={index === 0 ? "featured" : undefined}>
         <span className="day-insight-ref">§{dayNumber}.{index + 1}</span>
         <div>
           <h3>{inlineMarkup(headline)}</h3>
@@ -99,30 +126,33 @@ function InsightList({ content, dayNumber }: { content: string; dayNumber: numbe
   </div>;
 }
 
+// Questions: the why-it-matters column only appears when the day supplies one.
 function QuestionsCard({ content }: { content: string }) {
-  const items = bulletItems(content);
-  return <section className="day-questions">
-    <h3>Open questions <small>{items.length}</small></h3>
-    <ol>{items.map((item, index) => {
-      const why = item.sub.map((text) => text.replace(/^why it matters:\s*/i, "")).join(" ");
-      return <li key={index}>
-        <b>{String(index + 1).padStart(2, "0")}</b>
-        <div><p>{inlineMarkup(item.title)}</p>{why ? <em>{inlineMarkup(why)}</em> : null}</div>
-      </li>;
-    })}</ol>
+  const items = bulletItems(content).map((item) => ({ text: item.title, why: item.sub.map((text) => text.replace(/^why it matters:\s*/i, "")).join(" ") }));
+  const hasWhy = items.some((item) => item.why);
+  return <section className={`ti-register ti-questions${hasWhy ? " has-why" : ""}`} role="table" aria-label="Open questions">
+    <div className="ti-register-head" role="row"><span role="columnheader">#</span><span role="columnheader">Question</span>{hasWhy ? <span role="columnheader">Why it matters</span> : null}</div>
+    {items.map((item, index) => <article className="ti-register-row" role="row" key={index}>
+      <b role="cell" className="ti-ref">{String(index + 1).padStart(2, "0")}</b>
+      <p role="cell">{inlineMarkup(item.text)}</p>
+      {hasWhy ? <em role="cell">{item.why ? inlineMarkup(item.why) : null}</em> : null}
+    </article>)}
   </section>;
 }
 
-export function SectionCards({ slug, content, dayNumber }: { slug: string; content: string; dayNumber: number }) {
+export function SectionCards({ slug, content, dayNumber, caseId }: { slug: string; content: string; dayNumber: number; caseId: string }) {
   if (slug === "key-insights" && bulletItems(content).length) return <InsightList content={content} dayNumber={dayNumber} />;
   if (slug === "open-questions") {
     if (bulletItems(content).length) return <QuestionsCard content={content} />;
-  } else {
-    const parsed = slug === "evidence" ? { cards: evidenceCards(content), kind: "Claim" }
-      : slug === "decisions" ? { cards: decisionCards(content), kind: "Decision" }
-      : slug === "projects-discussed" ? { cards: projectCards(content), kind: "Project" }
-      : null;
-    if (parsed?.cards.length) return <CardStack cards={parsed.cards} kind={parsed.kind} plain={slug === "decisions"} />;
+  } else if (slug === "evidence") {
+    const claims = evidenceCards(content);
+    if (claims.length) return <EvidenceWorkspace claims={claims.map((card) => ({ title: card.title, fields: card.fields, searchHref: courtRecordHref(caseId, { query: stripBold(card.title).replace(/[*`]/g, "").slice(0, 160) }) }))} dayNumber={dayNumber} dayHref={witnessHref(caseId, { day: dayNumber })} />;
+  } else if (slug === "decisions") {
+    const cards = decisionCards(content);
+    if (cards.length) return <DecisionRegister cards={cards} />;
+  } else if (slug === "projects-discussed") {
+    const cards = projectCards(content);
+    if (cards.length) return <ProjectPanels cards={cards} />;
   }
   return <CollapseDocument content={content} />;
 }

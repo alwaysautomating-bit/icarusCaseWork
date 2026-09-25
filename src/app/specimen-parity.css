@@ -1,0 +1,114 @@
+/*
+  Design-system specimen parity. Loaded after design-system.css (see layout.tsx).
+  1. Testimony Database: the source inspector stays the right-hand column at every desktop width.
+  2. Trial Index landing: matches the design-system specimen (Trial Index.dc) for geometry, type and borders.
+     The one intentional change is shorter Day records: tighter padding inside the black Day block and the record body.
+*/
+
+/* ── 1. Testimony Database ───────────────────────────────────────────────────────────────────────────────
+   Below 1250px an older rule moved the inspector to a full-width row that the fixed-height grid collapsed to 1px. */
+@media(min-width:901px){
+  .case-workspace-shell .court-record-shell .court-record-grid{grid-template-columns:300px minmax(0,1fr) 360px}
+  .case-workspace-shell .court-record-shell .court-source-inspector{grid-column:auto;max-height:none;border-top:0}
+}
+@media(min-width:901px) and (max-width:1250px){
+  .case-workspace-shell .court-record-shell .court-record-grid{grid-template-columns:260px minmax(0,1fr) 320px}
+}
+@media(min-width:901px) and (max-width:1100px){
+  .case-workspace-shell .court-record-shell .court-record-grid{grid-template-columns:232px minmax(0,1fr) 290px}
+}
+
+@media(max-width:900px){
+  .case-workspace-shell .court-record-shell .court-record-grid{display:grid;grid-template-columns:minmax(0,1fr);height:auto;min-height:0}
+  .case-workspace-shell .court-record-shell .court-search-results{height:auto}
+  .case-workspace-shell .court-record-shell .court-transcript-panel{height:640px;border-right:0;border-bottom:1px solid var(--hairline-soft-2)}
+  .case-workspace-shell .court-record-shell .court-source-inspector{grid-column:auto;height:auto;max-height:none;border-top:0}
+}
+
+/* The workspace runs to the bottom of the window (the header is one 48px line plus the tab row). */
+@media(min-width:901px){
+  .case-workspace-shell .court-record-shell .court-record-grid{height:calc(100vh - 85px);min-height:620px}
+}
+
+/* Transcript column: the Court Record specimen's type and measure. Time and ordinal sit in a 64px mono column,
+   the speaker is a small serif, and the text is 13.5px held to 62ch instead of running the full panel width. */
+.case-workspace-shell .court-record-shell .court-transcript-panel>header h2{margin:2px 0 0;font:600 17px/normal var(--font-serif)}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy{display:grid;grid-template-columns:64px minmax(0,1fr);column-gap:16px;padding:0}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>header{display:contents}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>header>time,
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>header>small{grid-area:1/1;margin:0;color:rgba(30,23,18,.45);font:500 10.5px/1.5 var(--font-mono);letter-spacing:0}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>header>small{align-self:start;margin-top:16px}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>header>strong{grid-area:1/2;margin:0 0 4px;color:var(--ink);font:600 12.5px/normal var(--font-serif);letter-spacing:0}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>p{grid-area:2/2;max-width:62ch;margin:0;color:#2C241C;font-size:13.5px;line-height:1.65}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>footer{grid-area:3/2;display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:8px}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>footer code{color:rgba(30,23,18,.45);font:500 10px/1.4 var(--font-mono)}
+.case-workspace-shell .court-record-shell .court-transcript-window .court-segment-copy>footer a{padding-bottom:0;border-bottom:1px solid rgba(176,141,87,.32);color:var(--brass);font:500 10.5px/1.4 var(--font-display);letter-spacing:.03em;text-decoration:none;opacity:1}
+
+/* Search column and inspector: specimen sizes */
+.case-workspace-shell .court-record-shell .court-search-results button[type=submit],
+.case-workspace-shell .court-record-shell .court-search-results form button{padding:11px 0;border-radius:3px;font:600 11px/normal var(--font-display);letter-spacing:.06em}
+.case-workspace-shell .court-record-shell .court-source-inspector h2{margin:4px 0 20px;font:600 15px/normal var(--font-serif)}
+.case-workspace-shell .court-record-shell .court-source-inspector blockquote{font:italic 500 13px/1.6 var(--font-serif)}
+.case-workspace-shell .court-record-shell .court-source-inspector .v-serif{font:600 12px/normal var(--font-serif)}
+
+/* ── 2. Trial Index landing ──────────────────────────────────────────────────────────────────────────────── */
+.case-workspace-shell main.trial-index-landing.case-foundation-shell{max-width:1144px;min-height:0;margin:0 auto;padding:40px 32px 72px;background:transparent}
+.case-workspace-shell main.trial-index-landing>.ds-page-head{display:block;padding:0;border:0;background:transparent}
+.case-workspace-shell main.trial-index-landing .ds-page-head__main{display:block}
+.case-workspace-shell main.trial-index-landing .ds-page-head .ds-eyebrow{display:block;margin:0 0 14px;font:500 11px/normal var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:rgba(30,23,18,.5)}
+.case-workspace-shell main.trial-index-landing .ds-page-head h1{margin:0 0 14px;font:600 clamp(24px,3.4vw,34px)/1.15 var(--font-serif);letter-spacing:-.01em}
+.case-workspace-shell main.trial-index-landing .ds-page-head p{max-width:640px;margin:0 0 22px;font-size:13px;line-height:1.6;color:rgba(30,23,18,.65)}
+.case-workspace-shell main.trial-index-landing .foundation-day-index{margin:0;padding:12px 0 0;border-top:1px solid rgba(30,23,18,.15)}
+
+/* Toolbar buttons: one treatment for Jump to day, Expand all, Collapse all */
+.case-workspace-shell main.trial-index-landing .ds-toolbar{position:relative;display:flex;justify-content:space-between;align-items:center;gap:0;margin:0 0 14px;padding:0;border:0}
+.case-workspace-shell main.trial-index-landing .expand-collapse-all{display:flex;gap:8px;margin:0}
+.case-workspace-shell main.trial-index-landing :is(.ds-toolbar .trial-day-context summary,.expand-collapse-all button){display:flex;align-items:center;gap:6px;min-height:0;margin:0;padding:6px 10px;border:1px solid rgba(30,23,18,.22);border-radius:3px;background:none;color:var(--ink);font:600 10px/normal var(--font-mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;list-style:none;cursor:pointer}
+.case-workspace-shell main.trial-index-landing :is(.ds-toolbar .trial-day-context summary,.expand-collapse-all button):hover{border-color:rgba(30,23,18,.22);background:none;color:var(--ink)}
+.case-workspace-shell main.trial-index-landing .trial-day-context summary::-webkit-details-marker{display:none}
+.case-workspace-shell main.trial-index-landing .trial-day-context summary::before{content:"\25B8";font-size:9px}
+.case-workspace-shell main.trial-index-landing .trial-day-context details[open]>summary::before{content:"\25BE"}
+.case-workspace-shell main.trial-index-landing .ds-toolbar .trial-day-context{margin:0;padding:0;border:0}
+
+.case-workspace-shell main.trial-index-landing .foundation-day-list{display:flex;flex-direction:column;gap:10px;margin:0}
+.case-workspace-shell main.trial-index-landing .foundation-day{position:relative;display:flex;overflow:visible;border:1px solid rgba(30,23,18,.14);border-radius:2px;background:var(--paper)}
+
+/* Black Day block: the specimen's 100px width, shorter through tighter padding */
+.case-workspace-shell main.trial-index-landing .foundation-day>header{flex:0 0 100px;width:100px;min-height:0;display:flex;flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:3px;padding:12px 14px;background:var(--ink);color:var(--paper)}
+.case-workspace-shell main.trial-index-landing .foundation-day>header::before{content:none}
+.case-workspace-shell main.trial-index-landing .foundation-day>header span{margin:0;font:500 9px/normal var(--font-mono);letter-spacing:.16em;color:rgba(250,247,241,.55);text-transform:none}
+.case-workspace-shell main.trial-index-landing .foundation-day>header strong{margin:0;color:var(--paper);font:600 24px/1 var(--font-serif);letter-spacing:0}
+.case-workspace-shell main.trial-index-landing .foundation-day>header small{margin:0;font:500 9px/normal var(--font-mono);letter-spacing:.08em;color:rgba(250,247,241,.55);text-transform:none}
+.case-workspace-shell main.trial-index-landing .foundation-day>header a{display:inline;min-height:0;margin:5px 0 0;padding:0;color:var(--console-accent);font:600 10px/normal var(--font-mono);letter-spacing:.04em;text-decoration:none}
+.case-workspace-shell main.trial-index-landing .foundation-day>header a:hover{color:var(--brass);text-decoration:none}
+
+/* Record body */
+.case-workspace-shell main.trial-index-landing .foundation-day-body{position:relative;flex:1;min-width:0;grid-column:auto;display:block;padding:12px 44px 12px 18px}
+.case-workspace-shell main.trial-index-landing .foundation-day-body>summary{display:block;margin:0;padding:0;border:0;background:none;list-style:none;cursor:pointer}
+.case-workspace-shell main.trial-index-landing .foundation-day-body>summary:hover{background:none}
+.case-workspace-shell main.trial-index-landing .foundation-day-body[open]>summary{border:0}
+.case-workspace-shell main.trial-index-landing .foundation-day-summary{display:block;margin:0 0 4px;padding:0;border:0;color:var(--ink);font:600 12px/1.4 var(--font-serif)}
+.case-workspace-shell main.trial-index-landing .foundation-day-witnesses{display:block;margin:0;color:rgba(30,23,18,.55);font:400 10.5px/normal var(--font-display);letter-spacing:0}
+.case-workspace-shell main.trial-index-landing .foundation-day-toggle{position:absolute;top:12px;right:14px;grid-column:auto;grid-row:auto;width:24px;height:24px;border:1px solid rgba(30,23,18,.2);border-radius:50%;background:var(--paper)}
+.case-workspace-shell main.trial-index-landing .foundation-day-toggle::before,
+.case-workspace-shell main.trial-index-landing .foundation-day-toggle::after{width:9px;height:1.5px;background:var(--ink)}
+.case-workspace-shell main.trial-index-landing .foundation-day-note{margin:10px 0 0;padding:0;border:0;background:none;color:rgba(30,23,18,.55);font:500 10.5px/1.5 var(--font-mono)}
+
+/* Expanded witness table */
+.case-workspace-shell main.trial-index-landing .foundation-witness-table{grid-column:auto;margin:12px 0 0;border:0;border-top:1px solid rgba(30,23,18,.12)}
+.case-workspace-shell main.trial-index-landing :is(.foundation-witness-head,.foundation-witness-row){display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;min-height:0}
+.case-workspace-shell main.trial-index-landing .foundation-witness-head{padding:6px 0;border:0;background:rgba(30,23,18,.03)}
+.case-workspace-shell main.trial-index-landing .foundation-witness-head span{padding:0;border:0;color:rgba(30,23,18,.5);font:500 10px/normal var(--font-mono);letter-spacing:.1em;text-transform:uppercase}
+.case-workspace-shell main.trial-index-landing .foundation-witness-row{padding:9px 0;border:0;border-top:1px solid rgba(30,23,18,.08)}
+.case-workspace-shell main.trial-index-landing .foundation-witness-row>*{padding:0;border:0}
+.case-workspace-shell main.trial-index-landing .foundation-witness-row h3{margin:0;font:600 12.5px/normal var(--font-serif)}
+.case-workspace-shell main.trial-index-landing .foundation-witness-row>div>span{display:block;margin:1px 0 0;color:rgba(30,23,18,.5);font-size:10.5px;line-height:normal}
+.case-workspace-shell main.trial-index-landing .foundation-witness-row>p{margin:0;color:rgba(30,23,18,.8);font-size:11px;line-height:1.55}
+
+@media(max-width:760px){
+  .case-workspace-shell main.trial-index-landing.case-foundation-shell{padding:24px 16px 48px}
+  .case-workspace-shell main.trial-index-landing .foundation-day>header{flex-basis:78px;width:78px;padding:12px 10px}
+  .case-workspace-shell main.trial-index-landing .foundation-day-body{padding:12px 40px 12px 12px}
+  .case-workspace-shell main.trial-index-landing .foundation-witness-head{display:none}
+  .case-workspace-shell main.trial-index-landing .foundation-witness-row{grid-template-columns:minmax(0,1fr);gap:4px}
+}

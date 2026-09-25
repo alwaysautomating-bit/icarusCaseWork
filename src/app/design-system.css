@@ -453,3 +453,32 @@ body{
 .case-workspace-shell .witness-center .court-plain-text-body{grid-row:3;padding-top:8px}
 @media(max-width:1100px){.case-workspace-shell .witness-center{grid-template-rows:auto auto auto minmax(0,1fr)}.case-workspace-shell .witness-center .court-plain-text-find{grid-column:1/-1;grid-row:2;padding:8px 24px;border-top:0}.case-workspace-shell .witness-center .court-plain-text-bar{grid-row:3}.case-workspace-shell .witness-center .court-plain-text-body{grid-row:4}}
 .case-workspace-shell .witness-center .court-plain-text-bar{justify-content:flex-end;padding:6px 20px 0 20px}
+
+/* ── Global case chrome: one header line; case, account and switcher live in the Icarus menu ───────────── */
+.case-workspace-shell .case-workspace-masthead{display:flex;align-items:center;justify-content:space-between;gap:16px;height:48px;min-height:0;padding:0 var(--ds-gutter)}
+.case-workspace-shell .case-workspace-masthead .account{display:flex;align-items:center;gap:18px}
+.case-workspace-shell .case-lifecycle-nav{top:48px}
+.case-menu{position:relative}
+.case-menu>summary{display:inline-flex;align-items:center;gap:10px;list-style:none;cursor:pointer}
+.case-menu>summary::-webkit-details-marker{display:none}
+.case-menu>summary::after{content:"";width:5px;height:5px;margin:0 0 3px 2px;border-right:1.25px solid var(--ink-faint);border-bottom:1.25px solid var(--ink-faint);transform:rotate(45deg);transition:transform .15s ease}
+.case-menu[open]>summary::after{transform:rotate(-135deg) translate(-1px,-1px)}
+.case-menu-panel{position:absolute;top:calc(100% + 8px);left:0;z-index:60;display:grid;gap:14px;width:min(380px,calc(100vw - 32px));padding:16px 18px;border:1px solid var(--hairline-soft-2);background:var(--paper)}
+.case-menu-case{display:grid;gap:4px;padding-bottom:12px;border-bottom:1px solid var(--hairline-soft-2)}
+.case-menu-case span,.case-menu-account span{font:500 10.5px/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+.case-menu-case strong{font:600 16px/1.3 var(--font-serif)}
+.case-menu-case code{font:500 10.5px/1.5 var(--font-mono);color:var(--ink-faint);overflow-wrap:anywhere}
+.case-menu-panel .case-switcher{display:grid;grid-template-columns:1fr;gap:4px}
+.case-menu-panel>a{width:max-content;color:var(--brass);font:600 11px/1.4 var(--font-mono);letter-spacing:.06em;text-decoration:none;text-transform:uppercase;border-bottom:1px solid var(--hairline)}
+.case-menu-panel>a:hover{color:var(--amber);border-bottom-color:var(--amber)}
+.case-menu-account{display:grid;gap:2px;padding-top:12px;border-top:1px solid var(--hairline-soft-2)}
+.case-menu-account b{font:500 13.5px/1.4 var(--font-display);overflow-wrap:anywhere}
+
+/* Timeline and report pages: the back link rides on the eyebrow line instead of owning a band */
+.case-workspace-shell .responder-crumbs{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 18px}
+.case-workspace-shell .responder-crumbs a{color:var(--ink-muted);font:600 11px/1.4 var(--font-mono);letter-spacing:.08em;text-decoration:none;text-transform:uppercase}
+.case-workspace-shell .responder-crumbs a:hover{color:var(--ink);text-decoration:underline}
+.case-workspace-shell .responder-head{padding-top:18px}
+.case-workspace-shell .responder-head h1{font-size:clamp(30px,2.8vw,40px);line-height:1.12}
+.case-workspace-shell .responder-toolbar{min-height:0}
+.case-workspace-shell .responder-toolbar a{min-height:36px}

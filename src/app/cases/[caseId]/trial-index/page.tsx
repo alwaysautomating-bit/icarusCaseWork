@@ -28,16 +28,22 @@ const SHORT_SECTION_NAMES: Record<string, string> = {
   "Handoff Brief": "Handoff",
 };
 
+// The workflow through a trial day: understand it, inspect the record, resolve what is open, then use the work.
 const USER_TABS = [
   { slug: "key-insights", label: "Key Insights" },
   { slug: "decisions", label: "Decisions" },
-  { slug: "evidence", label: "Evidence" },
-  { slug: "projects-discussed", label: "Builders" },
   { slug: "witnesses", label: "Witnesses" },
+  { slug: "evidence", label: "Evidence" },
   { slug: "open-questions", label: "Open Questions" },
   { slug: "next-actions", label: "Research" },
   { slug: "creators", label: "Creators" },
+  { slug: "projects-discussed", label: "Builders" },
 ] as const;
+
+// Admin sections follow the same order for the sections they share; the rest keep their original order after them.
+const SECTION_RANK = new Map<string, number>(USER_TABS.map((tab, index) => [tab.slug, index]));
+const bySectionOrder = <T extends { slug: string }>(sections: T[]) =>
+  sections.map((section, index) => ({ section, index })).sort((a, b) => (SECTION_RANK.get(a.section.slug) ?? 99) - (SECTION_RANK.get(b.section.slug) ?? 99) || a.index - b.index).map(({ section }) => section);
 
 function indexHref(caseId: string, dayNumber: number, section?: string, asUser = false) {
   const query = new URLSearchParams({ day: String(dayNumber) });
@@ -98,7 +104,8 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
   const viewAsUser = isOwner && state.view === "user";
   const isAdmin = isOwner && !viewAsUser;
   const href = (dayNumber: number, section?: string) => indexHref(caseId, dayNumber, section, viewAsUser);
-  const selectedSection = selectedDay.sections.find((section) => section.slug === state.section) ?? selectedDay.sections[0];
+  const orderedSections = bySectionOrder(selectedDay.sections);
+  const selectedSection = orderedSections.find((section) => section.slug === state.section) ?? orderedSections[0];
   if (!selectedSection) notFound();
   const sectionContent = (slug: string) => selectedDay.sections.find((section) => section.slug === slug)?.content;
   const activeUserTab = USER_TABS.find((tab) => tab.slug === state.section) ?? USER_TABS[0];
@@ -134,12 +141,12 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
       <FileTabNav
         ariaLabel={`Day ${selectedDay.dayNumber} sections`}
         className="collapse-section-tabs"
-        tabs={selectedDay.sections.map((section) => ({ active: section.slug === selectedSection.slug, href: href(selectedDay.dayNumber, section.slug), label: SHORT_SECTION_NAMES[section.name] ?? section.name }))}
+        tabs={orderedSections.map((section) => ({ active: section.slug === selectedSection.slug, href: href(selectedDay.dayNumber, section.slug), label: SHORT_SECTION_NAMES[section.name] ?? section.name }))}
       />
 
       <article className="collapse-section-panel">
-        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {selectedDay.sections.indexOf(selectedSection) + 1} OF {selectedDay.sections.length}</MonoLabel><h1>{selectedSection.slug === "next-actions" ? "Research" : selectedSection.name}</h1></div></header>
-        {selectedSection.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={selectedSection.content} /> : <SectionCards dayNumber={selectedDay.dayNumber} slug={selectedSection.slug} content={selectedSection.content} />}
+        <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {orderedSections.indexOf(selectedSection) + 1} OF {orderedSections.length}</MonoLabel><h1>{selectedSection.slug === "next-actions" ? "Research" : selectedSection.name}</h1></div></header>
+        {selectedSection.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={selectedSection.content} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={selectedSection.slug} content={selectedSection.content} />}
       </article>
     </section>
     </> : <>
@@ -153,8 +160,8 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
       <article className="collapse-section-panel">
         <header><div><MonoLabel>DAY {selectedDay.dayNumber}{dayIndexEntry?.date ? ` · ${dayIndexEntry.date.toUpperCase()}` : ""}</MonoLabel><h1>{activeUserTab.label}</h1></div></header>
         {activeUserTab.slug === "witnesses" ? (dayIndexEntry ? <DayWitnessTable caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No witness index has been entered for this day yet.</p>) : null}
-        {activeUserTab.slug === "creators" ? (dayIndexEntry ? <DayCreatorGuide day={dayIndexEntry} /> : <p className="foundation-empty">No creator guide is available for this day yet.</p>) : null}
-        {!["witnesses", "creators"].includes(activeUserTab.slug) ? (sectionContent(activeUserTab.slug) ? (activeUserTab.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={sectionContent(activeUserTab.slug)!} /> : <SectionCards dayNumber={selectedDay.dayNumber} slug={activeUserTab.slug} content={sectionContent(activeUserTab.slug)!} />) : <p className="foundation-empty">Nothing has been recorded under {activeUserTab.label} for this day yet.</p>) : null}
+        {activeUserTab.slug === "creators" ? (dayIndexEntry ? <DayCreatorGuide caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No creator guide is available for this day yet.</p>) : null}
+        {!["witnesses", "creators"].includes(activeUserTab.slug) ? (sectionContent(activeUserTab.slug) ? (activeUserTab.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={sectionContent(activeUserTab.slug)!} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={activeUserTab.slug} content={sectionContent(activeUserTab.slug)!} />) : <p className="foundation-empty">Nothing has been recorded under {activeUserTab.label} for this day yet.</p>) : null}
       </article>
     </section>
     </>}

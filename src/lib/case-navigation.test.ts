@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getCaseNavigationItems, isCaseNavigationItemActive } from "@/lib/case-navigation";
+import { getCaseNavigationItems, getCaseSettingsItems, isCaseNavigationItemActive } from "@/lib/case-navigation";
 
 const caseId = "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa";
 
@@ -17,30 +17,28 @@ describe("case navigation policy", () => {
     ]);
   });
 
-  it("preserves the complete Casework workspace for the owner", () => {
+  it("keeps the settings pages out of the owner tab bar", () => {
     expect(getCaseNavigationItems(caseId, true).map((item) => item.label)).toEqual([
       "Foundation",
       "Trial Index",
       "Testimony Database",
       "Witness",
       "Timelines",
-      "Structure",
-      "Review",
-      "Accounts",
-      "Reconcile",
-      "Reconstruct",
       "Care Trajectory",
       "Files",
       "Documents",
       "Evidence",
       "Questions",
       "Reports",
-      "Access",
     ]);
   });
 
+  it("lists the owner-only pages in the settings menu", () => {
+    expect(getCaseSettingsItems(caseId).map((item) => item.label)).toEqual(["Structure", "Review", "Accounts", "Reconcile", "Reconstruct", "Access"]);
+  });
+
   it("does not mark Structure active while Review is open", () => {
-    const ownerItems = getCaseNavigationItems(caseId, true);
+    const ownerItems = getCaseSettingsItems(caseId);
     const structure = ownerItems.find((item) => item.label === "Structure");
     const review = ownerItems.find((item) => item.label === "Review");
     const reviewPath = `/cases/${caseId}/structure/review`;

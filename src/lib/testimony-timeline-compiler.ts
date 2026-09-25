@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { extractTemporalCues } from "@/lib/temporal-lexicon";
+
 import type { ParsedRevTranscript } from "@/lib/rev-testimony";
 import {
   compileTestimonyKnowledgeMap,
@@ -19,15 +21,18 @@ const qualificationPatterns = [
   { pattern: /\bI believe\b/i, qualification: "witness_qualified", basis: "wording:i-believe" },
   { pattern: /\bI think\b/i, qualification: "witness_qualified", basis: "wording:i-think" },
   { pattern: /\bmaybe\b/i, qualification: "witness_qualified", basis: "wording:maybe" },
+  { pattern: /\bI would say\b/i, qualification: "witness_qualified", basis: "wording:i-would-say" },
+  { pattern: /\bprobably\b/i, qualification: "estimated", basis: "wording:probably" },
   { pattern: /\bapproximately\b/i, qualification: "estimated", basis: "wording:approximately" },
-  { pattern: /\baround\b/i, qualification: "estimated", basis: "wording:around" },
+  { pattern: /\baround\s+(?:\d|one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|noon|midnight)/i, qualification: "estimated", basis: "wording:around" },
+  { pattern: /\b(?:I(?:'m| am) not sure|not sure)\b/i, qualification: "witness_qualified", basis: "wording:not-sure" },
   { pattern: /\bI (?:do not|don't) recall exactly\b/i, qualification: "not_recalled", basis: "wording:not-recalled-exactly" },
   { pattern: /\bI (?:do not|don't) know when\b/i, qualification: "unknown", basis: "wording:unknown-when" },
   { pattern: /\bwould have to check (?:my )?notes\b/i, qualification: "witness_qualified", basis: "wording:check-notes" },
 ] as const;
 
 const relativePattern = /\b(before|after|when I arrived|for about|(?:\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:minutes?|hours?|days?|weeks?|months?|years?)\s+later|that morning|that evening|that night|the next day|the following day)\b/i;
-const sequencePattern = /\b(then|later|earlier|first|already|not yet|had already|had not yet|subsequently|previously)\b/i;
+const sequencePattern = /\b(then|later|earlier|first|already|not yet|had already|had not yet|subsequently|previously|simultaneously|at the same time|at that point|at that time|while|once|next|eventually|at one point|at some point|when|as you|as I|as we)\b/i;
 const recurrencePattern = /\b(yearly|annually|daily|weekly|monthly|every\s+(?:day|week|month|year|morning|evening))\b/i;
 const durationRangePattern = /\b(?:anywhere\s+from\s+)?(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(?:to|-)\s+(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(minutes?|hours?|days?|weeks?|months?|years?)\b/i;
 
@@ -55,7 +60,7 @@ function isoDate(year: number, month: number, day: number) {
 }
 
 function durationFromWording(wording: string) {
-  const match = wording.match(/\b(?:for\s+(?:about\s+)?|approximately\s+|around\s+)(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(minutes?|hours?|days?|weeks?|months?|years?)\b/i);
+  const match = wording.match(/\b(?:for\s+(?:about\s+|probably\s+)?|approximately\s+|around\s+|probably\s+|took\s+(?:probably\s+)?)(\d+|one|two|three|four|five|six|seven|eight|nine|ten)\s+(minutes?|hours?|days?|weeks?|months?|years?)\b/i);
   if (!match) return null;
   const words: Record<string, number> = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10 };
   const value = Number.isNaN(Number(match[1])) ? words[match[1].toLowerCase()] : Number(match[1]);
@@ -90,7 +95,8 @@ export function parseTestimonyTemporalLanguage(rawWording: string): TemporalPars
   const duration = durationFromWording(wording);
   const durationRange = wording.match(durationRangePattern);
   const relative = wording.match(relativePattern)?.[0] ?? null;
-  const sequence = wording.match(sequencePattern)?.[0] ?? null;
+  const sequence = wording.match(sequencePattern)?.[0]
+    ?? extractTemporalCues(wording).find((cue) => cue.kind === "state" || cue.kind === "simultaneity")?.text ?? null;
   const recurrence = wording.match(recurrencePattern)?.[0] ?? null;
   const unknownWhen = /\bI (?:do not|don't) know when\b/i.test(wording);
   const approximate = /\b(?:approximately|around|about)\b/i.test(wording) || Boolean(timeOfDayBand);
@@ -141,6 +147,14 @@ const reviewedEventSchema = z.object({
   participantMentions: z.array(z.string().min(1)).default([]),
   recurrencePattern: z.record(z.string(), z.unknown()).nullable().default(null),
   extractionConfidence: z.number().min(0).max(1).default(1),
+  /** The witness affirmed a time or sequence stated by the questioner; it is not the witness's own wording. */
+  temporalAdoptedFromQuestion: z.boolean().default(false),
+  /** Further temporal wordings about the same event; each becomes its own assertion. */
+  additionalTemporal: z.array(z.object({
+    wording: z.string().min(1),
+    sourceSegmentIds: z.array(z.string().uuid()).min(1),
+    adoptedFromQuestion: z.boolean().default(false),
+  })).default([]),
 });
 
 export const reviewedTimelineUnitSchema = z.object({
@@ -216,25 +230,31 @@ export function compileTestimonyTimelineCandidates(input: {
           extractionConfidence: event.extractionConfidence,
         };
       }),
-      temporalAssertions: unit.events.map((event) => {
-        requireScope("Temporal assertion", event.temporalSourceSegmentIds);
-        assertExactWording("Temporal source wording", event.temporalWording, event.temporalSourceSegmentIds, segmentText);
-        const parsed = parseTestimonyTemporalLanguage(event.temporalWording);
-        return {
-          key: `${event.key}-time`, eventCandidateKey: event.key, sourceClaimKey: event.sourceClaimKey,
-          rawTemporalLanguage: event.temporalWording, assertedStart: null, assertedEnd: null,
-          precision: parsed.precision, assertedDate: parsed.assertedDate,
-          assertedTimeOfDayStart: parsed.assertedTimeOfDayStart, assertedTimeOfDayEnd: parsed.assertedTimeOfDayEnd,
-          timeOfDayBand: parsed.timeOfDayBand, datePrecision: parsed.datePrecision,
-          timeOfDayPrecision: parsed.timeOfDayPrecision, qualification: parsed.qualification,
-          qualifierText: parsed.qualifierText, confidenceBasis: parsed.confidenceBasis,
-          sequenceLanguage: parsed.sequenceLanguage, durationIso8601: parsed.durationIso8601,
-          relativeOffsetValue: parsed.relativeOffsetValue, relativeOffsetUnit: parsed.relativeOffsetUnit,
-          recurrencePattern: event.recurrencePattern ?? parsed.recurrencePattern,
-          lowerBoundEventCandidateKey: null, upperBoundEventCandidateKey: null,
-          assertedByRaw: unit.claim.assertedByRaw, sourceSegmentIds: event.temporalSourceSegmentIds,
-          extractionConfidence: event.extractionConfidence,
-        };
+      temporalAssertions: unit.events.flatMap((event) => {
+        const wordings = [
+          { key: `${event.key}-time`, wording: event.temporalWording, segmentIds: event.temporalSourceSegmentIds, adopted: event.temporalAdoptedFromQuestion },
+          ...event.additionalTemporal.map((extra, index) => ({ key: `${event.key}-time-${index + 2}`, wording: extra.wording, segmentIds: extra.sourceSegmentIds, adopted: extra.adoptedFromQuestion })),
+        ];
+        return wordings.map((item) => {
+          requireScope("Temporal assertion", item.segmentIds);
+          assertExactWording("Temporal source wording", item.wording, item.segmentIds, segmentText);
+          const parsed = parseTestimonyTemporalLanguage(item.wording);
+          return {
+            key: item.key, eventCandidateKey: event.key, sourceClaimKey: event.sourceClaimKey,
+            rawTemporalLanguage: item.wording, assertedStart: null, assertedEnd: null,
+            precision: parsed.precision, assertedDate: parsed.assertedDate,
+            assertedTimeOfDayStart: parsed.assertedTimeOfDayStart, assertedTimeOfDayEnd: parsed.assertedTimeOfDayEnd,
+            timeOfDayBand: parsed.timeOfDayBand, datePrecision: parsed.datePrecision,
+            timeOfDayPrecision: parsed.timeOfDayPrecision, qualification: parsed.qualification,
+            qualifierText: parsed.qualifierText, confidenceBasis: item.adopted ? "adopted-question-premise" : parsed.confidenceBasis,
+            sequenceLanguage: parsed.sequenceLanguage, durationIso8601: parsed.durationIso8601,
+            relativeOffsetValue: parsed.relativeOffsetValue, relativeOffsetUnit: parsed.relativeOffsetUnit,
+            recurrencePattern: event.recurrencePattern ?? parsed.recurrencePattern,
+            lowerBoundEventCandidateKey: null, upperBoundEventCandidateKey: null,
+            assertedByRaw: unit.claim.assertedByRaw, sourceSegmentIds: item.segmentIds,
+            extractionConfidence: event.extractionConfidence,
+          };
+        });
       }),
       relationships: unit.events.map((event) => ({
         key: `${event.key}-describes`, from: { type: "claim" as const, ref: event.sourceClaimKey }, relationType: "describes",

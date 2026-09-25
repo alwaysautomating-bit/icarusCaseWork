@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #8B6914; text-decoration: none; }
+    a:hover { color: #6B500F; }
+  </style>
+</helmet>
+<div style="background:#F9F8F6;min-height:100vh;font-family:'Inter',sans-serif;color:#0A0A0A;">
+  <div style="max-width:1080px;margin:0 auto;padding:40px 32px 72px;">
+
+    <sc-if value="{{ showIndex }}" hint-placeholder-val="{{ true }}">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(10,10,10,.5);margin-bottom:14px;">TRIAL INDEX · TESTIMONY BY DAY</div>
+
+      <h1 style="font-family:'Playfair Display',serif;font-weight:600;font-size:clamp(24px,3.4vw,34px);line-height:1.15;letter-spacing:-0.01em;margin:0 0 14px;">Who testified, and what they added.</h1>
+
+      <p style="font-size:13px;line-height:1.6;color:rgba(10,10,10,.65);max-width:640px;margin:0 0 22px;">Each trial day, the witnesses who testified, what they spoke about, and the evidence or information they contributed. Open a day for its working detail. Days 9–13 follow the dated trial-index fixture and the transcript-derived day files; where the reporting table differed, the day carries a source note.</p>
+
+      <div style="height:1px;background:rgba(10,10,10,.15);margin-bottom:12px;"></div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;position:relative;">
+        <button onClick="{{ toggleJump }}" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;background:none;border:1px solid rgba(10,10,10,.22);border-radius:3px;padding:6px 10px;cursor:pointer;color:#0A0A0A;display:flex;align-items:center;gap:6px;white-space:nowrap;">
+          <span style="font-size:9px;">{{ jumpGlyph }}</span> Jump to day
+        </button>
+        <sc-if value="{{ jumpOpen }}" hint-placeholder-val="{{ false }}">
+          <div style="position:absolute;top:32px;left:0;background:#FFFFFF;border:1px solid rgba(10,10,10,.14);border-radius:6px;box-shadow:0 12px 28px rgba(10,10,10,.12);min-width:150px;z-index:10;overflow:hidden;">
+            <sc-for list="{{ days }}" as="d" hint-placeholder-count="4">
+              <button onClick="{{ d.jumpTo }}" style="display:block;width:100%;text-align:left;background:none;border:none;border-bottom:1px solid rgba(10,10,10,.08);padding:8px 12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.03em;cursor:pointer;color:#0A0A0A;">DAY {{ d.num }} — {{ d.date }}</button>
+            </sc-for>
+          </div>
+        </sc-if>
+        <div style="display:flex;gap:8px;">
+          <button onClick="{{ expandAll }}" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;font-weight:600;background:none;border:1px solid rgba(10,10,10,.22);border-radius:3px;padding:6px 10px;cursor:pointer;color:#0A0A0A;white-space:nowrap;">EXPAND ALL</button>
+          <button onClick="{{ collapseAll }}" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.06em;font-weight:600;background:none;border:1px solid rgba(10,10,10,.22);border-radius:3px;padding:6px 10px;cursor:pointer;color:#0A0A0A;white-space:nowrap;">COLLAPSE ALL</button>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <sc-for list="{{ days }}" as="day" hint-placeholder-count="4">
+          <div ref="{{ day.setRef }}" style="display:flex;border:1px solid rgba(10,10,10,.14);border-radius:2px;background:#F9F8F6;position:relative;">
+
+            <div style="width:100px;flex-shrink:0;background:#0A0A0A;color:#F9F8F6;padding:16px 14px;display:flex;flex-direction:column;gap:4px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.16em;color:rgba(249,248,246,.55);">DAY</span>
+              <span style="font-family:'Playfair Display',serif;font-weight:600;font-size:24px;line-height:1;">{{ day.num }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;color:rgba(249,248,246,.55);">{{ day.date }}</span>
+              <button onClick="{{ day.openDay }}" style="margin-top:6px;background:none;border:none;padding:0;text-align:left;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;font-weight:600;color:#C9A227;">Open day →</button>
+            </div>
+
+            <div style="flex:1;min-width:0;padding:14px 44px 14px 18px;position:relative;">
+              <p style="font-family: 'Playfair Display',serif; font-weight: 600; font-size: 12px; line-height: 1.4; margin: 0 0 5px; height: 34px">{{ day.summary }}</p>
+              <p style="font-family: 'Inter',sans-serif; font-size: 10.5px; color: rgba(10,10,10,.55); margin: 0">{{ day.witnessNamesLine }}</p>
+
+              <button onClick="{{ day.toggle }}" style="position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;border:1px solid rgba(10,10,10,.2);background:#F9F8F6;font-size:14px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#0A0A0A;">{{ day.toggleGlyph }}</button>
+
+              <sc-if value="{{ day.isOpen }}" hint-placeholder-val="{{ false }}">
+                <div style="margin-top:12px;border-top:1px solid rgba(10,10,10,.12);">
+                  <div style="{{ day.headerGridStyle }}">
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">WITNESS</span>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">SPOKE ABOUT</span>
+                    <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">EVIDENCE OR INFORMATION CONTRIBUTED</span>
+                  </div>
+                  <sc-for list="{{ day.witnesses }}" as="w" hint-placeholder-count="3">
+                    <div style="{{ day.rowGridStyle }}">
+                      <div>
+                        <div style="font-family: 'Playfair Display',serif; font-weight: 600; font-size: 12.5px">{{ w.name }}</div>
+                        <sc-if value="{{ w.hasRole }}" hint-placeholder-val="{{ false }}">
+                          <div style="font-size:10.5px;color:rgba(10,10,10,.5);margin-top:1px;">{{ w.role }}</div>
+                        </sc-if>
+                      </div>
+                      <div style="font-size: 11px; line-height: 1.55; color: rgba(10,10,10,.8)">{{ w.spokeAboutDisplay }}</div>
+                      <div style="font-size: 11px; line-height: 1.55; color: rgba(10,10,10,.8)">{{ w.evidenceDisplay }}</div>
+                    </div>
+                  </sc-for>
+                </div>
+              </sc-if>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ showDetail }}" hint-placeholder-val="{{ false }}">
+      <button onClick="{{ backToIndex }}" style="background:none;border:none;padding:0;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.05em;font-weight:600;color:#8B6914;margin-bottom:18px;">← Trial Index</button>
+
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(10,10,10,.5);margin-bottom:8px;">DAY {{ activeDay.num }} · {{ activeDay.date }}</div>
+      <h1 style="font-family: Times New Roman; font-weight: 500; font-size: clamp(22px,3vw,30px); line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 18px">{{ activeTabLabel }}</h1>
+
+      <div style="display:flex;gap:20px;border-bottom:1px solid rgba(10,10,10,.15);margin-bottom:22px;overflow-x:auto;">
+        <sc-for list="{{ tabs }}" as="tab" hint-placeholder-count="8">
+          <button onClick="{{ tab.select }}" style="{{ tab.style }}">{{ tab.label }}</button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ activeDay.witnessesTab }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <div style="{{ activeDay.headerGridStyle }}">
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">WITNESS</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">SPOKE ABOUT</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;color:rgba(10,10,10,.5);">EVIDENCE OR INFORMATION CONTRIBUTED</span>
+          </div>
+          <sc-for list="{{ activeDay.witnesses }}" as="w" hint-placeholder-count="3">
+            <div style="{{ activeDay.rowGridStyle }}">
+              <div>
+                <div style="font-family: 'Playfair Display',serif; font-weight: 600; font-size: 12.5px">{{ w.name }}</div>
+                <sc-if value="{{ w.hasRole }}" hint-placeholder-val="{{ false }}">
+                  <div style="font-size:10.5px;color:rgba(10,10,10,.5);margin-top:1px;">{{ w.role }}</div>
+                </sc-if>
+              </div>
+              <div style="font-size: 11px; line-height: 1.55; color: rgba(10,10,10,.8)">{{ w.spokeAboutDisplay }}</div>
+              <div style="font-size: 11px; line-height: 1.55; color: rgba(10,10,10,.8)">{{ w.evidenceDisplay }}</div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ activeDay.witnessesEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:24px 0;font-size:12.5px;color:rgba(10,10,10,.45);">No witnesses recorded for this day.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ activeDay.researchTab }}" hint-placeholder-val="{{ false }}">
+        <div>
+          <sc-for list="{{ activeDay.research }}" as="row" hint-placeholder-count="3">
+            <div style="padding:16px 0;border-top:{{ row.borderStyle }};display:flex;gap:14px;">
+              <span style="width:22px;flex-shrink:0;font-family:'JetBrains Mono',monospace;color:#8B6914;font-size:12px;font-weight:600;">{{ row.indexLabel }}</span>
+              <div style="flex:1;min-width:0;">
+                <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:14px;line-height:1.4;margin-bottom:8px;">{{ row.title }}</div>
+                <div style="display:flex;gap:12px;">
+                  <span style="width:56px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(10,10,10,.45);text-transform:uppercase;">REASON</span>
+                  <span style="flex:1;font-size:12px;line-height:1.55;color:rgba(10,10,10,.75);">{{ row.reason }}</span>
+                </div>
+                <button onClick="{{ row.toggleExpand }}" style="margin-top:10px;background:#0A0A0A;color:#F9F8F6;border:none;border-radius:3px;padding:6px 10px;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;cursor:pointer;">{{ row.expandGlyph }} PROMPT &amp; SUPPORTING ITEMS</button>
+                <sc-if value="{{ row.expanded }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:10px;border:1px solid rgba(10,10,10,.14);border-radius:3px;padding:12px 14px;background:rgba(10,10,10,.02);">
+                    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                      <span style="font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(10,10,10,.45);">PROMPT</span>
+                      <button onClick="{{ row.copyPrompt }}" style="background:none;border:1px solid rgba(10,10,10,.2);border-radius:3px;padding:4px 8px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.05em;cursor:pointer;color:#8B6914;">{{ row.copyLabel }}</button>
+                    </div>
+                    <div style="font-size:11.5px;line-height:1.6;white-space:pre-wrap;color:rgba(10,10,10,.75);">{{ row.prompt }}</div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ activeDay.researchEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:24px 0;font-size:12.5px;color:rgba(10,10,10,.45);">No research items recorded for this day.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ activeDay.genericTab }}" hint-placeholder-val="{{ true }}">
+        <div>
+          <sc-for list="{{ activeDay.rows }}" as="row" hint-placeholder-count="3">
+            <div style="padding:16px 0;border-top:{{ row.borderStyle }};">
+              <sc-if value="{{ row.hasIndex }}" hint-placeholder-val="{{ false }}">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;color:#8B6914;">{{ row.indexLabel }}</span>
+              </sc-if>
+              <div style="font-family:'Playfair Display',serif;font-weight:600;font-size:14.5px;line-height:1.4;margin-top:4px;">{{ row.title }}</div>
+              <sc-for list="{{ row.fields }}" as="f" hint-placeholder-count="1">
+                <div style="display:flex;gap:14px;margin-top:8px;">
+                  <span style="width:120px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.08em;color:rgba(10,10,10,.45);text-transform:uppercase;">{{ f.label }}</span>
+                  <span style="flex:1;font-size:12.5px;line-height:1.55;color:rgba(10,10,10,.8);">{{ f.text }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </sc-for>
+          <sc-if value="{{ activeDay.rowsEmpty }}" hint-placeholder-val="{{ false }}">
+            <div style="padding:24px 0;font-size:12.5px;color:rgba(10,10,10,.45);">No entries recorded for this day.</div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+    </sc-if>
+
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showEvidenceColumn&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Witness detail&quot;},&quot;defaultExpanded&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behavior&quot;}}">
+const DASH = '—';
+
+const TABS = [
+  { id: 'insights', label: 'Key Insights' },
+  { id: 'decisions', label: 'Decisions' },
+  { id: 'evidence', label: 'Evidence' },
+  { id: 'builders', label: 'Builders' },
+  { id: 'witnesses', label: 'Witnesses' },
+  { id: 'questions', label: 'Open Questions' },
+  { id: 'research', label: 'Research' },
+  { id: 'creators', label: 'Creators' }
+];
+
+const RAW_DAYS = [
+  { id: 1, num: '01', date: 'JUL. 27',
+    summary: 'Opening statements set out the competing theories. Patrick Clancy began the family and mental-health timeline.',
+    witnesses: [{ name: 'Patrick Clancy' }] },
+  { id: 2, num: '02', date: 'JUL. 29',
+    summary: 'Patrick Clancy continued with the errand and discovery timeline; CVS and restaurant staff described related calls and purchases.',
+    witnesses: [
+      { name: 'Patrick Clancy', role: 'Continued testimony', spokeAbout: 'The errand, his return, finding Lindsay outside and the children in the basement, and her reported male command voice.', evidence: 'Established the errand window, discovery scene, and alleged command-voice statement.' },
+      { name: 'Angela Krause', role: 'CVS pharmacy manager', spokeAbout: "Patrick's CVS stop and Lindsay's related telephone interaction.", evidence: 'Corroborated the errand timing and described Lindsay as sounding coherent.' },
+      { name: 'Saria Sweeney', role: 'ThreeV Restaurant hostess', spokeAbout: 'The takeout order and pre-incident telephone interaction.', evidence: 'Corroborated the restaurant timeline and described Lindsay as clear and coherent.' }
+    ],
+    decisions: [
+      { title: "Treat Patrick as a source requiring claim-level provenance rather than as a global narrator of Lindsay's state", fields: [{ label: 'REASONING', text: 'Day 2 distinguishes his observation, recollection, interpretation, and incomplete medical knowledge.' }] },
+      { title: 'Keep "5:15 departure" separate from independently timestamped departure bounds', fields: [{ label: 'REASONING', text: 'Day 2 contains the testimonial time, while CVS surveillance/receipts and other digital evidence can provide harder anchors.' }] }
+    ],
+    evidence: [
+      { title: 'Lindsay requested the additional CVS stop.', fields: [
+        { label: 'SUPPORTING EVIDENCE', text: 'Patrick testified that she requested stool softener for Cora as he was preparing to leave; he asked her to text the product, and she subsequently texted "Pedia-Lax."' },
+        { label: 'SOURCE', text: 'Patrick testimony, Day 2.' }
+      ] },
+      { title: 'Lindsay communicated coherently with Patrick during the CVS trip.', fields: [
+        { label: 'SUPPORTING EVIDENCE', text: 'Patrick testified that she returned his call approximately one minute after his initial attempt, discussed whether a generic product was acceptable, and appeared to understand what he was asking.' },
+        { label: 'SOURCE', text: 'Patrick testimony, Day 2.' }
+      ] }
+    ],
+    research: [
+      { title: 'Build a Day 2 Patrick claim ledger with fields for exact claim, timestamp, source type, firsthand/hearsay/interpretation, corroborating evidence, conflicting evidence and ultimate provenance.',
+        reason: "Day 2 contains too many differently sourced statements to treat Patrick's testimony monolithically.",
+        prompt: "You are assisting with case research for Commonwealth v. Lindsay M. Clancy (trial Day 2).\n\nTask: Build a Day 2 Patrick claim ledger with fields for exact claim, timestamp, source type, firsthand/hearsay/interpretation, corroborating evidence, conflicting evidence and ultimate provenance.\nWhy it matters: Day 2 contains too many differently sourced statements to treat Patrick's testimony monolithically.\n\nRules:\n- Work only from the materials I provide. Do not supply facts from memory.\n- Cite the source and locator (page/line, timestamp, or exhibit) for every finding.\n- Keep what a source directly states separate from your inference, and say what is missing." },
+      { title: "Reconstruct January 24 from hard timestamps only, then overlay Patrick's remembered times separately.",
+        reason: "Tests the actual opportunity window underlying the prosecution's planning theory.", prompt: '' },
+      { title: 'Trace every appearance of "thoughts of harming the children" backward to its earliest source.',
+        reason: "Determines whether this is Lindsay's language, Patrick's interpretation, clinical terminology, police paraphrase, or later narrative compression.", prompt: '' }
+    ] },
+  { id: 3, num: '03', date: 'JUL. 30',
+    summary: "First responders described the residence, Lindsay's injuries, the children's condition, and emergency treatment.",
+    witnesses: [
+      { name: 'Officer Stephen Hall', role: 'Duxbury Police; first responder', spokeAbout: "Lindsay in the yard, her injuries, Patrick's distress, and the scene at 47 Summer Street.", evidence: 'Introduced window and blood photographs relevant to the apparent fall and self-harm attempt.' },
+      { name: 'Officer Brian Josephine', role: 'Duxbury Police; first responder', spokeAbout: 'The initial response and observations of Lindsay and the residence.', evidence: "Documented Lindsay's condition, the window area, and the first emergency-response minutes." },
+      { name: 'PJ Hussey', role: 'Eyewitness at the discovery scene', spokeAbout: "Seeing Patrick remove an item from Dawson's head and neck area.", evidence: "Connected the discovery scene to the ligature evidence and Patrick's rescue attempt." },
+      { name: 'Jennifer Stratton and other firefighters/paramedics', role: 'Emergency medical responders', spokeAbout: "CPR, ambulance care, the children's condition, and the mark around Callan's neck.", evidence: 'Provided CPR records and observations of exercise bands and neck injuries.' },
+      { name: 'Patrick Dwyer', role: 'Duxbury Fire firefighter/paramedic', spokeAbout: 'His dispatch to 47 Summer Street and emergency response with Jennifer Stratton.', evidence: 'Described first-response timing and actions at the residence.' }
+    ] },
+  { id: 4, num: '04', date: 'JUL. 31',
+    summary: "Investigators described the residence and collected items; clinicians addressed Dawson's and Callan's emergency care.",
+    witnesses: [
+      { name: 'Detective Mark Anthony Maffeo' },
+      { name: 'Dr. Mark Tenerowicz' },
+      { name: 'Dr. Benjamin Kaufman' }
+    ] }
+];
+
+function rowsWithBorders(list) {
+  return (list || []).map((r, i) => ({ ...r, borderStyle: i === 0 ? 'none' : '1px solid rgba(10,10,10,.08)' }));
+}
+
+class Component extends DCLogic {
+  state = { expanded: {}, jumpOpen: false, selectedDayId: null, activeTab: 'insights', expandedResearch: {}, copiedResearch: {} };
+  refs = {};
+
+  toggle(id) { this.setState(s => ({ expanded: { ...s.expanded, [id]: !s.expanded[id] } })); }
+  expandAll() { const e = {}; RAW_DAYS.forEach(d => e[d.id] = true); this.setState({ expanded: e }); }
+  collapseAll() { this.setState({ expanded: {} }); }
+  toggleJump() { this.setState(s => ({ jumpOpen: !s.jumpOpen })); }
+  jumpTo(id) {
+    const el = this.refs[id];
+    if (el) { const top = el.getBoundingClientRect().top + window.scrollY - 24; window.scrollTo({ top, behavior: 'smooth' }); }
+    this.setState({ jumpOpen: false });
+  }
+  openDay(id) { this.setState({ selectedDayId: id, activeTab: 'insights' }); window.scrollTo({ top: 0 }); }
+  backToIndex() { this.setState({ selectedDayId: null }); }
+  setTab(id) { this.setState({ activeTab: id }); }
+  toggleResearch(rowKey) { this.setState(s => ({ expandedResearch: { ...s.expandedResearch, [rowKey]: !s.expandedResearch[rowKey] } })); }
+  copyResearch(rowKey, text) {
+    navigator.clipboard?.writeText(text || '');
+    this.setState(s => ({ copiedResearch: { ...s.copiedResearch, [rowKey]: true } }));
+    setTimeout(() => this.setState(s => ({ copiedResearch: { ...s.copiedResearch, [rowKey]: false } })), 1500);
+  }
+
+  renderVals() {
+    const showEvidence = this.props.showEvidenceColumn ?? true;
+    const cols = 3;
+    const gridTemplate = `repeat(${cols},minmax(0,1fr))`;
+    const defaultOpen = this.props.defaultExpanded ?? false;
+
+    const days = RAW_DAYS.map(d => {
+      const isOpen = this.state.expanded[d.id] !== undefined ? this.state.expanded[d.id] : defaultOpen;
+      return {
+        ...d,
+        isOpen,
+        toggleGlyph: isOpen ? '\u2212' : '+',
+        witnessNamesLine: d.witnesses.map(w => w.name).join(' \u00b7 '),
+        setRef: el => { this.refs[d.id] = el; },
+        toggle: () => this.toggle(d.id),
+        openDay: () => this.openDay(d.id),
+        jumpTo: () => this.jumpTo(d.id),
+        headerGridStyle: `display:grid;grid-template-columns:${gridTemplate};gap:12px;padding:6px 0;background:rgba(10,10,10,.03);`,
+        rowGridStyle: `display:grid;grid-template-columns:${gridTemplate};gap:12px;padding:9px 0;border-top:1px solid rgba(10,10,10,.08);`,
+        witnesses: d.witnesses.map(w => ({ ...w, hasRole: !!w.role, spokeAboutDisplay: w.spokeAbout || DASH, evidenceDisplay: w.evidence || DASH }))
+      };
+    });
+
+    const selectedRaw = RAW_DAYS.find(d => d.id === this.state.selectedDayId) || null;
+    const activeTab = this.state.activeTab;
+
+    let activeDay = null;
+    if (selectedRaw) {
+      const witnesses = (selectedRaw.witnesses || []).map(w => ({ ...w, hasRole: !!w.role, spokeAboutDisplay: w.spokeAbout || DASH, evidenceDisplay: w.evidence || DASH }));
+      const decisionRows = rowsWithBorders((selectedRaw.decisions || []).map(r => ({ ...r, hasIndex: false })));
+      const evidenceRows = rowsWithBorders((selectedRaw.evidence || []).map((r, i) => ({ ...r, hasIndex: true, indexLabel: `CLAIM ${i + 1}` })));
+      const insightRows = rowsWithBorders(selectedRaw.insights || []);
+      const builderRows = rowsWithBorders(selectedRaw.builders || []);
+      const questionRows = rowsWithBorders(selectedRaw.openQuestions || []);
+      const creatorRows = rowsWithBorders(selectedRaw.creators || []);
+      const researchRows = rowsWithBorders((selectedRaw.research || []).map((r, i) => ({
+        ...r,
+        indexLabel: String(i + 1).padStart(2, '0'),
+        expanded: !!this.state.expandedResearch[`${selectedRaw.id}-${i}`],
+        expandGlyph: this.state.expandedResearch[`${selectedRaw.id}-${i}`] ? '\u25be' : '\u25b8',
+        toggleExpand: () => this.toggleResearch(`${selectedRaw.id}-${i}`),
+        copyPrompt: () => this.copyResearch(`${selectedRaw.id}-${i}`, r.prompt),
+        copyLabel: this.state.copiedResearch[`${selectedRaw.id}-${i}`] ? 'COPIED' : 'COPY PROMPT'
+      })));
+
+      const genericByTab = { insights: insightRows, decisions: decisionRows, evidence: evidenceRows, builders: builderRows, questions: questionRows, creators: creatorRows };
+      const rows = genericByTab[activeTab] || [];
+
+      activeDay = {
+        num: selectedRaw.num,
+        date: selectedRaw.date,
+        witnesses,
+        witnessesEmpty: witnesses.length === 0,
+        headerGridStyle: `display:grid;grid-template-columns:${gridTemplate};gap:12px;padding:6px 0;background:rgba(10,10,10,.03);`,
+        rowGridStyle: `display:grid;grid-template-columns:${gridTemplate};gap:12px;padding:9px 0;border-top:1px solid rgba(10,10,10,.08);`,
+        witnessesTab: activeTab === 'witnesses',
+        researchTab: activeTab === 'research',
+        research: researchRows,
+        researchEmpty: researchRows.length === 0,
+        genericTab: activeTab !== 'witnesses' && activeTab !== 'research',
+        rows,
+        rowsEmpty: rows.length === 0
+      };
+    }
+
+    const tabs = TABS.map(t => ({
+      ...t,
+      select: () => this.setTab(t.id),
+      style: `background:none;border:none;padding:0 0 10px;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;font-weight:600;` +
+        (t.id === activeTab ? 'color:#0A0A0A;border-bottom:2px solid #C9A227;' : 'color:rgba(10,10,10,.4);border-bottom:2px solid transparent;')
+    }));
+
+    return {
+      days,
+      jumpOpen: this.state.jumpOpen,
+      jumpGlyph: this.state.jumpOpen ? '\u25be' : '\u25b8',
+      toggleJump: () => this.toggleJump(),
+      expandAll: () => this.expandAll(),
+      collapseAll: () => this.collapseAll(),
+      showEvidence,
+      showIndex: !selectedRaw,
+      showDetail: !!selectedRaw,
+      activeDay,
+      activeTabLabel: (TABS.find(t => t.id === activeTab) || {}).label || '',
+      tabs,
+      backToIndex: () => this.backToIndex()
+    };
+  }
+}
+</script>
+</body>
+</html>

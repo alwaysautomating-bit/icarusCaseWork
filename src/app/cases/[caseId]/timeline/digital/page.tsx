@@ -39,10 +39,8 @@ export default async function DigitalTimelinePage({ params, searchParams }: { pa
   const keyView = !selected && !showAll;
 
   return <main className="responder-shell device-shell">
-    <nav className="responder-toolbar" aria-label="Timeline navigation"><Link href={timelineHref(caseId)}>← All timelines</Link><span>Digital report · {report.date}</span></nav>
-
     <header className="responder-head">
-      <MonoLabel>DIGITAL · DEVICE REPORT TIMELINE</MonoLabel>
+      <div className="responder-crumbs"><Link href={timelineHref(caseId)}>← All timelines</Link><MonoLabel>DIGITAL · DEVICE REPORT TIMELINE · {report.date}</MonoLabel></div>
       <h1>{report.title}</h1>
       <p>{report.scope_note}</p>
       <dl>

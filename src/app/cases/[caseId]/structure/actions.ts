@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { requireCaseActor } from "@/lib/authority";
+import { isCaseOwner } from "@/lib/case-owner";
 import { structureHref } from "@/lib/case-routes";
 import { getCaseStructureWorkspace } from "@/lib/case-structure";
 import { createClient } from "@/lib/supabase/server";
@@ -23,6 +24,7 @@ function formValue(formData: FormData, key: string) {
 export async function saveTimelineViewAction(caseId: string, runId: string, formData: FormData) {
   const actor = await requireCaseActor();
   const input = saveInputSchema.parse({ caseId, runId, name: formValue(formData, "name"), description: formValue(formData, "description") });
+  if (!(await isCaseOwner(actor.id, input.caseId))) throw new Error("Saving timeline views is limited to the case owner.");
   const workspace = await getCaseStructureWorkspace(actor.id, input.caseId, { type: "all", timelineRunId: input.runId });
   if (!workspace) throw new Error("The case is not accessible.");
   if (!workspace.timeline.runs.some((run) => run.id === input.runId)) throw new Error("The timeline extraction run is not accessible in this case.");

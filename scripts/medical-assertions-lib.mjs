@@ -99,6 +99,11 @@ export const extractionFileSchema = z.object({
 
 const clean = (text) => text.normalize("NFKC").replace(/[​-‍﻿]/g, "").replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/\s+/g, " ").trim();
 
+// True when `span` appears verbatim (after whitespace and quote normalization) in the segment's text.
+export function spanFound(segment, span) {
+  return Boolean(segment) && clean(segment.text).includes(clean(span));
+}
+
 export function segmentsByIndex(segments) {
   return new Map(segments.map((segment) => [segment.segment_index, segment]));
 }

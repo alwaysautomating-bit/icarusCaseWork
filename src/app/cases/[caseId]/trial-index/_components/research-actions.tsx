@@ -1,6 +1,5 @@
-import Link from "next/link";
-import { CollapseDocument, inlineMarkup } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
-import { CopyPromptButton } from "@/app/cases/[caseId]/trial-index/_components/copy-prompt-button";
+import { CollapseDocument } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
+import { ResearchWorkspace } from "@/app/cases/[caseId]/trial-index/_components/research-workspace";
 import { researchPrompt, researchSupport } from "@/lib/research-support";
 
 type Action = { task: string; reason: string };
@@ -25,29 +24,10 @@ function parseActions(content: string): Action[] {
 export function ResearchActions({ caseId, dayNumber, content }: { caseId: string; dayNumber: number; content: string }) {
   const actions = parseActions(content);
   if (actions.length === 0) return <CollapseDocument content={content} />;
-  return <div className="research-list">
-    {actions.map((action, index) => {
-      const task = action.task.replaceAll("**", "");
-      const support = researchSupport(caseId, dayNumber, task, action.reason);
-      const prompt = researchPrompt(dayNumber, task, action.reason, support);
-      return <article key={index}>
-        <span className="research-ref">{String(index + 1).padStart(2, "0")}</span>
-        <div>
-          <h3>{inlineMarkup(action.task)}</h3>
-          {action.reason ? <p><em>Reason</em> {inlineMarkup(action.reason)}</p> : null}
-          <details>
-            <summary>Prompt &amp; supporting items</summary>
-            <div className="research-prompt">
-              <div className="research-prompt-head"><span>Prompt</span><CopyPromptButton text={prompt} /></div>
-              <pre>{prompt}</pre>
-            </div>
-            <div className="research-support">
-              <div><h4>Inside Icarus</h4><ul>{support.icarus.map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul></div>
-              <div><h4>To go find</h4><ul>{support.hunt.map((item) => <li key={item}>{item}</li>)}</ul></div>
-            </div>
-          </details>
-        </div>
-      </article>;
-    })}
-  </div>;
+  const items = actions.map((action) => {
+    const task = action.task.replaceAll("**", "");
+    const support = researchSupport(caseId, dayNumber, task, action.reason);
+    return { task: action.task, reason: action.reason, prompt: researchPrompt(dayNumber, task, action.reason, support), icarus: support.icarus, hunt: support.hunt };
+  });
+  return <ResearchWorkspace items={items} />;
 }

@@ -57,7 +57,7 @@ export function TranscriptWindow({ caseId, query, selectedId, segments }: { case
     const time = formatTimestamp(segment.timestamp_start_ms);
     return <article ref={(node) => { refs.current[segment.id] = node; }} className={`court-segment${selected ? " selected" : ""}`} data-segment-id={segment.id} key={segment.id} onClick={(event) => choose(segment.id, event)}>
       <CopySegmentButton text={`[${time}] ${segment.speaker}: ${segment.exact_text}`} />
-      <div className="court-segment-copy"><header><strong>{segment.speaker}</strong><time>{time}</time><small>#{segment.ordinal + 1}</small></header><p>{segment.exact_text}</p><footer><Link scroll={false} aria-current={selected ? "location" : undefined} href={courtRecordHref(caseId, { query, segmentId: segment.id })}>Open segment →</Link></footer></div>
+      <div className="court-segment-copy"><header><strong>{segment.speaker}</strong><time>{time}</time><small>#{segment.ordinal + 1}</small></header><p>{segment.exact_text}</p><footer><code>{segment.id}</code><Link scroll={false} aria-current={selected ? "location" : undefined} href={courtRecordHref(caseId, { query, segmentId: segment.id })}>Open segment →</Link></footer></div>
     </article>;
   })}</div>;
 }

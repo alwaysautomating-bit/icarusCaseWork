@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+  <style>
+    body { margin: 0; }
+    a { color: #C9A227; text-decoration: none; }
+    a:hover { color: #8B6914; }
+  </style>
+</helmet>
+<div style="display:grid;grid-template-columns:56px 1fr;height:100vh;background:#F9F8F6;color:#0A0A0A;font-family:'Inter',sans-serif;box-sizing:border-box;">
+
+  <div style="background:#0A0A0A;display:flex;flex-direction:column;align-items:center;padding:20px 0;gap:20px;box-sizing:border-box;">
+    <div style="width:26px;height:26px;border:1px solid rgba(139,105,20,.28);border-radius:3px;display:flex;align-items:center;justify-content:center;color:#C9A227;font-family:'Playfair Display',serif;font-weight:600;font-size:12px;">I</div>
+    <div style="width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#F9F8F6;opacity:.55;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;">TI</div>
+    <div style="width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#F9F8F6;opacity:.55;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;">EV</div>
+    <div style="width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#F9F8F6;opacity:.55;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;">QN</div>
+    <div style="width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#F9F8F6;opacity:1;background:#8B6914;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;">CR</div>
+    <div style="flex:1;"></div>
+    <div style="width:30px;height:30px;border-radius:3px;display:flex;align-items:center;justify-content:center;color:#F9F8F6;opacity:.55;cursor:pointer;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.04em;">···</div>
+  </div>
+
+  <div style="display:flex;flex-direction:column;height:100vh;overflow:hidden;box-sizing:border-box;">
+
+    <div style="padding:14px 32px 12px;border-bottom:1px solid rgba(139,105,20,.28);display:flex;justify-content:space-between;align-items:baseline;flex-shrink:0;box-sizing:border-box;">
+      <div style="font-family:'Playfair Display',serif;font-size:13.5px;font-weight:600;">
+        <span style="font-size:11px;letter-spacing:.08em;color:rgba(10,10,10,.6);text-transform:uppercase;margin-right:10px;font-family:'Inter',sans-serif;font-weight:600;">Active case · owner</span>
+        Commonwealth v. Lindsay M. Clancy — compiled proceeding corpus
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:rgba(10,10,10,.45);">413d071f-6299-46ae-aa85-46390aca38a6</div>
+    </div>
+
+    <div style="display:flex;gap:24px;padding:0 32px;border-bottom:1px solid rgba(139,105,20,.28);overflow-x:auto;flex-shrink:0;box-sizing:border-box;">
+      <sc-for list="{{ navItems }}" as="item" hint-placeholder-count="10">
+        <a href="#" style="{{ item.style }}">{{ item.label }}</a>
+      </sc-for>
+    </div>
+
+    <div style="display:flex;flex:1;min-height:0;">
+
+      <div style="width:300px;flex-shrink:0;background:#FFFFFF;border-right:1px solid rgba(139,105,20,.28);box-shadow:2px 0 10px rgba(10,10,10,.04);padding:22px 22px 24px;overflow-y:auto;box-sizing:border-box;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(10,10,10,.45);letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px;display:block;">Search testimony</span>
+        <input value="Zoloft" style="width:100%;background:#FFFFFF;border:1px solid rgba(139,105,20,.28);border-radius:4px;padding:10px 12px;font-family:'Inter',sans-serif;font-size:13px;color:#0A0A0A;margin-bottom:10px;box-sizing:border-box;">
+        <button style="width:100%;background:#0A0A0A;color:#F9F8F6;border:none;border-radius:3px;padding:11px 0;font-size:11px;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;margin-bottom:16px;font-family:'Inter',sans-serif;">Search record</button>
+        <p style="font-size:12px;line-height:1.6;color:rgba(10,10,10,.6);margin:0;">Search exact words, natural-language phrasing, partial wording, speakers, or transcript fragments.</p>
+      </div>
+
+      <div style="flex:1;border-right:1px solid rgba(139,105,20,.28);padding:20px 30px;overflow-y:auto;min-width:0;box-sizing:border-box;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
+          <div>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(10,10,10,.45);letter-spacing:.06em;text-transform:uppercase;">Canonical transcript window</span>
+            <h1 style="font-family:'Playfair Display',serif;font-size:17px;font-weight:600;margin:2px 0 0;">MA v. Lindsay Clancy — Day 10</h1>
+          </div>
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(10,10,10,.45);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;">25 segments loaded</span>
+        </div>
+
+        <sc-for list="{{ segments }}" as="seg" hint-placeholder-count="4">
+          <div style="{{ seg.rowStyle }}">
+            <div style="width:64px;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(10,10,10,.45);line-height:1.5;">{{ seg.time }}<br>#{{ seg.ordinal }}</div>
+            <div>
+              <div style="font-family:'Playfair Display',serif;font-size:12.5px;font-weight:600;margin-bottom:4px;">{{ seg.speaker }}</div>
+              <div style="font-size:13.5px;line-height:1.65;color:#2C241C;max-width:62ch;">{{ seg.text }}</div>
+              <div style="margin-top:8px;display:flex;justify-content:space-between;align-items:center;">
+                <span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:rgba(10,10,10,.45);">{{ seg.uuid }}</span>
+                <a href="#" style="font-size:10.5px;letter-spacing:.03em;color:#C9A227;border-bottom:1px solid rgba(139,105,20,.28);">Open segment →</a>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="text-align:center;font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(10,10,10,.45);letter-spacing:.03em;padding:14px 0;">···9 more segments in window···</div>
+      </div>
+
+      <div style="width:360px;flex-shrink:0;background:#0A0A0A;color:#E9E1D2;padding:20px 22px 30px;overflow-y:auto;box-sizing:border-box;">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;">
+          <span style="font-family:'JetBrains Mono',monospace;font-size:10.5px;color:rgba(233,225,210,.45);letter-spacing:.06em;text-transform:uppercase;">Source inspector</span>
+          <a href="#" style="font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:#C9A227;">Exact source</a>
+        </div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin:4px 0 20px;color:#F4EEE1;">Selected segment</h2>
+
+        <div style="margin-bottom:22px;">
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(233,225,210,.4);margin-bottom:8px;">Passage</div>
+          <div style="font-family:'Playfair Display',serif;font-size:13px;font-weight:500;line-height:1.6;color:#F0E9DB;font-style:italic;">"Now this is a little chart that shows the prescriptions that Lindsay was on, and you are the yellow columns. You can see that. Would you agree with me that on September 15th, you prescribed Sertraline, Zoloft, 30 count on September 15th, 25 milligrams, right?"</div>
+        </div>
+
+        <div style="margin-bottom:22px;">
+          <sc-for list="{{ segmentKv }}" as="kv" hint-placeholder-count="5">
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:{{ kv.borderStyle }};font-size:12px;">
+              <span style="color:rgba(233,225,210,.45);letter-spacing:.03em;text-transform:uppercase;font-size:10px;">{{ kv.k }}</span>
+              <span style="{{ kv.valueStyle }}">{{ kv.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="margin-bottom:22px;">
+          <div style="font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:rgba(233,225,210,.4);margin-bottom:8px;">Proceeding + source</div>
+          <sc-for list="{{ sourceKv }}" as="kv" hint-placeholder-count="5">
+            <div style="display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-top:{{ kv.borderStyle }};font-size:12px;">
+              <span style="color:rgba(233,225,210,.45);letter-spacing:.03em;text-transform:uppercase;font-size:10px;">{{ kv.k }}</span>
+              <span style="{{ kv.valueStyle }}">{{ kv.v }}</span>
+            </div>
+          </sc-for>
+        </div>
+
+        <a href="#" style="display:inline-block;margin-top:10px;font-size:11.5px;color:#C9A227;border-bottom:1px solid rgba(139,105,20,.4);">← Open in Reconcile</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const NAV = ['Foundation', 'Trial Index', 'Court Record', 'Structure', 'Evidence', 'Questions', 'Reconcile', 'Reconstruct', 'Care Trajectory', 'Reports', 'Actor Knowledge', 'Gaps'];
+const ACTIVE_NAV = 'Court Record';
+const DISABLED_NAV = ['Actor Knowledge'];
+
+const SEGMENTS = [
+  { time: '00:46:20', ordinal: 877, speaker: 'Kevin Reddington', text: "Now this is a little chart that shows the prescriptions that Lindsay was on, and you are the yellow columns. You can see that. Would you agree with me that on September 15th, you prescribed Sertraline, Zoloft, 30 count on September 15th, 25 milligrams, right?", uuid: '8cc3a133-920a-5e68-a008-dee027890b5c', selected: true },
+  { time: '00:47:18', ordinal: 887, speaker: 'Kevin Reddington', text: "And as we said, it's an SSRI pill, correct?", uuid: 'f0219ccb-57f6-55c0-a3e9-3cb8cf797bd6' },
+  { time: '00:47:22', ordinal: 888, speaker: 'Dr. Jennifer Tufts', text: 'Yes.', uuid: '252717dd-f0f9-5216-acf0-f198d159e0c2' },
+  { time: '00:47:23', ordinal: 889, speaker: 'Kevin Reddington', text: "Do you know that Zoloft is not indicated for generalized anxiety? Why'd you give her Zoloft?", uuid: '70265bee-0e86-5546-a3b8-ef36f2891e9e' }
+];
+
+const SEGMENT_KV = [
+  { k: 'Segment UUID', v: '8cc3a133-920a-5e68-a008-dee027890b5c', mono: true },
+  { k: 'Speaker', v: 'Kevin Reddington', serif: true },
+  { k: 'Timestamp', v: '00:46:20', mono: true },
+  { k: 'Ordinal', v: '877', mono: true },
+  { k: 'Locator', v: '00:46:20–00:46:46', mono: true }
+];
+
+const SOURCE_KV = [
+  { k: 'Proceeding', v: 'MA v. Lindsay Clancy Day 10', serif: true },
+  { k: 'Status', v: 'Published', serif: true },
+  { k: 'Artifact', v: 'MA v. Lindsay Clancy Day 10', serif: true },
+  { k: 'SHA-256', v: 'fd94972c56cd53dc8cb812cab41e563f96efadf50bdc1c8080c7991fc617aab3', mono: true },
+  { k: 'Source family', v: 'Trial transcript', serif: true }
+];
+
+function kvStyle(row) {
+  return row.serif
+    ? "font-family:'Playfair Display',serif;font-weight:600;font-size:12px;color:#F0E9DB;text-align:right;max-width:200px;"
+    : "font-family:'JetBrains Mono',monospace;font-size:11.5px;color:#F0E9DB;text-align:right;max-width:200px;word-break:break-all;";
+}
+
+class Component extends DCLogic {
+  renderVals() {
+    const navItems = NAV.map(label => {
+      const isActive = label === ACTIVE_NAV;
+      const isDisabled = DISABLED_NAV.includes(label);
+      let style = "font-size:13px;letter-spacing:.03em;padding:14px 0 12px;border-bottom:2px solid transparent;white-space:nowrap;";
+      if (isActive) style += "color:#0A0A0A;border-bottom-color:#C9A227;font-weight:600;";
+      else if (isDisabled) style += "color:rgba(10,10,10,.45);opacity:.5;";
+      else style += "color:rgba(10,10,10,.6);";
+      return { label, style };
+    });
+
+    const segments = SEGMENTS.map((s, i) => ({
+      ...s,
+      rowStyle: `display:flex;gap:16px;padding:14px 12px;border-radius:4px;` +
+        (s.selected ? `background:rgba(139,105,20,.1);border-left:2px solid #C9A227;` : (i > 0 ? `border-top:1px solid rgba(139,105,20,.14);` : ''))
+    }));
+
+    const mapKv = list => list.map((row, i) => ({ ...row, valueStyle: kvStyle(row), borderStyle: i === 0 ? 'none' : '1px solid rgba(139,105,20,.18)' }));
+
+    return {
+      navItems,
+      segments,
+      segmentKv: mapKv(SEGMENT_KV),
+      sourceKv: mapKv(SOURCE_KV)
+    };
+  }
+}
+</script>
+</body>
+</html>

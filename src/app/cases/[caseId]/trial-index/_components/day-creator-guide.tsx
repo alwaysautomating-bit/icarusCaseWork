@@ -1,20 +1,24 @@
+import { Fragment } from "react";
+import { WitnessLink } from "@/app/cases/[caseId]/timeline/_components/cite-links";
 import type { FoundationDay } from "@/lib/foundation-day-index";
 
-export function DayCreatorGuide({ day }: { day: FoundationDay }) {
-  return <div className="creator-guide">
-    <section className="creator-checklist" aria-label="Before you post">
-      <h2>Before you post</h2>
-      <ul>
-        <li>Attribute every statement to the witness who made it. Say “testified that,” not “the fact is.”</li>
-        <li>Openings, closings and questions from lawyers are arguments, not evidence.</li>
-        <li>Note cross-examination when it qualifies a claim, and link or cite the day so readers can check.</li>
-      </ul>
-    </section>
-    {day.note ? <p className="creator-day-note"><strong>Source note for this day:</strong> {day.note}</p> : null}
-    <p className="creator-day-context">{day.summary}</p>
+export function DayCreatorGuide({ caseId, day }: { caseId: string; day: FoundationDay }) {
+  return <div className="creator-guide ti-split ti-creators">
+    <aside className="ti-creator-guidance">
+      <section className="creator-checklist" aria-label="Before you post">
+        <h2>Before you post</h2>
+        <ul>
+          <li>Attribute every statement to the witness who made it. Say “testified that,” not “the fact is.”</li>
+          <li>Openings, closings and questions from lawyers are arguments, not evidence.</li>
+          <li>Note cross-examination when it qualifies a claim, and link or cite the day so readers can check.</li>
+        </ul>
+      </section>
+      {day.note ? <p className="creator-day-note"><strong>Source note for this day:</strong> {day.note}</p> : null}
+      <p className="creator-day-context">{day.summary}</p>
+    </aside>
     <div className="creator-topics">
       {day.entries.map((entry) => <article className="creator-topic" key={entry.witness}>
-        <header><h3>{entry.witness}</h3><span>{entry.role}</span></header>
+        <header><h3>{entry.witness.split(";").map((name, index) => <Fragment key={name}>{index > 0 ? "; " : null}<WitnessLink caseId={caseId} name={name.trim()} /></Fragment>)}</h3><span>{entry.role}</span></header>
         <p className="creator-topic-about"><strong>Topic:</strong> {entry.testimony}</p>
         <ol>
           <li><strong>Lead with the finding.</strong> {entry.contribution}</li>

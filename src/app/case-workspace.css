@@ -1193,3 +1193,14 @@
 .case-workspace-shell .collapse-trial-index-shell .collapse-doc-table td,.case-workspace-shell .collapse-trial-index-shell .collapse-doc-table th{font-size:14.5px;line-height:1.55}
 .case-workspace-shell .collapse-trial-index-shell .collapse-section-panel>header{padding:18px clamp(18px,3vw,36px) 14px}
 .case-workspace-shell .collapse-trial-index-shell .collapse-section-panel>header h1{font-size:clamp(26px,2vw,32px)}
+
+.case-workspace-masthead .account{display:flex;align-items:center;justify-content:flex-end;gap:16px}
+.case-settings-menu{position:relative}
+.case-settings-menu>summary{list-style:none;cursor:pointer}.case-settings-menu>summary::-webkit-details-marker{display:none}
+.case-settings-menu>summary::after{content:" ▾";font-size:10px}
+.case-settings-menu.is-active>summary{border-bottom-color:var(--ink)}
+.case-settings-menu>nav{position:absolute;top:calc(100% + 10px);right:0;z-index:50;display:flex;min-width:190px;flex-direction:column;padding:6px 0;border:1px solid var(--hairline-soft-2);background:var(--surface-paper,#fff);box-shadow:0 8px 24px rgba(25,28,29,.12)}
+.case-settings-menu>nav a{padding:9px 16px;color:var(--ink);font-family:var(--font-display),system-ui,sans-serif;font-size:13.5px;text-decoration:none}
+.case-settings-menu>nav a:hover,.case-settings-menu>nav a[aria-current="page"]{background:var(--surface-alt)}
+.case-settings-menu>nav a[aria-current="page"]{font-weight:600}
+.case-settings-menu>nav small{padding:8px 16px 4px;border-top:1px solid var(--hairline-soft-2);margin-top:4px;color:var(--ink-faint);font-size:11px}

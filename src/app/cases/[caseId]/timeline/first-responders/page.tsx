@@ -52,10 +52,8 @@ export default async function FirstRespondersTimelinePage({ params, searchParams
   const anchor = timeline.anchor;
 
   return <main className="responder-shell">
-    <nav className="responder-toolbar" aria-label="Timeline navigation"><Link href={timelineHref(caseId)}>← All timelines</Link><span>Working reconstruction · v{timeline.schema_version}</span></nav>
-
     <header className="responder-head">
-      <MonoLabel>FIRST RESPONDERS · ANCHORED ON THE SCREAM (T₀)</MonoLabel>
+      <div className="responder-crumbs"><Link href={timelineHref(caseId)}>← All timelines</Link><MonoLabel>FIRST RESPONDERS · ANCHORED ON THE SCREAM (T₀) · V{timeline.schema_version}</MonoLabel></div>
       <h1>{timeline.title}</h1>
       <p>{anchor.rationale} There is one clock reference, {timeline.methodology.clock_anchor.event.toLowerCase()} at {timeline.methodology.clock_anchor.time}; everything else is placed relative to T₀, and conflicting accounts are kept side by side.</p>
       <dl>

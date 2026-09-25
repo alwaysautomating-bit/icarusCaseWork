@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 import { requireCaseActor } from "@/lib/authority";
-import { canReviewStructure, getAccessibleCase } from "@/lib/case-access";
+import { getAccessibleCase } from "@/lib/case-access";
 import { structureHref, structureReviewHref, structureObjectTypes, type StructureReviewRouteState } from "@/lib/case-routes";
 import { getStructureReviewWorkspace, reviewTargetTypes } from "@/lib/structure-review";
 import { createClient } from "@/lib/supabase/server";
@@ -93,7 +93,7 @@ export async function reviewStructureObjectAction(_previous: ReviewActionState, 
   if (["amend", "reject", "defer"].includes(parsed.data.action) && !parsed.data.note) return { kind: "validation", message: "Amend, reject, and defer decisions require a rationale." };
 
   const currentCase = await getAccessibleCase(actor.id, parsed.data.caseId);
-  if (!currentCase || !canReviewStructure(currentCase.membershipRole)) return { kind: "permission", message: "Your current case membership is read-only for structural review." };
+  if (!currentCase || currentCase.membershipRole !== "owner") return { kind: "permission", message: "Structural review is limited to the case owner." };
   const routeState = parsed.data.routeState as StructureReviewRouteState;
   const workspace = await getStructureReviewWorkspace(actor.id, parsed.data.caseId, { ...routeState, objectId: parsed.data.targetId });
   if (!workspace?.selected || workspace.selected.type !== parsed.data.targetType) return { kind: "validation", message: "The selected candidate is unavailable under the active case and queue filters." };
