@@ -68,6 +68,12 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
       <MonoLabel>FOUNDATION · CASE ORIENTATION</MonoLabel>
       <h1>{caseCaption(currentCase.title)}</h1>
       <p>On January 24, 2023, in Duxbury, Massachusetts, Cora (5), Dawson (3) and Callan (8 months) Clancy were strangled with exercise bands. Their mother, Lindsay Clancy, is charged with three counts of murder. Neither opening argues that someone else was responsible; the dispute is whether she was criminally responsible given severe postpartum mental illness.</p>
+    <nav className="foundation-next" aria-label="Continue">
+      <Link href={trialIndexHref(currentCase.id)}><strong>Trial Index</strong><span>Every day, witness and topic →</span></Link>
+      <Link href={courtRecordHref(currentCase.id)}><strong>Testimony Database</strong><span>Search the record →</span></Link>
+      <Link href={witnessHref(currentCase.id)}><strong>Witness</strong><span>Read one witness at a time →</span></Link>
+      <Link href={timelineHref(currentCase.id)}><strong>Timelines</strong><span>Sequence the events →</span></Link>
+    </nav>
     </header>
 
     <section className="foundation-charges" aria-label="The charges and the question">
@@ -111,11 +117,5 @@ export default async function FoundationPage({ params }: { params: Promise<{ cas
       <div>{researchThreads.map((thread) => <article key={thread.title}><h3>{thread.title}</h3><p>{thread.body}</p></article>)}</div>
     </section>
 
-    <nav className="foundation-next" aria-label="Continue">
-      <Link href={trialIndexHref(currentCase.id)}><strong>Trial Index</strong><span>Every day, witness and topic →</span></Link>
-      <Link href={courtRecordHref(currentCase.id)}><strong>Testimony Database</strong><span>Search the record →</span></Link>
-      <Link href={witnessHref(currentCase.id)}><strong>Witness</strong><span>Read one witness at a time →</span></Link>
-      <Link href={timelineHref(currentCase.id)}><strong>Timelines</strong><span>Sequence the events →</span></Link>
-    </nav>
   </main>;
 }
