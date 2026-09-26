@@ -15,7 +15,7 @@
 .vestibule-subtitle-2{font-size:16px;letter-spacing:.1em;color:rgba(244,238,225,.4);text-transform:uppercase}
 
 .vestibule-wordmark-wrap{position:absolute;bottom:-1.4vw;left:0;right:0;text-align:left;line-height:1;overflow:hidden;z-index:1}
-.vestibule-wordmark{font-family:var(--font-workbench-serif,serif);font-optical-sizing:auto;font-weight:600;font-size:clamp(24px,21vw,24px);letter-spacing:-.01em;color:#E9E1D2;white-space:nowrap;padding-left:.03em}
+.vestibule-wordmark{font-family:var(--font-workbench-serif,serif);font-optical-sizing:auto;font-weight:600;font-size:clamp(240px,21vw,390px);letter-spacing:-.01em;color:#E9E1D2;white-space:nowrap;padding-left:.03em}
 
 .vestibule-rule{position:absolute;left:44px;right:44px;bottom:190px;height:1px;background:rgba(176,141,87,.28);z-index:2}
 
@@ -31,5 +31,5 @@
   .vestibule-seal{width:80px;height:80px;margin-bottom:34px}
   .vestibule-rule{left:20px;right:20px;bottom:120px}
   .vestibule-enter{right:20px;bottom:56px}
-  .vestibule-wordmark{font-size:clamp(24px,32vw,24px)}
+  .vestibule-wordmark{font-size:clamp(120px,32vw,220px)}
 }
