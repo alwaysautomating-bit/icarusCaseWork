@@ -61,8 +61,15 @@
 
 .ti-questions .ti-register-head,.ti-questions .ti-register-row{grid-template-columns:44px minmax(0,1.3fr)}
 .ti-questions.has-why .ti-register-head,.ti-questions.has-why .ti-register-row{grid-template-columns:44px minmax(0,1.3fr) minmax(0,1fr)}
-.ti-questions .ti-register-row p{color:var(--ink);font-size:15.5px}
-.ti-questions .ti-register-row em{font-style:italic}
+.ti-questions .ti-register-row h3{margin:0;max-width:72ch}.ti-questions .ti-register-row h3 strong{font-weight:inherit}
+.ti-questions .ti-register-row p::first-letter{text-transform:uppercase}
+.ti-questions.has-save .ti-register-head,.ti-questions.has-save .ti-register-row{grid-template-columns:44px minmax(0,1.3fr) 148px}
+.ti-questions.has-why.has-save .ti-register-head,.ti-questions.has-why.has-save .ti-register-row{grid-template-columns:44px minmax(0,1.3fr) minmax(0,1fr) 148px}
+.ti-question-save{justify-self:end}.ti-question-save form{margin:0}
+.ti-question-save button,.ti-question-save a{display:inline-flex;min-height:32px;align-items:center;padding:0 10px;border:1px solid var(--hairline-soft-2);border-radius:4px;background:transparent;color:var(--ink-muted);font:600 10.5px/1.2 var(--font-mono),monospace;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap;cursor:pointer}
+.ti-question-save button:hover{border-color:var(--ink);background:var(--ink);color:var(--surface-paper)}
+.ti-question-save button:disabled{cursor:progress;opacity:.7}
+.ti-question-save a{border-color:transparent;color:var(--signal-deep)}.ti-question-save a:hover{text-decoration:underline}
 
 /* ── Key insights: one featured insight, supporting insights alongside ───────── */
 .case-workspace-shell .collapse-trial-index-shell .collapse-section-panel .day-insights{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 clamp(24px,3vw,48px);align-items:start}
@@ -89,6 +96,6 @@
 }
 @media(max-width:640px){
   .ti-register-head{display:none}
-  .ti-decisions .ti-register-row,.ti-decisions.has-context .ti-register-row,.ti-questions .ti-register-row,.ti-questions.has-why .ti-register-row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .ti-decisions .ti-register-row,.ti-decisions.has-context .ti-register-row,.ti-questions .ti-register-row,.ti-questions.has-why .ti-register-row,.ti-questions.has-save .ti-register-row,.ti-questions.has-why.has-save .ti-register-row{grid-template-columns:minmax(0,1fr);gap:8px}.ti-question-save{justify-self:start}
   .ti-inspector .research-support{grid-template-columns:minmax(0,1fr)}
 }

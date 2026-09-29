@@ -143,8 +143,11 @@ export function searchWarrantTimelineHref(caseId: string) {
   return `/cases/${encodeURIComponent(caseId)}/timeline/search-warrant`;
 }
 
-export function documentsHref(caseId: string, state: { doc?: string; message?: string; error?: string } = {}) {
+export type DocumentsStage = "upload" | "parsing" | "review" | "confirmed";
+
+export function documentsHref(caseId: string, state: { doc?: string; stage?: DocumentsStage; message?: string; error?: string } = {}) {
   const params = new URLSearchParams();
+  if (state.stage) params.set("stage", state.stage);
   if (state.doc?.trim()) params.set("doc", state.doc.trim());
   if (state.message) params.set("message", state.message.slice(0, 240));
   if (state.error) params.set("error", state.error.slice(0, 240));

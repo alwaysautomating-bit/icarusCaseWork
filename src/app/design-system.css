@@ -273,6 +273,17 @@ body{
 .case-workspace-shell .documents-upload :is(input[type=file],select){min-height:40px;border:1px solid var(--hairline);border-radius:3px;background:#fff;font-size:12.5px}
 .case-workspace-shell .documents-upload button{min-height:40px;padding:0 20px;border:0;border-radius:3px;background:var(--ink);color:var(--paper);font:600 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase}
 .case-workspace-shell .documents-body{margin-top:26px}
+.case-workspace-shell .documents-shell>.ds-stepper{margin-top:26px;margin-bottom:6px}.documents-list a .ds-chip{justify-self:start}
+.case-workspace-shell .documents-parsing{margin-top:22px}
+.documents-stage-note{margin:6px 0 14px;max-width:72ch;color:var(--ink-muted);font-size:13px;line-height:1.55}
+.documents-parse-list{display:grid;margin:0;padding:0;border:1px solid var(--hairline-soft-2);border-radius:4px;background:var(--surface-paper);list-style:none}
+.documents-parse-list li{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1.4fr) auto;align-items:center;gap:22px;padding:14px 18px;border-top:1px solid var(--hairline-soft-2)}.documents-parse-list li:first-child{border-top:0}
+.documents-parse-name{display:grid;gap:3px;min-width:0}.documents-parse-name strong{overflow-wrap:anywhere;font:600 14px/1.35 var(--font-serif)}.documents-parse-name span{color:var(--ink-faint);font-size:12px}
+.documents-parse-list p{margin:0;color:var(--ink-muted);font-size:13px;line-height:1.5}.documents-parse-list p a,.documents-parse-actions a{color:var(--signal-deep)}.documents-parse-error{color:var(--crimson,#6B1F2A)!important}
+.documents-parse-actions{display:flex;align-items:center;justify-content:flex-end;gap:14px;white-space:nowrap;font-size:12.5px}
+.documents-confirm{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px 22px;border-top:1px solid var(--hairline-soft-2);background:var(--surface-alt)}.documents-confirm p{margin:0;max-width:62ch;color:var(--ink-muted);font-size:13px;line-height:1.5}
+.documents-confirm button{min-height:40px;padding:0 18px;border:0;border-radius:3px;background:var(--ink);color:var(--paper);font:600 11px/1 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;cursor:pointer}.documents-confirm button:disabled{opacity:.7;cursor:progress}
+@media(max-width:900px){.documents-parse-list li{grid-template-columns:1fr;gap:8px}.documents-parse-actions{justify-content:flex-start}.documents-confirm{flex-direction:column;align-items:flex-start}}
 .case-workspace-shell .documents-list a{border-color:var(--hairline);border-radius:3px;background:#fff}
 .case-workspace-shell .documents-list a[aria-current=page]{border-color:var(--ink)}
 .case-workspace-shell .documents-list strong{font:600 13.5px/1.35 var(--font-serif)}

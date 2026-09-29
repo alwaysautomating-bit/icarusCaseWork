@@ -12,6 +12,7 @@ import { requireCaseActor } from "@/lib/authority";
 import { getCollapseTrialIndexDays } from "@/lib/collapse-trial-index";
 import { foundationDays } from "@/lib/foundation-day-index";
 import { getTrialIndexWorkspace } from "@/lib/trial-index";
+import { getSavedTrialDayQuestions } from "@/lib/trial-day-questions";
 
 export const dynamic = "force-dynamic";
 
@@ -113,6 +114,12 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
   const selectedDayIndex = days.indexOf(selectedDay);
   const previousDay = selectedDayIndex > 0 ? days[selectedDayIndex - 1] : null;
   const nextDay = selectedDayIndex < days.length - 1 ? days[selectedDayIndex + 1] : null;
+  const showingQuestions = (isAdmin ? selectedSection.slug : activeUserTab.slug) === "open-questions";
+  const questionSaving = showingQuestions ? {
+    savedQuestions: await getSavedTrialDayQuestions(caseId, selectedDay.dayNumber),
+    canSave: workspace.currentCase.membershipRole !== "viewer",
+    returnTo: href(selectedDay.dayNumber, "open-questions"),
+  } : undefined;
 
   return <main className="collapse-trial-index-shell">
     <nav className="trial-day-context" aria-label="Trial day">
@@ -146,7 +153,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
 
       <article className="collapse-section-panel">
         <header><div><MonoLabel>DAY {selectedDay.dayNumber} · SECTION {orderedSections.indexOf(selectedSection) + 1} OF {orderedSections.length}</MonoLabel><h1>{selectedSection.slug === "next-actions" ? "Research" : selectedSection.name}</h1></div></header>
-        {selectedSection.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={selectedSection.content} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={selectedSection.slug} content={selectedSection.content} />}
+        {selectedSection.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={selectedSection.content} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={selectedSection.slug} content={selectedSection.content} questionSaving={questionSaving} />}
       </article>
     </section>
     </> : <>
@@ -161,7 +168,7 @@ export default async function TrialIndexPage({ params, searchParams }: { params:
         <header><div><MonoLabel>DAY {selectedDay.dayNumber}{dayIndexEntry?.date ? ` · ${dayIndexEntry.date.toUpperCase()}` : ""}</MonoLabel><h1>{activeUserTab.label}</h1></div></header>
         {activeUserTab.slug === "witnesses" ? (dayIndexEntry ? <DayWitnessTable caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No witness index has been entered for this day yet.</p>) : null}
         {activeUserTab.slug === "creators" ? (dayIndexEntry ? <DayCreatorGuide caseId={caseId} day={dayIndexEntry} /> : <p className="foundation-empty">No creator guide is available for this day yet.</p>) : null}
-        {!["witnesses", "creators"].includes(activeUserTab.slug) ? (sectionContent(activeUserTab.slug) ? (activeUserTab.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={sectionContent(activeUserTab.slug)!} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={activeUserTab.slug} content={sectionContent(activeUserTab.slug)!} />) : <p className="foundation-empty">Nothing has been recorded under {activeUserTab.label} for this day yet.</p>) : null}
+        {!["witnesses", "creators"].includes(activeUserTab.slug) ? (sectionContent(activeUserTab.slug) ? (activeUserTab.slug === "next-actions" ? <ResearchActions caseId={caseId} dayNumber={selectedDay.dayNumber} content={sectionContent(activeUserTab.slug)!} /> : <SectionCards caseId={caseId} dayNumber={selectedDay.dayNumber} slug={activeUserTab.slug} content={sectionContent(activeUserTab.slug)!} questionSaving={questionSaving} />) : <p className="foundation-empty">Nothing has been recorded under {activeUserTab.label} for this day yet.</p>) : null}
       </article>
     </section>
     </>}

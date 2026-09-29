@@ -16,10 +16,26 @@ export type CoreTimeline = {
   updated_at: string;
 };
 
-export type TimelineItemState = "known" | "working" | "needs_source";
+export type TimelineItemState = "known" | "working" | "needs_source" | "projected";
 export type TimelineFilter = "all" | "knowns" | "needs-placement";
 
+export type TimelineSourceKind = "digital" | "documentary" | "testimony" | "accounts";
+
+export type TimelineProjectionOrigin = {
+  kind: TimelineSourceKind;
+  label: string;
+  viewLabel: string;
+  viewHref: string;
+};
+
+export type TimelineAccountVersion = { source: string; text: string; cites: string };
+
 export type CoreTimelineItem = {
+  /** Set only for read-only projections of existing source material (never stored as memberships). */
+  origin?: TimelineProjectionOrigin;
+  /** Parallel accounts kept side by side; never merged into a single asserted fact. */
+  versions?: TimelineAccountVersion[];
+  assessment?: string;
   id: string;
   membershipId: string | null;
   noteId: string | null;
@@ -195,7 +211,8 @@ export function matchesTimelineFilter(item: CoreTimelineItem, filter: TimelineFi
   if (filter === "needs-placement" && item.state !== "needs_source" && !["unknown", "relative", "relative_only", "sequence_only"].includes(item.precision)) return false;
   const needle = query.trim().toLowerCase();
   if (!needle) return true;
-  return [item.headline,item.timeLabel,item.section,item.category,item.sourceLabel,item.sourceHint,item.sourceWording,item.attribution,item.limitation]
+  return [item.headline,item.timeLabel,item.section,item.category,item.sourceLabel,item.sourceHint,item.sourceWording,item.attribution,item.limitation,
+    item.origin?.label,...(item.versions ?? []).map((version) => `${version.source} ${version.text}`)]
     .filter(Boolean).join(" ").toLowerCase().includes(needle);
 }
 
@@ -311,6 +328,7 @@ export async function getCoreTimelineWorkspace(caseId: string) {
 export function timelineStateLabel(state: TimelineItemState) {
   if (state === "known") return "Known anchor";
   if (state === "working") return "Working event";
+  if (state === "projected") return "Source record";
   return "Needs source";
 }
 

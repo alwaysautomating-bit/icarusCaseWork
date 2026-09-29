@@ -82,14 +82,12 @@ export default async function ReferenceReportsPage({ params }: { params: Promise
     <main className={styles.shell}>
       <div className={styles.inner}>
         <header className={styles.pageHeader}>
-          <p className={styles.eyebrow}>CASE FILES · REPORTS</p>
-          <h1>Documents organized by kind.</h1>
-          <p className={styles.lede}>Source material and generated analysis for the case, grouped by document type. Each entry shows what it is, where it came from, and its review status.</p>
+          <h1 className="ds-h1">Case Files and Reports</h1>
         </header>
 
-        <aside className={styles.boundary} aria-label="Report governance boundary">
+        <aside className={styles.boundary} aria-label="Reference boundary">
           <strong>REFERENCE BOUNDARY</strong>
-          <span>Listing a document here does not make its contents canonical. Verify claims against source-level evidence before citation.</span>
+          <span>These materials are reference and context, available to use as you see fit. Listing a document here does not make it part of the canonical case record.</span>
         </aside>
 
         <ReportLibrary entries={entries} />

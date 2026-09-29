@@ -4,7 +4,7 @@ import { MonoLabel } from "@/app/casework-ui";
 import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { caseFilesHref, digitalTimelineHref, firstRespondersTimelineHref, patrickAccountsHref, timelineHref } from "@/lib/case-routes";
+import { caseFilesHref, digitalTimelineHref, firstRespondersTimelineHref, patrickAccountsHref, searchWarrantTimelineHref, timelineHref } from "@/lib/case-routes";
 import {
   getCoreTimelineWorkspace,
   matchesTimelineFilter,
@@ -13,7 +13,9 @@ import {
   type CoreTimeline,
   type CoreTimelineItem,
   type TimelineFilter,
+  type TimelineSourceKind,
 } from "@/lib/core-timeline";
+import { DAY_BANDS, DAY_SOURCE_KINDS, dayBandKey, getJanuary24DayProjection, sortDayItems } from "@/lib/january-24-chronology";
 import { getResponderTimeline } from "@/lib/responder-timeline";
 import { getSupportingMediaLibrary } from "@/lib/supporting-media";
 import {
@@ -32,6 +34,7 @@ type SearchState = {
   q?: string;
   filter?: string;
   overlay?: string | string[];
+  hide?: string | string[];
   add?: string;
   edit?: string;
   message?: string;
@@ -46,12 +49,13 @@ type TimelineContext = {
   sections: string[];
   showSections: boolean;
   boundary: string;
+  fullDay?: boolean;
 };
 
 const timelineContext: Record<string, TimelineContext> = {
   "january-24": {
-    heading: "January 24 — Core Event Timeline",
-    framing: "The most precise timeline in Casework. Core stays sparse; overlays add source-specific detail without becoming the canonical account.",
+    heading: "January 24 — Full Day",
+    framing: "The core chronology for the whole day. Digital, documentary and testimonial records are projected from their own views with their sources and limits intact; conflicting accounts stay side by side.",
     overlays: [
       { key: "patrick", label: "Patrick testimony", terms: ["patrick clancy", "patrick testimony"] },
       { key: "911", label: "911", terms: ["911", "dispatch"] },
@@ -61,7 +65,8 @@ const timelineContext: Record<string, TimelineContext> = {
     ],
     sections: ["Lead-up", "Emergency response", "Discovery", "EMS activity", "After discovery", "Initial investigation"],
     showSections: false,
-    boundary: "Affidavit allegations are not promoted merely because the affidavit repeats them. Event time and source-record time remain separate.",
+    fullDay: true,
+    boundary: "Affidavit allegations are not promoted merely because the affidavit repeats them. Event time and source-record time remain separate. Source records are read-only projections of the device report, examiner testimony, warrant affidavit, responder reconstruction and account comparison; they are not copied into this timeline and are not Known Anchors.",
   },
   "lindsay-health": {
     heading: "Lindsay Clancy — Health & Care Trajectory",
@@ -110,8 +115,14 @@ function overlayValues(value: SearchState["overlay"], context: TimelineContext) 
   return [...new Set(requested.filter((key) => allowed.has(key)))];
 }
 
+function hiddenKinds(value: SearchState["hide"]) {
+  const requested = Array.isArray(value) ? value : value ? [value] : [];
+  const allowed = new Set<string>(DAY_SOURCE_KINDS.map((kind) => kind.key));
+  return [...new Set(requested.filter((key) => allowed.has(key)))] as TimelineSourceKind[];
+}
+
 function itemOverlayKeys(item: CoreTimelineItem, context: TimelineContext) {
-  if (item.state !== "working") return [];
+  if (item.state !== "working" || item.origin) return [];
   const sourceText = [item.headline, item.category, item.attribution, item.sourceLabel, item.informationBasis]
     .filter(Boolean).join(" ").toLowerCase();
   return context.overlays
@@ -155,29 +166,34 @@ function TimelineEvent({ item, caseId, timelineId, slug, canContribute, editing,
   </article>;
 
   const isOverlay = overlayLabels.length > 0;
-  return <article className={`timeline-event state-${item.state}${isOverlay ? " is-overlay" : ""}`}>
+  const origin = item.origin;
+  return <article className={`timeline-event state-${item.state}${isOverlay ? " is-overlay" : ""}${origin ? ` origin-${origin.kind}` : ""}`}>
     <time className="timeline-event-time">{item.timeLabel}</time>
     <div className="timeline-event-spine" aria-hidden="true"><i /></div>
     <div className="timeline-event-body">
       <div className="timeline-event-tags">
         {overlayLabels.map((label) => <span className="timeline-overlay-tag" key={label}>{label}</span>)}
+        {origin ? <span className="timeline-overlay-tag">{origin.label}</span> : null}
         {item.category ? <span className="timeline-lane-tag">{item.category}</span> : null}
-        <span className="timeline-state-label">{stateLabel}</span>
+        <span className="timeline-state-label">{item.versions ? "Accounts compared" : stateLabel}</span>
       </div>
       <h3>{item.headline}</h3>
       {sharedTimelines.length ? <p className="timeline-shared-note">Also on: {sharedTimelines.map((timeline, index) => <span key={timeline.id}>{index ? ", " : ""}<Link href={timelineHref(caseId, { timeline: timeline.slug })}>{timeline.title}</Link></span>)}</p> : null}
       <div className="timeline-event-controls">
-        {item.sourceHref ? <Link href={item.sourceHref}>Open source</Link> : <span>Source needed</span>}
+        {item.sourceHref ?? origin?.viewHref ? <Link href={(item.sourceHref ?? origin?.viewHref)!}>Open source</Link> : <span>Source needed</span>}
         <details className="timeline-evidence-details"><summary>Evidence details</summary><div>
-          {item.sourceWording ? <blockquote>{item.sourceWording}</blockquote> : <div className="core-timeline-source-needed"><strong>Source not yet linked</strong><p>{item.sourceHint || "No source hint recorded."}</p></div>}
+          {item.versions ? <ol className="timeline-account-versions">{item.versions.map((version) => <li key={version.source}><strong>{version.source}</strong><p>{version.text}</p>{version.cites ? <small>{version.cites}</small> : null}</li>)}</ol>
+            : item.sourceWording ? <blockquote>{item.sourceWording}</blockquote>
+            : origin ? null : <div className="core-timeline-source-needed"><strong>Source not yet linked</strong><p>{item.sourceHint || "No source hint recorded."}</p></div>}
+          {item.assessment ? <p className="core-timeline-limitation"><strong>Comparison note</strong>{item.assessment}</p> : null}
           <dl>
-            <div><dt>State</dt><dd>{stateLabel}</dd></div><div><dt>Time precision</dt><dd>{precisionLabel(item.precision)}</dd></div><div><dt>Section</dt><dd>{item.section || "Unassigned"}</dd></div>
+            <div><dt>State</dt><dd>{stateLabel}</dd></div><div><dt>Time precision</dt><dd>{precisionLabel(item.precision)}</dd></div>{origin ? <div><dt>Projected from</dt><dd>{origin.label}</dd></div> : <div><dt>Section</dt><dd>{item.section || "Unassigned"}</dd></div>}
             {item.attribution ? <div><dt>Attribution</dt><dd>{item.attribution}</dd></div> : null}
             {item.informationBasis ? <div><dt>Information basis</dt><dd>{item.informationBasis.replaceAll("_", " ")}</dd></div> : null}
             {item.objectCode ? <div><dt>Object</dt><dd><code>{item.objectCode}</code></dd></div> : null}
           </dl>
           {item.limitation ? <p className="core-timeline-limitation"><strong>Limitation / note</strong>{item.limitation}</p> : null}
-          <footer>{item.sourceLabel ? <span>{item.sourceLabel}</span> : null}{item.structureHref ? <Link href={item.structureHref}>Review event →</Link> : null}</footer>
+          <footer>{item.sourceLabel ? <span>{item.sourceLabel}</span> : null}{item.structureHref ? <Link href={item.structureHref}>Review event →</Link> : null}{origin ? <Link href={origin.viewHref}>{origin.viewLabel} →</Link> : null}</footer>
         </div></details>
         {canContribute && item.noteId ? <Link href={timelineHref(caseId, { timeline: slug, editNoteId: item.noteId })}>Edit</Link> : null}
         {canContribute && (item.noteId || item.membershipId) ? <details className="timeline-delete-control"><summary>Delete</summary><div>
@@ -200,6 +216,14 @@ function TimelineStream({ items, selected, context, activeOverlays, sharedByItem
     return <TimelineEvent key={item.id} item={item} caseId={caseId} timelineId={selected.id} slug={selected.slug} canContribute={canContribute} editing={editingId === item.noteId} overlayLabels={labels} sharedTimelines={sharedByItem.get(item.id) ?? []} />;
   };
 
+  if (context.fullDay) {
+    const bands = [...DAY_BANDS, { key: "relative", label: "Relative placement only" }];
+    return <>{bands.map((band) => {
+      const bandItems = items.filter((item) => (dayBandKey(item) ?? "relative") === band.key);
+      if (!bandItems.length) return null;
+      return <section className="timeline-section" key={band.key} aria-labelledby={`band-${band.key}`}><h2 id={`band-${band.key}`}>{band.label}</h2><div className="timeline-spine-list">{bandItems.map(renderEvent)}</div></section>;
+    })}</>;
+  }
   if (!context.showSections) return <div className="timeline-spine-list">{items.map(renderEvent)}</div>;
   const sectionOrder = [...context.sections, ...items.map((item) => item.section || "Unassigned")];
   const sections = [...new Set(sectionOrder)].filter((section) => items.some((item) => (item.section || "Unassigned").toLowerCase() === section.toLowerCase()));
@@ -225,7 +249,11 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
   const context = timelineContext[selected.slug] ?? fallbackContext;
   const selectedOverlayKeys = overlayValues(query.overlay, context);
   const activeOverlays = new Set(selectedOverlayKeys);
-  const allItems = workspace.itemsByTimeline.get(selected.id) ?? [];
+  const coreItems = workspace.itemsByTimeline.get(selected.id) ?? [];
+  const hidden = new Set(hiddenKinds(query.hide));
+  const projected = context.fullDay ? await getJanuary24DayProjection(caseId) : [];
+  const projectedCounts = new Map(DAY_SOURCE_KINDS.map((kind) => [kind.key, projected.filter((item) => item.origin?.kind === kind.key).length]));
+  const allItems = context.fullDay ? sortDayItems([...coreItems, ...projected.filter((item) => !hidden.has(item.origin!.kind))]) : coreItems;
   const overlayKeysByItem = new Map(allItems.map((item) => [item.id, itemOverlayKeys(item, context)]));
   const displayItems = allItems.filter((item) => {
     const keys = overlayKeysByItem.get(item.id) ?? [];
@@ -235,7 +263,7 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
   const visibleItems = displayItems.filter((item) => matchesTimelineFilter(item, filter, query.q ?? ""));
   const placedItems = visibleItems.filter((item) => item.precision !== "unknown");
   const unplacedItems = visibleItems.filter((item) => item.precision === "unknown");
-  const selectedRefs = new Set(allItems.map((item) => item.id));
+  const selectedRefs = new Set(coreItems.map((item) => item.id));
   const availableEvents = workspace.availableEvents.filter((event) => !selectedRefs.has(event.ref));
   const showAdd = canContribute && query.add === "1";
 
@@ -248,8 +276,9 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
     }
   }
 
-  const overlayCounts = new Map(context.overlays.map((overlay) => [overlay.key, allItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).includes(overlay.key)).length]));
-  const coreCount = allItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).length === 0).length;
+  const overlayCounts = new Map(context.overlays.map((overlay) => [overlay.key, coreItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).includes(overlay.key)).length]));
+  const coreCount = coreItems.filter((item) => (overlayKeysByItem.get(item.id) ?? []).length === 0).length;
+  const hiddenKeys = [...hidden];
   const activeOverlayLabels = context.overlays.filter((overlay) => activeOverlays.has(overlay.key)).map((overlay) => overlay.label);
 
   return <main className="core-timeline-shell"><div className="core-timeline-panels">
@@ -274,13 +303,22 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
         {context.overlays.map((overlay) => {
           const active = activeOverlays.has(overlay.key);
           const remaining = selectedOverlayKeys.filter((key) => key !== overlay.key);
-          return <form method="get" key={overlay.key}><input type="hidden" name="timeline" value={selected.slug} />{query.q ? <input type="hidden" name="q" value={query.q} /> : null}{filter !== "all" ? <input type="hidden" name="filter" value={filter} /> : null}{remaining.map((key) => <input type="hidden" name="overlay" value={key} key={key} />)}<button name={active ? undefined : "overlay"} value={active ? undefined : overlay.key} aria-pressed={active} title={`${active ? "Hide" : "Show"} ${overlay.label} overlay`}><span aria-hidden="true">{active ? "×" : "+"}</span> {overlay.label}<small>{overlayCounts.get(overlay.key) ?? 0}</small></button></form>;
+          return <form method="get" key={overlay.key}><input type="hidden" name="timeline" value={selected.slug} />{query.q ? <input type="hidden" name="q" value={query.q} /> : null}{filter !== "all" ? <input type="hidden" name="filter" value={filter} /> : null}{remaining.map((key) => <input type="hidden" name="overlay" value={key} key={key} />)}{hiddenKeys.map((key) => <input type="hidden" name="hide" value={key} key={`hide-${key}`} />)}<button name={active ? undefined : "overlay"} value={active ? undefined : overlay.key} aria-pressed={active} title={`${active ? "Hide" : "Show"} ${overlay.label} overlay`}><span aria-hidden="true">{active ? "×" : "+"}</span> {overlay.label}<small>{overlayCounts.get(overlay.key) ?? 0}</small></button></form>;
         })}
       </div>
 
-      <div className="core-timeline-status-line" aria-live="polite"><span>{visibleItems.length} visible item{visibleItems.length === 1 ? "" : "s"}</span><span>{activeOverlayLabels.length ? `Showing ${activeOverlayLabels.join(" + ")}` : "Core only"}</span></div>
+      {context.fullDay ? <div className="core-timeline-overlay-row core-timeline-source-row" aria-label="Sources in the full-day view">
+        <span className="core-timeline-source-label">Sources</span>
+        {DAY_SOURCE_KINDS.map((kind) => {
+          const shown = !hidden.has(kind.key);
+          const nextHidden = shown ? [...hiddenKeys, kind.key] : hiddenKeys.filter((key) => key !== kind.key);
+          return <form method="get" key={kind.key}><input type="hidden" name="timeline" value={selected.slug} />{query.q ? <input type="hidden" name="q" value={query.q} /> : null}{filter !== "all" ? <input type="hidden" name="filter" value={filter} /> : null}{selectedOverlayKeys.map((key) => <input type="hidden" name="overlay" value={key} key={key} />)}{nextHidden.map((key) => <input type="hidden" name="hide" value={key} key={`hide-${key}`} />)}<button aria-pressed={shown} title={`${shown ? "Hide" : "Show"} ${kind.label} records`}><span aria-hidden="true">{shown ? "×" : "+"}</span> {kind.label}<small>{projectedCounts.get(kind.key) ?? 0}</small></button></form>;
+        })}
+      </div> : null}
 
-      <details className="core-timeline-utilities" open={Boolean(query.q || filter !== "all") || undefined}><summary>Search &amp; filters</summary><form method="get"><input type="hidden" name="timeline" value={selected.slug} />{selectedOverlayKeys.map((key) => <input type="hidden" name="overlay" value={key} key={key} />)}<label><span>Search this timeline</span><input name="q" defaultValue={query.q ?? ""} placeholder="medication, CVS, dispatch…" /></label><fieldset><legend>Filter</legend>{(["all", "knowns", "needs-placement"] as const).map((value) => <label key={value}><input type="radio" name="filter" value={value} defaultChecked={filter === value} />{value === "needs-placement" ? "Needs placement" : value[0]!.toUpperCase() + value.slice(1)}</label>)}</fieldset><button>Apply</button></form></details>
+      <div className="core-timeline-status-line" aria-live="polite"><span>{visibleItems.length} visible item{visibleItems.length === 1 ? "" : "s"}</span><span>{context.fullDay ? `Core${activeOverlayLabels.length ? ` + ${activeOverlayLabels.join(" + ")}` : ""} + ${DAY_SOURCE_KINDS.filter((kind) => !hidden.has(kind.key)).length} source projections` : activeOverlayLabels.length ? `Showing ${activeOverlayLabels.join(" + ")}` : "Core only"}</span></div>
+
+      <details className="core-timeline-utilities" open={Boolean(query.q || filter !== "all") || undefined}><summary>Search &amp; filters</summary><form method="get"><input type="hidden" name="timeline" value={selected.slug} />{selectedOverlayKeys.map((key) => <input type="hidden" name="overlay" value={key} key={key} />)}{hiddenKeys.map((key) => <input type="hidden" name="hide" value={key} key={`hide-${key}`} />)}<label><span>Search this timeline</span><input name="q" defaultValue={query.q ?? ""} placeholder="medication, CVS, dispatch…" /></label><fieldset><legend>Filter</legend>{(["all", "knowns", "needs-placement"] as const).map((value) => <label key={value}><input type="radio" name="filter" value={value} defaultChecked={filter === value} />{value === "needs-placement" ? "Needs placement" : value[0]!.toUpperCase() + value.slice(1)}</label>)}</fieldset><button>Apply</button></form></details>
 
       {showAdd ? <section className="core-timeline-add-panel"><header><div><MonoLabel>ADD TO {selected.title.toUpperCase()}</MonoLabel><h2>Link what exists—or mark what you need.</h2></div><Link href={timelineHref(caseId, { timeline: selected.slug, overlays: selectedOverlayKeys })}>Close</Link></header><div>
         <section><h3>Existing source-linked event</h3><p>A reviewed event becomes a Known Anchor. An event candidate remains a Working Event.</p>{availableEvents.length ? <form action={addTimelineEventAction.bind(null, caseId, selected.id, selected.slug)} className="core-timeline-form"><label className="wide">Event<select name="eventRef" required defaultValue=""><option value="" disabled>Choose an existing event</option>{availableEvents.map((event) => <option key={event.ref} value={event.ref}>{event.state === "known" ? "KNOWN" : "WORKING"} · {event.timeLabel} · {event.title}</option>)}</select></label><label>Section<input name="section" list="timeline-sections" placeholder="Lead-up" /></label><label>Category<input name="category" placeholder="Digital, Medication…" /></label><datalist id="timeline-sections">{context.sections.map((section) => <option value={section} key={section} />)}</datalist><SubmitButton pendingLabel="Adding…">Add source-linked event</SubmitButton></form> : <p className="core-timeline-empty-copy">Every available source-linked event is already in this projection.</p>}</section>
@@ -288,12 +326,22 @@ export default async function CoreTimelinePage({ params, searchParams }: { param
       </div></section> : null}
 
       {placedItems.length ? <TimelineStream items={placedItems} selected={selected} context={context} activeOverlays={activeOverlays} sharedByItem={sharedByItem} caseId={caseId} canContribute={canContribute} editingId={query.edit} /> : <div className="core-timeline-empty"><strong>No placed events match this view.</strong><p>Change the filter, switch on an overlay, or add a source-linked event.</p></div>}
-      {unplacedItems.length ? <section className="timeline-section timeline-unplaced-section" aria-labelledby="unplaced-heading"><h2 id="unplaced-heading">Unplaced / unknown time</h2><TimelineStream items={unplacedItems} selected={selected} context={{ ...context, showSections: false }} activeOverlays={activeOverlays} sharedByItem={sharedByItem} caseId={caseId} canContribute={canContribute} editingId={query.edit} /></section> : null}
+      {unplacedItems.length ? <section className="timeline-section timeline-unplaced-section" aria-labelledby="unplaced-heading"><h2 id="unplaced-heading">Unplaced / unknown time</h2><TimelineStream items={unplacedItems} selected={selected} context={{ ...context, showSections: false, fullDay: false }} activeOverlays={activeOverlays} sharedByItem={sharedByItem} caseId={caseId} canContribute={canContribute} editingId={query.edit} /></section> : null}
 
       <details className="core-timeline-boundary"><summary>Projection boundary</summary><p>{context.boundary}</p><p>Overlay entries remain attributed working material. Activating an overlay changes this view only; it does not promote an assertion or duplicate an event.</p></details>
     </section>
 
     <aside className="core-timeline-side">
+      {context.fullDay ? <div className="side-card">
+        <div className="head">Day sources<span className="count">{projected.length}</span></div>
+        <div className="body">
+          <div className="file-row"><Link href={digitalTimelineHref(caseId)}>Device timeline report</Link><span className="meta">digital</span></div>
+          <div className="file-row"><Link href={searchWarrantTimelineHref(caseId)}>Search-warrant affidavit</Link><span className="meta">document</span></div>
+          <div className="file-row"><Link href={firstRespondersTimelineHref(caseId)}>First-responder reconstruction</Link><span className="meta">testimony</span></div>
+          <div className="file-row"><Link href={patrickAccountsHref(caseId)}>Patrick Clancy accounts</Link><span className="meta">accounts</span></div>
+          <div className="file-row"><span>Each record stays owned by its source view. Nothing here is copied or promoted.</span></div>
+        </div>
+      </div> : null}
       <div className="side-card">
         <div className="head">First responder accounts<span className="count">{responderTimeline.anchor.witness_alignment.length}</span></div>
         <div className="body">

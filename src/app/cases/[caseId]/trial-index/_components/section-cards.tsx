@@ -1,6 +1,9 @@
 import { CollapseDocument, inlineMarkup } from "@/app/cases/[caseId]/trial-index/_components/collapse-document";
 import { EvidenceWorkspace } from "@/app/cases/[caseId]/trial-index/_components/evidence-workspace";
-import { courtRecordHref, witnessHref } from "@/lib/case-routes";
+import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
+import { saveTrialDayQuestionAction } from "@/app/cases/[caseId]/questions/actions";
+import { courtRecordHref, questionsHref, witnessHref } from "@/lib/case-routes";
+import { trialDayQuestionKey } from "@/lib/trial-day-questions";
 
 type Field = { label: string; text: string };
 type Card = { title: string; fields: Field[]; bullets: string[] };
@@ -107,18 +110,21 @@ function ProjectPanels({ cards }: { cards: Card[] }) {
 
 function InsightList({ content, dayNumber }: { content: string; dayNumber: number }) {
   const items = bulletItems(content);
+  // A plain bullet (no bold lead, no sub-points) is a statement, not a headline: it reads as body text.
+  const isPlain = (item: (typeof items)[number]) => !/^\*\*(.+?)\*\*/.test(item.title) && item.sub.length === 0;
   return <div className="day-insights">
     {items.map((item, index) => {
       const split = /^\*\*(.+?)\*\*\s*(.*)$/.exec(item.title);
+      const plain = isPlain(item);
       const headline = split ? split[1] : stripBold(item.title);
-      const body = split?.[2] ?? "";
+      const body = plain ? item.title : split?.[2] ?? "";
       const summary = body || item.sub.slice(0, 2).join(" ");
-      const more = body ? item.sub : item.sub.slice(2);
-      return <article key={index} className={index === 0 ? "featured" : undefined}>
+      const more = body && !plain ? item.sub : item.sub.slice(2);
+      return <article key={index} className={index === 0 && !plain ? "featured" : undefined}>
         <span className="day-insight-ref">§{dayNumber}.{index + 1}</span>
         <div>
-          <h3>{inlineMarkup(headline)}</h3>
-          {summary ? <p>{inlineMarkup(summary)}</p> : null}
+          {plain ? null : <h3>{inlineMarkup(headline)}</h3>}
+          {summary ? <p className={plain ? "day-insight-statement" : undefined}>{inlineMarkup(summary)}</p> : null}
           {more.length ? <details><summary>{more.length} more {more.length === 1 ? "point" : "points"}</summary><ul>{more.map((text, i) => <li key={i}>{inlineMarkup(text)}</li>)}</ul></details> : null}
         </div>
       </article>;
@@ -126,24 +132,35 @@ function InsightList({ content, dayNumber }: { content: string; dayNumber: numbe
   </div>;
 }
 
+export type QuestionSaving = { savedQuestions: Map<string, string>; canSave: boolean; returnTo: string };
+
 // Questions: the why-it-matters column only appears when the day supplies one.
-function QuestionsCard({ content }: { content: string }) {
+function QuestionsCard({ content, caseId, dayNumber, saving }: { content: string; caseId: string; dayNumber: number; saving?: QuestionSaving }) {
   const items = bulletItems(content).map((item) => ({ text: item.title, why: item.sub.map((text) => text.replace(/^why it matters:\s*/i, "")).join(" ") }));
   const hasWhy = items.some((item) => item.why);
-  return <section className={`ti-register ti-questions${hasWhy ? " has-why" : ""}`} role="table" aria-label="Open questions">
-    <div className="ti-register-head" role="row"><span role="columnheader">#</span><span role="columnheader">Question</span>{hasWhy ? <span role="columnheader">Why it matters</span> : null}</div>
-    {items.map((item, index) => <article className="ti-register-row" role="row" key={index}>
-      <b role="cell" className="ti-ref">{String(index + 1).padStart(2, "0")}</b>
-      <p role="cell">{inlineMarkup(item.text)}</p>
-      {hasWhy ? <em role="cell">{item.why ? inlineMarkup(item.why) : null}</em> : null}
-    </article>)}
+  const saveAction = saveTrialDayQuestionAction.bind(null, caseId, dayNumber);
+  return <section className={`ti-register ti-questions${hasWhy ? " has-why" : ""}${saving ? " has-save" : ""}`} role="table" aria-label="Open questions">
+    <div className="ti-register-head" role="row"><span role="columnheader">#</span><span role="columnheader">Question</span>{hasWhy ? <span role="columnheader">Why it matters</span> : null}{saving ? <span role="columnheader" aria-label="Case Questions" /> : null}</div>
+    {items.map((item, index) => {
+      const savedId = saving?.savedQuestions.get(trialDayQuestionKey(dayNumber, item.text));
+      return <article className="ti-register-row" role="row" key={index}>
+        <b role="cell" className="ti-ref">{String(index + 1).padStart(2, "0")}</b>
+        <h3 role="cell">{inlineMarkup(item.text)}</h3>
+        {hasWhy ? <p role="cell">{item.why ? inlineMarkup(item.why) : null}</p> : null}
+        {saving ? <div role="cell" className="ti-question-save">
+          {savedId ? <a href={questionsHref(caseId, savedId)}>✓ In Case Questions</a>
+            : saving.canSave ? <form action={saveAction}><input type="hidden" name="question" value={item.text} /><input type="hidden" name="why" value={item.why} /><input type="hidden" name="returnTo" value={saving.returnTo} /><SubmitButton pendingLabel="Saving…">+ Case Questions</SubmitButton></form>
+            : null}
+        </div> : null}
+      </article>;
+    })}
   </section>;
 }
 
-export function SectionCards({ slug, content, dayNumber, caseId }: { slug: string; content: string; dayNumber: number; caseId: string }) {
+export function SectionCards({ slug, content, dayNumber, caseId, questionSaving }: { slug: string; content: string; dayNumber: number; caseId: string; questionSaving?: QuestionSaving }) {
   if (slug === "key-insights" && bulletItems(content).length) return <InsightList content={content} dayNumber={dayNumber} />;
   if (slug === "open-questions") {
-    if (bulletItems(content).length) return <QuestionsCard content={content} />;
+    if (bulletItems(content).length) return <QuestionsCard content={content} caseId={caseId} dayNumber={dayNumber} saving={questionSaving} />;
   } else if (slug === "evidence") {
     const claims = evidenceCards(content);
     if (claims.length) return <EvidenceWorkspace claims={claims.map((card) => ({ title: card.title, fields: card.fields, searchHref: courtRecordHref(caseId, { query: stripBold(card.title).replace(/[*`]/g, "").slice(0, 160) }) }))} dayNumber={dayNumber} dayHref={witnessHref(caseId, { day: dayNumber })} />;

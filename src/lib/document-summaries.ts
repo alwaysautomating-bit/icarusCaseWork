@@ -73,6 +73,9 @@ const metaSchema = z.object({
   status: z.enum(["summarized", "failed"]),
   error: z.string().optional(),
   pageCount: z.number().optional(),
+  /** Set when a researcher has checked the summary against the original. Not a case-record write. */
+  confirmedAt: z.string().optional(),
+  confirmedByUserId: z.string().optional(),
 });
 export type DocumentMeta = z.infer<typeof metaSchema>;
 
@@ -190,4 +193,15 @@ export async function readDocumentFile(caseId: string, docId: string, which: "or
   const fileName = which === "parsed" ? "parsed.md" : `original${found.meta.extension}`;
   const bytes = await fs.readFile(path.join(directory, fileName)).catch(() => null);
   return bytes ? { bytes, fileName: which === "parsed" ? `${path.basename(found.meta.name, found.meta.extension)}.parsed.md` : found.meta.name, extension: which === "parsed" ? ".md" : found.meta.extension } : null;
+}
+
+/** Record (or clear) that a researcher checked this summary against the original file. */
+export async function setDocumentConfirmation(caseId: string, docId: string, confirmedByUserId: string | null) {
+  const found = await getDocument(caseId, docId);
+  if (!found) throw new Error("That document is no longer available.");
+  if (found.meta.status !== "summarized") throw new Error("Only a summarized document can be confirmed.");
+  const meta: DocumentMeta = { ...found.meta, confirmedAt: undefined, confirmedByUserId: undefined };
+  if (confirmedByUserId) Object.assign(meta, { confirmedAt: new Date().toISOString(), confirmedByUserId });
+  await writeJson(path.join(documentDirectory(caseId, docId), "meta.json"), meta);
+  return meta;
 }

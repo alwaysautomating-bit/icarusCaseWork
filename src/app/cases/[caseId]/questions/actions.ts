@@ -5,7 +5,8 @@ import { redirect } from "next/navigation";
 import { z } from "zod";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { questionsHref } from "@/lib/case-routes";
+import { questionsHref, trialIndexHref } from "@/lib/case-routes";
+import { plainQuestionText, TRIAL_DAY_QUESTION_TYPE, trialDayQuestionKey } from "@/lib/trial-day-questions";
 import { createClient } from "@/lib/supabase/server";
 
 const caseIdSchema = z.uuid();
@@ -121,4 +122,39 @@ export async function resolveQuestionAction(rawCaseId: string, rawQuestionId: st
   if (!data) redirect(resultHref(parsed.data.caseId, parsed.data.questionId, "error", "That question is no longer available."));
   revalidatePath(questionsHref(parsed.data.caseId));
   redirect(resultHref(parsed.data.caseId, parsed.data.questionId, "message", "Question marked resolved. Its research history remains preserved."));
+}
+
+/** Save one question from a trial day's Open Questions tab into the case-level Questions area. */
+export async function saveTrialDayQuestionAction(rawCaseId: string, rawDayNumber: number, formData: FormData) {
+  const parsed = z.object({
+    caseId: caseIdSchema,
+    dayNumber: z.number().int().positive().max(10_000),
+    question: z.string().trim().min(5).max(4000),
+    why: z.string().trim().max(2000),
+    returnTo: z.string().trim().max(1000),
+  }).safeParse({ caseId: rawCaseId, dayNumber: rawDayNumber, question: value(formData, "question"), why: value(formData, "why"), returnTo: value(formData, "returnTo") });
+  if (!parsed.success) redirect("/casework");
+  const { caseId, dayNumber } = parsed.data;
+  const dayHref = trialIndexHref(caseId, { dayNumber, section: "open-questions" });
+  const returnTo = parsed.data.returnTo.startsWith(`/cases/${encodeURIComponent(caseId)}/trial-index`) ? parsed.data.returnTo : dayHref;
+  const actor = await requireContributor(caseId);
+  const supabase = await createClient();
+  const key = trialDayQuestionKey(dayNumber, parsed.data.question);
+  const existing = await supabase.from("research_questions").select("id").eq("case_id", caseId).eq("prompted_by_type", TRIAL_DAY_QUESTION_TYPE).eq("prompted_by_id", key).maybeSingle();
+  if (existing.error) throw new Error(existing.error.message);
+  if (!existing.data) {
+    const text = plainQuestionText(parsed.data.question);
+    const question = text.length > 500 ? `${text.slice(0, 499)}…` : text;
+    const why = plainQuestionText(parsed.data.why);
+    const context = [text.length > 500 ? `Full question: ${text}` : "", why ? `Why it matters (Trial Day ${dayNumber}): ${why}` : ""].filter(Boolean).join("\n\n").slice(0, 2000);
+    const { error } = await supabase.from("research_questions").insert({
+      case_id: caseId, question, context,
+      prompted_by_type: TRIAL_DAY_QUESTION_TYPE, prompted_by_id: key,
+      prompted_by_label: `Trial Index · Day ${dayNumber} · Open Questions`, prompted_by_href: dayHref,
+      created_by_user_id: actor.id,
+    });
+    if (error) throw new Error(error.message);
+    revalidatePath(questionsHref(caseId));
+  }
+  redirect(returnTo);
 }

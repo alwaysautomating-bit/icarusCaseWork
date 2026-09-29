@@ -4,7 +4,9 @@ import { SubmitButton } from "@/app/cases/[caseId]/_components/submit-button";
 import { MonoLabel, PageHeader } from "@/app/casework-ui";
 import { requireCaseActor } from "@/lib/authority";
 import { getAccessibleCase } from "@/lib/case-access";
-import { courtPacketIntakeHref, evidenceHref, questionsHref } from "@/lib/case-routes";
+import { courtPacketIntakeHref, courtRecordHref, evidenceHref, questionsHref } from "@/lib/case-routes";
+import { documentTypeLabel } from "@/lib/court-packet-labels";
+import { getCourtPacketWorkspace } from "@/lib/court-packet-workspace";
 import { getEvidenceWorkspace, type EvidenceSource } from "@/lib/research-workspace";
 import { addEvidenceFactAction, addEvidenceSourceAction, createEvidenceAction, linkEvidenceQuestionAction } from "./actions";
 
@@ -16,6 +18,12 @@ function evidenceCode(id: string) {
   return `E-${id.slice(0, 6).toUpperCase()}`;
 }
 
+/** Plain name for a court packet artifact, so the packet itself is findable without knowing the intake tool. */
+function packetName(filename: string | null) {
+  if (filename && /search[\s_-]*warrant/i.test(filename)) return "Search Warrant Packet";
+  return "Court Packet";
+}
+
 function sourceLink(source: EvidenceSource | undefined) {
   if (!source) return null;
   return source.source_href ? <Link href={source.source_href}>{source.source_label} →</Link> : <span>{source.source_label}</span>;
@@ -23,19 +31,30 @@ function sourceLink(source: EvidenceSource | undefined) {
 
 export default async function EvidencePage({ params, searchParams }: { params: Promise<{ caseId: string }>; searchParams: Promise<SearchState> }) {
   const [actor, { caseId }, query] = await Promise.all([requireCaseActor(), params, searchParams]);
-  const [currentCase, workspace] = await Promise.all([getAccessibleCase(actor.id, caseId), getEvidenceWorkspace(caseId)]);
+  const [currentCase, workspace, packet] = await Promise.all([getAccessibleCase(actor.id, caseId), getEvidenceWorkspace(caseId), getCourtPacketWorkspace(caseId)]);
   if (!currentCase) notFound();
 
   const canContribute = currentCase.membershipRole !== "viewer";
   const search = query.q?.trim().toLowerCase() ?? "";
   const filtered = workspace.evidence.filter((item) => !search || `${item.name} ${item.description} ${item.research_note}`.toLowerCase().includes(search));
-  const selected = workspace.evidence.find((item) => item.id === query.item) ?? filtered[0] ?? null;
+  const packetItem = packet.run ? {
+    key: `packet:${packet.run.sourceArtifactId}`,
+    name: packetName(packet.artifactTitle),
+    filename: packet.artifactTitle ?? "Court packet",
+    pageCount: packet.run.pageCount,
+  } : null;
+  const packetMatches = packetItem && (!search || `${packetItem.name} ${packetItem.filename} court packet`.toLowerCase().includes(search));
+  const packetSelected = Boolean(packetItem && (query.item === packetItem.key || (!query.item && workspace.evidence.length === 0)));
+  const selected = packetSelected ? null : workspace.evidence.find((item) => item.id === query.item) ?? filtered[0] ?? null;
+  const packetDivisions = packet.documents.length ? packet.documents : packet.candidates.filter((candidate) => candidate.reviewStatus !== "rejected");
+  const packetOpenHref = packetDivisions[0]?.sourceSegmentIds[0] ? courtRecordHref(caseId, { segmentId: packetDivisions[0].sourceSegmentIds[0] }) : null;
   const selectedSources = selected ? workspace.sources.filter((source) => source.evidence_id === selected.id) : [];
   const selectedFacts = selected ? workspace.facts.filter((fact) => fact.evidence_id === selected.id) : [];
   const linkedQuestionIds = new Set(selected ? workspace.links.filter((link) => link.evidence_id === selected.id).map((link) => link.question_id) : []);
   const linkedQuestions = workspace.questions.filter((question) => linkedQuestionIds.has(question.id));
   const availableQuestions = workspace.questions.filter((question) => !linkedQuestionIds.has(question.id));
-  const showAdd = canContribute && (query.add === "1" || workspace.evidence.length === 0);
+  // Browsing leads; adding an item is a deliberate, secondary step.
+  const showAdd = canContribute && query.add === "1";
   const askHref = selected ? (() => {
     const ask = new URLSearchParams({ ask: "1", promptType: "evidence", promptId: selected.id, promptLabel: selected.name, promptHref: evidenceHref(caseId, selected.id) });
     return `${questionsHref(caseId)}?${ask.toString()}`;
@@ -46,15 +65,14 @@ export default async function EvidencePage({ params, searchParams }: { params: P
       eyebrow={`EVIDENCE · ${workspace.evidence.length} ${workspace.evidence.length === 1 ? "ITEM" : "ITEMS"}`}
       title="Evidence"
       lede="Established items, each with its sources and the facts it supports. Nothing here is asserted without a source."
-      actions={<><Link href={courtPacketIntakeHref(caseId)} className="ds-btn">Court packet intake →</Link>{canContribute ? <Link href={`${evidenceHref(caseId)}?add=1`} className="ds-btn primary">+ Add evidence</Link> : null}</>}
+      actions={<><Link href={courtPacketIntakeHref(caseId)} className="ds-btn">Court packet intake →</Link>{canContribute ? <Link href={`${evidenceHref(caseId)}?add=1#add-evidence`} className="ds-btn primary">+ Add evidence</Link> : null}</>}
     />
     <details className="research-boundary-note"><summary>Evidence boundary</summary><p>Add an item only when reviewed material establishes that it exists. Facts require an underlying source; significance remains a research question.</p></details>
     {(query.message || query.error) && <p className={`supporting-files-notice ${query.error ? "error" : "success"}`} role={query.error ? "alert" : "status"}>{query.error ?? query.message}</p>}
 
-    {showAdd && <form action={createEvidenceAction.bind(null, caseId)} className="research-create-form"><header><div><MonoLabel>ADD EVIDENCE</MonoLabel><h2>Name an established item</h2></div><span>Source it next</span></header><label>Evidence name *<input name="name" required minLength={2} maxLength={300} placeholder="External hand swabs" /></label><label className="wide">What is it? <small>Describe, do not interpret.</small><textarea name="description" rows={3} maxLength={3000} placeholder="A concise identifying description." /></label><label className="wide">Research note <small>Optional</small><textarea name="researchNote" rows={3} maxLength={3000} placeholder="Provenance concerns, limitations, or handling notes." /></label><label className="research-confirm"><input type="checkbox" name="established" value="yes" required /><span>I reviewed material that establishes this item exists.</span></label><SubmitButton pendingLabel="Adding…">Add evidence item</SubmitButton></form>}
 
     <div className="research-split-workspace">
-      <aside className="research-index-list" aria-label="Evidence list"><form method="get" className="research-search-bar research-index-search"><label><span>Search evidence</span><input name="q" defaultValue={query.q ?? ""} placeholder="hand swabs, phone, photograph…" /></label><button>Search</button></form><header><span>EVIDENCE INDEX</span><strong>{filtered.length}</strong></header>{filtered.length === 0 ? <div className="research-index-empty">No matching evidence items.</div> : filtered.map((item) => { const active = selected?.id === item.id; const sourceCount = workspace.sources.filter((source) => source.evidence_id === item.id).length; const questionCount = workspace.links.filter((link) => link.evidence_id === item.id).length; return <Link href={`${evidenceHref(caseId, item.id)}${query.q ? `&q=${encodeURIComponent(query.q)}` : ""}`} aria-current={active ? "page" : undefined} key={item.id}><span>{evidenceCode(item.id)}</span><strong>{item.name}</strong><small>{sourceCount} sources · {questionCount} questions</small></Link>; })}</aside>
+      <aside className="research-index-list" aria-label="Evidence list"><form method="get" className="research-search-bar research-index-search"><label><span>Search evidence</span><input name="q" defaultValue={query.q ?? ""} placeholder="hand swabs, phone, photograph…" /></label><button>Search</button></form>{packetItem && packetMatches ? <><header><span>CASE PACKETS</span><strong>1</strong></header><Link href={`${evidenceHref(caseId, packetItem.key)}${query.q ? `&q=${encodeURIComponent(query.q)}` : ""}`} aria-current={packetSelected ? "page" : undefined}><span>{packetItem.pageCount} pages</span><strong>{packetItem.name}</strong><small>{packetItem.filename}</small></Link></> : null}<header><span>EVIDENCE INDEX</span><strong>{filtered.length}</strong></header>{filtered.length === 0 ? <div className="research-index-empty">No matching evidence items.</div> : filtered.map((item) => { const active = !packetSelected && selected?.id === item.id; const sourceCount = workspace.sources.filter((source) => source.evidence_id === item.id).length; const questionCount = workspace.links.filter((link) => link.evidence_id === item.id).length; return <Link href={`${evidenceHref(caseId, item.id)}${query.q ? `&q=${encodeURIComponent(query.q)}` : ""}`} aria-current={active ? "page" : undefined} key={item.id}><span>{evidenceCode(item.id)}</span><strong>{item.name}</strong><small>{sourceCount} sources · {questionCount} questions</small></Link>; })}</aside>
 
       <section className="research-record-panel">{selected ? <>
         <header className="research-record-title"><div><MonoLabel>{evidenceCode(selected.id)}</MonoLabel><h2>{selected.name}</h2><span className="state-chip pass">established</span></div><time>{new Date(selected.created_at).toLocaleDateString()}</time></header>
@@ -67,7 +85,14 @@ export default async function EvidencePage({ params, searchParams }: { params: P
         <section className="research-linked-section"><header><div><MonoLabel>SOURCES</MonoLabel><h3>Material that establishes or describes this item</h3></div><strong>{selectedSources.length}</strong></header>{selectedSources.length === 0 ? <p>No sources attached. Add the establishing source before recording a fact.</p> : <div className="research-source-list">{selectedSources.map((source) => <article key={source.id}><span>{source.relationship} · {source.source_type.replaceAll("_", " ")}</span><strong>{source.source_href ? <Link href={source.source_href}>{source.source_label} →</Link> : source.source_label}</strong>{source.researcher_note && <p>{source.researcher_note}</p>}</article>)}</div>}</section>
 
         {canContribute && <div className="research-editor-grid"><details open={selectedSources.length === 0}><summary>+ Add source</summary><form action={addEvidenceSourceAction.bind(null, caseId, selected.id)}><label>Source type<select name="sourceType" defaultValue="document"><option value="testimony">Testimony</option><option value="document">Document</option><option value="image">Image</option><option value="research_material">Research material</option></select></label><label>Relationship<select name="relationship" defaultValue="documents"><option value="documents">Documents</option><option value="mentions">Mentions</option><option value="depicts">Depicts</option></select></label><label>Source label<input name="sourceLabel" required maxLength={500} placeholder="Search warrant return · p. 14" /></label><label>Link <small>Optional</small><input name="sourceHref" maxLength={1000} placeholder="/cases/… or https://…" /></label><label>Research note <small>Optional</small><textarea name="note" rows={3} maxLength={2000} /></label><SubmitButton pendingLabel="Adding…">Add source</SubmitButton></form></details><details><summary>+ Add sourced fact</summary>{selectedSources.length === 0 ? <p>Add an underlying source first.</p> : <form action={addEvidenceFactAction.bind(null, caseId, selected.id)}><label>Factual statement<textarea name="statement" rows={3} required maxLength={2000} placeholder="State only what the selected source establishes." /></label><label>Underlying source<select name="sourceId" required defaultValue=""><option value="" disabled>Choose a source</option>{selectedSources.map((source) => <option value={source.id} key={source.id}>{source.source_label}</option>)}</select></label><SubmitButton pendingLabel="Adding…">Add fact</SubmitButton></form>}</details></div>}
+      </> : packetSelected && packetItem ? <>
+        <header className="research-record-title"><div><MonoLabel>COURT PACKET · {packetItem.pageCount} PAGES</MonoLabel><h2>{packetItem.name}</h2><span className="state-chip pass">source artifact</span></div>{packet.run ? <time>{new Date(packet.run.createdAt).toLocaleDateString()}</time> : null}</header>
+        <section className="research-context"><MonoLabel>WHAT IS IT?</MonoLabel><p>The court packet as filed, preserved unchanged: <strong>{packetItem.filename}</strong>. Its pages are readable in the Court Record{packetDivisions.length ? `; its ${packet.documents.length ? "confirmed documents" : "proposed page divisions"} are listed below` : ""}.</p>{packetOpenHref ? <Link className="research-ask-link" href={packetOpenHref}>Open the packet in the Court Record →</Link> : null}</section>
+        <section className="research-linked-section"><header><div><MonoLabel>CONTENTS</MonoLabel><h3>{packet.documents.length ? "Confirmed documents in this packet" : "Proposed page divisions (not yet confirmed)"}</h3></div><strong>{packetDivisions.length}</strong></header>{packetDivisions.length === 0 ? <p>No page divisions recorded yet.</p> : <div className="research-source-list">{packetDivisions.map((division) => <article key={division.id}><span>pages {division.startPage}–{division.endPage}</span><strong>{division.sourceSegmentIds[0] ? <Link href={courtRecordHref(caseId, { segmentId: division.sourceSegmentIds[0] })}>{documentTypeLabel(division.documentType)} →</Link> : documentTypeLabel(division.documentType)}</strong></article>)}</div>}</section>
+        <section className="research-linked-section"><header><div><MonoLabel>INTAKE</MonoLabel><h3>How this packet was brought in</h3></div></header><p>Page divisions are reviewed in the separate intake tool; that review does not change the preserved file. <Link href={courtPacketIntakeHref(caseId)}>Open court packet intake →</Link></p></section>
       </> : <div className="research-record-empty"><h2>No evidence item selected.</h2><p>Add an established item or change the current search.</p></div>}</section>
     </div>
+
+    {showAdd && <form action={createEvidenceAction.bind(null, caseId)} className="research-create-form evidence-add-form" id="add-evidence"><header><div><MonoLabel>ADD EVIDENCE</MonoLabel><h2>Name an established item</h2></div><span>Source it next</span></header><label>Evidence name *<input name="name" required minLength={2} maxLength={300} placeholder="External hand swabs" /></label><label className="wide">What is it? <small>Describe, do not interpret.</small><textarea name="description" rows={3} maxLength={3000} placeholder="A concise identifying description." /></label><label className="wide">Research note <small>Optional</small><textarea name="researchNote" rows={3} maxLength={3000} placeholder="Provenance concerns, limitations, or handling notes." /></label><label className="research-confirm"><input type="checkbox" name="established" value="yes" required /><span>I reviewed material that establishes this item exists.</span></label><SubmitButton pendingLabel="Adding…">Add evidence item</SubmitButton></form>}
   </main>;
 }
