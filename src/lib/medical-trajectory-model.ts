@@ -211,3 +211,18 @@ export function trajectoryFacts(events: TrajectoryEvent[], window: Window) {
   const prescribers = new Set(events.filter((e) => e.lane === "medication" && e.setting).map((e) => e.setting));
   return { days: daysBetween(window.start, window.end) + 1, medications: medications.size, settings: settings.size, prescribers: prescribers.size };
 }
+
+// Cumulative course through a date (inclusive): what the record documents up to that day, nothing after it.
+// A care contact is one setting on one day, so an encounter and its instructions count once.
+export function courseToDate(events: TrajectoryEvent[], episodeStart: string, date: string) {
+  const upTo = events.filter((e) => e.date <= date);
+  const care = upTo.filter((e) => e.lane === "care");
+  const medication = upTo.filter((e) => e.lane === "medication");
+  return {
+    day: daysBetween(episodeStart, date) + 1,
+    careContacts: new Set(care.map((e) => `${e.date}|${e.setting ?? e.id}`)).size,
+    settings: new Set(upTo.filter((e) => (e.lane === "care" || e.lane === "medication") && e.setting).map((e) => e.setting)).size,
+    medicationActions: medication.length,
+    medications: new Set(medication.map((e) => e.medication).filter(Boolean)).size,
+  };
+}

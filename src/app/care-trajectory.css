@@ -142,3 +142,25 @@
 .ct-sequence li strong{font-size:16px;line-height:1.3}
 .ct-sequence li span{font-size:13.5px;color:var(--ink-muted,#5A5248);line-height:1.55}
 @media(max-width:700px){.ct-sequence-callout{grid-template-columns:1fr}.ct-sequence li button{grid-template-columns:56px minmax(0,1fr)}}
+
+/* Selected record: the cumulative course through that day, pinned to the foot of the record column. */
+.ct-inspector-main{display:flex;flex-direction:column;min-width:0}
+.ct-inspector .ct-asof{display:grid;grid-template-columns:minmax(0,1.2fr) repeat(3,minmax(0,1fr));gap:0;margin:auto 0 0;padding-top:10px;border-top:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
+.ct-inspector-main>:has(+.ct-asof){margin-bottom:12px}
+.ct-asof>div{min-width:0;padding:0 12px;border-left:1px solid var(--hairline-soft-2,rgba(176,141,87,.32))}
+.ct-asof>div:first-child{padding-left:0;border-left:0}
+.ct-asof dt{font-size:9.5px!important}
+.ct-asof dd{margin:3px 0 0!important;font-size:13px!important;line-height:1.35;color:var(--ink,#1E1712)}
+.ct-asof-day dt{color:var(--signal-deep,#6F542E)!important}
+.ct-asof-day b{font-weight:700}
+
+/* Overview: text first; a quiet prompt at lower right leads into the timeline. */
+.ct-inspector.is-overview{grid-template-columns:minmax(0,1fr) auto}
+.ct-inspector.is-overview .ct-inspector-main{border-right:0}
+.ct-inspector.is-overview .ct-inspector-main h2{margin-top:0}
+.ct-inspector.is-overview .ct-inspector-main p{max-width:760px}
+.ct-explore{align-self:end;max-width:300px;margin:0;padding:18px 22px!important;border:0;background:none;color:var(--ink-faint,#8A8175);font:500 11px/1.5 var(--font-mono,monospace);letter-spacing:.04em;text-align:right;cursor:pointer}
+.ct-explore:hover,.ct-explore:focus-visible{color:var(--signal-deep,#6F542E)}
+.ct-explore span{color:var(--signal-deep,#6F542E)}
+.ct-board{scroll-margin-top:calc(var(--ct-top,104px) + 170px)}
+@media(max-width:700px){.ct-asof{grid-template-columns:1fr 1fr!important;gap:10px 0!important}.ct-asof>div:nth-child(3){padding-left:0;border-left:0}.ct-inspector.is-overview{grid-template-columns:1fr}.ct-explore{text-align:left;max-width:none}}

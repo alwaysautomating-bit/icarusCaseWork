@@ -6,13 +6,13 @@ import "@/app/care-trajectory.css";
 import { MonoLabel } from "@/app/casework-ui";
 import {
   clusterLane,
+  courseToDate,
   daysBetween,
   fullWindow,
   inWindow,
   leadUpWindow,
   medicationLanes,
   positionPercent,
-  trajectoryFacts,
   type CareSetting,
   type Cluster,
   type Evidence,
@@ -85,6 +85,19 @@ function Marker({ cluster, window, selectedId, onSelect, tone }: { cluster: Clus
   >{cluster.events.length > 1 ? <span>{cluster.events.length}</span> : null}</button>;
 }
 
+const fmtLong = (iso: string) => new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "UTC" }).format(new Date(`${iso}T00:00:00Z`));
+const plural = (count: number, word: string, many = `${word}s`) => `${count} ${count === 1 ? word : many}`;
+
+// The cumulative course through the selected day. Counts stop at that date; nothing later is included.
+function AsOf({ course, date }: { course: ReturnType<typeof courseToDate>; date: string }) {
+  return <dl className="ct-asof" aria-label={`Course as of ${fmtLong(date)}`}>
+    <div className="ct-asof-day"><dt>As of {fmt(date)}</dt><dd><b>{plural(course.day, "day")}</b> in documented treatment</dd></div>
+    <div><dt>Care contacts to date</dt><dd>{plural(course.careContacts, "contact")} · {plural(course.settings, "setting")}</dd></div>
+    <div title="Every documented start, dose change, stop, taper, and reported use or non-use"><dt>Medication changes to date</dt><dd>{plural(course.medicationActions, "action")} · {plural(course.medications, "medication")}</dd></div>
+    <div><dt>Status in the available record</dt><dd>No demonstrated stabilization</dd></div>
+  </dl>;
+}
+
 function Lane({ label, sub, children }: { label: string; sub?: string; children: React.ReactNode }) {
   return <div className="ct-lane"><div className="ct-lane-label"><strong>{label}</strong>{sub ? <span>{sub}</span> : null}</div><div className="ct-track">{children}</div></div>;
 }
@@ -110,8 +123,8 @@ export function CareTrajectoryWorkspace({ data }: { data: WorkspaceData }) {
   const full = useMemo(() => fullWindow(events, support), [events, support]);
   const selectedDate = !selection ? full.end : selection.kind === "event" ? selection.event.date : selection.card.date ?? full.end;
   const window = mode === "full" ? full : leadUpWindow(selectedDate);
-  const facts = trajectoryFacts(events, full);
   const episodeStart = events.find((e) => e.lane === "care")?.date ?? full.start;
+  const board = useRef<HTMLElement>(null);
   const selectedId = selection?.kind === "event" ? selection.event.id : null;
   const onEvent = (event: TrajectoryEvent) => setSelection({ kind: "event", event });
   const ticks = ticksFor(window, mode);
@@ -127,22 +140,17 @@ export function CareTrajectoryWorkspace({ data }: { data: WorkspaceData }) {
     <section className={`ct-inspector${selection ? "" : " is-overview"}`} aria-live="polite">
       {!selection ? <>
         <div className="ct-inspector-main">
-          <MonoLabel>CARE TRAJECTORY · SOURCE-BACKED</MonoLabel>
-          <h2>Severity ≠ imminent dangerousness ≠ treatment response</h2>
-          <p>Three questions the questioning keeps compressing: how ill she was, whether she met the emergency threshold, and whether treatment was working. Click any event, card or line to see what was said, by whom, and how they knew. A projection of testimony extractions, not a clinical record and not a finding of fault.</p>
+          <h2>A documented course without demonstrated stabilization</h2>
+          <p>The timeline follows {daysBetween(episodeStart, full.end) + 1} days of recorded treatment and care contacts, from {fmtLong(episodeStart)}, through {fmtLong(full.end)}. It distinguishes what clinicians documented, what the patient reported, and what was read from the record. It does not determine clinical fault.</p>
         </div>
-        <dl className="ct-stats">
-          <div><dt>Days of one episode</dt><dd>{daysBetween(episodeStart, full.end) + 1}</dd></div>
-          <div><dt>Medications</dt><dd>{facts.medications}</dd></div>
-          <div><dt>Care settings</dt><dd>{data.settings.length}</dd></div>
-          <div><dt>Prescribing settings</dt><dd>{facts.prescribers}</dd></div>
-        </dl>
+        <button type="button" className="ct-explore" onClick={() => board.current?.scrollIntoView({ behavior: "smooth", block: "start" })}>Select any point on the timeline to see the course as of that day <span aria-hidden="true">→</span></button>
       </> : selection.kind === "event" ? <>
         <div className="ct-inspector-main">
           <MonoLabel>{LANE_LABEL[selection.event.lane].toUpperCase()} · {PROVENANCE_LABEL[selection.event.provenance].toUpperCase()}</MonoLabel>
           <h2>{selection.event.title}</h2>
           <p>{selection.event.note ?? selection.event.summary}</p>
           {selection.event.conflicts.length ? <p className="ct-flag"><b>Flagged for review.</b> {selection.event.conflicts[0]}</p> : null}
+          <AsOf course={courseToDate(events, episodeStart, selection.event.date)} date={selection.event.date} />
         </div>
         <dl>
           <div><dt>Clinical/event time</dt><dd>{selection.event.approximate ? "≈ " : ""}{fmt(selection.event.date)}</dd></div>
@@ -161,6 +169,7 @@ export function CareTrajectoryWorkspace({ data }: { data: WorkspaceData }) {
           <h2>{selection.card.title}</h2>
           <p>{selection.card.detail}</p>
           <References items={selection.card.references} />
+          {selection.card.date ? <AsOf course={courseToDate(events, episodeStart, selection.card.date)} date={selection.card.date} /> : null}
         </div>
         <dl>
           <div><dt>Clinical/event time</dt><dd>{selection.card.date ? fmt(selection.card.date) : "not dated"}</dd></div>
@@ -184,7 +193,7 @@ export function CareTrajectoryWorkspace({ data }: { data: WorkspaceData }) {
       <p className="ct-legend"><i className="lg prov-clinician" />clinician act <i className="lg prov-reported" />patient report <i className="lg prov-record" />read from record <i className="lg approx" />approximate date <i className="lg flagged" />flagged for review</p>
     </section>
 
-    <section className="ct-board">
+    <section className="ct-board" ref={board}>
       <div className="ct-scroll">
         <header className="ct-axis"><div className="ct-lane-label"><strong>CALENDAR</strong><span>clinical/event time</span></div><div className="ct-track">{ticks.map((tick) => <time key={tick} style={{ left: `${positionPercent(tick, window)}%` }}>{fmt(tick, true)}</time>)}</div></header>
         <Lane label="Continuing episode" sub="analytical frame"><div className="ct-episode" style={{ left: `${positionPercent(episodeStart > window.start ? episodeStart : window.start, window)}%`, right: 0 }}><strong>{mode === "full" ? "Persistent episode without demonstrated stabilization" : `Days ${Math.max(1, daysBetween(episodeStart, window.start) + 1)}–${daysBetween(episodeStart, window.end) + 1} of the same episode`}</strong></div></Lane>
